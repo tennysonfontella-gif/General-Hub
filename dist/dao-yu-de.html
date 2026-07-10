@@ -150,6 +150,28 @@
   <div style="margin-top:1em;color:#3d3027;font-size:1.05em;"><p style="margin:0.8em 0;line-height:2.1;"><strong>作者：悟真（乔治）</strong></p>
 <p style="margin:0.8em 0;line-height:2.1;"><strong>日期：2026-07-10</strong></p>
 <hr style="border:none;border-top:1px solid #d4b896;margin:2em 0;"></div>
+<!-- 单条全文音频播放器（外链 mp3） -->
+<div class="audio-player-hero" style="background:#f5ead5;border:1px solid #d4b896;border-radius:8px;padding:24px;margin:32px auto;max-width:720px;box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+  <div style="text-align:center;margin-bottom:16px;color:#8a5a2b;font-size:16px;letter-spacing:2px;">🎧 通读全文 · 静思悟真</div>
+  <audio id="mainAudio" controls preload="metadata" style="width:100%;height:48px;">
+    <source src="https://tennysonfontella-gif.github.io/General-Hub/dist/dao-yu-de-full.mp3" type="audio/mpeg">
+  </audio>
+  <div class="audio-controls" style="display:flex;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap;gap:8px;">
+    <div class="audio-buttons" style="display:flex;gap:6px;">
+      <button onclick="document.getElementById('mainAudio').playbackRate=0.75;this.style.background='#c8423b';this.style.color='#fff';" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;">0.75x</button>
+      <button onclick="document.getElementById('mainAudio').playbackRate=1;this.style.background='#c8423b';this.style.color='#fff';" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;">1x</button>
+      <button onclick="document.getElementById('mainAudio').playbackRate=1.25;this.style.background='#c8423b';this.style.color='#fff';" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;">1.25x</button>
+      <button onclick="document.getElementById('mainAudio').playbackRate=1.5;this.style.background='#c8423b';this.style.color='#fff';" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;">1.5x</button>
+      <button onclick="document.getElementById('mainAudio').playbackRate=2;this.style.background='#c8423b';this.style.color='#fff';" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;">2x</button>
+    </div>
+    <div class="audio-extra" style="display:flex;gap:6px;align-items:center;">
+      <button onclick="var a=document.getElementById('mainAudio');a.muted=!a.muted;this.textContent=a.muted?'🔇':'🔊';" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;">🔊</button>
+      <a href="https://tennysonfontella-gif.github.io/General-Hub/dist/dao-yu-de-full.mp3" download="dao-yu-de-full.mp3" style="padding:4px 10px;border:1px solid #d4b896;background:#fff;color:#8a5a2b;border-radius:4px;cursor:pointer;font-size:12px;text-decoration:none;">⬇ 下载</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:12px;color:#8a5a2b;font-size:12px;opacity:0.7;">全长约 50 分钟 · zh-CN-YunjianNeural 男声 · 0.9x 倍速</div>
+</div>
+
 </section>
 <section id="ch2" style="margin:2.5em 0;padding:1.5em;background:#fffdf8;border-radius:8px;border:1px solid #e8dcc0;">
   <h2 style="color:#3d3027;font-size:1.5em;margin:0 0 0.5em 0;padding-bottom:0.3em;border-bottom:2px solid #c8423b;display:inline-block;">序章·一句话点透</h2>
@@ -918,5 +940,12 @@
     <p class="signature">—— 悟真（乔治） · 2026-07-10</p>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('mainAudio');
+  if (audio) { audio.playbackRate = 0.9; }
+});
+</script>
 </body>
 </html>
