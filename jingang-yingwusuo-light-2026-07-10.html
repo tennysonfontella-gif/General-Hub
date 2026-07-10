@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="《金刚经》核心钥匙二：应无所住而生其心 · 完整读书笔记 v2.1 浅色版（米白禅意风）">
+<title>应无所住而生其心 · 《金刚经》核心钥匙二 | v2.1 浅色版 2026-07-10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    /* 米白禅意风 - 主色系 */
+    --bg-deep: #faf8f5;        /* 主背景 - 米白 */
+    --bg-base: #f5f0e8;        /* 卡片背景 - 略深米 */
+    --bg-card: #ffffff;        /* 高亮卡片 - 纯白 */
+    --bg-elevated: #f0e8d8;    /* 悬浮态 - 暖米 */
+    --gold: #a08560;           /* 暗金 - 主点缀色 */
+    --gold-bright: #8a6f48;    /* 深金 - 重点强调 */
+    --gold-dim: #c0a880;       /* 浅金 - 次要点缀 */
+    --ink: #2a2018;            /* 主文字 - 浓墨黑棕 */
+    --ink-soft: #5a4a3a;       /* 次要文字 - 中棕 */
+    --ink-mute: #8a7a6a;       /* 辅助文字 - 浅棕灰 */
+    --rule: #e0d8c8;           /* 分隔线 - 米灰 */
+    --crimson: #8a3a28;        /* 朱砂红（点缀）*/
+    --jade: #5a7a58;           /* 玉绿（点缀）*/
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+    background: var(--bg-deep);
+    color: var(--ink);
+    line-height: 1.85;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    overflow-x: hidden;
+  }
+
+  /* ============ HERO ============ */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 24px;
+    background:
+      radial-gradient(ellipse at top, rgba(212,165,116,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at bottom, rgba(160,64,48,0.05) 0%, transparent 50%),
+      var(--bg-deep);
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(212,165,116,0.03) 80px, rgba(212,165,116,0.03) 81px);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    font-weight: 400;
+  }
+
+  .hero-eyebrow::before, .hero-eyebrow::after {
+    content: '—';
+    margin: 0 16px;
+    opacity: 0.5;
+  }
+
+  .hero-title {
+    font-size: clamp(40px, 6vw, 72px);
+    font-weight: 500;
+    color: var(--gold-bright);
+    letter-spacing: 0.08em;
+    margin-bottom: 32px;
+    line-height: 1.2;
+    text-shadow: 0 0 40px rgba(212,165,116,0.2);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 1.8vw, 20px);
+    color: var(--ink-soft);
+    max-width: 720px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    line-height: 2;
+    margin-bottom: 64px;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    margin-top: 32px;
+    font-size: 13px;
+    color: var(--ink-mute);
+    letter-spacing: 0.2em;
+  }
+
+  .hero-meta span { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+  .hero-meta span::before { content: ''; width: 1px; height: 24px; background: var(--rule); }
+  .hero-meta span:first-child::before, .hero-meta span:last-child::after { display: none; }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    color: var(--ink-mute);
+    animation: float 2.5s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translate(-50%, 0); opacity: 0.5; }
+    50% { transform: translate(-50%, 8px); opacity: 1; }
+  }
+
+  /* ============ VOICE SECTION ============ */
+  .voice-section {
+    padding: 100px 24px;
+    background:
+      radial-gradient(ellipse at center, rgba(212,165,116,0.06) 0%, transparent 60%),
+      var(--bg-base);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .voice-inner {
+    max-width: 880px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .voice-card {
+    margin: 64px auto 40px;
+    padding: 48px 56px;
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+    border: 1px solid var(--gold-dim);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(212,165,116,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .voice-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.6;
+  }
+
+  @media (max-width: 700px) {
+    .voice-card { flex-direction: column; text-align: center; padding: 40px 32px; gap: 24px; }
+  }
+
+  .voice-icon {
+    color: var(--gold);
+    flex-shrink: 0;
+    animation: pulse-voice 2.4s ease-in-out infinite;
+  }
+
+  @keyframes pulse-voice {
+    0%, 100% { opacity: 0.7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+
+  .voice-info { flex: 1; min-width: 0; }
+
+  .voice-title {
+    font-size: 22px;
+    color: var(--gold-bright);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin-bottom: 8px;
+  }
+
+  .voice-meta {
+    font-size: 13px;
+    color: var(--ink-mute);
+    letter-spacing: 0.25em;
+    margin-bottom: 20px;
+  }
+
+  .voice-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .voice-tag {
+    font-size: 12px;
+    padding: 4px 12px;
+    border: 1px solid var(--rule);
+    border-radius: 100px;
+    color: var(--ink-soft);
+    letter-spacing: 0.15em;
+  }
+
+  .voice-hint {
+    margin-top: 32px;
+    font-size: 14px;
+    color: var(--gold-dim);
+    letter-spacing: 0.2em;
+    line-height: 1.8;
+  }
+
+  .voice-step-list {
+    max-width: 720px;
+    margin: 48px auto 0;
+    text-align: left;
+  }
+
+  .voice-step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    padding: 24px 28px;
+    margin-bottom: 16px;
+    background: rgba(160, 133, 96, 0.4);
+    border-left: 2px solid var(--gold-dim);
+    border-radius: 0 4px 4px 0;
+    transition: all 0.3s ease;
+  }
+
+  .voice-step:hover {
+    background: rgba(160, 133, 96, 0.7);
+    border-left-color: var(--gold);
+    transform: translateX(4px);
+  }
+
+  .voice-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold);
+    line-height: 1;
+    flex-shrink: 0;
+    font-weight: 300;
+    margin-top: 4px;
+  }
+
+  .voice-step-body {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 2;
+    letter-spacing: 0.05em;
+  }
+
+  .voice-step-body strong {
+    color: var(--gold-bright);
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 16px;
+  }
+
+  .voice-step-detail {
+    color: var(--ink-soft);
+    font-size: 14px;
+  }
+
+  /* ============ KEY VISUAL (3-COLUMN) ============ */
+  .key-visual {
+    padding: 120px 24px;
+    background: var(--bg-base);
+    position: relative;
+  }
+
+  .key-visual::before {
+    content: '';
+    position: absolute;
+    top: 60px; left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+  }
+
+  .section-label {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    color: var(--gold-dim);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 500;
+    color: var(--gold-bright);
+    margin-bottom: 16px;
+    letter-spacing: 0.05em;
+  
+    line-height: 1.4;
+    letter-spacing: 0.05em; }
+
+  .section-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 24px;
+    opacity: 0.6;
+  }
+
+  .section-intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 80px;
+    color: var(--ink-soft);
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 0.08em;
+  }
+
+  .triple-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  @media (max-width: 860px) {
+    .triple-grid { grid-template-columns: 1fr; }
+  }
+
+  .triple-cell {
+    padding: 56px 40px;
+    border-right: 1px solid var(--rule);
+    position: relative;
+    background: var(--bg-base);
+    transition: background 0.4s ease;
+  }
+
+  .triple-cell:last-child { border-right: none; }
+
+  .triple-cell:hover {
+    background: var(--bg-card);
+  }
+
+  @media (max-width: 860px) {
+    .triple-cell { border-right: none; border-bottom: 1px solid var(--rule); }
+    .triple-cell:last-child { border-bottom: none; }
+  }
+
+  .cell-header {
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--gold);
+    margin-bottom: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  .cell-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-mute);
+    letter-spacing: 0.2em;
+    margin-bottom: 32px;
+    text-transform: lowercase;
+  }
+
+  .cell-body {
+    color: var(--ink-soft);
+    font-size: 15px;
+    line-height: 2.1;
+    letter-spacing: 0.06em;
+  }
+
+  .cell-verse {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--rule);
+    font-size: 14px;
+    color: var(--gold-dim);
+    font-style: italic;
+    line-height: 2;
+    letter-spacing: 0.1em;
+  }
+
+  .cell-crimson .cell-header,
+  .cell-crimson .cell-en { color: var(--crimson); }
+  .cell-jade .cell-header,
+  .cell-jade .cell-en { color: var(--jade); }
+
+  /* ============ OPENING 缘起 ============ */
+  .opening {
+    padding: 120px 24px;
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--bg-deep);
+  }
+
+  .opening-quote {
+    font-size: clamp(20px, 2.6vw, 28px);
+    text-align: center;
+    color: var(--gold-bright);
+    font-weight: 400;
+    line-height: 1.9;
+    letter-spacing: 0.1em;
+    margin-bottom: 56px;
+    text-shadow: 0 0 30px rgba(212,165,116,0.15);
+  }
+
+  .opening-text {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 2.3;
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    text-indent: 2em;
+  }
+
+  .opening-text strong {
+    color: var(--gold-bright);
+    font-weight: 500;
+  }
+
+  /* ============ THREE KEYS — DEEP DIVE ============ */
+  .deep-dive {
+    padding: 120px 24px;
+    background: var(--bg-base);
+  }
+
+  .deep-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .key-block {
+    margin-bottom: 100px;
+  }
+
+  .key-block:last-child { margin-bottom: 0; }
+
+  .key-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--gold-dim);
+    letter-spacing: 0.6em;
+    margin-bottom: 16px;
+  }
+
+  .key-heading {
+    font-size: clamp(32px, 4vw, 48px);
+    font-weight: 500;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+  }
+
+  .key-translation {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-mute);
+    letter-spacing: 0.15em;
+    margin-bottom: 32px;
+  }
+
+  .key-divider {
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold) 0%, transparent 100%);
+    margin-bottom: 48px;
+  }
+
+  .key-body {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 2.3;
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+    text-indent: 0;
+  }
+
+  .key-body p {
+    margin-bottom: 24px;
+  }
+
+  .key-body strong { color: var(--gold-bright); font-weight: 500; }
+
+  .sub-callout {
+    margin: 48px 0;
+    padding: 36px 40px;
+    background: var(--bg-card);
+    border-left: 3px solid var(--gold);
+    border-radius: 2px;
+    position: relative;
+  }
+
+  .sub-callout::before {
+    content: '“';
+    position: absolute;
+    top: 8px; left: 24px;
+    font-size: 56px;
+    color: var(--gold);
+    opacity: 0.25;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+
+  .sub-callout-text {
+    color: var(--ink);
+    font-size: 17px;
+    line-height: 2.2;
+    font-style: italic;
+    letter-spacing: 0.08em;
+    padding-left: 32px;
+  }
+
+  .sub-callout-cite {
+    margin-top: 16px;
+    padding-left: 32px;
+    font-size: 13px;
+    color: var(--gold-dim);
+    letter-spacing: 0.3em;
+  }
+
+  /* ============ KOAN ============ */
+  .koan-section {
+    padding: 120px 24px;
+    background: var(--bg-deep);
+    position: relative;
+  }
+
+  .koan-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(180deg, transparent, var(--gold), transparent);
+    opacity: 0.4;
+  }
+
+  .koan-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    padding: 80px 64px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    position: relative;
+  }
+
+  @media (max-width: 600px) {
+    .koan-card { padding: 56px 32px; }
+  }
+
+  .koan-label {
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.6em;
+    color: var(--crimson);
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .koan-title {
+    text-align: center;
+    font-size: clamp(28px, 4vw, 40px);
+    color: var(--gold-bright);
+    margin-bottom: 56px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+  }
+
+  .koan-scene {
+    background: var(--bg-elevated);
+    padding: 40px;
+    border-radius: 2px;
+    margin-bottom: 40px;
+  }
+
+  .koan-scene-line {
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 2.2;
+    margin-bottom: 12px;
+  }
+
+  .koan-scene-line span.tag { color: var(--gold-dim); font-size: 13px; margin-right: 16px; letter-spacing: 0.2em; }
+
+  .koan-answer {
+    font-size: clamp(22px, 3vw, 30px);
+    color: var(--gold-bright);
+    line-height: 2;
+    text-align: center;
+    margin: 40px 0;
+    padding: 32px 0;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: 0.15em;
+    font-weight: 400;
+  }
+
+  .koan-interpret {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 2.2;
+    letter-spacing: 0.05em;
+  }
+
+  .koan-interpret p { margin-bottom: 20px; }
+
+  /* ============ IN-SECT PRACTICE 入世法门 ============ */
+  .practice {
+    padding: 120px 24px;
+    background: var(--bg-base);
+  }
+
+  .practice-inner {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  .practice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+  }
+
+  @media (max-width: 860px) {
+    .practice-grid { grid-template-columns: 1fr; }
+  }
+
+  .practice-card {
+    background: var(--bg-card);
+    padding: 40px 32px;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .practice-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+  }
+
+  .practice-card:hover {
+    transform: translateY(-4px);
+    background: var(--bg-elevated);
+    border-color: var(--gold-dim);
+  }
+
+  .practice-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .pc-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    color: var(--gold-dim);
+    line-height: 1;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .pc-title {
+    font-size: 22px;
+    color: var(--gold-bright);
+    margin-bottom: 8px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+
+  .pc-subtitle {
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.3em;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+  }
+
+  .pc-body {
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 2.1;
+    letter-spacing: 0.05em;
+  }
+
+  .pc-example {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--rule);
+    font-size: 13px;
+    color: var(--ink-mute);
+    line-height: 1.9;
+    font-style: italic;
+  }
+
+  .pc-example::before {
+    content: '例';
+    display: inline-block;
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 500;
+    margin-right: 8px;
+  }
+
+  /* ============ PARADOX / CLOSING ============ */
+  .closing {
+    padding: 140px 24px;
+    background: var(--bg-deep);
+    text-align: center;
+  }
+
+  .closing-inner {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .closing-verse {
+    font-size: clamp(24px, 3.2vw, 38px);
+    color: var(--gold-bright);
+    line-height: 1.8;
+    letter-spacing: 0.12em;
+    margin-bottom: 56px;
+    font-weight: 400;
+  }
+
+  .closing-text {
+    font-size: 17px;
+    color: var(--ink-soft);
+    line-height: 2.3;
+    margin-bottom: 32px;
+    letter-spacing: 0.05em;
+  }
+
+  .closing-seal {
+    display: inline-block;
+    margin-top: 64px;
+    padding: 20px 48px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 14px;
+    letter-spacing: 0.5em;
+    border-radius: 2px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    padding: 64px 24px;
+    text-align: center;
+    background: var(--bg-base);
+    color: var(--ink-mute);
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    border-top: 1px solid var(--rule);
+  }
+
+  footer .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold-dim);
+    margin: 24px auto;
+    opacity: 0.4;
+  }
+
+  /* ============ ANIMATIONS ============ */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .anim-fade {
+    animation: fadeUp 1s ease both;
+  }
+
+  .anim-fade-d1 { animation-delay: 0.2s; }
+  .anim-fade-d2 { animation-delay: 0.5s; }
+  .anim-fade-d3 { animation-delay: 0.8s; }
+
+  /* Reading progress */
+  .progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
+    background: var(--gold);
+    z-index: 100;
+    width: 0%;
+    transition: width 0.1s linear;
+    box-shadow: 0 0 8px var(--gold);
+  }
+
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow anim-fade">金 刚 经 · 核 心 钥 匙</div>
+  <h1 class="hero-title anim-fade anim-fade-d1">应无所住而生其心</h1>
+  <p class="hero-subtitle anim-fade anim-fade-d2">不是逃离红尘,是带着觉知活在红尘里;<br>不是冷漠地旁观,是担当时全然投入、放下时全然放下。</p>
+  <div class="hero-meta anim-fade anim-fade-d3">
+    <span>读 经 · 《金 刚 经》</span>
+    <span>庄 严 净 土 分</span>
+    <span>六 祖 慧 能 一 偈</span>
+  </div>
+  <div class="scroll-hint">向 下 滑 动 · S C R O L L</div>
+</section>
+
+<!-- FULL TEXT VOICE -->
+<section class="voice-section">
+  <div class="voice-inner">
+    <div class="section-label">F U L L · V O I C E</div>
+    <h2 class="section-title">全 文 语 音</h2>
+    <div class="section-divider"></div>
+    <p class="section-intro">完整版读书笔记,接近 9 分钟逐字朗读。<br>已经作为语音消息发送到本对话——先听一遍,再翻下面的文字,会很有力量。</p>
+
+    <div class="voice-card">
+      <div class="voice-icon">
+        <svg viewBox="0 0 64 64" width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          <circle cx="32" cy="32" r="22" stroke="currentColor" stroke-width="1" opacity="0.6"/>
+          <path d="M28 22 L28 42 L42 32 Z" fill="currentColor"/>
+          <path d="M46 26 Q50 32 46 38" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+          <path d="M50 22 Q56 32 50 42" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="voice-info">
+        <div class="voice-title">应无所住而生其心 · 全文朗读</div>
+        <div class="voice-meta">约 1.5-2 分钟 · 中文普通话 · 节奏沉稳 · v2 公网版</div>
+        <div class="voice-tag-row">
+          <span class="voice-tag">①缘起</span>
+          <span class="voice-tag">②无所住</span>
+          <span class="voice-tag">③而生其心</span>
+          <span class="voice-tag">④破立合一</span>
+          <span class="voice-tag">⑤公案</span>
+          <span class="voice-tag">⑥修行</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin:24px auto 0;max-width:720px;padding:0 24px">
+      <audio controls preload="metadata" style="width:100%;height:48px;border-radius:8px;background:rgba(160,232,184,0.08)">
+        <source src="data:audio/mpeg;base64,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qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqpMQU1FMy4xMDCqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq//NkxHwAAANIAAAAAKqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq" type="audio/mpeg">
+      </audio>
+      <div style="font-size:12px;opacity:0.6;text-align:center;margin-top:8px">💡 飞书对话窗口也有完整语音版</div>
+    </div>
+
+    <div class="voice-step-list">
+      <div class="voice-step">
+        <div class="voice-step-num">1</div>
+        <div class="voice-step-body">
+          <strong>去飞书对话找语音</strong><br>
+          <span class="voice-step-detail">向上滑动本对话窗口,看见一个 <em>蓝色的语音消息条</em>(显示「语音 X 分钟」),点开就是完整版朗读。</span>
+        </div>
+      </div>
+      <div class="voice-step">
+        <div class="voice-step-num">2</div>
+        <div class="voice-step-body">
+          <strong>边听边读下面三章</strong><br>
+          <span class="voice-step-detail">声音走过一遍,文字再走一遍——记忆锚点最深的是这种「听读同步」。</span>
+        </div>
+      </div>
+      <div class="voice-step">
+        <div class="voice-step-num">3</div>
+        <div class="voice-step-body">
+          <strong>通勤、散步、做饭时反复听</strong><br>
+          <span class="voice-step-detail">这版朗读的节奏是按章节切的,每一段都能独立断句,适合循环播。</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY VISUAL 三栏 -->
+<section class="key-visual">
+  <div class="section-label">C O R E · T R I N I T Y</div>
+  <h2 class="section-title">一把钥匙开三道门</h2>
+  <div class="section-divider"></div>
+  <p class="section-intro">「应无所住而生其心」八个字,既是解脱的根本,也是承担的本钱。<br>下面这三个面向,共同构成这句经文的完整结构——缺一不成。</p>
+
+  <div class="triple-grid">
+
+    <div class="triple-cell">
+      <div class="cell-header">无所住</div>
+      <div class="cell-en">No Abiding</div>
+      <div class="cell-body">
+        心不黏着任何境界——色、声、香、味、触、法,过则不留。<br><br>
+        这不是冷漠,不是麻木,而是一种<strong> 清醒的自由</strong>:经历而不被占有,体验而不被定义。
+      </div>
+      <div class="cell-verse">
+        「应无所住而生其心」<br>
+        ——《金刚经》庄严净土分<br>
+        惠 能 顿 悟
+      </div>
+    </div>
+
+    <div class="triple-cell cell-crimson">
+      <div class="cell-header">而生其心</div>
+      <div class="cell-en">Yet The Heart Arises</div>
+      <div class="cell-body">
+        却不落断灭虚空;该照用照用,该担当担当。<br><br>
+        不执著、不死寂,在红尘里全身投入而内心无挂碍——这是<strong> 大乘菩萨的活法</strong>。
+      </div>
+      <div class="cell-verse">
+        「担 水 砍 柴,<br>无 非 妙 道。」<br>
+        —— 禅 门 日 用
+      </div>
+    </div>
+
+    <div class="triple-cell cell-jade">
+      <div class="cell-header">公案·五祖传法</div>
+      <div class="cell-en">The Fifth Patriarch's Transmission</div>
+      <div class="cell-body">
+        五祖三更为慧能讲《金刚经》至此句,慧能言下大悟:<br><br>
+        <em>「何期自性,本自清净……本自具足。」</em>
+      </div>
+      <div class="cell-verse">
+        一 句 经 文 透 悟 心,<br>
+        千 古 禅 宗 自 此 立。
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 缘起 OPENING -->
+<section class="opening">
+  <div class="section-label">P R E F A C E</div>
+  <h2 class="section-title">缘 起</h2>
+  <div class="section-divider"></div>
+
+  <div class="opening-quote">
+    多少人把「应无所住」读成了逃避,<br>
+    多少人把「而生其心」读成了执著。
+  </div>
+
+  <p class="opening-text">
+    念《金刚经》的人很多,但能真正把<strong>「应无所住而生其心」</strong>这句话活出来的人,很少。
+  </p>
+  <p class="opening-text">
+    这八个字,不是用来背诵的——是用来照见自己的。<strong>应无所住</strong>,是对内不在任何东西上停留;<strong>而生其心</strong>,是对外该担当时全然担当。两者是一体两面,绝非先后。
+  </p>
+  <p class="opening-text">
+    前半句要<em>破</em>,破掉我们心上的黏腻;后半句要<em>立</em>,立起在世间行菩萨道的勇猛。破得干净,立得稳当,这才是《金刚经》的真正功夫。
+  </p>
+  <p class="opening-text">
+    读完这篇笔记,你不需要变得更"佛系",而是要活得更<strong>清醒、热忱、无畏</strong>。
+  </p>
+</section>
+
+<!-- DEEP DIVE -->
+<section class="deep-dive">
+  <div class="deep-inner">
+
+    <div class="key-block">
+      <div class="key-num">C H A P T E R · O N E</div>
+      <h2 class="key-heading">无所住:不是不染,是染了还能掉</h2>
+      <div class="key-translation">Not avoiding experience, but refusing to be held by it.</div>
+      <div class="key-divider"></div>
+
+      <div class="key-body">
+        <p>很多人以为「应无所住」是教我们不要去爱、不要去投入、不要有任何情感。<strong>这是最大的误读</strong>。</p>
+        <p>「无所住」<strong>不是不经历,而是不黏着</strong>;不是没有感受,而是感受来了能走,不把感受当成「我」的一部分。</p>
+        <p>你看见一朵花,可以欣赏;闻到一阵饭香,可以欢喜;听到一段话,可以被打动——这些都是生命的正常流动。但当这些<strong>流过</strong>之后,你是否还能回到<strong>当下</strong>?还是已经陷进去,在脑海中反复回放?</p>
+      </div>
+
+      <div class="sub-callout">
+        <div class="sub-callout-text">
+          「色」是表象,「声」是语言,「香」是气味,「味」是饮食,「触」是接触,「法」是念头。<br>
+          ——六尘对应的是我们所有感官的入口,以及第六识的念头。<br>
+          佛陀说,不应在<strong>任何一个</strong>上面「住心」,因为住就生执,执就成苦。
+        </div>
+        <div class="sub-callout-cite">——《 金 刚 经 集 註 》</div>
+      </div>
+
+      <div class="key-body">
+        <p>什么叫「住」?<strong>「住」就是反复反刍</strong>。</p>
+        <p>老板骂了你一句,你回家反刍三天;伴侣说了一句冷话,你把它归档到「他不爱我」的证据库里;一次失败被你反复提取,直到它定义了你的全部自我——这些都是「住」。</p>
+        <p><strong>应无所住</strong>的反面不是「麻木」,而是<strong>「反刍型内耗」</strong>。破除的方法也不是压制,而是觉察——看见自己正在黏,然后松手。</p>
+        <p>六祖慧能听到五祖讲到这里时说:<em>「何期自性,本自清净」</em>——他意识到,那个<strong>能觉察到一切、又不在一切之中的东西</strong>,从来就没有被污染过。</p>
+      </div>
+    </div>
+
+    <div class="key-block">
+      <div class="key-num">C H A P T E R · T W O</div>
+      <h2 class="key-heading">而生其心:不是躺平,是担得起、放得下</h2>
+      <div class="key-translation">Action without clinging, presence without possession.</div>
+      <div class="key-divider"></div>
+
+      <div class="key-body">
+        <p>后半句才是<strong>《金刚经》真正难的地方</strong>。</p>
+        <p>很多修行人走了一半就停住了,把「应无所住」活成了<strong>什么都不在乎</strong>——不结婚、不奋斗、不动情、不发声——他们以为这就是「空」,其实这叫<strong>「顽空」</strong>,是佛法里要破的另一种执著。</p>
+        <p>《金刚经》在后半句急转直下:<strong>「而生其心」</strong>——这个<strong>「而生」</strong>,是动词,是动名词,是要你<strong>生起来</strong>。什么样的心?是<strong>清净心、广大心、承担心、慈悲心</strong>。</p>
+      </div>
+
+      <div class="sub-callout">
+        <div class="sub-callout-text">
+          「应无所住」是破执,「而生其心」是立愿。<br>
+          破而不立,落到偏空;立而不破,落入情执。<br>
+          <strong>两句话是一把刀的两面刃,缺了哪一面都成不了器。</strong>
+        </div>
+        <div class="sub-callout-cite">— — 禅 宗 用 功 之 要</div>
+      </div>
+
+      <div class="key-body">
+        <p>什么叫<strong>「而生其心」</strong>?这不是让你每天都升起一个伟大的心,而是让你在<strong>每一件具体的事</strong>里,生起那个不黏着的心。</p>
+        <p>比如:你被冤枉了——没有住,不在「委屈」「愤怒」上停留;但同时生其心——该澄清澄清,该追责追责,因为这是<strong>对事不对事</strong>,对事件负责,而不把它<em>变成自我身份的证明</em>。</p>
+        <p>你爱一个人——没有住,不在「他会不会离开」上焦虑;但同时生其心——该陪伴陪伴,该投入投入,因为<strong>爱本身就是承担</strong>。</p>
+        <p>《金刚经》不让你出家、不让你隐世。它要你在<strong>最喧嚣的房间里</strong>,炼出一颗<strong>最安静的心</strong>。</p>
+      </div>
+    </div>
+
+    <div class="key-block">
+      <div class="key-num">C H A P T E R · T H R E E</div>
+      <h2 class="key-heading">破与立:无所住是刀,而生其心是柄</h2>
+      <div class="key-translation">Detachment sharpens the blade; commitment gives it a handle.</div>
+      <div class="key-divider"></div>
+
+      <div class="key-body">
+        <p>禅宗用一句话把这个意思说透了:<strong>「不断百思想,了即业难忘」</strong>——不切断念头,而是认出<strong>念头的本质是空的</strong>。念头来来去去,你不必让它停下来,只要知道它不是你。</p>
+        <p>所以<strong>「应无所住」</strong> 不是要你<strong>没有念头</strong>,而是要你<strong>不被念头牵着走</strong>。<strong>「而生其心」</strong> 也不是要你<strong>没有情感</strong>,而是要你<strong>带着情感却不被情感定义</strong>。</p>
+        <p>这两个状态合起来,叫<strong>「活泼泼的禅」</strong>——<br>
+        在工作里全力以赴而不被工作绑架,在亲密里全然投入而不被亲密占有,在失败里认真复盘而不让失败定义自己,在成功里欢喜清明而不让成功自大。</p>
+      </div>
+
+      <div class="sub-callout">
+        <div class="sub-callout-text">
+          「佛法在世间,不离世间觉;<br>离世觅菩提,恰如求兔角。」<br>
+          ——永嘉证道歌
+        </div>
+        <div class="sub-callout-cite">— — 唐 · 永 嘉 玄 觉</div>
+      </div>
+
+      <p class="key-body">
+        这才是<strong>《金刚经》的入世法门</strong>:身在红尘,心不黏红尘;在世间担当作为,却不在世间建立自我——这是<strong>庄严净土</strong>,是<strong>人间佛教</strong>最圆满的状态。
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- KOAN 公案 -->
+<section class="koan-section">
+  <div class="section-label">K O A N · 公 案</div>
+  <h2 class="section-title">一 个 改 变 禅 宗 史 的 夜 晚</h2>
+  <div class="section-divider"></div>
+
+  <div class="koan-card">
+
+    <div class="koan-label">五 祖 弘 忍 传 法</div>
+    <div class="koan-title">三 更 受 记 · 慧 能 言 下 大 悟</div>
+
+    <div class="koan-scene">
+      <div class="koan-scene-line"><span class="tag">年 代</span>公元 661 年前后 · 唐 · 蕲州黄梅</div>
+      <div class="koan-scene-line"><span class="tag">人 物</span>五祖弘忍 · 六祖慧能 · 神秀上座</div>
+      <div class="koan-scene-line"><span class="tag">地 点</span>东山寺 · 五祖方丈室</div>
+      <div class="koan-scene-line"><span class="tag">时 间</span>三更时分</div>
+      <div class="koan-scene-line"><span class="tag">经 文</span>《金刚经》「应无所住而生其心」</div>
+    </div>
+
+    <div class="koan-answer">
+      「何期自性,本自清净;<br>
+      何期自性,本不生灭;<br>
+      何期自性,本自具足;<br>
+      何期自性,本无动摇;<br>
+      何期自性,能生万法。」
+    </div>
+
+    <div class="koan-interpret">
+      <p>禅宗史上最重要的一夜,没有法螺齐鸣,没有天花乱坠,只有一个<strong>卖柴的岭南汉子</strong>,听见和尚诵经「应无所住而生其心」八个字,当下大悟。</p>
+      <p>五祖随即为他秘密讲解《金刚经》,讲到「应无所住而生其心」时,慧能脱口而出这五句。<strong>每句的「本」</strong>,都是对我们向外抓取的警告——清净不是你努力维持来的,具足也不是你拼命够到的。</p>
+      <p>这是一个<strong>不识字的砍柴人</strong>对佛法的回应,却击中了<strong>「一切向外求法」的根基</strong>。从此,禅宗从<em>「藉教悟宗」</em>转向<em>「直指人心」</em>,成为中国佛教最重要的转折点之一。</p>
+      <p>我们不需要做第二个慧能,但我们可以学习<strong>那种「听一句经文就能停下来往内看」的勇气</strong>——不只在早课里念,而是在生活的每一件具体事里,把这句话拿出来照一照。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRACTICE 入世法门 -->
+<section class="practice">
+  <div class="practice-inner">
+    <div class="section-label">P R A C T I C E · 入 世</div>
+    <h2 class="section-title">三 个 落 地 修 行</h2>
+    <div class="section-divider"></div>
+    <p class="section-intro">《金刚经》的智慧必须在<strong>事上磨</strong>。下面三个方法,帮你把「应无所住而生其心」从<em>读到的字</em>,练成<em>活出的心</em>。</p>
+
+    <div class="practice-grid">
+
+      <div class="practice-card">
+        <div class="pc-num">01</div>
+        <div class="pc-title">觉 察 · 念 起 即 觉</div>
+        <div class="pc-subtitle">A W A R E N E S S</div>
+        <div class="pc-body">
+          当情绪升起的瞬间——愤怒、委屈、嫉妒、焦虑——在它还没变成念头之前,先<strong>「认」</strong>一下。<br><br>
+          不是压制它,而是说:<em>「啊,这是愤怒。」</em><br>
+          这一个<strong>「认」</strong>,已经在<em>住</em>之前按下暂停键了。
+        </div>
+        <div class="pc-example">被老板当众批评,心里翻涌——先慢三秒,在心里说「这是羞耻感升起」,而不是立刻进入「一定是针对我」的剧情。</div>
+      </div>
+
+      <div class="practice-card">
+        <div class="pc-num">02</div>
+        <div class="pc-title">担 当 · 该 做 就 做</div>
+        <div class="pc-subtitle">A C T I O N</div>
+        <div class="pc-body">
+          觉察之后,不要把自己抽离成旁观者。该道歉道歉,该争取争取,该表达表达。<br><br>
+          <strong>「而生其心」</strong>是动手的智慧,不是袖手的高明。菩萨不怕事,菩萨<strong>不怕在事里起波澜</strong>。
+        </div>
+        <div class="pc-example">和伴侣有冲突,觉察到自己的防御升起——「住」止住后,「生其心」就是真正把那句没说完的话讲出来,而不是冷漠地转身。</div>
+      </div>
+
+      <div class="practice-card">
+        <div class="pc-num">03</div>
+        <div class="pc-title">回 归 · 事 过 不 留</div>
+        <div class="pc-subtitle">R E T U R N</div>
+        <div class="pc-body">
+          做事的时候全力做,<strong>做完就放下</strong>。不再反复反刍「我刚才表现得好不好」「她是不是不高兴」。<br><br>
+          这是「住」的破除——让已经过去的事真正过去,让下一个下一刻<strong>崭新的来</strong>。
+        </div>
+        <div class="pc-example">下班回家,不要再带着工作里的紧绷刷手机。让一天结束的时候,真的结束。睡前一次深呼吸,把今天的注意力交还给身体。</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <div class="closing-inner">
+    <div class="section-label">C L O S I N G</div>
+    <h2 class="section-title">在 红 尘 里,做 个 清 醒 的 菩 萨</h2>
+    <div class="section-divider"></div>
+
+    <div class="closing-verse">
+      「应 无 所 住,而 生 其 心。」<br>
+      破 得 干 净,立 得 稳 当。<br>
+      一 句 经 文,半 辈 子 人 生。
+    </div>
+
+    <p class="closing-text">
+      <strong>《金刚经》不教你离开生活,而是要你活得更深。</strong>
+    </p>
+    <p class="closing-text">
+      当你能在最深的情绪里保持清明,能在最投入的关系里不失去自己,能在最喧嚣的世界里听见自己内心的<em>「应无所住」</em>——
+    </p>
+    <p class="closing-text">
+      你就活成了自己的<strong>庄严净土</strong>。
+    </p>
+
+    <div class="closing-seal">阅 毕 · 觉 而 后 行</div>
+  </div>
+</section>
+
+<footer>
+  <div>应 无 所 住 而 生 其 心</div>
+  <div class="divider"></div>
+  <div>《 金 刚 经 》 · 庄 严 净 土 分 · 深 度 读 书 笔 记</div>
+</footer>
+
+<script>
+  // Reading progress
+  const progress = document.getElementById('progress');
+  window.addEventListener('scroll', () => {
+    const h = document.documentElement;
+    const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    progress.style.width = scrolled + '%';
+  });
+
+  // Smooth fade on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('section h2, section .koan-card, section .practice-card, section .koan-section').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(40px)';
+    el.style.transition = 'opacity 1.2s ease, transform 1.2s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
