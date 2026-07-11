@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>六家一道——儒释道墨法兵的完整图谱 · 悟真读书笔记</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --paper: #faf6ef;
+    --ink: #3d3027;
+    --ink-soft: #6b5a4b;
+    --accent: #8a5a2b;
+    --accent-soft: #d4b896;
+    --gold: #c8932f;
+    --red: #c8423b;
+    --quote-bg: #f5ead5;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 20px;
+    line-height: 2.2;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 40px 30px 80px; }
+  .hero {
+    text-align: center;
+    padding: 60px 30px 40px;
+    background: linear-gradient(180deg, #faf6ef 0%, #f0e4ce 100%);
+    border-bottom: 2px solid var(--accent-soft);
+    margin-bottom: 50px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    color: var(--red);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .hero .subtitle {
+    font-size: 22px;
+    color: var(--accent);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .hero .signature {
+    font-size: 16px;
+    color: var(--ink-soft);
+    letter-spacing: 4px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--accent-soft);
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .audio-player {
+    margin: 30px auto;
+    max-width: 760px;
+    background: linear-gradient(135deg, #f5ead5 0%, #faf6ef 100%);
+    border: 1.5px solid var(--accent-soft);
+    border-radius: 16px;
+    padding: 24px 30px;
+    box-shadow: 0 4px 16px rgba(138, 90, 43, 0.08);
+  }
+  .audio-title { text-align: center; font-size: 16px; color: var(--accent); margin-bottom: 16px; letter-spacing: 2px; }
+  .audio-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); color: #fff; border: none; font-size: 24px;
+    cursor: pointer; flex-shrink: 0; transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .play-btn:hover { background: #6f4422; transform: scale(1.05); }
+  .audio-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .audio-progress-wrap {
+    width: 100%; height: 6px; background: var(--accent-soft);
+    border-radius: 3px; cursor: pointer; position: relative; overflow: hidden;
+  }
+  .audio-progress { height: 100%; background: var(--accent); width: 0%; border-radius: 3px; transition: width 0.1s linear; }
+  .audio-time { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); }
+  .audio-controls {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid var(--accent-soft);
+  }
+  .audio-controls button {
+    background: transparent; border: 1px solid var(--accent-soft);
+    color: var(--accent); padding: 5px 12px; border-radius: 6px;
+    cursor: pointer; font-size: 13px; font-family: inherit; transition: all 0.2s;
+  }
+  .audio-controls button:hover { background: var(--accent); color: #fff; }
+  .audio-controls button.active { background: var(--accent); color: #fff; }
+  .audio-controls .speed-group { display: flex; gap: 4px; }
+  .audio-controls .volume-wrap { display: flex; align-items: center; gap: 6px; }
+  .audio-controls input[type="range"] { width: 80px; accent-color: var(--accent); }
+  .audio-controls a {
+    margin-left: auto; color: var(--accent); text-decoration: none;
+    font-size: 13px; border: 1px solid var(--accent-soft); padding: 5px 12px; border-radius: 6px;
+  }
+  .audio-controls a:hover { background: var(--accent); color: #fff; }
+  body p { text-indent: 2em; margin-bottom: 18px; }
+  body p strong { color: var(--red); font-weight: 700; }
+  body h1.h1, body h2.h2, body h3.h3 {
+    color: var(--accent); font-weight: bold; margin: 40px 0 20px; line-height: 1.4;
+  }
+  body h1.h1 {
+    font-size: 32px; text-align: center;
+    border-top: 2px solid var(--accent-soft);
+    border-bottom: 2px solid var(--accent-soft);
+    padding: 20px 0; margin-top: 50px;
+  }
+  body h2.h2 {
+    font-size: 26px; border-left: 5px solid var(--red);
+    padding-left: 14px; margin-top: 50px;
+  }
+  body h3.h3 { font-size: 22px; color: var(--ink); margin-top: 30px; }
+  body .quote {
+    background: var(--quote-bg);
+    border-left: 4px solid var(--gold);
+    padding: 18px 24px; margin: 24px 0;
+    font-style: italic; color: var(--ink-soft); line-height: 2;
+  }
+  body .quote strong { color: var(--red); font-weight: 700; }
+  body li { margin-left: 30px; margin-bottom: 8px; line-height: 2; }
+  body hr.divider { border: none; border-top: 1px dashed var(--accent-soft); margin: 30px 0; }
+  body blockquote { margin: 20px 0; }
+  body blockquote.quote strong { color: var(--red); }
+  .table-row {
+    background: #fdf9f0;
+    padding: 8px 12px;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    text-indent: 0;
+    font-family: "PingFang SC", "Microsoft YaHei", monospace;
+  }
+  .seal {
+    text-align: center; margin: 60px 0 20px;
+    font-size: 26px; color: var(--red);
+    letter-spacing: 8px; font-weight: bold;
+  }
+  .seal::before, .seal::after { content: "❖"; color: var(--red); margin: 0 12px; font-size: 18px; }
+  .footer {
+    text-align: center; margin-top: 80px; padding: 30px 0;
+    border-top: 2px solid var(--accent-soft);
+    color: var(--ink-soft); font-size: 14px; line-height: 1.8;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+  @media (max-width: 600px) {
+    body { font-size: 18px; line-height: 2; }
+    .hero h1 { font-size: 32px; }
+    .container { padding: 20px 16px 60px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="hero">
+  <h1>六家一道</h1>
+  <div class="subtitle">儒释道墨法兵的完整图谱</div>
+  <div class="signature">悟真读书笔记 · 2026-07-11</div>
+  
+  <div class="audio-player">
+    <div class="audio-title">🎙️ 全文朗读 · 6 段通读 · 约 50 分钟</div>
+    <div class="audio-row">
+      <button class="play-btn" id="playBtn">▶</button>
+      <div class="audio-info">
+        <div class="audio-progress-wrap" id="progressWrap">
+          <div class="audio-progress" id="progress"></div>
+        </div>
+        <div class="audio-time">
+          <span id="curTime">00:00</span>
+          <span id="durTime">--:--</span>
+        </div>
+      </div>
+    </div>
+    <div class="audio-controls">
+      <div class="speed-group">
+        <button data-speed="0.75">0.75x</button>
+        <button data-speed="1" class="active">1x</button>
+        <button data-speed="1.25">1.25x</button>
+        <button data-speed="1.5">1.5x</button>
+        <button data-speed="2">2x</button>
+      </div>
+      <button id="muteBtn">🔊</button>
+      <div class="volume-wrap">🔉<input type="range" id="volume" min="0" max="100" value="100"></div>
+      <a href="liu-jia-yi-dao.mp3" download="liu-jia-yi-dao.mp3">下载音频</a>
+    </div>
+    <audio id="audio" preload="metadata" src="liu-jia-yi-dao.mp3"></audio>
+  </div>
+</div>
+
+<div class="body">
+<h1 class="h1">六家一道——儒释道墨法兵的完整图谱</h1>
+<blockquote class="quote">*春秋战国 500 年，出了一个轴心时代的中国。*<br>*六家并起，看似打架，实则互补。*<br>*读懂六家，就读懂了中国文化的底层操作系统。*<br>*两千年后，我们还在这六家里打转。*</blockquote>
+<hr class="divider">
+<h2 class="h2">序章·一句话点透</h2>
+<p>很多人以为「儒释道墨法兵」是六种对立的学问——儒家讲道德，道家讲自然，佛家讲出世，墨家讲兼爱，法家讲严刑，兵家讲诈术。</p>
+<p><strong>不是的。</strong></p>
+<p>这六家讲的是<strong>同一个问题的六个面向</strong>：</p>
+<p><strong>人活着，怎么办？</strong></p>
+<li>儒家：靠<strong>关系</strong>（修齐治平，靠君臣父子）</li>
+<li>道家：靠<strong>放下</strong>（道法自然，靠顺天应人）</li>
+<li>佛家：靠<strong>明心</strong>（明心见性，靠自觉觉醒）</li>
+<li>墨家：靠<strong>博爱</strong>（兼爱非攻，靠平等互利）</li>
+<li>法家：靠<strong>制度</strong>（抱法处势，靠规矩赏罚）</li>
+<li>兵家：靠<strong>形势</strong>（知己知彼，靠虚实奇正）</li>
+<p><strong>这六个面向加在一起，才是中国文化的完整操作系统。</strong></p>
+<p>缺一家，<strong>文化就残了</strong>。</p>
+<hr class="divider">
+<h2 class="h2">第一章·总览·六家对比表</h2>
+<h3 class="h3">1.1 一张表看懂六家</h3>
+<div class="table-row">| 维度 | 儒 | 道 | 佛 | 墨 | 法 | 兵 |</div>
+<div class="table-row">|---|---|---|---|---|---|---|</div>
+<div class="table-row">| **核心命题** | 修齐治平 | 道法自然 | 明心见性 | 兼爱非攻 | 抱法处势 | 知己知彼 |</div>
+<div class="table-row">| **看世界的方式** | 关系本体 | 自然本体 | 心性本体 | 平等本体 | 制度本体 | 形势本体 |</div>
+<div class="table-row">| **看人的角度** | 社会角色 | 自然本性 | 本来面目 | 普遍平等 | 趋利避害 | 利害计算 |</div>
+<div class="table-row">| **修身法门** | 诚意正心 | 致虚守静 | 戒定慧 | 修身见义 | 抱法守势 | 知己练形 |</div>
+<div class="table-row">| **治世路径** | 德治礼治 | 无为而治 | 治心为先 | 兼爱互利 | 法治赏罚 | 兵形势+兵权谋 |</div>
+<div class="table-row">| **核心经典** | 《论语》 | 《道德经》 | 《金刚经》 | 《墨子》 | 《韩非子》 | 《孙子兵法》 |</div>
+<div class="table-row">| **代表人物 TOP3** | 孔子·孟子·荀子 | 老子·庄子·列子 | 慧能·玄奘·窥基 | 墨子·公输班·禽滑厘 | 商鞅·韩非·李斯 | 孙子·吴起·孙膑 |</div>
+<div class="table-row">| **现代启示** | 修身齐家 | 慢生活 | 心理学 | 公益组织 | 法治社会 | 商业战略 |</div>
+<div class="table-row">| **最容易走的误区** | 虚伪礼教 | 装神弄鬼 | 装神弄鬼 | 不切实际 | 残暴专制 | 阴谋诡计 |</div>
+<div class="table-row">| **最高境界** | 从心所欲不逾矩 | 上善若水 | 见性成佛 | 视人如己 | 法不阿贵 | 善战者之胜 |</div>
+<h3 class="h3">1.2 六家的「出身」</h3>
+<p><strong>儒·道·墨·法·兵</strong> 五个本土学派，<strong>佛家</strong> 是外来文化中国化。</p>
+<div class="table-row">| 时代 | 学派 | 出场人物 | 出现背景 |</div>
+<div class="table-row">|---|---|---|---|</div>
+<div class="table-row">| 春秋 | 儒 | 孔子（前 551-479） | 周礼崩坏，孔子想恢复 |</div>
+<div class="table-row">| 春秋 | 道 | 老子（约前 600-500） | 周礼崩坏，老子想超越 |</div>
+<div class="table-row">| 春秋 | 兵 | 孙子（约前 545-470） | 春秋无义战，弱国要活 |</div>
+<div class="table-row">| 战国 | 墨 | 墨子（约前 470-390） | 战争频繁，墨子反战 |</div>
+<div class="table-row">| 战国 | 法 | 商鞅（约前 390-338） | 战国争霸，秦用商鞅变法 |</div>
+<div class="table-row">| 汉 | 佛 | 传入后汉化（67-220） | 汉代永平求法，佛教中国化 |</div>
+<div class="table-row">| 唐 | 佛 | 禅宗六祖慧能（638-713） | 佛教彻底中国化 |</div>
+<p><strong>所以六家是分批成熟的，</strong> 不是一次性出现的。</p>
+<h3 class="h3">1.3 六家的关系·互补不是对立</h3>
+<li><strong>儒</strong>讲<strong>入世</strong>（如何在社会活得体面）</li>
+<li><strong>道</strong>讲<strong>避世</strong>（如何在社会活得自在）</li>
+<li><strong>佛</strong>讲<strong>出世</strong>（如何从社会里跳出来）</li>
+<li><strong>墨</strong>讲<strong>平等</strong>（如何让社会对所有人公平）</li>
+<li><strong>法</strong>讲<strong>制度</strong>（如何让社会有规矩）</li>
+<li><strong>兵</strong>讲<strong>形势</strong>（如何在社会里取胜）</li>
+<p><strong>入·避·出·平·规·胜——六个字，是中国文化给人类的六把钥匙。</strong></p>
+<p><strong>缺一把，社会就失衡。</strong></p>
+<p>比如：</p>
+<li>缺儒家，社会没温度（功利主义）</li>
+<li>缺道家，社会没空间（过度内卷）</li>
+<li>缺佛家，社会没深度（精神空虚）</li>
+<li>缺墨家，社会没公平（贫富悬殊）</li>
+<li>缺法家，社会没底线（无法无天）</li>
+<li>缺兵家，社会没底线保护（被侵略）</li>
+<p><strong>中国历史上，凡是盛世，必是六家兼用；凡是乱世，必是六家偏废。</strong></p>
+<h3 class="h3">1.4 一句话总结六家</h3>
+<li><strong>儒</strong>：把人当人——<strong>关系</strong>是根本</li>
+<li><strong>道</strong>：把事当事——<strong>自然</strong>是根本</li>
+<li><strong>佛</strong>：把心当心——<strong>本心</strong>是根本</li>
+<li><strong>墨</strong>：把众当众——<strong>平等</strong>是根本</li>
+<li><strong>法</strong>：把规当规——<strong>制度</strong>是根本</li>
+<li><strong>兵</strong>：把势当势——<strong>形势</strong>是根本</li>
+<p><strong>人·事·心·众·规·势——六根柱子，撑起中国文化。</strong></p>
+<hr class="divider">
+<h2 class="h2">第二章·儒家·孔子-孟子-荀子</h2>
+<h3 class="h3">2.1 三个代表人物</h3>
+<p><strong>孔子（前 551-479）</strong>——儒家创始人</p>
+<p>孔子 3 岁丧父，17 岁丧母，少年贫困，做过仓库管理员、放牧员。中年周游列国 14 年，先后到过 7 个国家，但<strong>没有一个国君真正采纳他的政治主张</strong>。</p>
+<p>68 岁回鲁国，专心整理典籍、教授弟子。<strong>3 年后去世。</strong></p>
+<p>他一生最成功的事不是当官——是<strong>培养了 3000 弟子、72 贤人</strong>，把「仁」「礼」两个核心概念扎进中国人的骨髓里。</p>
+<p><strong>孟子（约前 372-289）</strong>——儒家的「辩护士」</p>
+<p>孟子比孔子晚 100 多年。他没见到孔子，但他<strong>把孔子的思想变成了一套能辩的体系</strong>。</p>
+<p>孟子的最大贡献是四个字：<strong>性善论</strong>。</p>
+<blockquote class="quote">「人皆有不忍人之心。」（《孟子·公孙丑上》）</blockquote>
+<p>「不忍人之心」就是「看见小孩要掉井里会本能伸手救」——这是人的<strong>本来良心</strong>。</p>
+<p>孟子的逻辑是：<strong>人的本性是善的，社会问题不是本性坏了，是后天被污染了。</strong></p>
+<p>所以修身要<strong>求其放心</strong>——把丢失的良心找回来。</p>
+<p><strong>荀子（约前 313-238）</strong>——儒家的「现实主义者」</p>
+<p>荀子比孟子晚 60 年。他<strong>反对孟子</strong>。</p>
+<blockquote class="quote">「人之性恶，其善者伪也。」（《荀子·性恶》）</blockquote>
+<p>荀子认为：人的本性是恶的（趋利避害），所谓「善」是<strong>后天人为</strong>（伪）做出来的。</p>
+<p>荀子的逻辑是：<strong>人的本性是恶的，所以要靠学习、靠制度、靠礼法来约束。</strong></p>
+<p><strong>荀子最有名的两个学生是李斯和韩非</strong>——<strong>法家代表</strong>。</p>
+<p>所以荀子<strong>是儒法之间的桥梁</strong>——他承认人性恶，所以重视外在规范，这正是法家的起点。</p>
+<h3 class="h3">2.2 三部核心经典</h3>
+<div class="table-row">| 经典 | 主要内容 | 核心命题 |</div>
+<div class="table-row">|---|---|---|</div>
+<div class="table-row">| **《论语》** | 孔子言行的记录 | 「仁」「礼」 |</div>
+<div class="table-row">| **《孟子》** | 孟子与各家的辩论 | 「性善」「仁政」 |</div>
+<div class="table-row">| **《荀子》** | 荀子的思想体系 | 「性恶」「礼法」 |</div>
+<p><strong>《论语》</strong>不是孔子写的——是孔门弟子及再传弟子记录孔子言行的语录体。<strong>20 篇，500 章。</strong></p>
+<p>最有名的一句是：</p>
+<blockquote class="quote">「学而时习之，不亦说乎？有朋自远方来，不亦乐乎？人不知而不愠，不亦君子乎？」（《论语·学而》）</blockquote>
+<p><strong>《孟子》</strong>主要是孟子周游列国时与各家的辩论记录。<strong>7 篇，260 章。</strong></p>
+<p>最有名的论证是「鱼与熊掌」：</p>
+<blockquote class="quote">「鱼，我所欲也；熊掌，亦我所欲也。二者不可得兼，舍鱼而取熊掌者也。生，亦我所欲也；义，亦我所欲也。二者不可得兼，舍生而取义者也。」（《孟子·告子上》）</blockquote>
+<p><strong>《荀子》</strong>是荀子自己写的。<strong>32 篇。</strong></p>
+<p>最有名的篇章是《劝学》：</p>
+<blockquote class="quote">「学不可以已。青，取之于蓝，而青于蓝；冰，水为之，而寒于水。」（《荀子·劝学》）</blockquote>
+<h3 class="h3">2.3 儒家的核心命题·修齐治平</h3>
+<p>《大学》开篇：</p>
+<blockquote class="quote">「大学之道，在明明德，在亲民，在止于至善。」（《大学·经一章》）</blockquote>
+<p>儒家的人生路径是：</p>
+<li><strong>修身</strong>——正心诚意</li>
+<li><strong>齐家</strong>——治家有序</li>
+<li><strong>治国</strong>——平天下</li>
+<p><strong>三纲八目：</strong></p>
+<li>三纲：明明德、亲民、止于至善</li>
+<li>八目：格物、致知、诚意、正心、修身、齐家、治国、平天下</li>
+<p><strong>前四目是修身</strong>——把心搞正。</p>
+<p><strong>中四目是齐家</strong>——把家搞顺。</p>
+<p><strong>后四目是治国平天下</strong>——把天下搞太平。</p>
+<h3 class="h3">2.4 儒家的现代启示</h3>
+<li><strong>个人</strong>：终身学习、知行合一（王阳明心学）</li>
+<li><strong>家庭</strong>：孝悌、家风、家训</li>
+<li><strong>组织</strong>：企业文化、价值观、使命愿景</li>
+<li><strong>社会</strong>：礼治、诚信、和谐</li>
+<p><strong>儒家的短板</strong>——容易变成<strong>虚伪礼教</strong>。宋明以后「吃人的礼教」就是反例。</p>
+<p>所以要记住：<strong>儒家的本质是「仁」——仁是内在的，礼是外在的。礼离开了仁，就是表演。</strong></p>
+<h3 class="h3">2.5 一句话总结儒家</h3>
+<blockquote class="quote"><strong>儒家是「人学」——把每个人放在关系里看，靠修身齐家治国，靠仁和礼。</strong></blockquote>
+<hr class="divider">
+<h2 class="h2">第三章·道家·老子-庄子-列子</h2>
+<h3 class="h3">3.1 三个代表人物</h3>
+<p><strong>老子（约前 600-500）</strong>——道家创始人</p>
+<p>老子是周朝的「守藏室之官」——<strong>国家图书馆馆长</strong>。这个职位让他能读遍当时所有的典籍。</p>
+<p>孔子曾经专门去周朝向老子问礼。回来后孔子对弟子说：</p>
+<blockquote class="quote">「鸟，吾知其能飞；鱼，吾知其能游；兽，吾知其能走。走者可以为罔，游者可以为纶，飞者可以为矰。至于龙，吾不能知，其乘风云而上天。吾今日见老子，其犹龙邪！」（《史记·老子韩非列传》）</blockquote>
+<p>孔子把老子比作「龙」——<strong>可见老子地位之高。</strong></p>
+<p>老子的核心贡献是写了一本<strong>只有 5000 字的小书</strong>——《道德经》。</p>
+<p><strong>庄子（约前 369-286）</strong>——道家的「文学家」</p>
+<p>庄子比老子晚 200 多年。他继承老子思想，但用<strong>更文学的方式</strong>表达。</p>
+<p>庄子最有名的篇章是《逍遥游》：</p>
+<blockquote class="quote">「北冥有鱼，其名为鲲。鲲之大，不知其几千里也。化而为鸟，其名为鹏。鹏之背，不知其几千里也。」（《庄子·逍遥游》）</blockquote>
+<p><strong>庄子不是讲道理，是讲故事</strong>。他用「鲲鹏展翅」「庄周梦蝶」「濠梁之辩」这些故事讲「道」。</p>
+<p><strong>列子（约前 450-375）</strong>——道家的「隐士」</p>
+<p>列子比庄子还早一点。他<strong>终身不仕</strong>，专心修道。</p>
+<p>《列子》一书中最有名的故事是「愚公移山」和「夸父逐日」——</p>
+<blockquote class="quote">「夸父与日逐走，入日。渴欲得饮，饮于河渭，河渭不足，北饮大泽。未至，道渴而死。弃其杖，化为邓林。」（《列子·汤问》）</blockquote>
+<p><strong>列子的精神是「顺其自然」</strong>——不是消极的不动，是<strong>看清大势然后顺势而为</strong>。</p>
+<h3 class="h3">3.2 三部核心经典</h3>
+<div class="table-row">| 经典 | 主要内容 | 核心命题 |</div>
+<div class="table-row">|---|---|---|</div>
+<div class="table-row">| **《道德经》** | 老子的哲学体系 | 「道」「德」「无为」 |</div>
+<div class="table-row">| **《庄子》** | 庄子的寓言和哲学 | 「逍遥」「齐物」 |</div>
+<div class="table-row">| **《列子》** | 列子的故事和哲学 | 「顺其自然」 |</div>
+<p><strong>《道德经》</strong>5000 字，是世界上<strong>被翻译次数仅次于《圣经》的书</strong>。</p>
+<p>最有名的一段：</p>
+<blockquote class="quote">「道可道，非常道；名可名，非常名。」（《道德经·第一章》）</blockquote>
+<p><strong>《庄子》</strong>33 篇，10 万字，是中国<strong>最具文学性的哲学书</strong>。</p>
+<p>最有名的故事「庄周梦蝶」：</p>
+<blockquote class="quote">「昔者庄周梦为胡蝶，栩栩然胡蝶也，自喻适志与，不知周也。俄然觉，则蘧蘧然周也。不知周之梦为胡蝶与，胡蝶之梦为周与？周与胡蝶则必有分矣。此之谓物化。」（《庄子·齐物论》）</blockquote>
+<p><strong>《列子》</strong>8 篇，20 万字。20 世纪初怀疑是晋人伪作，但现在学界基本认定是先秦原本。</p>
+<p>最有名的故事「愚公移山」——</p>
+<blockquote class="quote">「愚公曰：『虽我之死，有子存焉。子又生孙，孙又生子；子又有子，子又有孙。子子孙孙，无穷匮也，而山不加增，何苦而不平？』」（《列子·汤问》）</blockquote>
+<h3 class="h3">3.3 道家的核心命题·道法自然</h3>
+<p>《道德经》第 25 章：</p>
+<blockquote class="quote">「人法地，地法天，天法道，道法自然。」（《道德经·第二十五章》）</blockquote>
+<p><strong>「道法自然」</strong>是道家最核心的四个字。</p>
+<p>什么意思？</p>
+<li><strong>道</strong>不是人创造的，是本来就有的</li>
+<li><strong>道</strong>也不是神创造的，是自己如此的</li>
+<li><strong>道</strong>的运行规律就是「自然」</li>
+<p><strong>自然</strong>不是大自然的意思，是<strong>「自己如此」</strong>。</p>
+<p><strong>道家看世界的方式是：一切本来就很好，你的「有为」反而把它搞坏了。</strong></p>
+<blockquote class="quote">「为学日益，为道日损。损之又损，以至于无为。无为而无不为。」（《道德经·第四十八章》）</blockquote>
+<h3 class="h3">3.4 道家的现代启示</h3>
+<li><strong>个人</strong>：放下执念、顺其自然</li>
+<li><strong>生活</strong>：慢生活、回归自然</li>
+<li><strong>事业</strong>：顺势而为、不强求</li>
+<li><strong>领导</strong>：无为而治、少管多放</li>
+<p><strong>道家的短板</strong>——容易变成<strong>装神弄鬼</strong>。后世道教的炼丹成仙、长生不老就是反例。</p>
+<p>所以要记住：<strong>道家的本质是「道」——道是无形的，无为是为了让道自己起作用。</strong></p>
+<h3 class="h3">3.5 一句话总结道家</h3>
+<blockquote class="quote"><strong>道家是「天学」——把人放在天地之间看，靠顺应自然，靠无为而无不为。</strong></blockquote>
+<hr class="divider">
+<h2 class="h2">第四章·佛家·六祖慧能-玄奘-窥基</h2>
+<h3 class="h3">4.1 三个代表人物</h3>
+<p><strong>六祖慧能（638-713）</strong>——中国禅宗的真正创始人</p>
+<p>慧能大师 3 岁丧父，自幼砍柴为生。<strong>大字不识一个。</strong></p>
+<p>24 岁时听人念《金刚经》「应无所住而生其心」，<strong>当下大悟</strong>。</p>
+<p>他独自一人到黄梅拜五祖弘忍为徒。在厨房舂米 8 个月。</p>
+<p>五祖让弟子各写一首偈子。神秀写：</p>
+<blockquote class="quote">「身是菩提树，心如明镜台。时时勤拂拭，莫使惹尘埃。」（《坛经》）</blockquote>
+<p>慧能不识字，请人代写：</p>
+<blockquote class="quote">「菩提本无树，明镜亦非台。本来无一物，何处惹尘埃。」（《坛经》）</blockquote>
+<p>五祖看了，把鞋底把偈子擦了——说「<strong>也未见性</strong>」。</p>
+<p>半夜三更，五祖秘密传法给慧能——把达摩传下来的衣钵<strong>传给了这个不识字的砍柴人</strong>。</p>
+<p><strong>这是中国佛教史上最重要的一夜。</strong></p>
+<p><strong>玄奘（602-664）</strong>——唯识学的引进者</p>
+<p>玄奘 13 岁在洛阳出家，26 岁偷渡出关西行印度。</p>
+<p>17 年后从印度归来，在曲女城万人辩经大会 18 天<strong>无人能驳</strong>，印度佛教界授予「大乘天」+「解脱天」两个最高称号。</p>
+<p>回国后主持译场 19 年，翻译佛经 1335 卷，把瑜伽行派和唯识学<strong>系统引入中国</strong>。</p>
+<p><strong>窥基（632-682）</strong>——法相唯识宗的创立者</p>
+<p>窥基是玄奘的大弟子。他依据玄奘译的《瑜伽师地论》《成唯识论》，创立了<strong>法相唯识宗</strong>——中国佛教八大宗之一。</p>
+<p>窥基出身<strong>京兆尉迟氏</strong>（唐初名将尉迟敬德的侄子），17 岁出家，玄奘亲自为他剃度。</p>
+<p>他的贡献是把唯识学<strong>系统化、本土化</strong>——用中文讲唯识，让中国学者能懂。</p>
+<h3 class="h3">4.2 三部核心经典</h3>
+<div class="table-row">| 经典 | 主要内容 | 核心命题 |</div>
+<div class="table-row">|---|---|---|</div>
+<div class="table-row">| **《坛经》** | 六祖慧能说法的语录 | 「明心见性」「无念」 |</div>
+<div class="table-row">| **《瑜伽师地论》** | 弥勒菩萨说，无著记录 | 修行次第的完整说明 |</div>
+<div class="table-row">| **《成唯识论》** | 世亲菩萨造，玄奘译 | 「万法唯识」「三性三无性」 |</div>
+<p><strong>《六祖坛经》</strong>是中国佛教<strong>唯一一部被尊为「经」的中国人著作</strong>。其余都是「律」「论」。</p>
+<p>最有名的一段：</p>
+<blockquote class="quote">「菩提自性，本来清净。但用此心，直了成佛。」（《坛经·行由品》）</blockquote>
+<p><strong>《瑜伽师地论》</strong>100 卷，是<strong>整个大乘佛教的修行次第总集</strong>。</p>
+<p><strong>《成唯识论》</strong>10 卷，是<strong>唯识学的纲领</strong>。</p>
+<h3 class="h3">4.3 佛家的核心命题·明心见性</h3>
+<p><strong>佛家看世界的方式是：一切都是心造的。</strong></p>
+<blockquote class="quote">「万法唯识。三界唯心。又生又灭。」（《华严经》）</blockquote>
+<p><strong>心</strong>是一切现象的源头。</p>
+<p>佛家的修身路径是<strong>戒定慧</strong>三学：</p>
+<li><strong>戒</strong>——防非止恶</li>
+<li><strong>定</strong>——专注一境</li>
+<li><strong>慧</strong>——照见实相</li>
+<p><strong>三学不是三个阶段，是同时进行的。</strong></p>
+<h3 class="h3">4.4 佛家的现代启示</h3>
+<li><strong>个人</strong>：明心见性、心理健康</li>
+<li><strong>心理学</strong>：禅修、正念、内观</li>
+<li><strong>组织</strong>：员工心理关怀、心性文化</li>
+<li><strong>现代科学</strong>：神经科学、冥想研究</li>
+<p><strong>佛家的短板</strong>——容易变成<strong>装神弄鬼</strong>。各种「神通」「感应」「加持」就是反例。</p>
+<p>所以要记住：<strong>佛家的本质是「心」——心是根本，觉悟不是得到什么，是看清本来面目。</strong></p>
+<h3 class="h3">4.5 一句话总结佛家</h3>
+<blockquote class="quote"><strong>佛家是「心学」——把人放在本心看，靠明心见性，靠戒定慧三学。</strong></blockquote>
+<hr class="divider">
+<h2 class="h2">第五章·墨家·墨子-公输班-禽滑厘</h2>
+<h3 class="h3">5.1 三个代表人物</h3>
+<p><strong>墨子（约前 470-390）</strong>——墨家创始人</p>
+<p>墨子出身<strong>手工业者</strong>（工匠家庭），是战国初期<strong>最具实践性的思想家</strong>。</p>
+<p>他有几个身份：</p>
+<li><strong>思想家</strong>——创立墨家</li>
+<li><strong>科学家</strong>——精通数学、力学、光学（《墨经》记载了小孔成像、杠杆原理）</li>
+<li><strong>军事家</strong>——精通守城术</li>
+<p>墨子反对儒家「厚葬久丧」「礼乐繁文」——他认为这些是<strong>浪费资源</strong>。</p>
+<p><strong>公输班（鲁班，约前 507-444）</strong>——传说中的能工巧匠</p>
+<p>公输班是<strong>鲁国的手工大师</strong>，是<strong>所有工匠的祖师</strong>。</p>
+<p>公输班与墨子之间有<strong>最著名的「攻防战」</strong>：</p>
+<blockquote class="quote">公输班为楚国造了「云梯」准备攻宋国。墨子听说后，从齐国步行 10 天 10 夜赶到楚国郢都。</blockquote>
+<p>></p>
+<blockquote class="quote">墨子解下腰带，模拟城池，与公输班<strong>在沙盘上推演攻防</strong>——<strong>9 次攻，9 次守，9 次守成功</strong>。</blockquote>
+<p>></p>
+<blockquote class="quote">公输班攻不下，但他说「我知道怎么攻，只是没说」。</blockquote>
+<p>></p>
+<blockquote class="quote">墨子说「我知道你怎么攻，我也知道怎么守——我的弟子禽滑厘等 300 人，已经在宋国城头等着你了」。</blockquote>
+<p>></p>
+<blockquote class="quote">楚王只好说「算了，不打宋国了」。</blockquote>
+<p><strong>这是中国历史上第一次「不战而屈人之兵」的真实案例。</strong></p>
+<p><strong>禽滑厘（约前 480-390）</strong>——墨子的大弟子</p>
+<p>禽滑厘是墨子<strong>最信任的弟子</strong>。墨子把守城的技术全部教给了他。</p>
+<p>墨子临死前，把禽滑厘叫到床前：</p>
+<blockquote class="quote">「吾愿主君之合其志功而观焉。」（《墨子·鲁问》）</blockquote>
+<p><strong>墨子的核心不是「兼爱」两个字，是「合志功」——</strong>把动机和效果统一看<strong>。</strong></p>
+<h3 class="h3">5.2 一部核心经典</h3>
+<p><strong>《墨子》</strong>——墨家学派的总集</p>
+<div class="table-row">| 篇目 | 主要内容 | 核心命题 |</div>
+<div class="table-row">|---|---|---|</div>
+<div class="table-row">| **《兼爱》** | 墨子主张 | 「兼爱」「非攻」 |</div>
+<div class="table-row">| **《非攻》** | 反对侵略战争 | 「不义之战不可取」 |</div>
+<div class="table-row">| **《天志》** | 天的意志 | 「天是有意志的」 |</div>
+<div class="table-row">| **《明鬼》** | 鬼神的存在 | 「鬼神能赏贤罚暴」 |</div>
+<div class="table-row">| **《非命》** | 反对命定论 | 「人可以改造命运」 |</div>
+<div class="table-row">| **《非乐》** | 反对过度音乐 | 「浪费就是犯罪」 |</div>
+<div class="table-row">| **《节用》** | 节俭实用 | 「够用即可」 |</div>
+<div class="table-row">| **《节葬》** | 反对厚葬 | 「死人不该拖累活人」 |</div>
+<p><strong>《墨子》最有名的句子：</strong></p>
+<blockquote class="quote">「兼相爱，交相利。」（《墨子·兼爱中》）</blockquote>
+<blockquote class="quote">「天下之人皆相爱，则强不执弱，众不劫寡，富不侮贫，贵不敖贱，诈不欺愚。」（《墨子·兼爱中》）</blockquote>
+<p><strong>「兼爱」不是「博爱」——是「视人如己」。</strong></p>
+<h3 class="h3">5.3 墨家的核心命题·兼爱非攻</h3>
+<p><strong>墨家看世界的方式是：天下之乱皆起于「不相爱」。</strong></p>
+<li>父亲不爱儿子，所以不慈</li>
+<li>儿子不爱父亲，所以不孝</li>
+<li>国君不爱臣子，所以不义</li>
+<li>臣子不爱国君，所以不忠</li>
+<p><strong>「不相爱」是一切乱的根源。</strong></p>
+<p>墨子主张<strong>「兼爱」</strong>——<strong>一视同仁地爱所有人</strong>，不分亲疏贵贱。</p>
+<blockquote class="quote">「若使天下兼相爱，国与国不相攻，家与家不相乱，盗贼无有，君臣父子皆能孝慈，若此则天下治。」（《墨子·兼爱上》）</blockquote>
+<p><strong>墨子的另一核心是「非攻」</strong>——<strong>反对侵略战争，但支持正义的防守。</strong></p>
+<p>墨子<strong>不是和平主义者</strong>——他是<strong>有原则的非战主义者</strong>。</p>
+<h3 class="h3">5.4 墨家的现代启示</h3>
+<li><strong>个人</strong>：平等、互利、不分亲疏</li>
+<li><strong>公益组织</strong>：NGO、慈善、博爱</li>
+<li><strong>企业</strong>：平等机会、包容文化</li>
+<li><strong>国际关系</strong>：和平共处、不干涉内政</li>
+<p><strong>墨家的短板</strong>——容易变成<strong>不切实际</strong>。墨家的「兼爱」要求对所有人一视同仁——这在血亲社会很难做到。</p>
+<p>所以要记住：<strong>墨家的本质是「公」——公是根本，兼爱是「为公」的实践。</strong></p>
+<h3 class="h3">5.5 一句话总结墨家</h3>
+<blockquote class="quote"><strong>墨家是「公学」——把所有人放在平等位置看，靠兼爱非攻，靠视人如己。</strong></blockquote>
+<hr class="divider">
+<h2 class="h2">第六章·法家·商鞅-韩非-李斯</h2>
+<h3 class="h3">6.1 三个代表人物</h3>
+<p><strong>商鞅（约前 390-338）</strong>——法家实践第一人</p>
+<p>商鞅原名公孙鞅，魏国人。后入秦，辅佐秦孝公变法。</p>
+<p><strong>商鞅变法是中国历史上最深刻的一次改革</strong>——</p>
+<li><strong>废井田，开阡陌</strong>——废除奴隶社会的土地制度，确立封建土地私有</li>
+<li><strong>奖励耕战</strong>——种田好的免税，打仗有功的封爵</li>
+<li><strong>连坐法</strong>——一家犯法，九家连坐</li>
+<li><strong>县制</strong>——废除分封制，设立郡县制（中央直管）</li>
+<p><strong>商鞅的逻辑是：人性恶，所以要用制度。</strong></p>
+<blockquote class="quote">「有道之国，务在弱民。」（《商君书·弱民》）</blockquote>
+<p>商鞅最后被秦惠王车裂——但他的变法<strong>在秦国扎下了根</strong>，为后来秦始皇统一六国奠定了基础。</p>
+<p><strong>韩非（约前 280-233）</strong>——法家思想的集大成者</p>
+<p>韩非是<strong>韩国公子</strong>，是<strong>荀子的学生</strong>——和李斯是同门师兄弟。</p>
+<p>韩非口吃，但文章极好——<strong>秦始皇读了他的《孤愤》《五蠹》后说：「嗟乎，寡人得见此人与之游，死不恨矣！」（《史记·老子韩非列传》）</strong></p>
+<p>韩非被韩国派到秦国出使，结果<strong>被李斯陷害，死在秦国狱中</strong>。</p>
+<p><strong>李斯（约前 284-208）</strong>——法家最大的实践者</p>
+<p>李斯也是<strong>荀子的学生</strong>，是秦国的丞相。</p>
+<p>他辅助秦始皇<strong>统一文字（小篆）、统一度量衡、统一货币</strong>——这三大「统一」至今影响中国。</p>
+<p>李斯主张<strong>「以法为教，以吏为师」</strong>——全国上下用法家思想统一。</p>
+<p><strong>他最后被赵高陷害，腰斩于咸阳。</strong></p>
+<p><strong>法家三人都没有好下场</strong>——<strong>商鞅车裂、韩非毒死、李斯腰斩</strong>。</p>
+<p><strong>这是法家的悲剧——</strong>用制度改变了世界，自己被制度碾死<strong>。</strong></p>
+<h3 class="h3">6.2 三部核心经典</h3>
+<div class="table-row">| 经典 | 主要内容 | 核心命题 |</div>
+<div class="table-row">|---|---|---|</div>
+<div class="table-row">| **《商君书》** | 商鞅及其后学的著作 | 「变法」「法治」 |</div>
+<div class="table-row">| **《韩非子》** | 韩非的著作 | 「法」「术」「势」 |</div>
+<div class="table-row">| **《史记·秦本纪》** | 司马迁的史书 | 秦统一六国的全过程 |</div>
+<p><strong>《商君书》最有名的句子：</strong></p>
+<blockquote class="quote">「治世不一道，便国不法古。」（《商君书·更法》）</blockquote>
+<blockquote class="quote">「王者以赏禁，以刑劝。」（《商君书·赏刑》）</blockquote>
+<p><strong>《韩非子》最有名的句子：</strong></p>
+<blockquote class="quote">「法不阿贵，绳不挠曲。」（《韩非子·有度》）</blockquote>
+<blockquote class="quote">「明主之所导制其臣者，二柄而已矣。二者，刑、德也。」（《韩非子·二柄》）</blockquote>
+<p><strong>韩非的核心是「法、术、势」三结合：</strong></p>
+<li><strong>法</strong>——成文的法律</li>
+<li><strong>术</strong>——君主驾驭臣下的方法</li>
+<li><strong>势</strong>——君主的权势地位</li>
+<h3 class="h3">6.3 法家的核心命题·抱法处势</h3>
+<p><strong>法家看世界的方式是：人性恶，所以要靠制度。</strong></p>
+<li>法家不相信「道德教化」——商鞅说「圣人为国也，不法古，不修今」</li>
+<li>法家不相信「虚言」——韩非说「儒以文乱法，侠以武犯禁」</li>
+<li>法家相信「制度」——韩非说「法不阿贵，绳不挠曲」</li>
+<p><strong>法家三要素：</strong></p>
+<li><strong>法</strong>——公开的法律条文</li>
+<li><strong>术</strong>——隐秘的御臣方法</li>
+<li><strong>势</strong>——不可挑战的权势</li>
+<p><strong>法家的核心理念：</strong></p>
+<blockquote class="quote">「抱法处势则治，背法去势则乱。」（《韩非子·难势》）</blockquote>
+<h3 class="h3">6.4 法家的现代启示</h3>
+<li><strong>个人</strong>：守规则、按程序</li>
+<li><strong>组织</strong>：制度建设、绩效考核</li>
+<li><strong>社会</strong>：法治国家、法律面前人人平等</li>
+<li><strong>国际</strong>：国际法、规则导向</li>
+<p><strong>法家的短板</strong>——容易变成<strong>残暴专制</strong>。秦朝二世而亡就是反例。</p>
+<p>所以要记住：<strong>法家的本质是「法」——法是根本，「法不阿贵」是核心。</strong></p>
+<h3 class="h3">6.5 一句话总结法家</h3>
+<blockquote class="quote"><strong>法家是「法学」——把人放在制度里看，靠抱法处势，靠法不阿贵。</strong></blockquote>
+<hr class="divider">
+<h2 class="h2">第七章·兵家·孙子-吴起-孙膑</h2>
+<h3 class="h3">7.1 三个代表人物</h3>
+<p><strong>孙子（约前 545-470）</strong>——兵家创始人</p>
+<p>孙子是<strong>吴王阖闾的客卿</strong>，他献给吴王<strong>《孙子兵法》13 篇</strong>，帮助吴国<strong>击败强大的楚国</strong>。</p>
+<p>孙子的核心思想是「<strong>不战而屈人之兵</strong>」——</p>
+<blockquote class="quote">「百战百胜，非善之善者也；不战而屈人之兵，善之善者也。」（《孙子兵法·谋攻篇》）</blockquote>
+<p><strong>最好的胜利，是不打就赢。</strong></p>
+<p><strong>吴起（约前 440-381）</strong>——兵家改革者</p>
+<p>吴起是<strong>鲁国、魏国、楚国</strong>的将军。他在魏国创立<strong>「魏武卒」</strong>——中国历史上第一支职业军队。</p>
+<p>吴起在楚国被任命为令尹（相），<strong>主持变法</strong>——</p>
+<li>废除贵族世袭</li>
+<li>整顿吏治</li>
+<li>削弱旧贵族势力</li>
+<p><strong>吴起的变法比商鞅早了 30 多年</strong>——但商鞅成功了，吴起失败了。</p>
+<p>吴起最后被楚国旧贵族<strong>乱箭射死</strong>。</p>
+<p><strong>孙膑（约前 380-320）</strong>——兵家智谋派</p>
+<p>孙膑是<strong>孙子的后代</strong>（一说孙子亲自教的）。</p>
+<p>他最出名的两个战例：</p>
+<p>1. <strong>桂陵之战</strong>——围魏救赵</p>
+<p>2. <strong>马陵之战</strong>——减灶诱敌</p>
+<p><strong>马陵之战</strong>孙膑的计策：</p>
+<blockquote class="quote">庞涓率魏军追齐军。孙膑第一天挖 10 万灶，第二天 5 万灶，第三天 3 万灶。</blockquote>
+<p>></p>
+<blockquote class="quote">庞涓大喜：「齐军逃兵过半！」</blockquote>
+<p>></p>
+<blockquote class="quote">庞涓亲自带精锐骑兵追到马陵道——<strong>道路狭窄，两边是山</strong>。</blockquote>
+<p>></p>
+<blockquote class="quote">孙膑早已在路两侧埋伏 1 万弓弩手。等庞涓进入伏击圈，<strong>万箭齐发</strong>——魏军大败，庞涓<strong>自杀</strong>。</blockquote>
+<p><strong>这就是「知己知彼，百战不殆」的实战。</strong></p>
+<h3 class="h3">7.2 三部核心经典</h3>
+<div class="table-row">| 经典 | 主要内容 | 核心命题 |</div>
+<div class="table-row">|---|---|---|</div>
+<div class="table-row">| **《孙子兵法》** | 孙子的兵法 | 「不战而屈人之兵」 |</div>
+<div class="table-row">| **《吴子》** | 吴起的兵法 | 「以治为胜」 |</div>
+<div class="table-row">| **《孙膑兵法》** | 孙膑的兵法 | 「奇正相生」 |</div>
+<p><strong>《孙子兵法》</strong>13 篇，<strong>世界上最早的兵书</strong>，被译为多国语言。</p>
+<p>最有名的句子：</p>
+<blockquote class="quote">「兵者，国之大事，死生之地，存亡之道，不可不察也。」（《孙子兵法·计篇》）</blockquote>
+<blockquote class="quote">「知彼知己，百战不殆；不知彼而知己，一胜一负；不知彼，不知己，每战必殆。」（《孙子兵法·谋攻篇》）</blockquote>
+<blockquote class="quote">「善战者之胜也，无智名，无勇功。」（《孙子兵法·形篇》）</blockquote>
+<p><strong>《吴子》</strong>最有名的句子：</p>
+<blockquote class="quote">「以治为胜。教而後战，兵之常法。」（《吴子·治兵》）</blockquote>
+<p><strong>《孙膑兵法》</strong>最有名的句子：</p>
+<blockquote class="quote">「必攻不守，兵之急者也。」（《孙膑兵法·威王问》）</blockquote>
+<h3 class="h3">7.3 兵家的核心命题·知己知彼</h3>
+<p><strong>兵家看世界的方式是：一切都是形势的博弈。</strong></p>
+<p>兵家不靠道德、不靠信仰、不靠制度——<strong>靠对形势的判断</strong>。</p>
+<p>兵家五事：</p>
+<li><strong>道</strong>——君民同心</li>
+<li><strong>天</strong>——天时</li>
+<li><strong>地</strong>——地利</li>
+<li><strong>将</strong>——将领</li>
+<li><strong>法</strong>——军法</li>
+<p><strong>兵家的核心理念：</strong></p>
+<blockquote class="quote">「善战者，求之于势，不责于人，故能择人而任势。」（《孙子兵法·势篇》）</blockquote>
+<p><strong>最好的将领，不靠人的勇敢，靠势的把握。</strong></p>
+<h3 class="h3">7.4 兵家的现代启示</h3>
+<li><strong>个人</strong>：知己知彼、形势判断</li>
+<li><strong>商业</strong>：战略、竞争、博弈</li>
+<li><strong>体育</strong>：战术、节奏、变化</li>
+<li><strong>国际关系</strong>：地缘政治、大国博弈</li>
+<p><strong>兵家的短板</strong>——容易变成<strong>阴谋诡计</strong>。三十六计的各种算计就是反例。</p>
+<p>所以要记住：<strong>兵家的本质是「势」——势是根本，「不战而屈人之兵」是最高境界。</strong></p>
+<h3 class="h3">7.5 一句话总结兵家</h3>
+<blockquote class="quote"><strong>兵家是「势学」——把一切放在形势里看，靠知己知彼，靠善战者之胜。</strong></blockquote>
+<hr class="divider">
+<h2 class="h2">第八章·收束·六家同归——中国文化的完整图谱</h2>
+<h3 class="h3">8.1 六家是同一道</h3>
+<p><strong>儒释道墨法兵，表面是六家，本质是一道。</strong></p>
+<p>「道」是六家共同认可的<strong>最高存在</strong>：</p>
+<li>儒家讲「天道」（天理）</li>
+<li>道家讲「道」（自然）</li>
+<li>佛家讲「佛性」（真如）</li>
+<li>墨家讲「天志」（天意）</li>
+<li>法家讲「道」（治道）</li>
+<li>兵家讲「道」（兵道）</li>
+<p><strong>六家都在讲「道」</strong>——只是面向不同：</p>
+<div class="table-row">| 家 | 「道」的面向 |</div>
+<div class="table-row">|---|---|</div>
+<div class="table-row">| 儒 | 人伦之道 |</div>
+<div class="table-row">| 道 | 自然之道 |</div>
+<div class="table-row">| 佛 | 心性之道 |</div>
+<div class="table-row">| 墨 | 博爱之道 |</div>
+<div class="table-row">| 法 | 治世之道 |</div>
+<div class="table-row">| 兵 | 胜负之道 |</div>
+<h3 class="h3">8.2 六家是六根柱子</h3>
+<p><strong>中国文化这栋大厦，缺一根柱子就塌了。</strong></p>
+<li>缺儒——社会无道德（功利主义）</li>
+<li>缺道——生活无空间（过度内卷）</li>
+<li>缺佛——心灵无安顿（精神空虚）</li>
+<li>缺墨——社会无公平（贫富悬殊）</li>
+<li>缺法——社会无底线（无法无天）</li>
+<li>缺兵——国家无保护（被侵略）</li>
+<p><strong>中国历史上，盛世都是六家兼用，乱世都是六家偏废。</strong></p>
+<p><strong>汉初</strong>——道家（黄老之学）+ 儒家（汉武帝独尊儒术后）</p>
+<p><strong>唐初</strong>——儒家（贞观之治）+ 兵家（李靖等）+ 道家（道教）</p>
+<p><strong>宋</strong>——儒家（程朱理学）独尊，道佛被压抑——所以宋<strong>武力不行</strong>（被金、元欺负）</p>
+<p><strong>清</strong>——儒家独尊，其他家全压制——所以清<strong>虽大而弱</strong>（鸦片战争失败）</p>
+<h3 class="h3">8.3 现代中国的六家</h3>
+<p><strong>现代中国其实也在用六家</strong>——只是换了个名字：</p>
+<li><strong>儒</strong>——党的思想政治工作（修齐治平）</li>
+<li><strong>道</strong>——生态文明建设（道法自然）</li>
+<li><strong>佛</strong>——文化软实力（精神文化）</li>
+<li><strong>墨</strong>——脱贫攻坚、共同富裕（兼爱互利）</li>
+<li><strong>法</strong>——全面依法治国（法治）</li>
+<li><strong>兵</strong>——国防、科技（形势博弈）</li>
+<p><strong>六家没有过时，只是换了时代。</strong></p>
+<h3 class="h3">8.4 个人怎么用六家</h3>
+<p><strong>一个人活一辈子，也需要六家：</strong></p>
+<li><strong>修身上</strong>用<strong>儒</strong>——修身齐家</li>
+<li><strong>生活上</strong>用<strong>道</strong>——顺其自然</li>
+<li><strong>心性上</strong>用<strong>佛</strong>——明心见性</li>
+<li><strong>公益上</strong>用<strong>墨</strong>——兼爱互利</li>
+<li><strong>事业上</strong>用<strong>法</strong>——抱法处势</li>
+<li><strong>竞争上</strong>用<strong>兵</strong>——知己知彼</li>
+<p><strong>六家同修，才是完整的人。</strong></p>
+<h3 class="h3">8.5 一句话总结六家</h3>
+<blockquote class="quote"><strong>六家是六个面向，本质是一道；</strong><br><strong>六家是六根柱子，少一根就塌；</strong><br><strong>六家没有过时，只是换时代；</strong><br><strong>六家同修，才是完整的人。</strong></blockquote>
+<p><strong>这是中国文化给我们的最深的礼物。</strong></p>
+<hr class="divider">
+<h2 class="h2">附录·18 部经典原句索引 + 24 位代表人物</h2>
+<h3 class="h3">儒家三部</h3>
+<p>1. <strong>《论语·学而》</strong>——「学而时习之，不亦说乎？」</p>
+<p>2. <strong>《孟子·公孙丑上》</strong>——「人皆有不忍人之心。」</p>
+<p>3. <strong>《荀子·劝学》</strong>——「青，取之于蓝，而青于蓝。」</p>
+<h3 class="h3">道家三部</h3>
+<p>4. <strong>《道德经·第一章》</strong>——「道可道，非常道；名可名，非常名。」</p>
+<p>5. <strong>《庄子·逍遥游》</strong>——「北冥有鱼，其名为鲲。」</p>
+<p>6. <strong>《列子·汤问》</strong>——「子子孙孙，无穷匮也，而山不加增。」</p>
+<h3 class="h3">佛家三部</h3>
+<p>7. <strong>《金刚经》</strong>——「应无所住而生其心。」</p>
+<p>8. <strong>《六祖坛经·行由品》</strong>——「菩提本无树，明镜亦非台。」</p>
+<p>9. <strong>《成唯识论》</strong>——「万法唯识，三性三无性。」</p>
+<h3 class="h3">墨家一部</h3>
+<p>10. <strong>《墨子·兼爱中》</strong>——「兼相爱，交相利。」</p>
+<h3 class="h3">法家三部</h3>
+<p>11. <strong>《商君书·更法》</strong>——「治世不一道，便国不法古。」</p>
+<p>12. <strong>《韩非子·有度》</strong>——「法不阿贵，绳不挠曲。」</p>
+<p>13. <strong>《史记·秦本纪》</strong>——司马迁的秦史记录</p>
+<h3 class="h3">兵家三部</h3>
+<p>14. <strong>《孙子兵法·计篇》</strong>——「兵者，国之大事。」</p>
+<p>15. <strong>《孙子兵法·谋攻篇》</strong>——「不战而屈人之兵，善之善者也。」</p>
+<p>16. <strong>《吴子·治兵》</strong>——「以治为胜。」</p>
+<h3 class="h3">经典史书</h3>
+<p>17. <strong>《史记·老子韩非列传》</strong>——「吾今日见老子，其犹龙邪！」</p>
+<p>18. <strong>《华严经》</strong>——「万法唯识。三界唯心。」</p>
+<hr class="divider">
+<h3 class="h3">24 位代表人物（每家 TOP3）</h3>
+<p><strong>儒（3 位）</strong>：</p>
+<li>孔子（前 551-479）——儒家创始人</li>
+<li>孟子（约前 372-289）——性善论</li>
+<li>荀子（约前 313-238）——性恶论、礼法</li>
+<p><strong>道（3 位）</strong>：</p>
+<li>老子（约前 600-500）——道家创始人、《道德经》</li>
+<li>庄子（约前 369-286）——逍遥游</li>
+<li>列子（约前 450-375）——顺其自然</li>
+<p><strong>佛（3 位）</strong>：</p>
+<li>六祖慧能（638-713）——禅宗</li>
+<li>玄奘（602-664）——唯识学</li>
+<li>窥基（632-682）——法相唯识宗</li>
+<p><strong>墨（3 位）</strong>：</p>
+<li>墨子（约前 470-390）——墨家创始人</li>
+<li>公输班（鲁班，约前 507-444）——工匠祖师</li>
+<li>禽滑厘（约前 480-390）——墨子大弟子</li>
+<p><strong>法（3 位）</strong>：</p>
+<li>商鞅（约前 390-338）——商鞅变法</li>
+<li>韩非（约前 280-233）——法家集大成</li>
+<li>李斯（约前 284-208）——法家实践第一人</li>
+<p><strong>兵（3 位）</strong>：</p>
+<li>孙子（约前 545-470）——《孙子兵法》</li>
+<li>吴起（约前 440-381）——《吴子》</li>
+<li>孙膑（约前 380-320）——《孙膑兵法》</li>
+<hr class="divider">
+<h2 class="h2">悟真笔记·一句话回响</h2>
+<p><strong>儒释道墨法兵，六个面向，同一道。</strong></p>
+<p><strong>人·事·心·众·规·势——六根柱子，撑起中国文化。</strong></p>
+<p><strong>缺一家，文化就残了。</strong></p>
+<p><strong>缺一家，人生也残了。</strong></p>
+<p><strong>儒，让我知道我是谁；</strong></p>
+<p><strong>道，让我知道事该怎么办；</strong></p>
+<p><strong>佛，让我知道心安何处；</strong></p>
+<p><strong>墨，让我知道众生平等；</strong></p>
+<p><strong>法，让我知道规矩何在；</strong></p>
+<p><strong>兵，让我知道何时该进退。</strong></p>
+<p><strong>六家同修，才是完整的人。</strong></p>
+<p><strong>这是中国文化给我们的最深的礼物。</strong></p>
+<hr class="divider">
+<p>🧘 静思·悟真</p>
+<p>2026-07-11</p>
+</div>
+
+<div class="seal">悟 真</div>
+
+<div class="footer">
+  悟真读书笔记 · 六家一道——儒释道墨法兵的完整图谱<br>
+  2026-07-11 · 8000+ 字深度研读 · 24 位代表人物 · 18 部经典原句
+</div>
+
+</div>
+
+<script>
+  const audio = document.getElementById('audio');
+  const playBtn = document.getElementById('playBtn');
+  const progress = document.getElementById('progress');
+  const progressWrap = document.getElementById('progressWrap');
+  const curTime = document.getElementById('curTime');
+  const durTime = document.getElementById('durTime');
+  const muteBtn = document.getElementById('muteBtn');
+  const volume = document.getElementById('volume');
+  const speedBtns = document.querySelectorAll('[data-speed]');
+  function fmtTime(s) {
+    if (isNaN(s) || !isFinite(s)) return '--:--';
+    return String(Math.floor(s/60)).padStart(2,'0') + ':' + String(Math.floor(s%60)).padStart(2,'0');
+  }
+  audio.addEventListener('loadedmetadata', () => durTime.textContent = fmtTime(audio.duration));
+  audio.addEventListener('timeupdate', () => {
+    if (audio.duration) {
+      progress.style.width = (audio.currentTime / audio.duration * 100) + '%';
+      curTime.textContent = fmtTime(audio.currentTime);
+    }
+  });
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); playBtn.textContent = '⏸'; }
+    else { audio.pause(); playBtn.textContent = '▶'; }
+  });
+  audio.addEventListener('ended', () => playBtn.textContent = '▶');
+  progressWrap.addEventListener('click', e => {
+    const rect = progressWrap.getBoundingClientRect();
+    const ratio = (e.clientX - rect.left) / rect.width;
+    if (audio.duration) audio.currentTime = ratio * audio.duration;
+  });
+  speedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      speedBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      audio.playbackRate = parseFloat(btn.dataset.speed);
+    });
+  });
+  muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇' : '🔊';
+  });
+  volume.addEventListener('input', e => audio.volume = e.target.value / 100);
+</script>
+</body>
+</html>
