@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>传统文化哲学 · 每日10条 · 深色多彩版 · 悟真</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #0e0e15; }
+body {
+  font-family: "PingFang SC","Microsoft YaHei","Hiragino Sans GB",sans-serif;
+  background: linear-gradient(180deg, #0e0e15 0%, #16161f 50%, #0e0e15 100%);
+  color: #d8d8e8;
+  min-height: 100vh;
+  padding: 32px 20px 60px;
+  line-height: 1.95;
+  -webkit-font-smoothing: antialiased;
+}
+.container { max-width: 820px; margin: 0 auto; }
+.hero {
+  text-align: center;
+  padding: 64px 28px 44px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, rgba(232,196,104,0.08) 0%, rgba(200,127,74,0.05) 50%, rgba(127,200,169,0.08) 100%);
+  border-radius: 20px;
+  border: 1px solid rgba(232,196,104,0.25);
+  box-shadow: 0 4px 32px rgba(232,196,104,0.06), inset 0 1px 0 rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(232,196,104,0.6), transparent);
+}
+.hero h1 {
+  color: #e8c468;
+  letter-spacing: 10px;
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 24px rgba(232,196,104,0.3);
+}
+.hero .date {
+  color: #c87f4a;
+  font-size: 16px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.hero .sub {
+  color: #8fb8de;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+.hero .vers {
+  color: #7fc8a9;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+  font-style: italic;
+}
+.hero .sign {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 6px 20px;
+  background: rgba(232,196,104,0.1);
+  color: #e8c468;
+  border: 1px solid rgba(232,196,104,0.3);
+  border-radius: 20px;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+.card {
+  background: linear-gradient(160deg, #1a1a26 0%, #1f1f2c 100%);
+  border-radius: 18px;
+  padding: 32px 36px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(232,196,104,0.12);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.03);
+  word-break: break-word;
+  overflow-wrap: break-word;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.card::before {
+  content: "";
+  position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--accent, #e8c468);
+  box-shadow: 0 0 12px var(--accent, #e8c468);
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5), 0 0 0 1px var(--accent, #e8c468);
+  border-color: var(--accent, #e8c468);
+}
+.cnum {
+  font-size: 13px;
+  color: var(--accent, #e8c468);
+  font-weight: 600;
+  margin-bottom: 14px;
+  letter-spacing: 3px;
+  padding-bottom: 12px;
+  border-bottom: 1px dashed rgba(232,196,104,0.25);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cnum .num-badge {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(232,196,104,0.12);
+  border: 1px solid var(--accent, #e8c468);
+  border-radius: 10px;
+  font-size: 11px;
+}
+.cnum .title-zh {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 6px;
+  font-weight: 500;
+}
+.cquote {
+  font-size: 15.5px;
+  color: #e8c468;
+  font-style: italic;
+  border-left: 3px solid var(--accent, #e8c468);
+  padding: 12px 0 12px 16px;
+  margin-bottom: 20px;
+  line-height: 1.95;
+  background: linear-gradient(90deg, rgba(232,196,104,0.05) 0%, transparent 100%);
+  padding-right: 12px;
+  border-radius: 0 6px 6px 0;
+}
+.cquote .src {
+  display: block;
+  color: #9eb89e;
+  font-style: normal;
+  font-size: 12px;
+  margin-top: 6px;
+  letter-spacing: 1.5px;
+  opacity: 0.85;
+}
+.cc {
+  font-size: 15.5px;
+  color: #fff;
+  line-height: 2;
+  margin-bottom: 22px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(127,200,169,0.06) 0%, rgba(127,200,169,0.02) 100%);
+  border-radius: 10px;
+  border-left: 3px solid #7fc8a9;
+  word-break: break-word;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+.story {
+  font-size: 14.5px;
+  color: #c4a8e8;
+  line-height: 2.05;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: rgba(196,168,232,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(196,168,232,0.1);
+  word-break: break-word;
+}
+.story .plabel {
+  color: #c4a8e8;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.story .plabel::before { content: "📜"; font-size: 13px; }
+.levels { margin-bottom: 20px; }
+.level {
+  font-size: 14px;
+  color: #d8d8e8;
+  line-height: 2;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  background: rgba(216,216,232,0.04);
+  border-radius: 8px;
+  border-left: 2px solid #8fb8de;
+  word-break: break-word;
+}
+.level .lkey {
+  color: #8fb8de;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+.climax {
+  font-size: 15px;
+  color: #e8a5b5;
+  line-height: 2.1;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(232,165,181,0.08) 0%, rgba(232,165,181,0.02) 100%);
+  border-radius: 10px;
+  border: 1px solid rgba(232,165,181,0.18);
+  word-break: break-word;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  position: relative;
+}
+.climax::before {
+  content: "";
+  position: absolute;
+  top: 10px; left: -1px;
+  width: 3px; height: calc(100% - 20px);
+  background: #e8a5b5;
+  border-radius: 2px;
+  box-shadow: 0 0 8px rgba(232,165,181,0.5);
+}
+.climax .clabel {
+  color: #e8a5b5;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.climax .clabel::before { content: "✨"; font-size: 13px; }
+.do {
+  background: linear-gradient(135deg, rgba(240,198,116,0.08) 0%, rgba(232,196,104,0.04) 100%);
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-size: 14.5px;
+  color: #f0c674;
+  line-height: 2.1;
+  word-break: break-word;
+  border: 1px solid rgba(240,198,116,0.2);
+}
+.do .dlabel {
+  color: #f0c674;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.do .dlabel::before { content: "🧘"; font-size: 13px; }
+.do p { color: #d8d8e8; margin-bottom: 6px; }
+.do p strong { color: #f0c674; font-weight: 500; }
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 12px;
+  color: #8a7860;
+  padding-bottom: 30px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+@media(max-width: 600px) {
+  .card { padding: 22px 20px; }
+  .hero h1 { font-size: 24px; letter-spacing: 6px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="hero">
+<h1>传统文化哲学 · 每日10条</h1>
+<div class="date">2026-07-12 · 周日</div>
+<div class="vers">"直指心性，不绕弯子 · 出观点必带实例"</div>
+<div class="sign">悟真 🧘 静思出品 · 深色多彩版</div>
+</div>
+<div class="card" style="--accent:#e8c468">
+  <div class="cnum">
+    <span class="num-badge">㉓</span>
+    <span class="title-zh">处变不惊</span>
+  </div>
+  <div class="cquote">
+    泰山崩于前而色不变，麋鹿兴于左而目不瞬。
+    <span class="src">—— 《孟子·告子上》</span>
+  </div>
+  <div class="cc">大事当前，最考验人。能稳住的人，已经赢了一半。</div>
+  <div class="story">
+    <div class="plabel">谢安 · 深度解析</div>
+    东晋名士谢安，出身世家却心怀天下。公元383年，前秦苻坚率八十万大军南下，号称「投鞭断流」，东晋危在旦夕。战报传来时，谢安正在与客人下棋。他看完战报，面不改色，继续落子。客人忍不住问战况，他淡淡一句：「小儿辈已破敌。」——背后是淝水之战，前秦八十万大军一朝崩溃，留下「风声鹤唳，草木皆兵」的成语。谢安之所以能做到这一步，绝不是临场装出来的镇定，而是几十年如一日的定力训练。临大事有静气，是真功夫。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>识变——天下事每天都在变，每天都有大事小事敲门。识别「什么值得我慌，什么不值得」，是处变不惊的前提。否则大事小事一起抓，必然疲于奔命。</div>
+    <div class="level"><span class="lkey">【第二层】</span>定心——平时有静坐或定心的习惯。谢安好静养，《世说新语》载其「雅志未就」而能超然物外，靠的是「每有静坐半日」的功夫。临事之时能定，根在平时能静。</div>
+    <div class="level"><span class="lkey">【第三层】</span>接变——事情来时，定住之后再接。谢安下棋时不慌，是因为他知道慌解决不了任何问题，慌只会让判断力下降。先定，再想，再动。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    真正的高手，不是「无所畏惧」，而是「虽畏不乱」。泰山崩于前，色不变，靠的不是不怕，是把怕收纳好了，再拿出定力。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天你有一件紧张的事。。</p>
+    <p><strong>·</strong> 先深呼吸三次。。</p>
+    <p><strong>·</strong> 问自己三句话：①最坏的结果是什么？②我能接受吗？③如果接受，我现在该做哪一步？做完了，就放下。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#c87f4a">
+  <div class="cnum">
+    <span class="num-badge">㉔</span>
+    <span class="title-zh">利他</span>
+  </div>
+  <div class="cquote">
+    非以其无私邪？故能成其私。
+    <span class="src">—— 《道德经》第七章</span>
+  </div>
+  <div class="cc">最深的利他是无私的。一心为人的人，反而成全了自己。</div>
+  <div class="story">
+    <div class="plabel">武训 · 深度解析</div>
+    清朝嘉庆年间，山东堂邑县乞丐武训，一字不识，却用三十年的时间乞讨办学。他要饭时唱：「你行好，俺代劳，大家帮咱办义学。」他把讨来的每一个铜板都积起来，自己穿破衣、食糟糠，攒够了钱就买地、办学。他先后在堂邑、馆陶、临清办了三所义学，让穷人家孩子免费读书。武训一生不婚、不要、不住自己的房子，纯粹把自己的人生「借」出去做这件事。当时士大夫讥笑他「不识时务」，但他办的三所义学改变了数千个穷孩子的命运。百姓自发为他建祠立碑，称他「武训义士」。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>真看见——看见别人的需要，而不是只看见自己的需要。绝大多数人「利他」做不到位，是因为他根本没看见别人。武训能看见穷孩子上不起学，所以他能为这事燃烧一生。</div>
+    <div class="level"><span class="lkey">【第二层】</span>真付出——利他的本质是「把自己交出去」。武训把一辈子的时间、尊严、享受都交出去了。这不是「布施一点钱」，这是「把自己烧了给人取暖」。</div>
+    <div class="level"><span class="lkey">【第三层】</span>不求回报——武训办义学不图名、不图利、不图后世记。求回报的利他，骨子里还是自利。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    《道德经》讲「非以其无私邪，故能成其私」，这是大智慧。看起来无私的，最后成全了最大的「私」——不是名利的「私」，是人格的「私」，是生命圆满的「私」。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天做一件小事，不为回报，不为人知。。</p>
+    <p><strong>·</strong> 可以是给陌生人指路、给同事带一杯咖啡、给家人一句「我看见你辛苦了」。。</p>
+    <p><strong>·</strong> 做完不告诉任何人。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#7fc8a9">
+  <div class="cnum">
+    <span class="num-badge">㉕</span>
+    <span class="title-zh">守静</span>
+  </div>
+  <div class="cquote">
+    致虚极，守静笃。万物并作，吾以观复。
+    <span class="src">—— 《道德经》第十六章</span>
+  </div>
+  <div class="cc">静是心的本来面目。找回静，是找回自己。</div>
+  <div class="story">
+    <div class="plabel">周恩来 · 深度解析</div>
+    青年周恩来在南开学校读书时，常常去戏园子。但他去戏园子不是为了听戏，而是为了练静功——周围锣鼓喧天、喝彩雷动，他却能在角落里安静地看书，一看就是几个小时。他在日记里说：「剧场中，万籁俱寂，独与心谋。」后来无论是在白色恐怖的上海、还是在敌机轰炸的重庆、还是在中南海繁忙的国事中，他都能保持一种「水静无波」的状态。尼克松访华时曾感慨：「我见到周总理时，仿佛见到一个'静'字站在那里。」一个能在最乱的环境里静下来的人，才能在最重的担子下稳下来。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>身静——每天有段时间完全安静。哪怕十分钟，关掉手机，关上门窗，不说话，不做事，就坐着。这是「止」的功夫。</div>
+    <div class="level"><span class="lkey">【第二层】</span>心静——身静易，心静难。心静的关键，是不被手机、不被信息、不被「想要做什么」拉走。心静是「无所住」的功夫。</div>
+    <div class="level"><span class="lkey">【第三层】</span>常静——偶尔静一次容易，常静难。把「每天静一刻」变成「每天的常态」，这是守静的根。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    老子讲「致虚极，守静笃」——虚到极致，静到纯然。虚到极致不是「空无一物」，而是「能装得下万物」。静到纯然不是「死寂一片」，而是「能映得见万物」。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天关掉手机一小时。。</p>
+    <p><strong>·</strong> 找一个地方坐着。。</p>
+    <p><strong>·</strong> 闭眼。。</p>
+    <p><strong>·</strong> 慢慢呼吸。。</p>
+    <p><strong>·</strong> 什么都不做。。</p>
+    <p><strong>·</strong> 这一小时，是你一天的「主」。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#d97757">
+  <div class="cnum">
+    <span class="num-badge">㉖</span>
+    <span class="title-zh">不怨</span>
+  </div>
+  <div class="cquote">
+    劳而不怨，忧而不乱。
+    <span class="src">—— 《中庸》第二十章</span>
+  </div>
+  <div class="cc">抱怨是因为把自己的责任推给别人。先承担，再前行。</div>
+  <div class="story">
+    <div class="plabel">孔子 · 深度解析</div>
+    《论语·卫灵公》记载，孔子说：「君子求诸己，小人求诸人。」这是儒家修身的一把钥匙。孔子一生周游列国，十四年奔波，挨过围困、断过粮、被弟子误解、被国君冷落，但他不怨。他被匡人围困五日，弟子们都吓坏了，他照常弹琴。子路问他「君子亦有穷乎」，他说：「君子固穷，小人穷斯滥矣。」——君子穷，能守住；小人穷，就乱了。孔子的「不怨」不是没有情绪，是「虽有情绪，但不陷入情绪」。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>认出抱怨的根——抱怨的根是「我以为应该是那样」，而现实不是那样。问题是「我以为的」对不对？</div>
+    <div class="level"><span class="lkey">【第二层】</span>承担自己的部分——事情出问题，先不找别人的原因，先找自己的原因。这是反求诸己。</div>
+    <div class="level"><span class="lkey">【第三层】</span>改变能改变的——把自己那部分改变了，再去影响能影响的。不怨，不是「什么都不做」，是「做完该做的，不怨结果」。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    怨天尤人是最低能量的事。怨得越多，自己越弱。能量守恒——向外发怨气，向内就漏元气。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天有一件不如意的事。。</p>
+    <p><strong>·</strong> 先不要抱怨。。</p>
+    <p><strong>·</strong> 问自己：我做了什么让它变坏的？如果有，我下次怎么做？。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#b8d99c">
+  <div class="cnum">
+    <span class="num-badge">㉗</span>
+    <span class="title-zh">精进</span>
+  </div>
+  <div class="cquote">
+    是故君子欲有所为，必念念精进，如救头燃。
+    <span class="src">—— 《佛遗教经》</span>
+  </div>
+  <div class="cc">精进不是逼自己，是知道时间宝贵。</div>
+  <div class="story">
+    <div class="plabel">玄奘 · 深度解析</div>
+    唐贞观三年（629年），玄奘二十七岁，从长安出发西行求法。当时唐朝初建，突厥威胁西域，朝廷禁边不许人出。玄奘是「冒越宪章，私行出境」的。独自一人，凭一匹瘦马，过秦州、凉州、玉门关、莫贺延碛——八百余里无人烟的戈壁，五天四夜没水，靠湿马粪解渴；在高昌国被国王强留，他以绝食三日明志。历时十七年，走过一百三十八个国家，行程五万余里。归国时，已是四十四岁，带回佛舍利、佛像、经论六百五十七部。从此一生译经不辍，到圆寂前仍在翻译。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>知所求——知道这件事值得做。玄奘不是盲目精进，他是「为法忘躯」——明明白白知道自己在求什么。精进的根，是「志」立得正。</div>
+    <div class="level"><span class="lkey">【第二层】</span>不退屈——精进是「进」字，就是往前走，不被困难吓退。莫贺延碛差点要了他的命，他不退。</div>
+    <div class="level"><span class="lkey">【第三层】</span>持之恒——精进最难的不是一时，是一世。玄奘十七年，初心不改。这种恒，常人做不到。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    《佛遗教经》说「如救头燃」——像头上着火一样急。火烧到头上，你不救吗？精进不是「逼自己」，是「看清楚这事的紧迫」。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 最近有一件事一直拖着没做。。</p>
+    <p><strong>·</strong> 今天定一个最小的开始。。</p>
+    <p><strong>·</strong> 哪怕只是五分钟。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#e8a5b5">
+  <div class="cnum">
+    <span class="num-badge">㉘</span>
+    <span class="title-zh">放下</span>
+  </div>
+  <div class="cquote">
+    一切有为法，如梦幻泡影，如露亦如电，应作如是观。
+    <span class="src">—— 《金刚经·应化非真分》</span>
+  </div>
+  <div class="cc">放下不是放弃，是不执着。</div>
+  <div class="story">
+    <div class="plabel">弘一法师 · 深度解析</div>
+    李叔同，1880年生于天津，是清末民初最负盛名的艺术家——诗词、书画、篆刻、音乐、戏剧、话剧，无一不通。他是第一个把西方话剧、油画、钢琴引进中国的人，「长亭外，古道边」成为几代人的记忆。1918年，三十九岁，在杭州虎跑寺剃度出家，法名弘一。朋友们哀叹：「中国第一个最有才气的艺术家走了！」弘一法师却说：「我的福报在俗世享尽了，该去修福了。」他出家后，持戒精严，过午不食。一次丰子恺请他到家中，恭敬地奉上素斋，弘一法师只吃了一小碗白米饭配咸菜，丰子恺的孩子们都惊了。他临终前写「悲欣交集」四字。放下繁华，是真放下。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>识幻——知道眼前这一切「会变、会失、终非我有」。房子、地位、关系、才华，皆然。</div>
+    <div class="level"><span class="lkey">【第二层】</span>承许——承认这些东西不属于我，今天在，明天可能不在。弘一法师承认自己的才华、名利都「不究竟」，才能放下。</div>
+    <div class="level"><span class="lkey">【第三层】</span>转身——放下不是「什么都不做」，是「放下执着后，承担新的东西」。弘一法师放下艺术，承担了弘扬律宗的大业。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    《心经》讲「心无挂碍，无挂碍故，无有恐怖」。心有挂碍，则恐怖；心无挂碍，则自在。放下，得大自在。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天有一件事你放不下。。</p>
+    <p><strong>·</strong> 问自己：如果明天我就要离开人世，这件事还重要吗？让那个「明天」来得更早一些。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#8fb8de">
+  <div class="cnum">
+    <span class="num-badge">㉙</span>
+    <span class="title-zh">观呼吸</span>
+  </div>
+  <div class="cquote">
+    觉诸相非相，则见如来。
+    <span class="src">—— 《金刚经》（呼吸为入门）</span>
+  </div>
+  <div class="cc">呼吸是连系身心最直接的桥。从呼吸入手，是最直接的路。</div>
+  <div class="story">
+    <div class="plabel">释迦牟尼 · 深度解析</div>
+    公元前528年，乔达摩·悉达多在菩提伽耶的菩提树下，结跏趺坐，发誓「不证菩提，宁可碎身，不起此座」。他先后修了六年苦行，皮包骨头，濒死，意识到苦行非道。放弃苦行后，他接受牧羊女苏耶妲的乳糜供养，恢复体力。然后他在菩提树下入定。传说他在入定的七个七日里，前七个七日观的是什么？是呼吸。安那般那——入出息念，是佛陀证道的基础法门。后来南传佛教把「出入息念」列为四十种止业处之首。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>知息——知道自己在呼吸。人在忙乱中「忘记」呼吸——不是真的忘，是意识不到。观呼吸的第一步是把意识拉回来。</div>
+    <div class="level"><span class="lkey">【第二层】</span>调息——呼吸的长短、深浅、节奏，自己可以调。深长、均匀、绵密的呼吸，是身心安定的标志。</div>
+    <div class="level"><span class="lkey">【第三层】</span>息相——呼吸最终会变得越来越细，越来越浅，到最后「若有若无」。这是心静到极致的自然结果。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    南怀瑾先生讲：「观呼吸是佛法的入门功夫，是儒释道三家的共法。」观呼吸看似简单，但真正做到「念念分明」，已经是大功夫。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天找一个安静的地方。。</p>
+    <p><strong>·</strong> 坐下来。。</p>
+    <p><strong>·</strong> 闭眼。。</p>
+    <p><strong>·</strong> 把注意力放在鼻尖的呼吸上。。</p>
+    <p><strong>·</strong> 不跟着任何念头走。。</p>
+    <p><strong>·</strong> 十分钟即可。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#c4a8e8">
+  <div class="cnum">
+    <span class="num-badge">㉚</span>
+    <span class="title-zh">平常心</span>
+  </div>
+  <div class="cquote">
+    佛法在世间，不离世间觉。离世觅菩提，恰如求兔角。
+    <span class="src">—— 《六祖坛经·般若品》</span>
+  </div>
+  <div class="cc">最高深的道理，藏在最平常的事里。</div>
+  <div class="story">
+    <div class="plabel">赵州从谂禅师 · 深度解析</div>
+    唐代赵州从谂禅师，活了一百二十岁，是禅宗史上最有生活气息的禅师。有人问：「如何是道？」赵州答：「吃茶去。」问的人糊涂了，刚才那个来问的也答「吃茶去」，我也答「吃茶去」，到底什么意思？赵州说：「你且吃茶去。」——意思是：道不在别处，就在你吃饭喝茶穿衣走路里。又有僧问：「如何是赵州？」师曰：「东门西门，南门北门。」——赵州不是某个地方，是整个生活本身。禅不在深山古刹，在日用之间。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>吃饭时吃饭——这是禅宗最深的功夫。吃饭时想着工作，工作时想着手机，手机上想着吃饭——三心二意，一事无成。</div>
+    <div class="level"><span class="lkey">【第二层】</span>睡觉时睡觉——睡觉就是睡觉，不为明天焦虑，不为昨天后悔。</div>
+    <div class="level"><span class="lkey">【第三层】</span>做手头事时，心无旁骛——一件一件地做，做完一件放下，再做下一件。这就是「平常心」。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    六祖说「佛法在世间」，道在吃茶吃饭里。不必远求，不必苦修。就在眼前的每件事里。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天吃饭时，就吃饭。。</p>
+    <p><strong>·</strong> 走路时，就走路。。</p>
+    <p><strong>·</strong> 洗碗时，就洗碗。。</p>
+    <p><strong>·</strong> 专心地做一件平凡的事。。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#f0c674">
+  <div class="cnum">
+    <span class="num-badge">㉛</span>
+    <span class="title-zh">守缺</span>
+  </div>
+  <div class="cquote">
+    天道忌满，人道忌全。
+    <span class="src">—— 《菜根谭》</span>
+  </div>
+  <div class="cc">太追求完美，反而有缺失。守住缺口，让「运」流进来。</div>
+  <div class="story">
+    <div class="plabel">曾国藩 · 深度解析</div>
+    曾国藩带兵打仗，从不追求「万全之策」。他写信给弟弟曾国荃说：「凡事求万全者，必无万全之日。」他主张「宁可不全，但求不败」。湘军打硬仗，常常只取七分胜利，不求全胜；让三分给对手，反而能持久。梅州之役，弟弟想全歼敌军，曾国藩急信劝阻：「兵者，诡道也，势者，留余地也。」——打仗要留余地，人生要守缺。月满则亏，水满则溢。曾国藩用一生的起伏，悟透了这个「缺」字。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>知缺——知道事情不可能完美。追求完美的本质，是不接受现实。</div>
+    <div class="level"><span class="lkey">【第二层】</span>守缺——守住已有的，不贪多。知道「够了」是什么感觉，是守缺的功夫。</div>
+    <div class="level"><span class="lkey">【第三层】</span>用缺——在不完美中找到最优点。曾国藩打仗是「用缺」的典范——不全歼，留余地，反而赢。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    《道德经》讲「大成若缺」——最大的「成」，看起来像有「缺」。守缺不是消极，是主动让出空间，让「运」流转进来。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天有一件事做得不完美。。</p>
+    <p><strong>·</strong> 先不要后悔。。</p>
+    <p><strong>·</strong> 先接受。。</p>
+    <p><strong>·</strong> 问自己：从这个「缺」里，我能学到什么？。</p>
+  </div>
+</div>
+<div class="card" style="--accent:#9eb89e">
+  <div class="cnum">
+    <span class="num-badge">㉜</span>
+    <span class="title-zh">戒定慧</span>
+  </div>
+  <div class="cquote">
+    因戒生定，因定发慧，因慧灭贪瞋痴。
+    <span class="src">—— 《楞严经》</span>
+  </div>
+  <div class="cc">戒是规矩，定是安静，慧是清澈。三学不是三段，是一事。</div>
+  <div class="story">
+    <div class="plabel">释迦牟尼 · 深度解析</div>
+    佛陀成道后，第一件事是到鹿野苑为五比丘说法。说的什么？《四圣谛》《八正道》《三十七菩提分法》。在所有法门里，戒定慧是骨干。佛陀为在家众制定五戒——不杀生、不偷盗、不妄语、不饮酒、不邪淫；为出家众制定比丘二百五十戒、比丘尼三百四十八戒。佛陀在临终遗教中说：「汝等当勤精进。譬如小水常流，则能穿石。若行者之心，数数懈废，譬如钻火，未热而息，虽欲得火，火难可得。」——戒定慧三学，是修行的根。
+  </div>
+  <div class="levels">
+    <div class="level"><span class="lkey">【第一层】</span>戒——知道什么不该做。戒是「止损」——先把最大的漏洞堵住。心不静，先从「不乱说话、不乱想、不乱看」开始。</div>
+    <div class="level"><span class="lkey">【第二层】</span>定——坚持不做。心能定下来，才有可能进入「静」。定不是强迫，是慢慢养成。</div>
+    <div class="level"><span class="lkey">【第三层】</span>慧——不做之后，心干净了，智慧自然出来。这叫「由戒入定，由定发慧」。</div>
+  </div>
+  <div class="climax">
+    <div class="clabel">巅峰体证</div>
+    三学不是三段，是一事。戒是「门」，定是「路」，慧是「果」。不戒，无以入门；不定，无以行远；不慧，无以见真。
+  </div>
+  <div class="do">
+    <div class="dlabel">今日功夫</div>
+    <p><strong>·</strong> 今天给自己定一个小规矩：某一件事绝对不做。。</p>
+    <p><strong>·</strong> 比如「今天不抱怨」或「今天不刷短视频」。。</p>
+    <p><strong>·</strong> 做到就是戒，做到就是定的基础。。</p>
+  </div>
+</div>
+<footer>悟真 🧘 静思出品 · 每日10条 · 传统文化哲学 · 深色多彩版 v2</footer>
+</div>
+</body>
+</html>
