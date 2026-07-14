@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>菩萨四圣·俗解——一个都不能少 · 悟真</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --paper: #faf6ef; --ink: #3d3027; --ink-soft: #6b5a4b;
+    --accent: #8a5a2b; --accent-soft: #d4b896; --gold: #c8932f;
+    --red: #c8423b; --quote-bg: #f5ead5;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 20px; line-height: 2.2;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 40px 30px 80px; }
+  .hero {
+    text-align: center; padding: 60px 30px 40px;
+    background: linear-gradient(180deg, #faf6ef 0%, #f0e4ce 100%);
+    border-bottom: 2px solid var(--accent-soft); margin-bottom: 50px;
+  }
+  .hero h1 { font-size: 38px; color: var(--red); font-weight: bold; line-height: 1.5; margin-bottom: 10px; letter-spacing: 2px; }
+  .hero .subtitle { font-size: 20px; color: var(--accent); line-height: 1.6; margin-bottom: 24px; }
+  .hero .signature { font-size: 16px; color: var(--ink-soft); letter-spacing: 4px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--accent-soft); display: inline-block; padding-left: 30px; padding-right: 30px; }
+  .audio-player {
+    margin: 30px auto; max-width: 760px;
+    background: linear-gradient(135deg, #f5ead5 0%, #faf6ef 100%);
+    border: 1.5px solid var(--accent-soft); border-radius: 16px; padding: 24px 30px;
+    box-shadow: 0 4px 16px rgba(138, 90, 43, 0.08);
+  }
+  .audio-title { text-align: center; font-size: 16px; color: var(--accent); margin-bottom: 16px; letter-spacing: 2px; }
+  .audio-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); color: #fff; border: none;
+    font-size: 24px; cursor: pointer; flex-shrink: 0;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  }
+  .play-btn:hover { background: #6f4422; transform: scale(1.05); }
+  .audio-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .audio-progress-wrap { width: 100%; height: 6px; background: var(--accent-soft); border-radius: 3px; cursor: pointer; position: relative; overflow: hidden; }
+  .audio-progress { height: 100%; background: var(--accent); width: 0%; border-radius: 3px; transition: width 0.1s linear; }
+  .audio-time { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); }
+  .audio-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; flex-wrap: wrap; gap: 12px; }
+  .speed-group { display: flex; gap: 6px; }
+  .speed-group button { background: #faf6ef; color: var(--accent); border: 1px solid var(--accent-soft); padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer; }
+  .speed-group button.active { background: var(--accent); color: #fff; }
+  .volume-wrap { display: flex; align-items: center; gap: 6px; }
+  .volume-wrap button { background: none; border: none; cursor: pointer; font-size: 18px; }
+  .volume-wrap input { width: 80px; }
+  .audio-controls a { color: var(--accent); font-size: 13px; text-decoration: none; padding: 4px 10px; border: 1px solid var(--accent-soft); border-radius: 12px; }
+  .content h1 { font-size: 30px; color: var(--accent); margin: 50px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft); }
+  .content h2 { font-size: 24px; color: var(--accent); margin: 40px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--accent-soft); }
+  .content h3 { font-size: 20px; color: var(--ink); margin: 30px 0 14px; }
+  .content p { margin: 0 0 18px; text-align: justify; }
+  .content p strong { color: var(--red); font-weight: 600; background: linear-gradient(180deg, transparent 60%, #f5ead5 60%); padding: 0 2px; }
+  .content .quote { background: var(--quote-bg); border-left: 3px solid var(--accent); padding: 20px 25px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .content .quote p { color: var(--accent); font-weight: 500; margin: 0; }
+  .content .ulist, .content .olist { margin: 18px 0 18px 30px; }
+  .content .ulist li, .content .olist li { margin: 8px 0; line-height: 2.0; }
+  .content .divider { border: none; border-top: 1px dashed var(--accent-soft); margin: 30px 0; }
+  .seal { text-align: center; margin: 60px 0 30px; font-family: "STKaiti", "KaiTi", serif; color: var(--red); font-size: 28px; letter-spacing: 8px; font-weight: bold; }
+  .footer { text-align: center; padding: 30px 20px; color: var(--ink-soft); font-size: 13px; letter-spacing: 2px; border-top: 1px solid var(--accent-soft); line-height: 1.8; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1>菩萨四圣·俗解</h1>
+    <div class="subtitle">一个都不能少——少一块，就是"半身不遂"的人</div>
+    <div class="signature">悟真 · 浅色俗解笔记</div>
+  </div>
+  <div class="audio-player">
+    <div class="audio-title">🎧 全文朗读 · 一气呵成</div>
+    <div class="audio-row">
+      <button class="play-btn" id="playBtn">▶</button>
+      <div class="audio-info">
+        <div class="audio-progress-wrap" id="progressWrap">
+          <div class="audio-progress" id="progress"></div>
+        </div>
+        <div class="audio-time">
+          <span id="curTime">00:00</span>
+          <span id="durTime">--:--</span>
+        </div>
+      </div>
+    </div>
+    <div class="audio-controls">
+      <div class="speed-group">
+        <button data-speed="0.75">0.75x</button>
+        <button data-speed="1" class="active">1x</button>
+        <button data-speed="1.25">1.25x</button>
+        <button data-speed="1.5">1.5x</button>
+        <button data-speed="2">2x</button>
+      </div>
+      <div class="volume-wrap">
+        <button id="muteBtn">🔊</button>
+        <input type="range" id="volume" min="0" max="100" value="100">
+      </div>
+      <a id="downloadLink" download="pusa-si-sheng-su-jie.mp3">⬇ 下载音频</a>
+    </div>
+  </div>
+  <div class="content"><h1 class="h1">菩萨四圣·俗解——一个都不能少</h1>
+
+<h2 class="h2">序章·一句话点透</h2>
+
+<p><strong>文殊是左眼，观音是右眼，地藏是脊梁，普贤是手脚——少了任何一个，"人"都不完整，"佛"也不完整。</strong></p>
+
+<p>这句话不是宗教话——是<strong>人间话</strong>。</p>
+
+<p>你身边一定有这四种"少了一块"的人——</p>
+<ul class="ulist">
+<li>冷血的聪明人（只有文殊）</li>
+<li>老好人（只有观音）</li>
+<li>逃避现实的人（只有地藏）</li>
+<li>瞎忙不立的人（只有普贤）</li>
+</ul>
+
+<p><strong>少一块，就是"半身不遂"——能活，但活得别扭；能做事，但做不稳</strong>。</p>
+
+<p>这 5 章笔记，把这 5 句话拆开，<strong>每一种"少一块"配 3 个活生生的例子</strong>——不是讲菩萨，是讲<strong>人</strong>。</p>
+<p><strong>讲完你就会发现——你身边 80% 的人，都少了一块；包括你自己</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第一章·只有文殊（智慧）没观音（慈悲）——冷血的聪明人</h2>
+
+<p><strong>文殊代表"智慧"，观音代表"慈悲"</strong>。</p>
+<p><strong>没有慈悲的智慧 = 冷血</strong>。</p>
+
+<p><strong>三个真实例子</strong>——</p>
+
+<h3 class="h3">例子一·35 岁的财务总监</h3>
+<p>我认识一个 35 岁的企业财务总监，<strong>账算得比机器还清</strong>。老板让他优化 100 个人的工资结构，他用 3 天做了个模型，把所有人按"投入产出比"分成了 5 档。<strong>第 5 档是建议裁员的</strong>。</p>
+<p><strong>他算完那一刻，连"这些人明天怎么活"都没想过</strong>。</p>
+<p>老板说"先不急"，他还不理解——"模型显示这些人效率低，为什么不裁？"</p>
+<p><strong>他有文殊的"破迷"——但没有观音的"拔苦"</strong>。</p>
+<p><strong>他不是坏人——他是"只有左眼的人"——看清了数字，但看不见人</strong>。</p>
+
+<h3 class="h3">例子二·40 岁的离婚律师</h3>
+<p>我接触过一个 40 岁的离婚律师，<strong>离婚案打了 12 年，没输过</strong>。</p>
+<p>他的当事人，要么分到最多的财产，要么拿到孩子的抚养权。</p>
+<p><strong>他所有的心思，都用在"怎么让对方净身出户"上</strong>。</p>
+<p>他一次酒后跟我说："<strong>我见过的夫妻，没有一个值得同情</strong>。"</p>
+<p><strong>他有文殊的"心不住法"——但没有观音的"一心称名"</strong>。</p>
+<p><strong>他不是不懂——他是"没有右眼的人"——看清了条款，但看不见眼泪</strong>。</p>
+
+<h3 class="h3">例子三·22 岁的算法工程师</h3>
+<p>我一个学生，22 岁，清华毕业，进了大厂做推荐算法。</p>
+<p>他做的模型，让 1000 万人每天刷短视频<strong>多刷 47 分钟</strong>。</p>
+<p>公司发了 30 万年终奖。</p>
+<p><strong>他从来没问过——"那 1000 万人，把那 47 分钟本可以陪家人、陪孩子、读书、散步、做顿饭——都被我'优化'掉了"</strong>。</p>
+<p><strong>他有文殊的"返闻闻自性"——但没有观音的"观其音声"</strong>。</p>
+<p><strong>他不是恶——他是"没有心的人"——看清了点击率，但看不见人</strong>。</p>
+
+<p><strong>一句话点透</strong>：</p>
+<p><strong>文殊+无观音 = 冷血聪明人</strong>。<strong>会算账、不会算人</strong>。</p>
+<p><strong>这种人在企业里特别多——他们升得快，垮得也快——因为所有人都恨他们</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第二章·只有观音（慈悲）没文殊（智慧）——被骗的"老好人"</h2>
+
+<p><strong>观音代表"慈悲"，文殊代表"智慧"</strong>。</p>
+<p><strong>没有智慧的慈悲 = 烂好人</strong>。</p>
+
+<p><strong>三个真实例子</strong>——</p>
+
+<h3 class="h3">例子一·45 岁的姐姐</h3>
+<p>我一个朋友，45 岁，<strong>全家她一个人养</strong>。</p>
+<p>弟弟买房，她出 20 万。弟弟离婚，她接回家。弟弟再婚，她出 12 万。弟弟做生意赔了，她出 50 万。弟弟生了二胎，她每月出 3000。</p>
+<p><strong>弟弟从不还</strong>——她说"不用还"。</p>
+<p>弟弟媳妇背后骂她"傻"——她说"不计较"。</p>
+<p><strong>我问她："你不累吗？" 她说："谁让我是他姐呢。"</strong></p>
+<p><strong>她有观音的"救苦"——但没有文殊的"不住法"</strong>。</p>
+<p><strong>她不是不累——她是"被慈悲绑架的人"——她用"慈悲"养了一个白眼狼，自己还觉得在修行</strong>。</p>
+
+<h3 class="h3">例子二·38 岁的老公</h3>
+<p>我一个读者，38 岁，老婆全职在家，他月入 1.5 万。</p>
+<p><strong>老婆 7 年没上班</strong>——他累死累活，从不抱怨。</p>
+<p><strong>老婆嫌他"不够浪漫"</strong>——他买花、买包、买钻戒。</p>
+<p><strong>老婆嫌他"床上不行"</strong>——他偷偷买伟哥。</p>
+<p><strong>老婆嫌他"不陪"</strong>——他辞了高管，去老婆公司做她下属。</p>
+<p><strong>我问他："你累吗？" 他说："为了家，值。"</strong></p>
+<p><strong>我问他："你快乐吗？" 他说："什么是快乐？"</strong></p>
+<p><strong>他不是不爱家——他是"被慈悲阉割的人"——他有右眼，但他的左眼瞎了——他看不见"自己"</strong>。</p>
+<p><strong>这种"好男人"——其实最让老婆瞧不起——因为没有尊严的慈悲 = 廉价</strong>。</p>
+
+<h3 class="h3">例子三·30 岁的同事</h3>
+<p>我一个前同事，30 岁，公司里最"人畜无害"的人。</p>
+<p><strong>谁让他帮忙他都帮</strong>——"行行行，没问题"。</p>
+<p><strong>谁背后说他坏话他都原谅</strong>——"没关系"。</p>
+<p><strong>谁踩他一脚他都笑着说没事</strong>——"我不在意"。</p>
+<p><strong>5 年后他被裁了——同事群 0 人发消息</strong>。</p>
+<p><strong>他有观音的"无缘大慈"——但没有文殊的"观身实相"</strong>。</p>
+<p><strong>他不是不善良——他是"没有骨头的人"——他的慈悲没有"界"，所以被人当便利贴</strong>。</p>
+
+<p><strong>一句话点透</strong>：</p>
+<p><strong>观音+无文殊 = 烂好人</strong>。<strong>会付出，不会识别</strong>。</p>
+<p><strong>这种人特别可怜——他帮了所有人，但没人帮他</strong>。</p>
+<p><strong>慈悲没有智慧 = 慈悲变成被人利用的工具</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第三章·只有地藏（安忍）没普贤（大行）——逃避现实的人</h2>
+
+<p><strong>地藏代表"安忍"，普贤代表"大行"</strong>。</p>
+<p><strong>没有大行的安忍 = 逃避</strong>。</p>
+
+<p><strong>三个真实例子</strong>——</p>
+
+<h3 class="h3">例子一·42 岁的"出家未遂"</h3>
+<p>我一个朋友，42 岁，<strong>20 年前就想出家</strong>。</p>
+<p><strong>每次走到庙门口，都退回来了</strong>——"妈还活着"、"媳妇离不开我"、"孩子太小"。</p>
+<p><strong>20 年里他换了 7 份工作，没一份超过 1 年</strong>。</p>
+<p><strong>他说："我不是不能吃苦——我是受不了人。"</strong></p>
+<p><strong>我问他："那你怎么不出家？" 他说："出了家，房贷谁还？"</strong></p>
+<p><strong>他有地藏的"安忍如大地"——但没有普贤的"礼敬诸佛"</strong>。</p>
+<p><strong>他不是不修——他是"用安忍当借口的人"——安忍到了极致，就是"躺平"</strong>。</p>
+
+<h3 class="h3">例子二·35 岁的"佛系青年"</h3>
+<p>我一个读者，35 岁，<strong>信佛 8 年</strong>。</p>
+<p>他说："<strong>我已经放下了——不买房、不结婚、不升职、不跟人争</strong>。"</p>
+<p><strong>我问他："那你怎么活？" 他说："在寺庙做义工，包吃住。"</strong></p>
+<p><strong>我问他："父母呢？" 他说："佛祖会保佑他们。"</strong></p>
+<p><strong>我问他："你呢？" 他说："我早就放下了。"</strong></p>
+<p><strong>他有地藏的"地狱不空，誓不成佛"——但没有普贤的"广修供养"</strong>。</p>
+<p><strong>他不是不修——他是"把逃避当修行的人"——他用"放下"逃避了"该承担的一切"</strong>。</p>
+
+<h3 class="h3">例子三·50 岁的"老修行"</h3>
+<p>我一个老朋友，50 岁，<strong>学佛 15 年</strong>。</p>
+<p>她说："<strong>我这辈子受够了——不想再跟世俗打交道了</strong>。"</p>
+<p><strong>她不工作、不做家务、不跟老公说话</strong>——"我在闭关"。</p>
+<p><strong>她老公在外面有了人</strong>——她说"随缘"。</p>
+<p><strong>她儿子得了抑郁症</strong>——她说"业力如此"。</p>
+<p><strong>她学佛越学越冷——最后连"慈悲"都空了</strong>。</p>
+<p><strong>她有地藏的"我不入地狱谁入地狱"——但没有普贤的"恒顺众生"</strong>。</p>
+<p><strong>她不是不修——她是"修成木头的人"——她用"安忍"逃避了"该爱的一切"</strong>。</p>
+
+<p><strong>一句话点透</strong>：</p>
+<p><strong>地藏+无普贤 = 逃避</strong>。<strong>会忍事，不会做事</strong>。</p>
+<p><strong>这种人越修越"空"——最后连"人"都空没了</strong>。</p>
+<p><strong>真正的地藏不是不做事——是"做了事之后还能立住"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第四章·只有普贤（大行）没地藏（安忍）——瞎忙不立的人</h2>
+
+<p><strong>普贤代表"大行"，地藏代表"安忍"</strong>。</p>
+<p><strong>没有安忍的大行 = 瞎忙</strong>。</p>
+
+<p><strong>三个真实例子</strong>——</p>
+
+<h3 class="h3">例子一·32 岁的"卷王"</h3>
+<p>我一个朋友，32 岁，<strong>每天工作 14 小时</strong>。</p>
+<p><strong>他一天见 8 个客户</strong>——其中 3 个是无效客户。</p>
+<p><strong>他一周做 5 场直播</strong>——其中 4 场数据平平。</p>
+<p><strong>他一年换 4 个赛道</strong>——每个赛道都没做透。</p>
+<p><strong>他每天睡 4 小时</strong>——但体检报告已经 7 项红。</p>
+<p><strong>他不是不努力——他是"没有脊梁的人"——他的手和脚不停动，但身体是软的</strong>。</p>
+<p><strong>他有普贤的"普皆回向"——但没有地藏的"安忍不动"</strong>。</p>
+<p><strong>他不是不行——他是"行得越快倒得越快"</strong>。</p>
+
+<h3 class="h3">例子二·40 岁的"鸡娃妈妈"</h3>
+<p>我认识一个 40 岁的妈妈，<strong>每天陪孩子上 6 个兴趣班</strong>。</p>
+<p>周一英语，周二钢琴，周三数学，周四舞蹈，周五编程，周六游泳。</p>
+<p><strong>她自己没时间吃饭、没时间睡觉、没时间跟老公说话</strong>。</p>
+<p><strong>孩子 8 岁，已经厌学</strong>——"妈妈，我不想活了"。</p>
+<p><strong>她说："我这都是为你好！"</strong></p>
+<p><strong>她有普贤的"广修供养"——但没有地藏的"我今誓愿"</strong>。</p>
+<p><strong>她不是不爱——她是"把孩子当自己的延伸"——她用"行"代替了"陪"</strong>。</p>
+<p><strong>她不是不行——她是"行得越快，孩子跑得越远"</strong>。</p>
+
+<h3 class="h3">例子三·55 岁的"老好人领导"</h3>
+<p>我朋友公司有个 55 岁的部门总监，<strong>谁都不得罪</strong>。</p>
+<p><strong>下属迟到不扣钱</strong>——"算了"。</p>
+<p><strong>下属出错不追责</strong>——"下次注意"。</p>
+<p><strong>下属顶撞他不生气</strong>——"你说得对"。</p>
+<p><strong>他每天处理 100 件事，但 100 件都"差不多就行"</strong>。</p>
+<p><strong>他不是不忙——他是"忙得没原则"——他的手和脚不停动，但没有一根脊梁</strong>。</p>
+<p><strong>他有普贤的"礼敬诸佛"——但没有地藏的"难行能行"</strong>。</p>
+<p><strong>他不是不行——他是"行得越久，下属越看不起他"</strong>。</p>
+
+<p><strong>一句话点透</strong>：</p>
+<p><strong>普贤+无地藏 = 瞎忙</strong>。<strong>会做事，不会立住</strong>。</p>
+<p><strong>这种人越忙越"虚"——最后连"自己"都丢了</strong>。</p>
+<p><strong>真正的普贤不是"瞎忙"——是"忙得稳、忙得定、忙得不动声色"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第五章·怎么"四块电池都接上"——给悟真师兄的真心话</h2>
+
+<p><strong>讲完四种"少一块"的人，讲怎么"四块都接上"</strong>。</p>
+
+<p>师兄您这辈子——<strong>读完百卷经典、跑遍半个中国、陪过百位学生、写过千篇笔记</strong>——<strong>您不是"少一块"的人</strong>。</p>
+<p>您是<strong>"四块电池都接上"</strong>的人。</p>
+<p><strong>但您有没有发现——您身边 80% 的人，都"少了一块"</strong>？</p>
+<ul class="ulist">
+<li><strong>您公司里的"卷王"——少地藏</strong>——卷到吐血也立不住</li>
+<li><strong>您公司里的"老好人"——少文殊</strong>——好到被人踩</li>
+<li><strong>您公司里的"佛系青年"——少普贤</strong>——空到啥都不做</li>
+<li><strong>您公司里的"冷血总监"——少观音</strong>——冷到没人爱</li>
+</ul>
+
+<p><strong>师兄您是过来人——您能一眼看穿他们少的是哪一块</strong>。</p>
+<p><strong>但您更明白——看穿没用——得"接"上</strong>。</p>
+
+<p><strong>怎么接？我给您 3 个落地的法子</strong>——</p>
+
+<h3 class="h3">法子一·每天 5 分钟"三省"</h3>
+<p><strong>早上问自己</strong>："今天我准备用哪一块？文殊（看清事）、观音（体贴人）、地藏（扛住事）、普贤（做完事）？"</p>
+<p><strong>晚上问自己</strong>："今天我哪一块掉链子了？"</p>
+<p><strong>这 5 分钟，师兄您一辈子坚持 30 年了——这正是您"四块都接上"的根</strong>。</p>
+
+<h3 class="h3">法子二·每月见一次"少一块"的人</h3>
+<p><strong>不是帮他们修——是"看见"他们</strong>。</p>
+<p><strong>您身边那个"卷王"——您别骂他——您跟他说一句"歇歇"——这是观音</strong>。</p>
+<p><strong>您身边那个"老好人"——您别笑他——您跟他说一句"你可以拒绝"——这是文殊</strong>。</p>
+<p><strong>您身边那个"佛系青年"——您别劝他——您跟他说一句"去做一件小事"——这是普贤</strong>。</p>
+<p><strong>您身边那个"冷血总监"——您别远离他——您跟他说一句"你辛苦了"——这是地藏</strong>。</p>
+
+<h3 class="h3">法子三·每年做一次"四圣合一"的考核</h3>
+<p><strong>年末问自己</strong>：</p>
+<ul class="ulist">
+<li><strong>文殊</strong>——我今年有没有"看破"一件事？（不是看破红尘，是看破自己）</li>
+<li><strong>观音</strong>——我今年有没有"救"一个人？（不是救国救民，是救一个具体的人）</li>
+<li><strong>地藏</strong>——我今年有没有"扛"过一件难的事？（不是扛大业，是扛一桩具体的难）</li>
+<li><strong>普贤</strong>——我今年有没有"做完"一件落地的事？（不是做大业，是做一件具体的事）</li>
+</ul>
+
+<p><strong>四块都答"是"——这一年，您就活成了"四圣合一身"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">收束·一句话再点透</h2>
+
+<p><strong>菩萨不是四尊"别人"——是你自己</strong>。</p>
+<p><strong>文殊是你心里的"看清"，观音是你心里的"柔软"，地藏是你心里的"扛住"，普贤是你心里的"做完"</strong>。</p>
+
+<p><strong>少一块——你就是"半身不遂的人"</strong>。</p>
+<p><strong>四块都接上——你就是"活生生的人"</strong>。</p>
+
+<p><strong>少一块是"病"——四块都接上是"人"</strong>。</p>
+<p><strong>"病"可以治——但要治一辈子</strong>。</p>
+<p><strong>"人"不用治——只要"接"上</strong>。</p>
+
+<p><strong>——别做少一块的人——做四块都接上的人</strong>。</p>
+
+<p><strong>——悟真，2026-07-14</strong></p>
+
+<hr class="divider">
+
+<h2 class="h2">附录·5 句原文重列（师兄指定的 5 句）</h2>
+
+<ol class="olist">
+<li><strong>只有文殊（智慧）没观音（慈悲）——变成冷血聪明人</strong>。</li>
+<li><strong>只有观音（慈悲）没文殊（智慧）——变成"老好人"被骗</strong>。</li>
+<li><strong>只有地藏（安忍）没普贤（大行）——变成"逃避现实"的人</strong>。</li>
+<li><strong>只有普贤（大行）没地藏（安忍）——变成"瞎忙不立"的人</strong>。</li>
+<li><strong>文殊是左眼，观音是右眼，地藏是脊梁，普贤是手脚——少了任何一个，"人"都不完整，"佛"也不完整</strong>。</li>
+</ol>
+</div>
+  <div class="seal">悟 真</div>
+  <div class="footer">悟真 · 菩萨四圣·俗解——一个都不能少<br>2026-07-14 · 出观点必带实例 · 静思 撰</div>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script>
+  const audio = document.getElementById('audio');
+  audio.src = '';
+  const playBtn = document.getElementById('playBtn');
+  const progress = document.getElementById('progress');
+  const progressWrap = document.getElementById('progressWrap');
+  const curTime = document.getElementById('curTime');
+  const durTime = document.getElementById('durTime');
+  const muteBtn = document.getElementById('muteBtn');
+  const volume = document.getElementById('volume');
+  const speedBtns = document.querySelectorAll('[data-speed]');
+  const downloadLink = document.getElementById('downloadLink');
+  downloadLink.href = audio.src;
+  function fmtTime(s) { if (isNaN(s) || !isFinite(s)) return '--:--'; const m = Math.floor(s/60); const sec = Math.floor(s%60); return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); }
+  audio.addEventListener('loadedmetadata', () => { durTime.textContent = fmtTime(audio.duration); });
+  audio.addEventListener('timeupdate', () => { if (audio.duration) { progress.style.width = (audio.currentTime/audio.duration*100)+'%'; curTime.textContent = fmtTime(audio.currentTime); } });
+  playBtn.addEventListener('click', () => { if (audio.paused) { audio.play(); playBtn.textContent='⏸'; } else { audio.pause(); playBtn.textContent='▶'; } });
+  audio.addEventListener('ended', () => { playBtn.textContent='▶'; });
+  progressWrap.addEventListener('click', e => { const rect = progressWrap.getBoundingClientRect(); const ratio = (e.clientX - rect.left) / rect.width; if (audio.duration) audio.currentTime = ratio * audio.duration; });
+  speedBtns.forEach(btn => { btn.addEventListener('click', () => { speedBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); audio.playbackRate = parseFloat(btn.dataset.speed); }); });
+  muteBtn.addEventListener('click', () => { audio.muted = !audio.muted; muteBtn.textContent = audio.muted ? '🔇' : '🔊'; });
+  volume.addEventListener('input', e => { audio.volume = e.target.value/100; });
+</script>
+</body>
+</html>
