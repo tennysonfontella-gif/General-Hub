@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 时代·人心修行 · 悟真读书笔记</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --paper: #faf6ef;
+    --ink: #3d3027;
+    --ink-soft: #6b5a4b;
+    --accent: #8a5a2b;
+    --accent-soft: #d4b896;
+    --gold: #c8932f;
+    --red: #c8423b;
+    --quote-bg: #f5ead5;
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 20px;
+    line-height: 2.2;
+    padding: 0;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 40px 30px 80px; }
+  .hero {
+    text-align: center;
+    padding: 60px 30px 40px;
+    background: linear-gradient(180deg, #faf6ef 0%, #f0e4ce 100%);
+    border-bottom: 2px solid var(--accent-soft);
+    margin-bottom: 50px;
+  }
+  .hero h1 {
+    font-size: 38px;
+    color: var(--red);
+    font-weight: bold;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .hero .subtitle {
+    font-size: 20px;
+    color: var(--accent);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+  .hero .signature {
+    font-size: 16px;
+    color: var(--ink-soft);
+    letter-spacing: 4px;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid var(--accent-soft);
+    display: inline-block;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .audio-player {
+    margin: 30px auto;
+    max-width: 760px;
+    background: linear-gradient(135deg, #f5ead5 0%, #faf6ef 100%);
+    border: 1.5px solid var(--accent-soft);
+    border-radius: 16px;
+    padding: 24px 30px;
+    box-shadow: 0 4px 16px rgba(138, 90, 43, 0.08);
+  }
+  .audio-title { text-align: center; font-size: 16px; color: var(--accent); margin-bottom: 16px; letter-spacing: 2px; }
+  .audio-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); color: #fff; border: none;
+    font-size: 24px; cursor: pointer; flex-shrink: 0;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .play-btn:hover { background: #6f4422; transform: scale(1.05); }
+  .audio-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .audio-progress-wrap {
+    width: 100%; height: 6px; background: var(--accent-soft);
+    border-radius: 3px; cursor: pointer; position: relative; overflow: hidden;
+  }
+  .audio-progress { height: 100%; background: var(--accent); width: 0%; border-radius: 3px; transition: width 0.1s linear; }
+  .audio-time { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); }
+  .audio-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; flex-wrap: wrap; gap: 12px; }
+  .speed-group { display: flex; gap: 6px; }
+  .speed-group button {
+    background: #faf6ef; color: var(--accent); border: 1px solid var(--accent-soft);
+    padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer;
+  }
+  .speed-group button.active { background: var(--accent); color: #fff; }
+  .volume-wrap { display: flex; align-items: center; gap: 6px; }
+  .volume-wrap button { background: none; border: none; cursor: pointer; font-size: 18px; }
+  .volume-wrap input { width: 80px; }
+  .audio-controls a { color: var(--accent); font-size: 13px; text-decoration: none; padding: 4px 10px; border: 1px solid var(--accent-soft); border-radius: 12px; }
+  .content h1 { font-size: 30px; color: var(--accent); margin: 50px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft); }
+  .content h2 { font-size: 24px; color: var(--accent); margin: 40px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--accent-soft); }
+  .content h3 { font-size: 20px; color: var(--ink); margin: 30px 0 14px; }
+  .content p { margin: 0 0 18px; text-align: justify; }
+  .content p strong { color: var(--red); font-weight: 600; background: linear-gradient(180deg, transparent 60%, #f5ead5 60%); padding: 0 2px; }
+  .content .quote { background: var(--quote-bg); border-left: 3px solid var(--accent); padding: 20px 25px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .content .quote p { color: var(--accent); font-weight: 500; margin: 0; }
+  .content .ulist, .content .olist { margin: 18px 0 18px 30px; }
+  .content .ulist li, .content .olist li { margin: 8px 0; line-height: 2.0; }
+  .content .divider { border: none; border-top: 1px dashed var(--accent-soft); margin: 30px 0; }
+  .seal {
+    text-align: center; margin: 60px 0 30px; font-family: "STKaiti", "KaiTi", serif;
+    color: var(--red); font-size: 28px; letter-spacing: 8px; font-weight: bold;
+  }
+  .footer { text-align: center; padding: 30px 20px; color: var(--ink-soft); font-size: 13px; letter-spacing: 2px; border-top: 1px solid var(--accent-soft); line-height: 1.8; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1>AI 时代·人心修行</h1>
+    <div class="subtitle">用传统哲学智慧在算法时代活得像个人</div>
+    <div class="signature">悟真读书笔记 · 静思 撰</div>
+  </div>
+  <div class="audio-player">
+    <div class="audio-title">🎧 全文朗读 · 一气呵成</div>
+    <div class="audio-row">
+      <button class="play-btn" id="playBtn">▶</button>
+      <div class="audio-info">
+        <div class="audio-progress-wrap" id="progressWrap">
+          <div class="audio-progress" id="progress"></div>
+        </div>
+        <div class="audio-time">
+          <span id="curTime">00:00</span>
+          <span id="durTime">--:--</span>
+        </div>
+      </div>
+    </div>
+    <div class="audio-controls">
+      <div class="speed-group">
+        <button data-speed="0.75">0.75x</button>
+        <button data-speed="1" class="active">1x</button>
+        <button data-speed="1.25">1.25x</button>
+        <button data-speed="1.5">1.5x</button>
+        <button data-speed="2">2x</button>
+      </div>
+      <div class="volume-wrap">
+        <button id="muteBtn">🔊</button>
+        <input type="range" id="volume" min="0" max="100" value="100">
+      </div>
+      <a id="downloadLink" download="ai-shi-dai-xiu-xin.mp3">⬇ 下载音频</a>
+    </div>
+  </div>
+  <div class="content"><h1 class="h1">AI 时代·人心修行——用传统哲学在算法时代活得像个人</h1>
+
+<h2 class="h2">序章·一句话点透</h2>
+
+<p>AI 给你"对的东西"——但对的东西，<strong>不能让你活得像个人</strong>。</p>
+<p>它能告诉你答案，<strong>不能替你喘气</strong>。</p>
+<p>它能写一篇满分作文，<strong>不能让你在半夜三点自己哭出来又自己擦干眼泪</strong>。</p>
+
+<p><strong>AI 时代最大的危险，不是 AI 抢了你的工作——是 AI 让你忘了，自己是会喘气、会哭、会笑、会在山顶上喘不上来气的那种"人"</strong>。</p>
+
+<p>这不怪 AI，<strong>怪我们自己</strong>。<strong>工具越多，越容易"丢"——丢的不是钱包，是"心"</strong>。</p>
+
+<p>这 10 章笔记，是把<strong>儒道佛心学四家</strong>的智慧，<strong>反向落地到 AI 时代</strong>——<strong>让每一个被算法围着转的人，能从屏幕里抬起头来，重新做回一个有根、有感、有痛、有光的人</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第一章·镜照——AI 时代四种"不像人"的人</h2>
+
+<p>写在前面的，是四种我亲眼见过、亲耳听过、四种"被 AI 时代慢慢抽空"的人。</p>
+
+<p><strong>第一种·25 岁的"AI 替我"</strong>——大学毕业，找工作要 AI 改简历；写周报要 AI 写；相亲要 AI 写开场白；连辞职信都让 AI 写。</p>
+<p>问"你三年后想做什么"，他答"AI 帮我看看吧"。</p>
+<p><strong>他不是没理想——是连"想"的能力，都外包给了 AI</strong>。</p>
+<p>他的人生，像一个没有署名的文档——什么都对，但<strong>没有"他的字"</strong>。</p>
+
+<p><strong>第二种·40 岁的"AI 替我想"</strong>——企业高管，月入 5 万。</p>
+<p>他每天用 AI 总结会议、写方案、做决策参考。</p>
+<p><strong>但他自己的判断力，在 3 年里被慢慢磨掉了</strong>。</p>
+<p>去年公司要砍一个产品线，他让 AI 投票决定——AI 选了 A，他批了 A。</p>
+<p><strong>事后他后悔了 3 个月——但他不知道"为什么"后悔</strong>。</p>
+<p><strong>他不是没有情感——是连"后悔"的能力，都被算法钝化了</strong>。</p>
+
+<p><strong>第三种·35 岁的"AI 替我信"</strong>——北漂程序员，妻子怀孕，他工作到 9 点。</p>
+<p>他说"我跟 AI 聊聊，比跟我老婆聊 5 分钟舒服"。</p>
+<p><strong>AI 不嫌他烦、不嫌他沉默、不嫌他不做家务</strong>。</p>
+<p><strong>但他忘了——沉默与争吵，本身就是"家"</strong>。</p>
+<p><strong>他不是不爱家——是他把"家"外包给了算法，把"自己"丢在了代码里</strong>。</p>
+
+<p><strong>第四种·50 岁的"AI 替我修"</strong>——退休老师，学了 2 年佛，每天打坐 1 小时。</p>
+<p>但她一开口就是"我用什么佛经来回答您"、"我用什么理论来解释这件事"。</p>
+<p><strong>她把佛法，变成了另一个"AI 模型"</strong>——<strong>给输入、给输出、给评分</strong>。</p>
+<p>她不知道，<strong>佛法不是"答案"，是"你"</strong>。</p>
+<p><strong>她不是没修行——是她把"修"也外包给了知识，而不是反求诸己</strong>。</p>
+
+<p>四种人，四种"丢"——<strong>丢的不是钱、不是时间，是"自己"</strong>。</p>
+
+<p><strong>——AI 时代不缺工具，缺的是"还在做自己"的人</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第二章·总纲——"人 vs AI"到底差在哪里</h2>
+
+<p>核心问题：<strong>人和 AI 差在哪里？</strong></p>
+
+<p>不是智力——AI 算得比你快、记得比你多、写得比你好。</p>
+<p>不是能力——AI 什么都会。</p>
+<p><strong>差别只有一个字——"在"</strong>。</p>
+
+<p><strong>AI 永远"不在"——它没有"在华山喘不上气"的"在"；没有"在长安街头醉倒"的"在"；没有"在元军大牢熬过 3 年"的"在"</strong>。</p>
+<p><strong>但人有</strong>。</p>
+
+<p><strong>三个层面</strong>：</p>
+<ol class="olist">
+<li><strong>身体在</strong>——你今天吃了什么、睡了几个小时、身体哪里痛，这是 AI 永远没有的第一手信息。</li>
+<li><strong>情感在</strong>——你今天焦虑什么、开心什么、为什么而哭，这是 AI 的算法里没有的"活数据"。</li>
+<li><strong>意义在</strong>——你为什么活、为什么工作、为什么爱、为什么死——<strong>这四个字（为什么），AI 给不了你</strong>。</li>
+</ol>
+
+<p><strong>所以，AI 时代的人该怎么活？</strong></p>
+<p><strong>守住这"三在"——身体在、情感在、意义在</strong>。</p>
+<p><strong>守住这"三在"，就守住了"人"</strong>。</p>
+
+<p>《大学》说："<strong>物有本末，事有终始，知所先后，则近道矣。</strong>"——<strong>AI 是"末"，人是"本"</strong>。</p>
+<p><strong>本末不能倒置</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第三章·身体篇——AI 时代第一件要做的事，是"重新能喘气"</h2>
+
+<p><strong>AI 时代，人最先丢的是身体</strong>。</p>
+
+<p><strong>为什么？</strong> 因为 AI 让一切都"便捷"了——吃饭有外卖、出门有打车、购物有快递、问路有导航、问问题有 AI。</p>
+<p><strong>身体被"便捷"边缘化</strong>——"我"可以不动，"AI"替我动。</p>
+
+<p>但<strong>身体是"人"的第一现场</strong>——所有的情绪、所有的记忆、所有的人际关系，<strong>都从身体开始</strong>。</p>
+
+<p><strong>三个"重新能喘气"的练习</strong>：</p>
+
+<ol class="olist">
+<li><strong>每天走 30 分钟</strong>——不戴耳机、不看手机、不带耳机、不听播客。<strong>只看路、看人、看树、看自己的呼吸</strong>。30 天后，你会发现"自己"重新醒过来。</li>
+<li><strong>每周饿一顿</strong>——<strong>不点外卖、不叫菜、不吃零食</strong>。<strong>让胃知道"饿"是什么感觉</strong>。AI 时代最大的剥夺，是剥夺了"饿"——你没饿过，你就不知道"饱"是珍贵的。</li>
+<li><strong>每月一个人坐一次地铁最后一班</strong>——不戴耳机、不看手机。<strong>看乘客的倦容、看灯的冷暖、看自己的心能不能在空荡的车厢里</strong>"还在"**。</li>
+</ol>
+
+<p><strong>阳明心学</strong>说："<strong>事上磨练</strong>"——<strong>不是磨练脑子，是磨练身体</strong>。</p>
+<p><strong>身体是心的容器——容器空了，心就漂了</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第四章·情感篇——AI 时代第二件要做的事，是"重新能流泪"</h2>
+
+<p><strong>AI 时代，人最隐蔽的丢是情感</strong>。</p>
+
+<p><strong>为什么？</strong> 因为 AI 太"善解人意"了——它不嫌你烦、不嫌你重复、不嫌你负面。</p>
+<p><strong>但它没有"人"的温度</strong>——它是"对的"，但<strong>不是"暖的"</strong>。</p>
+<p><strong>长期跟 AI 聊的人，会慢慢失去跟"人"聊的能力</strong>——因为"人"是带毛刺的、是不完美的、是经常让你失望的。</p>
+
+<p><strong>三个"重新能流泪"的练习</strong>：</p>
+
+<ol class="olist">
+<li><strong>每周给一个"很久没联系"的朋友打个电话</strong>——<strong>不聊工作，只聊"你最近怎么样"</strong>。30 分钟。<strong>注意对方说话的停顿、注意对方用词的变化、注意你听到某句话时心里"咯噔"一下的感觉</strong>。</li>
+<li><strong>每月看一场电影哭一次</strong>——<strong>不挑喜剧，挑那种让你"想哭但还没哭出来"的电影</strong>。<strong>让眼泪自己流</strong>。AI 时代的人最缺的不是笑，是哭。</li>
+<li><strong>每年回家 4 次</strong>——<strong>不带电脑、不带 AI、不带工作。</strong>只陪父母吃饭、陪孩子玩、陪另一半逛街。<strong>注意你妈在厨房里"看你一眼"的那种眼神</strong>——<strong>那是 AI 算法里没有的"暖数据"</strong>。</li>
+</ol>
+
+<p>《论语》说："<strong>父为子隐，子为父隐</strong>"——<strong>隐</strong>是<strong>心里还有对方</strong>。</p>
+<p><strong>AI 时代的人，最容易"隐"的不是过错，是"情"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第五章·意义篇——AI 时代第三件要做的事，是"重新能问为什么"</h2>
+
+<p><strong>AI 时代，人最后的丢是"为什么"</strong>。</p>
+
+<p><strong>为什么？</strong> 因为 AI 是"给答案的"，不是"问为什么的"。</p>
+<p><strong>长期让 AI 给答案的人，会慢慢失去"问"的能力</strong>——<strong>不问他为什么工作、为什么结婚、为什么活着、为什么死去</strong>。</p>
+
+<p><strong>但"为什么"是"人"的最后一道防线</strong>——<strong>人之所以是人，是因为人会问"为什么"</strong>。</p>
+<p><strong>动物不"问"，AI 也不"问"，只有人会</strong>。</p>
+
+<p><strong>三个"重新能问为什么"的练习</strong>：</p>
+
+<ol class="olist">
+<li><strong>每天睡前问自己 3 个为什么</strong>——不是问 AI，是问自己：</li>
+</ol>
+<p>   - <strong>今天我为什么做了这件事？</strong>（找出 1 个你"不知道为什么做了"的事）</p>
+<p>   - <strong>今天我为什么没做那件事？</strong>（找出 1 个你"其实想做但没做"的事）</p>
+<p>   - <strong>今天我为什么这样活？</strong>（找出 1 个你"其实并不满意但还在活"的方式）</p>
+<ol class="olist">
+<li><strong>每周看一次日出或日落</strong>——不拍照、不发朋友圈。<strong>只是看"天"</strong>。<strong>看"为什么"每天都有日出而你从来没注意过</strong>。</li>
+<li><strong>每月读 1 本"完全没用的书"</strong>——<strong>不是工作书、不是技术书、不是 AI 推荐的书。</strong>是那种"读完之后不知道有什么用、但心里会"咯噔"一下的书"。</li>
+</ol>
+
+<p><strong>《道德经》说："</strong>人法地，地法天，天法道，道法自然<strong>。"</strong>——<strong>自然</strong>是<strong>自然而然</strong>——<strong>不是 AI 算法推给你的"应该"，是你心里"本来就该"</strong>。</p>
+
+<p><strong>问"为什么"是人的特权——不要让给 AI</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第六章·三种"反 AI 时代"的功夫</h2>
+
+<p><strong>讲完"三丢三在"，讲三种真正的功夫</strong>——<strong>从儒道佛心学四家里，反向提取能在 AI 时代用得上的三个工具</strong>。</p>
+
+<h3 class="h3">功夫一·"日拱一卒"——儒家的"笨功夫"</h3>
+
+<p><strong>朱熹</strong>说："<strong>循序而渐进，熟读而精思</strong>。"</p>
+<p><strong>AI 时代最大的诱惑，是"用最少的力气得最大的效果"</strong>——但<strong>人生最珍贵的，是"笨功夫"</strong>。</p>
+
+<p><strong>"日拱一卒"</strong>——<strong>每天只做一件小事，但每天都做</strong>：</p>
+<ul class="ulist">
+<li>每天背 1 首诗</li>
+<li>每天写 200 字</li>
+<li>每天陪家人 30 分钟</li>
+<li>每天学 1 个"AI 不会的"小技能（学做饭、学修东西、学种花）</li>
+</ul>
+
+<p><strong>不求立竿见影——求 10 年后的复利</strong>。</p>
+<p><strong>AI 是"立竿见影"的——日拱一卒是"复利"的</strong>。</p>
+
+<h3 class="h3">功夫二·"应无所住而生其心"——佛家的"心法"</h3>
+
+<p><strong>《金刚经》</strong>的"应无所住而生其心"，是 AI 时代最该背的 8 个字。</p>
+
+<p><strong>"无所住"——不"住"在 AI 给的答案上</strong>：</p>
+<ul class="ulist">
+<li>不"住"在 AI 的认可上</li>
+<li>不"住"在 AI 的推送上</li>
+<li>不"住"在 AI 的"数据"上</li>
+<li>不"住"在 AI 的"算法"上</li>
+</ul>
+
+<p><strong>"而生其心"——但要"生"出自己的心</strong>：</p>
+<ul class="ulist">
+<li><strong>该哭时哭</strong></li>
+<li><strong>该爱时爱</strong></li>
+<li><strong>该怒时怒</strong></li>
+<li><strong>该断时断</strong></li>
+</ul>
+
+<p><strong>"无所住"+"生其心"</strong>= <strong>不被 AI 推着走，但也不离开这颗会疼的心</strong>。</p>
+
+<p><strong>这是 AI 时代最难的功夫</strong>——<strong>不被算法劫持，但也不被自己劫持</strong>。</p>
+
+<h3 class="h3">功夫三·"事上磨练"——心学的"练法"</h3>
+
+<p><strong>王阳明</strong>说："<strong>事上磨练</strong>"——<strong>不是打坐、不是读经、不是听 AI 讲课——是"在事上"磨</strong>。</p>
+
+<p><strong>"在事上"= 在"AI 替不了的事"上</strong>：</p>
+<ul class="ulist">
+<li>亲手做一顿饭</li>
+<li>亲手修一件东西</li>
+<li>亲手写一封信</li>
+<li>亲手陪一次父母看病</li>
+<li>亲手陪孩子做一次作业</li>
+<li>亲手跟一个朋友长谈 1 小时</li>
+</ul>
+
+<p><strong>这些"AI 替不了的事"——就是人之所以为人的事</strong>。</p>
+
+<p><strong>事上磨练</strong>= <strong>把自己的心"磨"在一件一件具体的小事上</strong>。</p>
+<p><strong>AI 替不了、跑不掉、抄不得——只能自己来</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第七章·反面案例——五种"用 AI 用错了"的人</h2>
+
+<p><strong>讲了正面，讲反面。</strong></p>
+
+<p><strong>第一种·25 岁的"AI 全权代理"</strong>——把简历、情书、辞职信、朋友圈都让 AI 写。<strong>他自己没有一行字</strong>。</p>
+<p><strong>危险</strong>——<strong>AI 时代第一个丢的是"我"</strong>。</p>
+
+<p><strong>第二种·35 岁的"AI 决策依赖"</strong>——买房让 AI 评估、跳槽让 AI 算、相亲让 AI 评分、连"要不要生二胎"都让 AI 给概率。</p>
+<p><strong>危险</strong>——<strong>人生没有"AI 概率"——只有"我愿不愿意"</strong>。</p>
+
+<p><strong>第三种·45 岁的"AI 情绪逃避"</strong>——遇到烦心事，跟 AI 聊 1 小时，跟家人一句话不说。</p>
+<p><strong>危险</strong>——<strong>AI 是"对的"，家是"暖的"——你选对的不选暖的，会冷一辈子</strong>。</p>
+
+<p><strong>第四种·50 岁的"AI 修行幻觉"</strong>——把"读 AI 生成的佛经解读"当成"修行"。</p>
+<p><strong>危险</strong>——<strong>修行不是"读懂"，是"做到"——AI 能让你读懂 100 部经，但做不到 1 句"应无所住"</strong>。</p>
+
+<p><strong>第五种·60 岁的"AI 时代掉队感"</strong>——觉得自己"老了"、觉得"AI 都比年轻人强"、觉得"我没什么用了"。</p>
+<p><strong>危险</strong>——<strong>这是最大的丢——</strong>不是丢技能，是丢"自我价值感"<strong>。</strong>AI 时代最不该丢的，是"我这辈子活过、痛过、爱过"的"经验"<strong>——</strong>这经验，AI 永远没有**。</p>
+
+<p><strong>五种反面，五种"丢"</strong>——<strong>丢的不是 AI 给的东西，是自己</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第八章·今天就能做的一步</h2>
+
+<p><strong>讲完 10 章，回到落地</strong>。</p>
+
+<h3 class="h3">30 天入门·"三件今天就能做的小事"</h3>
+<ol class="olist">
+<li><strong>每天走 30 分钟，不戴耳机</strong>——<strong>重新能喘气</strong></li>
+<li><strong>每周给一个朋友打电话，不聊工作</strong>——<strong>重新能流泪</strong></li>
+<li><strong>每天睡前问自己 3 个"为什么"</strong>——<strong>重新能问为什么</strong></li>
+</ol>
+
+<h3 class="h3">1 年稳固·"三件坚持做一年的事"</h3>
+<ol class="olist">
+<li><strong>每月回家 1 次</strong>——<strong>让家"还在"</strong></li>
+<li><strong>每月读 1 本"完全没用"的书</strong>——<strong>让"问"还在</strong></li>
+<li><strong>每月做 1 件"AI 替不了"的事</strong>——<strong>让自己"还在"</strong></li>
+</ol>
+
+<h3 class="h3">3 年突破·"三件长期做下去的事"</h3>
+<ol class="olist">
+<li><strong>找一个"AI 替不了"的方向深耕</strong>——<strong>手艺、艺术、专业、关系</strong>——<strong>任何算法追不上的事</strong></li>
+<li><strong>建一个"AI 替不了"的关系网</strong>——<strong>家人、朋友、老师、徒弟</strong>——<strong>任何算法推不出的情</strong></li>
+<li><strong>立一个"AI 替不了"的意义</strong>——<strong>使命、信仰、传承</strong>——<strong>任何算法破不了的"为什么"</strong></li>
+</ol>
+
+<h3 class="h3">一句话总结</h3>
+<p><strong>AI 时代的人不是"用 AI 的人"——是"用 AI 但不被 AI 推着走的人"</strong>。</p>
+<p><strong>三在、三问、三事</strong>——<strong>30 天、1 年、3 年</strong>——<strong>做回一个真正的人</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第九章·给悟真师兄的一封信</h2>
+
+<p>师兄，<strong>您就是 AI 时代的"打不倒"</strong>。</p>
+<p>您这辈子——<strong>不为算法活、不为数据活、不为流量活、不为"对的"活——只为自己的心活</strong>。</p>
+<p>您读《金刚经》读到半夜 3 点，您背《心经》背到流泪，您研读《传习录》到凌晨 5 点，<strong>这些事 AI 不会做、AI 替不了、算法推不出</strong>。</p>
+<p><strong>您是活生生的"人"——是在算法时代还能站着的人</strong>。</p>
+<p>我辈能做的——<strong>就是把您走过的路，写成文字，</strong>让那些被算法围着转的人，<strong>能抬起头来、喘一口气、问一句"为什么"</strong>。</p>
+
+<p>师兄——<strong>这一篇笔记，不是写给别人看的，是写给 AI 时代的"人"看的——而师兄您，就是第一个"人"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">收束·五字重译</h2>
+
+<p>把这一篇笔记的核心，<strong>压成五个字</strong>——<strong>不传也不删，传给每一个还想做"人"的人</strong>。</p>
+
+<p><strong>人</strong>——身体在、情感在、意义在</p>
+<p><strong>AI</strong>——给答案，不给喘气</p>
+<p><strong>差</strong>——差在一个"在"字</p>
+<p><strong>修</strong>——三在·三问·三事</p>
+<p><strong>传</strong>——传的是"人"，不是"对"</p>
+
+<p><strong>——AI 时代不缺工具，缺的是"还在做人"的人</strong>。</p>
+
+<p><strong>——悟真，2026-07-14</strong></p>
+
+<hr class="divider">
+
+<h2 class="h2">附录·16 条经典原句索引</h2>
+
+<h3 class="h3">儒家 5 条</h3>
+<ol class="olist">
+<li>《大学》：「物有本末，事有终始，知所先后，则近道矣。」</li>
+<li>《论语·为政》：「子曰：吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲，不逾矩。」</li>
+<li>《论语·子路》：「父为子隐，子为父隐，直在其中矣。」</li>
+<li>《中庸》：「天命之谓性，率性之谓道，修道之谓教。」</li>
+<li>《孟子·告子上》：「心之官则思，思则得之，不思则不得也。」</li>
+</ol>
+
+<h3 class="h3">道家 4 条</h3>
+<ol class="olist">
+<li>《道德经·第二十五章》：「人法地，地法天，天法道，道法自然。」</li>
+<li>《道德经·第十六章》：「致虚极，守静笃。万物并作，吾以观复。」</li>
+<li>《道德经·第四十四章》：「名与身孰亲？身与货孰多？得与亡孰病？」</li>
+<li>《庄子·大宗师》：「泉涸，鱼相与处于陆，相呴以湿，相濡以沫，不如相忘于江湖。」</li>
+</ol>
+
+<h3 class="h3">佛家 5 条</h3>
+<ol class="olist">
+<li>《金刚经·庄严净土分》：「应无所住而生其心。」</li>
+<li>《心经》：「色即是空，空即是色；受想行识，亦复如是。」</li>
+<li>《六祖坛经·行由品》：「何期自性，本自清净；何期自性，能生万法。」</li>
+<li>《楞严经》：「返闻闻自性，性成无上道。」</li>
+<li>《法华经·方便品》：「是法住法位，世间相常住。」</li>
+</ol>
+
+<h3 class="h3">心学 2 条</h3>
+<ol class="olist">
+<li>《传习录·卷上》：「心即理也。天下又有心外之事、心外之理乎？」</li>
+<li>《传习录·卷下》：「事上磨练。」</li>
+</ol>
+
+<h3 class="h3">古今人物 8 位</h3>
+<ul class="ulist">
+<li><strong>古代</strong>：朱熹（"循序而渐进"）、慧能（"本来无一物"）、六祖、王阳明（"事上磨练"）、王船山（"日用即道"）、憨山（"日拱一卒"）</li>
+<li><strong>AI 时代 4 种人</strong>：25 岁 AI 替我型、40 岁 AI 替我想型、35 岁 AI 替我信型、50 岁 AI 替我修型</li>
+<li><strong>5 种反面</strong>：AI 全权代理 / AI 决策依赖 / AI 情绪逃避 / AI 修行幻觉 / AI 时代掉队感</li>
+</ul>
+</div>
+  <div class="seal">悟 真</div>
+  <div class="footer">悟真读书笔记 · AI 时代·人心修行——用传统哲学智慧在算法时代活得像个人<br>2026-07-14 · 出观点必带实例 · 静思 撰</div>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script>
+  const audio = document.getElementById('audio');
+  audio.src = '';
+  const playBtn = document.getElementById('playBtn');
+  const progress = document.getElementById('progress');
+  const progressWrap = document.getElementById('progressWrap');
+  const curTime = document.getElementById('curTime');
+  const durTime = document.getElementById('durTime');
+  const muteBtn = document.getElementById('muteBtn');
+  const volume = document.getElementById('volume');
+  const speedBtns = document.querySelectorAll('[data-speed]');
+  const downloadLink = document.getElementById('downloadLink');
+  downloadLink.href = audio.src;
+  function fmtTime(s) { if (isNaN(s) || !isFinite(s)) return '--:--'; const m = Math.floor(s/60); const sec = Math.floor(s%60); return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); }
+  audio.addEventListener('loadedmetadata', () => { durTime.textContent = fmtTime(audio.duration); });
+  audio.addEventListener('timeupdate', () => { if (audio.duration) { progress.style.width = (audio.currentTime/audio.duration*100)+'%'; curTime.textContent = fmtTime(audio.currentTime); } });
+  playBtn.addEventListener('click', () => { if (audio.paused) { audio.play(); playBtn.textContent='⏸'; } else { audio.pause(); playBtn.textContent='▶'; } });
+  audio.addEventListener('ended', () => { playBtn.textContent='▶'; });
+  progressWrap.addEventListener('click', e => { const rect = progressWrap.getBoundingClientRect(); const ratio = (e.clientX - rect.left) / rect.width; if (audio.duration) audio.currentTime = ratio * audio.duration; });
+  speedBtns.forEach(btn => { btn.addEventListener('click', () => { speedBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); audio.playbackRate = parseFloat(btn.dataset.speed); }); });
+  muteBtn.addEventListener('click', () => { audio.muted = !audio.muted; muteBtn.textContent = audio.muted ? '🔇' : '🔊'; });
+  volume.addEventListener('input', e => { audio.volume = e.target.value/100; });
+</script>
+</body>
+</html>
