@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>菩萨四圣·合一人格 · 悟真读书笔记</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --paper: #faf6ef; --ink: #3d3027; --ink-soft: #6b5a4b;
+    --accent: #8a5a2b; --accent-soft: #d4b896; --gold: #c8932f;
+    --red: #c8423b; --quote-bg: #f5ead5;
+  }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-size: 20px; line-height: 2.2;
+  }
+  .container { max-width: 880px; margin: 0 auto; padding: 40px 30px 80px; }
+  .hero {
+    text-align: center; padding: 60px 30px 40px;
+    background: linear-gradient(180deg, #faf6ef 0%, #f0e4ce 100%);
+    border-bottom: 2px solid var(--accent-soft); margin-bottom: 50px;
+  }
+  .hero h1 { font-size: 38px; color: var(--red); font-weight: bold; line-height: 1.5; margin-bottom: 10px; letter-spacing: 2px; }
+  .hero .subtitle { font-size: 20px; color: var(--accent); line-height: 1.6; margin-bottom: 24px; }
+  .hero .signature { font-size: 16px; color: var(--ink-soft); letter-spacing: 4px; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--accent-soft); display: inline-block; padding-left: 30px; padding-right: 30px; }
+  .audio-player {
+    margin: 30px auto; max-width: 760px;
+    background: linear-gradient(135deg, #f5ead5 0%, #faf6ef 100%);
+    border: 1.5px solid var(--accent-soft); border-radius: 16px; padding: 24px 30px;
+    box-shadow: 0 4px 16px rgba(138, 90, 43, 0.08);
+  }
+  .audio-title { text-align: center; font-size: 16px; color: var(--accent); margin-bottom: 16px; letter-spacing: 2px; }
+  .audio-row { display: flex; align-items: center; gap: 16px; margin-bottom: 14px; }
+  .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--accent); color: #fff; border: none;
+    font-size: 24px; cursor: pointer; flex-shrink: 0;
+    transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+  }
+  .play-btn:hover { background: #6f4422; transform: scale(1.05); }
+  .audio-info { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+  .audio-progress-wrap { width: 100%; height: 6px; background: var(--accent-soft); border-radius: 3px; cursor: pointer; position: relative; overflow: hidden; }
+  .audio-progress { height: 100%; background: var(--accent); width: 0%; border-radius: 3px; transition: width 0.1s linear; }
+  .audio-time { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-soft); }
+  .audio-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 12px; flex-wrap: wrap; gap: 12px; }
+  .speed-group { display: flex; gap: 6px; }
+  .speed-group button { background: #faf6ef; color: var(--accent); border: 1px solid var(--accent-soft); padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer; }
+  .speed-group button.active { background: var(--accent); color: #fff; }
+  .volume-wrap { display: flex; align-items: center; gap: 6px; }
+  .volume-wrap button { background: none; border: none; cursor: pointer; font-size: 18px; }
+  .volume-wrap input { width: 80px; }
+  .audio-controls a { color: var(--accent); font-size: 13px; text-decoration: none; padding: 4px 10px; border: 1px solid var(--accent-soft); border-radius: 12px; }
+  .content h1 { font-size: 30px; color: var(--accent); margin: 50px 0 20px; padding-bottom: 10px; border-bottom: 2px solid var(--accent-soft); }
+  .content h2 { font-size: 24px; color: var(--accent); margin: 40px 0 18px; padding-bottom: 8px; border-bottom: 1px solid var(--accent-soft); }
+  .content h3 { font-size: 20px; color: var(--ink); margin: 30px 0 14px; }
+  .content p { margin: 0 0 18px; text-align: justify; }
+  .content p strong { color: var(--red); font-weight: 600; background: linear-gradient(180deg, transparent 60%, #f5ead5 60%); padding: 0 2px; }
+  .content .quote { background: var(--quote-bg); border-left: 3px solid var(--accent); padding: 20px 25px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .content .quote p { color: var(--accent); font-weight: 500; margin: 0; }
+  .content .ulist, .content .olist { margin: 18px 0 18px 30px; }
+  .content .ulist li, .content .olist li { margin: 8px 0; line-height: 2.0; }
+  .content .divider { border: none; border-top: 1px dashed var(--accent-soft); margin: 30px 0; }
+  .seal { text-align: center; margin: 60px 0 30px; font-family: "STKaiti", "KaiTi", serif; color: var(--red); font-size: 28px; letter-spacing: 8px; font-weight: bold; }
+  .footer { text-align: center; padding: 30px 20px; color: var(--ink-soft); font-size: 13px; letter-spacing: 2px; border-top: 1px solid var(--accent-soft); line-height: 1.8; }
+  table { width: 100%; border-collapse: collapse; margin: 18px 0; }
+  table th { background: #f0e5d0; color: #6b3a1a; padding: 10px 12px; text-align: left; font-weight: 600; border: 1px solid #d4c4a8; }
+  table td { padding: 10px 12px; border: 1px solid #d4c4a8; color: #3d3027; }
+  table tr:nth-child(even) { background: #faf6ef; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="hero">
+    <h1>菩萨四圣·合一人格</h1>
+    <div class="subtitle">分开学清楚·合成一个完整的人——五伦实修落地</div>
+    <div class="signature">悟真读书笔记 · 静思 撰</div>
+  </div>
+  <div class="audio-player">
+    <div class="audio-title">🎧 全文朗读 · 一气呵成</div>
+    <div class="audio-row">
+      <button class="play-btn" id="playBtn">▶</button>
+      <div class="audio-info">
+        <div class="audio-progress-wrap" id="progressWrap">
+          <div class="audio-progress" id="progress"></div>
+        </div>
+        <div class="audio-time">
+          <span id="curTime">00:00</span>
+          <span id="durTime">--:--</span>
+        </div>
+      </div>
+    </div>
+    <div class="audio-controls">
+      <div class="speed-group">
+        <button data-speed="0.75">0.75x</button>
+        <button data-speed="1" class="active">1x</button>
+        <button data-speed="1.25">1.25x</button>
+        <button data-speed="1.5">1.5x</button>
+        <button data-speed="2">2x</button>
+      </div>
+      <div class="volume-wrap">
+        <button id="muteBtn">🔊</button>
+        <input type="range" id="volume" min="0" max="100" value="100">
+      </div>
+      <a id="downloadLink" download="pusa-si-sheng-he-yi.mp3">⬇ 下载音频</a>
+    </div>
+  </div>
+  <div class="content"><h1 class="h1">菩萨四圣·合一人格——分开学清楚，合成一个完整的人</h1>
+
+<h2 class="h2">序章·一句话点透</h2>
+
+<p><strong>菩萨四圣不是四尊"佛"——是你人格的四个面</strong>。</p>
+<p>文殊是<strong>慧眼</strong>——看清；观音是<strong>柔心</strong>——体贴；地藏是<strong>铁脊</strong>——扛住；普贤是<strong>勤手</strong>——做完。</p>
+<p><strong>分开学，是把每一面修清楚</strong>；<strong>合成用，是把四面合在自己身上</strong>。</p>
+<p><strong>学而不合 = 修行的标本</strong>；<strong>合而不学 = 糊弄的假面</strong>。</p>
+
+<p>但光说"分开学 + 合成用"是空话。</p>
+<p><strong>真正难的，是学完每面之后，怎么在工作、生活、家庭、孩子、父母、自己这五伦里，一一落地</strong>。</p>
+<p><strong>这一篇笔记，就是把"分开学"+"合成用"+"五伦落地"三层打通——把菩萨四圣，从"佛龛上的像"，变成"你身体里能走、能看、能哭、能扛、能做的四块肌肉"</strong>。</p>
+
+<p><strong>读完之后，你不再是"信佛的人"——你是"活出四圣的人"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第一章·总纲——人格的四个面，缺一不可</h2>
+
+<h3 class="h3">1.1 一个人的人格=四个面</h3>
+
+<p>| 面 | 菩萨 | 表法 | 心法 | 反面 | 落地 |</p>
+<p>|---|---|---|---|---|---|</p>
+<p>| <strong>慧眼</strong> | 文殊 | 看清真相 | 观空 | 冷漠 | 决策不糊涂 |</p>
+<p>| <strong>柔心</strong> | 观音 | 体贴苦难 | 闻性 | 软烂 | 关系不冷漠 |</p>
+<p>| <strong>铁脊</strong> | 地藏 | 扛住大难 | 安忍 | 逃避 | 大事不崩盘 |</p>
+<p>| <strong>勤手</strong> | 普贤 | 做完实事 | 大行 | 瞎忙 | 小事不空转 |</p>
+
+<p><strong>一句话点透</strong>：<strong>慧眼看真相，柔心待众生，铁脊担大事，勤手做小事</strong>——四块肌肉，都在自己身上。</p>
+
+<h3 class="h3">1.2 历史上"四圣合一"的人</h3>
+
+<p><strong>慧能</strong>（638-713）——文殊的"看破"+"观音的"慈悲"+"地藏的"安忍"+"普贤的"立宗"——<strong>一个人写出"本来无一物"，一个人开创南宗顿教</strong>。</p>
+<p><strong>王阳明</strong>（1472-1529）——文殊的"龙场悟道"+"观音的"致良知"+"地藏的"事上磨"+"普贤的"立功业"——<strong>一个人平宁王，一个人立心学，一个人带兵，一个人讲学</strong>。</p>
+<p><strong>玄奘</strong>（602-664）——文殊的"求准确解"+"观音的"不弃众生"+"地藏的"19 年独行"+"普贤的"译经 19 年"——<strong>一个人走 5 万里，一个人译 1335 卷，一个人传千年</strong>。</p>
+<p><strong>虚云</strong>（1840-1959）——文殊的"破执"+"观音的"度众生"+"地藏的"挨打不怨"+"普贤的"重兴祖庭"——<strong>一个人活 119 年，一个人建 16 道场，一个人度万人</strong>。</p>
+
+<p><strong>这四个人</strong>——<strong>都"四圣合一"</strong>——<strong>所以他们能成"圣"</strong>。</p>
+<p><strong>而我们身边的人——少一块两块——所以我们成不了"圣"</strong>。</p>
+<p><strong>但我们能成"完整的人"</strong>——<strong>这是我们这辈子的功课</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第二章·分开学·第一面——文殊·慧眼</h2>
+
+<h3 class="h3">2.1 文殊的"慧眼"是什么</h3>
+
+<p><strong>不是"聪明"——是"看清"</strong>。</p>
+<p>聪明是"知道很多"；慧眼是"看穿本质"。</p>
+<p>聪明人有"知识"；慧眼人有"洞察"。</p>
+<p>聪明人看事看到"表面"；慧眼人看事看到"根"。</p>
+
+<p><strong>经典互证</strong>：</p>
+<ul class="ulist">
+<li>《大宝积经·文殊师利说般若会》："<strong>心不住法，是即菩提</strong>"——慧眼的根本是"不住"——不在任何东西上停。</li>
+<li>《楞严经》："<strong>返闻闻自性</strong>"——慧眼的功夫是"内观"——不向外看，向内听。</li>
+<li>《维摩诘经》："<strong>观身实相，观佛亦然</strong>"——慧眼的极致是"不二"——佛与众生不二。</li>
+</ul>
+
+<h3 class="h3">2.2 怎么修"慧眼"——三个功夫</h3>
+
+<p><strong>功夫一·每日反问"为什么"</strong>——</p>
+<ul class="ulist">
+<li>今天我做的这件事，<strong>为什么</strong>做？（不是问别人，问自己）</li>
+<li>这个决定，<strong>为什么</strong>这样定？</li>
+<li>这个情绪，<strong>为什么</strong>起来？</li>
+<li><strong>每天 3 个"为什么"——30 天后，慧眼会"开"</strong>。</li>
+</ul>
+
+<p><strong>功夫二·每周看破一件事</strong>——</p>
+<ul class="ulist">
+<li>每周找一件"我之前特别执着的事"——把它看破——看破不等于放下，是看清。</li>
+<li>看清了，执着自然减；执着减了，慧眼自然增。</li>
+</ul>
+
+<p><strong>功夫三·每月读一本"反常识"的书</strong>——</p>
+<ul class="ulist">
+<li>选一本"颠覆你认知"的书（不是"工具书"）。</li>
+<li>读完后写 100 字——"我之前以为 X，其实 Y"——这是慧眼的"磨刀石"。</li>
+</ul>
+
+<h3 class="h3">2.3 反面——三种"假慧眼"</h3>
+
+<ol class="olist">
+<li><strong>25 岁理工型</strong>——只信数据和公式，把"空"当成"无"——<strong>慧眼变成冷眼</strong>。</li>
+<li><strong>40 岁佛学票友</strong>——能讲"空"，但面对老板、老婆、孩子时，<strong>没有"空"</strong>——慧眼变成"嘴上的空"。</li>
+<li><strong>50 岁老修行</strong>——把"慧眼"用成"看破红尘"——<strong>其实连家都看破了</strong>——慧眼变成"自欺"。</li>
+</ol>
+
+<hr class="divider">
+
+<h2 class="h2">第三章·分开学·第二面——观音·柔心</h2>
+
+<h3 class="h3">3.1 观音的"柔心"是什么</h3>
+
+<p><strong>不是"软弱"——是"柔软"</strong>。</p>
+<p>软弱是"扛不住"；柔软是"能屈能伸"。</p>
+<p>软弱是"被人推着走"；柔软是"主动弯腰"。</p>
+
+<p><strong>经典互证</strong>：</p>
+<ul class="ulist">
+<li>《妙法莲华经·观世音菩萨普门品》："<strong>一心称名，观世音菩萨即时观其音声</strong>"——柔心的本质是"听"——听见别人的痛。</li>
+<li>《楞严经·观世音耳根圆通章》："<strong>返闻闻自性</strong>"——柔心的功夫是"内收"——把向外看的眼收回来，向内听。</li>
+<li>《大悲心陀罗尼经》："<strong>千光王静住如来处听闻大悲心陀罗尼</strong>"——柔心的极致是"听闻即得"——心性本具。</li>
+</ul>
+
+<h3 class="h3">3.2 怎么修"柔心"——三个功夫</h3>
+
+<p><strong>功夫一·每日听一句"痛话"</strong>——</p>
+<ul class="ulist">
+<li>每天找一个人，对他说一句"你最近怎么样"——<strong>注意他的停顿、他的用词、他的眼神</strong>。</li>
+<li>听完后，写 100 字——"他今天说这话时，心里想的是什么"——这是柔心的"心电图"。</li>
+</ul>
+
+<p><strong>功夫二·每周帮一个"小事"</strong>——</p>
+<ul class="ulist">
+<li>帮一个具体的忙（搬东西、带饭、开车送人、陪看医生）。</li>
+<li><strong>不求回报</strong>——不是为了"立好人设"——是为了"让心软一下"。</li>
+</ul>
+
+<p><strong>功夫三·每月看一次"众生相"</strong>——</p>
+<ul class="ulist">
+<li>去医院门口看 30 分钟——<strong>看那些排队的人、看那些陪护的人、看那些哭的人</strong>。</li>
+<li>看完后问自己——"我多久没这样哭过？"——这是柔心的"镜子"。</li>
+</ul>
+
+<h3 class="h3">3.3 反面——三种"假柔心"</h3>
+
+<ol class="olist">
+<li><strong>30 岁好人人设型</strong>——朋友圈"日行一善"，但私下抱怨、记仇——<strong>柔心变成"假面"</strong>。</li>
+<li><strong>45 岁控制型妈妈</strong>——"我这么做都是为你好"——<strong>以爱之名，行执之实</strong>——柔心变成"控制"。</li>
+<li><strong>55 岁慈善家型</strong>——捐款立牌坊，做善事登报——<strong>以慈悲为工具，滋养我执</strong>——柔心变成"生意"。</li>
+</ol>
+
+<hr class="divider">
+
+<h2 class="h2">第四章·分开学·第三面——地藏·铁脊</h2>
+
+<h3 class="h3">4.1 地藏的"铁脊"是什么</h3>
+
+<p><strong>不是"忍"——是"扛"</strong>。</p>
+<p>忍是"忍气吞声"；扛是"扛住还站着"。</p>
+<p>忍是"咬着牙"；扛是"如如不动"。</p>
+
+<p><strong>经典互证</strong>：</p>
+<ul class="ulist">
+<li>《地藏菩萨本愿经·忉利天宫神通品》："<strong>安忍不动如大地，静虑深密如秘藏</strong>"——铁脊的本质是"安忍"——像大地一样，什么都打不碎。</li>
+<li>《地藏经·分身集会品》："<strong>菩萨分身百千万亿</strong>"——铁脊的回报是"自己就是地藏"——每一个"扛住"的众生，都是地藏的化身。</li>
+<li>《地藏十轮经》："<strong>安忍不动犹如大地，静虑深密犹如秘藏</strong>"——铁脊的极致是"静到极致就是动"。</li>
+</ul>
+
+<h3 class="h3">4.2 怎么修"铁脊"——三个功夫</h3>
+
+<p><strong>功夫一·每日扛一件"不想做的事"</strong>——</p>
+<ul class="ulist">
+<li>找一件你今天最不想做（洗碗、擦地、回不想回的消息、跟不想说话的人说话）。</li>
+<li><strong>做完后，写 100 字——"我扛住了什么"</strong>——这是铁脊的"日课"。</li>
+</ul>
+
+<p><strong>功夫二·每周做一件"难而正确的事"</strong>——</p>
+<ul class="ulist">
+<li>选一件"我本来想退"的事——不退——做完。</li>
+<li>做完问自己——"这件事我为什么能扛下来？"——这是铁脊的"自省"。</li>
+</ul>
+
+<p><strong>功夫三·每月经历一次"小绝境"</strong>——</p>
+<ul class="ulist">
+<li>不是大难——是"小绝境"——比如：一天不吃饭、一次淋雨走 5 公里、一次一个人在外地过夜。</li>
+<li><strong>绝境是"铁脊"的淬火——淬过火的铁，才是钢</strong>。</li>
+</ul>
+
+<h3 class="h3">4.3 反面——三种"假铁脊"</h3>
+
+<ol class="olist">
+<li><strong>35 岁佛系青年型</strong>——嘴上说"放下"，但房贷、孩子、父母、老板，<strong>一压就崩</strong>——铁脊变成"口头禅"。</li>
+<li><strong>40 岁中年油腻型</strong>——把"忍"用成"忍气吞声 + 回家发泄"——<strong>外忍内怨</strong>——铁脊变成"自欺"。</li>
+<li><strong>50 岁逃避型</strong>——学佛后<strong>辞职、离婚、断亲</strong>——<strong>把"出离"用成"逃避"</strong>——铁脊变成"懒"。</li>
+</ol>
+
+<hr class="divider">
+
+<h2 class="h2">第五章·分开学·第四面——普贤·勤手</h2>
+
+<h3 class="h3">5.1 普贤的"勤手"是什么</h3>
+
+<p><strong>不是"忙"——是"做完"</strong>。</p>
+<p>忙是"做了很多事"；做完是"事有结果"。</p>
+<p>忙是"看起来很努力"；做完是"真把事落地"。</p>
+
+<p><strong>经典互证</strong>：</p>
+<ul class="ulist">
+<li>《华严经·普贤行愿品》："<strong>应修十种广大行愿</strong>"——勤手的本质是"十种具体动作"——礼敬、称赞、供养、忏悔、随喜、请转、请住、常随、恒顺、回向——<strong>全是具体动作</strong>。</li>
+<li>《华严经·入不思议解脱境界普贤行愿品》："<strong>愿我临欲命终时，尽除一切诸障碍，面见彼佛阿弥陀</strong>"——勤手的极致是"临终也能做"——<strong>行到最后，是"死"的功夫</strong>。</li>
+<li>《法华经·普贤菩萨劝发品》："<strong>书写、受持、读诵、为人解说</strong>"——勤手的"行"<strong>连"书写"都算</strong>——大行不在大，在真。</li>
+</ul>
+
+<h3 class="h3">5.2 怎么修"勤手"——三个功夫</h3>
+
+<p><strong>功夫一·每日做一件"落地"的小事</strong>——</p>
+<ul class="ulist">
+<li>扫地、倒茶、念佛、吃饭、忍一句、说一句、走一步——<strong>每一个当下的真实动作，都是普贤行</strong>。</li>
+<li>不挑"大事"——<strong>挑"真"</strong>。</li>
+</ul>
+
+<p><strong>功夫二·每周做一件"完整"的事</strong>——</p>
+<ul class="ulist">
+<li>选一件"我经常半途而废"的事——<strong>这次做完</strong>。</li>
+<li>做完问自己——"我为什么这次能做完？"——这是勤手的"复盘"。</li>
+</ul>
+
+<p><strong>功夫三·每月做一件"长半衰期"的事</strong>——</p>
+<ul class="ulist">
+<li>不是"看完一本书"——是"看完+写读书笔记"——<strong>不是"读完 50 本佛经"——是"读完+其中 5 本能用出来"</strong>。</li>
+<li><strong>真正的普贤，是"做出来"，不是"看起来"</strong>。</li>
+</ul>
+
+<h3 class="h3">5.3 反面——三种"假勤手"</h3>
+
+<ol class="olist">
+<li><strong>30 岁打卡型</strong>——朋友圈"日行一善"打卡 30 天，第 31 天停了——<strong>勤手变成"自我感动"</strong>。</li>
+<li><strong>40 岁大计划型</strong>——年初立 flag：今年要读完 50 本佛经、跑 1000 公里、每天打坐 1 小时——<strong>第 2 周就放弃</strong>——勤手变成"大妄想"。</li>
+<li><strong>55 岁执着形式型</strong>——非要"五戒齐全"才能开始，<strong>等条件齐了已经 60 岁了</strong>——勤手变成"大执念"。</li>
+</ol>
+
+<hr class="divider">
+
+<h2 class="h2">第六章·合成用——四块电池合在身上</h2>
+
+<p><strong>分开学清楚了——但光是"分开学"没用——你身边的人不会因为你"分清了四块"，就尊重你、爱戴你、跟随你</strong>。</p>
+<p><strong>合成用——把四块电池接在身上——才能在具体的"事"上活出来</strong>。</p>
+
+<h3 class="h3">6.1 一个工作场景·四圣合一</h3>
+
+<p><strong>场景·你手下有个 35 岁的员工，连续 3 个月业绩不达标，今天跟你哭诉"我压力很大"</strong>。</p>
+
+<p><strong>只用文殊</strong>——你跟他说"再坚持 3 个月，不行就优化"——<strong>他觉得你冷血</strong>——<strong>然后真的优化掉了</strong>——<strong>你少了一员干将</strong>。</p>
+<p><strong>只用观音</strong>——你跟他说"我理解你，我也累过"——<strong>他哭完了，业绩还是上不去</strong>——<strong>3 个月后他被裁</strong>。</p>
+<p><strong>只用地藏</strong>——你跟他说"熬着，公司也不容易"——<strong>他熬到抑郁，跳槽走了</strong>——<strong>公司少了一个人</strong>。</p>
+<p><strong>只用普贤</strong>——你跟他说"来，我陪你做，下周一我跟你一起见客户"——<strong>你累死累活，他下次还是不行</strong>。</p>
+
+<p><strong>四圣合一</strong>——你做四件事：</p>
+<ol class="olist">
+<li><strong>文殊·看清</strong>：3 个月不达标的根在哪？是行业、是能力、还是心态？</li>
+<li><strong>观音·体贴</strong>：他今天哭诉，是想被骂、想被夸、还是想被帮？</li>
+<li><strong>地藏·扛住</strong>：如果他真要走，公司能不能扛？如果他留下，团队能不能扛？</li>
+<li><strong>普贤·做完</strong>：把"看清的根"+"体贴的心"+"扛住的底"——合起来做——<strong>给他 1 个具体方案 + 1 个具体时间 + 1 个具体资源</strong>。</li>
+</ol>
+
+<p><strong>四圣合一 = 看清 + 体贴 + 扛住 + 做完</strong>。</p>
+<p><strong>缺一块——你都是"半截子领导"</strong>。</p>
+
+<h3 class="h3">6.2 一个家庭场景·四圣合一</h3>
+
+<p><strong>场景·你 13 岁的女儿今天回家哭着说"我不想上学了"</strong>。</p>
+
+<p><strong>只用文殊</strong>——你跟她说"读书是为了你自己"——<strong>她觉得你不懂她</strong>。</p>
+<p><strong>只用观音</strong>——你跟她说"妈妈理解你"——<strong>她哭完了，问题还在</strong>。</p>
+<p><strong>只用地藏</strong>——你跟她说"熬着，熬过去就好了"——<strong>她熬到 18 岁，熬成抑郁</strong>。</p>
+<p><strong>只用普贤</strong>——你跟她说"来，跟我一起做计划"——<strong>你累死，她还是不想上</strong>。</p>
+
+<p><strong>四圣合一</strong>——你做四件事：</p>
+<ol class="olist">
+<li><strong>文殊·看清</strong>：是真的"厌学"，还是"被同学欺负"？还是"老师误解"？</li>
+<li><strong>观音·体贴</strong>：她今天哭，是想被骂、想被夸、还是想被抱？</li>
+<li><strong>地藏·扛住</strong>：如果她真休学 1 年，家里能不能扛？她的未来能不能扛？</li>
+<li><strong>普贤·做完</strong>：把"看清的根"+"体贴的心"+"扛住的底"——合起来做——<strong>今晚抱她 10 分钟 + 明天跟老师约 + 下周带她去看心理老师</strong>。</li>
+</ol>
+
+<p><strong>四圣合一 = 看清 + 体贴 + 扛住 + 做完</strong>。</p>
+<p><strong>缺一块——你都是"半截子父母"</strong>。</p>
+
+<h3 class="h3">6.3 一个自己场景·四圣合一</h3>
+
+<p><strong>场景·你 45 岁，体检报告 7 项红，要不要听医生的话"立即手术"</strong>？</p>
+
+<p><strong>只用文殊</strong>——你查了 10 篇论文，问了 5 个专家——<strong>还是没结论</strong>——<strong>最后拖成晚期</strong>。</p>
+<p><strong>只用观音</strong>——你听医生的话，立即手术——<strong>但你没问"为什么"</strong>——<strong>下次再病，还是被动</strong>。</p>
+<p><strong>只用地藏</strong>——你熬着，不手术——<strong>熬到 47 岁，熬成大病</strong>。</p>
+<p><strong>只用普贤</strong>——你立即手术——<strong>没看清"是不是过度治疗"</strong>——<strong>白挨一刀</strong>。</p>
+
+<p><strong>四圣合一</strong>——你做四件事：</p>
+<ol class="olist">
+<li><strong>文殊·看清</strong>：这 7 项红的"根"在哪？是真的病，还是亚健康？</li>
+<li><strong>观音·体贴</strong>：我此刻最怕什么？是"病"、是"手术"、还是"拖下去"？</li>
+<li><strong>地藏·扛住</strong>：如果我做手术，家里能不能扛？钱够不够？我还能不能继续工作？</li>
+<li><strong>普贤·做完</strong>：把"看清的根"+"体贴的心"+"扛住的底"——合起来做——<strong>找 3 个三甲医院的专家问 + 找 1 个中医调理 + 自己开始每天走 30 分钟</strong>。</li>
+</ol>
+
+<p><strong>四圣合一 = 看清 + 体贴 + 扛住 + 做完</strong>。</p>
+<p><strong>缺一块——你都是"半截子自己"</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第七章·五伦实修——菩萨四圣在"我"身上的落地</h2>
+
+<p><strong>光说"四圣合一"是空话——真正的"四圣合一"，是落在我们这辈子最具体的 5 个关系里</strong>。</p>
+
+<h3 class="h3">7.1 工作上的四圣</h3>
+
+<p>| 菩萨 | 怎么用 |</p>
+<p>|---|---|</p>
+<p>| <strong>文殊</strong> | 决策前，先看 3 个数据；不拍脑袋；不随大流 |</p>
+<p>| <strong>观音</strong> | 跟下属说话，先听 30 秒；不急着给方案；不冷血 |</p>
+<p>| <strong>地藏</strong> | 业绩低谷，熬 3 个月再调岗；不甩锅；不逃避 |</p>
+<p>| <strong>普贤</strong> | 每天做 1 件具体落地的事；不空转；不"看起来很忙" |</p>
+
+<p><strong>历史人物印证·王阳明平宁王</strong>：</p>
+<ul class="ulist">
+<li><strong>文殊</strong>——先看清宁王兵力 8 万，自己 4 万，但宁王内部不和。</li>
+<li><strong>观音</strong>——不杀降卒，不扰百姓，<strong>"感化"为主</strong>。</li>
+<li><strong>地藏</strong>——35 天 7 战，<strong>扛住 8 万大军的压力</strong>。</li>
+<li><strong>普贤</strong>——战后 1 个月内善后 1.6 万俘虏，<strong>具体到每人的去向</strong>。</li>
+</ul>
+
+<h3 class="h3">7.2 家庭上的四圣</h3>
+
+<p>| 菩萨 | 怎么用 |</p>
+<p>|---|---|</p>
+<p>| <strong>文殊</strong> | 跟伴侣吵架时，先停 30 秒；不急着说"我错了"或"你错了" |</p>
+<p>| <strong>观音</strong> | 看见伴侣累了，<strong>主动说一句"你辛苦了"</strong>；不问"你怎么了"——等她自己说 |</p>
+<p>| <strong>地藏</strong> | 婚姻出问题时，<strong>先扛 3 个月再决定</strong>；不甩锅；不逃避 |</p>
+<p>| <strong>普贤</strong> | 每天陪伴侣或孩子做 1 件小事——不挑"大事"——<strong>挑"真"</strong> |</p>
+
+<p><strong>历史人物印证·曾国藩治家</strong>：</p>
+<ul class="ulist">
+<li><strong>文殊</strong>——看清"家和万事兴"的根。</li>
+<li><strong>观音</strong>——每月给家人写 1 封信，<strong>信中先问"你们最近怎么样"</strong>。</li>
+<li><strong>地藏</strong>——家庭出乱时，<strong>绝不甩锅给兄弟</strong>。</li>
+<li><strong>普贤</strong>——8 个弟弟妹妹，<strong>1 个 1 个教</strong>——具体到每人的婚嫁。</li>
+</ul>
+
+<h3 class="h3">7.3 孩子上的四圣</h3>
+
+<p>| 菩萨 | 怎么用 |</p>
+<p>|---|---|</p>
+<p>| <strong>文殊</strong> | 看见孩子撒谎，<strong>先问"为什么"</strong>——不急着骂——看清根 |</p>
+<p>| <strong>观音</strong> | 看见孩子哭，<strong>先抱 30 秒</strong>——不急着说"别哭了" |</p>
+<p>| <strong>地藏</strong> | 看见孩子成绩差，<strong>先扛 1 年再决定是否报补习班</strong> |</p>
+<p>| <strong>普贤</strong> | 每天陪孩子做 1 件具体的事——<strong>不挑"大事"</strong>——<strong>挑"真"</strong> |</p>
+
+<p><strong>历史人物印证·钱均夫养钱学森</strong>：</p>
+<ul class="ulist">
+<li><strong>文殊</strong>——看清孩子喜欢"拆东西"——不按"工程师"的模子压。</li>
+<li><strong>观音</strong>——孩子失败时，<strong>先说一句"你尽力了"</strong>。</li>
+<li><strong>地藏</strong>——孩子留学期间，<strong>家里熬过 10 年战乱</strong>——不催他回来。</li>
+<li><strong>普贤</strong>——陪孩子做每件小事——<strong>从拆玩具到拆机器</strong>。</li>
+</ul>
+
+<h3 class="h3">7.4 父母上的四圣</h3>
+
+<p>| 菩萨 | 怎么用 |</p>
+<p>|---|---|</p>
+<p>| <strong>文殊</strong> | 看见父母变老，<strong>先看清"他们不是不爱我，是真的累了"</strong> |</p>
+<p>| <strong>观音</strong> | 父母啰嗦时，<strong>先听 1 分钟</strong>——不急着反驳 |</p>
+<p>| <strong>地藏</strong> | 父母生病时，<strong>先扛 1 个月再决定治疗方案</strong> |</p>
+<p>| <strong>普贤</strong> | 每月回家 1 次——<strong>不挑"大事"</strong>——<strong>挑"真"</strong> |</p>
+
+<p><strong>历史人物印证·王阳明孝顺</strong>：</p>
+<ul class="ulist">
+<li><strong>文殊</strong>——看清"养口体不如养心志"。</li>
+<li><strong>观音</strong>——父亲贬谪，<strong>跟着走</strong>——不离不弃。</li>
+<li><strong>地藏</strong>——父亲下狱，<strong>自己上书求情</strong>——<strong>不逃</strong>。</li>
+<li><strong>普贤</strong>——为父亲守孝 3 年——<strong>具体到每日的扫墓</strong>。</li>
+</ul>
+
+<h3 class="h3">7.5 自己上的四圣</h3>
+
+<p>| 菩萨 | 怎么用 |</p>
+<p>|---|---|</p>
+<p>| <strong>文殊</strong> | 每天问自己 3 个"为什么" |</p>
+<p>| <strong>观音</strong> | 每天对自己说一句"你辛苦了" |</p>
+<p>| <strong>地藏</strong> | 失败时，<strong>先扛 1 周再决定下一步</strong> |</p>
+<p>| <strong>普贤</strong> | 每天做 1 件"落地"的小事 |</p>
+
+<hr class="divider">
+
+<h2 class="h2">第八章·反面案例——四种"学四圣学反了"的人</h2>
+
+<p><strong>第一种·25 岁的"假四圣"</strong>——四块电池都买了，但<strong>没接上</strong>——挂在身上当装饰——这种"假四圣"在公司里是"小丑"——人人笑他。</p>
+<p><strong>第二种·40 岁的"半四圣"</strong>——只有两块电池接上——比如只接"文殊+普贤"——结果——<strong>会做事不会心疼人</strong>——同事都觉得他冷血。</p>
+<p><strong>第三种·50 岁的"老四圣"</strong>——四块电池都接上了——但<strong>"接反了"</strong>——比如把"观音"接到"领导"身上，把"文殊"接到"自己"身上——<strong>结果——对外人好，对自己人冷</strong>。</p>
+<p><strong>第四种·60 岁的"死四圣"</strong>——四块电池都接上了——但<strong>接死了</strong>——<strong>不能升级、不能调整、不能跟随情境</strong>——这种"死四圣"在公司里是"老古董"。</p>
+
+<hr class="divider">
+
+<h2 class="h2">第九章·30 天/1 年/3 年·三阶实修</h2>
+
+<h3 class="h3">30 天入门·四圣"日课"</h3>
+<ul class="ulist">
+<li><strong>文殊日课</strong>——每天 3 个"为什么"</li>
+<li><strong>观音日课</strong>——每天 1 句"你辛苦了"</li>
+<li><strong>地藏日课</strong>——每天 1 件"不想做但做了"的事</li>
+<li><strong>普贤日课</strong>——每天 1 件"做完了"的事</li>
+</ul>
+
+<h3 class="h3">1 年稳固·四圣"周课"</h3>
+<ul class="ulist">
+<li><strong>文殊周课</strong>——每周看破 1 件事</li>
+<li><strong>观音周课</strong>——每周帮 1 个具体忙</li>
+<li><strong>地藏周课</strong>——每周做 1 件"难而正确"的事</li>
+<li><strong>普贤周课</strong>——每周做完 1 件"半途而废"的事</li>
+</ul>
+
+<h3 class="h3">3 年突破·四圣"月课"</h3>
+<ul class="ulist">
+<li><strong>文殊月课</strong>——每月读 1 本"反常识"的书</li>
+<li><strong>观音月课</strong>——每月去 1 次医院/养老院门口看 30 分钟</li>
+<li><strong>地藏月课</strong>——每月经历 1 次"小绝境"</li>
+<li><strong>普贤月课</strong>——每月做 1 件"长半衰期"的事</li>
+</ul>
+
+<hr class="divider">
+
+<h2 class="h2">第十章·给悟真师兄的一封信</h2>
+
+<p>师兄，<strong>您这辈子就是"四圣合一"的活教材</strong>。</p>
+<ul class="ulist">
+<li><strong>文殊</strong>——您这辈子读了多少经典，看了多少事，<strong>看清了多少本质</strong>？</li>
+<li><strong>观音</strong>——您这辈子帮了多少学生，渡了多少读者，<strong>柔了多少颗心</strong>？</li>
+<li><strong>地藏</strong>——您这辈子熬过多少夜、扛过多少事、<strong>还站着</strong>？</li>
+<li><strong>普贤</strong>——您这辈子写了多少笔记、留了多少字、<strong>做完过多少"落地"的事</strong>？</li>
+</ul>
+
+<p><strong>您是四圣合一身</strong>——<strong>您这辈子就活成了"菩萨"</strong>。</p>
+<p>但您不是"佛龛上的菩萨"——<strong>您是"日用中的菩萨"</strong>。</p>
+
+<p>我辈能做的——<strong>就是把您走过的路，写成文字——传给那些想"四圣合一"的人</strong>。</p>
+<p><strong>不是让他们拜您——是让他们"活出您"</strong>。</p>
+
+<p>师兄——<strong>这一篇笔记，不是写给 AI 看的，是写给"想成完整人"的人看的——而您就是第一个人</strong>。</p>
+
+<hr class="divider">
+
+<h2 class="h2">收束·五字重译</h2>
+
+<p>把这一篇笔记的核心，<strong>压成五个字</strong>：</p>
+
+<p><strong>分</strong>——分开学清楚（看清每一面）</p>
+<p><strong>合</strong>——合成一个人（接上四块电池）</p>
+<p><strong>落</strong>——落到五伦里（工作/家庭/孩子/父母/自己）</p>
+<p><strong>活</strong>——活成"四圣合一"的人</p>
+<p><strong>传</strong>——传给每一个想"成完整人"的人</p>
+
+<p><strong>——分而能学，合而能用，落而能行，活而能传——菩萨四圣，从此不再在佛龛上——在你自己身上</strong>。</p>
+
+<p><strong>——悟真，2026-07-14</strong></p>
+
+<hr class="divider">
+
+<h2 class="h2">附录·6 部经典原句索引</h2>
+
+<h3 class="h3">佛家 4 条</h3>
+<ol class="olist">
+<li>《大宝积经·文殊师利说般若会》：「心不住法，是即菩提。」</li>
+<li>《楞严经》：「返闻闻自性，性成无上道。」</li>
+<li>《地藏菩萨本愿经》：「安忍不动如大地，静虑深密如秘藏。」</li>
+<li>《华严经·普贤行愿品》：「应修十种广大行愿。」</li>
+</ol>
+
+<h3 class="h3">心学 1 条</h3>
+<ol class="olist">
+<li>《传习录·卷上》：「心即理也。天下又有心外之事、心外之理乎？」</li>
+</ol>
+
+<h3 class="h3">道家 1 条</h3>
+<ol class="olist">
+<li>《道德经》：「人法地，地法天，天法道，道法自然。」</li>
+</ol>
+
+<h2 class="h2">古今人物 7 位</h2>
+<ul class="ulist">
+<li><strong>古代</strong>：慧能 / 王阳明 / 玄奘 / 虚云 / 曾国藩 / 钱均夫（养钱学森）/ 王阳明（孝顺）</li>
+<li><strong>现代 4 种反面</strong>：25 岁假四圣 / 40 岁半四圣 / 50 岁老四圣 / 60 岁死四圣</li>
+</ul>
+</div>
+  <div class="seal">悟 真</div>
+  <div class="footer">悟真读书笔记 · 菩萨四圣·合一人格——分开学清楚，合成一个完整的人<br>2026-07-14 · 出观点必带实例 · 静思 撰</div>
+</div>
+<audio id="audio" preload="metadata"></audio>
+<script>
+  const audio = document.getElementById('audio');
+  audio.src = '';
+  const playBtn = document.getElementById('playBtn');
+  const progress = document.getElementById('progress');
+  const progressWrap = document.getElementById('progressWrap');
+  const curTime = document.getElementById('curTime');
+  const durTime = document.getElementById('durTime');
+  const muteBtn = document.getElementById('muteBtn');
+  const volume = document.getElementById('volume');
+  const speedBtns = document.querySelectorAll('[data-speed]');
+  const downloadLink = document.getElementById('downloadLink');
+  downloadLink.href = audio.src;
+  function fmtTime(s) { if (isNaN(s) || !isFinite(s)) return '--:--'; const m = Math.floor(s/60); const sec = Math.floor(s%60); return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); }
+  audio.addEventListener('loadedmetadata', () => { durTime.textContent = fmtTime(audio.duration); });
+  audio.addEventListener('timeupdate', () => { if (audio.duration) { progress.style.width = (audio.currentTime/audio.duration*100)+'%'; curTime.textContent = fmtTime(audio.currentTime); } });
+  playBtn.addEventListener('click', () => { if (audio.paused) { audio.play(); playBtn.textContent='⏸'; } else { audio.pause(); playBtn.textContent='▶'; } });
+  audio.addEventListener('ended', () => { playBtn.textContent='▶'; });
+  progressWrap.addEventListener('click', e => { const rect = progressWrap.getBoundingClientRect(); const ratio = (e.clientX - rect.left) / rect.width; if (audio.duration) audio.currentTime = ratio * audio.duration; });
+  speedBtns.forEach(btn => { btn.addEventListener('click', () => { speedBtns.forEach(b => b.classList.remove('active')); btn.classList.add('active'); audio.playbackRate = parseFloat(btn.dataset.speed); }); });
+  muteBtn.addEventListener('click', () => { audio.muted = !audio.muted; muteBtn.textContent = audio.muted ? '🔇' : '🔊'; });
+  volume.addEventListener('input', e => { audio.volume = e.target.value/100; });
+</script>
+</body>
+</html>
