@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>知止而后定——《大学》三纲最易被讲歪的一句</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #faf6ef;
+    color: #3d3027;
+    font-family: 'Noto Serif SC', '站酷小薇体', 'STKaiti', 'KaiTi', 'PingFang SC', serif;
+    font-size: 20px;
+    line-height: 2.2;
+    padding: 0 0 80px 0;
+}
+
+.page { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+/* HERO 区 */
+.hero {
+    background: linear-gradient(135deg, #faf6ef 0%, #f3eada 100%);
+    padding: 80px 32px 60px;
+    text-align: center;
+    border-bottom: 3px double #8a5a2b;
+    margin-bottom: 60px;
+}
+
+.hero .main-title {
+    font-size: 44px;
+    font-weight: 700;
+    color: #3d3027;
+    letter-spacing: 6px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.hero .sub-title {
+    font-size: 22px;
+    color: #8a5a2b;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.hero .meta {
+    font-size: 14px;
+    color: #7a6f63;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.hero .meta .seal {
+    color: #c8423b;
+    font-weight: 600;
+}
+
+/* 音频播放器 */
+.audio-player {
+    background: #fff;
+    border: 2px solid #8a5a2b;
+    border-radius: 12px;
+    padding: 24px 28px;
+    max-width: 720px;
+    margin: 32px auto 0;
+    box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+}
+
+.audio-player .player-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.audio-player .play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #8a5a2b;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.audio-player .play-btn:hover { background: #6f4520; }
+
+.audio-player .progress-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.audio-player .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0e4d0;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-player .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8a5a2b, #c8a85a);
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.audio-player .time-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #7a6f63;
+    font-family: monospace;
+}
+
+.audio-player .controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px solid #f0e4d0;
+}
+
+.audio-player .ctrl-btn {
+    background: transparent;
+    border: 1px solid #d4c4a8;
+    color: #8a5a2b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.audio-player .ctrl-btn:hover { background: #f0e4d0; }
+
+.audio-player .ctrl-btn.active {
+    background: #8a5a2b;
+    color: #fff;
+    border-color: #8a5a2b;
+}
+
+.audio-player .speed-group {
+    display: flex;
+    gap: 4px;
+}
+
+.audio-player .volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.audio-player .volume-slider {
+    width: 80px;
+}
+
+.audio-player .download {
+    color: #8a5a2b;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* 标题层级 */
+.title-h1 {
+    font-size: 30px;
+    color: #3d3027;
+    margin: 60px 0 30px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #8a5a2b;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.title-h2 {
+    font-size: 26px;
+    color: #8a5a2b;
+    margin: 50px 0 24px;
+    padding-left: 18px;
+    border-left: 6px solid #8a5a2b;
+    letter-spacing: 2px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.title-h3 {
+    font-size: 22px;
+    color: #5a3e22;
+    margin: 36px 0 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.title-h4 {
+    font-size: 19px;
+    color: #5a3e22;
+    margin: 24px 0 12px;
+    font-weight: 600;
+}
+
+/* 段落 */
+.paragraph {
+    margin-bottom: 20px;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+/* 加粗 */
+.strong {
+    color: #8a5a2b;
+    font-weight: 600;
+    background: linear-gradient(transparent 65%, rgba(200, 168, 90, 0.25) 65%);
+    padding: 0 2px;
+}
+
+/* 警示/朱红 */
+.quote {
+    background: #fef5f4;
+    border-left: 4px solid #c8423b;
+    padding: 16px 24px;
+    margin: 24px 0;
+    border-radius: 0 6px 6px 0;
+    font-style: normal;
+    color: #5a3e22;
+}
+
+.quote p {
+    margin: 8px 0;
+    text-indent: 0;
+}
+
+/* 列表 */
+.bullet-list, .num-list {
+    margin: 16px 0 20px 40px;
+}
+
+.bullet-list li, .num-list li {
+    margin-bottom: 10px;
+    line-height: 1.9;
+}
+
+/* 表格 */
+.table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #d4c4a8;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.data-table th {
+    background: #8a5a2b;
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    border-top: 1px solid #f0e4d0;
+    line-height: 1.7;
+}
+
+.data-table tr:nth-child(even) td {
+    background: #faf6ef;
+}
+
+/* 分割线 */
+.divider {
+    border: none;
+    border-top: 1px dashed #c8a85a;
+    margin: 50px 0;
+}
+
+/* 印章 */
+.seal-stamp {
+    display: inline-block;
+    background: #c8423b;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin: 0 4px;
+}
+
+/* 落款 */
+.sign-off {
+    text-align: right;
+    margin: 60px 0 30px;
+    color: #8a5a2b;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+@media (max-width: 768px) {
+    body { font-size: 18px; line-height: 2.0; }
+    .hero { padding: 50px 20px 40px; }
+    .hero .main-title { font-size: 30px; letter-spacing: 3px; }
+    .hero .sub-title { font-size: 17px; }
+    .title-h1 { font-size: 24px; }
+    .title-h2 { font-size: 20px; }
+    .page { padding: 0 20px; }
+    .audio-player { padding: 18px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="main-title">知止而后定——《大学》三纲最易被讲歪的一句</div>
+    <div class="sub-title">《大学》三纲最易被讲歪的一句 · 深度研读笔记</div>
+    <div class="meta">
+        <span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 15 日 · 字数 7000+ · 全文音频 30+ 分钟
+    </div>
+    
+    <div class="audio-player">
+        <audio id="audio" preload="metadata">
+            <source src="zhi-zhi-er-hou-ding-full.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player-row">
+            <button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+            <div class="progress-wrap">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-row">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">--:--</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="speed-group">
+                <button class="ctrl-btn" data-speed="0.75">0.75x</button>
+                <button class="ctrl-btn active" data-speed="1">1x</button>
+                <button class="ctrl-btn" data-speed="1.25">1.25x</button>
+                <button class="ctrl-btn" data-speed="1.5">1.5x</button>
+                <button class="ctrl-btn" data-speed="2">2x</button>
+            </div>
+            <button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+            <div class="volume">
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+            </div>
+            <a class="download" id="downloadBtn" href="zhi-zhi-er-hou-ding-full.mp3" download="zhi-zhi-er-hou-ding-full.mp3">⬇ 下载音频</a>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+<h1 class="title-h1">知止而后定——《大学》三纲最易被讲歪的一句</h1>
+<blockquote class="quote">
+<p>"知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。"</p>
+<p>——《大学》经一章</p>
+</blockquote>
+<h2 class="title-h2">序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">"知止而后定"，不是知道要停下来就定了——是真知到事物本来的标准，止于那个标准，于是自动定在道上。</strong></p>
+<p class="paragraph">假知的人永远在动，因为他心里没标准；真知的人如如不动，因为他看见了结果。一出手就是结果，没看见结果不出手。</p>
+<p class="paragraph">这就是知止而后定的全部秘密：<strong class="strong">真知是定的前提，无标准则无定力。</strong></p>
+<p class="paragraph">悟真师兄这一次没有用任何玄学术语，只用"妈妈种地"这一个凡人案例，就把这句被讲了两千年的核心经文讲透了。这是真功夫——能把最深的话讲给种地阿姨听，还能让她点头说"对，就是这么回事"。</p>
+<p class="paragraph">本篇读书笔记，按"名相拆解—经典本意—历史人物印证—反面案例—今日功夫"五段式展开，逐层深入，每一句都配上经典互证和真实人物的故事。</p>
+<hr class="divider">
+<h2 class="title-h2">第一章·名相拆解——"知止而后定"六个字到底在说什么</h2>
+<h3 class="title-h3">1.1 "知"字的深浅两层</h3>
+<p class="paragraph">悟真师兄引用得最妙——"知"不是同一个字。</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>类型</th>
+<th>内涵</th>
+<th>状态</th>
+<th>比喻</th>
+</tr>
+<tr>
+<td><strong class="strong">假知</strong></td>
+<td>妄念，是"我以为的世界"</td>
+<td>主观投射，念头不断</td>
+<td>没看表，以为大家说的都对</td>
+</tr>
+<tr>
+<td><strong class="strong">真知</strong></td>
+<td>本来的样子，本来，亦名"如来"</td>
+<td>见到事物本相，止于中</td>
+<td>看了表，4 点就是 4 点，不因人而异</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">关键差异：</strong> 假知的"我以为"永远在变（人云亦云、随境而迁），真知的"本来"恒常不动（不以任何人意志为转移）。所以"知"的真假，决定了后面"止、定、静、安、虑、得"全部六个字是否真能发生。</p>
+<p class="paragraph">悟真师兄举了一个绝妙的例子："100 个人说 4 点，但没看表都不是标准，一看表就知标准。"——</p>
+<ul class="bullet-list">
+<li>100 个人的意见 = 假知</li>
+<li>看了表 = 真知</li>
+<li>真知 = 一眼看穿"几就是几"，无需辩论</li>
+</ul>
+<p class="paragraph">这就是真知与假知的分水岭：<strong class="strong">假知需要靠辩论来维持（越辩越乱），真知不需要辩论（一见即定）。</strong></p>
+<h3 class="title-h3">1.2 "止"字的真正含义</h3>
+<p class="paragraph"><strong class="strong">止 = 止于标准</strong>，不是"停止"。</p>
+<ul class="bullet-list">
+<li>止于中 = 拿到结果的标准</li>
+<li>止于至善 = 止于道的标准（《大学》本义）</li>
+<li>止于终点 = 以终为始</li>
+</ul>
+<p class="paragraph">止，是"已经有标准了"的完成时态。不是"我正在努力达到"，而是"我已见到那个标准，所以止于此"。</p>
+<p class="paragraph">悟真师兄原话非常关键："<strong class="strong">止于中的意思就是已经有标准了，已经有结果的标准。止于标准。</strong>"——他用了三句递进，把"止"字拆得清清楚楚：</p>
+<ol class="num-list">
+<li>止于中（中 = 中道 = 真实结果的位置）</li>
+<li>止于标准（标准 = 客观的、可验证的、不以人意志为转移的）</li>
+<li>止于标准（重复一次 = 加深 = 这是"知止"的真意，不是"停止"的意思）</li>
+</ul>
+<h3 class="title-h3">1.3 "定"字的双重指涉</h3>
+<ul class="bullet-list">
+<li><strong class="strong">静定的"定"：</strong> 心不随境转，如如不动</li>
+<li><strong class="strong">决定的"定"：</strong> 知道结果后，一出手就是那个结果</li>
+</ul>
+<p class="paragraph">悟真师兄特别点出：高手"<strong class="strong">会装傻，会难得糊涂，但在关键时刻他一定会出手，而且他一出手，神龙见首不见尾，来也无影去无踪</strong>"——这就是"定"。<strong class="strong">定不是不动，是"知道什么时候动、动即是结果"的精准。</strong></p>
+<p class="paragraph">这一段是整篇最深刻的洞见之一。把"定"和"装糊涂"区分开：</p>
+<ul class="bullet-list">
+<li><strong class="strong">高手的"难得糊涂" = 已知后的不计较</strong></li>
+<li><strong class="strong">凡人的"难得糊涂" = 不知道的不敢计较</strong></li>
+</ul>
+<p class="paragraph">前者是真定，后者是麻木。</p>
+<h3 class="title-h3">1.4 "静"字的真义——"不染"</h3>
+<p class="paragraph">悟真师兄说"<strong class="strong">静是什么意思？叫不染。</strong>"</p>
+<p class="paragraph">把"静"和"不染"画等号，是极高的见地。我们通常以为"静"是"安静"、"不动"——但悟真师兄告诉我们：<strong class="strong">真正的静是"虽处闹市，纤尘不染"。</strong></p>
+<ul class="bullet-list">
+<li>静 ≠ 物理上的安静</li>
+<li>静 = 心中有标准，外境再变我不动</li>
+</ul>
+<p class="paragraph">"有人说这事不应该这样，有人说应该那样，但对你有标准的人如如不动。如果你没标准，别人一说你就动，因为你心中没有真知的标准。"</p>
+<p class="paragraph">这段话点出了"静"的根本前提——<strong class="strong">标准是"静"的护城河。没有标准的人，永远静不下来，因为他对外界信息没有过滤器。</strong></p>
+<h3 class="title-h3">1.5 "安"字与"虑"字</h3>
+<ul class="bullet-list">
+<li><strong class="strong">安 = 安住真知。</strong> 不是"环境安全"，是"内心有所安住"——心里有了真知，到哪里都安。</li>
+<li><strong class="strong">虑 = 真智慧。</strong> 不是"思虑"（胡思乱想），是"智慧的观照"——全在真知的世界里运作，没有妄念。</li>
+</ul>
+<p class="paragraph">悟真师兄用最简的语言，把《大学》这六个字彻底翻成现代白话：</p>
+<blockquote class="quote">
+<p>知止 = 见到真标准</p>
+<p>定 = 不被外境摇动</p>
+<p>静 = 不染</p>
+<p>安 = 安住真知</p>
+<p>虑 = 真智慧</p>
+<p>得 = 证得如来究竟涅槃净土</p>
+</blockquote>
+<h3 class="title-h3">1.6 一句话总结六字真言</h3>
+<blockquote class="quote">
+<p><strong class="strong">真知 → 止于标准 → 定在道上 → 静而不染 → 安住真知 → 虑是真慧 → 得究竟涅槃</strong></p>
+</blockquote>
+<p class="paragraph">六字是一气贯通的——<strong class="strong">前面一字不真，后面五字全垮。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第二章·经典本意——《大学》原文逐句详注 + 多版本互证</h2>
+<h3 class="title-h3">2.1 原文与三家注解对照</h3>
+<p class="paragraph"><strong class="strong">【经文·《大学》经一章】</strong></p>
+<blockquote class="quote">
+<p>知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">【朱熹《大学章句》】</strong></p>
+<blockquote class="quote">
+<p>"止者，所当止之地，即至善之所在也。知之，则志有定向。静，谓心不妄动。安，谓所处而安。虑，谓处事精详。得，谓得其所止。"</p>
+</blockquote>
+<p class="paragraph">朱熹把"止"解为"至善之所在"，是儒家立场上的最高标准——止于至善。</p>
+<p class="paragraph"><strong class="strong">【王阳明《大学古本旁释》】</strong></p>
+<blockquote class="quote">
+<p>"知止者，知至善之在吾心而止之也。"</p>
+</blockquote>
+<p class="paragraph">阳明把"止"从"外在的至善"拉回到"吾心"——标准不在外，在心。这与悟真师兄讲的"标准只有一个，不是人决定的，是道在做标准"完全相通——<strong class="strong">道不在外，但也不在"我以为"，而在真知中。</strong></p>
+<p class="paragraph"><strong class="strong">【南怀瑾《原本大学微言》】</strong></p>
+<blockquote class="quote">
+<p>"知止，是知道止于至善，也就是佛家讲的无上正等正觉、止观双运。"</p>
+</blockquote>
+<p class="paragraph">南师直接把"知止"和佛家的"止观"打通——止，是定；观，是慧。定慧双修，正是禅宗的核心路径。</p>
+<p class="paragraph"><strong class="strong">【憨山德清《大学纲目决疑》】</strong></p>
+<blockquote class="quote">
+<p>"知止者，即一心三观。三止者，曰体真止，方便随缘止，息二边分别止。"</p>
+</blockquote>
+<p class="paragraph">憨山大师是明末四大高僧之一，他把"知止"和天台宗的"一心三观"对应起来——<strong class="strong">一个"知止"，含三层止的功夫</strong>：</p>
+<ol class="num-list">
+<li>体真止 = 见到本来</li>
+<li>方便随缘止 = 在事上随缘</li>
+<li>息二边分别止 = 不落空有两边</li>
+</ul>
+<h3 class="title-h3">2.2 三家一句共通之处</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>注家</th>
+<th>核心立场</th>
+<th>与悟真师兄原话对照</th>
+</tr>
+<tr>
+<td>朱熹</td>
+<td>止于至善（外在标准）</td>
+<td>"标准只有一个，不是人决定的，是道在做标准"</td>
+</tr>
+<tr>
+<td>阳明</td>
+<td>止于吾心（内在良知）</td>
+<td>"真知的人就会止于中"</td>
+</tr>
+<tr>
+<td>南师</td>
+<td>止于无上正等正觉</td>
+<td>"定在道上，定在如来上"</td>
+</tr>
+<tr>
+<td>憨山</td>
+<td>一心三观·三止</td>
+<td>"定、静、安、虑、得"——每一字都是"止"的不同层次</td>
+</tr>
+</table></div>
+<p class="paragraph">四家虽侧重不同，但都指向同一件事：<strong class="strong">"止"必有所指，必是已见之标准。</strong> 悟真师兄的视频，正是把四家打成一片——止于真知、止于如来、止于道的标准。</p>
+<h3 class="title-h3">2.3 与《大学》前后文的呼应</h3>
+<p class="paragraph">《大学》开篇即言三纲：</p>
+<blockquote class="quote">
+<p>"大学之道，在明明德，在亲民，在止于至善。"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"知止而后定"恰恰是三纲"止于至善"的功夫论。没有"知止而后定"这步，"止于至善"就只是口号；有了"知止而后定"，三纲才落地。</p>
+<p class="paragraph">再看《大学》八目（格物、致知、诚意、正心、修身、齐家、治国、平天下），"知止"对应的是<strong class="strong">致知</strong>——致良知、致真知。所以"知止"不是"致知"之后，而是<strong class="strong">"致知"的另一种表达</strong>。</p>
+<h3 class="title-h3">2.4 与禅宗"止观"的深度互证</h3>
+<p class="paragraph">天台宗《摩诃止观》云：</p>
+<blockquote class="quote">
+<p>"止乃伏结之初门，观是断惑之正要。止则爱养心识之善资，观则策发神解之妙术。"</p>
+</blockquote>
+<p class="paragraph">翻译成现代话：</p>
+<ul class="bullet-list">
+<li><strong class="strong">止 = 安心的初步功夫</strong>（让心先静下来）</li>
+<li><strong class="strong">观 = 开悟的关键功夫</strong>（在静中见到真相）</li>
+<li><strong class="strong">止是善根的滋养，观是智慧的激发</strong></li>
+</ul>
+<p class="paragraph">悟真师兄讲的"真知 + 止于标准"，正是"观"的具体内容；"定在道上、不染"，正是"止"的具体表现。</p>
+<p class="paragraph"><strong class="strong">知止 = 止观双运。</strong> 一个真知的人，必然是"止"在标准上，又能"观"到本相。这是禅与《大学》的无缝对接。</p>
+<h3 class="title-h3">2.5 与《楞严经》"见性"互证</h3>
+<p class="paragraph">《楞严经》卷六：</p>
+<blockquote class="quote">
+<p>"妙性圆明，离诸名相，本来无有世界众生。因妄有生，因生有灭，生灭名妄，灭妄名真。"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"真知，本来，亦名如来"——正是《楞严经》"妙性圆明"的白话版。</p>
+<ul class="bullet-list">
+<li>妙性 = 本来 = 真知</li>
+<li>圆明 = 止于中 = 标准</li>
+<li>离诸名相 = 不染 = 静</li>
+</ul>
+<p class="paragraph">所以<strong class="strong">知止而后定的最高境界，就是《楞严经》的"妙性圆明"——见到了那个本来。</strong></p>
+<h3 class="title-h3">2.6 与《传习录》"知行合一"互证</h3>
+<p class="paragraph">王阳明《传习录·卷上》：</p>
+<blockquote class="quote">
+<p>"知是行之始，行是知之成。"</p>
+</blockquote>
+<p class="paragraph">悟真师兄说"<strong class="strong">真正知道的人做事很容易，是因为不知道，所以才难做到</strong>"——直接对应阳明的"知行合一"。</p>
+<ul class="bullet-list">
+<li>假知 = 不知而行 = 行不通</li>
+<li>真知 = 知而后行 = 一行即成</li>
+</ul>
+<p class="paragraph"><strong class="strong">"知道却做不到"的人，是"知"不到位（是假知，不是真知）。</strong> 这是悟真师兄与阳明心学的无缝对接。</p>
+<hr class="divider">
+<h2 class="title-h2">第三章·历史人物印证——三个"知止而后定"的真实故事</h2>
+<h3 class="title-h3">3.1 妈妈种了几十年地——"心中有标准"的凡人智慧</h3>
+<p class="paragraph">悟真师兄讲的第一个例证是<strong class="strong">他妈妈</strong>——一位平凡的中国农村女性。</p>
+<p class="paragraph"><strong class="strong">故事：</strong></p>
+<ul class="bullet-list">
+<li>每年春天哪个节气播种最佳，她心里清清楚楚</li>
+<li>别人说早一点或晚一点播种，她<strong class="strong">不会动</strong></li>
+<li>因为她心中有标准</li>
+<li>这是几十年下地论证出来的结果</li>
+</ul>
+<p class="paragraph"><strong class="strong">三层分点：</strong></p>
+<ol class="num-list">
+<li><strong class="strong">第一层·标准的来源是真知实证：</strong> 不是书本学的，是几十年在土地上亲自验证的——这就是"真知"，不是"假知"。</li>
+<li><strong class="strong">第二层·真知带来不动：</strong> 标准一旦确立，别人怎么说都动摇不了。这就是"如如不动"。</li>
+<li><strong class="strong">第三层·凡人之智即圣人之智：</strong> 悟真师兄没用圣贤举例，反而用妈妈——大道至简。圣人之智不在玄虚，在日用中能落地。妈妈种地几十年如一日，就是"知止而后定"的活标本。</li>
+</ul>
+<p class="paragraph"><strong class="strong">关键启发：</strong> 真知不必来自经典，可以来自任何你真正下过功夫的领域。种地如此，做手艺如此，做企业如此，做父母如此。</p>
+<p class="paragraph"><strong class="strong">这一段的精妙之处：</strong> 大多数人讲"知止而后定"会引经据典，从朱熹讲到阳明，从王夫之讲到南怀瑾。悟真师兄只用了一句"我妈妈种了几十年地"——<strong class="strong">这是真正吃过这碗饭的人讲出来的话。</strong> 没有 30 年在地里摸爬滚打，不会懂"节气"是死的、"标准"是真的。</p>
+<h3 class="title-h3">3.2 玄奘 19 年求经——"不知标准，绝不出手"的圣僧定力</h3>
+<p class="paragraph"><strong class="strong">故事背景：</strong></p>
+<ul class="bullet-list">
+<li>玄奘西行求法，前后 19 年（629–645）</li>
+<li>在那烂陀寺跟随戒贤论师学习 5 年</li>
+<li>曲女城辩论大会 18 天，无人能破</li>
+<li>回国后主持译经场 19 年，翻译 1335 卷</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么这是"知止而后定"：</strong></p>
+<ol class="num-list">
+<li><strong class="strong">真知前的"假知期"：</strong> 玄奘出国前已通读国内佛经，发现"诸家注解不一，莫衷一是"——这是知道"我还有很多不知道"，是真知前的"知不知"。悟真师兄说的"知道种子是烂的熟的种子，你还会播种吗？"——玄奘知道国内佛经"种子"有问题，所以非要去印度取经。</li>
+<li><strong class="strong">求真知的过程：</strong> 19 年跋涉 + 5 年那烂陀寺学习，是"假知"向"真知"的转化过程。中间历经高昌王挽留、沙漠断水、徒弟离队等劫难，每一次都是"我心中的标准够不够"的考验。</li>
+<li><strong class="strong">止于标准后的一出手：</strong> 回国后 19 年主持译经场，翻译 1335 卷，每卷皆是定中之作——这是"一出手就是结果"。<strong class="strong">翻译不是自己创作，是把梵文原本精准转成汉文——这就是悟真师兄说的"标准是道在做，不是我在做"。</strong></li>
+<li><strong class="strong">曲女城 18 天无对手：</strong> 18 天里每天登座，无人敢应，这不是"辩论技巧"，是"真知止于中"的自然结果。18 天等于 18 场真知实证——佛家各派的"标准"他都见过、都验证过、都止于其上。</li>
+</ul>
+<p class="paragraph"><strong class="strong">关键启发：</strong> 19 年看似漫长，其实是为"定在道上"做准备。<strong class="strong">真知来得越慢，定力越深；真知来得越快（如顿悟），定力越要后续"保任"。</strong> 这是悟真师兄讲的"知止而后定"的圣僧版。</p>
+<p class="paragraph"><strong class="strong">玄奘临终语</strong>（《大慈恩寺三藏法师传·卷十》）：</p>
+<blockquote class="quote">
+<p>"此身危脆，汝等宜勤修功德，勿令后悔。"</p>
+</blockquote>
+<p class="paragraph">翻译：<strong class="strong">身体是脆弱的，你们要勤奋修功德，不要让自己后悔。</strong> ——这是真知者临终的标准交代。他知道自己要走了，把"标准"再交代一次，让后人"止于此"。</p>
+<h3 class="title-h3">3.3 王阳明龙场悟道——"知难行易"的心学实证</h3>
+<p class="paragraph"><strong class="strong">故事背景：</strong></p>
+<ul class="bullet-list">
+<li>1506 年，阳明被贬贵州龙场驿</li>
+<li>1508 年某个夜晚，于石棺中端坐，彻夜不眠，忽然大悟"圣人之道，吾性自足"</li>
+<li>留下著名的"龙场悟道"四字偈</li>
+<li>之后平宁王之乱（35 天平叛）、平思田之乱，每一出手皆是结果</li>
+</ul>
+<p class="paragraph"><strong class="strong">三层分点：</strong></p>
+<ol class="num-list">
+<li><strong class="strong">悟前·知不知：</strong> 阳明被贬前已是饱读诗书、遍访朱子之学的人，但他发现"格物穷理"这条路走不通——这是"假知被破"的过程。悟真师兄原话"<strong class="strong">真正知道的人做事很容易，是因为不知道，所以才难做到</strong>"——阳明正是"知道朱子学走不通"，才转去悟"心即理"。</li>
+<li><strong class="strong">悟中·真知现前：</strong> 龙场一夜，他忽然明白——<strong class="strong">"心即理"</strong>——良知本是具足，标准不在外求，止于吾心。这是"知止"的真版本。</li>
+<li><strong class="strong">悟后·定静安虑得：</strong> 之后平宁王之乱，平思田之乱，每一出手皆是结果（不是事后诸葛，而是事前已知）。这是"定在良知上"的活证据。</li>
+</ul>
+<p class="paragraph"><strong class="strong">关键启发：</strong> 悟真师兄视频里原话"王阳明心学讲'<strong class="strong">知难行易</strong>'，真正难是在认知上不知道。真正知道的人做事很容易，是因为不知道，所以才难做到"——正是阳明心学的现代白话版。</p>
+<p class="paragraph"><strong class="strong">阳明的"四句教"：</strong></p>
+<blockquote class="quote">
+<p>"无善无恶心之体，有善有恶意之动，知善知恶是良知，为善去恶是格物。"</p>
+</blockquote>
+<p class="paragraph">四句教的"<strong class="strong">知善知恶是良知</strong>"——就是"知止"的另一面。知道什么是善的、什么是恶的，就是真知；止于善、远离恶，就是"止于至善"。</p>
+<p class="paragraph">悟真师兄的"知止而后定"是<strong class="strong">积极的</strong>——止于本来的标准；阳明四句教是<strong class="strong">辩证的</strong>——知善知恶才能止。两条路最终汇于一处：<strong class="strong">止于良知。</strong></p>
+<h3 class="title-h3">3.4 孔子"七十而从心所欲不逾矩"——知止的圆满境界</h3>
+<p class="paragraph"><strong class="strong">故事背景：</strong></p>
+<ul class="bullet-list">
+<li>孔子自述："吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲不逾矩。"</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么这是"知止而后定"的最终版本：</strong></p>
+<ul class="bullet-list">
+<li>"<strong class="strong">从心所欲不逾矩</strong>" = 心中有标准（矩），所以从心所欲也不越界</li>
+<li>矩 = 止的标准</li>
+<li>从心 = 不假思索、自然而然</li>
+<li>不逾矩 = 自动止于标准</li>
+</ul>
+<p class="paragraph">悟真师兄讲的"高手装傻，关键出手一出手就是结果"——正是"从心所欲不逾矩"的写照。</p>
+<p class="paragraph"><strong class="strong">关键启发：</strong> 70 岁的孔子，用 50 年实证，才达到"知止而后定"的圆满——<strong class="strong">这不是一日之功，是一辈子的事。</strong> 悟真师兄不是要我们"现在就到 70 岁的境界"，而是"知道这条路是真的，然后从 30 天入门开始走"。</p>
+<h3 class="title-h3">3.5 南怀瑾"批《大学》"——文化传承的"定力"</h3>
+<p class="paragraph"><strong class="strong">故事背景：</strong></p>
+<ul class="bullet-list">
+<li>南怀瑾先生在 1987 年左右开始系统讲解《大学》，是现代版的"以终为始"</li>
+<li>他讲《大学》时已经 70 多岁，心中已有定论</li>
+<li>所以他一开口讲，就是 30 年的真知浓缩</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么这是"知止而后定"的现代版：</strong></p>
+<ol class="num-list">
+<li><strong class="strong">真知期：</strong> 南师讲《大学》前，已经讲过《论语》《老子》《庄子》《金刚经》《楞严经》《禅宗》——这是几十年在儒释道三家中实证出来的"真知"。</li>
+<li><strong class="strong">止于标准：</strong> 他讲《大学》时，不像一般学者那样"参考各家"，而是直接"指心"——这正是悟真师兄说的"<strong class="strong">没有拿到这个结果，他不会出手</strong>"。</li>
+<li><strong class="strong">后定后静：</strong> 一出手就是定力，一开口就是静气——这是真定者的风范。</li>
+</ul>
+<p class="paragraph"><strong class="strong">关键启发：</strong> 南师的"批《大学》"是悟真师兄"妈妈种地"的高级版——<strong class="strong">一个在土地上种了几十年地，一个在文化上种了几十年地，标准都是"几十年实证出来的"。</strong> 悟真师兄能讲透《大学》，是因为他在妈妈那块地和南师那块地之间，<strong class="strong">找到了同一个"标准"——真知来自实证，不是来自书本。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第四章·反面案例——四种"知不了"的人</h2>
+<h3 class="title-h3">4.1 第一种·"我知道啊，我就做不到"型</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 30 岁白领，知道早睡早起好，但天天刷手机到 2 点。</p>
+<p class="paragraph"><strong class="strong">为什么这是假知：</strong></p>
+<ul class="bullet-list">
+<li>他"知道"的只是<strong class="strong">道理</strong>（信息），不是<strong class="strong">标准</strong>（真知）</li>
+<li>真正的标准，是经历过"不刷手机的爽感"和"刷手机的空虚"反复比对后，<strong class="strong">身体层面</strong>确认了"早睡早起"才是对的</li>
+<li>没经过这个实证过程，所谓的"知道"只是<strong class="strong">脑子的妄念</strong></li>
+</ul>
+<p class="paragraph"><strong class="strong">悟真师兄原话对应：</strong> "<strong class="strong">你知道种子是烂的熟的种子，你还会播种吗？你知道水是100度会烫伤手，你还会去烫自己吗？是因为你不知道，所以可能不小心碰到它烫你了。</strong>"</p>
+<ul class="bullet-list">
+<li>知道水烫 = 假知（没被烫过）</li>
+<li>被烫过 = 真知（身体记住了）</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 不是"再读一遍《大学》"，而是"今晚 10 点关手机试试看，连续 30 天"——<strong class="strong">用身体验证道理</strong>。</p>
+<h3 class="title-h3">4.2 第二种·"看别人怎么做我就怎么做"型</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 40 岁创业者，今天学这个模式，明天学那个模式，永远在变。</p>
+<p class="paragraph"><strong class="strong">为什么这是假知：</strong></p>
+<ul class="bullet-list">
+<li>他心里没标准，所以<strong class="strong">别人一说他就动</strong></li>
+<li>这是悟真师兄原话："<strong class="strong">如果你没标准，别人一说你就动，因为你心中没有真知的标准。</strong>"</li>
+<li>创业赛道不是看出来的，是"自己过去 10 年做了什么、最擅长什么"——这个真知从内求，不从外求</li>
+</ul>
+<p class="paragraph"><strong class="strong">悟真师兄原话对应：</strong> "<strong class="strong">100个人说4点，但没看表都不是标准，一看表就知标准。</strong>"</p>
+<ul class="bullet-list">
+<li>100 个人的意见 = 看别人</li>
+<li>看了表 = 看自己的真知</li>
+<li>真知在己，不在人</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 静下来问自己——"我过去 5 年最愿意下功夫的是什么？哪怕没人给我钱，我愿意花时间在哪？"——那个答案就是标准。</p>
+<h3 class="title-h3">4.3 第三种·"以'难得糊涂'为借口不动手"型</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 50 岁老好人，谁都不得罪，遇事"糊涂"过去。</p>
+<p class="paragraph"><strong class="strong">为什么这是误解：</strong></p>
+<ul class="bullet-list">
+<li>悟真师兄原话："<strong class="strong">高手会装傻，会难得糊涂，但在关键时刻他一定会出手。</strong>"</li>
+<li>难得糊涂是"已知标准后的选择不介入"，不是"不知道也不介入"</li>
+<li>真正的难得糊涂 = <strong class="strong">因为知道，所以可以不计较</strong></li>
+<li>假糊涂 = <strong class="strong">因为不知道，所以不敢计较</strong></li>
+</ul>
+<p class="paragraph"><strong class="strong">辨别口诀：</strong></p>
+<ul class="bullet-list">
+<li>真糊涂：知道 A 是错的，但选择不计较 → 智慧</li>
+<li>假糊涂：不知道 A 是不是错，所以不计较 → 麻木</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 分辨自己是哪种"糊涂"。如果你的"糊涂"是<strong class="strong">该出手时不出手</strong>，那不是糊涂，是懦弱。</p>
+<h3 class="title-h3">4.4 第四种·"以终为始是鸡汤"型</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 35 岁职场人，天天喊"以终为始"但每年都重新立 flag。</p>
+<p class="paragraph"><strong class="strong">为什么这是误解：</strong></p>
+<ul class="bullet-list">
+<li>以终为始的前提是<strong class="strong">先见到那个"终"</strong>（即真知）</li>
+<li>没见到"终"的人谈"以终为始"是空话</li>
+<li>真正以终为始的人，是"<strong class="strong">拿到结果的人，他是以终为始</strong>"——他之所以能以终为始，是因为他<strong class="strong">已经知道结果是什么样</strong></li>
+</ul>
+<p class="paragraph"><strong class="strong">悟真师兄原话对应：</strong> "<strong class="strong">拿到结果的人，他是以终为始，他不会是做了再说，他也不会去妄想，因为他知道这个结果是必然的，所以他一出手就这个结果。</strong>"</p>
+<ul class="bullet-list">
+<li>拿到结果的人：以终为始</li>
+<li>没拿到结果的人：先做再说</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 不是"想象一个 5 年后的目标"，而是"在过去几年里，<strong class="strong">哪件事你真真切切拿到了结果</strong>？那个结果的标准是什么？"——从过去的真知中找今天的定。</p>
+<h3 class="title-h3">4.5 第五种·"宿命论型"——被"标准是死的"反噬</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 60 岁退休老人，什么事都说"老了，没用了"，对什么都无所谓。</p>
+<p class="paragraph"><strong class="strong">为什么这是假知：</strong></p>
+<ul class="bullet-list">
+<li>悟真师兄说"标准是道在做"——这是<strong class="strong">真知的客观性</strong></li>
+<li>但"老了没用了"是他<strong class="strong">主观的"我以为"</strong>——这是<strong class="strong">假知的逃避</strong></li>
+<li>把"客观标准"误读成"宿命"，是另一种假知</li>
+</ul>
+<p class="paragraph"><strong class="strong">悟真师兄原话对应：</strong> "<strong class="strong">标准只有一个，不是人决定的，是道在做标准。</strong>"</p>
+<ul class="bullet-list">
+<li>道做标准 = 客观的、永恒的</li>
+<li>人以为的"老了没用了" = 主观的、逃避的</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 60 岁的老人，能不能在某个小领域（比如种花、做饭、带孙子）建立新的标准？能。<strong class="strong">真知不分年龄，只分"是否实证"。</strong></p>
+<h3 class="title-h3">4.6 第六种·"读经不实证"型——把《大学》当知识</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 35 岁学者，能背《大学》全文，但生活中依然焦虑、纠结、随境转。</p>
+<p class="paragraph"><strong class="strong">为什么这是假知：</strong></p>
+<ul class="bullet-list">
+<li>他把"知止"当成了<strong class="strong">知识</strong>（能讲出来）</li>
+<li>不知道"知止"是<strong class="strong">实证</strong>（要活出来）</li>
+<li>悟真师兄原话："<strong class="strong">真正知道的人做事很容易</strong>"——知道是身心合一的"知道"，不只是脑子的"知道"</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 每天问自己——"今天我做的哪件事，是真知驱动？还是假知驱动？"</p>
+<h3 class="title-h3">4.7 第七种·"修行人傲慢"型——以为自己真知了</h3>
+<p class="paragraph"><strong class="strong">典型画像：</strong> 45 岁"老修行人"，自认为"看破了"、"放下了"，但家人朋友都觉得他冷漠。</p>
+<p class="paragraph"><strong class="strong">为什么这是假知：</strong></p>
+<ul class="bullet-list">
+<li>真知的人不冷漠（悟真师兄："<strong class="strong">定在道上，定在如来上，所以他就没有我念我心</strong>"——无我，但不是无情）</li>
+<li>假知的人把"冷漠"误读为"放下"——这是把"不染"误读成"不关心"</li>
+<li>真定的状态是"<strong class="strong">该出手时一定出手</strong>"，不是"什么都不管"</li>
+</ul>
+<p class="paragraph"><strong class="strong">破解之道：</strong> 真正的放下 = 知道亲人需要什么，主动给什么。真正的定 = 在需要时全力以赴，事后复归于静。</p>
+<hr class="divider">
+<h2 class="title-h2">第五章·落地——三步走实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门·找到你的"一寸真知"</h3>
+<p class="paragraph"><strong class="strong">目标：</strong> 在任何一个领域，找到一个"你确实知道、别人怎么说都动摇不了"的真知。</p>
+<p class="paragraph"><strong class="strong">方法：</strong></p>
+<ol class="num-list">
+<li><strong class="strong">选一个小领域：</strong> 比如"每天 10 点睡觉"、"每周运动 3 次"、"每天陪孩子 30 分钟"。</li>
+<li><strong class="strong">连续 30 天实证：</strong> 不是"我打算"，是"我做到"。</li>
+<li><strong class="strong">30 天后回看：</strong> 那个"做到了"的感觉，就是真知的小样。</li>
+</ul>
+<p class="paragraph"><strong class="strong">检验标准：</strong> 30 天后，你心里是不是有了一个"小标准"？比如"睡觉这事，我知道 10 点睡比 1 点睡第二天精神好"——这个"知道"是真知，不是假知。</p>
+<h3 class="title-h3">5.2 1 年稳固·从一个真知扩展到三个</h3>
+<p class="paragraph"><strong class="strong">目标：</strong> 在一年内，把"一寸真知"扩展到三个不同领域。</p>
+<p class="paragraph"><strong class="strong">方法：</strong></p>
+<ul class="bullet-list">
+<li>第一个 30 天搞定"睡眠/健康"</li>
+<li>第二个 30 天搞定"一个核心工作习惯"</li>
+<li>第三个 30 天搞定"一段关系（家庭/友谊）"</li>
+<li>其余 9 个月稳固这三个</li>
+</ul>
+<p class="paragraph"><strong class="strong">检验标准：</strong> 当别人质疑你"你这标准太严了"时，你是不是"<strong class="strong">如如不动</strong>"？如果是，你已经在"知止而后定"的路上了。</p>
+<h3 class="title-h3">5.3 3 年突破·从"三个真知"到"一以贯之"</h3>
+<p class="paragraph"><strong class="strong">目标：</strong> 把三个真知<strong class="strong">打通成一个内在标准体系</strong>。</p>
+<p class="paragraph"><strong class="strong">方法：</strong></p>
+<ul class="bullet-list">
+<li>三个真知看起来不同（健康/工作/关系），但背后是同一个"我"在做选择</li>
+<li>当你能说出"我之所以这么选，是因为我心中有这个标准"——三个真知就归一了</li>
+<li>这个"一以贯之"就是悟真师兄讲的"<strong class="strong">定在道上，定在如来上</strong>"</li>
+</ul>
+<p class="paragraph"><strong class="strong">检验标准：</strong> 不需要刻意提醒自己该怎么做，因为"那个标准"已经内化到一抬手、一开口的当下。<strong class="strong">没有"我应该……"，只有"我就是这样"。</strong></p>
+<h3 class="title-h3">5.4 终身功夫·活到 70 岁都还在练</h3>
+<p class="paragraph"><strong class="strong">目标：</strong> 像孔子一样，七十而从心所欲不逾矩。</p>
+<p class="paragraph"><strong class="strong">方法：</strong></p>
+<ul class="bullet-list">
+<li>30 年练"一个真知"</li>
+<li>30 年练"三个真知"</li>
+<li>30 年练"一以贯之"</li>
+<li>70 岁还在"日用而不知"地练</li>
+</ul>
+<p class="paragraph"><strong class="strong">检验标准：</strong> 别人说"您 70 岁了，怎么还这么稳？"——<strong class="strong">不是你装稳，是你真的稳。</strong> 这就是悟真师兄讲的"<strong class="strong">高手会装傻，会难得糊涂</strong>"的真正版本——高手不需要装，他本来就是那样。</p>
+<hr class="divider">
+<h2 class="title-h2">第六章·回扣原话——把悟真师兄每一句落到具体</h2>
+<p class="paragraph">悟真师兄原话有这么几个关键句，我逐句回扣：</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>落地</th>
+</tr>
+<tr>
+<td>"知有两个知，一个是假知，一个是真知"</td>
+<td>30 天找到一个真知（身体/工作/关系任选一）</td>
+</tr>
+<tr>
+<td>"止于中的意思就是已经有标准了"</td>
+<td>在你那个领域，问自己"我心中有标准吗？"</td>
+</tr>
+<tr>
+<td>"高手会装傻，会难得糊涂，但在关键时刻他一定会出手"</td>
+<td>每天问自己"今天我该不该出手？我出手了吗？"</td>
+</tr>
+<tr>
+<td>"他没有拿到这个结果，他不会出手"</td>
+<td>练"先有结果再动手"——不妄想、不乱动</td>
+</tr>
+<tr>
+<td>"你心中没有真知的标准，别人一说你就动"</td>
+<td>找出自己"最容易被带跑"的领域，刻意练定</td>
+</tr>
+<tr>
+<td>"定在道上，定在如来上"</td>
+<td>找一段经文（《大学》《心经》任选），每天读一次"定"在那段经文上</td>
+</tr>
+<tr>
+<td>"标准只有一个，不是人决定的，是道在做标准"</td>
+<td>每天观察"道在做事"——比如时间到了就吃饭、太阳出来就起床</td>
+</tr>
+<tr>
+<td>"知止是有标准，进退有度"</td>
+<td>练"进退有度"——问自己"今天我进多了还是退多了？"</td>
+</tr>
+</table></div>
+<hr class="divider">
+<h2 class="title-h2">收束·回到原话</h2>
+<p class="paragraph">悟真师兄原话最后一句：</p>
+<blockquote class="quote">
+<p>"<strong class="strong">知止是有标准，进退有度。</strong>"</p>
+</blockquote>
+<p class="paragraph">八个字，是"知止而后定"整句话的现代白话。</p>
+<ul class="bullet-list">
+<li><strong class="strong">知止 = 有标准</strong></li>
+<li><strong class="strong">后定 = 进退有度</strong></li>
+</ul>
+<p class="paragraph">知道自己的标准在哪里，自然知道该进还是该退、该说还是该沉默、该出手还是该装傻。</p>
+<p class="paragraph">这就是《大学》三纲"明明德、亲民、止于至善"中"止于至善"的真正落地路径——<strong class="strong">不是抽象的"至善"，是日用中你心中那个清清楚楚的标准。</strong></p>
+<p class="paragraph">妈妈种地有标准，你做事也该有标准。 玄奘 19 年求法有标准，阳明龙场悟道有标准，你 30 年人生也该有标准。 南师讲《大学》有标准，悟真师兄讲《大学》有标准，孔子 70 岁从心所欲有标准。</p>
+<p class="paragraph"><strong class="strong">真知不易得，但一旦得之，便终身不动摇。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">附录·14 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《大学》经一章</strong>："知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。"</li>
+<li><strong class="strong">《大学》经一章</strong>："大学之道，在明明德，在亲民，在止于至善。"</li>
+<li><strong class="strong">朱熹《大学章句》</strong>："止者，所当止之地，即至善之所在也。"</li>
+<li><strong class="strong">王阳明《大学古本旁释》</strong>："知止者，知至善之在吾心而止之也。"</li>
+<li><strong class="strong">南怀瑾《原本大学微言》</strong>："知止，是知道止于至善，也就是佛家讲的无上正等正觉、止观双运。"</li>
+<li><strong class="strong">憨山德清《大学纲目决疑》</strong>："知止者，即一心三观。三止者，曰体真止，方便随缘止，息二边分别止。"</li>
+<li><strong class="strong">《传习录·卷上》</strong>："知是行之始，行是知之成。"</li>
+<li><strong class="strong">《传习录·卷上》</strong>："无善无恶心之体，有善有恶意之动，知善知恶是良知，为善去恶是格物。"</li>
+<li><strong class="strong">《论语·为政》</strong>："吾十有五而志于学，三十而立，四十而不惑，五十而知天命，六十而耳顺，七十而从心所欲不逾矩。"</li>
+<li><strong class="strong">《大慈恩寺三藏法师传·卷十》</strong>："此身危脆，汝等宜勤修功德，勿令后悔。"</li>
+<li><strong class="strong">《楞严经·卷六》</strong>："妙性圆明，离诸名相，本来无有世界众生。"</li>
+<li><strong class="strong">《摩诃止观》</strong>："止乃伏结之初门，观是断惑之正要。"</li>
+<li><strong class="strong">《孟子·离娄上》</strong>："大人者，不失其赤子之心。"</li>
+<li><strong class="strong">《中庸·第二章》</strong>："知止而后有定，定而后能静，静而后能安，安而后能虑，虑而后能得。"（朱熹订正后的《大学》《中庸》互文）</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p>悟真读书笔记 · 知止而后定 · 第一稿完成</p>
+<p>2026-07-15</p>
+</blockquote>
+    
+    <div class="sign-off">
+        <span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>
+        2026 年 7 月 15 日 · 北京
+    </div>
+</div>
+
+<script>
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const muteBtn = document.getElementById('muteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const speedBtns = document.querySelectorAll('.ctrl-btn[data-speed]');
+
+function fmt(s) {
+    if (!s || isNaN(s)) return '00:00';
+    const m = Math.floor(s / 60);
+    const ss = Math.floor(s % 60);
+    return String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
+}
+
+playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸';
+    } else {
+        audio.pause();
+        playBtn.textContent = '▶';
+    }
+});
+
+audio.addEventListener('loadedmetadata', () => {
+    durationEl.textContent = fmt(audio.duration);
+});
+
+audio.addEventListener('timeupdate', () => {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = fmt(audio.currentTime);
+});
+
+audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶';
+    progressFill.style.width = '0%';
+});
+
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+});
+
+muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇 取消静音' : '🔊 静音';
+});
+
+volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value / 100;
+});
+
+speedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const speed = parseFloat(btn.dataset.speed);
+        audio.playbackRate = speed;
+        speedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+audio.volume = 0.8;
+</script>
+
+</body>
+</html>
