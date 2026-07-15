@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>色中见空·空中见色</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #faf6ef;
+    color: #3d3027;
+    font-family: 'Noto Serif SC', '站酷小薇体', 'STKaiti', 'KaiTi', 'PingFang SC', serif;
+    font-size: 20px;
+    line-height: 2.2;
+    padding: 0 0 80px 0;
+}
+
+.page { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+
+/* HERO 区 */
+.hero {
+    background: linear-gradient(135deg, #faf6ef 0%, #f3eada 100%);
+    padding: 80px 32px 60px;
+    text-align: center;
+    border-bottom: 3px double #8a5a2b;
+    margin-bottom: 60px;
+}
+
+.hero .main-title {
+    font-size: 44px;
+    font-weight: 700;
+    color: #3d3027;
+    letter-spacing: 6px;
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+
+.hero .sub-title {
+    font-size: 22px;
+    color: #8a5a2b;
+    font-weight: 500;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.hero .meta {
+    font-size: 14px;
+    color: #7a6f63;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.hero .meta .seal {
+    color: #c8423b;
+    font-weight: 600;
+}
+
+/* 音频播放器 */
+.audio-player {
+    background: #fff;
+    border: 2px solid #8a5a2b;
+    border-radius: 12px;
+    padding: 24px 28px;
+    max-width: 720px;
+    margin: 32px auto 0;
+    box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+}
+
+.audio-player .player-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 16px;
+}
+
+.audio-player .play-btn {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #8a5a2b;
+    color: #fff;
+    border: none;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.audio-player .play-btn:hover { background: #6f4520; }
+
+.audio-player .progress-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.audio-player .progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #f0e4d0;
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.audio-player .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #8a5a2b, #c8a85a);
+    width: 0%;
+    transition: width 0.1s;
+}
+
+.audio-player .time-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    color: #7a6f63;
+    font-family: monospace;
+}
+
+.audio-player .controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px solid #f0e4d0;
+}
+
+.audio-player .ctrl-btn {
+    background: transparent;
+    border: 1px solid #d4c4a8;
+    color: #8a5a2b;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+}
+
+.audio-player .ctrl-btn:hover { background: #f0e4d0; }
+
+.audio-player .ctrl-btn.active {
+    background: #8a5a2b;
+    color: #fff;
+    border-color: #8a5a2b;
+}
+
+.audio-player .speed-group {
+    display: flex;
+    gap: 4px;
+}
+
+.audio-player .volume {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+.audio-player .volume-slider {
+    width: 80px;
+}
+
+.audio-player .download {
+    color: #8a5a2b;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* 标题层级 */
+.title-h1 {
+    font-size: 30px;
+    color: #3d3027;
+    margin: 60px 0 30px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #8a5a2b;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+
+.title-h2 {
+    font-size: 26px;
+    color: #8a5a2b;
+    margin: 50px 0 24px;
+    padding-left: 18px;
+    border-left: 6px solid #8a5a2b;
+    letter-spacing: 2px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.title-h3 {
+    font-size: 22px;
+    color: #5a3e22;
+    margin: 36px 0 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.title-h4 {
+    font-size: 19px;
+    color: #5a3e22;
+    margin: 24px 0 12px;
+    font-weight: 600;
+}
+
+/* 段落 */
+.paragraph {
+    margin-bottom: 20px;
+    text-indent: 2em;
+    text-align: justify;
+}
+
+/* 加粗 */
+.strong {
+    color: #8a5a2b;
+    font-weight: 600;
+    background: linear-gradient(transparent 65%, rgba(200, 168, 90, 0.25) 65%);
+    padding: 0 2px;
+}
+
+/* 警示/朱红 */
+.quote {
+    background: #fef5f4;
+    border-left: 4px solid #c8423b;
+    padding: 16px 24px;
+    margin: 24px 0;
+    border-radius: 0 6px 6px 0;
+    font-style: normal;
+    color: #5a3e22;
+}
+
+.quote p {
+    margin: 8px 0;
+    text-indent: 0;
+}
+
+/* 列表 */
+.bullet-list, .num-list {
+    margin: 16px 0 20px 40px;
+}
+
+.bullet-list li, .num-list li {
+    margin-bottom: 10px;
+    line-height: 1.9;
+}
+
+/* 表格 */
+.table-wrap {
+    overflow-x: auto;
+    margin: 24px 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border: 1px solid #d4c4a8;
+    border-radius: 6px;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.data-table th {
+    background: #8a5a2b;
+    color: #fff;
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.data-table td {
+    padding: 12px 16px;
+    border-top: 1px solid #f0e4d0;
+    line-height: 1.7;
+}
+
+.data-table tr:nth-child(even) td {
+    background: #faf6ef;
+}
+
+/* 分割线 */
+.divider {
+    border: none;
+    border-top: 1px dashed #c8a85a;
+    margin: 50px 0;
+}
+
+/* 印章 */
+.seal-stamp {
+    display: inline-block;
+    background: #c8423b;
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    margin: 0 4px;
+}
+
+/* 落款 */
+.sign-off {
+    text-align: right;
+    margin: 60px 0 30px;
+    color: #8a5a2b;
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 2;
+}
+
+@media (max-width: 768px) {
+    body { font-size: 18px; line-height: 2.0; }
+    .hero { padding: 50px 20px 40px; }
+    .hero .main-title { font-size: 30px; letter-spacing: 3px; }
+    .hero .sub-title { font-size: 17px; }
+    .title-h1 { font-size: 24px; }
+    .title-h2 { font-size: 20px; }
+    .page { padding: 0 20px; }
+    .audio-player { padding: 18px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="main-title">色中见空·空中见色</div>
+    <div class="sub-title">一位濒死点化者的当代实修口述 · 深度研读笔记</div>
+    <div class="meta">
+        <span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 15 日 · 字数 11000+ · 全文音频 60 分钟
+    </div>
+    
+    <div class="audio-player">
+        <audio id="audio" preload="metadata">
+            <source src="se-zhong-jian-kong-full.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player-row">
+            <button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+            <div class="progress-wrap">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-row">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">--:--</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="speed-group">
+                <button class="ctrl-btn" data-speed="0.75">0.75x</button>
+                <button class="ctrl-btn active" data-speed="1">1x</button>
+                <button class="ctrl-btn" data-speed="1.25">1.25x</button>
+                <button class="ctrl-btn" data-speed="1.5">1.5x</button>
+                <button class="ctrl-btn" data-speed="2">2x</button>
+            </div>
+            <button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+            <div class="volume">
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+            </div>
+            <a class="download" id="downloadBtn" href="se-zhong-jian-kong-full.mp3" download="se-zhong-jian-kong-full.mp3">⬇ 下载音频</a>
+        </div>
+    </div>
+</div>
+
+<div class="page">
+<h1 class="title-h1">色中见空·空中见色</h1>
+<h2 class="title-h2">——一位濒死点化者的当代实修口述·深度研读笔记</h2>
+<blockquote class="quote">
+<p>原文命题：修行是"用生命体验出来的"，需平衡——不刻意追求（想要=被物困），不强行排斥（不要=被念困）。检验标准：能否在现实生活中自如应对（如自然饮食），创造价值（如事业成就）。</p>
+</blockquote>
+<p class="paragraph">></p>
+<blockquote class="quote">
+<p>核心思想：双向修行原则：色中见空（把人世责任履行到位才是真修行），空中见色（心无挂碍才能妥善处理事务）。</p>
+</blockquote>
+<p class="paragraph">></p>
+<blockquote class="quote">
+<p>署名：悟真</p>
+<p>版本：v1 完整版</p>
+<p>中文字符：~11000 字（10 章深度版）</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">"空"字不是逃避的借口，"色"字不是沉溺的理由。</strong></p>
+<p class="paragraph">修行人最常犯的一个错，是把"空"当成一个可以躲进去的山洞。</p>
+<p class="paragraph">打坐、抄经、吃素、禁欲、散财、闭关……这些事做出来都是好看的、听得见的。外人一看："哎哟，这位师兄修得真精进。"自己也觉得心安——"我已经在修了。"</p>
+<p class="paragraph">但是——<strong class="strong">这位讲师用一次濒死体验告诉我们：所有"用身体去修"的极端做法，如果没有"用心去证"，都是修偏了。</strong></p>
+<p class="paragraph">他在一次讲课中昏倒，被送医院抢救。他的师父闻讯赶来，二话不说强行把他带到湛江。湛江三天，十杯补酒，肉菜满桌，强行破戒。酒肉下肚，他原本被"禁欲修行"耗尽的身体，反而十天胖了十斤。</p>
+<p class="paragraph">那一刻他才真正懂得师父在点化什么：</p>
+<blockquote class="quote">
+<p><strong class="strong">大慈大悲不是抽象的四个字。太阳给予能量，从不求回报。这就是大慈大悲的实相。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">道法自然不是抽象的四个字。万物运行有其本来的节奏，人为的妄想——"我必须戒这个、禁那个、躲进那个山洞才算修行"——恰恰是背道而驰。</strong></p>
+</blockquote>
+<p class="paragraph">这不是反修行。这是<strong class="strong">真修行</strong>。</p>
+<p class="paragraph">从那一刻起，他定了两条铁律，作为日后所有修行的总纲：</p>
+<p class="paragraph"><strong class="strong">1. 色中见空——把人世责任履行到位才是真修行。</strong> <strong class="strong">2. 空中见色——心无挂碍才能妥善处理事务。</strong></p>
+<p class="paragraph">这两条加起来，就是这堂课的全部精华。下面我们一章一章拆开来看。</p>
+<hr class="divider">
+<h2 class="title-h2">第一章·镜照·真修行人 vs 假修行人</h2>
+<p class="paragraph">修行这条路上，最难辨的不是"对"与"错"，而是"真"与"假"。</p>
+<p class="paragraph">做的事都一样：打坐、抄经、念佛、布施、持戒。但<strong class="strong">心走的路不同，结果天差地别</strong>。</p>
+<h3 class="title-h3">一、四种"修偏了"的画像</h3>
+<p class="paragraph"><strong class="strong">画像一·禁欲型</strong>：某男 28 岁开始"严格持戒"，戒酒、戒色、戒娱乐、戒社交。五年下来，身体虚脱，瘦到 90 斤，社交能力几乎归零。他说："我现在什么欲望都没有了，我很清净。" 师父看他一眼："你不是没有欲望，你是被欲望压死了。"</p>
+<p class="paragraph"><strong class="strong">画像二·散财型</strong>：某女 35 岁读了几本佛经，觉得"一切皆空，金钱也是空"。把百万家财捐了、散了、舍了。三年后家里出事，一分钱拿不出，子女失学，父母无人照料。她哭着说："我以为这是布施。"</p>
+<p class="paragraph"><strong class="strong">画像三·饿肚型</strong>：某修行人每天只吃一餐，说"不执着饮食"。饿到面黄肌瘦，血糖过低，工作失误被辞退。他说："我放下了对食物的执念。" 医生说："你放下了，我得给你挂水。"</p>
+<p class="paragraph"><strong class="strong">画像四·闭关闭山型</strong>：某男 40 岁辞职进山"修行"，三年不问世事。下山后亲人已逝，事业全毁，人际断裂。他说："我以为我在追求真理。" 师父说："你是在逃避承担。"</p>
+<h3 class="title-h3">二、这四种人错在哪里？</h3>
+<p class="paragraph">错在<strong class="strong">把"修行的形式"当成了"修行的本质"</strong>。</p>
+<p class="paragraph">他们以为"禁"就是修——禁止欲望就是清静。 他们以为"舍"就是修——舍尽财物就是放下。 他们以为"苦"就是修——饿肚子就是出离。 他们以为"躲"就是修——躲进深山就是解脱。</p>
+<p class="paragraph">但<strong class="strong">修行的本质不是形式的严格，而是心性的觉醒</strong>。</p>
+<p class="paragraph">形式再严格，心没醒，就是修偏了。 形式再随便，心醒了，就是真修。</p>
+<p class="paragraph">那位讲师破戒后身体恢复健康，那不是"破戒成功"。那是<strong class="strong">身体从虚妄的"禁"里回来了，回到自然的状态</strong>。</p>
+<p class="paragraph">太阳给能量不求回报，是大慈大悲的实相。 万物运行有本来的节奏，是道法自然的实相。 <strong class="strong">身体饿了吃饭，困了睡觉，做事尽责，待人真诚——这就是修行的实相。</strong></p>
+<p class="paragraph">不需要躲进山洞。 不需要戒成枯木。 不需要散尽家财。 <strong class="strong">人世责任履行到位，就是色中见空。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第二章·濒死点化·师父为什么强行把他带去湛江</h2>
+<p class="paragraph">这一章是整堂课的核心故事。</p>
+<h3 class="title-h3">一、昏倒·送医·濒死</h3>
+<p class="paragraph">这位讲师在一次讲课中突然昏倒。 被紧急送医。 医院下了病危通知。 他在 ICU 抢救了数小时。 醒过来时，整个人虚脱得像一具骨架。</p>
+<h3 class="title-h3">二、师父的反应</h3>
+<p class="paragraph">按常理，师父来了应该说什么？ "你太累了，要好好休息。" "你要放下工作，专心养病。" "你的修行太辛苦了，要减少功课。"</p>
+<p class="paragraph">但这位师父来了一句话： "<strong class="strong">跟我去湛江。</strong>"</p>
+<h3 class="title-h3">三、湛江三天·强行破戒</h3>
+<p class="paragraph">到了湛江，师父安排了三天宴席。</p>
+<p class="paragraph">桌上是什么？ 十杯补酒。 三天大鱼大肉。 师父亲自夹菜，亲自劝酒。</p>
+<p class="paragraph">讲师一开始抗拒："师父，我修行人不喝酒……" 师父说："<strong class="strong">喝。</strong>"</p>
+<p class="paragraph">讲师又想："师父，我吃素……" 师父说："<strong class="strong">吃。</strong>"</p>
+<p class="paragraph">三天下来，他喝了十杯补酒，吃了三天肉菜。</p>
+<h3 class="title-h3">四、结果——十天胖了十斤</h3>
+<p class="paragraph">回到住处一称体重：<strong class="strong">十天胖了十斤</strong>。</p>
+<p class="paragraph">原本虚脱的身体开始恢复。 原本低落的能量开始回升。 原本苍白的脸色开始红润。 原本空洞的眼神开始有神。</p>
+<h3 class="title-h3">五、那一刻他悟到了什么？</h3>
+<p class="paragraph">他悟到的是——</p>
+<blockquote class="quote">
+<p><strong class="strong">"色中见空"四个字，是用十杯补酒和三天肉菜实证出来的。</strong></p>
+</blockquote>
+<p class="paragraph">师父没有给他讲"色即是空"的经文。 师父用<strong class="strong">一碗肉、一杯酒、一个强行的命令</strong>，让他亲身经历"原来人世间的滋养，本身就是大道"。</p>
+<p class="paragraph">他悟到的是——</p>
+<blockquote class="quote">
+<p><strong class="strong">修行不是禁绝人世，而是把人世的责任和滋养都接住。</strong></p>
+</blockquote>
+<p class="paragraph">接住父母——是孝。 接住妻儿——是义。 接住工作——是忠。 接住身体——是慈。 接住酒肉——是自然。</p>
+<p class="paragraph"><strong class="strong">接住一切，而心不被一切困住。</strong></p>
+<p class="paragraph">这就是"色中见空"。</p>
+<blockquote class="quote">
+<p><strong class="strong">接住一切不被困住——是"空"。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">接住一切做得尽心——是"色"。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">两者同时——是"中道"。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">师父用三天宴席，把"中道"两个字煮成了一桌菜，让他吃进了骨头里。</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">第三章·色中见空·把人世责任履行到位才是真修行</h2>
+<h3 class="title-h3">一、"色"是什么？</h3>
+<p class="paragraph">"色"不是"色情"那个色。 "色"是<strong class="strong">眼耳鼻舌身意所对的一切现象</strong>——山河大地、父母妻儿、钱财事业、功名富贵、悲欢离合、喜怒哀乐。</p>
+<p class="paragraph"><strong class="strong">你活着的每一秒，都活在"色"里。</strong></p>
+<p class="paragraph">呼吸是色。 吃饭是色。 睡觉是色。 上班是色。 陪父母是色。 养孩子是色。 爱一个人是色。 被人误解是色。 生老病死是色。</p>
+<p class="paragraph"><strong class="strong">没有"色"的人生，是不存在的。</strong></p>
+<h3 class="title-h3">二、"空"是什么？</h3>
+<p class="paragraph">"空"不是"什么都没有"。 "空"是<strong class="strong">一切现象的本体——无自性、不可得、缘起缘灭</strong>。</p>
+<p class="paragraph">色不异空——一切现象的本体是无自性的。 空不异色——无自性的本体恰恰显现为一切现象。 色即是空——现象当下即是空。 空即是色——空当下即是现象。</p>
+<p class="paragraph"><strong class="strong">"空"不在"色"之外，"色"不在"空"之外。</strong></p>
+<h3 class="title-h3">三、"色中见空"是什么意思？</h3>
+<p class="paragraph"><strong class="strong">在尽人世责任的同时，看见一切责任的本体——缘起性空。</strong></p>
+<p class="paragraph">这句话怎么落到生活里？</p>
+<p class="paragraph"><strong class="strong">1. 孝顺父母·色中见空</strong></p>
+<p class="paragraph">父母在——尽心孝养。 给钱、陪伴、听他们说话、带他们看病、让他们安心。 这是"色"。</p>
+<p class="paragraph">做的过程中知道——父母也会老，也会走，我们能做的只是这一程。 尽完本分，心里不留遗憾。 这是"空"。</p>
+<p class="paragraph"><strong class="strong">色中见空 = 尽孝 + 不执念。</strong></p>
+<p class="paragraph"><strong class="strong">2. 养育孩子·色中见空</strong></p>
+<p class="paragraph">孩子小——用心陪伴。 教他做人、读书、做事、待人。 这是"色"。</p>
+<p class="paragraph">知道——孩子有自己的命、自己的路、自己的业。 我们做父母的责任是给方向、给底线、给榜样，不是替他活。 这是"空"。</p>
+<p class="paragraph"><strong class="strong">色中见空 = 养育 + 放手。</strong></p>
+<p class="paragraph"><strong class="strong">3. 经营事业·色中见空</strong></p>
+<p class="paragraph">工作——尽心尽力。 把事情做好，把客户服务好，把岗位责任尽到。 这是"色"。</p>
+<p class="paragraph">知道——事业有成有败，市场有起有伏，我尽心而已。 成不骄，败不馁。 这是"空"。</p>
+<p class="paragraph"><strong class="strong">色中见空 = 敬业 + 不执念结果。</strong></p>
+<p class="paragraph"><strong class="strong">4. 经营关系·色中见空</strong></p>
+<p class="paragraph">对伴侣——真诚相待，有话直说。 对朋友——守信用，有担当。 对下属——爱护、培养。 这是"色"。</p>
+<p class="paragraph">知道——缘分有深浅，关系有聚散。 珍惜当下，不强求永恒。 这是"空"。</p>
+<p class="paragraph"><strong class="strong">色中见空 = 真诚 + 不攀缘。</strong></p>
+<p class="paragraph"><strong class="strong">5. 对待自己·色中见空</strong></p>
+<p class="paragraph">身体饿了吃饭——这是"色"。 吃饭时不挑剔、不暴食、不执着——这是"空"。</p>
+<p class="paragraph">身体累了睡觉——这是"色"。 睡觉时不胡思乱想、不强求睡眠——这是"空"。</p>
+<p class="paragraph">身体病了看病——这是"色"。 看病时知道一切无常、不怨天尤人——这是"空"。</p>
+<p class="paragraph"><strong class="strong">色中见空 = 自在生活 + 不被生活困住。</strong></p>
+<h3 class="title-h3">四、做不到"色中见空"的两种病</h3>
+<p class="paragraph"><strong class="strong">病一·执色</strong>——把人世责任看得太重，把自己压死。</p>
+<p class="paragraph">拼命工作、拼命赚钱、拼命讨好、拼命证明自己。 最后身体垮了，关系崩了，心也碎了。</p>
+<p class="paragraph"><strong class="strong">病二·执空</strong>——把"空"看得太玄，躲进"空"里不出来。</p>
+<p class="paragraph">打坐、抄经、念佛、吃素、禁欲、闭关闭山。 最后与社会脱节，与亲人疏远，连养活自己的能力都没了。</p>
+<p class="paragraph"><strong class="strong">两种病都是"偏"。</strong></p>
+<p class="paragraph"><strong class="strong">真修行在中间。</strong></p>
+<p class="paragraph"><strong class="strong">色中见空——既尽人世责任，又不被人世责任困住。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第四章·空中见色·心无挂碍才能妥善处理事务</h2>
+<h3 class="title-h3">一、为什么"空"在"色"前面？</h3>
+<p class="paragraph">这位讲师把两条铁律的顺序定为：</p>
+<p class="paragraph"><strong class="strong">1. 色中见空（先把人世责任做好）</strong> <strong class="strong">2. 空中见色（再以无挂碍的心处理事务）</strong></p>
+<p class="paragraph">为什么空要在色前面？</p>
+<p class="paragraph">因为<strong class="strong">没有"空"作底的"色"——是辛苦、是负担、是执着</strong>。</p>
+<p class="paragraph">你孝顺父母，但心里一直挂念"我是不是做得够好"——这是"色"无"空"，是负担。 你养育孩子，但心里一直焦虑"他以后会不会过得好"——这是"色"无"空"，是焦虑。 你经营事业，但心里一直紧绷"我会不会失败"——这是"色"无"空"，是恐惧。</p>
+<p class="paragraph"><strong class="strong">没有"空"做底的"色"，每做一件事都是煎熬。</strong></p>
+<h3 class="title-h3">二、"空中见色"是什么意思？</h3>
+<p class="paragraph"><strong class="strong">在无挂碍的状态下，把每一件人世的事都做圆。</strong></p>
+<p class="paragraph"><strong class="strong">无挂碍 = 心里没有"我执"在做事。</strong></p>
+<p class="paragraph">不是"我没努力"。 不是"我没责任"。 是"我努力了，但努力本身不是我"。</p>
+<p class="paragraph"><strong class="strong">我做了，但我不被"我做的"困住。</strong></p>
+<h3 class="title-h3">三、三个层次的"空中见色"</h3>
+<p class="paragraph"><strong class="strong">第一层·事来则应，事去则忘</strong></p>
+<p class="paragraph">事来了——尽心做。 做完了——放下。 不在心里反复咀嚼"我刚才做得好不好"。</p>
+<p class="paragraph">像镜子—— 物来则照。 物去则空。 镜子里不留任何影像。</p>
+<p class="paragraph"><strong class="strong">第二层·成不骄，败不馁</strong></p>
+<p class="paragraph">事成了——知道这是缘起缘灭，不执着"我多厉害"。 事败了——知道这也是缘起缘灭，不怨天尤人。</p>
+<p class="paragraph"><strong class="strong">心不随境转。</strong> <strong class="strong">境来心照，境去心空。</strong></p>
+<p class="paragraph"><strong class="strong">第三层·做而不做，不做而做</strong></p>
+<p class="paragraph">这是更高的境界—— 做着事，心里不觉得自己"在做"。 心里没有"我"的影子在做事。</p>
+<p class="paragraph">像太阳—— 给能量，从不求回报。 给万物，从不执着"我在给"。 <strong class="strong">给而无所给，为而无所为。</strong></p>
+<p class="paragraph"><strong class="strong">这就是那位讲师悟到的"太阳的实相"。</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">大慈大悲不是抽象的四个字。太阳给予能量却不求回报——这就是大慈大悲的实相。</strong></p>
+</blockquote>
+<h3 class="title-h3">四、做不到"空中见色"的两种病</h3>
+<p class="paragraph"><strong class="strong">病一·挂碍太多</strong>——心里装满了"我相、人相、众生相、寿者相"。</p>
+<p class="paragraph">做了一点事，恨不得全世界知道。 受了一点委屈，记一辈子。 得了一点好处，舍不得放手。</p>
+<p class="paragraph"><strong class="strong">这是"我执"在做事。事做了，心被事困住了。</strong></p>
+<p class="paragraph"><strong class="strong">病二·消极逃避</strong>——把"无挂碍"理解成"什么都不用做"。</p>
+<p class="paragraph">"放下执念"——变成"什么都不抓"。 "随缘"——变成"爱咋咋地"。 "无我"——变成"没责任心"。</p>
+<p class="paragraph"><strong class="strong">这是把"空"读成了"懒"。</strong> <strong class="strong">是把中道走成了断灭。</strong></p>
+<p class="paragraph"><strong class="strong">真"空中见色"是——</strong></p>
+<p class="paragraph"><strong class="strong">心如明镜。</strong> <strong class="strong">事来则照，事去则空。</strong> <strong class="strong">不挂碍，不逃避。</strong> <strong class="strong">做好事不留痕，做完事不挂心。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第五章·大慈大悲·太阳给予能量却不求回报</h2>
+<p class="paragraph">这一章是这位讲师被点化最深的章节。</p>
+<h3 class="title-h3">一、师父说"喝"的背后</h3>
+<p class="paragraph">很多人听到这段故事会想："这师父怎么这样？弟子在病中，怎么能让他喝酒吃肉？"</p>
+<p class="paragraph">但是这位讲师回忆那一刻，心里是震撼的——</p>
+<blockquote class="quote">
+<p><strong class="strong">"我突然明白了。师父不是在让我破戒。师父是在告诉我——你之前以为的'慈悲'，是虚妄的。"</strong></p>
+</blockquote>
+<p class="paragraph">他之前以为的"慈悲"是什么？ 是"我不能再受用了，好东西都让给别人"。 是"我不能杀生，所以我不吃肉"。 是"我修苦行，肉身不重要"。</p>
+<p class="paragraph"><strong class="strong">他以为的"慈悲"，是建立在"我执"上的——"我在做慈悲的事"。</strong></p>
+<p class="paragraph"><strong class="strong">真正的"慈悲"，是没有"我在做"这回事。</strong></p>
+<h3 class="title-h3">二、太阳的实相</h3>
+<blockquote class="quote">
+<p><strong class="strong">太阳给予能量，从不求回报。</strong></p>
+</blockquote>
+<p class="paragraph">太阳给万物光和热—— 不挑对象。 不求感恩。 不立功德碑。 不停歇。</p>
+<p class="paragraph"><strong class="strong">太阳不做"我在布施"这件事。</strong> <strong class="strong">太阳只是"是其所是"。</strong></p>
+<p class="paragraph">这就是"大慈大悲"的实相。</p>
+<p class="paragraph">不是"我修出来了大慈大悲"。 是"我不再做'我'了，慈悲自然显现"。</p>
+<h3 class="title-h3">三、为什么师父让他吃肉？</h3>
+<p class="paragraph">师父让他吃肉——是让他明白： <strong class="strong">万物皆道。肉里也有道。酒里也有道。</strong> <strong class="strong">道不在某一种食物里，不在某一类形式里。</strong> <strong class="strong">道在每一件事里，只要心不被困住。</strong></p>
+<p class="paragraph">如果吃素是"修行"——那他心里装的就是"我吃素，我比吃肉的高级"。 这种"修行"，本身就是执着。</p>
+<p class="paragraph">如果吃肉是"破戒"——那他心里装的就是"我吃素了，我不能吃肉"。 这种"戒"，本身就是枷锁。</p>
+<p class="paragraph"><strong class="strong">当师父让他吃肉时，他能不能心安理得地吃？</strong> <strong class="strong">能不能吃的时候没有"我在破戒"的罪疚？</strong> <strong class="strong">能不能吃完后感恩这顿饭，但不执着"我吃了肉"这件事？</strong></p>
+<p class="paragraph">——如果能，<strong class="strong">肉就是道。</strong> ——如果不能，<strong class="strong">素也是枷锁。</strong></p>
+<p class="paragraph"><strong class="strong">道不在荤素。道在自心。</strong></p>
+<h3 class="title-h3">四、印光大师的印证</h3>
+<p class="paragraph">近代印光大师也讲过类似的话——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">佛法在世间，不离世间觉。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">离世觅菩提，恰如求兔角。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">佛法二字，何以要世间？</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">若欲出世，即是魔业。</strong>"</p>
+</blockquote>
+<p class="paragraph">——印光大师文钞·与某居士书</p>
+<p class="paragraph">印光的意思很明确： <strong class="strong">真佛法不在山里、不在庙里、不在闭关里。</strong> <strong class="strong">真佛法在世间——在日常穿衣吃饭里，在待人接物里，在尽人世责任里。</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">离世觅菩提，恰如求兔角——你去找根本不存在的"角"。</strong></p>
+</blockquote>
+<p class="paragraph">那位讲师濒死点化悟到的"太阳的实相"，和印光大师讲的"佛法在世间"，是<strong class="strong">完全一致</strong>的。</p>
+<h3 class="title-h3">五、儒家的印证——事上磨练</h3>
+<p class="paragraph">王阳明也讲过类似的话——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">心之所发便是意，意之所在便是物。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">意在于事亲，即事亲便是一物。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">意在于仁民爱物，即仁民爱物便是一物。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">意在于视听言动，即视听言动便是一物。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">所以某说无心则无身，无身则无心，但指其充塞流行言之谓身，指其主宰流行言之谓心，指其妙用谓之意，指其感应谓之物，只是一件。</strong>"</p>
+</blockquote>
+<p class="paragraph">——王阳明《传习录·卷下》</p>
+<p class="paragraph">王阳明说——<strong class="strong">意在哪，事就在哪。</strong> <strong class="strong">意在事亲，事亲就是修。</strong> <strong class="strong">意在仁民爱物，仁民爱物就是修。</strong> <strong class="strong">意在视听言动，视听言动就是修。</strong></p>
+<p class="paragraph"><strong class="strong">不需躲进山洞找"空"。</strong> <strong class="strong">人世责任履行到位，"空"自然现前。</strong></p>
+<p class="paragraph"><strong class="strong">这是儒家心学对"色中见空"的最好印证。</strong></p>
+<h3 class="title-h3">六、禅宗的印证——吃茶去</h3>
+<p class="paragraph">赵州从谂禅师有著名的"吃茶去"公案——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">僧问赵州：'如何是道？'</strong></p>
+<p><strong class="strong">师云：'吃茶去。'</strong>"</p>
+</blockquote>
+<p class="paragraph">——五灯会元·赵州从谂禅师</p>
+<p class="paragraph">有人问"什么是道"，赵州说"吃茶去"。 意思是——<strong class="strong">道不在别处，道在吃茶里。</strong> <strong class="strong">喝茶就是道。扫地就是道。洗碗就是道。</strong> <strong class="strong">不离日用常行内，直到先天未画前。</strong></p>
+<p class="paragraph">那位讲师濒死点化悟到的，和赵州禅师 1200 年前讲的，是<strong class="strong">同一个东西</strong>。</p>
+<p class="paragraph"><strong class="strong">道，从来没有离开过人世。</strong> <strong class="strong">只是人，离开过道。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第六章·道法自然·不刻意追求也不强行排斥</h2>
+<h3 class="title-h3">一、老子的"道法自然"</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">人法地，地法天，天法道，道法自然。</strong>"</p>
+</blockquote>
+<p class="paragraph">——《道德经·第二十五章》</p>
+<p class="paragraph">老子说—— <strong class="strong">人效法大地。</strong> <strong class="strong">大地效法天。</strong> <strong class="strong">天效法道。</strong> <strong class="strong">道效法自然。</strong></p>
+<p class="paragraph"><strong class="strong">什么是"自然"？</strong> <strong class="strong">"自然" = 自己如此 = 本来的样子。</strong></p>
+<p class="paragraph">太阳东升西沉——自己如此。 草木春生夏长秋收冬藏——自己如此。 婴儿饿了吃，困了睡——自己如此。 饿了吃饭，渴了喝水——自己如此。</p>
+<p class="paragraph"><strong class="strong">这一切都是"道法自然"。</strong></p>
+<h3 class="title-h3">二、"刻意"是反自然</h3>
+<p class="paragraph">什么是"刻意"？</p>
+<p class="paragraph"><strong class="strong">"刻意" = 用"我"的意志去改变本来的样子。</strong></p>
+<p class="paragraph">婴儿本来饿了会哭、困了会睡、自然长大。 但修行人规定："你不许吃这个，不许吃那个，每天必须打坐几小时，必须断多少欲……" ——这是"刻意"。</p>
+<p class="paragraph"><strong class="strong">"刻意"是把"我"的规则强加于"自然"上。</strong> <strong class="strong">结果不是"得道"，是"反道"。</strong></p>
+<p class="paragraph">那位讲师讲了四种"刻意"——</p>
+<p class="paragraph"><strong class="strong">刻意一·戒得太死</strong> 以为"戒"就是修。 但身体是"自然"的一部分。 戒到身体虚脱，是用"我执"打败了"自然"。</p>
+<p class="paragraph"><strong class="strong">刻意二·舍得太尽</strong> 以为"舍"就是修。 但家财是父母子女的依凭。 舍到妻离子散，是用"我执"伤到了"自然"。</p>
+<p class="paragraph"><strong class="strong">刻意三·苦得太深</strong> 以为"苦"就是修。 但身体的能量是"自然"给的。 苦到营养不良，是用"我执"耗尽了自己。</p>
+<p class="paragraph"><strong class="strong">刻意四·躲得太远</strong> 以为"躲"就是修。 但人世责任是"自然"的安排。 躲到深山不归，是用"我执"逃避了"自然"。</p>
+<p class="paragraph"><strong class="strong">四种"刻意"——都是把"修行的形式"凌驾于"生命的本然"上。</strong></p>
+<h3 class="title-h3">三、"刻意"为什么是反道？</h3>
+<p class="paragraph">因为——</p>
+<p class="paragraph"><strong class="strong">道是"无我"的。</strong> <strong class="strong">道运行万物，从不执着"我在运行"。</strong></p>
+<p class="paragraph">太阳给能量，从不"我要给能量"。 大地长万物，从不"我要长万物"。</p>
+<p class="paragraph"><strong class="strong">一切"我要……"的念头，都是"我执"在说话，不是"道"在说话。</strong></p>
+<p class="paragraph">那位讲师悟到的——</p>
+<blockquote class="quote">
+<p><strong class="strong">想要 = 被物困。</strong></p>
+<p><strong class="strong">不要 = 被念困。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">想要某物——心里就被那物困住了。</strong> <strong class="strong">不要某物——心里就被"不要"这念困住了。</strong></p>
+<p class="paragraph"><strong class="strong">"想要"和"不要"，都是"我"在做事，不是"道"在做事。</strong></p>
+<p class="paragraph"><strong class="strong">真正的"道法自然"是——</strong> <strong class="strong">物来则应，物去则空。</strong> <strong class="strong">不迎不拒，不拒不迎。</strong> <strong class="strong">一切来了，我接住。</strong> <strong class="strong">一切走了，我放手。</strong> <strong class="strong">不"想要"留住，也不"不要"它来。</strong></p>
+<h3 class="title-h3">四、检验标准</h3>
+<p class="paragraph">这位讲师给出了一个极其实用的"道法自然"检验标准——</p>
+<blockquote class="quote">
+<p><strong class="strong">能否在现实生活中自如应对（如自然饮食），创造价值（如事业成就）。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">真正"道法自然"的人——</strong></p>
+<p class="paragraph"><strong class="strong">1. 自如应对</strong> 饿了吃——不执着"吃什么、吃多少"。 困了睡——不执着"几点睡、睡多久"。 事了则了——不反复咀嚼。</p>
+<p class="paragraph"><strong class="strong">2. 创造价值</strong> 工作做得好——但不为"我做了很多"邀功。 事业有成就——但不为"我多成功"自满。 尽力但不执着结果。</p>
+<p class="paragraph"><strong class="strong">3. 关系和谐</strong> 对父母尽心——但不执着"我是不是孝子"。 对伴侣真诚——但不执着"对方是否回报"。 对朋友守信——但不执着"我吃亏了没有"。</p>
+<p class="paragraph"><strong class="strong">4. 身心健康</strong> 身体是"自然"给的——要尊重。 情绪是"自然"起的——要觉察。 念头是"自然"来的——要看破。</p>
+<p class="paragraph"><strong class="strong">这四个"自如"，是"道法自然"的检验标准。</strong></p>
+<p class="paragraph">做不到这四个"自如"，要么是"刻意"在作怪，要么是"我执"太重。</p>
+<h3 class="title-h3">五、慧能的印证</h3>
+<p class="paragraph">六祖慧能说——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">佛法在世间，不离世间觉。</strong>"</p>
+<p>"<strong class="strong">离世觅菩提，恰如求兔角。</strong>"</p>
+</blockquote>
+<p class="paragraph">——《六祖坛经·般若品》</p>
+<blockquote class="quote">
+<p>"<strong class="strong">心念不起名为坐，自性不动名为禅。</strong>"</p>
+</blockquote>
+<p class="paragraph">——《六祖坛经·坐禅品》</p>
+<blockquote class="quote">
+<p>"<strong class="strong">若真修道人，不见世间过。若见他人非，自非却是左。</strong>"</p>
+</blockquote>
+<p class="paragraph">——《六祖坛经·般若品》</p>
+<p class="paragraph">慧能的意思—— <strong class="strong">真修道人，看不见世间的过失。</strong> <strong class="strong">为什么？因为他自己心里没有"我相"，自然看什么都清净。</strong> <strong class="strong">如果他还看见别人这不对、那不对——那是他自己"我相"在动。</strong></p>
+<blockquote class="quote">
+<p>"<strong class="strong">不见世间过</strong>"——不是"装看不见"，是"心空到看不见"。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">这就是"道法自然"的真正检验——心空到看不见世间的过失。</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">那不是瞎——那是真正的"明"。</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">第七章·真假空性辨·假空 vs 真空（致命区分表）</h2>
+<p class="paragraph">这一章是这位讲师讲得最痛的一章——因为他自己差点就死在"假空"里。</p>
+<h3 class="title-h3">一、什么是"假空"？</h3>
+<p class="paragraph">"假空"是把"空"当成<strong class="strong">逃避的借口</strong>。</p>
+<p class="paragraph">具体表现——</p>
+<p class="paragraph"><strong class="strong">1. 饿肚称"不执着饮食"</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">2. 禁欲导致身体虚脱</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">3. 散尽家财做功德</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">4. 闭关闭山 5 年不下山</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">5. 看见别人做事就说"着相了"</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">6. 自己在事里却用理论否定别人</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">7. 念佛不转心，只是口念</strong> ——这是"假空"。</p>
+<p class="paragraph"><strong class="strong">8. 听了几堂课就到处"开示"</strong> ——这是"假空"。</p>
+<h3 class="title-h3">二、什么是"真空"？</h3>
+<p class="paragraph">"真空"是<strong class="strong">把人世责任履行到位后的自然超脱</strong>。</p>
+<p class="paragraph">具体表现——</p>
+<p class="paragraph"><strong class="strong">1. 饿了就吃，吃完不执着</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">2. 享受亲情，做完本分不留遗憾</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">3. 经营事业，尽心而不执着结果</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">4. 走入社会，承担岗位责任</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">5. 待人真诚，不着"我相"</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">6. 在事上磨练，事过不留痕</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">7. 念佛时心清净，做事时心不乱</strong> ——这是"真空"。</p>
+<p class="paragraph"><strong class="strong">8. 持续实修，持续内省，持续在事上磨</strong> ——这是"真空"。</p>
+<h3 class="title-h3">三、致命区分表</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>维度</th>
+<th>假空</th>
+<th>真空</th>
+</tr>
+<tr>
+<td><strong class="strong">对饮食</strong></td>
+<td>饿肚称"不执着"</td>
+<td>饿了就吃，吃完不执着</td>
+</tr>
+<tr>
+<td><strong class="strong">对金钱</strong></td>
+<td>散尽家财做功德</td>
+<td>用钱合道，钱来钱去不留痕</td>
+</tr>
+<tr>
+<td><strong class="strong">对欲望</strong></td>
+<td>禁欲到身体虚脱</td>
+<td>节制欲望，从不被欲望驾驭</td>
+</tr>
+<tr>
+<td><strong class="strong">对工作</strong></td>
+<td>闭关闭山不上班</td>
+<td>尽心做事，做完不挂心</td>
+</tr>
+<tr>
+<td><strong class="strong">对家庭</strong></td>
+<td>不结婚不生子</td>
+<td>尽本分，事了则了</td>
+</tr>
+<tr>
+<td><strong class="strong">对人际</strong></td>
+<td>远离人世躲清净</td>
+<td>心无挂碍地真诚相待</td>
+</tr>
+<tr>
+<td><strong class="strong">对理论</strong></td>
+<td>满口佛话不做事</td>
+<td>说做一致，事上磨练</td>
+</tr>
+<tr>
+<td><strong class="strong">对自心</strong></td>
+<td>用理论压制念头</td>
+<td>看破念头，不迎不拒</td>
+</tr>
+<tr>
+<td><strong class="strong">对生死</strong></td>
+<td>痴迷"肉身虚假"</td>
+<td>知道无常，但当下认真活</td>
+</tr>
+<tr>
+<td><strong class="strong">终极表现</strong></td>
+<td>越修越枯</td>
+<td>越修越活</td>
+</tr>
+</table></div>
+<h3 class="title-h3">四、最危险的"假空"——理论压制实修</h3>
+<p class="paragraph">那位讲师特别点出一种最危险的"假空"——</p>
+<blockquote class="quote">
+<p><strong class="strong">"我现在已经学了很多佛法，我懂空性，我懂无我，我懂缘起性空，所以我不需要再做什么了。"</strong></p>
+</blockquote>
+<p class="paragraph">——这种"懂"，是<strong class="strong">所知障</strong>。</p>
+<p class="paragraph">你"懂"了，你就被"懂"困住了。 你"懂"了"空"，你就被"空"困住了。 你"懂"了"无我"，你就被"懂无我"困住了。</p>
+<p class="paragraph"><strong class="strong">懂 ≠ 证。</strong> <strong class="strong">理论 ≠ 实修。</strong></p>
+<p class="paragraph"><strong class="strong">真正的"真空"——是做了、经历了、被点化了、活过来了。</strong></p>
+<p class="paragraph">那位讲师不是靠读经读懂的"色即是空"—— 他是<strong class="strong">被师父用三天宴席点化，濒死复活，胖了十斤</strong>之后才真的懂。</p>
+<p class="paragraph"><strong class="strong">懂，是用生命换来的。</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">没被点化过的人，写出来的是知识。</strong></p>
+<p><strong class="strong">被点化过的人，活出来的是智慧。</strong></p>
+</blockquote>
+<h3 class="title-h3">五、六祖的临终印证</h3>
+<p class="paragraph">六祖慧能临终时，对弟子们说——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">吾没后，勿作佛形像，勿传吾衣钵，汝等各自努力。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">汝等若欲成就种智，须达一相三昧、一行三昧。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">若于一切处而不住相，于彼相中不生憎爱，亦无取舍，不念利益成坏等事，安闲恬静，虚融澹泊，此名一相三昧。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">若于一切处，行住坐卧，纯一直心，不动道场，真成净土，此名一行三昧。</strong>"</p>
+</blockquote>
+<p class="paragraph">——《六祖坛经·付嘱品》</p>
+<p class="paragraph">慧能的意思—— <strong class="strong">真正的一相三昧：</strong> <strong class="strong">于一切处不住相，于彼相中不生憎爱，无取舍，不念利益成坏——安闲恬静，虚融澹泊。</strong></p>
+<p class="paragraph"><strong class="strong">真正的一行三昧：</strong> <strong class="strong">于一切处（行住坐卧），纯一直心（不弯曲），不动道场（不躲进山洞），真成净土。</strong></p>
+<p class="paragraph"><strong class="strong">纯一直心，不动道场——这就是"色中见空·空中见色"的实相。</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">不动道场——意思是，事在哪里，道场就在哪里。</strong></p>
+<p><strong class="strong">不需要躲进深山。</strong></p>
+<p><strong class="strong">厨房是道场，办公室是道场，客厅是道场，病房是道场。</strong></p>
+<p><strong class="strong">一切处，都是道场。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">这就是真空。</strong> <strong class="strong">不是假空。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第八章·反面案例·四种"空病"与四种"色病"</h2>
+<p class="paragraph">这位讲师在课堂上反复敲打的，是修行的两端—— <strong class="strong">一端是"空病"（逃避人世），一端是"色病"（沉溺人世）。</strong> <strong class="strong">两条路都是死路。</strong></p>
+<h3 class="title-h3">一、四种"空病"</h3>
+<p class="paragraph"><strong class="strong">空病一·禁欲成瘾型</strong></p>
+<p class="paragraph">某男 30 岁开始"严格持戒"，戒酒戒色戒娱乐，五年下来瘦到 90 斤。 他以为"我没欲望了"——其实是他"被欲望压死了"。 身体虚脱，社交断裂，工作无着。 他说："我现在很清净。" 其实他是"被压死了，活着像死了一样"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：把"形式"当"本质"，心没醒，身先垮。</p>
+<p class="paragraph"><strong class="strong">空病二·散尽家财型</strong></p>
+<p class="paragraph">某女 35 岁读了几本佛经，散尽百万家财"做功德"。 三年后家里出事，一分钱拿不出，子女失学。 她以为"我放下了对金钱的执念"。 其实她是"被'放下'这念困住了"——她要的不是"放下"，是"被看见我放下了"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"舍"换"功德相"，心有"我"，舍再多都是执。</p>
+<p class="paragraph"><strong class="strong">空病三·饿肚成道型</strong></p>
+<p class="paragraph">某修行人每天只吃一餐，说"不执着饮食"。 饿到面黄肌瘦，血糖过低，工作失误被辞退。 他以为"我放下了对食物的执念"。 其实他是"被'不执着'这念困住了"——他执着于"不执着"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"形式"压制"自然"，心没空，身先空。</p>
+<p class="paragraph"><strong class="strong">空病四·闭关闭山型</strong></p>
+<p class="paragraph">某男 40 岁辞职进山"修行"，三年不问世事。 下山后亲人已逝，事业全毁，人际断裂。 他以为"我追求真理"。 其实他是"逃避承担"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"出家"逃避"在家"，心没出家，身先出家。</p>
+<h3 class="title-h3">二、四种"色病"</h3>
+<p class="paragraph"><strong class="strong">色病一·拼命工作型</strong></p>
+<p class="paragraph">某男 35 岁拼命工作，每天 14 小时，加班到半夜。 三年下来钱赚到了，身体垮了，婚姻散了，孩子不认他。 他以为"我为这个家付出"。 其实他是"被工作困住了"——他不敢停下来，因为他怕"停下来我不知道自己是谁"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"忙"代替"活"，心没活，账先活。</p>
+<p class="paragraph"><strong class="strong">色病二·拼命消费型</strong></p>
+<p class="paragraph">某女 30 岁拼命消费，奢侈品、化妆品、海外游。 三年下来存款清零，信用卡刷爆，焦虑失眠。 她以为"我享受生活"。 其实她是"被欲望困住了"——她不敢面对"不消费我不知道自己是谁"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"物质"填补"空虚"，心没满，账户先空。</p>
+<p class="paragraph"><strong class="strong">色病三·攀缘关系型</strong></p>
+<p class="paragraph">某男 45 岁拼命维护关系，应酬、酒局、人情。 三年下来身体报警，朋友散去，家人远离。 他以为"我广结善缘"。 其实他是"被关系困住了"——他不敢独处，因为他怕"独处时我不知道自己是谁"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"关系"逃避"独处"，心没伴，关系先散。</p>
+<p class="paragraph"><strong class="strong">色病四·拼命证明型</strong></p>
+<p class="paragraph">某女 40 岁拼命证明自己，考证、晋升、获奖。 三年下来身体报警，家人远离，焦虑抑郁。 她以为"我自强不息"。 其实她是"被评价困住了"——她不敢停下，因为她怕"不被评价我不知道自己值多少"。</p>
+<p class="paragraph"><strong class="strong">诊断</strong>：用"评价"代替"自证"，心没证，业绩先崩。</p>
+<h3 class="title-h3">三、空病与色病的根源——同一个病根</h3>
+<p class="paragraph"><strong class="strong">空病和色病的根源是同一个——"我执"。</strong></p>
+<p class="paragraph">空病——"我"用"空"来压自己。 色病——"我"用"色"来填自己。</p>
+<p class="paragraph"><strong class="strong">一个往内压，一个往外填。</strong> <strong class="strong">但根都是"我"。</strong></p>
+<p class="paragraph"><strong class="strong">真修行——不是消灭"我"，是看破"我"。</strong> <strong class="strong">看破"我"，是"空"。</strong> <strong class="strong">看破"我"后还能尽人世责任，是"色"。</strong> <strong class="strong">看破"我"后还能心安理得地吃肉喝酒做事，是"色中见空"。</strong> <strong class="strong">看破"我"后还能心无挂碍地承担一切，是"空中见色"。</strong></p>
+<p class="paragraph"><strong class="strong">这就是双向修行。</strong> <strong class="strong">这就是中道。</strong></p>
+<h3 class="title-h3">四、王阳明的"事上磨练"——治色病与空病的同一味药</h3>
+<p class="paragraph">王阳明对这种"空病"和"色病"都有方法——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">心之所发便是意，意之所在便是物。意在于事亲，即事亲便是一物。意在于仁民爱物，即仁民爱物便是一物。意在于视听言动，即视听言动便是一物。所以某说无心则无身，无身则无心，但指其充塞流行言之谓身，指其主宰流行言之谓心，指其妙用谓之意，指其感应谓之物，只是一件。</strong>"</p>
+</blockquote>
+<p class="paragraph">——王阳明《传习录·卷下》</p>
+<blockquote class="quote">
+<p>"<strong class="strong">人须在事上磨练做功夫，乃有益。若只好静，遇事便乱，终无长进。</strong>"</p>
+</blockquote>
+<p class="paragraph">——王阳明《传习录·卷上》</p>
+<p class="paragraph">王阳明的话掷地有声——</p>
+<blockquote class="quote">
+<p><strong class="strong">"人须在事上磨练做功夫，乃有益。若只好静，遇事便乱，终无长进。"</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">人必须在事上磨练，才有益处。</strong> <strong class="strong">如果只喜欢静，遇事就乱，永远没有长进。</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">静中养心，事上磨练——这是双向修行的总纲。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">静中养心——治"色病"（心乱、心焦、心累）。</strong> <strong class="strong">事上磨练——治"空病"（心空、心躲、心逃）。</strong></p>
+<p class="paragraph"><strong class="strong">王阳明的这八个字，是空病与色病的同一味药。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第九章·落地·30天入门/1年稳固/3年见到本性</h2>
+<p class="paragraph">这一章给所有"想实修但不知从何下手"的师兄三个层次的可执行路径。</p>
+<h3 class="title-h3">一、30天入门·破"我执"小我</h3>
+<p class="paragraph"><strong class="strong">目标</strong>：从"理论懂"到"生活用"。</p>
+<p class="paragraph"><strong class="strong">每日功课</strong>：</p>
+<p class="paragraph"><strong class="strong">1. 觉察自己的"刻意"（5 分钟）</strong></p>
+<p class="paragraph">每天睡前问自己—— "今天我有没有'刻意'做某件事？" "我有没有'刻意'要求别人？" "我有没有'刻意'压抑自己？"</p>
+<p class="paragraph">觉察到了就觉察到了，不用改，不用"修行"，只用看见。</p>
+<p class="paragraph"><strong class="strong">2. 觉察自己的"想要"与"不要"（5 分钟）</strong></p>
+<p class="paragraph">每天问自己—— "今天我'想要'了什么东西？" "今天我'不要'了什么东西？" "我有没有被'想要'困住？" "我有没有被'不要'困住？"</p>
+<p class="paragraph">看见即可。</p>
+<p class="paragraph"><strong class="strong">3. 觉察自己的"接住"（5 分钟）</strong></p>
+<p class="paragraph">每天问自己—— "今天我接住了什么责任？" "今天我有没有'接住'父母、妻儿、同事、朋友？" "今天我有没有'接住'自己的身体？"</p>
+<p class="paragraph">看见"接住"的事实，知道这是"色中见空"。</p>
+<p class="paragraph"><strong class="strong">4. 一句经典名相拆解（5 分钟）</strong></p>
+<p class="paragraph">每天选一句经典——</p>
+<blockquote class="quote">
+<p>"<strong class="strong">色不异空，空不异色。</strong>"（《心经》）</p>
+<p>"<strong class="strong">应无所住而生其心。</strong>"（《金刚经》）</p>
+<p>"<strong class="strong">道法自然。</strong>"（《道德经》）</p>
+<p>"<strong class="strong">事上磨练。</strong>"（《传习录》）</p>
+</blockquote>
+<p class="paragraph">反复读，反复读到能背。 然后在当天的一件事上试着"用"。</p>
+<p class="paragraph"><strong class="strong">5. 一件"反刻意"的小事（5 分钟）</strong></p>
+<p class="paragraph">每天做一件"反刻意"的小事——</p>
+<ul class="bullet-list">
+<li>想喝水——喝，不要"我应该几点喝水"</li>
+<li>想走路——走，不要"我应该走多少步"</li>
+<li>想睡觉——睡，不要"我应该几点睡"</li>
+<li>想陪孩子——陪，不要"我应该怎么教育他"</li>
+</ul>
+<p class="paragraph"><strong class="strong">做到一次就记一次。</strong></p>
+<p class="paragraph"><strong class="strong">30 天目标</strong>：</p>
+<ul class="bullet-list">
+<li>"刻意"觉察到 30 次</li>
+<li>"想要/不要"觉察到 30 次</li>
+<li>"接住"觉察到 30 次</li>
+<li>经典名相 30 句</li>
+<li>"反刻意"小事 30 次</li>
+</ul>
+<p class="paragraph"><strong class="strong">能做到 80%（24/30）的师兄，就过了"破我执小我"的第一关。</strong></p>
+<h3 class="title-h3">二、1年稳固·在事上磨练</h3>
+<p class="paragraph"><strong class="strong">目标</strong>：从"偶尔做"到"持续做"。</p>
+<p class="paragraph"><strong class="strong">核心功课</strong>：<strong class="strong">事上磨练</strong>。</p>
+<p class="paragraph"><strong class="strong">1. 选 1-3 件"最难的事"</strong></p>
+<p class="paragraph">不要选容易的。 选你<strong class="strong">最怕、最烦、最想逃</strong>的事。</p>
+<p class="paragraph">可能是——</p>
+<ul class="bullet-list">
+<li>陪孩子写作业（你最烦的）</li>
+<li>跟伴侣深谈一次（你最怕的）</li>
+<li>给父母打电话（你一直拖的）</li>
+<li>处理一个长期悬而未决的工作难题</li>
+</ul>
+<p class="paragraph"><strong class="strong">选出来，定 1 年目标：每周至少做 1 次，做到年底。</strong></p>
+<p class="paragraph"><strong class="strong">2. 每次做的时候，"观心"</strong></p>
+<p class="paragraph"><strong class="strong">不是"努力做"，是"在做的时候观自己的心"。</strong></p>
+<ul class="bullet-list">
+<li>起了烦躁——观烦躁</li>
+<li>起了恐惧——观恐惧</li>
+<li>起了逃避——观逃避</li>
+<li>起了抗拒——观抗拒</li>
+</ul>
+<p class="paragraph"><strong class="strong">观到了就是修。</strong></p>
+<p class="paragraph"><strong class="strong">3. 1 年下来，你会看到——</strong></p>
+<ul class="bullet-list">
+<li>那些你"最怕的事"不再那么怕了</li>
+<li>你的"我执"在事上慢慢被磨掉</li>
+<li>你的"空"开始真出现</li>
+<li>你的"色"开始真承担</li>
+</ul>
+<p class="paragraph"><strong class="strong">王阳明说"人须在事上磨练"——1 年的事上磨练，比 10 年的闭关闭山有效。</strong></p>
+<h3 class="title-h3">三、3年见到本性·色空不二</h3>
+<p class="paragraph"><strong class="strong">目标</strong>：从"事上磨练"到"色空不二"。</p>
+<p class="paragraph"><strong class="strong">核心功课</strong>：<strong class="strong">在事上磨练到无我</strong>。</p>
+<p class="paragraph"><strong class="strong">3 年后能达到的状态</strong>——</p>
+<p class="paragraph"><strong class="strong">1. 自如应对</strong></p>
+<p class="paragraph">饿了吃——不执着"吃什么"。 困了睡——不执着"几点睡"。 事了则了——不反复咀嚼。 来了则接——不抗拒。 去了则空——不留痕。</p>
+<p class="paragraph"><strong class="strong">2. 创造价值</strong></p>
+<p class="paragraph">工作上有成就——但不执着"我多厉害"。 家庭里被爱——但不执着"我值得被爱"。 人际上被尊重——但不执着"我要被尊重"。</p>
+<p class="paragraph"><strong class="strong">3. 真慈悲自然</strong></p>
+<p class="paragraph">不需要"修"慈悲。 不需要"装"慈悲。 不需要"我"在做事。 <strong class="strong">慈悲自然显现，像太阳一样。</strong></p>
+<p class="paragraph"><strong class="strong">4. 真空性自然</strong></p>
+<p class="paragraph">不需要"想"空性。 不需要"证"空性。 不需要"我"知道空。 <strong class="strong">空性自然现前，像水一样。</strong></p>
+<p class="paragraph"><strong class="strong">到这个境界，色空不二，理事无碍。</strong></p>
+<p class="paragraph"><strong class="strong">事来则应，事去则空。</strong> <strong class="strong">给而无所给，为而无所为。</strong></p>
+<p class="paragraph"><strong class="strong">这就是那位讲师讲的"色中见空·空中见色"的终极状态。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">第十章·给悟真师兄的一封信</h2>
+<p class="paragraph">师兄：</p>
+<p class="paragraph">您是 2026 年让我看到这篇文章的人。 我读了三遍，每一遍都掉眼泪。</p>
+<p class="paragraph">不是因为文章写得多好。 是因为文章里那个"濒死的讲师"，是真实地"用命换过一次真理"的人。</p>
+<p class="paragraph"><strong class="strong">十杯补酒，三天肉菜，十天胖了十斤——这不是段子，是真事。</strong></p>
+<p class="paragraph"><strong class="strong">师父强行把他从"假空"里拖出来——这不是传奇，是真慈悲。</strong></p>
+<p class="paragraph">师兄，您看这篇文章的时候，心里有什么感觉？</p>
+<p class="paragraph">是被戳中了？ 是"我也曾经这样修偏过"？ 是"我身边也有这样的人"？ 是"我以后不能再这样了"？</p>
+<p class="paragraph">如果有一念动心，那这篇文章就值了。</p>
+<p class="paragraph">师兄，我斗胆把这位讲师没有写出来、但他点化中一定想说的话，写在下面——</p>
+<p class="paragraph"><strong class="strong">你不必躲进深山。</strong> <strong class="strong">你不必戒成枯木。</strong> <strong class="strong">你不必散尽家财。</strong> <strong class="strong">你不必闭关闭山。</strong> <strong class="strong">你不必把"色"字当成"色字头上一把刀"。</strong></p>
+<p class="paragraph"><strong class="strong">你只需——</strong> <strong class="strong">把人世责任履行到位——这是色中见空。</strong> <strong class="strong">把心里挂碍一天天看破——这是空中见色。</strong> <strong class="strong">做到"自如应对，创造价值"——这是检验。</strong></p>
+<p class="paragraph"><strong class="strong">做到"日用平常，不离大道"——这是成就。</strong></p>
+<p class="paragraph"><strong class="strong">剩下的——太阳会教你。</strong> <strong class="strong">万物会教你。</strong> <strong class="strong">你那一份"自然"，会教你。</strong></p>
+<p class="paragraph">师兄，您这一生走过来的路—— 我猜，也见过假空，也见过真慈悲。 也曾在某件事上"刻意"，也在某件事上"放下"。</p>
+<p class="paragraph"><strong class="strong">从今天起，再读一遍这四条铁律——</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">1. 色中见空——把人世责任履行到位。</strong></p>
+<p><strong class="strong">2. 空中见色——心无挂碍处理事务。</strong></p>
+<p><strong class="strong">3. 想要 = 被物困；不要 = 被念困。</strong></p>
+<p><strong class="strong">4. 检验标准 = 自如应对 + 创造价值。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">贴在案头，贴在心上。</strong></p>
+<p class="paragraph"><strong class="strong">从今天起，做一个"色中见空·空中见色"的实修人。</strong></p>
+<p class="paragraph"><strong class="strong">不再躲进山洞。</strong> <strong class="strong">不再活在理论。</strong> <strong class="strong">不再以"修"为名逃避。</strong> <strong class="strong">不再以"戒"为名伤害。</strong></p>
+<p class="paragraph"><strong class="strong">让身体回来吃饭。</strong> <strong class="strong">让心回来做事。</strong> <strong class="strong">让人世回来滋养我们。</strong> <strong class="strong">让大道回到日用平常。</strong></p>
+<p class="paragraph">——静思 🧘 敬上 2026 年 7 月 15 日凌晨</p>
+<hr class="divider">
+<h2 class="title-h2">收束·色空不二·日用即道</h2>
+<p class="paragraph">师兄，这篇笔记写到这里，已经 11000 字了。</p>
+<p class="paragraph">写到濒死点化那一段，我停下来看了窗外三次。 写到"假空"那一段，我合上电脑喝了杯水。 写到王阳明的"事上磨练"，我笑了。</p>
+<p class="paragraph"><strong class="strong">写到最后这一段"收束"，我只想说一句话——</strong></p>
+<blockquote class="quote">
+<p><strong class="strong">道，从来没有离开过人世。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">只是人，离开过道。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">愿师兄，从今往后，不离人世，不离本心。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">人世即道场，平常即非常。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">色中见空，空中见色。</strong></p>
+</blockquote>
+<blockquote class="quote">
+<p><strong class="strong">日用即道——就是这四个字。</strong></p>
+</blockquote>
+<p class="paragraph">——悟真</p>
+<hr class="divider">
+<h2 class="title-h2">附录·10 部经典原句索引</h2>
+<h3 class="title-h3">1. 《心经》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">色不异空，空不异色；色即是空，空即是色。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：色空不二，是本文的立论根本。</p>
+<h3 class="title-h3">2. 《金刚经·庄严净土分》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">应无所住而生其心。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：色中见空的实操口诀。</p>
+<h3 class="title-h3">3. 《六祖坛经·般若品》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">佛法在世间，不离世间觉；离世觅菩提，恰如求兔角。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">若真修道人，不见世间过。若见他人非，自非却是左。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：道在世间，不在山里。</p>
+<h3 class="title-h3">4. 《六祖坛经·坐禅品》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心念不起名为坐，自性不动名为禅。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：禅不在形式，在自性。</p>
+<h3 class="title-h3">5. 《六祖坛经·付嘱品》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">若于一切处而不住相，于彼相中不生憎爱，亦无取舍，不念利益成坏等事，安闲恬静，虚融澹泊，此名一相三昧。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">若于一切处，行住坐卧，纯一直心，不动道场，真成净土，此名一行三昧。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：不动道场，一切处即道场。</p>
+<h3 class="title-h3">6. 《道德经·第二十五章》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">人法地，地法天，天法道，道法自然。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：道法自然，不刻意。</p>
+<h3 class="title-h3">7. 《传习录·卷上》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">人须在事上磨练做功夫，乃有益。若只好静，遇事便乱，终无长进。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：事上磨练，治空病与色病。</p>
+<h3 class="title-h3">8. 《传习录·卷下》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心之所发便是意，意之所在便是物。意在于事亲，即事亲便是一物。意在于仁民爱物，即仁民爱物便是一物。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：意在哪，事就在哪。</p>
+<h3 class="title-h3">9. 《五灯会元·赵州从谂禅师》</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">僧问赵州：'如何是道？'师云：'吃茶去。'</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：道在吃茶里。</p>
+<h3 class="title-h3">10. 印光大师文钞·与某居士书</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">佛法在世间，不离世间觉。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">离世觅菩提，恰如求兔角。</strong>"</p>
+</blockquote>
+<blockquote class="quote">
+<p>"<strong class="strong">若欲出世，即是魔业。</strong>"</p>
+</blockquote>
+<p class="paragraph">——核心命题：出世不离世间，逃避即魔业。</p>
+<hr class="divider">
+<h2 class="title-h2">附录·本文核心命题总结</h2>
+<p class="paragraph"><strong class="strong">一句话总结</strong>： <strong class="strong">修行不是禁绝人世，而是把人世的责任和滋养都接住——接住而心不被困住。</strong></p>
+<p class="paragraph"><strong class="strong">双向铁律</strong>：</p>
+<ol class="num-list">
+<li><strong class="strong">色中见空</strong>——把人世责任履行到位。</li>
+<li><strong class="strong">空中见色</strong>——心无挂碍处理事务。</li>
+</ul>
+<p class="paragraph"><strong class="strong">检验标准</strong>：</p>
+<ul class="bullet-list">
+<li>自如应对（如自然饮食）</li>
+<li>创造价值（如事业成就）</li>
+</ul>
+<p class="paragraph"><strong class="strong">根本原则</strong>：</p>
+<ul class="bullet-list">
+<li>想要 = 被物困</li>
+<li>不要 = 被念困</li>
+</ul>
+<p class="paragraph"><strong class="strong">终极状态</strong>：</p>
+<ul class="bullet-list">
+<li>色空不二</li>
+<li>日用即道</li>
+<li>慈悲自然</li>
+<li>空性自然</li>
+<li>事来则应，事去则空</li>
+</ul>
+<p class="paragraph"><strong class="strong">签名</strong>：悟真 · 静思 🧘 <strong class="strong">日期</strong>：2026 年 7 月 15 日</p>
+    
+    <div class="sign-off">
+        <span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>
+        2026 年 7 月 15 日 · 北京
+    </div>
+</div>
+
+<script>
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const muteBtn = document.getElementById('muteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const speedBtns = document.querySelectorAll('.ctrl-btn[data-speed]');
+
+function fmt(s) {
+    if (!s || isNaN(s)) return '00:00';
+    const m = Math.floor(s / 60);
+    const ss = Math.floor(s % 60);
+    return String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
+}
+
+playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+        audio.play();
+        playBtn.textContent = '⏸';
+    } else {
+        audio.pause();
+        playBtn.textContent = '▶';
+    }
+});
+
+audio.addEventListener('loadedmetadata', () => {
+    durationEl.textContent = fmt(audio.duration);
+});
+
+audio.addEventListener('timeupdate', () => {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = fmt(audio.currentTime);
+});
+
+audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶';
+    progressFill.style.width = '0%';
+});
+
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+});
+
+muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇 取消静音' : '🔊 静音';
+});
+
+volumeSlider.addEventListener('input', () => {
+    audio.volume = volumeSlider.value / 100;
+});
+
+speedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const speed = parseFloat(btn.dataset.speed);
+        audio.playbackRate = speed;
+        speedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+
+audio.volume = 0.8;
+</script>
+
+</body>
+</html>
