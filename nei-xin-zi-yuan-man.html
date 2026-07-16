@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《内心自圆满·肉身是淤泥，本心自圆满》</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#faf6ef;color:#3d3027;font-family:'Noto Serif SC','站酷小薇体','STKaiti','KaiTi','PingFang SC',serif;font-size:20px;line-height:2.2;padding:0 0 80px 0}
+.page{max-width:920px;margin:0 auto;padding:0 32px}
+.hero{background:linear-gradient(135deg,#faf6ef 0%,#f3eada 100%);padding:80px 32px 60px;text-align:center;border-bottom:3px double #8a5a2b;margin-bottom:60px}
+.hero .main-title{font-size:42px;font-weight:700;color:#3d3027;letter-spacing:4px;margin-bottom:16px;line-height:1.4}
+.hero .sub-title{font-size:22px;color:#8a5a2b;font-weight:500;letter-spacing:3px;margin-bottom:24px;line-height:1.6}
+.hero .meta{font-size:14px;color:#7a6f63;letter-spacing:2px;margin-bottom:40px}
+.hero .meta .seal{color:#c8423b;font-weight:600}
+.audio-player{background:#fff;border:2px solid #8a5a2b;border-radius:12px;padding:24px 28px;max-width:720px;margin:32px auto 0;box-shadow:0 4px 20px rgba(138,90,43,.12)}
+.audio-player .player-row{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.audio-player .play-btn{width:56px;height:56px;border-radius:50%;background:#8a5a2b;color:#fff;border:none;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+.audio-player .play-btn:hover{background:#6f4520}
+.audio-player .progress-wrap{flex:1;display:flex;flex-direction:column;gap:6px}
+.audio-player .progress-bar{width:100%;height:8px;background:#f0e4d0;border-radius:4px;cursor:pointer;position:relative;overflow:hidden}
+.audio-player .progress-fill{height:100%;background:linear-gradient(90deg,#8a5a2b,#c8a85a);width:0%;transition:width .1s}
+.audio-player .time-row{display:flex;justify-content:space-between;font-size:13px;color:#7a6f63;font-family:monospace}
+.audio-player .controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #f0e4d0}
+.audio-player .ctrl-btn{background:transparent;border:1px solid #d4c4a8;color:#8a5a2b;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-family:inherit}
+.audio-player .ctrl-btn:hover{background:#f0e4d0}
+.audio-player .ctrl-btn.active{background:#8a5a2b;color:#fff;border-color:#8a5a2b}
+.audio-player .speed-group{display:flex;gap:4px}
+.audio-player .volume{display:flex;align-items:center;gap:8px;margin-left:auto}
+.audio-player .volume-slider{width:80px}
+.audio-player .download{color:#8a5a2b;text-decoration:none;font-size:13px}
+.title-h1{font-size:30px;color:#3d3027;margin:60px 0 30px;padding-bottom:16px;border-bottom:2px solid #8a5a2b;letter-spacing:3px;font-weight:600}
+.title-h2{font-size:26px;color:#8a5a2b;margin:50px 0 24px;padding-left:18px;border-left:6px solid #8a5a2b;letter-spacing:2px;font-weight:600;line-height:1.5}
+.title-h3{font-size:22px;color:#5a3e22;margin:36px 0 18px;font-weight:600;letter-spacing:1px}
+.title-h4{font-size:19px;color:#5a3e22;margin:24px 0 12px;font-weight:600}
+.paragraph{margin-bottom:20px;text-indent:2em;text-align:justify}
+.strong{color:#8a5a2b;font-weight:600;background:linear-gradient(transparent 65%,rgba(200,168,90,.25) 65%);padding:0 2px}
+.quote{background:#fef5f4;border-left:4px solid #c8423b;padding:16px 24px;margin:24px 0;border-radius:0 6px 6px 0;font-style:normal;color:#5a3e22}
+.quote p{margin:8px 0;text-indent:0}
+.bullet-list,.num-list{margin:16px 0 20px 40px}
+.bullet-list li,.num-list li{margin-bottom:10px;line-height:1.9}
+.table-wrap{overflow-x:auto;margin:24px 0}
+.data-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d4c4a8;border-radius:6px;overflow:hidden;font-size:16px}
+.data-table th{background:#8a5a2b;color:#fff;padding:12px 16px;text-align:left;font-weight:600;letter-spacing:1px}
+.data-table td{padding:12px 16px;border-top:1px solid #f0e4d0;line-height:1.7}
+.data-table tr:nth-child(even) td{background:#faf6ef}
+.divider{border:none;border-top:1px dashed #c8a85a;margin:50px 0}
+.seal-stamp{display:inline-block;background:#c8423b;color:#fff;padding:4px 12px;border-radius:4px;font-weight:600;letter-spacing:4px;margin:0 4px}
+.sign-off{text-align:right;margin:60px 0 30px;color:#8a5a2b;font-size:18px;letter-spacing:2px;line-height:2}
+@media(max-width:768px){body{font-size:18px;line-height:2.0}.hero{padding:50px 20px 40px}.hero .main-title{font-size:28px;letter-spacing:3px}.hero .sub-title{font-size:17px}.title-h1{font-size:24px}.title-h2{font-size:20px}.page{padding:0 20px}.audio-player{padding:18px 20px}}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="main-title">《内心自圆满·肉身是淤泥，本心自圆满》</div>
+<div class="sub-title">肉身是淤泥，本心自圆满 · 深度研读笔记</div>
+<div class="meta"><span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 16 日 · 字数 10000+ · 全文音频 50+ 分钟</div>
+<div class="audio-player">
+<audio id="audio" preload="metadata"><source src="nei-xin-zi-yuan-man-full.mp3" type="audio/mpeg"></audio>
+<div class="player-row">
+<button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+<div class="progress-wrap">
+<div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="time-row"><span id="currentTime">00:00</span><span id="duration">--:--</span></div>
+</div>
+</div>
+<div class="controls">
+<div class="speed-group">
+<button class="ctrl-btn" data-speed="0.75">0.75x</button>
+<button class="ctrl-btn active" data-speed="1">1x</button>
+<button class="ctrl-btn" data-speed="1.25">1.25x</button>
+<button class="ctrl-btn" data-speed="1.5">1.5x</button>
+<button class="ctrl-btn" data-speed="2">2x</button>
+</div>
+<button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+<div class="volume"><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80"></div>
+<a class="download" id="downloadBtn" href="nei-xin-zi-yuan-man-full.mp3" download="nei-xin-zi-yuan-man-full.mp3">⬇ 下载音频</a>
+</div>
+</div>
+</div>
+<div class="page">
+<h1 class="title-h1">《内心自圆满·肉身是淤泥，本心自圆满》</h1>
+<h2 class="title-h2">悟真读书笔记</h2>
+<p class="paragraph"><strong class="strong">核心命题：现实必然残缺，人的圆满只能源于内心；真正修行是"知行合一"——在承担责任中修炼心性，最终达到"现实虽残缺，内心自圆满"的境界。</strong></p>
+<blockquote class="quote">
+<p>梦想是内在的欲望，欲望是外在的产物。</p>
+<p>肉身是淤泥，本心自圆满。</p>
+<p>活好自己——不被他人的评价左右。</p>
+<p>现实虽残缺，内心自圆满。</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">0. 序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">修行的真谛，不是让现实变完美，是让内心变圆满。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥，本心自圆满。</strong>"</p>
+<p class="paragraph">这一句话，把"残缺的现实"和"圆满的本心"分开了——</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>现实</th>
+<th>本心</th>
+</tr>
+<tr>
+<td>肉身会老</td>
+<td>本心不老</td>
+</tr>
+<tr>
+<td>外貌会变</td>
+<td>本心不变</td>
+</tr>
+<tr>
+<td>关系会断</td>
+<td>本心不挂</td>
+</tr>
+<tr>
+<td>事业会败</td>
+<td>本心不败</td>
+</tr>
+<tr>
+<td>钱会没有</td>
+<td>本心不需要钱</td>
+</tr>
+<tr>
+<td>名会散去</td>
+<td>本心不靠名</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">肉身是淤泥——这是事实，不是骂人</strong>。肉身会老、会病、会死——<strong class="strong">这些是物理规律</strong>。</p>
+<p class="paragraph"><strong class="strong">本心自圆满——这是修行的可能</strong>。本心不需要靠外境来圆满——<strong class="strong">它本来就圆满</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人的圆满只能源于内心，现实必然残缺，修行的本质是心灵成长。</strong>"</p>
+<p class="paragraph"><strong class="strong">现实残缺是事实，内心圆满是修行</strong>。</p>
+<p class="paragraph"><strong class="strong">这两件事同时存在——这叫"知行合一"</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">1. 第一章·名相拆解——"梦想、欲望、残缺、圆满、知行合一"五字逐字拆</h2>
+<h3 class="title-h3">1.1【梦想 vs 欲望】——内在的火焰 vs 外在的索取</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">梦想是内在的欲望，欲望是外在的产物。</strong>"</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>梦想</th>
+<th>欲望</th>
+</tr>
+<tr>
+<td>内在生起</td>
+<td>外在激发</td>
+</tr>
+<tr>
+<td>越追越深</td>
+<td>越追越浅</td>
+</tr>
+<tr>
+<td>实现后更自由</td>
+<td>实现后更空虚</td>
+</tr>
+<tr>
+<td>不需要他人认可</td>
+<td>需要他人满足</td>
+</tr>
+<tr>
+<td>越走越宽广</td>
+<td>越走越狭窄</td>
+</tr>
+<tr>
+<td>与灵魂共鸣</td>
+<td>与肉体纠缠</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">梦想 = 内在的火焰</strong>——它从你心里生起，<strong class="strong">不实现你也知道自己想什么</strong>。 <strong class="strong">欲望 = 外在的索取</strong>——它从外境生起，<strong class="strong">实现了你还想更多</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥，本心自圆满。</strong>"——<strong class="strong">欲望附着在"淤泥"上，梦想附着在"本心"上</strong>。</p>
+<h3 class="title-h3">1.2【残缺】——现实的真相</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">现实必然残缺。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"残缺"？</strong></p>
+<ul class="bullet-list">
+<li>你爱的人——<strong class="strong">可能不爱你</strong>。</li>
+<li>你做的事——<strong class="strong">可能不成功</strong>。</li>
+<li>你的努力——<strong class="strong">可能没回报</strong>。</li>
+<li>你的真心——<strong class="strong">可能被辜负</strong>。</li>
+<li>你的健康——<strong class="strong">可能出问题</strong>。</li>
+<li>你的命运——<strong class="strong">可能不公平</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这些是现实——不是修行能改的</strong>。</p>
+<p class="paragraph"><strong class="strong">残缺不是失败——是事实</strong>。</p>
+<h3 class="title-h3">1.3【圆满】——本心的真相</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人的圆满只能源于内心。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"圆满"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">不靠外境</strong>——不靠钱、不靠名、不靠爱。</li>
+<li><strong class="strong">不靠他人</strong>——不靠父母、不靠爱人、不靠孩子。</li>
+<li><strong class="strong">不靠运气</strong>——不靠天时、不靠地利、不靠人和。</li>
+<li><strong class="strong">只靠自己</strong>——靠心、靠觉、靠行动。</li>
+</ul>
+<p class="paragraph"><strong class="strong">圆满 ≠ 一切都好</strong>。 <strong class="strong">圆满 = 不管好不好，心都安稳</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真正的快乐源于不依赖他人评价的内心宁静。</strong>"</p>
+<p class="paragraph"><strong class="strong">真正的圆满 = 心不被外境转。</strong></p>
+<h3 class="title-h3">1.4【肉身是淤泥】——客观事实</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥。</strong>"</p>
+<p class="paragraph"><strong class="strong">这不是骂人——这是佛家对身体的基本看法</strong>。</p>
+<ul class="bullet-list">
+<li>肉身会老——<strong class="strong">老了就不美了</strong>。</li>
+<li>肉身会病——<strong class="strong">病了就不能动</strong>。</li>
+<li>肉身会死——<strong class="strong">死了就什么都没了</strong>。</li>
+<li>肉身有欲——<strong class="strong">饿了要吃、困了要睡、色了要色</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">肉身是物质——它必然衰败、必然不完美</strong>。</p>
+<p class="paragraph"><strong class="strong">如果你把"圆满"寄托在肉身上——你一定失望</strong>。</p>
+<h3 class="title-h3">1.5【本心自圆满】——主观可能</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">本心自圆满。</strong>"</p>
+<p class="paragraph"><strong class="strong">这是修行最伟大的发现</strong>——</p>
+<p class="paragraph"><strong class="strong">心不需要外境</strong>——</p>
+<ul class="bullet-list">
+<li>不需要美貌——<strong class="strong">心自美</strong>。</li>
+<li>不需要健康——<strong class="strong">心自健</strong>。</li>
+<li>不需要富有——<strong class="strong">心自有</strong>。</li>
+<li>不需要被爱——<strong class="strong">心自爱</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">本心是"自"圆满——自己圆满自己，不靠外物</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉体不完美，但心灵可以保持高贵。</strong>"</p>
+<p class="paragraph"><strong class="strong">肉身是淤泥——本心是莲花——莲花从淤泥里长出来——但莲花不染</strong>。</p>
+<h3 class="title-h3">1.6【知行合一】——在事上修</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真正修行要在现实中实践：履行责任（如工作、家庭），保持心灵超脱（不执着得失）。</strong>"</p>
+<p class="paragraph"><strong class="strong">知行合一 = 知道 + 做到 = 在事上修</strong>。</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>知</th>
+<th>行</th>
+</tr>
+<tr>
+<td>知道"要赚钱"</td>
+<td>真的去赚</td>
+</tr>
+<tr>
+<td>知道"要爱人"</td>
+<td>真的去爱</td>
+</tr>
+<tr>
+<td>知道"要承担"</td>
+<td>真的去承担</td>
+</tr>
+<tr>
+<td>知道"要放下"</td>
+<td>真的去放下</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">知而不行 = 不知</strong>。</p>
+<p class="paragraph"><strong class="strong">王阳明讲："</strong>知是行之始，行是知之成。<strong class="strong">"——</strong>知行是一个东西的两面**。</p>
+<h3 class="title-h3">1.7 一句话总结</h3>
+<blockquote class="quote">
+<p><strong class="strong">现实残缺是事实——肉身是淤泥</strong>。</p>
+<p><strong class="strong">内心圆满是修行——本心自圆满</strong>。</p>
+<p><strong class="strong">梦想是内在的火焰——欲望是外在的索取</strong>。</p>
+<p><strong class="strong">知行合一 = 在事上修 = 现实虽残缺，内心自圆满</strong>。</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">2. 第二章·经典本意——"内心自圆满"在 6 部经典里的同证</h2>
+<h3 class="title-h3">2.1 《维摩诘经》——心净则国土净</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">随其心净，则佛土净。</strong>"</p>
+<p>"<strong class="strong">欲得净土，当净其心；随其心净，则佛土净。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"人的圆满只能源于内心"——<strong class="strong">维摩诘一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">心净 = 国土净</strong>——<strong class="strong">不是"环境变干净了"，是"心变干净了"</strong>。</p>
+<p class="paragraph">你心清净——<strong class="strong">看什么都清净</strong>。 你心浑浊——<strong class="strong">看什么都浑浊</strong>。</p>
+<p class="paragraph"><strong class="strong">圆满不在外境——在心</strong>。</p>
+<h3 class="title-h3">2.2 《六祖坛经》——本来无一物</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"本心自圆满"——<strong class="strong">慧能一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">本来无一物</strong>——<strong class="strong">本心不需要任何外物来"装满"——它本来就满</strong>。</p>
+<p class="paragraph"><strong class="strong">你给本心"加"东西——反而把它弄乱了</strong>。 <strong class="strong">你让本心"空"——它就自显圆满</strong>。</p>
+<p class="paragraph"><strong class="strong">圆满 = 空 = 减法</strong>。</p>
+<h3 class="title-h3">2.3 《金刚经》——应无所住而生其心</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">应无所住而生其心。</strong>"</p>
+<p>"<strong class="strong">凡所有相，皆是虚妄。若见诸相非相，则见如来。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"现实残缺、本心圆满"——<strong class="strong">金刚经一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">外境（相）都是虚妄——本心才是真实</strong>。</p>
+<p class="paragraph"><strong class="strong">你住在"相"上——你被相转——你心残缺</strong>。 <strong class="strong">你不住"相"上——你看见本心——你心圆满</strong>。</p>
+<h3 class="title-h3">2.4 《传习录》——知是行之始·行是知之成</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">知是行之始，行是知之成。</strong>"</p>
+<p>"<strong class="strong">知之真切笃实处，即是行；行之明觉精察处，即是知。</strong>"</p>
+<p>"<strong class="strong">未有知而不行者；知而不行，只是未知。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"知行合一"——<strong class="strong">阳明一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">没有"知而不行"——如果有"知而不行"——说明"不知"</strong>。</p>
+<p class="paragraph"><strong class="strong">真知必行——真行必知</strong>。 <strong class="strong">知行合一 = 在事上磨练</strong>。</p>
+<h3 class="title-h3">2.5 《道德经》——少则得·多则惑</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">少则得，多则惑。</strong>"</p>
+<p>"<strong class="strong">为学日益，为道日损。损之又损，以至于无为。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"本心自圆满"——<strong class="strong">老子一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">少 = 得</strong>——<strong class="strong">少欲则心得</strong>。 <strong class="strong">多 = 惑</strong>——<strong class="strong">多欲则心惑</strong>。</p>
+<p class="paragraph"><strong class="strong">圆满 = 损我执 = 减法</strong>。</p>
+<h3 class="title-h3">2.6 《毛选》——实事求是·在事上磨练</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">实践、认识、再实践、再认识，这种形式，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"在现实中实践"——<strong class="strong">毛主席一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">实践 → 认识 → 再实践 → 再认识</strong>——<strong class="strong">这是修行的循环</strong>。</p>
+<p class="paragraph"><strong class="strong">在事上磨练 = 在事上修 = 现实虽残缺，内心自圆满</strong>。</p>
+<h3 class="title-h3">2.7 经典互证的一句话</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>经典</th>
+<th>翻法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>《维摩诘经》</td>
+<td>心净则国土净</td>
+<td>圆满在心不在境</td>
+</tr>
+<tr>
+<td>《六祖坛经》</td>
+<td>本来无一物</td>
+<td>圆满 = 自满 = 空</td>
+</tr>
+<tr>
+<td>《金刚经》</td>
+<td>应无所住</td>
+<td>外境虚妄，本心真实</td>
+</tr>
+<tr>
+<td>《传习录》</td>
+<td>知行合一</td>
+<td>知行是一个东西</td>
+</tr>
+<tr>
+<td>《道德经》</td>
+<td>少则得多则惑</td>
+<td>圆满 = 减法</td>
+</tr>
+<tr>
+<td>《毛选》</td>
+<td>在事上磨练</td>
+<td>在现实里修行</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">6 部经典，一个指向：现实残缺是事实，内心圆满是修行。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">3. 第三章·历史人物——四个"现实残缺·内心圆满"的故事</h2>
+<h3 class="title-h3">3.1 毛主席·现实残破，本心圆满</h3>
+<p class="paragraph">毛主席一生<strong class="strong">现实残破</strong>——</p>
+<ul class="bullet-list">
+<li>家人牺牲——<strong class="strong">妻子、弟弟、儿子</strong>。</li>
+<li>同志牺牲——<strong class="strong">无数战友</strong>。</li>
+<li>国家残破——<strong class="strong">抗日战争、解放战争</strong>。</li>
+<li>个人被整——<strong class="strong">文革中失势</strong>。</li>
+<li>政策错误——<strong class="strong">大跃进、文化大革命</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但毛主席"本心圆满"</strong>——</p>
+<ul class="bullet-list">
+<li>他"实事求是"——<strong class="strong">心有标准</strong>。</li>
+<li>他"为人民服务"——<strong class="strong">心有方向</strong>。</li>
+<li>他"敢斗争"——<strong class="strong">心有力量</strong>。</li>
+<li>他临终说"你办事，我放心"——<strong class="strong">心有交代</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">肉身是淤泥——本心是毛主席那颗"为人民"的心</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">得人心者得天下。</strong>"——<strong class="strong">毛主席的圆满——不靠肉身——靠本心</strong>。</p>
+<h3 class="title-h3">3.2 玄奘·19 年现实苦难，本心圆满</h3>
+<p class="paragraph">玄奘<strong class="strong">现实残破</strong>——</p>
+<ul class="bullet-list">
+<li>19 年不回家——<strong class="strong">肉身远在万里</strong>。</li>
+<li>沙漠断水——<strong class="strong">肉身濒死</strong>。</li>
+<li>高昌王挽留——<strong class="strong">肉身被困</strong>。</li>
+<li>同事排挤——<strong class="strong">肉身孤立</strong>。</li>
+<li>临终只说"勤修功德"——<strong class="strong">肉身将死</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但玄奘"本心圆满"</strong>——</p>
+<ul class="bullet-list">
+<li>他"求真经"——<strong class="strong">心有方向</strong>。</li>
+<li>他"译经 19 年"——<strong class="strong">心有坚持</strong>。</li>
+<li>他"曲女城 18 天无人能辩"——<strong class="strong">心有力量</strong>。</li>
+<li>他"留 75 部经书"——<strong class="strong">心有交代</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">肉身是淤泥——本心是玄奘那颗"求真经"的心</strong>。</p>
+<h3 class="title-h3">3.3 王阳明·现实被贬，本心圆满</h3>
+<p class="paragraph">王阳明<strong class="strong">现实残破</strong>——</p>
+<ul class="bullet-list">
+<li>1508 年被贬龙场——<strong class="strong">肉身濒死</strong>。</li>
+<li>钱宁迫害——<strong class="strong">肉身险死</strong>。</li>
+<li>宁王反叛——<strong class="strong">肉身临阵</strong>。</li>
+<li>得罪权奸——<strong class="strong">肉身被整</strong>。</li>
+<li>临终"此心光明"——<strong class="strong">肉身将死</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但王阳明"本心圆满"</strong>——</p>
+<ul class="bullet-list">
+<li>他"致良知"——<strong class="strong">心有标准</strong>。</li>
+<li>他"知行合一"——<strong class="strong">心有方向</strong>。</li>
+<li>他"事上磨练"——<strong class="strong">心有力量</strong>。</li>
+<li>他"龙场悟道"——<strong class="strong">心有交代</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">肉身是淤泥——本心是阳明那颗"良知"的心</strong>。</p>
+<h3 class="title-h3">3.4 慧能·大字不识，本心圆满</h3>
+<p class="paragraph">慧能<strong class="strong">现实残破</strong>——</p>
+<ul class="bullet-list">
+<li>大字不识——<strong class="strong">肉身"低贱"</strong>。</li>
+<li>父亲早亡——<strong class="strong">肉身孤苦</strong>。</li>
+<li>砍柴为生——<strong class="strong">肉身贫贱</strong>。</li>
+<li>被神秀弟子追杀——<strong class="strong">肉身濒死</strong>。</li>
+<li>隐居 16 年——<strong class="strong">肉身潜逃</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但慧能"本心圆满"</strong>——</p>
+<ul class="bullet-list">
+<li>他"不识本心学法无益"——<strong class="strong">心有标准</strong>。</li>
+<li>他"菩提本无树"——<strong class="strong">心有方向</strong>。</li>
+<li>他"一花一叶一菩提"——<strong class="strong">心有力量</strong>。</li>
+<li>他"留《坛经》一部"——<strong class="strong">心有交代</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">肉身是淤泥——本心是慧能那颗"本来无一物"的心</strong>。</p>
+<h3 class="title-h3">3.5 四个故事·一个共同点</h3>
+<p class="paragraph">毛主席、玄奘、阳明、慧能——</p>
+<p class="paragraph"><strong class="strong">肉身都残破——本心都圆满</strong>。</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>古人</th>
+<th>肉身</th>
+<th>本心</th>
+</tr>
+<tr>
+<td>毛主席</td>
+<td>家人牺牲、国家残破</td>
+<td>为人民服务</td>
+</tr>
+<tr>
+<td>玄奘</td>
+<td>19 年不归、沙漠濒死</td>
+<td>求真经</td>
+</tr>
+<tr>
+<td>阳明</td>
+<td>被贬龙场、险死</td>
+<td>致良知</td>
+</tr>
+<tr>
+<td>慧能</td>
+<td>不识、贫贱、被追杀</td>
+<td>本来无一物</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">共同点</strong>：</p>
+<ul class="bullet-list">
+<li>肉身是淤泥——<strong class="strong">这是事实</strong>。</li>
+<li>本心有方向——<strong class="strong">这是修行</strong>。</li>
+<li>现实残破——<strong class="strong">不改本心</strong>。</li>
+<li>内心圆满——<strong class="strong">不靠外境</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这叫"现实虽残缺，内心自圆满"。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">4. 第四章·反面案例——七种"把圆满寄托在外境上"的人</h2>
+<h3 class="title-h3">4.1 「寄托在外貌」型——"我不美，所以不圆满"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">外貌美丑是外在评价，真正的快乐源于不依赖他人评价的内心宁静。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">把圆满寄托在外貌上</strong>——</p>
+<ul class="bullet-list">
+<li>我不漂亮——<strong class="strong">所以我不圆满</strong>。</li>
+<li>我老了——<strong class="strong">所以我不圆满</strong>。</li>
+<li>我有疤——<strong class="strong">所以我不圆满</strong>。</li>
+<li>我胖——<strong class="strong">所以我不圆满</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但外貌会变——圆满就跟着变</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥。</strong>"——<strong class="strong">指望肉身完美——是痴心妄想</strong>。</p>
+<h3 class="title-h3">4.2 「寄托在关系」型——"他不爱我，所以不圆满"</h3>
+<p class="paragraph">这种人<strong class="strong">把圆满寄托在关系上</strong>——</p>
+<ul class="bullet-list">
+<li>父母不爱我——<strong class="strong">所以我不圆满</strong>。</li>
+<li>爱人离开我——<strong class="strong">所以我不圆满</strong>。</li>
+<li>朋友背叛我——<strong class="strong">所以我不圆满</strong>。</li>
+<li>同事排挤我——<strong class="strong">所以我不圆满</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但关系会断——圆满就跟着断</strong>。</p>
+<p class="paragraph"><strong class="strong">真圆满 = 不依赖任何关系</strong>。</p>
+<h3 class="title-h3">4.3 「寄托在钱」型——"我没钱，所以不圆满"</h3>
+<p class="paragraph">这种人<strong class="strong">把圆满寄托在钱上</strong>——</p>
+<ul class="bullet-list">
+<li>我没钱——<strong class="strong">所以我不圆满</strong>。</li>
+<li>我钱少——<strong class="strong">所以我低人一等</strong>。</li>
+<li>我钱被骗——<strong class="strong">所以我崩溃</strong>。</li>
+<li>我钱没了——<strong class="strong">所以我没价值</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但钱会没有——圆满就跟着没有</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">本心自圆满。</strong>"——<strong class="strong">不靠外物</strong>。</p>
+<h3 class="title-h3">4.4 「寄托在名声」型——"我不红，所以不圆满"</h3>
+<p class="paragraph">这种人<strong class="strong">把圆满寄托在名声上</strong>——</p>
+<ul class="bullet-list">
+<li>我没名——<strong class="strong">所以我不圆满</strong>。</li>
+<li>我粉丝少——<strong class="strong">所以我没价值</strong>。</li>
+<li>我被黑——<strong class="strong">所以我失败</strong>。</li>
+<li>我被遗忘——<strong class="strong">所以我没存在过</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但名声会散去——圆满就跟着散去</strong>。</p>
+<p class="paragraph"><strong class="strong">真圆满 = 不需要他人知道自己</strong>。</p>
+<h3 class="title-h3">4.5 「寄托在事业」型——"我事业失败，所以不圆满"</h3>
+<p class="paragraph">这种人<strong class="strong">把圆满寄托在事业上</strong>——</p>
+<ul class="bullet-list">
+<li>我项目失败——<strong class="strong">所以我不圆满</strong>。</li>
+<li>我公司倒闭——<strong class="strong">所以我没价值</strong>。</li>
+<li>我被裁员——<strong class="strong">所以我失败</strong>。</li>
+<li>我赚不到钱——<strong class="strong">所以我白活</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但事业会败——圆满就跟着败</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">履行责任（如工作、家庭）。</strong>"——<strong class="strong">做事是责任——但圆满不靠它</strong>。</p>
+<h3 class="title-h3">4.6 「逃避现实」型——"我念佛，所以圆满"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">批判虚假修行：单纯打坐念经是逃避。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">把圆满寄托在"修行"上</strong>——</p>
+<ul class="bullet-list">
+<li>我打坐——<strong class="strong">所以我圆满</strong>。</li>
+<li>我念经——<strong class="strong">所以我有功德</strong>。</li>
+<li>我出家——<strong class="strong">所以我脱离苦海</strong>。</li>
+<li>我不入世——<strong class="strong">所以我清净</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但这只是逃避——不是圆满</strong>。</p>
+<p class="paragraph"><strong class="strong">真圆满 = 在现实中承担责任——心不动</strong>。</p>
+<h3 class="title-h3">4.7 「嘴上说圆满」型——"我应该已经圆满了"</h3>
+<p class="paragraph">这种人<strong class="strong">嘴上说"我已经圆满了"——但现实一来就破</strong>——</p>
+<ul class="bullet-list">
+<li>我说"我不在乎"——<strong class="strong">但我天天在乎</strong>。</li>
+<li>我说"我已经放下"——<strong class="strong">但我天天抓</strong>。</li>
+<li>我说"我心圆满"——<strong class="strong">但我天天被外境转</strong>。</li>
+<li>我说"我知行合一"——<strong class="strong">但我知而不行</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"嘴硬"——不是"真圆满"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">知是行之始，行是知之成。</strong>"——<strong class="strong">嘴上说"圆满"但做不到——</strong>就是"不知"**。</p>
+<h3 class="title-h3">4.8 现代职场版·3 种"把圆满寄托在外境上"画像</h3>
+<h4 class="title-h4">4.8.1 35 岁产品经理——"寄托在事业"型</h4>
+<p class="paragraph">小王 35 岁，高级产品经理。</p>
+<p class="paragraph">他把圆满<strong class="strong">寄托在事业上</strong>——</p>
+<ul class="bullet-list">
+<li>项目失败——<strong class="strong">我失败</strong>。</li>
+<li>老板批评——<strong class="strong">我不行</strong>。</li>
+<li>同事升职——<strong class="strong">我没价值</strong>。</li>
+<li>35 岁被裁——<strong class="strong">我完了</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他活在"事业 = 圆满"的幻觉里</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">履行责任——保持心灵超脱。</strong>"——<strong class="strong">小王做事——但圆满不靠它</strong>。</p>
+<p class="paragraph">真知的产品经理，<strong class="strong">做事时全力以赴——做完后心不挂——事业成败不决定他的"圆满"</strong>。</p>
+<h4 class="title-h4">4.8.2 45 岁创业者——"寄托在钱"型</h4>
+<p class="paragraph">老李 45 岁，创业十年。</p>
+<p class="paragraph">他把圆满<strong class="strong">寄托在钱上</strong>——</p>
+<ul class="bullet-list">
+<li>钱赚了——<strong class="strong">我赢了</strong>。</li>
+<li>钱没了——<strong class="strong">我败了</strong>。</li>
+<li>钱少了——<strong class="strong">我低</strong>。</li>
+<li>钱多了——<strong class="strong">我高</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他活在"钱 = 圆满"的幻觉里</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">本心自圆满——不靠外物。</strong>"——<strong class="strong">老李的圆满应该来自"创造"——不是"赚多少"</strong>。</p>
+<p class="paragraph">真知的创业者，<strong class="strong">赚时感恩——赔时接受——圆满不靠余额</strong>。</p>
+<h4 class="title-h4">4.8.3 60 岁退休人——"寄托在关系"型</h4>
+<p class="paragraph">老张 60 岁，退休五年。</p>
+<p class="paragraph">他把圆满<strong class="strong">寄托在关系上</strong>——</p>
+<ul class="bullet-list">
+<li>子女不孝——<strong class="strong">我失败</strong>。</li>
+<li>老伴不理解——<strong class="strong">我孤独</strong>。</li>
+<li>老朋友不联系——<strong class="strong">我被遗忘</strong>。</li>
+<li>没人看我——<strong class="strong">我没存在</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他活在"关系 = 圆满"的幻觉里</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥——本心自圆满。</strong>"——<strong class="strong">老张的圆满应该来自"自己"——不是"被谁看"</strong>。</p>
+<p class="paragraph">真知的退休人，<strong class="strong">一个人也能圆满——因为"本心"就是家</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">5. 第五章·落地——三步走"内心自圆满"实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门——找到"不靠外境"的一件事</h3>
+<p class="paragraph"><strong class="strong">30 天的目标：找一件"不靠外境"也能开心的事。</strong></p>
+<p class="paragraph">举例：</p>
+<ul class="bullet-list">
+<li><strong class="strong">每天早起 10 分钟</strong>——不为任何事——只为"我愿意"——<strong class="strong">心不靠外境</strong>。</li>
+<li><strong class="strong">每天独处 10 分钟</strong>——不刷手机——不为任何事——<strong class="strong">心不靠外境</strong>。</li>
+<li><strong class="strong">每天写 100 字</strong>——不为发表——不为他人——<strong class="strong">心不靠外境</strong>。</li>
+<li><strong class="strong">每天走 1000 步</strong>——不为减肥——不为打卡——<strong class="strong">心不靠外境</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">30 天后，你会发现"不靠外境也能开心"</strong>。</p>
+<h3 class="title-h3">5.2 1 年稳固——在事上磨练"知行合一"</h3>
+<p class="paragraph"><strong class="strong">1 年的目标：在事上磨练"知行合一"。</strong></p>
+<p class="paragraph"><strong class="strong">3 个具体场景</strong>：</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>场景</th>
+<th>知</th>
+<th>行</th>
+</tr>
+<tr>
+<td>工作</td>
+<td>知道"要尽责"</td>
+<td>真的去尽责</td>
+</tr>
+<tr>
+<td>家庭</td>
+<td>知道"要爱"</td>
+<td>真的去爱</td>
+</tr>
+<tr>
+<td>自己</td>
+<td>知道"要养"</td>
+<td>真的去养（身体+心）</td>
+</tr>
+</table></div>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真正修行要在现实中实践：履行责任（如工作、家庭），保持心灵超脱。</strong>"</p>
+<p class="paragraph"><strong class="strong">1 年后，你能在 3 件事上做到"知行合一"</strong>。</p>
+<h3 class="title-h3">5.3 3 年突破——活出"现实残缺·内心圆满"</h3>
+<p class="paragraph"><strong class="strong">3 年的目标：活出"现实残缺·内心圆满"的状态。</strong></p>
+<ul class="bullet-list">
+<li>现实来了——<strong class="strong">我不躲</strong>。</li>
+<li>责任来了——<strong class="strong">我不逃</strong>。</li>
+<li>失败来了——<strong class="strong">我不倒</strong>。</li>
+<li>失去来了——<strong class="strong">我不怨</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心不动——</strong>因为"本心自圆满"**。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人的圆满只能源于内心。</strong>"</p>
+<p class="paragraph"><strong class="strong">3 年后，你能活出"现实虽残缺，内心自圆满"</strong>。</p>
+<h3 class="title-h3">5.4 终身功夫</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥，本心自圆满。</strong>"</p>
+<p class="paragraph"><strong class="strong">这一句——是一辈子的事</strong>。</p>
+<ul class="bullet-list">
+<li>妈妈<strong class="strong">一辈子</strong>守节气——<strong class="strong">她一辈子知道"现实残缺"——但她心圆满</strong>。</li>
+<li>毛主席<strong class="strong">一辈子</strong>为人民——<strong class="strong">他一辈子知道"现实残破"——但他心圆满</strong>。</li>
+<li>阳明<strong class="strong">一辈子</strong>致良知——<strong class="strong">他一辈子知道"被贬"——但他心圆满</strong>。</li>
+<li>玄奘<strong class="strong">一辈子</strong>求真经——<strong class="strong">他一辈子知道"现实苦"——但他心圆满</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">现实残缺是事实——本心圆满是修行——这是一辈子的事</strong>。</p>
+<h3 class="title-h3">5.5 三个检验：你的"圆满"是真的吗？</h3>
+<ol class="num-list">
+<li><strong class="strong">外貌检验</strong>——你不漂亮时，<strong class="strong">心里还安宁吗</strong>？不安宁就是"寄托在外貌"，安宁就是"本心自圆满"。</li>
+<li><strong class="strong">关系检验</strong>——你爱人离开你时，<strong class="strong">心里还安宁吗</strong>？不安宁就是"寄托在关系"，安宁就是"本心自圆满"。</li>
+<li><strong class="strong">钱检验</strong>——你钱突然没了，<strong class="strong">心里还安宁吗</strong>？不安宁就是"寄托在钱"，安宁就是"本心自圆满"。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真正的快乐源于不依赖他人评价的内心宁静。</strong>"</p>
+<p class="paragraph"><strong class="strong">经得起这三关——就是真的本心自圆满</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">6. 第六章·回扣原话——7 句原话逐句落地表</h2>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>名相</th>
+<th>落地动作</th>
+</tr>
+<tr>
+<td>"梦想是内在的欲望，欲望是外在的产物"</td>
+<td>梦想 vs 欲望</td>
+<td>问自己"这件事是我想，还是外境要"</td>
+</tr>
+<tr>
+<td>"现实必然残缺，修行的本质是心灵成长"</td>
+<td>现实残缺+心灵成长</td>
+<td>接受残缺，但不停下成长</td>
+</tr>
+<tr>
+<td>"外貌美丑是外在评价，真正的快乐源于不依赖他人评价"</td>
+<td>不依赖评价</td>
+<td>每天问"今天我为谁而活"</td>
+</tr>
+<tr>
+<td>"肉身是淤泥，本心自圆满"</td>
+<td>肉身+本心</td>
+<td>接受肉身的不完美，守住本心的圆满</td>
+</tr>
+<tr>
+<td>"活好自己，不被他人的评价左右"</td>
+<td>活好自己</td>
+<td>列出"我为自己做的 3 件事"</td>
+</tr>
+<tr>
+<td>"得人心者得天下"</td>
+<td>得人心</td>
+<td>做事问"这是为他人还是为自己"</td>
+</tr>
+<tr>
+<td>"知行合一——在承担责任中修炼心性"</td>
+<td>知行合一</td>
+<td>列一件"知道没做到"的事，去做</td>
+</tr>
+</table></div>
+<h3 class="title-h3">6.1 一句话总纲</h3>
+<blockquote class="quote">
+<p><strong class="strong">现实残缺是事实——肉身是淤泥</strong>。</p>
+<p><strong class="strong">内心圆满是修行——本心自圆满</strong>。</p>
+<p><strong class="strong">梦想是内在的火焰——欲望是外在的索取</strong>。</p>
+<p><strong class="strong">知行合一 = 在事上修 = 现实虽残缺，内心自圆满</strong>。</p>
+<p><strong class="strong">师兄，</strong>今天你为谁而活？****</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">7. 收束——肉身是淤泥，本心自圆满</h2>
+<p class="paragraph">悟真师兄讲："<strong class="strong">肉身是淤泥，本心自圆满。</strong>"</p>
+<p class="paragraph"><strong class="strong">这一句话，是上午 6 篇的总和——</strong></p>
+<blockquote class="quote">
+<p>《知止·修行的过程》——<strong class="strong">找真知</strong>（入口）</p>
+<p>《见如来·当下》——<strong class="strong">客观真实</strong>（方法）</p>
+<p>《带罪而来·正视恶》——<strong class="strong">敢看自己</strong>（第一关）</p>
+<p>《主宰自己的心》——<strong class="strong">我心即宇宙</strong>（总纲）</p>
+<p>《应无所住而生其心》——<strong class="strong">敢拿敢放</strong>（动态平衡）</p>
+<p><strong class="strong">《内心自圆满》——</strong>现实残缺·本心圆满<strong class="strong">（实修·知行合一）</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">6 篇同源同证一条路——从"找真知"到"现实残缺·本心圆满"——这是修行的全程</strong>。</p>
+<p class="paragraph"><strong class="strong">这一条路</strong>——</p>
+<blockquote class="quote">
+<p>肉身是淤泥——<strong class="strong">这是事实，不是骂人</strong>。</p>
+<p>本心自圆满——<strong class="strong">这是修行，不是幻想</strong>。</p>
+<p>梦想是内在的火焰——<strong class="strong">值得追</strong>。</p>
+<p>欲望是外在的索取——<strong class="strong">值得止</strong>。</p>
+<p>知是行之始——<strong class="strong">想到就去做</strong>。</p>
+<p>行是知之成——<strong class="strong">做完才是真知</strong>。</p>
+<p>在事上磨练——<strong class="strong">不是逃避现实</strong>。</p>
+<p>在现实中圆满——<strong class="strong">不是寄托外境</strong>。</p>
+<p>现实虽残缺——<strong class="strong">这是事实</strong>。</p>
+<p>内心自圆满——<strong class="strong">这是修行</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">师兄，</strong>今天你为谁而活？****</p>
+<blockquote class="quote">
+<p>为他人评价——<strong class="strong">活在淤泥里</strong>。</p>
+<p>为外境圆满——<strong class="strong">活在淤泥里</strong>。</p>
+<p><strong class="strong">为内心圆满——</strong>活在莲花里<strong class="strong">。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">肉身是淤泥——本心是莲花</strong>。 <strong class="strong">莲花从淤泥里长出来——但莲花不染</strong>。 <strong class="strong">这是修行的真模样。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">8. 附录·14 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《维摩诘经·佛国品》</strong> "随其心净，则佛土净"</li>
+<li><strong class="strong">《六祖坛经·行由品》</strong> "菩提本无树，明镜亦非台，本来无一物，何处惹尘埃"</li>
+<li><strong class="strong">《六祖坛经·机缘品》</strong> "不识本心，学法无益"</li>
+<li><strong class="strong">《金刚经·第十品》</strong> "应无所住而生其心"</li>
+<li><strong class="strong">《金刚经·第五品》</strong> "凡所有相，皆是虚妄。若见诸相非相，则见如来"</li>
+<li><strong class="strong">《传习录·卷上》</strong> "知是行之始，行是知之成"</li>
+<li><strong class="strong">《传习录·卷中》</strong> "知之真切笃实处，即是行；行之明觉精察处，即是知"</li>
+<li><strong class="strong">《传习录·卷下》</strong> "未有知而不行者；知而不行，只是未知"</li>
+<li><strong class="strong">《道德经·第二十二章》</strong> "少则得，多则惑"</li>
+<li><strong class="strong">《道德经·第四十八章》</strong> "为学日益，为道日损"</li>
+<li><strong class="strong">《毛选·实践论》</strong> "实践、认识、再实践、再认识"</li>
+<li><strong class="strong">《毛选·整顿党的作风》</strong> "实事求是"</li>
+<li><strong class="strong">《大乘起信论》</strong> "心生则种种法生，心灭则种种法灭"</li>
+<li><strong class="strong">《大般涅槃经》</strong> "肉身无常，本心常住"</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p><strong class="strong">署名：悟真 · 静思整理</strong></p>
+<p><strong class="strong">2026-07-16 上午 · 飞书对话由悟真命题、静思执笔</strong></p>
+<p><strong class="strong">最高纲领：古人的智慧不是拿来欣赏的，是拿来校准的。</strong></p>
+</blockquote>
+<div class="sign-off"><span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>2026 年 7 月 16 日 · 北京</div>
+</div>
+<script>
+const audio=document.getElementById('audio'),playBtn=document.getElementById('playBtn'),progressBar=document.getElementById('progressBar'),progressFill=document.getElementById('progressFill'),currentTimeEl=document.getElementById('currentTime'),durationEl=document.getElementById('duration'),muteBtn=document.getElementById('muteBtn'),volumeSlider=document.getElementById('volumeSlider'),speedBtns=document.querySelectorAll('.ctrl-btn[data-speed]');
+function fmt(s){if(!s||isNaN(s))return '00:00';const m=Math.floor(s/60),ss=Math.floor(s%60);return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')}
+playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.textContent='⏸'}else{audio.pause();playBtn.textContent='▶'}});
+audio.addEventListener('loadedmetadata',()=>{durationEl.textContent=fmt(audio.duration)});
+audio.addEventListener('timeupdate',()=>{const pct=(audio.currentTime/audio.duration)*100;progressFill.style.width=pct+'%';currentTimeEl.textContent=fmt(audio.currentTime)});
+audio.addEventListener('ended',()=>{playBtn.textContent='▶';progressFill.style.width='0%'});
+progressBar.addEventListener('click',(e)=>{const rect=progressBar.getBoundingClientRect();const pct=(e.clientX-rect.left)/rect.width;audio.currentTime=pct*audio.duration});
+muteBtn.addEventListener('click',()=>{audio.muted=!audio.muted;muteBtn.textContent=audio.muted?'🔇 取消静音':'🔊 静音'});
+volumeSlider.addEventListener('input',()=>{audio.volume=volumeSlider.value/100});
+speedBtns.forEach(btn=>{btn.addEventListener('click',()=>{const speed=parseFloat(btn.dataset.speed);audio.playbackRate=speed;speedBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active')})});
+audio.volume=0.8;
+</script>
+</body>
+</html>
