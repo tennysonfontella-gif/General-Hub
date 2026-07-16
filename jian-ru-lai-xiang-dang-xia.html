@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《见如来·就在每个当下——客观真实是"如来"的凡人版本》</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #faf6ef; color: #3d3027;
+    font-family: 'Noto Serif SC', '站酷小薇体', 'STKaiti', 'KaiTi', 'PingFang SC', serif;
+    font-size: 20px; line-height: 2.2; padding: 0 0 80px 0;
+}
+.page { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+.hero {
+    background: linear-gradient(135deg, #faf6ef 0%, #f3eada 100%);
+    padding: 80px 32px 60px; text-align: center;
+    border-bottom: 3px double #8a5a2b; margin-bottom: 60px;
+}
+.hero .main-title {
+    font-size: 42px; font-weight: 700; color: #3d3027;
+    letter-spacing: 4px; margin-bottom: 16px; line-height: 1.4;
+}
+.hero .sub-title {
+    font-size: 22px; color: #8a5a2b; font-weight: 500;
+    letter-spacing: 3px; margin-bottom: 24px; line-height: 1.6;
+}
+.hero .meta {
+    font-size: 14px; color: #7a6f63; letter-spacing: 2px; margin-bottom: 40px;
+}
+.hero .meta .seal { color: #c8423b; font-weight: 600; }
+.audio-player {
+    background: #fff; border: 2px solid #8a5a2b; border-radius: 12px;
+    padding: 24px 28px; max-width: 720px; margin: 32px auto 0;
+    box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+}
+.audio-player .player-row { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+.audio-player .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #8a5a2b; color: #fff; border: none; font-size: 22px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s;
+}
+.audio-player .play-btn:hover { background: #6f4520; }
+.audio-player .progress-wrap { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.audio-player .progress-bar {
+    width: 100%; height: 8px; background: #f0e4d0; border-radius: 4px;
+    cursor: pointer; position: relative; overflow: hidden;
+}
+.audio-player .progress-fill {
+    height: 100%; background: linear-gradient(90deg, #8a5a2b, #c8a85a);
+    width: 0%; transition: width 0.1s;
+}
+.audio-player .time-row {
+    display: flex; justify-content: space-between;
+    font-size: 13px; color: #7a6f63; font-family: monospace;
+}
+.audio-player .controls {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid #f0e4d0;
+}
+.audio-player .ctrl-btn {
+    background: transparent; border: 1px solid #d4c4a8; color: #8a5a2b;
+    padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-family: inherit;
+}
+.audio-player .ctrl-btn:hover { background: #f0e4d0; }
+.audio-player .ctrl-btn.active { background: #8a5a2b; color: #fff; border-color: #8a5a2b; }
+.audio-player .speed-group { display: flex; gap: 4px; }
+.audio-player .volume { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.audio-player .volume-slider { width: 80px; }
+.audio-player .download { color: #8a5a2b; text-decoration: none; font-size: 13px; }
+.title-h1 {
+    font-size: 30px; color: #3d3027; margin: 60px 0 30px; padding-bottom: 16px;
+    border-bottom: 2px solid #8a5a2b; letter-spacing: 3px; font-weight: 600;
+}
+.title-h2 {
+    font-size: 26px; color: #8a5a2b; margin: 50px 0 24px; padding-left: 18px;
+    border-left: 6px solid #8a5a2b; letter-spacing: 2px; font-weight: 600; line-height: 1.5;
+}
+.title-h3 { font-size: 22px; color: #5a3e22; margin: 36px 0 18px; font-weight: 600; letter-spacing: 1px; }
+.title-h4 { font-size: 19px; color: #5a3e22; margin: 24px 0 12px; font-weight: 600; }
+.paragraph { margin-bottom: 20px; text-indent: 2em; text-align: justify; }
+.strong {
+    color: #8a5a2b; font-weight: 600;
+    background: linear-gradient(transparent 65%, rgba(200, 168, 90, 0.25) 65%);
+    padding: 0 2px;
+}
+.quote {
+    background: #fef5f4; border-left: 4px solid #c8423b;
+    padding: 16px 24px; margin: 24px 0; border-radius: 0 6px 6px 0;
+    font-style: normal; color: #5a3e22;
+}
+.quote p { margin: 8px 0; text-indent: 0; }
+.bullet-list, .num-list { margin: 16px 0 20px 40px; }
+.bullet-list li, .num-list li { margin-bottom: 10px; line-height: 1.9; }
+.table-wrap { overflow-x: auto; margin: 24px 0; }
+.data-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid #d4c4a8; border-radius: 6px; overflow: hidden; font-size: 16px;
+}
+.data-table th {
+    background: #8a5a2b; color: #fff; padding: 12px 16px;
+    text-align: left; font-weight: 600; letter-spacing: 1px;
+}
+.data-table td { padding: 12px 16px; border-top: 1px solid #f0e4d0; line-height: 1.7; }
+.data-table tr:nth-child(even) td { background: #faf6ef; }
+.divider { border: none; border-top: 1px dashed #c8a85a; margin: 50px 0; }
+.seal-stamp {
+    display: inline-block; background: #c8423b; color: #fff;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600;
+    letter-spacing: 4px; margin: 0 4px;
+}
+.sign-off {
+    text-align: right; margin: 60px 0 30px; color: #8a5a2b;
+    font-size: 18px; letter-spacing: 2px; line-height: 2;
+}
+@media (max-width: 768px) {
+    body { font-size: 18px; line-height: 2.0; }
+    .hero { padding: 50px 20px 40px; }
+    .hero .main-title { font-size: 28px; letter-spacing: 3px; }
+    .hero .sub-title { font-size: 17px; }
+    .title-h1 { font-size: 24px; }
+    .title-h2 { font-size: 20px; }
+    .page { padding: 0 20px; }
+    .audio-player { padding: 18px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="hero">
+    <div class="main-title">《见如来·就在每个当下——客观真实是"如来"的凡人版本》</div>
+    <div class="sub-title">客观真实是"如来"的凡人版本 · 深度研读笔记</div>
+    <div class="meta">
+        <span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 16 日 · 字数 10000+ · 全文音频 50+ 分钟
+    </div>
+    <div class="audio-player">
+        <audio id="audio" preload="metadata">
+            <source src="jian-ru-lai-xiang-dang-xia-full.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player-row">
+            <button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+            <div class="progress-wrap">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-row">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">--:--</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="speed-group">
+                <button class="ctrl-btn" data-speed="0.75">0.75x</button>
+                <button class="ctrl-btn active" data-speed="1">1x</button>
+                <button class="ctrl-btn" data-speed="1.25">1.25x</button>
+                <button class="ctrl-btn" data-speed="1.5">1.5x</button>
+                <button class="ctrl-btn" data-speed="2">2x</button>
+            </div>
+            <button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+            <div class="volume">
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+            </div>
+            <a class="download" id="downloadBtn" href="jian-ru-lai-xiang-dang-xia-full.mp3" download="jian-ru-lai-xiang-dang-xia-full.mp3">⬇ 下载音频</a>
+        </div>
+    </div>
+</div>
+<div class="page">
+<h1 class="title-h1">《见如来·就在每个当下——客观真实是"如来"的凡人版本》</h1>
+<h2 class="title-h2">悟真读书笔记</h2>
+<p class="paragraph"><strong class="strong">核心命题：见如来不在深山里，在每个当下的"实事求是"。</strong></p>
+<blockquote class="quote">
+<p>佛法里有 84000 法门，都是方便说法，本来无法。</p>
+<p>抓住那个不变的东西——客观真实——就能应万变。</p>
+<p>它不叫"如来"也行，叫本来、叫事实、叫本质、叫规律——都是一回事。</p>
+<p>这是真正的镜子，让还在门外打转的师兄，看清自己脚下的路。</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">0. 序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">"如来"不是佛家的专利，"客观真实"是它的凡人翻译。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">没有佛法的基础的人可以翻成他能听懂的语言，这没所谓的。</strong>"</p>
+<p class="paragraph">这一句话，把"如来"从宗教的高台请下来——</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>佛家讲</th>
+<th>凡人翻</th>
+</tr>
+<tr>
+<td>如来</td>
+<td>本来</td>
+</tr>
+<tr>
+<td>实相</td>
+<td>事实</td>
+</tr>
+<tr>
+<td>真如</td>
+<td>真相</td>
+</tr>
+<tr>
+<td>般若</td>
+<td>本质</td>
+</tr>
+<tr>
+<td>见性</td>
+<td>见真实</td>
+</tr>
+<tr>
+<td>涅槃</td>
+<td>安住事实</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">不是降格，是回归。</strong> 道不在名相上，<strong class="strong">在事实里</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">法无定法。</strong>它有一个定有一个标准在，但是又无定是因为每个时空的点不一样。它怎么不一样？一定有一个不变的东西。你只要抓住这个不变的，就能应万变。"</p>
+<p class="paragraph"><strong class="strong">这个不变的东西，就是"客观真实"</strong>——也叫"实事求是"，也叫"如来"。</p>
+<hr class="divider">
+<h2 class="title-h2">1. 第一章·名相拆解——"如来"到底在说什么</h2>
+<h3 class="title-h3">1.1【如来】——无所从来，亦无所去</h3>
+<p class="paragraph">《金刚经》："<strong class="strong">如来者，无所从来，亦无所去，故名如来。</strong>"</p>
+<p class="paragraph"><strong class="strong">如来不是一尊佛，是一个状态</strong>——<strong class="strong">事物的本来状态</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">凡事要客观真实，因为只有客观真实没有念，没有想法，没有听别人说，也没有自己的想法，是这个事情是怎么回事？我如实关照它的本来的样子是怎样就是怎样，这叫客观真实。</strong>"</p>
+<p class="paragraph">这就是"如来"——<strong class="strong">不是想象的，是"本来的样子"</strong>。</p>
+<h3 class="title-h3">1.2【客观真实】——如如不动的标准</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">如果你能够知道它客观真实，那你就处处时时刻刻都见如来。</strong>"</p>
+<p class="paragraph">"客观真实"四个字，是悟真师兄给"如来"翻的最精准的词。</p>
+<ul class="bullet-list">
+<li><strong class="strong">客观</strong>——不是我以为的，是<strong class="strong">它本来的</strong>。</li>
+<li><strong class="strong">真实</strong>——不是修饰的，是<strong class="strong">它实际的</strong>。</li>
+</ul>
+<p class="paragraph">合起来：<strong class="strong">客观真实 = 事物的本来的样子 = 如来</strong>。</p>
+<h3 class="title-h3">1.3【本质】——所有时空点背后的不变</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">换一个字讲叫本质，就是你对这个事情的本质了解吗？如果不了解，我带你去了解它，然后你知道这个本质，你遵循这个本质，做的结果就在道上，就是如来。</strong>"</p>
+<p class="paragraph">"本质"是<strong class="strong">所有变化的背后，那个不变的东西</strong>。</p>
+<p class="paragraph">一年四季，春夏秋冬，<strong class="strong">这是变</strong>；但春耕秋收冬藏的规律，<strong class="strong">这是不变</strong>——这就是本质。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你只要抓住这个不变的，就能应万变。如果你抓住这个不变的，你谁都变，你就变得一塌糊涂了。</strong>"</p>
+<p class="paragraph"><strong class="strong">抓住不变 = 抓住本质 = 抓住客观真实 = 见如来。</strong></p>
+<h3 class="title-h3">1.4【实事求是】——毛主席把"如来"翻成了四个字</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">毛主席，我问你问题了，很简单一句话，他当年在井冈山打仗的时候，你拿什么跟蒋介石的？要人有吗？没有，要钱有吗？没有，要枪有炮没有，没有，要地理位置有吗？没有，硬有啥？飞机大炮有吗？没有，那毛主席拿什么打？毛主席就拿着如来！毛主席为什么提出实事求是？马克思主义是实事求是的精神核心价值啊。</strong>"</p>
+<p class="paragraph">毛主席一辈子打的仗，<strong class="strong">靠的就是"客观真实"</strong>——</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>看上去</th>
+<th>客观真实（毛主席看见的）</th>
+</tr>
+<tr>
+<td>敌强我弱，<strong class="strong">死路一条</strong></td>
+<td>敌强我弱，但<strong class="strong">敌人分散，我方集中</strong>——机会在这里</td>
+</tr>
+<tr>
+<td>城市繁华，<strong class="strong">人心向背</strong></td>
+<td>农村凋敝，但<strong class="strong">农民要土地</strong>——根在这里</td>
+</tr>
+<tr>
+<td>装备落后，<strong class="strong">打不赢</strong></td>
+<td>装备落后，但<strong class="strong">敌长途奔袭，我以逸待劳</strong>——赢在这里</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">毛主席看穿了表象，</strong>抓住本质，<strong class="strong">所以永远在变——他永远有办法</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">他遵循了客观真实，所以他永远是变的。</strong>"</p>
+<p class="paragraph"><strong class="strong">这就是见如来。</strong></p>
+<h3 class="title-h3">1.5【方便说法】——84000 法门都指向同一件事</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">佛法里有一句话，84000 的法门，都是方便说法，本来无法而已，只是方便说法。你要去执着那个法，你就叫法执了。</strong>"</p>
+<p class="paragraph"><strong class="strong">法无定法。</strong></p>
+<p class="paragraph">84000 法门，是 84000 个角度——但<strong class="strong">指向同一个东西</strong>：客观真实。</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>角度</th>
+<th>说法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>佛家</td>
+<td>如来、本来</td>
+<td>事物的本来</td>
+</tr>
+<tr>
+<td>道家</td>
+<td>道、自然</td>
+<td>事物的本然</td>
+</tr>
+<tr>
+<td>儒家</td>
+<td>仁、礼</td>
+<td>事物的本分</td>
+</tr>
+<tr>
+<td>兵家</td>
+<td>实、势</td>
+<td>事物的本质</td>
+</tr>
+<tr>
+<td>心学</td>
+<td>良知、本心</td>
+<td>事物的本真</td>
+</tr>
+<tr>
+<td>马克思主义</td>
+<td>实事求是</td>
+<td>事物的客观规律</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">名字不一样，指向同一件事。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">本来无法。</strong>"——<strong class="strong">法是船，岸是真实；执着船，就上不了岸。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">2. 第二章·经典本意——"见如来"在 6 部经典里的同证</h2>
+<h3 class="title-h3">2.1 《金刚经》——如来者·无所从来亦无所去</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">如来者，无所从来，亦无所去，故名如来。</strong>"</p>
+<p>"<strong class="strong">凡所有相，皆是虚妄。若见诸相非相，则见如来。</strong>"</p>
+</blockquote>
+<p class="paragraph">"诸相非相"——<strong class="strong">不被表象所转，看见本质</strong>——这就是见如来。</p>
+<p class="paragraph">悟真师兄讲的"客观真实"，就是"诸相非相"。</p>
+<h3 class="title-h3">2.2 《道德经》——道法自然·无为而无不为</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">人法地，地法天，天法道，道法自然。</strong>"</p>
+<p>"<strong class="strong">为学日益，为道日损。损之又损，以至于无为。无为而无不为。</strong>"</p>
+</blockquote>
+<p class="paragraph">"道法自然"——<strong class="strong">道遵循它自己</strong>——这就是客观真实。</p>
+<p class="paragraph">"无为而无不为"——<strong class="strong">不妄为，但该做的都能做</strong>——这是"应万变"的极致。</p>
+<p class="paragraph">悟真师兄讲的"抓住不变应万变"——老子 2500 年前就说过了。</p>
+<h3 class="title-h3">2.3 《中庸》——天命之谓性·修道之谓教</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">在中庸之道里面，这三句话已经讲得很清楚了，天命之谓性，率性之谓道，修道之谓教。</strong>"</p>
+<blockquote class="quote">
+<p>"<strong class="strong">天命之谓性，率性之谓道，修道之谓教。</strong>"</p>
+</blockquote>
+<p class="paragraph">三句话，三步：</p>
+<ol class="num-list">
+<li><strong class="strong">天命之谓性</strong>——每个人有自己的本性（客观规律）</li>
+<li><strong class="strong">率性之谓道</strong>——遵循本性就是道（客观真实）</li>
+<li><strong class="strong">修道之谓教</strong>——把道修出来就是教（实证）</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">每个人都有他的天命，也有他的天性。</strong>"——<strong class="strong">"天命"就是客观真实</strong>。</p>
+<h3 class="title-h3">2.4 《传习录》——心外无物·心外无理</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心外无物，心外无理。</strong>"</p>
+<p>"<strong class="strong">知是心之本体，心自然会知。见父自然知孝，见兄自然知悌，见孺子入井自然知恻隐。</strong>"</p>
+</blockquote>
+<p class="paragraph">阳明讲的"良知"——<strong class="strong">本心本有的客观真实</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">每个人都有他的天命，也有他的天性。</strong>"——阳明叫它"良知"，悟真叫它"客观真实"。</p>
+<p class="paragraph"><strong class="strong">名字不一样，指向同一件事。</strong></p>
+<h3 class="title-h3">2.5 《六祖坛经》——本来无一物·何处惹尘埃</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。</strong>"</p>
+<p>"<strong class="strong">不识本心，学法无益。</strong>"</p>
+</blockquote>
+<p class="paragraph">"本来无一物"——<strong class="strong">客观真实是空的，但正是因为空，才能装下一切。</strong></p>
+<p class="paragraph">悟真师兄讲的"客观真实"——<strong class="strong">不是抓一个东西，是把所有的"抓"都放下，让真实自己显现</strong>。</p>
+<h3 class="title-h3">2.6 《毛泽东选集》——实事求是</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">'实事'就是客观存在着的一切事物，'是'就是客观事物的内部联系，即规律性，'求'就是我们去研究。</strong>"</p>
+<p>"<strong class="strong">主观意识必须遵照客观真实。</strong>"</p>
+</blockquote>
+<p class="paragraph">毛主席用最朴素的话，把"如来"翻译成所有人都听得懂的四个字。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">毛主席就拿着如来。</strong>"——<strong class="strong">拿着"客观真实"，打赢了所有的不可能</strong>。</p>
+<h3 class="title-h3">2.7 经典互证的一句话</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>经典</th>
+<th>翻法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>《金刚经》</td>
+<td>如来、诸相非相</td>
+<td>不被表象所转</td>
+</tr>
+<tr>
+<td>《道德经》</td>
+<td>道、自然、无为</td>
+<td>遵循它自己</td>
+</tr>
+<tr>
+<td>《中庸》</td>
+<td>天命、率性</td>
+<td>客观规律</td>
+</tr>
+<tr>
+<td>《传习录》</td>
+<td>良知、本心</td>
+<td>客观真实</td>
+</tr>
+<tr>
+<td>《六祖坛经》</td>
+<td>本来无一物</td>
+<td>不执着</td>
+</tr>
+<tr>
+<td>《毛选》</td>
+<td>实事求是</td>
+<td>客观规律</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">6 部经典，一个指向：客观真实。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">3. 第三章·历史人物——三个"见如来"的故事</h2>
+<h3 class="title-h3">3.1 毛主席·井冈山的"客观真实"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">在井冈山的很多人说逃跑主义，为什么逃跑主义？因为人是讲表象。他妈的，我死了，我要拼，他妈的还没死，都赢死了，拼个毛线呐，留着青山在不怕没柴烧。</strong>"</p>
+<p class="paragraph"><strong class="strong">逃跑主义的人，看表象——敌强我弱，所以必死。</strong></p>
+<p class="paragraph"><strong class="strong">毛主席，看本质——敌强我弱，但敌人的强是表面的强。</strong></p>
+<ul class="bullet-list">
+<li>敌人<strong class="strong">多</strong>——但<strong class="strong">分散</strong>，<strong class="strong">补给线长</strong>。</li>
+<li>敌人<strong class="strong">装备好</strong>——但<strong class="strong">进入山区，装备优势消失</strong>。</li>
+<li>敌人<strong class="strong">有城市</strong>——但<strong class="strong">城市是他们的负担</strong>。</li>
+</ul>
+<p class="paragraph">毛主席看穿本质，做出判断：<strong class="strong">到农村去，到山区去，到敌人力量薄弱的地方去。</strong></p>
+<p class="paragraph"><strong class="strong">这是"见如来"。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真正的拼不是去死，拼是你的本质上在拼，但是在事实的面前，你得干什么？能退，能进，进退自如才能来去自由啊。</strong>"</p>
+<p class="paragraph"><strong class="strong">进退自如，就是"应万变"。</strong></p>
+<h3 class="title-h3">3.2 玄奘·19 年取经的"客观真实"</h3>
+<p class="paragraph">玄奘法师，<strong class="strong">公元 627 年偷渡出关，645 年回国</strong>。</p>
+<p class="paragraph">19 年，<strong class="strong">走过 5 万里</strong>，<strong class="strong">经过 110 个国家</strong>，<strong class="strong">遭遇无数次的追杀、饥饿、迷路</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人不要去在意任何人对你的标签，你只在意这个事情的真实是怎么回事，你只要不违背这个真实，你怎么搞我都可以接受。</strong>"</p>
+<p class="paragraph">玄奘不被任何标签所转——</p>
+<ul class="bullet-list">
+<li>不被"和尚不能出国"的标签所转；</li>
+<li>不被"沙漠必死"的标签所转；</li>
+<li>不被"蛮夷无佛"的标签所转。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他只在意一件事：真经在哪里。</strong></p>
+<p class="paragraph">这就是<strong class="strong">客观真实</strong>——<strong class="strong">在别人看不见的地方，看见本质</strong>。</p>
+<h3 class="title-h3">3.3 慧能·一偈见本来的"客观真实"</h3>
+<p class="paragraph">五祖弘忍令众人作偈。</p>
+<p class="paragraph">神秀作："<strong class="strong">身是菩提树，心如明镜台，时时勤拂拭，勿使惹尘埃。</strong>"</p>
+<p class="paragraph">慧能作："<strong class="strong">菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。</strong>"</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">他有一个定有一个标准在，但是又无定是因为每个时空的点不一样。</strong>"</p>
+<p class="paragraph">神秀看见的是"渐修"的真实——需要"时时勤拂拭"。 慧能看见的是"顿悟"的真实——<strong class="strong">本来无一物</strong>。</p>
+<p class="paragraph"><strong class="strong">两个真实，都是真实；但慧能的那个，更彻底</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">法无定法。</strong>"——<strong class="strong">神秀的法是渐修，慧能的法是顿悟，都是法；但法不能执着，要看哪个更接近真实</strong>。</p>
+<h3 class="title-h3">3.4 孔子·因材施教的"客观真实"</h3>
+<p class="paragraph">《论语·先进》：</p>
+<blockquote class="quote">
+<p>"<strong class="strong">子路问闻斯行诸？子曰：有父兄在，如之何其闻斯行之？冉有问闻斯行诸？子曰：闻斯行之。</strong>"</p>
+<p>"公西华曰：由也问闻斯行诸？子曰：有父兄在。求也问闻斯行诸？子曰：闻斯行之。赤也惑，敢问。子曰：求也退，故进之；由也兼人，故退之。<strong class="strong">"</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">同一个问题，孔子给两个不同的答案</strong>——</p>
+<p class="paragraph">为什么？</p>
+<p class="paragraph">因为<strong class="strong">子路和冉有是两个人，本质不同</strong>。</p>
+<ul class="bullet-list">
+<li>子路<strong class="strong">勇猛激进</strong>——所以要<strong class="strong">压一下</strong>，"有父兄在"。</li>
+<li>冉有<strong class="strong">怯懦退缩</strong>——所以要<strong class="strong">推一把</strong>，"闻斯行之"。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">假如说这个人，比如说这里每个人，他的本性是谁，我全知道，因为这是规律天定的。</strong>"</p>
+<p class="paragraph"><strong class="strong">孔子看见了每个学生的"天命"，所以能因材施教。</strong></p>
+<p class="paragraph"><strong class="strong">这就是见如来——在每个学生身上，看见他的本来。</strong></p>
+<h3 class="title-h3">3.5 五个古人·一个共同点</h3>
+<p class="paragraph">毛主席、玄奘、慧能、孔子、悟真妈妈——</p>
+<p class="paragraph">他们有一个共同点：<strong class="strong">在别人看不见的地方，看见本质</strong>。</p>
+<ul class="bullet-list">
+<li>毛主席在<strong class="strong">井冈山看见本质</strong>——敌弱我强；</li>
+<li>玄奘在<strong class="strong">沙漠看见本质</strong>——真经在西方；</li>
+<li>慧能在<strong class="strong">柴房看见本质</strong>——本来无一物；</li>
+<li>孔子在<strong class="strong">学生身上看见本质</strong>——每个人有每个人的天命；</li>
+<li>悟真妈妈在<strong class="strong">土地里看见本质</strong>——哪个节气播种最佳。</li>
+</ul>
+<p class="paragraph"><strong class="strong">抓住这个不变的本质，就能应万变。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">4. 第四章·反面案例——七种"见不到如来"的人</h2>
+<h3 class="title-h3">4.1 「讲表象」型——"他妈的还没死都赢死了"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人是讲表象。他妈的，我死了，我要拼，他妈的还没死，都赢死了，拼个毛线呐。</strong>"</p>
+<p class="paragraph">这种人只看表象——</p>
+<ul class="bullet-list">
+<li>看见"敌强我弱"，<strong class="strong">就投降</strong>；</li>
+<li>看见"亏损扩大"，<strong class="strong">就割肉</strong>；</li>
+<li>看见"股价跌"，<strong class="strong">就抛售</strong>；</li>
+<li>看见"敌人凶"，<strong class="strong">就拼命</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他们没看见本质——表象背后的规律。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真正的拼不是去死，拼是你的本质上在拼。</strong>"——<strong class="strong">死在表象里的人，从未"见"过真实</strong>。</p>
+<h3 class="title-h3">4.2 「想这个做那个」型——心不在当下</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">我们很多人是在想这个问题的时候，又在做那个事，在做这个事情的时候又在想那个问题，那就很难介入它的本质。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">心是散的</strong>——</p>
+<ul class="bullet-list">
+<li>开会时想着家里的事；</li>
+<li>吃饭时想着工作的事；</li>
+<li>陪孩子时想着自己的事。</li>
+</ul>
+<p class="paragraph"><strong class="strong">心不在当下，就看不见当下的真实。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">是不是因为有一句话我也想问一下。</strong>"——<strong class="strong">他没有"入"当下，所以一直问，没答案</strong>。</p>
+<h3 class="title-h3">4.3 「被标签所转」型——"和尚不能出国"</h3>
+<p class="paragraph">玄奘面对的第一个难题，是"和尚不能出国"的标签。</p>
+<p class="paragraph">当时唐朝法令：<strong class="strong">私自出关者死</strong>。</p>
+<p class="paragraph">如果玄奘被这个标签所转——"我不能出国，我不能去取经"——<strong class="strong">那就没有玄奘，没有《瑜伽师地论》，没有《成唯识论》，没有整个唯识宗</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人不要去在意任何人对你的标签，你只在意这个事情的真实是怎么回事。</strong>"</p>
+<p class="paragraph"><strong class="strong">被标签所转的人，永远在"应该这样"、"不能那样"里打转——他永远见不到真实。</strong></p>
+<h3 class="title-h3">4.4 「执着法」型——"法执"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你要去执着那个法，你就叫法执了。</strong>"</p>
+<p class="paragraph">84000 法门，是 84000 个角度——</p>
+<ul class="bullet-list">
+<li>学佛的人执着"必须念佛"——<strong class="strong">没念佛就不算修行</strong>；</li>
+<li>学道的人执着"必须打坐"——<strong class="strong">不打坐就不算修道</strong>；</li>
+<li>学儒的人执着"必须读经"——<strong class="strong">不读经就不算学圣</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他们执着船，看不见岸。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">本来无法。</strong>"——<strong class="strong">法是船，岸是真实；执着船，就上不了岸</strong>。</p>
+<h3 class="title-h3">4.5 「讲玄虚」型——把"如来"说成玄学</h3>
+<p class="paragraph">有人把"如来"讲成不可言说的玄学——</p>
+<ul class="bullet-list">
+<li>"如来不可说"；</li>
+<li>"开悟不可说"；</li>
+<li>"道不可道"。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但悟真师兄讲："</strong>没有佛法的基础的人可以翻成他能听懂的语言，这没所谓的。**"</p>
+<p class="paragraph"><strong class="strong">讲玄虚的人，是"藏着掖着"——他们怕别人懂</strong>。</p>
+<p class="paragraph">真正的实修人，<strong class="strong">最朴素</strong>：客观真实、本质、实事求是、如来——<strong class="strong">都是一回事</strong>。</p>
+<p class="paragraph"><strong class="strong">玄虚不是高深，是装。</strong></p>
+<h3 class="title-h3">4.6 「有念想」型——"我以为"代替"客观"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">客观真实没有念，没有想法，没有听别人说，也没有自己的想法。</strong>"</p>
+<p class="paragraph">"有念想"是<strong class="strong">最大的障碍</strong>——</p>
+<ul class="bullet-list">
+<li>我以为这件事是这样的；</li>
+<li>我以为他应该这样想；</li>
+<li>我以为这件事会这样发展。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"我以为"三字，就把你关在"主观"里，看不见"客观"。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你只要不违背这个真实，你怎么搞我都可以接受。</strong>"——<strong class="strong">有念想的人，连"接受"都做不到</strong>。</p>
+<h3 class="title-h3">4.7 「信仰变迷信」型——把"客观真实"换成"神的旨意"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">有信仰的人心中只有真相，只有本质，他是没有念想啊。</strong>"</p>
+<p class="paragraph"><strong class="strong">但很多"有信仰"的人，把信仰变成了迷信</strong>——</p>
+<ul class="bullet-list">
+<li>"这是神的旨意，不要质疑"——<strong class="strong">这是用"神"代替了"客观真实"</strong>；</li>
+<li>"前世注定，不要反抗"——<strong class="strong">这是用"前世"代替了"客观规律"</strong>；</li>
+<li>"佛菩萨会保佑"——<strong class="strong">这是用"佛菩萨"代替了"实事求是"</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这些人，"信仰"是念想，不是客观真实。</strong></p>
+<p class="paragraph">悟真师兄讲的"信仰"是<strong class="strong">心里只有真相</strong>——<strong class="strong">信仰的本质是客观真实，不是神佛。</strong></p>
+<h3 class="title-h3">4.8 现代职场版·3 种"见不到如来"画像</h3>
+<h4 class="title-h4">4.8.1 35 岁产品经理——"想这个做那个"型</h4>
+<p class="paragraph">小王 35 岁，某互联网公司高级产品经理。</p>
+<p class="paragraph">他开会时<strong class="strong">心里在想下一个产品</strong>； 他做产品时<strong class="strong">心里在想老板的评价</strong>； 他下班时<strong class="strong">心里在想同事的关系</strong>。</p>
+<p class="paragraph"><strong class="strong">他从来没有"在"过任何一件事。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你能不能进入它的本质，是因为你心不在当下。</strong>"——小王的心永远在"别处"，<strong class="strong">所以他永远见不到本质</strong>。</p>
+<p class="paragraph">真知的产品经理，<strong class="strong">开会时只在开会，做产品时只在做产品，下班时只在下班</strong>——<strong class="strong">因为当下就是真实，真实就是如来</strong>。</p>
+<h4 class="title-h4">4.8.2 45 岁创业者——"被标签所转"型</h4>
+<p class="paragraph">老李 45 岁，创业十年。</p>
+<p class="paragraph">他被无数标签所转：</p>
+<ul class="bullet-list">
+<li>"你应该上市"——他就拼命冲业绩；</li>
+<li>"你应该裁员"——他就狠心裁人；</li>
+<li>"你应该转型"——他就盲目跟风。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他没看见自己公司的本质。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">人不要去在意任何人对你的标签，你只在意这个事情的真实是怎么回事。</strong>"——老李在意了所有标签，<strong class="strong">所以他没在意真实</strong>。</p>
+<p class="paragraph">真知的创业者，<strong class="strong">不被标签所转</strong>——他只在意一件事：<strong class="strong">这家公司，它的真实是什么</strong>。</p>
+<h4 class="title-h4">4.8.3 60 岁退休人——"讲玄虚"型</h4>
+<p class="paragraph">老张 60 岁，退休五年。</p>
+<p class="paragraph">他天天在公园里讲"道"：</p>
+<ul class="bullet-list">
+<li>"道可道，非常道"——他就讲得云里雾里；</li>
+<li>"如来不可说"——他就说得玄之又玄；</li>
+<li>"你不懂"——他就把别人推开。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他以为这是高深，其实是装。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">没有佛法的基础的人可以翻成他能听懂的语言，这没所谓的。</strong>"——<strong class="strong">老张不肯翻，是因为他根本没真懂</strong>。</p>
+<p class="paragraph">真知的退休人，<strong class="strong">讲得最朴素</strong>："<strong class="strong">这件事就这样办，因为这个原因。</strong>"——<strong class="strong">道不在玄虚里，在事实里</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">5. 第五章·落地——三步走"见如来"实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门——找一件"当下"</h3>
+<p class="paragraph"><strong class="strong">30 天的目标：每天找一件事，全然在当下。</strong></p>
+<p class="paragraph">举例：</p>
+<ul class="bullet-list">
+<li><strong class="strong">吃饭时只在吃饭</strong>——不看手机、不看电视、不说话；</li>
+<li><strong class="strong">走路时只在走路</strong>——不想工作、不刷视频、不打电话；</li>
+<li><strong class="strong">陪家人时只在陪家人</strong>——不刷手机、不想工作；</li>
+<li><strong class="strong">工作时只在工作</strong>——不分心、不摸鱼。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">如果你能够知道它客观真实，那你就处处时时刻刻都见如来。</strong>"——<strong class="strong">30 天后，你会发现：当下即是真实，真实就是如来</strong>。</p>
+<h3 class="title-h3">5.2 1 年稳固——把"客观真实"变成肌肉</h3>
+<p class="paragraph"><strong class="strong">1 年的目标：把"在当下"练成肌肉。</strong></p>
+<ul class="bullet-list">
+<li>看一件事，<strong class="strong">问自己"它的本质是什么"</strong>；</li>
+<li>做一个决策，<strong class="strong">问自己"这是基于事实还是基于念想"</strong>；</li>
+<li>处理一个关系，<strong class="strong">问自己"我看见的是这个人，还是我以为的这个人"</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">我知道他的本性，我就是他的死穴，我也知道他的优点，我也知道他的思维，我还知道他未来怎么做，都知道是因为我掌握他的道。</strong>"——<strong class="strong">1 年后，你能"掌握"一些事的"道"</strong>。</p>
+<h3 class="title-h3">5.3 3 年突破——应万变</h3>
+<p class="paragraph"><strong class="strong">3 年的目标：应万变。</strong></p>
+<ul class="bullet-list">
+<li>不变的是<strong class="strong">客观真实</strong>；</li>
+<li>变的是<strong class="strong">时空、人事、场景</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">掌握"不变"，就能"应万变"。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">进退自如才能来去自由啊。</strong>"——<strong class="strong">3 年后，你进退自如</strong>。</p>
+<h3 class="title-h3">5.4 终身功夫</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">本来无一物，何处惹尘埃。</strong>"——<strong class="strong">这不是一天的事，是一辈子的事</strong>。</p>
+<p class="paragraph">毛主席打了一辈子仗，<strong class="strong">一直在"实事求是"</strong>； 玄奘走了 19 年，<strong class="strong">一直在"客观真实"</strong>； 孔子教了一辈子书，<strong class="strong">一直在"因材施教"</strong>； 悟真妈妈种了一辈子地，<strong class="strong">一直在"节气"</strong>。</p>
+<p class="paragraph"><strong class="strong">见如来，是一辈子的事。</strong></p>
+<h3 class="title-h3">5.5 三个检验：你的"如来"是真的吗？</h3>
+<ol class="num-list">
+<li><strong class="strong">当下检验</strong>——做这件事时，<strong class="strong">心在不在这里</strong>？心在别处就是没见如来，心在当下就是见如来。</li>
+<li><strong class="strong">本质检验</strong>——看一件事时，<strong class="strong">看见本质还是看见表象</strong>？看见本质就是见如来，看见表象就是没见。</li>
+<li><strong class="strong">标签检验</strong>——别人给你贴标签时，<strong class="strong">动不动</strong>？动就是没见如来，不动就是见如来。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你只要不违背这个真实，你怎么搞我都可以接受。</strong>"——<strong class="strong">经得起"怎么搞"，就是真的见如来</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">6. 第六章·回扣原话——7 句原话逐句落地表</h2>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>名相</th>
+<th>落地动作</th>
+</tr>
+<tr>
+<td>"凡事要客观真实，没有念没有想法"</td>
+<td>客观真实</td>
+<td>做事时问自己"我有念想吗？"</td>
+</tr>
+<tr>
+<td>"如果你能知道它客观真实，你就处处时时刻刻都见如来"</td>
+<td>见如来</td>
+<td>每天找一件"全然在当下"的事</td>
+</tr>
+<tr>
+<td>"本来无法，只是方便说法"</td>
+<td>法无定法</td>
+<td>不要执着任何"法"，要看真实</td>
+</tr>
+<tr>
+<td>"法无定法，有一个定有一个标准在"</td>
+<td>不变+变</td>
+<td>抓住不变的本质，应对万变的场景</td>
+</tr>
+<tr>
+<td>"毛主席就拿着如来，毛主席为什么提出实事求是"</td>
+<td>实事求是=如来</td>
+<td>翻译：把"如来"变成"实事求是"</td>
+</tr>
+<tr>
+<td>"人不要去在意任何人对你的标签"</td>
+<td>标签不沾</td>
+<td>别人给你贴标签时，看本质不看标签</td>
+</tr>
+<tr>
+<td>"有信仰的人心中只有真相，只有本质"</td>
+<td>信仰=真相</td>
+<td>检验信仰：是真信客观真实，还是真信神佛</td>
+</tr>
+</table></div>
+<h3 class="title-h3">6.1 一句话总纲</h3>
+<blockquote class="quote">
+<p><strong class="strong">见如来不在深山里，在每个当下的"实事求是"。</strong></p>
+<p>抓住那个不变的东西——客观真实——就能应万变。</p>
+<p>它不叫"如来"也行，叫本来、叫事实、叫本质、叫规律——都是一回事。</p>
+<p><strong class="strong">师兄，你今天"客观真实"了吗？</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">7. 收束——佛法在世间，不离世间觉</h2>
+<p class="paragraph">《六祖坛经》："<strong class="strong">佛法在世间，不离世间觉。离世觅菩提，恰如求兔角。</strong>"</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">佛法里有一句话讲的怎么说，叫 84000 的法门，都是方便说法，本来无法而已，只是方便说法。</strong>"</p>
+<p class="paragraph"><strong class="strong">佛法不在寺庙里，在每个当下的事实里。</strong></p>
+<blockquote class="quote">
+<p>毛主席拿着"实事求是"打天下——<strong class="strong">这就是见如来</strong>；</p>
+<p>玄奘拿着"真经在哪里"走了 19 年——<strong class="strong">这就是见如来</strong>；</p>
+<p>慧能拿着"本来无一物"砍了 30 年柴——<strong class="strong">这就是见如来</strong>；</p>
+<p>孔子拿着"每个学生的天命"教了一辈子书——<strong class="strong">这就是见如来</strong>；</p>
+<p>悟真妈妈拿着"哪个节气播种最佳"种了一辈子地——<strong class="strong">这就是见如来</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">见如来，不是去拜佛——是在每件事上，看见真实。</strong></p>
+<p class="paragraph"><strong class="strong">师兄，</strong>你今天"客观真实"了吗？<em>*</em>*</p>
+<p class="paragraph">哪怕只有一秒钟，<strong class="strong">也是见如来</strong>。 守住这一秒，<strong class="strong">一年后，你能见到的，会是别人一辈子也见不到的</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">8. 附录·14 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《金刚经》</strong> "如来者，无所从来，亦无所去，故名如来"</li>
+<li><strong class="strong">《金刚经》</strong> "凡所有相，皆是虚妄。若见诸相非相，则见如来"</li>
+<li><strong class="strong">《道德经》</strong> "人法地，地法天，天法道，道法自然"</li>
+<li><strong class="strong">《道德经》</strong> "为学日益，为道日损。损之又损，以至于无为。无为而无不为"</li>
+<li><strong class="strong">《中庸》</strong> "天命之谓性，率性之谓道，修道之谓教"</li>
+<li><strong class="strong">《传习录》</strong> "心外无物，心外无理"</li>
+<li><strong class="strong">《传习录》</strong> "知是心之本体，心自然会知"</li>
+<li><strong class="strong">《六祖坛经》</strong> "菩提本无树，明镜亦非台，本来无一物，何处惹尘埃"</li>
+<li><strong class="strong">《六祖坛经》</strong> "不识本心，学法无益"</li>
+<li><strong class="strong">《六祖坛经》</strong> "佛法在世间，不离世间觉。离世觅菩提，恰如求兔角"</li>
+<li><strong class="strong">《毛选·改造我们的学习》</strong> "实事就是客观存在着的一切事物，是就是客观事物的内部联系，即规律性，求就是我们去研究"</li>
+<li><strong class="strong">《毛选》</strong> "主观意识必须遵照客观真实"</li>
+<li><strong class="strong">《论语·先进》</strong> "求也退，故进之；由也兼人，故退之"</li>
+<li><strong class="strong">《大慈恩寺三藏法师传》</strong> 玄奘 19 年求法</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p><strong class="strong">署名：悟真 · 静思整理</strong></p>
+<p><strong class="strong">2026-07-16 上午 · 飞书对话由悟真命题、静思执笔</strong></p>
+<p><strong class="strong">最高纲领：古人的智慧不是拿来欣赏的，是拿来校准的。</strong></p>
+</blockquote>
+    <div class="sign-off">
+        <span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>
+        2026 年 7 月 16 日 · 北京
+    </div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const muteBtn = document.getElementById('muteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const speedBtns = document.querySelectorAll('.ctrl-btn[data-speed]');
+function fmt(s) {
+    if (!s || isNaN(s)) return '00:00';
+    const m = Math.floor(s / 60);
+    const ss = Math.floor(s % 60);
+    return String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
+}
+playBtn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); playBtn.textContent = '⏸'; }
+    else { audio.pause(); playBtn.textContent = '▶'; }
+});
+audio.addEventListener('loadedmetadata', () => { durationEl.textContent = fmt(audio.duration); });
+audio.addEventListener('timeupdate', () => {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = fmt(audio.currentTime);
+});
+audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶';
+    progressFill.style.width = '0%';
+});
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+});
+muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇 取消静音' : '🔊 静音';
+});
+volumeSlider.addEventListener('input', () => { audio.volume = volumeSlider.value / 100; });
+speedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const speed = parseFloat(btn.dataset.speed);
+        audio.playbackRate = speed;
+        speedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+audio.volume = 0.8;
+</script>
+</body>
+</html>
