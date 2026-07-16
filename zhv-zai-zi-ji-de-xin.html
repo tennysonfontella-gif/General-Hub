@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《主宰自己的心——我心即宇宙，宇宙即我心》</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#faf6ef;color:#3d3027;font-family:'Noto Serif SC','站酷小薇体','STKaiti','KaiTi','PingFang SC',serif;font-size:20px;line-height:2.2;padding:0 0 80px 0}
+.page{max-width:920px;margin:0 auto;padding:0 32px}
+.hero{background:linear-gradient(135deg,#faf6ef 0%,#f3eada 100%);padding:80px 32px 60px;text-align:center;border-bottom:3px double #8a5a2b;margin-bottom:60px}
+.hero .main-title{font-size:42px;font-weight:700;color:#3d3027;letter-spacing:4px;margin-bottom:16px;line-height:1.4}
+.hero .sub-title{font-size:22px;color:#8a5a2b;font-weight:500;letter-spacing:3px;margin-bottom:24px;line-height:1.6}
+.hero .meta{font-size:14px;color:#7a6f63;letter-spacing:2px;margin-bottom:40px}
+.hero .meta .seal{color:#c8423b;font-weight:600}
+.audio-player{background:#fff;border:2px solid #8a5a2b;border-radius:12px;padding:24px 28px;max-width:720px;margin:32px auto 0;box-shadow:0 4px 20px rgba(138,90,43,.12)}
+.audio-player .player-row{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.audio-player .play-btn{width:56px;height:56px;border-radius:50%;background:#8a5a2b;color:#fff;border:none;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+.audio-player .play-btn:hover{background:#6f4520}
+.audio-player .progress-wrap{flex:1;display:flex;flex-direction:column;gap:6px}
+.audio-player .progress-bar{width:100%;height:8px;background:#f0e4d0;border-radius:4px;cursor:pointer;position:relative;overflow:hidden}
+.audio-player .progress-fill{height:100%;background:linear-gradient(90deg,#8a5a2b,#c8a85a);width:0%;transition:width .1s}
+.audio-player .time-row{display:flex;justify-content:space-between;font-size:13px;color:#7a6f63;font-family:monospace}
+.audio-player .controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #f0e4d0}
+.audio-player .ctrl-btn{background:transparent;border:1px solid #d4c4a8;color:#8a5a2b;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-family:inherit}
+.audio-player .ctrl-btn:hover{background:#f0e4d0}
+.audio-player .ctrl-btn.active{background:#8a5a2b;color:#fff;border-color:#8a5a2b}
+.audio-player .speed-group{display:flex;gap:4px}
+.audio-player .volume{display:flex;align-items:center;gap:8px;margin-left:auto}
+.audio-player .volume-slider{width:80px}
+.audio-player .download{color:#8a5a2b;text-decoration:none;font-size:13px}
+.title-h1{font-size:30px;color:#3d3027;margin:60px 0 30px;padding-bottom:16px;border-bottom:2px solid #8a5a2b;letter-spacing:3px;font-weight:600}
+.title-h2{font-size:26px;color:#8a5a2b;margin:50px 0 24px;padding-left:18px;border-left:6px solid #8a5a2b;letter-spacing:2px;font-weight:600;line-height:1.5}
+.title-h3{font-size:22px;color:#5a3e22;margin:36px 0 18px;font-weight:600;letter-spacing:1px}
+.title-h4{font-size:19px;color:#5a3e22;margin:24px 0 12px;font-weight:600}
+.paragraph{margin-bottom:20px;text-indent:2em;text-align:justify}
+.strong{color:#8a5a2b;font-weight:600;background:linear-gradient(transparent 65%,rgba(200,168,90,.25) 65%);padding:0 2px}
+.quote{background:#fef5f4;border-left:4px solid #c8423b;padding:16px 24px;margin:24px 0;border-radius:0 6px 6px 0;font-style:normal;color:#5a3e22}
+.quote p{margin:8px 0;text-indent:0}
+.bullet-list,.num-list{margin:16px 0 20px 40px}
+.bullet-list li,.num-list li{margin-bottom:10px;line-height:1.9}
+.table-wrap{overflow-x:auto;margin:24px 0}
+.data-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d4c4a8;border-radius:6px;overflow:hidden;font-size:16px}
+.data-table th{background:#8a5a2b;color:#fff;padding:12px 16px;text-align:left;font-weight:600;letter-spacing:1px}
+.data-table td{padding:12px 16px;border-top:1px solid #f0e4d0;line-height:1.7}
+.data-table tr:nth-child(even) td{background:#faf6ef}
+.divider{border:none;border-top:1px dashed #c8a85a;margin:50px 0}
+.seal-stamp{display:inline-block;background:#c8423b;color:#fff;padding:4px 12px;border-radius:4px;font-weight:600;letter-spacing:4px;margin:0 4px}
+.sign-off{text-align:right;margin:60px 0 30px;color:#8a5a2b;font-size:18px;letter-spacing:2px;line-height:2}
+@media(max-width:768px){body{font-size:18px;line-height:2.0}.hero{padding:50px 20px 40px}.hero .main-title{font-size:28px;letter-spacing:3px}.hero .sub-title{font-size:17px}.title-h1{font-size:24px}.title-h2{font-size:20px}.page{padding:0 20px}.audio-player{padding:18px 20px}}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="main-title">《主宰自己的心——我心即宇宙，宇宙即我心》</div>
+<div class="sub-title">我是一切的根源 · 深度研读笔记</div>
+<div class="meta"><span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 16 日 · 字数 11000+ · 全文音频 50+ 分钟</div>
+<div class="audio-player">
+<audio id="audio" preload="metadata"><source src="zhv-zai-zi-ji-de-xin-full.mp3" type="audio/mpeg"></audio>
+<div class="player-row">
+<button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+<div class="progress-wrap">
+<div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="time-row"><span id="currentTime">00:00</span><span id="duration">--:--</span></div>
+</div>
+</div>
+<div class="controls">
+<div class="speed-group">
+<button class="ctrl-btn" data-speed="0.75">0.75x</button>
+<button class="ctrl-btn active" data-speed="1">1x</button>
+<button class="ctrl-btn" data-speed="1.25">1.25x</button>
+<button class="ctrl-btn" data-speed="1.5">1.5x</button>
+<button class="ctrl-btn" data-speed="2">2x</button>
+</div>
+<button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+<div class="volume"><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80"></div>
+<a class="download" id="downloadBtn" href="zhv-zai-zi-ji-de-xin-full.mp3" download="zhv-zai-zi-ji-de-xin-full.mp3">⬇ 下载音频</a>
+</div>
+</div>
+</div>
+<div class="page">
+<h1 class="title-h1">《主宰自己的心——我心即宇宙，宇宙即我心》</h1>
+<h2 class="title-h2">悟真读书笔记</h2>
+<p class="paragraph"><strong class="strong">核心命题：一个人能主宰自己的心，就能主宰万物；不能主宰自己的心，有钱没钱，都是苦海。</strong></p>
+<blockquote class="quote">
+<p>"我是一切的根源"——不是口号，是修行的硬指标。</p>
+<p>父母、爱人、孩子、事业，都是"像"。</p>
+<p>像在变，心不变，叫守恒。</p>
+<p>心守恒了，就不再苦海无边，就直达涅槃。</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">0. 序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">主宰自己的心 = 主宰万物。这是修行的硬指标。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">一个人不能主宰自己的心的人，是没有办法主宰万物。一个人不能找到自己的人，是无法认识别人。</strong>"</p>
+<p class="paragraph">这一句话，把"心"和"万物"的关系点透了——</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>状态</th>
+<th>结果</th>
+</tr>
+<tr>
+<td>心不被外境转</td>
+<td>主宰万物</td>
+</tr>
+<tr>
+<td>心被外境转</td>
+<td>被万物转</td>
+</tr>
+<tr>
+<td>认识自己</td>
+<td>认识天下</td>
+</tr>
+<tr>
+<td>不认识自己</td>
+<td>不认识任何人</td>
+</tr>
+</table></div>
+<p class="paragraph">悟真师兄讲："<strong class="strong">得到一个答案叫我心，即宇宙，宇宙，即我心，也就一句话，我是一切的根源。</strong>"</p>
+<p class="paragraph"><strong class="strong">"我是一切的根源"——这是法藏法师《华严经》金狮子章的核心，也是慧能"一念觉即佛，一念迷即凡夫"的真意</strong>。</p>
+<p class="paragraph"><strong class="strong">这四个字，不是用来喊的口号，是用来做的硬指标</strong>：</p>
+<ul class="bullet-list">
+<li>你<strong class="strong">说</strong>"我是一切的根源"——但<strong class="strong">事</strong>来了你就怨——那不叫主宰。</li>
+<li>你<strong class="strong">说</strong>"我心即宇宙"——但<strong class="strong">人</strong>骂你你就恼——那不叫守恒。</li>
+<li>你<strong class="strong">说</strong>"我要做主"——但<strong class="strong">钱</strong>少了你就慌——那不叫破生死轮回。</li>
+</ul>
+<p class="paragraph"><strong class="strong">真主宰，是心不动；假主宰，是嘴硬。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">1. 第一章·名相拆解——"主宰、守恒、像、涅槃、苦"五字逐字拆</h2>
+<h3 class="title-h3">1.1【主宰】——不是控制外境，是心不动</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">一个人能够去主宰自己的心。记住一句话，能够主宰自己的心，这个人就得到成佛了，也就解脱了。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"主宰"？</strong></p>
+<p class="paragraph">不是<strong class="strong">控制外境</strong>——外境你控制不了，父母、爱人、孩子、事业，谁能控制？ 不是<strong class="strong">压住情绪</strong>——压住等于没压，等于"藏起来"，早晚爆发。 不是<strong class="strong">装作没事</strong>——那是麻木，不是主宰。</p>
+<p class="paragraph"><strong class="strong">主宰 = 心不动 + 该做还做</strong>。</p>
+<p class="paragraph">外境来了，<strong class="strong">心知道</strong>；外境变了，<strong class="strong">心不变</strong>；外境去，<strong class="strong">心还是这个心</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">他不管是有钱，没钱做任何一件事情，对他来讲的话都是幸福的，他不会有任何障碍了。</strong>"</p>
+<p class="paragraph"><strong class="strong">主宰 = 不管外境怎么变，</strong>我心自有主**。</p>
+<h3 class="title-h3">1.2【守恒】——以终为始的"心版本"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">我们的心是叫随波逐流……你就没有办法做到两个字叫守恒。当一个人的心，如果是守恒了，这个人心，一旦守恒，他能够掌握不变的，就能 1 万变。</strong>"</p>
+<p class="paragraph"><strong class="strong">"守恒"是个物理学名词</strong>——能量守恒、动量守恒。</p>
+<p class="paragraph"><strong class="strong">但悟真师兄借来用心的层面</strong>：</p>
+<ul class="bullet-list">
+<li><strong class="strong">守恒 = 守住那个不变的东西</strong>。</li>
+<li><strong class="strong">变 = 万事万物都在变</strong>。</li>
+<li><strong class="strong">守 + 变 = 心不变，事能应</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">他能够掌握不变的，就能 1 万变。不管怎么变，他都不变，这叫什么？这叫破除生死轮回。</strong>"</p>
+<p class="paragraph"><strong class="strong">守恒 = 抓住不变的本质，应对万变的外境</strong>。</p>
+<blockquote class="quote">
+<p>你爱人今天对你好——<strong class="strong">你高兴</strong>。</p>
+<p>你爱人明天对你坏——<strong class="strong">你难受</strong>。</p>
+<p>这是"随波逐流"——心被外境带着走。</p>
+</blockquote>
+<p class="paragraph">></p>
+<blockquote class="quote">
+<p>守恒的人：</p>
+<p>你爱人今天对你好——<strong class="strong">你感恩</strong>。</p>
+<p>你爱人明天对你坏——<strong class="strong">你冷静</strong>。</p>
+<p>你的心<strong class="strong">永远是这个心</strong>——感恩 / 冷静——<strong class="strong">不是不变，是稳定的"应有"反应</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">这叫守恒。</strong></p>
+<h3 class="title-h3">1.3【像】——所有外境都是"像"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">我们的父母，我们的爱人，我们的孩子，我们的事业等等，所有东西都是个像。像是变还是不变的？变的。</strong>"</p>
+<p class="paragraph"><strong class="strong">"像"是个佛家用语</strong>——相。</p>
+<p class="paragraph">《金刚经》："<strong class="strong">凡所有相，皆是虚妄。</strong>"——所有你能看见、听见、想到、摸到的，<strong class="strong">都是相</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">如果你随着那个像变，你就没有办法安宁。</strong>"</p>
+<p class="paragraph"><strong class="strong">外境都是像</strong>：</p>
+<ul class="bullet-list">
+<li>父母是像——<strong class="strong">他们的行为会变，今天对你好明天对你坏</strong>。</li>
+<li>爱人是像——<strong class="strong">今天温柔明天可能发脾气</strong>。</li>
+<li>孩子是像——<strong class="strong">今天乖明天可能顶嘴</strong>。</li>
+<li>事业是像——<strong class="strong">今天赚钱明天可能赔钱</strong>。</li>
+<li>钱是像——<strong class="strong">今天有明天可能没有</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">你若把这些"像"当成真的，你就被"像"转了</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">其实这外在像影响我根本不存在，是因为我们被像迷惑才会存在，才会轮回，才会苦海。</strong>"</p>
+<p class="paragraph"><strong class="strong">像 = 假，但被迷惑 = 真受</strong>。</p>
+<h3 class="title-h3">1.4【苦海】——心里有苦，外境才是苦海</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">所以他出不来，有钱没钱，他都是苦海的。</strong>"</p>
+<p class="paragraph"><strong class="strong">苦海不是外境的"苦"</strong>——很多人会以为"我穷所以苦海"。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">苦没钱苦，跟钱没有关系，因为你的心是叫随波逐流。</strong>"</p>
+<p class="paragraph"><strong class="strong">苦海 = 心随波逐流的状态</strong>。</p>
+<ul class="bullet-list">
+<li>有钱——<strong class="strong">怕失去</strong>——<strong class="strong">苦</strong>。</li>
+<li>没钱——<strong class="strong">想得到</strong>——<strong class="strong">苦</strong>。</li>
+<li>有人爱——<strong class="strong">怕分离</strong>——<strong class="strong">苦</strong>。</li>
+<li>没人爱——<strong class="strong">想被爱</strong>——<strong class="strong">苦</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">有也苦，没有也苦；得到也苦，失去也苦。</strong>——<strong class="strong">这叫苦海</strong>。</p>
+<p class="paragraph"><strong class="strong">能出苦海的方法只有一个</strong>——<strong class="strong">心守恒</strong>。</p>
+<h3 class="title-h3">1.5【涅槃】——不是死，是心不再被外境转</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">直接到达了什么涅槃了？叫涅槃的本质不是死了有涅，是已经是心守恒不变，他就可以主宰自己的心，就可以主宰万物。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"涅槃"？</strong></p>
+<p class="paragraph">很多人误解为"死了"——<strong class="strong">不是</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">涅槃的本质不是死了有涅，是心守恒不变。</strong>"</p>
+<p class="paragraph"><strong class="strong">涅槃 = 心守恒的状态 = 不再被外境转 = 极乐</strong>。</p>
+<ul class="bullet-list">
+<li>不是<strong class="strong">死后去</strong>的——是<strong class="strong">活着就到的</strong>。</li>
+<li>不是<strong class="strong">没有苦</strong>——是<strong class="strong">苦来了心不动</strong>。</li>
+<li>不是<strong class="strong">什么都好</strong>——是<strong class="strong">什么都来了都能安</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">涅槃的"极乐" = 心不被外境转的乐</strong>。</p>
+<h3 class="title-h3">1.6 一句话总结</h3>
+<blockquote class="quote">
+<p><strong class="strong">心不动 = 主宰；心守恒 = 涅槃。</strong></p>
+<p><strong class="strong">外境都是"像"，像在变，心不变。</strong></p>
+<p><strong class="strong">主宰自己的心 = 主宰万物；不主宰 = 被万物转。</strong></p>
+<p><strong class="strong">我心即宇宙，宇宙即我心——这就是"我是一切的根源"。</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">2. 第二章·经典本意——"主宰心"在 6 部经典里的同证</h2>
+<h3 class="title-h3">2.1 《华严经》——我心即宇宙，宇宙即我心</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">若人欲了知，三世一切佛，应观法界性，一切唯心造。</strong>"</p>
+<p>"<strong class="strong">心如工画师，能画诸世间。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"我心即宇宙，宇宙即我心"——<strong class="strong">就是《华严经》"一切唯心造"</strong>。</p>
+<p class="paragraph"><strong class="strong">心不是"外境的反光镜"——心是"外境的制造者"</strong>。</p>
+<p class="paragraph">你看见的世界，<strong class="strong">是你心的投射</strong>。 你心的状态，<strong class="strong">决定你看见什么</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">今天发生的所有的事情都是过去的因结了今天的果，而未来的果是今天动的因，就会结未来的果，这是自然必然的。</strong>"</p>
+<p class="paragraph"><strong class="strong">心 = 因；外境 = 果。主宰心 = 主宰因 = 主宰果</strong>。</p>
+<h3 class="title-h3">2.2 《六祖坛经》——一念觉即佛，一念迷即凡夫</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">一念觉即佛，一念迷即凡夫。</strong>"</p>
+<p>"<strong class="strong">菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲："<strong class="strong">今天发生的所有的事情都是过去的因结了今天的果。</strong>"</p>
+<p class="paragraph"><strong class="strong">一念觉——佛——主宰自己</strong>。 <strong class="strong">一念迷——凡夫——被外境转</strong>。</p>
+<p class="paragraph"><strong class="strong">心一动，外境跟着动</strong>：</p>
+<ul class="bullet-list">
+<li>心动怒——<strong class="strong">看见的世界是"该怒"</strong>。</li>
+<li>心动爱——<strong class="strong">看见的世界是"可爱"</strong>。</li>
+<li>心动贪——<strong class="strong">看见的世界是"该贪"</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">心变了，外境没变，但你的"看见"变了</strong>——<strong class="strong">所以外境跟着变了</strong>。</p>
+<h3 class="title-h3">2.3 《金刚经》——凡所有相，皆是虚妄</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">凡所有相，皆是虚妄。若见诸相非相，则见如来。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲："<strong class="strong">所有东西都是个像。像是变还是不变的？变的。</strong>"</p>
+<p class="paragraph"><strong class="strong">相 = 虚妄 = 像 = 变</strong>。</p>
+<p class="paragraph"><strong class="strong">如果你执着"相"——你就被"相"转</strong>：</p>
+<ul class="bullet-list">
+<li>执着"钱"——<strong class="strong">没钱就苦</strong>。</li>
+<li>执着"人"——<strong class="strong">人走就苦</strong>。</li>
+<li>执着"名"——<strong class="strong">名失就苦</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">不执着"相"——你就看见"相背后的本质"——</strong>那就不被转**。</p>
+<h3 class="title-h3">2.4 《道德经》——为道日损·损之又损</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">为学日益，为道日损。损之又损，以至于无为。无为而无不为。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲："<strong class="strong">主宰自己的心。</strong>"</p>
+<p class="paragraph"><strong class="strong">老子讲的是"为道日损"</strong>——<strong class="strong">做减法</strong>：</p>
+<ul class="bullet-list">
+<li>损去"我执"——心就轻了。</li>
+<li>损去"我念"——心就空了。</li>
+<li>损去"我见"——心就明。</li>
+</ul>
+<p class="paragraph"><strong class="strong">损到最后"无为"——心就空到能装下万物——</strong>所以"无不为"**。</p>
+<p class="paragraph"><strong class="strong">主宰 = 把"我"损到最小——让"心"显现</strong>。</p>
+<h3 class="title-h3">2.5 《传习录》——心外无物·心外无理</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心外无物，心外无理。</strong>"</p>
+<p>"<strong class="strong">心之所发便是意，意之所在便是物。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲："<strong class="strong">如果知道这个本质的时候，我们就可以主宰任何万物，所以可以主宰任何人，事物，一切东西你都可以主宰。</strong>"</p>
+<p class="paragraph"><strong class="strong">阳明一句话</strong>："<strong class="strong">意之所在便是物</strong>"——<strong class="strong">你心里装着什么，那个就是你的"物"</strong>。</p>
+<p class="paragraph"><strong class="strong">你心里装着"钱"——钱就是你的"物"——你为钱转</strong>。 <strong class="strong">你心里装着"道"——道就是你的"物"——你为道转</strong>。</p>
+<p class="paragraph"><strong class="strong">主宰 = 心里装"道"，不装"钱、爱、名、位"</strong>。</p>
+<h3 class="title-h3">2.6 《毛选》——内因是变化的根据，外因是变化的条件</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">唯物辩证法认为外因是变化的条件，内因是变化的根据，外因通过内因而起作用。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲："<strong class="strong">动不动说父母影响我，动不动说我们的孩子影响我……其实这外在像影响我根本不存在，是因为我们被像迷惑才会存在。</strong>"</p>
+<p class="paragraph"><strong class="strong">毛主席一句话</strong>——<strong class="strong">外因是条件，内因是根据</strong>。</p>
+<p class="paragraph"><strong class="strong">外境不是"决定"你的</strong>——外境是"条件"——<strong class="strong">"决定"的是你的心</strong>。</p>
+<p class="paragraph"><strong class="strong">主宰 = 主宰内因 = 改变"决定"</strong>。</p>
+<h3 class="title-h3">2.7 经典互证的一句话</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>经典</th>
+<th>翻法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>《华严经》</td>
+<td>一切唯心造</td>
+<td>心 = 因；外境 = 果</td>
+</tr>
+<tr>
+<td>《六祖坛经》</td>
+<td>一念觉即佛</td>
+<td>心变了，外境没变</td>
+</tr>
+<tr>
+<td>《金刚经》</td>
+<td>凡所有相皆是虚妄</td>
+<td>外境都是"像"</td>
+</tr>
+<tr>
+<td>《道德经》</td>
+<td>为道日损</td>
+<td>主宰 = 损我执</td>
+</tr>
+<tr>
+<td>《传习录》</td>
+<td>心外无物</td>
+<td>心里装什么就是什么</td>
+</tr>
+<tr>
+<td>《毛选》</td>
+<td>内因是根据</td>
+<td>外境是条件</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">6 部经典，一个指向：主宰自己的心 = 主宰万物。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">3. 第三章·历史人物——四个"主宰自己心"的故事</h2>
+<h3 class="title-h3">3.1 悟真妈妈·种 30 年地，心守恒</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">我妈妈种几十年地拿到了标准：每年春天哪个节气播种最佳，是几十年论证的结果。别人说早一点或晚一点播种，她不会动，因为她心中有标准。</strong>"</p>
+<p class="paragraph"><strong class="strong">妈妈的心守恒</strong>——</p>
+<ul class="bullet-list">
+<li>别人说早一点——<strong class="strong">她不动</strong>。</li>
+<li>别人说晚一点——<strong class="strong">她不动</strong>。</li>
+<li>年成好——<strong class="strong">她不喜</strong>。</li>
+<li>年成坏——<strong class="strong">她不悲</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么不动？</strong></p>
+<p class="paragraph">因为她心中有"节气"的标准——<strong class="strong">这叫守恒</strong>。</p>
+<p class="paragraph"><strong class="strong">她能主宰自己的心——所以她能主宰 30 年地</strong>。</p>
+<h3 class="title-h3">3.2 毛主席·被排挤时心守恒</h3>
+<p class="paragraph">王明、博古在中央苏区时，<strong class="strong">毛主席被排挤</strong>——</p>
+<ul class="bullet-list">
+<li>被剥夺军事指挥权——<strong class="strong">他没有怨</strong>。</li>
+<li>被发配到边缘岗位——<strong class="strong">他没有恼</strong>。</li>
+<li>别人批评他"右倾"——<strong class="strong">他没有争</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么不动？</strong></p>
+<p class="paragraph">因为他<strong class="strong">看见了"实事求是"的本质</strong>——<strong class="strong">这叫守恒</strong>。</p>
+<p class="paragraph"><strong class="strong">他心中有"道"的标准——所以他主宰自己的心——所以他后来主宰了中国</strong>。</p>
+<h3 class="title-h3">3.3 王阳明·龙场一夜破生死</h3>
+<p class="paragraph">王阳明 1508 年被贬贵州龙场。</p>
+<p class="paragraph">身边是瘴疠之地、僚人环居、仆从病弱——<strong class="strong">生死一线</strong>。</p>
+<p class="paragraph"><strong class="strong">但他一夜大悟</strong>："<strong class="strong">圣人之道，吾性自足，向之求理于事物者误也。</strong>"</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">这叫什么？这叫破除生死轮回，就已经不再苦海无边。</strong>"</p>
+<p class="paragraph">阳明那一刻<strong class="strong">主宰了自己的心</strong>——</p>
+<ul class="bullet-list">
+<li>生死来了——<strong class="strong">他不动</strong>。</li>
+<li>苦海来了——<strong class="strong">他不怕</strong>。</li>
+<li>名利来了——<strong class="strong">他不取</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他主宰了心——所以他后来主宰了心学</strong>。</p>
+<h3 class="title-h3">3.4 玄奘·19 年求法心守恒</h3>
+<p class="paragraph">玄奘 19 年求法，<strong class="strong">走 5 万里、经过 110 国</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">这外在像影响我根本不存在，是因为我们被像迷惑才会存在。</strong>"</p>
+<p class="paragraph">玄奘<strong class="strong">不被外境转</strong>——</p>
+<ul class="bullet-list">
+<li>高昌王挽留——<strong class="strong">他不动</strong>。</li>
+<li>沙漠断水——<strong class="strong">他不退</strong>。</li>
+<li>盗贼威胁——<strong class="strong">他不怕</strong>。</li>
+<li>美女诱惑——<strong class="strong">他不乱</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么不动？</strong></p>
+<p class="paragraph">因为<strong class="strong">他心中有"真经"的标准</strong>——<strong class="strong">这叫守恒</strong>。</p>
+<p class="paragraph"><strong class="strong">他主宰了心——所以他主宰了 19 年——所以他后来主宰了唯识宗</strong>。</p>
+<h3 class="title-h3">3.5 四个故事·一个共同点</h3>
+<p class="paragraph">悟真妈妈、毛主席、阳明、玄奘——</p>
+<p class="paragraph"><strong class="strong">共同点：心中有"不变的标准"——所以心不动——所以能主宰外境</strong>。</p>
+<ul class="bullet-list">
+<li>妈妈心中有<strong class="strong">节气</strong>——<strong class="strong">她主宰 30 年地</strong>。</li>
+<li>毛主席心中有<strong class="strong">实事求是</strong>——<strong class="strong">他主宰了中国</strong>。</li>
+<li>阳明心中有<strong class="strong">良知</strong>——<strong class="strong">他主宰了心学</strong>。</li>
+<li>玄奘心中有<strong class="strong">真经</strong>——<strong class="strong">他主宰了唯识宗</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">主宰 = 心中有标准 = 心不动 = 主宰万物</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">4. 第四章·反面案例——七种"心被外境转"的人</h2>
+<h3 class="title-h3">4.1 「被父母影响」型——"是他不体谅我"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">动不动说父母影响我。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">心被父母转</strong>——</p>
+<ul class="bullet-list">
+<li>父母不夸我——<strong class="strong">我不开心</strong>。</li>
+<li>父母不理解我——<strong class="strong">我怨他们</strong>。</li>
+<li>父母偏心——<strong class="strong">我记一辈子</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么苦？</strong></p>
+<p class="paragraph">因为<strong class="strong">他把"开心"的钥匙交给父母了</strong>——父母不夸，钥匙就拔了。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">其实这外在像影响我根本不存在，是因为我们被像迷惑才会存在。</strong>"</p>
+<p class="paragraph"><strong class="strong">父母是像——像在变——你被像转了——所以苦</strong>。</p>
+<h3 class="title-h3">4.2 「被爱人影响」型——"是他不爱我"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">动不动说我们的先生，爱人影响我。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">心被爱人转</strong>——</p>
+<ul class="bullet-list">
+<li>爱人不陪我——<strong class="strong">我孤独</strong>。</li>
+<li>爱人冷落我——<strong class="strong">我委屈</strong>。</li>
+<li>爱人离开我——<strong class="strong">我活不下去</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么苦？</strong></p>
+<p class="paragraph">因为<strong class="strong">他把"快乐"的钥匙交给爱人了</strong>——爱人不给，钥匙就拔了。</p>
+<p class="paragraph"><strong class="strong">爱人是像——像在变——你被像转了——所以苦</strong>。</p>
+<h3 class="title-h3">4.3 「被孩子影响」型——"是孩子不争气"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">动不动说我们的孩子影响我。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">心被孩子转</strong>——</p>
+<ul class="bullet-list">
+<li>孩子考不好——<strong class="strong">我丢脸</strong>。</li>
+<li>孩子不听话——<strong class="strong">我焦虑</strong>。</li>
+<li>孩子不回家——<strong class="strong">我孤独</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么苦？</strong></p>
+<p class="paragraph">因为<strong class="strong">他把"面子"的钥匙交给孩子了</strong>——孩子不争气，钥匙就拔了。</p>
+<p class="paragraph"><strong class="strong">孩子是像——像在变——你被像转了——所以苦</strong>。</p>
+<h3 class="title-h3">4.4 「被事业影响」型——"是行业不好"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">动不动说朋友事业影响我。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">心被事业转</strong>——</p>
+<ul class="bullet-list">
+<li>业绩下滑——<strong class="strong">我焦虑</strong>。</li>
+<li>客户流失——<strong class="strong">我失眠</strong>。</li>
+<li>同行打压——<strong class="strong">我愤怒</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么苦？</strong></p>
+<p class="paragraph">因为<strong class="strong">他把"自我价值"的钥匙交给事业了</strong>——事业不顺，钥匙就拔了。</p>
+<p class="paragraph"><strong class="strong">事业是像——像在变——你被像转了——所以苦</strong>。</p>
+<h3 class="title-h3">4.5 「被钱影响」型——"是没钱"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">苦没钱苦，跟钱没有关系，因为你的心是叫随波逐流。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">心被钱转</strong>——</p>
+<ul class="bullet-list">
+<li>没钱——<strong class="strong">我活不下去</strong>。</li>
+<li>钱少——<strong class="strong">我不体面</strong>。</li>
+<li>钱丢——<strong class="strong">我崩溃</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么苦？</strong></p>
+<p class="paragraph">因为<strong class="strong">他把"安全感"的钥匙交给钱了</strong>——钱不够，钥匙就拔了。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你就没有办法做到两个字叫守恒。</strong>"</p>
+<p class="paragraph"><strong class="strong">钱是像——像在变——你被像转了——所以苦</strong>。</p>
+<h3 class="title-h3">4.6 「找外在的锅」型——"是社会不公"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">动不动就是全是找外在的，像在影响我。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">永远在找外境的原因</strong>——</p>
+<ul class="bullet-list">
+<li>我不幸福——<strong class="strong">是社会不公</strong>。</li>
+<li>我不成功——<strong class="strong">是没人脉</strong>。</li>
+<li>我不健康——<strong class="strong">是压力大</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">为什么苦？</strong></p>
+<p class="paragraph">因为<strong class="strong">他们不承认"我是一切的根源"</strong>——<strong class="strong">所以他们永远找不到"主宰点"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">得到一个答案叫我心，即宇宙，宇宙，即我心，也就一句话，我是一切的根源。</strong>"</p>
+<p class="paragraph"><strong class="strong">找外因 = 苦海轮回。出外因 = 出苦海</strong>。</p>
+<h3 class="title-h3">4.7 「嘴上说主宰」型——"我要做主"</h3>
+<p class="paragraph">这种人<strong class="strong">嘴上说"我要主宰"——事来了还是被转</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">一个人不能主宰自己的心的人，是没有办法主宰万物。</strong>"</p>
+<p class="paragraph"><strong class="strong">真主宰是心不动</strong>——<strong class="strong">不是嘴硬</strong>。 <strong class="strong">假主宰是嘴硬</strong>——<strong class="strong">事来了心还动</strong>。</p>
+<p class="paragraph"><strong class="strong">嘴上说"我不在乎"——心里在乎得要命</strong>——<strong class="strong">这不是主宰</strong>。 <strong class="strong">心里真不在乎——</strong>所以嘴不用硬——<strong class="strong">这才是主宰</strong>。</p>
+<h3 class="title-h3">4.8 现代职场版·3 种"心被外境转"画像</h3>
+<h4 class="title-h4">4.8.1 35 岁产品经理——"被事业影响"型</h4>
+<p class="paragraph">小王 35 岁，高级产品经理。</p>
+<p class="paragraph">他每天下班——</p>
+<ul class="bullet-list">
+<li>项目失败——<strong class="strong">失眠</strong>。</li>
+<li>老板批评——<strong class="strong">委屈</strong>。</li>
+<li>同事升职——<strong class="strong">嫉妒</strong>。</li>
+</ul>
+<p class="paragraph">他以为"我被事业影响"——<strong class="strong">其实是他的心被"业绩"这把钥匙转了</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">他不管是有钱，没钱做任何一件事情，对他来讲的话都是幸福的。</strong>"——<strong class="strong">小王做不到，因为他的钥匙在事业手里</strong>。</p>
+<p class="paragraph">真知的产品经理，<strong class="strong">做完就放下</strong>——业绩是像，不被他转——<strong class="strong">所以他下班能安心</strong>。</p>
+<h4 class="title-h4">4.8.2 45 岁创业者——"被钱影响"型</h4>
+<p class="paragraph">老李 45 岁，创业十年。</p>
+<p class="paragraph">他每天——</p>
+<ul class="bullet-list">
+<li>钱进来——<strong class="strong">兴奋</strong>。</li>
+<li>钱出去——<strong class="strong">焦虑</strong>。</li>
+<li>钱没了——<strong class="strong">崩溃</strong>。</li>
+</ul>
+<p class="paragraph">他以为"我被钱影响"——<strong class="strong">其实是他的心被"余额"这把钥匙转了</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">苦没钱苦，跟钱没有关系，因为你的心是叫随波逐流。</strong>"——<strong class="strong">老李做不到，因为他的钥匙在钱手里</strong>。</p>
+<p class="paragraph">真知的创业者，<strong class="strong">钱来钱去都稳住</strong>——<strong class="strong">因为他的钥匙在自己心里</strong>。</p>
+<h4 class="title-h4">4.8.3 60 岁退休人——"被孩子影响"型</h4>
+<p class="paragraph">老张 60 岁，退休五年。</p>
+<p class="paragraph">他每天——</p>
+<ul class="bullet-list">
+<li>孩子不回来——<strong class="strong">失落</strong>。</li>
+<li>孩子不听话——<strong class="strong">生气</strong>。</li>
+<li>孩子不争气——<strong class="strong">抱怨</strong>。</li>
+</ul>
+<p class="paragraph">他以为"我为孩子活"——<strong class="strong">其实是他的心被"孩子"这把钥匙转了</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">其实这外在像影响我根本不存在，是因为我们被像迷惑才会存在。</strong>"——<strong class="strong">老张被孩子迷了</strong>。</p>
+<p class="paragraph">真知的退休人，<strong class="strong">孩子来去都自在</strong>——<strong class="strong">因为他的钥匙在自己心里</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">5. 第五章·落地——三步走"主宰心"实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门——找到"钥匙"在哪里</h3>
+<p class="paragraph"><strong class="strong">30 天的目标：找到自己"心被什么外境转"。</strong></p>
+<p class="paragraph">举例：</p>
+<ul class="bullet-list">
+<li>今天<strong class="strong">爱人</strong>说我两句，<strong class="strong">我心里什么反应</strong>？</li>
+<li>不舒服——<strong class="strong">钥匙在爱人手里</strong>。</li>
+<li>没什么——<strong class="strong">钥匙在自己手里</strong>。</li>
+<li>今天<strong class="strong">钱</strong>少赚 1000，<strong class="strong">我心里什么反应</strong>？</li>
+<li>焦虑——<strong class="strong">钥匙在钱手里</strong>。</li>
+<li>没什么——<strong class="strong">钥匙在自己手里</strong>。</li>
+<li>今天<strong class="strong">孩子</strong>顶嘴，<strong class="strong">我心里什么反应</strong>？</li>
+<li>生气——<strong class="strong">钥匙在孩子手里</strong>。</li>
+<li>没什么——<strong class="strong">钥匙在自己手里</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">30 天后，你会很清楚地知道自己的"钥匙"在哪里</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">一个人不能找到自己的人，是无法认识别人。</strong>"</p>
+<p class="paragraph"><strong class="strong">30 天的目的就是"找到自己"</strong>——<strong class="strong">找到你的钥匙放在谁手里</strong>。</p>
+<h3 class="title-h3">5.2 1 年稳固——把钥匙拿回来</h3>
+<p class="paragraph"><strong class="strong">1 年的目标：把钥匙从外境手里拿回来。</strong></p>
+<p class="paragraph">具体做法：</p>
+<ul class="bullet-list">
+<li><strong class="strong">每天睡前问自己</strong>："今天我的钥匙被谁拿走了？"</li>
+<li><strong class="strong">看见"被拿走"了</strong>——就是"找到了"。</li>
+<li><strong class="strong">把钥匙拿回来</strong>——就是"主宰心"。</li>
+</ul>
+<p class="paragraph"><strong class="strong">3 个拿回钥匙的方法</strong>：</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>钥匙</th>
+<th>拿回方法</th>
+</tr>
+<tr>
+<td>被父母</td>
+<td>接受"父母是像"，但<strong class="strong">我心不变</strong></td>
+</tr>
+<tr>
+<td>被爱人</td>
+<td>接受"爱人是像"，但<strong class="strong">我心不变</strong></td>
+</tr>
+<tr>
+<td>被孩子</td>
+<td>接受"孩子是像"，但<strong class="strong">我心不变</strong></td>
+</tr>
+<tr>
+<td>被钱</td>
+<td>接受"钱是像"，但<strong class="strong">我心不变</strong></td>
+</tr>
+<tr>
+<td>被事业</td>
+<td>接受"事业是像"，但<strong class="strong">我心不变</strong></td>
+</tr>
+<tr>
+<td>被名声</td>
+<td>接受"名声是像"，但<strong class="strong">我心不变</strong></td>
+</tr>
+</table></div>
+<p class="paragraph">悟真师兄讲："<strong class="strong">如果一个人能主宰自己的心，他就不管任何人是坐在他身边，他都可以主宰，他都可以自在驾驭。</strong>"</p>
+<p class="paragraph"><strong class="strong">1 年后，你能把钥匙拿回 50%</strong>。</p>
+<h3 class="title-h3">5.3 3 年突破——钥匙全在自己手里</h3>
+<p class="paragraph"><strong class="strong">3 年的目标：钥匙全在自己手里。</strong></p>
+<p class="paragraph"><strong class="strong">3 年后</strong>：</p>
+<ul class="bullet-list">
+<li>父母影响你——<strong class="strong">你不动</strong>。</li>
+<li>爱人冷落你——<strong class="strong">你不动</strong>。</li>
+<li>孩子顶嘴——<strong class="strong">你不动</strong>。</li>
+<li>钱少了——<strong class="strong">你不动</strong>。</li>
+<li>事业失败——<strong class="strong">你不动</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">不动不是麻木——是"心有主"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">一个人不能主宰自己的心的人，是没有办法主宰万物。</strong>"</p>
+<p class="paragraph"><strong class="strong">3 年后，你能主宰万物——</strong>因为你能主宰自己的心**。</p>
+<h3 class="title-h3">5.4 终身功夫</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">一个人能够去主宰自己的心。记住一句话，能够主宰自己的心，这个人就得到成佛了，也就解脱了。</strong>"</p>
+<p class="paragraph"><strong class="strong">主宰自己的心 = 修行 = 成佛 = 解脱 = 涅槃</strong>。</p>
+<ul class="bullet-list">
+<li>妈妈<strong class="strong">一辈子</strong>守节气——<strong class="strong">她一辈子主宰自己的心</strong>。</li>
+<li>毛主席<strong class="strong">一辈子</strong>实事求是——<strong class="strong">他一辈子主宰自己的心</strong>。</li>
+<li>阳明<strong class="strong">一辈子</strong>致良知——<strong class="strong">他一辈子主宰自己的心</strong>。</li>
+<li>玄奘<strong class="strong">一辈子</strong>求真经——<strong class="strong">他一辈子主宰自己的心</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">主宰心 = 一辈子的事</strong>。</p>
+<h3 class="title-h3">5.5 三个检验：你的"心"主宰了吗？</h3>
+<ol class="num-list">
+<li><strong class="strong">爱人检验</strong>——爱人冷落你 3 天，你<strong class="strong">心里什么反应</strong>？不舒服就是没主宰，没反应就是主宰了。</li>
+<li><strong class="strong">钱检验</strong>——账户突然少 1 万，你<strong class="strong">心里什么反应</strong>？焦虑就是没主宰，没反应就是主宰了。</li>
+<li><strong class="strong">孩子检验</strong>——孩子突然顶嘴 5 句，你<strong class="strong">心里什么反应</strong>？生气就是没主宰，没反应就是主宰了。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">他不管是有钱，没钱做任何一件事情，对他来讲的话都是幸福的，他不会有任何障碍了。</strong>"</p>
+<p class="paragraph"><strong class="strong">经得起这三关——就是真的主宰</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">6. 第六章·回扣原话——7 句原话逐句落地表</h2>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>名相</th>
+<th>落地动作</th>
+</tr>
+<tr>
+<td>"所有东西都是个像，像是变的"</td>
+<td>一切是像</td>
+<td>问自己"我把什么当成了不变的"</td>
+</tr>
+<tr>
+<td>"随着像变就没有办法安宁"</td>
+<td>不随像变</td>
+<td>遇到外境时，问"我的心在动吗"</td>
+</tr>
+<tr>
+<td>"心守恒了就能掌握不变的就能 1 万变"</td>
+<td>守恒</td>
+<td>每天找一件事，守住"心不变"</td>
+</tr>
+<tr>
+<td>"主宰自己的心就成佛了"</td>
+<td>主宰=成佛</td>
+<td>每天问"今天我主宰了心吗"</td>
+</tr>
+<tr>
+<td>"外在像影响我根本不存在"</td>
+<td>像不存在</td>
+<td>找到"我以为的影响"——其实是自心的迷</td>
+</tr>
+<tr>
+<td>"我心即宇宙，宇宙即我心"</td>
+<td>我心即宇宙</td>
+<td>一切外境都是心的投射</td>
+</tr>
+<tr>
+<td>"我是一切的根源"</td>
+<td>一切因我</td>
+<td>不再找外因，回到"我"</td>
+</tr>
+</table></div>
+<h3 class="title-h3">6.1 一句话总纲</h3>
+<blockquote class="quote">
+<p><strong class="strong">主宰自己的心 = 主宰万物。</strong></p>
+<p><strong class="strong">心不动 = 主宰；心守恒 = 涅槃。</strong></p>
+<p><strong class="strong">我是一切的根源——不是口号，是硬指标。</strong></p>
+<p><strong class="strong">师兄，</strong>今天你的钥匙放在谁手里？****</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">7. 收束——我心即宇宙</h2>
+<p class="paragraph">悟真师兄讲："<strong class="strong">得到一个答案叫我心，即宇宙，宇宙，即我心，也就一句话，我是一切的根源。</strong>"</p>
+<p class="paragraph"><strong class="strong">这四个字，是修行的总纲</strong>——</p>
+<blockquote class="quote">
+<p>毛主席说"内因是变化的根据"——<strong class="strong">内因就是心</strong>。</p>
+<p>老子说"为道日损"——<strong class="strong">损去我执让心显现</strong>。</p>
+<p>慧能说"一念觉即佛"——<strong class="strong">心动了就是凡夫</strong>。</p>
+<p>阳明说"心外无物"——<strong class="strong">心里装什么就是什么</strong>。</p>
+<p>玄奘走 19 年——<strong class="strong">他主宰了心 19 年</strong>。</p>
+<p>妈妈种 30 年地——<strong class="strong">她主宰了心 30 年</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">所以 6 部经典同证一条路</strong>——<strong class="strong">主宰自己的心 = 主宰万物</strong>。</p>
+<blockquote class="quote">
+<p>父母、爱人、孩子、事业、钱、名声——<strong class="strong">都是像</strong>。</p>
+<p>像在变，心不变——<strong class="strong">叫守恒</strong>。</p>
+<p>心守恒了——<strong class="strong">就叫涅槃</strong>。</p>
+<p>涅槃不是死——<strong class="strong">是心不再被外境转</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">师兄，</strong>今天你的钥匙放在谁手里？****</p>
+<p class="paragraph"><strong class="strong">父母？爱人？孩子？钱？事业？名声？</strong>——</p>
+<blockquote class="quote">
+<p><strong class="strong">把钥匙拿回来。</strong></p>
+<p>钥匙一旦回到你手里——<strong class="strong">你就主宰了自己的心</strong>。</p>
+<p>一旦主宰了自己的心——<strong class="strong">你就主宰了万物</strong>。</p>
+<p>一旦主宰了万物——<strong class="strong">你就直达涅槃</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">钥匙，本来就在你手里。</strong> <strong class="strong">只是你把它放在外境里，忘了拿回来。</strong></p>
+<p class="paragraph"><strong class="strong">今天——拿回来。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">8. 附录·14 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《华严经》</strong> "若人欲了知，三世一切佛，应观法界性，一切唯心造"</li>
+<li><strong class="strong">《华严经》</strong> "心如工画师，能画诸世间"</li>
+<li><strong class="strong">《六祖坛经》</strong> "一念觉即佛，一念迷即凡夫"</li>
+<li><strong class="strong">《六祖坛经》</strong> "菩提本无树，明镜亦非台，本来无一物，何处惹尘埃"</li>
+<li><strong class="strong">《金刚经》</strong> "凡所有相，皆是虚妄。若见诸相非相，则见如来"</li>
+<li><strong class="strong">《道德经·第四十八章》</strong> "为学日益，为道日损。损之又损，以至于无为。无为而无不为"</li>
+<li><strong class="strong">《传习录·卷上》</strong> "心外无物，心外无理"</li>
+<li><strong class="strong">《传习录·卷中》</strong> "心之所发便是意，意之所在便是物"</li>
+<li><strong class="strong">《毛选·矛盾论》</strong> "外因是变化的条件，内因是变化的根据，外因通过内因而起作用"</li>
+<li><strong class="strong">《毛选·实践论》</strong> "主观必须符合客观"</li>
+<li><strong class="strong">《大慈恩寺三藏法师传·卷十》</strong> 玄奘临终语</li>
+<li><strong class="strong">《王阳明全集·传习录下》</strong> "破山中贼易，破心中贼难"</li>
+<li><strong class="strong">《孟子·公孙丑上》</strong> "人皆有不忍人之心"</li>
+<li><strong class="strong">《中庸·第一章》</strong> "天命之谓性，率性之谓道，修道之谓教"</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p><strong class="strong">署名：悟真 · 静思整理</strong></p>
+<p><strong class="strong">2026-07-16 上午 · 飞书对话由悟真命题、静思执笔</strong></p>
+<p><strong class="strong">最高纲领：古人的智慧不是拿来欣赏的，是拿来校准的。</strong></p>
+</blockquote>
+<div class="sign-off"><span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>2026 年 7 月 16 日 · 北京</div>
+</div>
+<script>
+const audio=document.getElementById('audio'),playBtn=document.getElementById('playBtn'),progressBar=document.getElementById('progressBar'),progressFill=document.getElementById('progressFill'),currentTimeEl=document.getElementById('currentTime'),durationEl=document.getElementById('duration'),muteBtn=document.getElementById('muteBtn'),volumeSlider=document.getElementById('volumeSlider'),speedBtns=document.querySelectorAll('.ctrl-btn[data-speed]');
+function fmt(s){if(!s||isNaN(s))return '00:00';const m=Math.floor(s/60),ss=Math.floor(s%60);return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')}
+playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.textContent='⏸'}else{audio.pause();playBtn.textContent='▶'}});
+audio.addEventListener('loadedmetadata',()=>{durationEl.textContent=fmt(audio.duration)});
+audio.addEventListener('timeupdate',()=>{const pct=(audio.currentTime/audio.duration)*100;progressFill.style.width=pct+'%';currentTimeEl.textContent=fmt(audio.currentTime)});
+audio.addEventListener('ended',()=>{playBtn.textContent='▶';progressFill.style.width='0%'});
+progressBar.addEventListener('click',(e)=>{const rect=progressBar.getBoundingClientRect();const pct=(e.clientX-rect.left)/rect.width;audio.currentTime=pct*audio.duration});
+muteBtn.addEventListener('click',()=>{audio.muted=!audio.muted;muteBtn.textContent=audio.muted?'🔇 取消静音':'🔊 静音'});
+volumeSlider.addEventListener('input',()=>{audio.volume=volumeSlider.value/100});
+speedBtns.forEach(btn=>{btn.addEventListener('click',()=>{const speed=parseFloat(btn.dataset.speed);audio.playbackRate=speed;speedBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active')})});
+audio.volume=0.8;
+</script>
+</body>
+</html>
