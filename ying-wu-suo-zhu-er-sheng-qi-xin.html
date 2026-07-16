@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《应无所住而生其心——敢拿敢放的动态平衡》</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#faf6ef;color:#3d3027;font-family:'Noto Serif SC','站酷小薇体','STKaiti','KaiTi','PingFang SC',serif;font-size:20px;line-height:2.2;padding:0 0 80px 0}
+.page{max-width:920px;margin:0 auto;padding:0 32px}
+.hero{background:linear-gradient(135deg,#faf6ef 0%,#f3eada 100%);padding:80px 32px 60px;text-align:center;border-bottom:3px double #8a5a2b;margin-bottom:60px}
+.hero .main-title{font-size:42px;font-weight:700;color:#3d3027;letter-spacing:4px;margin-bottom:16px;line-height:1.4}
+.hero .sub-title{font-size:22px;color:#8a5a2b;font-weight:500;letter-spacing:3px;margin-bottom:24px;line-height:1.6}
+.hero .meta{font-size:14px;color:#7a6f63;letter-spacing:2px;margin-bottom:40px}
+.hero .meta .seal{color:#c8423b;font-weight:600}
+.audio-player{background:#fff;border:2px solid #8a5a2b;border-radius:12px;padding:24px 28px;max-width:720px;margin:32px auto 0;box-shadow:0 4px 20px rgba(138,90,43,.12)}
+.audio-player .player-row{display:flex;align-items:center;gap:18px;margin-bottom:16px}
+.audio-player .play-btn{width:56px;height:56px;border-radius:50%;background:#8a5a2b;color:#fff;border:none;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+.audio-player .play-btn:hover{background:#6f4520}
+.audio-player .progress-wrap{flex:1;display:flex;flex-direction:column;gap:6px}
+.audio-player .progress-bar{width:100%;height:8px;background:#f0e4d0;border-radius:4px;cursor:pointer;position:relative;overflow:hidden}
+.audio-player .progress-fill{height:100%;background:linear-gradient(90deg,#8a5a2b,#c8a85a);width:0%;transition:width .1s}
+.audio-player .time-row{display:flex;justify-content:space-between;font-size:13px;color:#7a6f63;font-family:monospace}
+.audio-player .controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-top:12px;border-top:1px solid #f0e4d0}
+.audio-player .ctrl-btn{background:transparent;border:1px solid #d4c4a8;color:#8a5a2b;padding:6px 12px;border-radius:6px;cursor:pointer;font-size:13px;font-family:inherit}
+.audio-player .ctrl-btn:hover{background:#f0e4d0}
+.audio-player .ctrl-btn.active{background:#8a5a2b;color:#fff;border-color:#8a5a2b}
+.audio-player .speed-group{display:flex;gap:4px}
+.audio-player .volume{display:flex;align-items:center;gap:8px;margin-left:auto}
+.audio-player .volume-slider{width:80px}
+.audio-player .download{color:#8a5a2b;text-decoration:none;font-size:13px}
+.title-h1{font-size:30px;color:#3d3027;margin:60px 0 30px;padding-bottom:16px;border-bottom:2px solid #8a5a2b;letter-spacing:3px;font-weight:600}
+.title-h2{font-size:26px;color:#8a5a2b;margin:50px 0 24px;padding-left:18px;border-left:6px solid #8a5a2b;letter-spacing:2px;font-weight:600;line-height:1.5}
+.title-h3{font-size:22px;color:#5a3e22;margin:36px 0 18px;font-weight:600;letter-spacing:1px}
+.title-h4{font-size:19px;color:#5a3e22;margin:24px 0 12px;font-weight:600}
+.paragraph{margin-bottom:20px;text-indent:2em;text-align:justify}
+.strong{color:#8a5a2b;font-weight:600;background:linear-gradient(transparent 65%,rgba(200,168,90,.25) 65%);padding:0 2px}
+.quote{background:#fef5f4;border-left:4px solid #c8423b;padding:16px 24px;margin:24px 0;border-radius:0 6px 6px 0;font-style:normal;color:#5a3e22}
+.quote p{margin:8px 0;text-indent:0}
+.bullet-list,.num-list{margin:16px 0 20px 40px}
+.bullet-list li,.num-list li{margin-bottom:10px;line-height:1.9}
+.table-wrap{overflow-x:auto;margin:24px 0}
+.data-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #d4c4a8;border-radius:6px;overflow:hidden;font-size:16px}
+.data-table th{background:#8a5a2b;color:#fff;padding:12px 16px;text-align:left;font-weight:600;letter-spacing:1px}
+.data-table td{padding:12px 16px;border-top:1px solid #f0e4d0;line-height:1.7}
+.data-table tr:nth-child(even) td{background:#faf6ef}
+.divider{border:none;border-top:1px dashed #c8a85a;margin:50px 0}
+.seal-stamp{display:inline-block;background:#c8423b;color:#fff;padding:4px 12px;border-radius:4px;font-weight:600;letter-spacing:4px;margin:0 4px}
+.sign-off{text-align:right;margin:60px 0 30px;color:#8a5a2b;font-size:18px;letter-spacing:2px;line-height:2}
+@media(max-width:768px){body{font-size:18px;line-height:2.0}.hero{padding:50px 20px 40px}.hero .main-title{font-size:28px;letter-spacing:3px}.hero .sub-title{font-size:17px}.title-h1{font-size:24px}.title-h2{font-size:20px}.page{padding:0 20px}.audio-player{padding:18px 20px}}
+</style>
+</head>
+<body>
+<div class="hero">
+<div class="main-title">《应无所住而生其心——敢拿敢放的动态平衡》</div>
+<div class="sub-title">敢拿敢放的动态平衡 · 深度研读笔记</div>
+<div class="meta"><span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 16 日 · 字数 10000+ · 全文音频 50+ 分钟</div>
+<div class="audio-player">
+<audio id="audio" preload="metadata"><source src="ying-wu-suo-zhu-er-sheng-qi-xin-full.mp3" type="audio/mpeg"></audio>
+<div class="player-row">
+<button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+<div class="progress-wrap">
+<div class="progress-bar" id="progressBar"><div class="progress-fill" id="progressFill"></div></div>
+<div class="time-row"><span id="currentTime">00:00</span><span id="duration">--:--</span></div>
+</div>
+</div>
+<div class="controls">
+<div class="speed-group">
+<button class="ctrl-btn" data-speed="0.75">0.75x</button>
+<button class="ctrl-btn active" data-speed="1">1x</button>
+<button class="ctrl-btn" data-speed="1.25">1.25x</button>
+<button class="ctrl-btn" data-speed="1.5">1.5x</button>
+<button class="ctrl-btn" data-speed="2">2x</button>
+</div>
+<button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+<div class="volume"><input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80"></div>
+<a class="download" id="downloadBtn" href="ying-wu-suo-zhu-er-sheng-qi-xin-full.mp3" download="ying-wu-suo-zhu-er-sheng-qi-xin-full.mp3">⬇ 下载音频</a>
+</div>
+</div>
+</div>
+<div class="page">
+<h1 class="title-h1">《应无所住而生其心——敢拿敢放的动态平衡》</h1>
+<h2 class="title-h2">悟真读书笔记</h2>
+<p class="paragraph"><strong class="strong">核心命题：真正修行是"敢拿敢放"的动态平衡——既全力奋斗，又随时能放下，最终达到"不增不减"的自在境界。</strong></p>
+<blockquote class="quote">
+<p>钱要赚，事要做，但心不住在上面。</p>
+<p>入世是"拿"，出世是"放"；拿与放之间，是"应无所住"。</p>
+<p>创造价值时保持心灵自由——这才是检验修行的真标准。</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">0. 序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">"应无所住而生其心"——这是《金刚经》最硬核的一句，也是最容易被讲歪的一句。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">既敢拿又敢放</strong>"——<strong class="strong">这一句话，把"入世"和"出世"统一了</strong>。</p>
+<p class="paragraph">很多人误解"应无所住"——以为是什么都不做，<strong class="strong">那是死寂，不是空</strong>。</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>误解</th>
+<th>真相</th>
+</tr>
+<tr>
+<td>无所住 = 啥都不做</td>
+<td>无所住 = 做了不执着</td>
+</tr>
+<tr>
+<td>无所住 = 不能赚钱</td>
+<td>无所住 = 赚了不被赚转</td>
+</tr>
+<tr>
+<td>无所住 = 不能有家</td>
+<td>无所住 = 有家不被家转</td>
+</tr>
+<tr>
+<td>无所住 = 不能奋斗</td>
+<td>无所住 = 奋斗时心不染</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">真正"应无所住"的人</strong>——</p>
+<ul class="bullet-list">
+<li>赚钱赚到手——<strong class="strong">心不住在钱上</strong>。</li>
+<li>做事做到极致——<strong class="strong">心不住在事上</strong>。</li>
+<li>爱家爱到深处——<strong class="strong">心不住在家上</strong>。</li>
+<li>修禅修到开悟——<strong class="strong">心不住在禅上</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">敢拿——所以能创造价值</strong>。 <strong class="strong">敢放——所以心灵自由</strong>。 <strong class="strong">不增不减——所以自在</strong>。</p>
+<p class="paragraph"><strong class="strong">这就是修行的真模样。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">1. 第一章·名相拆解——"应无所住而生其心"九字逐字拆</h2>
+<h3 class="title-h3">1.1【应】——应该、必然</h3>
+<p class="paragraph">《六祖坛经》："<strong class="strong">应无所住而生其心。</strong>"</p>
+<p class="paragraph">"应"——<strong class="strong">应该</strong>。</p>
+<p class="paragraph">这不是一句劝勉——是<strong class="strong">必然</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">财名利色皆是变的。</strong>"</p>
+<p class="paragraph">既然是变的，<strong class="strong">你就"应该"不住</strong>。</p>
+<p class="paragraph"><strong class="strong">不是"不能住"——是"不应该住"</strong>。</p>
+<p class="paragraph">你今天住在钱上——明天钱没了——<strong class="strong">你跟着没了</strong>。 你今天住在名上——明天名去了——<strong class="strong">你跟着去了</strong>。</p>
+<p class="paragraph"><strong class="strong">"应该"= 智慧</strong>——你早就知道"它是变的"，所以你"应该"不住。</p>
+<h3 class="title-h3">1.2【无所住】——不住在一切相上</h3>
+<p class="paragraph">"无所住"——<strong class="strong">不住在任何"相"上</strong>。</p>
+<blockquote class="quote">
+<p>《金刚经》："<strong class="strong">应无所住，心不执着于任何事相。</strong>"</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">什么是"相"？</strong></p>
+<ul class="bullet-list">
+<li>钱是相——<strong class="strong">有相</strong>。</li>
+<li>名是相——<strong class="strong">有相</strong>。</li>
+<li>利是相——<strong class="strong">有相</strong>。</li>
+<li>色是相——<strong class="strong">有相</strong>。</li>
+<li>权是相——<strong class="strong">有相</strong>。</li>
+<li>享受是相——<strong class="strong">有相</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"无所住"= 心不挂任何一相</strong>。</p>
+<p class="paragraph">不是"看不见"——<strong class="strong">是"看见但不挂"</strong>。</p>
+<p class="paragraph"><strong class="strong">你赚 100 万——你看见 100 万——但你心不挂 100 万</strong>。 <strong class="strong">你做 CEO——你看见 CEO——但你心不挂 CEO</strong>。</p>
+<p class="paragraph"><strong class="strong">这叫应无所住。</strong></p>
+<h3 class="title-h3">1.3【而生其心】——生一颗什么心？</h3>
+<p class="paragraph"><strong class="strong">"无所住"不是没有心——是"而生其心"</strong>。</p>
+<p class="paragraph"><strong class="strong">生什么心？</strong>——<strong class="strong">清净心、菩提心、平常心</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">用菩提心转化烦恼即为修行。</strong>"</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>状态</th>
+<th>心</th>
+</tr>
+<tr>
+<td>钱来了</td>
+<td>生"感恩心"——不生"贪心"</td>
+</tr>
+<tr>
+<td>钱走了</td>
+<td>生"平常心"——不生"嗔心"</td>
+</tr>
+<tr>
+<td>事来了</td>
+<td>生"精进心"——不生"烦心"</td>
+</tr>
+<tr>
+<td>事走了</td>
+<td>生"放下心"——不生"悔心"</td>
+</tr>
+<tr>
+<td>病来了</td>
+<td>生"安住心"——不生"恐心"</td>
+</tr>
+<tr>
+<td>病走了</td>
+<td>生"欢喜心"——不生"慢心"</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">"应无所住"是手段——"而生其心"是目的</strong>。</p>
+<h3 class="title-h3">1.4【不执着】——是动态，不是静态</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">追求财富、名声等世俗目标时需保持'不执着'的心态。</strong>"</p>
+<p class="paragraph">"不执着"≠ 啥都不做。</p>
+<p class="paragraph"><strong class="strong">不执着 = 做了不挂 = 拿得起放得下 = 动态平衡</strong>。</p>
+<ul class="bullet-list">
+<li>你<strong class="strong">赚</strong>钱——<strong class="strong">不执着</strong>于钱——所以能赚更多。</li>
+<li>你<strong class="strong">做</strong>事——<strong class="strong">不执着</strong>于事——所以能做得更稳。</li>
+<li>你<strong class="strong">爱</strong>人——<strong class="strong">不执着</strong>于人——所以能爱得更深。</li>
+</ul>
+<p class="paragraph"><strong class="strong">执着的反面不是"不做事"——是"做了不挂"</strong>。</p>
+<h3 class="title-h3">1.5【创造价值】——入世的硬指标</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">鼓励积极创造价值（赚钱、提升能力、维护健康）。</strong>"</p>
+<p class="paragraph"><strong class="strong">不执着 ≠ 不创造</strong>。</p>
+<p class="paragraph"><strong class="strong">真正的入世</strong>：</p>
+<ul class="bullet-list">
+<li><strong class="strong">赚该赚的钱</strong>——不偷不抢不骗。</li>
+<li><strong class="strong">做该做的事</strong>——尽职尽责。</li>
+<li><strong class="strong">养该养的身</strong>——健康自律。</li>
+<li><strong class="strong">爱该爱的人</strong>——真诚投入。</li>
+</ul>
+<p class="paragraph"><strong class="strong">你赚了 100 万——但你心不挂 100 万</strong>——<strong class="strong">这叫"应无所住"地赚钱</strong>。</p>
+<h3 class="title-h3">1.6【心灵自由】——出世的硬指标</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">保持'心中无住'的超脱（不沉迷权财酒色）。</strong>"</p>
+<p class="paragraph"><strong class="strong">"无住"= 心灵自由</strong>。</p>
+<p class="paragraph"><strong class="strong">真正的出世</strong>：</p>
+<ul class="bullet-list">
+<li>钱再多——<strong class="strong">不沉迷</strong>。</li>
+<li>权再大——<strong class="strong">不傲慢</strong>。</li>
+<li>享受再好——<strong class="strong">不贪恋</strong>。</li>
+<li>修行再高——<strong class="strong">不卖弄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"出世"不是"离开世界"——是"在世界中心灵自由"</strong>。</p>
+<h3 class="title-h3">1.7【随缘不变】——动态平衡的最高境界</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">达摩祖师观点：随缘不变——外在顺应变化，内心保持觉知。</strong>"</p>
+<p class="paragraph"><strong class="strong">随缘 = 入世 = 外在顺应变化</strong>。 <strong class="strong">不变 = 出世 = 内心保持觉知</strong>。</p>
+<p class="paragraph"><strong class="strong">这两者同时存在</strong>——<strong class="strong">这叫"应无所住而生其心"</strong>。</p>
+<ul class="bullet-list">
+<li>外面在变——<strong class="strong">你跟着变</strong>（随缘）。</li>
+<li>内心不变——<strong class="strong">你始终如一</strong>（不变）。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"随缘不变"是修行的最高境界</strong>——<strong class="strong">像水一样，碰到方是方，碰到圆是圆，但水还是水</strong>。</p>
+<h3 class="title-h3">1.8 一句话总结</h3>
+<blockquote class="quote">
+<p><strong class="strong">应无所住——心不住在任何相上</strong>。</p>
+<p><strong class="strong">而生其心——生清净、菩提、平常的心</strong>。</p>
+<p><strong class="strong">敢拿——所以能创造价值（入世）</strong>。</p>
+<p><strong class="strong">敢放——所以心灵自由（出世）</strong>。</p>
+<p><strong class="strong">随缘不变——是修行的最高境界</strong>。</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">2. 第二章·经典本意——"应无所住"在 6 部经典里的同证</h2>
+<h3 class="title-h3">2.1 《金刚经》——应无所住而生其心</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">应无所住而生其心。</strong>"</p>
+<p>"<strong class="strong">凡所有相，皆是虚妄。若见诸相非相，则见如来。</strong>"</p>
+<p>"<strong class="strong">过去心不可得，现在心不可得，未来心不可得。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"应无所住而生其心"——<strong class="strong">就是《金刚经》的核心</strong>。</p>
+<p class="paragraph">"无所住"= 心不住在<strong class="strong">过去心</strong>、<strong class="strong">现在心</strong>、<strong class="strong">未来心</strong>上——<strong class="strong">三心都不可得</strong>。</p>
+<p class="paragraph"><strong class="strong">你今天赚了 100 万——你执着这个 100 万——你的"心"就被 100 万"住"了</strong>。</p>
+<p class="paragraph"><strong class="strong">你心不住在 100 万上——但你还是赚了 100 万</strong>——<strong class="strong">这叫"应无所住而生其心"</strong>。</p>
+<h3 class="title-h3">2.2 《六祖坛经》——无所住即为佛</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心不住法，道即通流。心若住法，名为自缚。</strong>"</p>
+<p>"<strong class="strong">于一切法不取不舍，即是见性成佛道。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"敢拿敢放"——<strong class="strong">就是"于一切法不取不舍"</strong>。</p>
+<blockquote class="quote">
+<p>取——是拿。</p>
+<p>舍——是放。</p>
+<p>不取不舍——是<strong class="strong">拿了不被拿转，放了不被放转</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">真修行人</strong>——<strong class="strong">取能取，舍能舍，取舍之间，心不染着</strong>。</p>
+<h3 class="title-h3">2.3 《道德经》——为道日损·无为而无不为</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">为学日益，为道日损。损之又损，以至于无为。无为而无不为。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"应无所住"——<strong class="strong">老子叫它"无为"</strong>。</p>
+<ul class="bullet-list">
+<li>"无为"= <strong class="strong">不妄为</strong>——不是不做事，是不执着地做事。</li>
+<li>"无不为"= <strong class="strong">该做的都能做</strong>——因为心不挂，做事更高效。</li>
+</ul>
+<p class="paragraph"><strong class="strong">无为不是消极——是积极到极致后的"放手"</strong>。</p>
+<h3 class="title-h3">2.4 《传习录》——事上磨练·心不着相</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">人须在事上磨练做功夫，乃有益。</strong>"</p>
+<p>"<strong class="strong">心之本体无所沾染，意之所动皆是物。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"既敢拿又敢放"——<strong class="strong">阳明叫它"事上磨练"</strong>。</p>
+<ul class="bullet-list">
+<li><strong class="strong">不做事</strong>——你永远不会"敢拿"——<strong class="strong">这是逃避</strong>。</li>
+<li><strong class="strong">只做事</strong>——你永远不会"敢放"——<strong class="strong">这是执着</strong>。</li>
+<li><strong class="strong">做事时磨练</strong>——<strong class="strong">敢拿又敢放</strong>——<strong class="strong">这叫真修行</strong>。</li>
+</ul>
+<h3 class="title-h3">2.5 《达摩血脉论》——随缘不变</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">随缘不变者，变化万亿，觉性不动。</strong>"</p>
+<p>"<strong class="strong">心无所住，随处解脱。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"随缘不变"——<strong class="strong">达摩祖师一句话</strong>。</p>
+<p class="paragraph"><strong class="strong">"随缘"= 入世——外在跟着变</strong>。 <strong class="strong">"不变"= 出世——内心不变</strong>。</p>
+<p class="paragraph"><strong class="strong">这两者同时存在——"心无所住，随处解脱"</strong>。</p>
+<h3 class="title-h3">2.6 《毛选》——实事求是·有所为有所不为</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">有所为，有所不为。</strong>"</p>
+<p>"<strong class="strong">主观与客观、理论与实践、知与行的具体的历史的统一。</strong>"</p>
+</blockquote>
+<p class="paragraph">悟真师兄讲的"敢拿敢放"——<strong class="strong">毛主席叫它"有所为有所不为"</strong>。</p>
+<p class="paragraph"><strong class="strong">该做的必做</strong>——<strong class="strong">有所为</strong>。 <strong class="strong">不该做的绝不做</strong>——<strong class="strong">有所不为</strong>。</p>
+<p class="paragraph"><strong class="strong">这叫"应无所住"的革命家版本</strong>。</p>
+<h3 class="title-h3">2.7 经典互证的一句话</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>经典</th>
+<th>翻法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>《金刚经》</td>
+<td>应无所住而生其心</td>
+<td>心不住任何相</td>
+</tr>
+<tr>
+<td>《六祖坛经》</td>
+<td>不取不舍</td>
+<td>取了不挂</td>
+</tr>
+<tr>
+<td>《道德经》</td>
+<td>无为而无不为</td>
+<td>损我执让道显</td>
+</tr>
+<tr>
+<td>《传习录》</td>
+<td>事上磨练</td>
+<td>做中放下</td>
+</tr>
+<tr>
+<td>《达摩血脉论》</td>
+<td>随缘不变</td>
+<td>外变内不变</td>
+</tr>
+<tr>
+<td>《毛选》</td>
+<td>有所为有所不为</td>
+<td>该做的必做</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">6 部经典，一个指向：敢拿又敢放 = 应无所住而生其心。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">3. 第三章·历史人物——四个"敢拿敢放"的故事</h2>
+<h3 class="title-h3">3.1 毛主席·既革命又放下</h3>
+<p class="paragraph">毛主席一生<strong class="strong">敢拿</strong>：</p>
+<ul class="bullet-list">
+<li>拿起枪杆子——<strong class="strong">打天下</strong>。</li>
+<li>拿起笔杆子——<strong class="strong">写文章</strong>。</li>
+<li>拿起"实事求是"——<strong class="strong">建新中国</strong>。</li>
+<li>拿起"人民"——<strong class="strong">立国本</strong>。</li>
+</ul>
+<p class="paragraph">毛主席一生<strong class="strong">敢放</strong>：</p>
+<ul class="bullet-list">
+<li>放下名誉——<strong class="strong">不要"万岁"</strong>。</li>
+<li>放下权力——<strong class="strong">让华国锋接班</strong>。</li>
+<li>放下"个人崇拜"——<strong class="strong">生前平反了很多"同志"</strong>。</li>
+<li>放下"自己的好恶"——<strong class="strong">该团结的都团结</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他"敢拿"——所以能建新中国</strong>。 <strong class="strong">他"敢放"——所以不落个人崇拜的俗</strong>。 <strong class="strong">"敢拿又敢放"——所以他成了"人民领袖"。</strong></p>
+<h3 class="title-h3">3.2 达摩祖师·面壁九年·一苇渡江</h3>
+<p class="paragraph">达摩从印度来中国，<strong class="strong">先面壁 9 年</strong>——<strong class="strong">这是"放"</strong>：</p>
+<ul class="bullet-list">
+<li>放下面子——<strong class="strong">一个印度人，千里迢迢来中国</strong>。</li>
+<li>放下名利——<strong class="strong">9 年不说话</strong>。</li>
+<li>放下身份——<strong class="strong">"不立文字"</strong>。</li>
+<li>放下生死——<strong class="strong">9 年没人听，他也面壁</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">然后"一苇渡江"</strong>——<strong class="strong">这是"拿"</strong>：</p>
+<ul class="bullet-list">
+<li>拿起佛法——<strong class="strong">与梁武帝对话</strong>。</li>
+<li>拿起慧可——<strong class="strong">传法给二祖</strong>。</li>
+<li>拿起少林——<strong class="strong">开创禅宗</strong>。</li>
+<li>拿起中国——<strong class="strong">把印度佛法变成中国禅</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"敢拿"——所以能开创</strong>。 <strong class="strong">"敢放"——所以能传</strong>。 <strong class="strong">"敢拿又敢放"——所以他成了"东土禅宗初祖"</strong>。</p>
+<h3 class="title-h3">3.3 王阳明·事上磨练·心不着相</h3>
+<p class="paragraph">王阳明<strong class="strong">敢拿</strong>：</p>
+<ul class="bullet-list">
+<li>拿起龙场——<strong class="strong">在最苦的地方悟道</strong>。</li>
+<li>拿起军事——<strong class="strong">平宁王叛乱</strong>。</li>
+<li>拿起心学——<strong class="strong">知行合一</strong>。</li>
+<li>拿起"致良知"——<strong class="strong">把儒释道打通</strong>。</li>
+</ul>
+<p class="paragraph">王阳明<strong class="strong">敢放</strong>：</p>
+<ul class="bullet-list">
+<li>放下功名——<strong class="strong">不要做大官</strong>。</li>
+<li>放下"得君行道"——<strong class="strong">不再执着于"得君"</strong>。</li>
+<li>放下"格物"——<strong class="strong">不再向外格物</strong>。</li>
+<li>放下"朱子"——<strong class="strong">创阳明学</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"敢拿"——所以能建功立业</strong>。 <strong class="strong">"敢放"——所以能创立心学</strong>。 <strong class="strong">"敢拿又敢放"——所以他成了"三不朽"。</strong></p>
+<h3 class="title-h3">3.4 玄奘·取经 19 年·译经 19 年</h3>
+<p class="paragraph">玄奘<strong class="strong">敢拿</strong>：</p>
+<ul class="bullet-list">
+<li>拿起经书——<strong class="strong">19 年求法 5 万里</strong>。</li>
+<li>拿起戒日王——<strong class="strong">曲女城 18 天</strong>。</li>
+<li>拿起唯识——<strong class="strong">翻译经书 75 部</strong>。</li>
+<li>拿起法相——<strong class="strong">开创唯识宗</strong>。</li>
+</ul>
+<p class="paragraph">玄奘<strong class="strong">敢放</strong>：</p>
+<ul class="bullet-list">
+<li>放下家乡——<strong class="strong">19 年不回家</strong>。</li>
+<li>放下性命——<strong class="strong">沙漠断水</strong>。</li>
+<li>放下名利——<strong class="strong">拒绝高官</strong>。</li>
+<li>放下"自我"——<strong class="strong">临终只说"勤修功德"</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"敢拿"——所以能取经</strong>。 <strong class="strong">"敢放"——所以能译经</strong>。 <strong class="strong">"敢拿又敢放"——所以他成了"法相唯识宗初祖"</strong>。</p>
+<h3 class="title-h3">3.5 四个故事·一个共同点</h3>
+<p class="paragraph">毛主席、达摩、阳明、玄奘——</p>
+<p class="paragraph"><strong class="strong">共同点</strong>：</p>
+<ul class="bullet-list">
+<li><strong class="strong">敢拿</strong>——<strong class="strong">所以能建功立业、开创学派</strong>。</li>
+<li><strong class="strong">敢放</strong>——<strong class="strong">所以不落执着、不被功转</strong>。</li>
+<li><strong class="strong">敢拿又敢放</strong>——<strong class="strong">所以"应无所住而生其心"</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">入世与出世，从来不是两条路——是同一条路的两端</strong>。</p>
+<p class="paragraph"><strong class="strong">真修行人——两头都到位</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">4. 第四章·反面案例——七种"不拿也不放"的人</h2>
+<h3 class="title-h3">4.1 「逃避型」——啥都不做就是修行</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">单纯打坐念经若脱离现实实践，实为逃避。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">"不拿"——但也不"敢"</strong>。</p>
+<ul class="bullet-list">
+<li>我不工作——<strong class="strong">因为我"要修行"</strong>。</li>
+<li>我不结婚——<strong class="strong">因为我"要出家"</strong>。</li>
+<li>我不赚钱——<strong class="strong">因为我"看破红尘"</strong>。</li>
+<li>我不做事——<strong class="strong">因为我"应无所住"</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"逃避"——不是"放下"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">虚假修行：单纯打坐念经若脱离现实实践。</strong>"</p>
+<p class="paragraph"><strong class="strong">真正的"放下"——是做了之后不挂——不是"做了不做"</strong>。</p>
+<h3 class="title-h3">4.2 「贪恋型」——啥都抓就是执着</h3>
+<p class="paragraph">这种人<strong class="strong">"只拿"——但不放</strong>。</p>
+<ul class="bullet-list">
+<li>钱越多越好——<strong class="strong">多多益善</strong>。</li>
+<li>名越高越好——<strong class="strong">名扬天下</strong>。</li>
+<li>权越大越好——<strong class="strong">一言九鼎</strong>。</li>
+<li>享受越好越好——<strong class="strong">豪华极致</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"执着"——不是"敢拿"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">不沉迷权财酒色。</strong>"</p>
+<p class="paragraph"><strong class="strong">真正的"敢拿"——是拿了不被拿转——不是"拿了越多越好"</strong>。</p>
+<h3 class="title-h3">4.3 「佛系型」——"应无所住 = 啥都不必"</h3>
+<p class="paragraph">这种人<strong class="strong">误解"应无所住"</strong>：</p>
+<ul class="bullet-list">
+<li>应无所住 = 啥都不必努力。</li>
+<li>应无所住 = 啥都不必计较。</li>
+<li>应无所住 = 啥都不必认真。</li>
+<li>应无所住 = 啥都不必负责。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"消极"——不是"放下"</strong>。</p>
+<p class="paragraph"><strong class="strong">真正的"应无所住"——是该做的必做——心不挂</strong>。</p>
+<h3 class="title-h3">4.4 「强求型」——"我要控制一切"</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">强求控制外境</strong>——是忌讳。"</p>
+<p class="paragraph">这种人<strong class="strong">要"控制"外境</strong>：</p>
+<ul class="bullet-list">
+<li>我要控制爱人——<strong class="strong">让他听我的</strong>。</li>
+<li>我要控制孩子——<strong class="strong">让他照我的办</strong>。</li>
+<li>我要控制下属——<strong class="strong">让他照我的做</strong>。</li>
+<li>我要控制结果——<strong class="strong">让它照我的发生</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">外境控制不了——所以他们天天活在焦虑里</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">财名利色皆是变的。</strong>"</p>
+<p class="paragraph"><strong class="strong">强求控制"变的"——</strong>是苦海**。</p>
+<h3 class="title-h3">4.5 「沉溺型」——沉迷物质享受</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">沉迷物质享受——是忌讳。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">"敢拿"——但被"拿"的东西转了</strong>：</p>
+<ul class="bullet-list">
+<li>钱拿了——<strong class="strong">被钱转</strong>——成了钱的奴隶。</li>
+<li>名拿了——<strong class="strong">被名转</strong>——成了名的奴隶。</li>
+<li>享受拿了——<strong class="strong">被享受转</strong>——成了享受的奴隶。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"被外境转"——不是"敢拿"</strong>。</p>
+<h3 class="title-h3">4.6 「嘴硬型」——嘴上说放下，心里还在拿</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">检验标准：能否在创造价值时保持心灵自由。</strong>"</p>
+<p class="paragraph">这种人<strong class="strong">嘴上说"放下"——心里还在拿</strong>：</p>
+<ul class="bullet-list">
+<li>我"不计较"——<strong class="strong">但我天天计较</strong>。</li>
+<li>我"不在乎"——<strong class="strong">但我天天在乎</strong>。</li>
+<li>我"应无所住"——<strong class="strong">但我住在所有的"应无所住"上</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"嘴硬"——不是"真放下"</strong>。</p>
+<p class="paragraph"><strong class="strong">真放下——是事来了心不动</strong>。</p>
+<h3 class="title-h3">4.7 「佛商型」——打着"佛"字赚钱</h3>
+<p class="paragraph">这种人<strong class="strong">嘴上说"应无所住"——但心里比谁都贪</strong>：</p>
+<ul class="bullet-list">
+<li>我用佛法赚钱——<strong class="strong">所以我比谁都贪</strong>。</li>
+<li>我开"禅修营"——<strong class="strong">所以我比谁都商业</strong>。</li>
+<li>我卖"开光法器"——<strong class="strong">所以我比谁都精明</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">这是"利用"——不是"修行"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">虚假修行。</strong>"</p>
+<p class="paragraph"><strong class="strong">真正"应无所住"的人——</strong>不靠佛法赚钱**。</p>
+<h3 class="title-h3">4.8 现代职场版·3 种"不拿也不放"画像</h3>
+<h4 class="title-h4">4.8.1 35 岁产品经理——"逃避型"</h4>
+<p class="paragraph">小王 35 岁，高级产品经理。</p>
+<p class="paragraph">他天天说要"放下"——但他<strong class="strong">放下的是责任</strong>：</p>
+<ul class="bullet-list">
+<li>项目失败——<strong class="strong">我尽力了</strong>（逃避）。</li>
+<li>团队不力——<strong class="strong">他们不行</strong>（推诿）。</li>
+<li>业绩下滑——<strong class="strong">环境不好</strong>（抱怨）。</li>
+<li>个人成长——<strong class="strong">没时间</strong>（拖延）。</li>
+</ul>
+<p class="paragraph">他以为"我放下"——<strong class="strong">其实他在逃避</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">虚假修行。</strong>"——<strong class="strong">小王的"放下"是逃避</strong>。</p>
+<p class="paragraph">真知的产品经理，<strong class="strong">敢做敢当——事来了扛——事过了放下</strong>——<strong class="strong">这叫"敢拿敢放"</strong>。</p>
+<h4 class="title-h4">4.8.2 45 岁创业者——"贪恋型"</h4>
+<p class="paragraph">老李 45 岁，创业十年。</p>
+<p class="paragraph">他天天要"创造价值"——但他<strong class="strong">"创造"的是"我要更多"</strong>：</p>
+<ul class="bullet-list">
+<li>钱赚了 100 万——<strong class="strong">不够，要 1000 万</strong>。</li>
+<li>公司做大了——<strong class="strong">不够，要上市</strong>。</li>
+<li>上市了——<strong class="strong">不够，要世界 500 强</strong>。</li>
+<li>500 强了——<strong class="strong">不够，要 500 强之首</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他"敢拿"——但"放"不下</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">不沉迷权财酒色。</strong>"——<strong class="strong">老李沉溺了</strong>。</p>
+<p class="paragraph">真知的创业者，<strong class="strong">敢赚敢花——赚了感恩——花时分享——"应无所住"</strong>。</p>
+<h4 class="title-h4">4.8.3 60 岁退休人——"嘴硬型"</h4>
+<p class="paragraph">老张 60 岁，退休五年。</p>
+<p class="paragraph">他天天说"应无所住"——但他<strong class="strong">嘴上说，手里抓</strong>：</p>
+<ul class="bullet-list">
+<li>我"不在乎子女"——<strong class="strong">但天天打电话给他们</strong>。</li>
+<li>我"不在乎身体"——<strong class="strong">但天天量血压</strong>。</li>
+<li>我"不在乎名声"——<strong class="strong">但天天刷朋友圈</strong>。</li>
+<li>我"应无所住"——<strong class="strong">但我住在"应无所住"这四个字上</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">他"嘴硬"——但不"真放下"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">检验标准：能否在创造价值时保持心灵自由。</strong>"</p>
+<p class="paragraph">真知的退休人，<strong class="strong">敢说敢放——说放下就放下——心真不动</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">5. 第五章·落地——三步走"应无所住"实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门——找一件"敢拿"的事</h3>
+<p class="paragraph"><strong class="strong">30 天的目标：找一件"敢拿"的事，全情投入但不挂。</strong></p>
+<p class="paragraph">举例：</p>
+<ul class="bullet-list">
+<li><strong class="strong">赚钱</strong>——这周赚 1000——心不住在 1000 上。</li>
+<li><strong class="strong">做项目</strong>——这周全情投入——心不住在项目上。</li>
+<li><strong class="strong">学技能</strong>——这周学一项新本事——心不住在技能上。</li>
+<li><strong class="strong">爱家人</strong>——这周对家人特别好——心不住在"好"上。</li>
+</ul>
+<p class="paragraph"><strong class="strong">30 天后，你会发现"敢拿" + "不挂" = 心情更稳</strong>。</p>
+<h3 class="title-h3">5.2 1 年稳固——找一件"敢放"的事</h3>
+<p class="paragraph"><strong class="strong">1 年的目标：找一件"敢放"的事，主动放下一件外境。</strong></p>
+<p class="paragraph">具体做法：</p>
+<ul class="bullet-list">
+<li><strong class="strong">放下一段"已经过去"的关系</strong>——不再执着于"应该这样"。</li>
+<li><strong class="strong">放下一件"已经失去"的东西</strong>——不再执着于"应该有那个"。</li>
+<li><strong class="strong">放下一段"已经结束"的事</strong>——不再执着于"如果当时"。</li>
+</ul>
+<p class="paragraph"><strong class="strong">3 个"放"的层次</strong>：</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>层次</th>
+<th>状态</th>
+</tr>
+<tr>
+<td>表层</td>
+<td>物质（钱、物、享受）</td>
+</tr>
+<tr>
+<td>中层</td>
+<td>关系（父母、爱人、孩子、朋友）</td>
+</tr>
+<tr>
+<td>深层</td>
+<td>自我（我执、面子、名誉、地位）</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">先放表层——再放中层——最后放深层</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">敢拿敢放——是动态平衡。</strong>"</p>
+<h3 class="title-h3">5.3 3 年突破——拿放自如</h3>
+<p class="paragraph"><strong class="strong">3 年的目标：拿放自如。</strong></p>
+<ul class="bullet-list">
+<li>该赚的——<strong class="strong">敢赚</strong>。</li>
+<li>该放的——<strong class="strong">敢放</strong>。</li>
+<li>该进的——<strong class="strong">敢进</strong>。</li>
+<li>该退的——<strong class="strong">敢退</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">"应无所住"——不是"啥都不做"——是"做时心不动"</strong>。</p>
+<h3 class="title-h3">5.4 终身功夫</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">应无所住而生其心——这是《金刚经》最硬核的一句。</strong>"</p>
+<p class="paragraph"><strong class="strong">这 9 个字——是一辈子的事</strong>。</p>
+<ul class="bullet-list">
+<li>妈妈<strong class="strong">一辈子</strong>守节气——<strong class="strong">她一辈子敢拿（种地）敢放（不执着）</strong>。</li>
+<li>毛主席<strong class="strong">一辈子</strong>实事求是——<strong class="strong">他一辈子敢拿（革命）敢放（个人）</strong>。</li>
+<li>阳明<strong class="strong">一辈子</strong>致良知——<strong class="strong">他一辈子敢拿（事功）敢放（功名）</strong>。</li>
+<li>玄奘<strong class="strong">一辈子</strong>求真经——<strong class="strong">他一辈子敢拿（经书）敢放（名利）</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">应无所住 = 一辈子的事。</strong></p>
+<h3 class="title-h3">5.5 三个检验：你的"应无所住"是真的吗？</h3>
+<ol class="num-list">
+<li><strong class="strong">赚钱检验</strong>——赚 100 万后，<strong class="strong">心动不动</strong>？动就是"贪恋"，不动就是"应无所住"。</li>
+<li><strong class="strong">失财检验</strong>——突然少 1 万，<strong class="strong">心动不动</strong>？动就是"执着"，不动就是"应无所住"。</li>
+<li><strong class="strong">失爱检验</strong>——爱人冷落你 3 天，<strong class="strong">心动不动</strong>？动就是"沉溺"，不动就是"应无所住"。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">检验标准：能否在创造价值时保持心灵自由。</strong>"</p>
+<p class="paragraph"><strong class="strong">经得起这三关——就是真的应无所住</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">6. 第六章·回扣原话——7 句原话逐句落地表</h2>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>名相</th>
+<th>落地动作</th>
+</tr>
+<tr>
+<td>"应无所住而生其心"</td>
+<td>无住=不挂</td>
+<td>做事时问"我的心在动吗"</td>
+</tr>
+<tr>
+<td>"财名利色皆是变的"</td>
+<td>外境是变</td>
+<td>不在变的东西上花心思</td>
+</tr>
+<tr>
+<td>"心是不变的"</td>
+<td>心是不变</td>
+<td>把心放在不变的地方</td>
+</tr>
+<tr>
+<td>"既敢拿又敢放"</td>
+<td>敢拿敢放</td>
+<td>找一件敢做，再找一件敢放</td>
+</tr>
+<tr>
+<td>"用菩提心转化烦恼"</td>
+<td>烦恼=菩提</td>
+<td>今天的事，反问"我学到什么"</td>
+</tr>
+<tr>
+<td>"随缘不变"</td>
+<td>随缘+不变</td>
+<td>外变时内不变</td>
+</tr>
+<tr>
+<td>"敢创造价值，敢保持心灵自由"</td>
+<td>创造+自由</td>
+<td>工作时心不挂，放下时心不悔</td>
+</tr>
+</table></div>
+<h3 class="title-h3">6.1 一句话总纲</h3>
+<blockquote class="quote">
+<p><strong class="strong">敢拿——所以能创造价值</strong>。</p>
+<p><strong class="strong">敢放——所以心灵自由</strong>。</p>
+<p><strong class="strong">不增不减——所以自在</strong>。</p>
+<p><strong class="strong">师兄，</strong>今天你敢拿什么？敢放什么？****</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">7. 收束——应无所住而生其心</h2>
+<p class="paragraph">悟真师兄讲："<strong class="strong">应无所住而生其心——这是修行的总纲。</strong>"</p>
+<p class="paragraph"><strong class="strong">这一句话，是上午 4 篇的总和——</strong></p>
+<blockquote class="quote">
+<p>《知止·修行的过程》——<strong class="strong">敢拿"标准"</strong>。</p>
+<p>《见如来·当下》——<strong class="strong">敢拿"客观真实"</strong>。</p>
+<p>《带罪而来·正视恶》——<strong class="strong">敢拿"自己的恶"</strong>。</p>
+<p>《主宰自己的心》——<strong class="strong">敢放"外境"</strong>。</p>
+<p><strong class="strong">《应无所住》——</strong>敢拿又敢放<strong class="strong">——总纲。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">5 篇同源同证一条路</strong>——<strong class="strong">敢拿又敢放 = 应无所住而生其心</strong>。</p>
+<p class="paragraph"><strong class="strong">这一条路</strong>——</p>
+<blockquote class="quote">
+<p>钱赚了——<strong class="strong">心不住钱上</strong>。</p>
+<p>事做了——<strong class="strong">心不住事上</strong>。</p>
+<p>家人爱了——<strong class="strong">心不住爱上</strong>。</p>
+<p>修行修了——<strong class="strong">心不住修上</strong>。</p>
+<p>拿起了——<strong class="strong">又放得下</strong>。</p>
+<p>进退了——<strong class="strong">又稳得住</strong>。</p>
+<p>这叫<strong class="strong">应无所住而生其心</strong>。</p>
+<p>这叫<strong class="strong">敢拿敢放的动态平衡</strong>。</p>
+<p>这叫<strong class="strong">修行的真模样</strong>。</p>
+</blockquote>
+<p class="paragraph"><strong class="strong">师兄，</strong>今天你敢拿什么？敢放什么？****</p>
+<blockquote class="quote">
+<p>敢拿——<strong class="strong">是敢面对</strong>。</p>
+<p>敢放——<strong class="strong">是敢放下</strong>。</p>
+<p>不增不减——<strong class="strong">是敢自在</strong>。</p>
+<p><strong class="strong">敢拿又敢放——是真修行。</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">8. 附录·14 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《金刚经·第十品》</strong> "应无所住而生其心"</li>
+<li><strong class="strong">《金刚经·第五品》</strong> "凡所有相，皆是虚妄。若见诸相非相，则见如来"</li>
+<li><strong class="strong">《金刚经·第三品》</strong> "过去心不可得，现在心不可得，未来心不可得"</li>
+<li><strong class="strong">《六祖坛经·定慧品》</strong> "心不住法，道即通流。心若住法，名为自缚"</li>
+<li><strong class="strong">《六祖坛经·机缘品》</strong> "于一切法不取不舍，即是见性成佛道"</li>
+<li><strong class="strong">《道德经·第四十八章》</strong> "为学日益，为道日损。损之又损，以至于无为。无为而无不为"</li>
+<li><strong class="strong">《传习录·卷上》</strong> "人须在事上磨练做功夫，乃有益"</li>
+<li><strong class="strong">《传习录·卷中》</strong> "心之本体无所沾染，意之所动皆是物"</li>
+<li><strong class="strong">《达摩血脉论》</strong> "随缘不变者，变化万亿，觉性不动"</li>
+<li><strong class="strong">《达摩血脉论》</strong> "心无所住，随处解脱"</li>
+<li><strong class="strong">《毛选·纪念白求恩》</strong> "我们大家要学习他毫无自私自利之心的精神"</li>
+<li><strong class="strong">《毛选·整顿党的作风》</strong> "为群众服务"</li>
+<li><strong class="strong">《大乘起信论》</strong> "心生则种种法生，心灭则种种法灭"</li>
+<li><strong class="strong">《维摩诘经·佛国品》</strong> "随其心净，则佛土净"</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p><strong class="strong">署名：悟真 · 静思整理</strong></p>
+<p><strong class="strong">2026-07-16 上午 · 飞书对话由悟真命题、静思执笔</strong></p>
+<p><strong class="strong">最高纲领：古人的智慧不是拿来欣赏的，是拿来校准的。</strong></p>
+</blockquote>
+<div class="sign-off"><span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>2026 年 7 月 16 日 · 北京</div>
+</div>
+<script>
+const audio=document.getElementById('audio'),playBtn=document.getElementById('playBtn'),progressBar=document.getElementById('progressBar'),progressFill=document.getElementById('progressFill'),currentTimeEl=document.getElementById('currentTime'),durationEl=document.getElementById('duration'),muteBtn=document.getElementById('muteBtn'),volumeSlider=document.getElementById('volumeSlider'),speedBtns=document.querySelectorAll('.ctrl-btn[data-speed]');
+function fmt(s){if(!s||isNaN(s))return '00:00';const m=Math.floor(s/60),ss=Math.floor(s%60);return String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0')}
+playBtn.addEventListener('click',()=>{if(audio.paused){audio.play();playBtn.textContent='⏸'}else{audio.pause();playBtn.textContent='▶'}});
+audio.addEventListener('loadedmetadata',()=>{durationEl.textContent=fmt(audio.duration)});
+audio.addEventListener('timeupdate',()=>{const pct=(audio.currentTime/audio.duration)*100;progressFill.style.width=pct+'%';currentTimeEl.textContent=fmt(audio.currentTime)});
+audio.addEventListener('ended',()=>{playBtn.textContent='▶';progressFill.style.width='0%'});
+progressBar.addEventListener('click',(e)=>{const rect=progressBar.getBoundingClientRect();const pct=(e.clientX-rect.left)/rect.width;audio.currentTime=pct*audio.duration});
+muteBtn.addEventListener('click',()=>{audio.muted=!audio.muted;muteBtn.textContent=audio.muted?'🔇 取消静音':'🔊 静音'});
+volumeSlider.addEventListener('input',()=>{audio.volume=volumeSlider.value/100});
+speedBtns.forEach(btn=>{btn.addEventListener('click',()=>{const speed=parseFloat(btn.dataset.speed);audio.playbackRate=speed;speedBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active')})});
+audio.volume=0.8;
+</script>
+</body>
+</html>
