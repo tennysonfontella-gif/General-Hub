@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>一花开五叶 —— 禅宗五家七宗的宗风、接引与传承</title>
+<style>
+:root {
+  --bg: #faf6ef;
+  --paper: #fffdf8;
+  --ink: #3d3027;
+  --ink-soft: #6a5b4f;
+  --rule: #e6dfd0;
+  --ochre: #8a5a2b;
+  --ochre-soft: #b88959;
+  --vermilion: #c8423b;
+  --jade: #4a7060;
+  --font: "站酷小薇体","站酷小薇LOGO体","STKaiti","KaiTi","Songti SC","PingFang SC","Microsoft YaHei",serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink); font-family: var(--font); -webkit-font-smoothing: antialiased; }
+body { line-height: 2.5; font-size: 20px; }
+.wt-container { max-width: 860px; margin: 0 auto; padding: 40px 28px 80px; }
+.wt-hero { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 44px 36px 32px; margin-bottom: 32px; position: relative; box-shadow: 0 2px 18px rgba(106,91,79,.06); }
+.wt-hero-title { font-size: 36px; line-height: 1.5; font-weight: 600; color: var(--ink); margin: 0 0 8px; letter-spacing: .5px; }
+.wt-hero-sub { font-size: 18px; color: var(--ochre); margin: 4px 0 18px; line-height: 1.8; }
+.wt-hero-meta { font-size: 16px; color: var(--ink-soft); border-top: 1px solid var(--rule); padding-top: 14px; margin-top: 18px; }
+.wt-hero-meta p { margin: 4px 0; }
+.wt-seal { position: absolute; top: 24px; right: 28px; background: var(--vermilion); color: #fffdf8; padding: 8px 14px; border-radius: 6px; font-size: 14px; letter-spacing: 4px; font-weight: 600; }
+.wt-audio { background: linear-gradient(135deg, #fff8eb 0%, #f7eddb 100%); border: 1px solid var(--ochre-soft); border-radius: 12px; padding: 22px 26px; margin-bottom: 32px; }
+.wt-audio-label { font-size: 15px; color: var(--ochre); margin-bottom: 12px; letter-spacing: 2px; }
+.wt-audio-row { display: flex; align-items: center; gap: 14px; }
+.wt-play { width: 52px; height: 52px; border-radius: 50%; background: var(--ochre); color: #fff; border: none; font-size: 22px; cursor: pointer; flex-shrink: 0; transition: transform .15s; }
+.wt-play:hover { transform: scale(1.06); }
+.wt-play.playing { background: var(--vermilion); }
+.wt-progress { flex: 1; height: 6px; background: #e9dcc1; border-radius: 3px; position: relative; cursor: pointer; }
+.wt-progress-bar { height: 100%; background: var(--ochre); border-radius: 3px; width: 0%; transition: width .1s linear; }
+.wt-time { font-size: 14px; color: var(--ink-soft); min-width: 90px; text-align: right; }
+.wt-audio-ctrl { display: flex; align-items: center; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+.wt-ctrl-btn { background: transparent; border: 1px solid var(--ochre-soft); color: var(--ochre); padding: 5px 12px; border-radius: 16px; font-size: 13px; cursor: pointer; font-family: inherit; }
+.wt-ctrl-btn.active { background: var(--ochre); color: #fff; }
+.wt-volume { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-soft); }
+.wt-volume input { width: 80px; }
+.wt-download { background: transparent; border: 1px solid var(--jade); color: var(--jade); padding: 5px 12px; border-radius: 16px; font-size: 13px; cursor: pointer; font-family: inherit; text-decoration: none; }
+.wt-section { background: var(--paper); border: 1px solid var(--rule); border-radius: 12px; padding: 32px 30px; margin-bottom: 24px; }
+.wt-section-title { font-size: 26px; color: var(--ochre); font-weight: 600; margin: 0 0 22px; padding-bottom: 14px; border-bottom: 2px solid var(--ochre-soft); letter-spacing: 1px; }
+.wt-section-body p { margin: 14px 0; }
+.wt-section-body h3 { color: var(--ochre); font-size: 20px; margin: 24px 0 10px; }
+.wt-section-body blockquote { background: #fff8eb; border-left: 4px solid var(--ochre); margin: 18px 0; padding: 14px 20px; color: var(--ink); font-size: 19px; }
+.wt-section-body strong { color: var(--vermilion); font-weight: 600; }
+.wt-section-body li { margin: 8px 0 8px 20px; }
+.wt-section-body hr { border: 0; border-top: 1px dashed var(--rule); margin: 22px 0; }
+.wt-section-body table.wt-table { border-collapse: collapse; margin: 18px 0; width: 100%; font-size: 18px; }
+.wt-section-body table.wt-table th, .wt-section-body table.wt-table td { border: 1px solid var(--rule); padding: 10px 14px; text-align: left; }
+.wt-section-body table.wt-table th { background: #fff8eb; color: var(--ochre); font-weight: 600; }
+.wt-footer { text-align: center; padding: 30px 0 10px; color: var(--ochre); font-size: 14px; letter-spacing: 2px; }
+.wt-seal-end { display: inline-block; background: var(--vermilion); color: #fffdf8; padding: 4px 10px; border-radius: 4px; font-size: 13px; letter-spacing: 3px; }
+</style>
+</head>
+<body>
+<div class="wt-container">
+<div class="wt-hero">
+  <div class="wt-seal">悟 真</div>
+  <div class="wt-hero-title">一花开五叶 —— 禅宗五家七宗的宗风、接引与传承</div>
+  <div class="wt-hero-sub">出观点必带实例,讲道理必以心印心。</div>
+  <div class="wt-hero-meta">
+    
+  </div>
+</div>
+
+<div class="wt-audio">
+  <div class="wt-audio-label">🎧 全文通读 · 一气呵成 · 30分钟</div>
+  <div class="wt-audio-row">
+    <button class="wt-play" id="wtPlayBtn">▶</button>
+    <div class="wt-progress" id="wtProgress"><div class="wt-progress-bar" id="wtBar"></div></div>
+    <div class="wt-time"><span id="wtCur">00:00</span> / <span id="wtTotal">--:--</span></div>
+  </div>
+  <div class="wt-audio-ctrl">
+    <button class="wt-ctrl-btn" data-rate="0.75">0.75x</button>
+    <button class="wt-ctrl-btn active" data-rate="1">1x</button>
+    <button class="wt-ctrl-btn" data-rate="1.25">1.25x</button>
+    <button class="wt-ctrl-btn" data-rate="1.5">1.5x</button>
+    <button class="wt-ctrl-btn" data-rate="2">2x</button>
+    <button class="wt-ctrl-btn" id="wtMuteBtn">🔊</button>
+    <div class="wt-volume">🔉 <input type="range" id="wtVol" min="0" max="100" value="100"></div>
+    <a class="wt-download" id="wtDownload" download="full.mp3">⬇ 下载音频</a>
+  </div>
+  <p style="font-size:13px;color:#8a5a2b;margin-top:10px;">💡 使用提示:把 full.mp3 与 index.html 放在同一目录即可播放</p>
+</div>
+
+<section class="wt-section" id="sec-0"><div class="wt-section-title">序章 · 一句话点透</div><div class="wt-section-body"><p>禅宗史上有一个惊天动地的事实 —— <strong>慧能门下,一个不识字的樵夫,传出了五家七宗。</strong></p>
+<p>有人问:这不就乱了吗?不对。<strong>这不是乱,这是「一花开五叶」</strong>。</p>
+<p>同一颗心,因为弟子根器不同,接引法门就有了五种风格;</p>
+<p>同一泓水,因为地形不同,流向就有了五道支脉;</p>
+<p>同一轮月,因为云层不同,显现就有了五样光明。</p>
+<p><strong>五家不是分裂,是接引。七宗不是混乱,是普应。</strong></p>
+<p>一句话点透:</p>
+<blockquote>**临济痛快,曹洞绵密,沩仰默契,云门高古,法眼简明——五种风格,五种根器对应,但归宿是一个——明心见性。**</blockquote>
+<blockquote>**选对了法门,三年见性;选错了法门,三十年还在门外。**</blockquote>
+<hr/></div></section><section class="wt-section" id="sec-1"><div class="wt-section-title">第一章 · 五家七宗的总根 —— 一花开五叶的源流</div><div class="wt-section-body"><h3>1.1 慧能门下的两条主线</h3>
+<p>慧能圆寂前,把衣钵传给了两个人:</p>
+<p><strong>怀让(南岳怀让)</strong> —— 衡山方向。</p>
+<p><strong>行思(青原行思)</strong> —— 江西方向。</p>
+<p>怀让传马祖道一,马祖传百丈怀海,百丈传黄檗希运,黄檗传临济义玄 ——<strong>临济宗</strong>出。</p>
+<p>怀让这一系还传出了<strong>沩仰宗</strong>(沩山灵佑→仰山慧寂)。</p>
+<p>行思传石头希迁,石头传药山惟俨,药山传洞山良价→曹山本寂 ——<strong>曹洞宗</strong>出。</p>
+<p>石头这一系还传出了<strong>云门宗</strong>(雪峰义存→云门文偃)和<strong>法眼宗</strong>(清凉文益)。</p>
+<p>这就是「一花开五叶」的来历 —— <strong>一花五叶,根在同一颗心里</strong>。</p>
+<h3>1.2 「南顿北渐」的对照</h3>
+<p>神秀在北宗讲「渐修」—— 身是菩提树,心如明镜台,时时勤拂拭,勿使惹尘埃。</p>
+<p>慧能在南宗讲「顿悟」—— 菩提本无树,明镜亦非台,本来无一物,何处惹尘埃。</p>
+<p>「渐」与「顿」,不是谁对谁错,是<strong>两种根器</strong> ——</p>
+<li>**根器利的人,一念即悟**</li>
+<li>**根器钝的人,渐修渐悟**</li>
+<p>五家七宗,各有各的「顿」和「渐」配比。</p>
+<h3>1.3 五家七宗的真正名字</h3>
+<p>严格说 ——</p>
+<p><strong>五家</strong>:沩仰、临济、曹洞、云门、法眼。</p>
+<p><strong>七宗</strong>:五家之外,临济又分两支,<strong>杨岐派</strong>(方会)和<strong>黄龙派</strong>(慧南),所以是七宗。</p>
+<h3>1.4 共同的根源</h3>
+<p>五家七宗,尽管风格千差万别,都有同一个根本 ——</p>
+<p><strong>《坛经》的核心:见性是佛,直指人心,不立文字。</strong></p>
+<p>不管哪一派,都在做同一件事 —— <strong>让你见你的性</strong>。</p>
+<p>区别只是「动作」不同:</p>
+<li>临济用棒喝——让你「顿」过来</li>
+<li>曹洞用绵密——让你「渐」入</li>
+<li>沩仰用圆相——让你「默」会</li>
+<li>云门用截断——让你「断」思</li>
+<li>法眼用六相——让你「识」透</li>
+<p><strong>动作不同,目的归一。</strong></p>
+<hr/></div></section><section class="wt-section" id="sec-2"><div class="wt-section-title">第二章 · 沩仰宗 —— 默契印心的父慈子孝</div><div class="wt-section-body"><h3>2.1 源流与传承</h3>
+<p>沩仰宗 ——「沩山」灵佑 +「仰山」慧寂合创。</p>
+<p>灵佑(771-853),百丈怀海弟子,住潭州沩山。</p>
+<p>慧寂(807-883),灵佑弟子,住袁州仰山。</p>
+<p>沩仰宗<strong>最早出,也最早衰</strong> —— 五家中最早成立,但传了几代就式微。但它把禅的「圆融」发挥到了极致。</p>
+<h3>2.2 宗风:「父慈子孝」</h3>
+<p>沩仰宗的风格,后人用四个字概括 —— <strong>父慈子孝</strong>。</p>
+<p>沩山像父亲,仰山像儿子;<strong>父亲以慈,儿子以孝,默契印心,不立文字。</strong></p>
+<p>沩仰宗的核心功夫 ——<strong>三生圆融</strong>。</p>
+<p><strong>过去、现在、未来,三际同时,</strong> 没有前后,没有差别,<strong>当下即是</strong>。</p>
+<h3>2.3 接引法门:「圆相」</h3>
+<p>沩仰宗独特的接引法 —— <strong>圆相</strong>。</p>
+<p>沩山在地上画圆相,有三种 ——</p>
+<li>**○(光圈)** —— 表「真理」——真理圆融无碍</li>
+<li>**●(黑圈)** —— 表「智慧」——智慧深不可见</li>
+<li>**⊙(文字圈)** —— 表「言语」——言语道断</li>
+<p>师生之间,常以圆相传心:老师画一个相,学生接一个相,<strong>相与相的呼应,就是心与心的印证</strong>。</p>
+<h3>2.4 公案:「如虫御木,偶尔成文」</h3>
+<p>仰山问沩山:</p>
+<blockquote>「师叔平时如何接引学人?」</blockquote>
+<p>沩山答:</p>
+<blockquote>「如虫御木,偶尔成文。」</blockquote>
+<p><strong>虫咬木头,偶尔会咬出像字的痕迹。</strong> <strong>悟道的接引,也像这样 —— 不是设计的,是自然成的。</strong></p>
+<p>仰山又问:</p>
+<blockquote>「那么,师叔画圆相是什么意思?」</blockquote>
+<p>沩山说:</p>
+<blockquote>「我画的不是圆相,是不可说。」</blockquote>
+<p><strong>「不可说」,是沩仰宗的灵魂 —— 一切不可说,一切已在圆相里。</strong></p>
+<hr/></div></section><section class="wt-section" id="sec-3"><div class="wt-section-title">第三章 · 临济宗 —— 棒喝交驰的当头一棒</div><div class="wt-section-body"><h3>3.1 源流与传承</h3>
+<p>临济宗 —— 由<strong>义玄</strong>在河北正定临济寺创立。</p>
+<p>义玄(?-867),黄檗希运弟子,住临济院。</p>
+<p><strong>临济宗后来成了五家中传播最广、影响最深的一支</strong> ——「临济儿孙遍天下」。</p>
+<p>临济宗在中国后期,又分两支 ——</p>
+<li>**杨岐派**(方会,992-1049)—— 活泼自由</li>
+<li>**黄龙派**(慧南,1002-1069)—— 严谨整肃</li>
+<p>这就是<strong>「五家七宗」</strong>多出来的「两宗」。</p>
+<h3>3.2 宗风:「棒喝交驰」</h3>
+<p>临济宗最出名的接引法 —— <strong>棒喝</strong>。<strong>当头一棒,大喝一声。</strong></p>
+<p>为什么用棒喝?<strong>让人「顿」起来 —— 打断你的思维惯性,逼你在当下见性。</strong></p>
+<p>临济宗传承上溯到黄檗希运,希运曾对弟子说:</p>
+<blockquote>「我此一诀,直指人心,见性成佛。」</blockquote>
+<p>—— 这八个字,<strong>临济宗的根本</strong>。</p>
+<h3>3.3 接引法门:「四宾主」「四料简」</h3>
+<p>临济义玄总结了<strong>四料简</strong>(四种对治):</p>
+<li>**夺人**(对有我执的)→ 用棒打掉「我」</li>
+<li>**夺境**(对外境执着的)→ 用喝破掉「境」</li>
+<li>**人境俱夺**(对「我」和「境」都执着的)→ 大棒大喝</li>
+<li>**人境俱不夺**(对一切不执着的)→ 顺其自然</li>
+<h3>3.4 公案:「棒打吃松」</h3>
+<p>最有名的临济公案 ——</p>
+<p>义玄问新到的僧人:</p>
+<blockquote>「你从哪里来?」</blockquote>
+<p>僧人答:</p>
+<blockquote>「黄檗来。」</blockquote>
+<p>义玄什么都没说,<strong>当头一棒</strong>:</p>
+<blockquote>「吃松!」</blockquote>
+<p>僧人丈二和尚,后退一步。义玄说:</p>
+<blockquote>「你这瞎驴!我打的是你!」</blockquote>
+<p>僧人当晚问义玄:</p>
+<blockquote>「问头不知。」</blockquote>
+<p>义玄又打三棒:</p>
+<blockquote>「你这个人,解不得三句棒。」</blockquote>
+<p>后来义玄上堂:</p>
+<blockquote>「我于黄檗处,三度问佛法的大意,三度被打。如蒿枝拂相似。」</blockquote>
+<blockquote>「我与么时,任么不得。」</blockquote>
+<p>—— <strong>「任么不得」</strong>,意思是:<strong>过去当下一片,不可得,不可说</strong>。</p>
+<h3>3.5 杨岐派与黄龙派</h3>
+<p><strong>杨岐方会</strong>(992-1049)——</p>
+<p>杨岐派的特点:<strong>活泼自由</strong>,「无著精彩」。</p>
+<p>杨岐一日上堂,<strong>拈起拄杖</strong>——「把这一根放到你手里,你怎么办?」众下没人答。杨岐说:</p>
+<blockquote>「不用开口,不用动手,只是在那一刻,你就是你。」</blockquote>
+<p><strong>黄龙慧南</strong>(1002-1069)——</p>
+<p>黄龙派的特点:<strong>严谨整肃</strong>,<strong>「黄龙三关」</strong>。</p>
+<p>黄龙三关:</p>
+<p>学人初入,黄龙必问:</p>
+<li>「草鞋钱多少?」—— 问你「性命」在哪儿吃住</li>
+<li>「你的本来面目是什么?」—— 找你未生之前的本来</li>
+<li>「我手何似佛手?」—— 打破你心里的「佛」</li>
+<p><strong>三关扣住学人,逼他直面自己的根本。</strong></p>
+<h3>3.6 临济宗为什么最大</h3>
+<p>临济宗后来出了<strong>圆悟克勤</strong>、<strong>大慧宗杲</strong>、<strong>密庵悟明</strong>等大宗师。</p>
+<p>到南宋,<strong>临济宗一统禅宗</strong> —— 沩仰、曹洞、云门、法眼都不传了,只有临济还在。</p>
+<p>为什么?<strong>棒喝适合「当下」这个时代 —— 现代社会节奏快、人心急,临济宗的「当头一棒」,正对症。</strong></p>
+<hr/></div></section><section class="wt-section" id="sec-4"><div class="wt-section-title">第四章 · 曹洞宗 —— 绵密回互的五位君臣</div><div class="wt-section-body"><h3>4.1 源流与传承</h3>
+<p>曹洞宗 —— 由<strong>洞山良价</strong>和<strong>曹山本寂</strong>创立。</p>
+<p>这一支传得久 —— <strong>传到现代日本,成了「道元曹洞」</strong>。</p>
+<p>洞山良价(807-869),药山惟俨弟子。</p>
+<p>曹山本寂(840-901),洞山良价弟子。</p>
+<p>「曹洞」二字的来历:曹 = 曹山(本寂住地);洞 = 洞山(良价住地)。</p>
+<h3>4.2 宗风:「绵密回互」</h3>
+<p>曹洞宗最不像禅宗 —— 它<strong>不棒不喝,慢慢地「回互」</strong>。</p>
+<p><strong>师父慢慢讲,弟子慢慢听;师父慢慢问,弟子慢慢答。</strong> 像文火,像抽丝。</p>
+<p>后人说:「曹洞就像『绵里藏针』 —— 软绵,但有锋」。</p>
+<h3>4.3 接引法门:「五位君臣」</h3>
+<p>曹洞宗最有名的接引法 —— <strong>五位君臣</strong>。这是曹洞宗的根本功夫。</p>
+<li>**正中偏**(君位)—— 体在正中,用流向偏 —— 妙用偏正能成事</li>
+<li>**偏中正**(臣位)—— 体偏用正 —— 凡事从偏入正</li>
+<li>**正中来**(君向臣位)—— 体用一贯 —— 透过不二的境界</li>
+<li>**兼中至**(臣向君位)—— 体用圆融 —— 功用过现</li>
+<li>**兼中到**(君臣合道)—— 体用全泯 —— 一真法界,绝待而立</li>
+<p><strong>从「正」(体)到「兼」(体用不二),五种密度的功夫。</strong></p>
+<h3>4.4 公案:「即此用,离此用」</h3>
+<p>洞山过水,看到水中自己的影子。他悟了一首偈 ——</p>
+<blockquote>「切忌从他觅,迢迢与我疏。</blockquote>
+<blockquote>我今独自在,处处得逢渠。</blockquote>
+<blockquote>渠今正是我,我今不是渠。</blockquote>
+<blockquote>应须与么会,方得契如如。」</blockquote>
+<p><strong>「渠」(影子)是「我」吗?「我」是「渠」吗?既是我,又不是渠 —— 这就是曹洞的核心:主客不二,体用圆融。</strong></p>
+<h3>4.5 正法眼藏与日本曹洞</h3>
+<p>曹洞宗的嫡传,传到中国<strong>道元</strong>(1200-1253),道元入宋学禅,得曹洞正脉,<strong>传到日本,成「道元曹洞」</strong>。</p>
+<p>道元的核心著作 ——<strong>《正法眼藏》</strong> ——<strong>「正法眼藏」四字,是五家七宗共遵的根本</strong>(源自禅宗「教外别传,正法眼藏」)。</p>
+<p>道元的禅 —— 极严谨、极绵密,<strong>打坐与日常不二</strong>,「只管打坐」(日语:shikantaza)—— 道元把日常的「行住坐卧」,<strong>全作修行</strong>。</p>
+<h3>4.6 临济与曹洞的对比</h3>
+<li>临济像 **闪电** —— 当头一下,痛快</li>
+<li>曹洞像 **细雨** —— 绵绵密密,浸入</li>
+<p>临济适合<strong>急性子</strong>、<strong>利根人</strong>;曹洞适合<strong>慢性子</strong>、<strong>钝根人</strong>。但同归 —— 都是<strong>明心见性</strong>。</p>
+<hr/></div></section><section class="wt-section" id="sec-5"><div class="wt-section-title">第五章 · 云门宗 —— 云遮月明的截断众流</div><div class="wt-section-body"><h3>5.1 源流与传承</h3>
+<p>云门宗 —— 由<strong>云门文偃</strong>创立。</p>
+<p>文偃(864-949),雪峰义存弟子,住广东乳源云门山。</p>
+<p>云门山上有云,云中有月 ——「云门」即含<strong>云遮月明</strong>的意思 —— <strong>真理被遮,但真理仍在</strong>。</p>
+<p>云门宗兴盛于五代,后来衰败,南宋后期基本不传。但《云门广录》<strong>,至今仍是禅宗史重要的灯录</strong>。</p>
+<h3>5.2 宗风:「截断众流」</h3>
+<p>云门宗的接引法,后人用四个字概括 ——<strong>截断众流</strong>。</p>
+<p><strong>不让你的思维流下去,当头截断!</strong> 怎么截?<strong>不解释,不开示,一句怪话,一个动作,让你「停」</strong>。</p>
+<p>公案:</p>
+<p>僧问:</p>
+<blockquote>「如何是佛法?」</blockquote>
+<p>云门答:</p>
+<blockquote>「腊八。」</blockquote>
+<p>僧不懂 ——「腊八」是释迦牟尼悟道日,<strong>云门答「腊八」</strong>,是「<strong>你没问,我也可以不答</strong>」。</p>
+<p><strong>云门饼</strong>:</p>
+<p>僧问云门:</p>
+<blockquote>「如何是云门剑?」</blockquote>
+<p>云门答:</p>
+<blockquote>「菜刀。」</blockquote>
+<p>僧再问:</p>
+<blockquote>「杀何人?」</blockquote>
+<p>云门答:</p>
+<blockquote>「杀一切。」</blockquote>
+<p>僧问:</p>
+<blockquote>「如何放过?」</blockquote>
+<p>云门答:</p>
+<blockquote>「放过了。」</blockquote>
+<p>—— <strong>「云门剑」不是杀人的剑,是放下你执着的剑</strong>。</p>
+<h3>5.3 云门三句</h3>
+<p>云门一生接引,有<strong>三句常话</strong> ——</p>
+<li>**「涵盖乾坤」**(一切都被它涵盖,无一漏)</li>
+<li>**「截断众流」**(你不让它流,它就流不成)</li>
+<li>**「随波逐浪」**(它还是允许一切流动)</li>
+<p><strong>这三句,不是三个不同的事,是同一件事的三面 ——</strong></p>
+<p>「涵盖乾坤」是<strong>体</strong> —— 本心涵盖一切;</p>
+<p>「截断众流」是<strong>用</strong> —— 当下断你的妄想;</p>
+<p>「随波逐浪」是<strong>化</strong> —— 一切仍在流,而我不迎不拒。</p>
+<p><strong>体用化三面,都是一个「道」。</strong></p>
+<hr/></div></section><section class="wt-section" id="sec-6"><div class="wt-section-title">第六章 · 法眼宗 —— 三界唯心、万法唯识</div><div class="wt-section-body"><h3>6.1 源流与传承</h3>
+<p>法眼宗 —— 由<strong>法眼文益</strong>创立。</p>
+<p>文益(885-958),得法于罗汉桂琛,住金陵清凉寺。</p>
+<p><strong>法眼宗创派最晚(约 950 年后),也最早衰 —— 只传到北宋就衰</strong>,但<strong>它的理论水平最高</strong>。</p>
+<h3>6.2 宗风:「六相圆融」</h3>
+<p>法眼宗的核心功夫 ——<strong>三界唯心,万法唯识</strong>(唯识学的影响)。</p>
+<p><strong>一切万法,都是「识」的显现;一切「识」,都是「心」的显现;一切「心」,都是自性的显现。</strong></p>
+<p>法眼文益总结了一套接引法 —— <strong>「六相圆融」</strong>:</p>
+<li>总相</li>
+<li>别相</li>
+<li>同相</li>
+<li>异相</li>
+<li>成相</li>
+<li>坏相</li>
+<p><strong>华严六相,与禅宗心法,在这里融合</strong> —— 这是法眼宗独特之处。</p>
+<h3>6.3 接引法门:「华严六相」</h3>
+<p><strong>总相</strong>(一真法界)→ <strong>别相</strong>(万象各别)→ <strong>同相</strong>(同归一心)→ <strong>异相</strong>(各有自性)→ <strong>成相</strong>(和合成事)→ <strong>坏相</strong>(各住自位)。</p>
+<p><strong>这一圆融,不是把万物合到一个,而是「一一法皆即真如」——每一法都具足全部真理</strong>。</p>
+<p>文益在《宗门十规论》里,批评了其他四家的一些「病」——</p>
+<blockquote>「临济喝,有不当机之病」;</blockquote>
+<blockquote>「曹洞绵密,有沉空之病」;</blockquote>
+<blockquote>「沩仰默契,有孤峰之病」;</blockquote>
+<blockquote>「云门截断,有伤巧之病」。</blockquote>
+<p><strong>法眼宗,要综合四家而避免其偏</strong> —— 这是法眼宗的根本。</p>
+<h3>6.4 公案:「华严与禅」</h3>
+<p>僧问文益:</p>
+<blockquote>「如何是华严境?」</blockquote>
+<p>文益答:</p>
+<blockquote>「满目青山。」</blockquote>
+<p>僧又问:</p>
+<blockquote>「如何是华严灯?」</blockquote>
+<p>文益答:</p>
+<blockquote>「面前一片黑。」</blockquote>
+<p><strong>「满目青山」—— 华严「一真法界」,一切圆满无漏</strong>;<strong>「面前一片黑」—— 华严「黑暗之处,方见真光」</strong>。</p>
+<p>文益的禅 —— 「<strong>真俗不二,理事圆融</strong>」 —— <strong>既不离俗而修真,亦不执真而废俗</strong>。</p>
+<h3>6.5 李后主与法眼宗</h3>
+<p>南唐后主<strong>李煜</strong>(937-978),亡国后被软禁。李煜曾亲近法眼文益。</p>
+<p>法眼圆寂前,把袈裟传给<strong>永明延寿</strong> —— <strong>延寿禅、教、律、密、净五宗兼弘</strong>。</p>
+<p>延寿的《宗镜录》<strong>,集禅宗理论之大成</strong> —— 100 卷,集禅、教、律、净各家之说,让<strong>法眼宗的「圆融」精神传遍所有宗派</strong>。</p>
+<hr/></div></section><section class="wt-section" id="sec-7"><div class="wt-section-title">第七章 · 杨岐与黄龙 —— 临济下的两条支流</div><div class="wt-section-body"><h3>7.1 杨岐派</h3>
+<p>杨岐方会(992-1049),原是临济宗第七代。</p>
+<p>杨岐派特点 —— <strong>活泼自由</strong>。</p>
+<p>杨岐派的家风 —— <strong>「一灯分焰」</strong> —— 一灯分下去,千万灯都在。</p>
+<p><strong>公案:杨岐的一口饭</strong></p>
+<p>杨岐一日烧饭,一个出家人来参禅。</p>
+<p>杨岐说:</p>
+<blockquote>「你来干啥?」</blockquote>
+<p>出家人答:</p>
+<blockquote>「求道。」</blockquote>
+<p>杨岐说:</p>
+<blockquote>「我烧火煮饭,你看到吗?」</blockquote>
+<p>出家人答:</p>
+<blockquote>「看到了。」</blockquote>
+<p>杨岐说:</p>
+<blockquote>「那就不远,别求了。」</blockquote>
+<p>—— <strong>「求道」和「烧火煮饭」,是同一件事</strong> —— 你「看」到了,就有了。</p>
+<h3>7.2 黄龙派</h3>
+<p>黄龙慧南(1002-1069),杨岐同时代的临济弟子。</p>
+<p><strong>黄龙派特点 —— 严谨整肃</strong>。</p>
+<p><strong>黄龙派的家风 —— 「黄龙三关」</strong> —— 三关让人无法逃。</p>
+<p><strong>黄龙三关:</strong></p>
+<p>学人入室,黄龙必问:</p>
+<blockquote>「草鞋钱多少?」</blockquote>
+<p>—— 这是「<strong>初关</strong>」 —— 不问佛法,问生活 —— <strong>你「性命」在哪吃住</strong>?</p>
+<p>学人答不上来,黄龙追问:</p>
+<blockquote>「你的父母未生你前,你是哪一个?」</blockquote>
+<p>—— 这是「<strong>重关</strong>」 —— 你「本来面目」是什么? —— <strong>找你未生之前的本来</strong>。</p>
+<p>学人答不上来,黄龙再问:</p>
+<blockquote>「我手何似佛手?」</blockquote>
+<p>—— 这是「<strong>末关</strong>」 —— <strong>打破你心里的「佛」—— 你心里的「佛」,不是你心里的「佛」</strong>,除非你见到你心里那个「能佛」的。</p>
+<p><strong>三关都过,才算入门;三关不通,还在门外。</strong></p>
+<h3>7.3 杨岐与黄龙的兴衰</h3>
+<p>南宋后,<strong>黄龙派衰而杨岐派独盛</strong> —— 「<strong>临济儿孙遍天下</strong>」,其实是「<strong>杨岐儿孙遍天下</strong>」。</p>
+<p>为什么?<strong>杨岐派的「活泼」,适应了南宋以后的市民文化、世俗化趋势。黄龙派的「严谨」,适应的是「丛林清规」式的传统生活,不太适合世俗化时代。</strong></p>
+<p>到明清,<strong>临济几乎等于杨岐派</strong>,<strong>黄龙派成了少数</strong>。</p>
+<hr/></div></section><section class="wt-section" id="sec-8"><div class="wt-section-title">第八章 · 五家七宗的对比表 —— 一张图看清</div><div class="wt-section-body"><table class="wt-table">
+<thead><tr><th>宗</th><th>初祖</th><th>核心功夫</th><th>接引法</th><th>风格</th><th>适合根器</th><th>后期命运</th></tr></thead>
+<tbody><tr><td>**沩仰**</td><td>灵佑/慧寂</td><td>三生圆融</td><td>圆相</td><td>父慈子孝</td><td>圆融型</td><td>最先衰</td></tr><tr><td>**临济**</td><td>义玄</td><td>四料简</td><td>棒喝</td><td>当头一棒</td><td>利根人</td><td>最盛</td></tr><tr><td>**曹洞**</td><td>良价/本寂</td><td>五位君臣</td><td>绵密</td><td>抽丝绵密</td><td>钝根人</td><td>较盛</td></tr><tr><td>**云门**</td><td>文偃</td><td>三句(涵盖/截断/随波)</td><td>一字禅</td><td>截断众流</td><td>极利根</td><td>较快衰</td></tr><tr><td>**法眼**</td><td>文益</td><td>六相圆融</td><td>理事不二</td><td>圆融清净</td><td>圆融善根</td><td>最早衰</td></tr><tr><td>**杨岐**</td><td>方会</td><td>临济变通</td><td>一日了然</td><td>活泼泼地</td><td>中等根器</td><td>大盛</td></tr><tr><td>**黄龙**</td><td>慧南</td><td>三关扣紧</td><td>严谨追问</td><td>严谨整肃</td><td>严谨学人</td><td>中后期衰</td></tr></tbody>
+</table>
+<p><strong>一句话总结五家</strong>:</p>
+<li>**沩仰**:师徒之间的「默契游戏」</li>
+<li>**临济**:当头的一「棒」、大「喝」一声</li>
+<li>**曹洞**:慢火温煮的「绵密功夫」</li>
+<li>**云门**:一字禅的「截断思维」</li>
+<li>**法眼**:「圆融清净、不落两边」的「理事不二」</li>
+<hr/></div></section><section class="wt-section" id="sec-9"><div class="wt-section-title">第九章 · 反面案例 · 五种「错会」五家宗风的迷误</div><div class="wt-section-body"><h3>9.1 沩仰宗的错会:25 岁「默契到自己」</h3>
+<p>某些人学沩仰,<strong>错会了「默契」</strong> ——</p>
+<p>他以为「默契」就是「不解释」,所以他<strong>不教人</strong>;</p>
+<p>他以为「默契」就是「不说话」,所以他<strong>不说话</strong>;</p>
+<p>他以为「默契」就是「圆相」,所以他<strong>画圆相</strong>,不悟心。</p>
+<p><strong>这不是默契,这是懒惰的借口。</strong></p>
+<p>真正沩仰的默契 —— <strong>是师徒之间的「心灵相通」</strong>,不是「你不教我不教」。</p>
+<p><strong>默契是「心知道」,不是「你不说我不说」。</strong></p>
+<h3>9.2 临济宗的错会:35 岁「只会棒喝」</h3>
+<p>某些人学临济,<strong>错会了「棒喝」</strong> ——</p>
+<p>他以为「棒」就是<strong>打人</strong>,所以他对学生暴力;</p>
+<p>他以为「喝」就是<strong>凶</strong>,所以他对学生吼叫;</p>
+<p>他以为「临济」就是<strong>狠</strong>,所以他对待弟子没有温度。</p>
+<p><strong>这不是临济,这是把脾气当成佛法。</strong></p>
+<p>真正临济的棒喝 —— <strong>棒在中节,喝在当机</strong>。<strong>棒是慈悲,喝是爱护</strong>。</p>
+<p>临济的「棒」,是<strong>警觉你的执着</strong>。没有慈悲当背景,只有怒气,不是临济。</p>
+<h3>9.3 曹洞宗的错会:40 岁「绵密到无聊」</h3>
+<p>某些人学曹洞,<strong>错会了「绵密」</strong> ——</p>
+<p>他以为「绵密」就是<strong>啰嗦</strong>,所以他每讲一事,<strong>重复百遍</strong>;</p>
+<p>他以为「绵密」就是<strong>不直接</strong>,所以学生<strong>听不懂</strong>他也不点明;</p>
+<p>他以为「绵密」就是<strong>稳</strong>,所以他<strong>永远不变</strong>,从不深入。</p>
+<p><strong>这不是曹洞,这是把拖拉当功夫。</strong></p>
+<p>真正曹洞的绵密 —— <strong>是「抽丝」的功夫,每一丝都抽到位</strong>。不啰嗦,不漏,到位。</p>
+<p>所以曹洞宗为什么传到日本?<strong>因为日本人懂「抽丝」,一针一针,从不马虎</strong>。</p>
+<h3>9.4 云门宗的错会:30 岁「截断思考」</h3>
+<p>某些人学云门,<strong>错会了「截断」</strong> ——</p>
+<p>他以为「截断」就是<strong>不许思考</strong>,所以学生思考他就骂;</p>
+<p>他以为「截断」就是<strong>一句话打断</strong>,所以他从来不给完整回答;</p>
+<p>他以为「截断」就是<strong>出奇制胜</strong>,所以<strong>为求「巧」而弄巧</strong>。</p>
+<p><strong>这不是云门,这是把偏激当机锋。</strong></p>
+<p>法眼文益早就批评过 ——<strong>云门有「伤巧之病」</strong>。<strong>真机锋不是「巧」 —— 是「切断妄想」,不是「炫耀技术」</strong>。</p>
+<h3>9.5 法眼宗的错会:50 岁「圆融到自己失去立场」</h3>
+<p>某些人学法眼,<strong>错会了「圆融」</strong> ——</p>
+<p>他以为「圆融」就是<strong>没有立场</strong>,所以他什么都说「也对也不对」;</p>
+<p>他以为「圆融」就是<strong>和稀泥</strong>,所以他对就是对、错也不反对;</p>
+<p>他以为「圆融」就是<strong>不下判断</strong>,所以他学生问他「是不是要做这件事」,他永远说「看情况」。</p>
+<p><strong>这不是法眼,这是把乡愿当智慧。</strong></p>
+<p>真正法眼的圆融 —— <strong>是「理」与「事」的圆融</strong>,不是「有」与「无」的「圆」。</p>
+<p><strong>圆融必须有中心 —— 这个中心就是「性」</strong>。</p>
+<p><strong>离「性」而圆,和稀泥;执「性」而方,失圆融。</strong></p>
+<h3>9.6 五种错会的共同根</h3>
+<p>五种错会,共同根在一个字 —— <strong>执</strong>。</p>
+<li>执「默契」,失沩仰</li>
+<li>执「棒喝」,失临济</li>
+<li>执「绵密」,失曹洞</li>
+<li>执「截断」,失云门</li>
+<li>执「圆融」,失法眼</li>
+<p><strong>执即障。不执即用。</strong></p>
+<p>临济老人临终说 —— 「一片身心,等闲放下。」</p>
+<p><strong>身心都放下,法门更放下,这才叫「明心见性」。</strong></p>
+<hr/></div></section><section class="wt-section" id="sec-10"><div class="wt-section-title">第十章 · 实修法门 · 如何选适合自己的法门</div><div class="wt-section-body"><h3>10.1 自测你是哪种根器</h3>
+<p>回答以下 10 题,给自己打分(每题 1 分,完全符合计 1 分):</p>
+<li>听到一个新道理,常常「言下即悟」(临济型) → 临济风格 ↑1</li>
+<li>听道理慢了,但能慢慢深入(曹洞型) → 曹洞风格 ↑1</li>
+<li>喜欢不立文字的「直接相应」(沩仰型) → 沩仰风格 ↑1</li>
+<li>喜欢一句话断你思路的「机锋」(云门型) → 云门风格 ↑1</li>
+<li>喜欢「理事不二」式的综合思维(法眼型) → 法眼风格 ↑1</li>
+<li>不能接受「模糊」,需要「清楚」(临济型) → ↑1</li>
+<li>不能接受「太快」,需要「绵密」(曹洞型) → ↑1</li>
+<li>喜欢「无言的交流」(沩仰型) → ↑1</li>
+<li>喜欢「矛盾的冲击」(云门型) → ↑1</li>
+<li>喜欢「圆融而不失立场」(法眼型) → ↑1</li>
+<p><strong>统计分数,看哪个风格得分最高</strong> —— 这就是<strong>接近你根器</strong>的风格。</p>
+<h3>10.2 五家七宗 · 各类修行人的对治</h3>
+<table class="wt-table">
+<thead><tr><th>你的「病」</th><th>对应的「药」</th><th>推荐宗</th></tr></thead>
+<tbody><tr><td>思虑过多,不能断</td><td>当头一棒</td><td>临济 / 云门</td></tr><tr><td>焦虑不安,总着急</td><td>绵密的功夫</td><td>曹洞</td></tr><tr><td>执着自我,不信任别人</td><td>师徒默契</td><td>沩仰</td></tr><tr><td>偏执一边,不通中道</td><td>圆融清净</td><td>法眼</td></tr><tr><td>区分不清「活」与「死」</td><td>临济变通</td><td>杨岐</td></tr><tr><td>散乱难收,立不住</td><td>严谨整肃</td><td>黄龙</td></tr></tbody>
+</table>
+<h3>10.3 实修三步入门 · 一辈子修一个宗</h3>
+<p><strong>第一步 · 找师</strong></p>
+<li>不一定是某宗大德,但必须是「能接引你」的明眼人。</li>
+<li>找到师父,**一辈子跟随**。</li>
+<p><strong>第二步 · 明宗</strong></p>
+<li>不是「学十个宗」 —— 是「修一个宗」。</li>
+<li>一辈子精修一个宗,**实修 10 年以上** —— 这是黄龙慧南的标准。</li>
+<p><strong>第三步 · 见性</strong></p>
+<li>当下见性。</li>
+<li>见性之后,临济、曹洞、沩仰、云门、法眼,都是你的,**因为你已不在五家内**。</li>
+<hr/></div></section><section class="wt-section" id="sec-11"><div class="wt-section-title">收束 · 给悟真师兄的一封信</div><div class="wt-section-body"><p>师兄,</p>
+<p>你今天问的这个问题,直指禅宗史的核心。</p>
+<p>五家七宗,不是禅宗的分裂,<strong>是禅宗的「分灯」</strong>。</p>
+<p>一灯分无量灯,</p>
+<p>一花开五叶,</p>
+<p>一水成五脉。</p>
+<p><strong>一灯还同归一灯。五家还同归一心。</strong></p>
+<p>师兄,你今天选法门,</p>
+<p><strong>不是选「哪一派最强」,是选「哪一派最适合你」。</strong></p>
+<p>利根人选临济(痛快),</p>
+<p>钝根人选曹洞(绵密),</p>
+<p>圆融人选沩仰(默契),</p>
+<p>极利人选云门(截断),</p>
+<p>善根人选法眼(圆融)。</p>
+<p><strong>一人一法门。法法皆是禅。</strong></p>
+<p><strong>修了十年,你已不在宗内;</strong></p>
+<p><strong>修了三十年,你已不在禅内;</strong></p>
+<p><strong>修了一辈子,你已不在道内 ——</strong></p>
+<p><strong>道就是你,你就是道。</strong></p>
+<p>到那一天,你回看五家七宗,</p>
+<p>你会发现 ——</p>
+<p><strong>它们从来没分开过。</strong></p>
+<p><strong>它们都在你心里。</strong></p>
+<p>—— 静思 敬上</p>
+<hr/></div></section><section class="wt-section" id="sec-12"><div class="wt-section-title">附录 · 经典原句索引</div><div class="wt-section-body"><li>**《六祖坛经》** ——「菩提本无树,明镜亦非台,本来无一物,何处惹尘埃。」</li>
+<li>**《六祖坛经》** ——「我此一诀,直指人心,见性成佛。」</li>
+<li>**《六祖坛经》** ——「佛法在世间,不离世间觉。」</li>
+<li>**《六祖坛经》** ——「何期自性,本自具足。」</li>
+<li>**《坛经·定慧品》** ——「心念不起,名为坐;见本性不乱,名为禅。」</li>
+<li>**《五灯会元》** ——「五家之学,各有所主,然其归则同。同者何?明心见性而已。」</li>
+<li>**《临济录》** ——「我有三句,接人:第一句,涵盖乾坤;第二句,截断众流;第三句,随波逐浪。」</li>
+<li>**《临济录》** ——「一片身心,等闲放下。」</li>
+<li>**《曹洞五位颂》** ——「正中偏,偏中正,正中来,兼中至,兼中到。」</li>
+<li>**《洞山悟道偈》** ——「渠今正是我,我今不是渠。应须与么会,方得契如如。」</li>
+<li>**《云门广录》** ——「涵盖乾坤,截断众流,随波逐浪。」</li>
+<li>**《宗门十规论·法眼文益》** ——「临济喝,有不当机之病;曹洞绵密,有沉空之病;沩仰默契,有孤峰之病;云门截断,有伤巧之病。」</li>
+<li>**《正法眼藏·道元》** ——「只管打坐。」</li>
+<li>**《宗镜录·永明延寿》** ——「一心为宗,镜智为用。以心为宗,以净为镜。」</li>
+<li>**黄檗希运 ——「我此一诀,直指人心,见性成佛。」</li>
+<li>**《人天眼目》** ——「五家宗派,法虽不同,归旨则一。」</li>
+<hr/>
+<blockquote>**作者:悟真**</blockquote>
+<blockquote>**设计:浅色米白 + 赭石 + 朱红点缀 · 站酷小薇体 · 单条全文音频 · 一花开五叶**</blockquote></div></section>
+
+<div class="wt-footer">
+  <div class="wt-seal-end">悟 真 · 出 品</div>
+  <p style="margin-top:14px;">中道立心 · 此心光明 · 亦复何言</p>
+</div>
+</div>
+
+<script>
+(function(){
+  const audio = new Audio('full.mp3');
+  window._wtAudio = audio;
+  const btn = document.getElementById('wtPlayBtn');
+  const bar = document.getElementById('wtBar');
+  const prog = document.getElementById('wtProgress');
+  const cur = document.getElementById('wtCur');
+  const total = document.getElementById('wtTotal');
+  const muteBtn = document.getElementById('wtMuteBtn');
+  const vol = document.getElementById('wtVol');
+  const dl = document.getElementById('wtDownload');
+  dl.href = 'full.mp3';
+  const fmt = s => { const m = Math.floor(s/60); const sec = Math.floor(s%60); return String(m).padStart(2,'0')+':'+String(sec).padStart(2,'0'); };
+  audio.addEventListener('loadedmetadata', () => { total.textContent = fmt(audio.duration); });
+  audio.addEventListener('timeupdate', () => {
+    bar.style.width = (audio.currentTime/audio.duration*100) + '%';
+    cur.textContent = fmt(audio.currentTime);
+  });
+  btn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); btn.textContent = '⏸'; btn.classList.add('playing'); }
+    else { audio.pause(); btn.textContent = '▶'; btn.classList.remove('playing'); }
+  });
+  prog.addEventListener('click', e => {
+    const r = prog.getBoundingClientRect();
+    audio.currentTime = ((e.clientX - r.left) / r.width) * audio.duration;
+  });
+  document.querySelectorAll('.wt-ctrl-btn[data-rate]').forEach(b => {
+    b.addEventListener('click', () => {
+      audio.playbackRate = parseFloat(b.dataset.rate);
+      document.querySelectorAll('.wt-ctrl-btn[data-rate]').forEach(x => x.classList.remove('active'));
+      b.classList.add('active');
+    });
+  });
+  muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇' : '🔊';
+  });
+  vol.addEventListener('input', () => { audio.volume = vol.value / 100; });
+})();
+</script>
+</body>
+</html>
