@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>以身为炉——达摩用一身火，点醒千万劫众生 · 悟真读书笔记</title>
+<style>
+:root {
+  --bg: #faf6ef;
+  --card: #f3ead8;
+  --text: #3d3027;
+  --brown: #8a5a2b;
+  --gold: #b08c4a;
+  --red: #c8423b;
+  --light: #e8dcc0;
+  --line: #d4c5a3;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 2.4;
+  font-size: 20px;
+}
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px 24px 80px;
+}
+h1 {
+  text-align: center;
+  font-size: 38px;
+  color: var(--brown);
+  margin: 30px 0 20px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+}
+.hero {
+  background: linear-gradient(135deg, #f5ead0 0%, #faf2dc 100%);
+  border-radius: 16px;
+  padding: 30px 30px 26px;
+  margin: 20px 0 40px;
+  box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+  border: 1px solid var(--line);
+}
+.hero-sub {
+  text-align: center;
+  color: var(--brown);
+  font-size: 16px;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+.audio-player {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 22px 0 8px;
+}
+.audio-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-play {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(138, 90, 43, 0.3);
+  transition: transform 0.15s;
+}
+.btn-play:hover { transform: scale(1.06); }
+.btn-play.playing { background: var(--red); }
+.progress-wrap {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--light);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--brown);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s;
+}
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--brown);
+  font-family: monospace;
+}
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--brown);
+}
+.btn-ctrl {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 12px;
+  transition: all 0.15s;
+}
+.btn-ctrl:hover { background: var(--brown); color: #fff; }
+.btn-ctrl.active { background: var(--brown); color: #fff; }
+.btn-ctrl.mute-active { background: var(--red); color: #fff; }
+.vol-slider {
+  width: 80px;
+  vertical-align: middle;
+}
+h2 {
+  color: var(--brown);
+  border-left: 5px solid var(--brown);
+  padding-left: 14px;
+  margin: 50px 0 24px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+h3 {
+  color: var(--brown);
+  margin: 32px 0 16px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+h4 {
+  color: var(--gold);
+  margin: 24px 0 12px;
+  font-size: 20px;
+}
+p {
+  margin: 14px 0;
+  text-align: justify;
+}
+blockquote {
+  background: rgba(176, 140, 74, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 12px 18px;
+  margin: 18px 0;
+  color: var(--brown);
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+ul, ol {
+  margin: 14px 0;
+  padding-left: 30px;
+}
+li {
+  margin: 8px 0;
+}
+strong {
+  color: var(--red);
+  font-weight: 700;
+}
+code {
+  background: var(--light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--brown);
+  font-size: 0.9em;
+}
+hr {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 40px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.4);
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  text-align: left;
+}
+th {
+  background: var(--brown);
+  color: #fff;
+}
+.seal {
+  text-align: right;
+  margin-top: 50px;
+  color: var(--red);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  opacity: 0.85;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--brown);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>以身为炉——达摩用一身火，点醒千万劫众生</h1>
+  <div class="hero">
+    <div class="hero-sub">悟真修行笔记 · 命题式研读 · 一部电影拆出禅宗一千五百年</div>
+    <div class="audio-player">
+      <audio id="audio" preload="metadata">
+        <source src="yi-shen-wei-lu-full.mp3" type="audio/mpeg">
+      </audio>
+      <div class="audio-row">
+        <button class="btn-play" id="btnPlay" aria-label="播放/暂停">▶</button>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="time-row">
+            <span id="curTime">0:00</span>
+            <span id="totalTime">--:--</span>
+          </div>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <span>倍速:</span>
+        <button class="btn-ctrl rate-btn" data-rate="0.75">0.75x</button>
+        <button class="btn-ctrl rate-btn active" data-rate="1">1x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.25">1.25x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.5">1.5x</button>
+        <button class="btn-ctrl rate-btn" data-rate="2">2x</button>
+        <button class="btn-ctrl" id="btnMute">🔇</button>
+        <input type="range" min="0" max="100" value="100" class="vol-slider" id="volSlider">
+        <a href="yi-shen-wei-lu-full.mp3" download class="btn-ctrl">⬇ 下载音频</a>
+      </div>
+    </div>
+  </div>
+  <h1>以身为炉——达摩用一身火，点醒千万劫众生</h1>
+<blockquote><strong>悟真修行笔记 · 第 8 篇</strong></blockquote>
+<blockquote>出观点必带实例，讲道理必以心印心。</blockquote>
+<blockquote>一把火不是神通，是慈悲。</blockquote>
+<blockquote>一苇渡江是脚印，以身为炉是心印。</blockquote>
+<hr/>
+<h2>序章·一句话点透</h2>
+<p><strong>达摩面壁九年——</strong>等什么？</p>
+<p><strong>等一个能承当的人。</strong></p>
+<p><strong>达摩以身为炉——</strong>烧什么？</p>
+<p><strong>烧自己的"我"——点亮众生的"觉"。</strong></p>
+<p><strong>师兄——</strong>这一段故事里<strong>有三个人物</strong>——<strong>匪首·长老·达摩</strong>。</p>
+<p><strong>匪首</strong>——<strong>见钱眼开·见利忘义·被五欲六尘所转</strong>——<strong>第 1-2 层（病）</strong>。</p>
+<p><strong>长老</strong>——<strong>跪拜·求饶·被外境转</strong>——<strong>第 3 层（守本分）</strong>。</p>
+<p><strong>达摩</strong>——<strong>心无敌人·以身为炉·以慈悲为火</strong>——<strong>第 9-10 层（无敌·如来）</strong>。</p>
+<p><strong>师兄——</strong>你今天问这个题目——<strong>是因为你也看到了"心有敌人"的痛苦</strong>。</p>
+<p><strong>这一篇笔记——只做一件事</strong>：</p>
+<p><strong>把"以身为炉"这 4 个字——拆到底。</strong></p>
+<p><strong>达摩为什么不躲？</strong></p>
+<p><strong>不是不能——是不忍。</strong></p>
+<p><strong>不忍众生在无明里滚——不忍那一点点善根没机会被点亮。</strong></p>
+<p><strong>这就是禅——这就是佛——这就是真慈悲。</strong></p>
+<hr/>
+<h2>第一章·名相拆解——9 个字到底在说什么</h2>
+<h3>第 1 段·"心无敌人"</h3>
+<p><strong>"心"</strong> = 觉知·觉照·能见的功能。 <strong>"无"</strong> = 没有。 <strong>"敌人"</strong> = 对立面·仇人·伤害你的人。</p>
+<p><strong>达摩的"心无敌人"</strong>——<strong>不是"我原谅你"——是"你根本不在我心里"</strong>。</p>
+<p>- "原谅"= 你还在我心里——只是我"不计较" - "无敌人"= 你根本不在我心里——你在我心里没有位置</p>
+<p><strong>师兄你看——</strong>这一句是 8 层以上的境界——</p>
+<blockquote><strong>能原谅的人——还在第 3-4 层（守本分·忘我）。</strong></blockquote>
+<blockquote><strong>能"无"的人——已经在第 8-9 层（本心·无敌）。</strong></blockquote>
+<p><strong>"心无敌人"= 心无对立 = 心无二 = 心无我 = 真空。</strong></p>
+<h3>第 2 段·"刀剑加身亦如清风拂面"</h3>
+<p><strong>"刀剑加身"</strong> = 刀砍在身上·箭射在身上。 <strong>"亦"</strong> = 也。 <strong>"如"</strong> = 像。 <strong>"清风拂面"</strong> = 微风吹过脸。</p>
+<p><strong>达摩的意思</strong>：</p>
+<blockquote><strong>"刀剑在我身上——但我的心——像被微风吹过一样——没有什么感觉。"</strong></blockquote>
+<p><strong>师兄你看——</strong>这不是"硬扛"——不是"我忍"——是"我真的没感觉"——</p>
+<blockquote><strong>"硬扛"= 疼——但忍着——第 3-4 层。</strong></blockquote>
+<blockquote><strong>"无感觉"= 真的没有对立——没有"我"和"刀"的二元——第 9-10 层。</strong></blockquote>
+<p><strong>当心"无"的时候——刀剑不是"加"在你身上——是"穿过"你——但你没"被穿过"——因为你"无"</strong>。</p>
+<h3>第 3 段·"以身为炉"</h3>
+<p><strong>"以"</strong> = 用。 <strong>"身"</strong> = 肉身·身相。 <strong>"为"</strong> = 当成。 <strong>"炉"</strong> = 炉子。</p>
+<p><strong>达摩的意思</strong>：</p>
+<blockquote><strong>"用我的肉身——当成一个炉子——烧。"</strong></blockquote>
+<p><strong>师兄你看——</strong>这一句<strong>直接破了"身"</strong>——</p>
+<p>- 普通人 = 身是"我"——要保护 - 神秀 = 身是"菩提树"——要勤拂拭 - 达摩 = 身是"炉"——要用——要烧</p>
+<p><strong>达摩把"身"从"我执"中彻底拿出来——身不是"我"——身是"工具"——工具是用来烧的——烧了也没关系——因为身不是"我"</strong>。</p>
+<p><strong>这就是"无我相"——"无我"才能"以身为炉"</strong>。</p>
+<h3>第 4 段·"为众生点燃心灯"</h3>
+<p><strong>"为"</strong> = 给。 <strong>"众生"</strong> = 一切有情。 <strong>"点燃"</strong> = 烧起·点亮。 <strong>"心灯"</strong> = 觉性·觉照·本心。</p>
+<p><strong>达摩的意思</strong>：</p>
+<blockquote><strong>"为了给一切众生——点亮他们心里的觉性。"</strong></blockquote>
+<p><strong>师兄你看——</strong>这一句是"慈悲"——</p>
+<p>- "慈悲"≠ 软弱 - "慈悲"≠ 同情 - "慈悲"= 用自己的"无我"——唤醒众生的"无明"</p>
+<p><strong>"以身为炉"——烧的不是达摩——是众生的"无明"。</strong></p>
+<p><strong>"为众生点燃心灯"——点的不是油灯——是众生的"本心"。</strong></p>
+<h3>第 5 段·"无我相·无人相·无众生相·无寿者相"</h3>
+<p><strong>这是《金刚经》的"四相"——</strong></p>
+<p>- "我相"= 我这个身 - "人相"= 别人 - "众生相"= 一切有情 - "寿者相"= 时间·寿命</p>
+<p><strong>达摩的意思</strong>：</p>
+<blockquote><strong>"我"没了——"你"没了——"他"没了——"时间"也没了——什么都没有了——"无相"。</strong></blockquote>
+<p><strong>师兄你看——</strong>这是《金刚经》最核心的"破相"——</p>
+<p>- 破"我相"= 不再住"我" - 破"人相"= 不再住"人" - 破"众生相"= 不再住"众生" - 破"寿者相"= 不再住"时间"</p>
+<p><strong>四相破尽——心就空了——空了就能"以身为炉"——因为身不是"我"——身是"空"</strong>。</p>
+<h3>第 6 段·"迷途的众生"</h3>
+<p><strong>"迷途"</strong> = 迷路 = 不认识回家的路。 <strong>"众生"</strong> = 一切有情。</p>
+<p><strong>达摩的"迷途众生"</strong>——<strong>不是骂人——是看到"众生都在无明里"</strong>。</p>
+<p><strong>师兄你看——</strong>达摩不恨匪首——达摩<strong>悲</strong>匪首——</p>
+<blockquote><strong>恨的人——自己也在恨里。</strong></blockquote>
+<blockquote><strong>悲的人——自己已经出来——但还看到众生的苦。</strong></blockquote>
+<p><strong>"迷途的众生"——5 个字——"迷途"是病——"众生"是缘——达摩看到这两个字——就看到了自己"为什么要以身为炉"</strong>。</p>
+<h3>第 7 段·"那一点点尚未泯灭的善根"</h3>
+<p><strong>"一点点"</strong> = 极少。 <strong>"尚未泯灭"</strong> = 还没有完全消失。 <strong>"善根"</strong> = 心里那个本来的善。</p>
+<p><strong>达摩的意思</strong>：</p>
+<blockquote><strong>"哪怕是强盗——心里也有一点点善——只是被五欲六尘盖住了——我要把那一点点善——点亮。"</strong></blockquote>
+<p><strong>师兄你看——</strong>这一句<strong>直接对应"佛性"</strong>——</p>
+<blockquote><strong>佛性 = 本来就有的善根 = 众生皆有佛性。</strong></blockquote>
+<blockquote><strong>强盗也有佛性——只是被贪嗔痴盖住了。</strong></blockquote>
+<blockquote><strong>达摩的"以身为炉"——就是把盖子烧掉——让佛性露出来。</strong></blockquote>
+<h3>第 8 段·"罪从心生还从心灭·一切善恶皆由心生"</h3>
+<p><strong>"罪从心生"</strong> = 罪是心造的。 <strong>"还从心灭"</strong> = 罪也是心灭的。 <strong>"一切善恶皆由心生"</strong> = 善也是心生的——恶也是心生的。</p>
+<p><strong>这是整段故事的总纲</strong>——</p>
+<p>- 匪首作恶——心造 - 长老求饶——心动 - 达摩以身为炉——心慈 - 匪首回头——心转 - 跪在达摩面前——心醒</p>
+<p><strong>一切都在"心"——心是一切的总根源</strong>。</p>
+<h3>第 9 段·"佛在灵山莫远求·灵山只在汝心头"</h3>
+<p><strong>"灵山"</strong> = 佛住的地方 = 觉悟。 <strong>"汝心头"</strong> = 你的心里。</p>
+<p><strong>这是禅宗最有名的一句</strong>——</p>
+<blockquote><strong>不要去远方求佛——佛就在你心里。</strong></blockquote>
+<p><strong>师兄你看——</strong>这一句是整个故事的"钥匙"——</p>
+<p>- 匪首心里无佛——所以抢 - 长老心里有佛——所以跪 - 达摩心里无佛——但他"是"佛</p>
+<p><strong>"是佛"≠ "求佛"——是佛"无求"——无求的人——就是佛</strong>。</p>
+<hr/>
+<h2>第二章·经典本意——《达摩传》原文 + 多版本互证</h2>
+<h3>第 1 段·《达摩传》原文</h3>
+<blockquote><strong>"达摩大师在山洞一坐就坐九年。"</strong></blockquote>
+<blockquote><strong>"……无我相，无人相，无众生相，无寿者相。</strong></blockquote>
+<blockquote><strong>达摩心中无敌人，所以刀剑加身亦如清风拂面。"</strong></blockquote>
+<blockquote><strong>"他顺势而为，随缘应化。"</strong></blockquote>
+<blockquote><strong>"达摩不是不能躲，他要以身为炉，为这些迷途的众生点燃一盏心灯。"</strong></blockquote>
+<blockquote><strong>"这一把火烧的是他的身体，点亮的却是强盗心中的那一点点尚未泯灭的善根。"</strong></blockquote>
+<blockquote><strong>"跪的不是达摩祖师的神通，是自己那一念回头的善心。"</strong></blockquote>
+<blockquote><strong>"佛在灵山莫远求，灵山只在汝心头。"</strong></blockquote>
+<blockquote>（《达摩祖师传》影视剧本·精选段落）</blockquote>
+<h3>第 2 段·《金刚经》"四相"原文</h3>
+<blockquote><strong>"须菩提，于意云何？须菩提，若菩萨有我相、人相、众生相、寿者相，即非菩萨。"</strong></blockquote>
+<blockquote>（《金刚经·离相寂灭分第十四》）</blockquote>
+<p><strong>这一句——是达摩整个故事的"经典依据"——</strong></p>
+<p><strong>达摩的"心无敌人"——破了"我相"</strong>——<strong>心无"我"——所以无对立</strong>。 <strong>达摩的"以身为炉"——破了"人相"</strong>——<strong>身是工具——不是"我"——所以能烧</strong>。 <strong>达摩的"为众生点燃心灯"——破了"众生相"</strong>——<strong>"众生"不是对象——"众生"是"我"——我即是众生</strong>。 <strong>达摩的"刀剑加身亦如清风"——破了"寿者相"</strong>——<strong>时间没了——生死没了——只有当下一念</strong>。</p>
+<h3>第 3 段·《六祖坛经》"无相忏悔"</h3>
+<blockquote><strong>"忏者，忏其前愆。从前所有恶业、愚迷、憍诳、嫉妒等罪，悉皆尽忏，永不复起，是名为忏。</strong></blockquote>
+<blockquote><strong>悔者，悔其后过。从今以后，所有恶业、愚迷、憍诳、嫉妒等罪，今已觉悟，悉皆永断，更不复作，是名为悔。"</strong></blockquote>
+<blockquote>（《六祖坛经·忏悔品第六》）</blockquote>
+<p><strong>师兄你看——</strong>这一段是慧能讲的"忏悔"——</p>
+<p>- "忏"= 翻过去 - "悔"= 不再做 - "觉"= 觉照——是核心</p>
+<p><strong>达摩的"以身为炉"——是给众生的"觉照"——</strong></p>
+<blockquote><strong>达摩的火烧了 3 个小时——3 个小时就是 3 个"觉照"的瞬间。</strong></blockquote>
+<blockquote><strong>众生的"无明"被这 3 个小时的火"烧穿"——露出了"觉"。</strong></blockquote>
+<h3>第 4 段·《达摩血脉论》</h3>
+<blockquote><strong>"即心即佛。心即是佛，佛即是心。心外无佛，佛外无心。"</strong></blockquote>
+<blockquote>（《达摩血脉论》）</blockquote>
+<p><strong>这一句——</strong>达摩自己说的——<strong>和"佛在灵山莫远求"是同一个意思</strong>——</p>
+<blockquote><strong>心 = 佛 = 灵山。</strong></blockquote>
+<blockquote><strong>达摩的"以身为炉"——是让众生看到"自己的心就是佛"。</strong></blockquote>
+<h3>第 5 段·《大乘起信论》"心真如门"</h3>
+<blockquote><strong>"心真如者，即是一法界大总相法门体。所谓心性不生不灭。"</strong></blockquote>
+<blockquote>（《大乘起信论》）</blockquote>
+<p><strong>这一句——</strong>直接对应达摩的"刀剑加身亦如清风"——</p>
+<blockquote><strong>"心性不生不灭"——心不是"肉做的"——心不随肉身生灭。</strong></blockquote>
+<blockquote><strong>肉身被火——心不被火——所以"刀剑加身亦如清风"。</strong></blockquote>
+<h3>第 6 段·《维摩诘经》"火中生莲华"</h3>
+<blockquote><strong>"火中生莲华，是可谓希有。在欲而行禅，希有亦如是。"</strong></blockquote>
+<blockquote>（《维摩诘经·佛道品》）</blockquote>
+<p><strong>这一句——</strong>是整段故事的"经典印证"——</p>
+<blockquote><strong>"火中生莲华"——火里能长出莲花——"希有"——非常稀有的事。</strong></blockquote>
+<blockquote><strong>达摩坐在火箭里——是"火中生莲华"——肉身被火——心开莲花。</strong></blockquote>
+<p><strong>师兄你看——</strong>达摩就是"火中莲花"——<strong>"在欲而行禅"——在火里·在刀剑里·在五欲六尘里——行禅</strong>。</p>
+<h3>第 7 段·《达摩四行观》"报冤行"</h3>
+<blockquote><strong>"云何报冤行？谓修道行人，若受苦时，当自念言：我从往昔，无数劫中，弃本从末，流浪诸有，多起冤憎，违害无限。今虽无犯，是我宿殃，恶业果熟，非天非人，所能见与。甘心忍受，都无冤诉。"</strong></blockquote>
+<blockquote>（《达摩四行观》）</blockquote>
+<p><strong>这一段——</strong>是达摩的"报冤行"——</p>
+<blockquote><strong>达摩被匪首打——是"宿殃"——是过去种的因——现在收的果。</strong></blockquote>
+<blockquote><strong>达摩"甘心忍受"——不抱怨——不报复——以身为炉——烧掉这个"冤"。</strong></blockquote>
+<p><strong>这就是达摩的"忍辱"——不是被动忍——是"主动"以身为炉——让"冤"被烧——被化解</strong>。</p>
+<hr/>
+<h2>第三章·历史人物印证——达摩的 3 个真实故事</h2>
+<h3>第 1 段·达摩一苇渡江（公元 520 年左右）</h3>
+<p><strong>南朝梁普通七年</strong>——<strong>达摩从南天竺（印度）乘船到广州</strong>——<strong>梁武帝派使臣迎到金陵（南京）</strong>。</p>
+<p><strong>梁武帝问</strong>："朕即位以来，造寺、写经、度僧无数，功德如何？"</p>
+<p><strong>达摩答</strong>："<strong>无功。</strong>"（因为你"住"在功德上）</p>
+<p><strong>梁武帝不能领会</strong>——<strong>达摩知道机缘不对</strong>——<strong>于是"一苇渡江"——一只芦苇过长江——北上</strong>。</p>
+<p><strong>师兄你看——</strong>这就是"心无敌人"——</p>
+<p>- 达摩"心无武帝"——武帝不在他心里 - 达摩"心无北魏"——北魏也不在他心里 - 达摩"心无中国"——中国也不在他心里 - <strong>达摩"心无一切"——一切不在他心里——所以"应无所住而生其心"</strong>。</p>
+<p><strong>"一苇渡江"——不是神通——是"心无牵挂"——所以能"过"——"过"就是"放下"</strong>。</p>
+<h3>第 2 段·达摩面壁九年（公元 527-536 年）</h3>
+<p><strong>达摩到北魏</strong>——<strong>在嵩山少林寺后山的"达摩洞"面壁</strong>——<strong>一坐就是九年</strong>。</p>
+<p><strong>九年里</strong>——<strong>有人在他面前练武·他不动</strong>——<strong>有人朝他扔石头·他不动</strong>——<strong>有人在他身后刻字·他不动</strong>——<strong>他一直面壁</strong>。</p>
+<p><strong>九年里</strong>——<strong>他"面壁"——不是面"墙"——是面"心"</strong>——</p>
+<blockquote><strong>面"墙"= 看到墙。</strong></blockquote>
+<blockquote><strong>面"心"= 看到心。</strong></blockquote>
+<blockquote><strong>看到"心"的时候——墙就没了。</strong></blockquote>
+<p><strong>九年里</strong>——<strong>他等的不是"慧可"</strong>——<strong>是等一个能承当"无相法门"的人</strong>。</p>
+<p><strong>慧可来断臂求法</strong>——<strong>达摩说"诸佛最初求道，为法忘形"——把衣钵传给他</strong>。</p>
+<p><strong>这就是"心无敌人"的真实案例——九年不动——是因为"心无"——心无·所以身不动</strong>。</p>
+<h3>第 3 段·达摩只履西归（公元 535 年）</h3>
+<p><strong>达摩传完衣钵给慧可</strong>——<strong>准备圆寂</strong>——<strong>当着众人面</strong>——<strong>"只履西归"——穿着一只鞋</strong>——<strong>往西走</strong>——<strong>回印度</strong>。</p>
+<p><strong>众人不理解</strong>——<strong>以为他走了</strong>。</p>
+<p><strong>后来北魏使臣宋云从西域回来</strong>——<strong>说在葱岭（帕米尔高原）遇到达摩</strong>——<strong>达摩手里提着一只鞋</strong>——<strong>问他"为什么来"</strong>——<strong>宋云不懂</strong>。</p>
+<p><strong>等宋云回到洛阳</strong>——<strong>打开达摩的棺材</strong>——<strong>棺材里只有一只鞋</strong>——<strong>达摩的身体不在</strong>。</p>
+<p><strong>师兄你看——</strong>这就是"以身为炉"——</p>
+<blockquote><strong>身体是工具——用了就放下——不"住"在身体上。</strong></blockquote>
+<blockquote><strong>这就是"无寿者相"——时间没了——"来去自由"——来·是工具来了——去·是工具走了。</strong></blockquote>
+<p><strong>达摩的"以身为炉"是真实的一生——</strong>他活着的时候·把"身"当成炉用——<strong>死了之后·把"身"提在手上</strong>——<strong>身从来不是"我"</strong>。</p>
+<h3>第 4 段·达摩与慧能的"传承线"</h3>
+<p><strong>达摩 → 慧可 → 僧璨 → 道信 → 弘忍 → 慧能</strong>——<strong>这是中国禅宗的"传承"</strong>。</p>
+<p><strong>师兄你看——</strong>这 6 代人——<strong>有一个共同点</strong>——</p>
+<blockquote><strong>达摩面壁九年——心无敌人。</strong></blockquote>
+<blockquote><strong>慧可断臂——心无自己。</strong></blockquote>
+<blockquote><strong>僧璨"四十年名不可得"——心无名相。</strong></blockquote>
+<blockquote><strong>道信种地——心无对立。</strong></blockquote>
+<blockquote><strong>弘忍选拔——心无偏私。</strong></blockquote>
+<blockquote><strong>慧能不识字——心无文字。</strong></blockquote>
+<p><strong>这 6 代人——都是"以身为炉"——都把"身"当工具——都"无相"——都"无住"</strong>。</p>
+<p><strong>所以"一花开五叶"——不是偶然——是这 6 代人"以身为炉"的总和</strong>。</p>
+<hr/>
+<h2>第四章·反面案例——七种"以身相为炉"的人</h2>
+<h3>第 1 种·"被刀剑气死的"人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 被人骂了几句——3 天睡不着 - 被人算计了一下——3 个月走不出来 - 被人伤了一次——3 年活在过去 - 被人欺骗了——一辈子不原谅</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我的心受了伤——我住在伤里——我是伤的人。"</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>你"住"在"伤"上——你"住"在"伤你的人"上——你"住"在"被伤"上——所以你出不来。</strong></blockquote>
+<blockquote><strong>达摩"心无敌人"——不是"原谅"——是"心里根本没人"——所以没"伤"——所以没"住"——所以没"轮回"。</strong></blockquote>
+<h3>第 2 种·"执着自己身相"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 长得好看——就觉得自己高人一等 - 长得不好看——就觉得自己矮人一截 - 老了一点——就怕被嫌弃 - 病了一下——就觉得天塌了</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"是"身"——"身"是"我"——"身"被伤 = "我"被伤。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩"以身为炉"——身不是"我"——身是工具——工具烧了——但"我"没烧——"我"是"心"——心是不生不灭的。</strong></blockquote>
+<blockquote><strong>你"住"在"身"上——所以"身"被伤——你就被伤——你就在轮回里。</strong></blockquote>
+<h3>第 3 种·"求回报的慈悲"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 帮了人——希望人说谢谢 - 做了善事——希望人记住 - 救了一个——希望人感恩 - 烧了自己——希望人看见</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>我帮你——你要回报我——你不说谢谢——我白帮了。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩的"以身为炉"——不是"求回报"——是"为了众生"——"众生"也包括"他自己"——"为众生"= "为自己"= "为佛"= "为一"。</strong></blockquote>
+<blockquote><strong>你"求回报"——你"住"在"回报"上——你"住"在"对方"上——所以你"有敌人"——"对方"就是"敌人"——"对方不回报"= "对方伤害我"。</strong></blockquote>
+<p><strong>达摩的慈悲是"无我"——你的慈悲是"有我"——两种慈悲——两种境界</strong>。</p>
+<h3>第 4 种·"以身殉"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 为了爱情——跳楼 - 为了面子——打架 - 为了钱——拼命 - 为了孩子——累死 - 为了家——牺牲</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"为"你"——"我"住"你"——"我"为"你"死了——但"我"还是"住"在"你"上。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>你"为别人"死了——但"我"还在——只是换了个形式——"我"在"死后被人纪念"上。</strong></blockquote>
+<blockquote><strong>达摩"以身为炉"——"我"不"住"在"身"上——身不是"我"——身被烧了——"我"还在——"我"在"点亮众生心灯"上。</strong></blockquote>
+<blockquote><strong>你"以身殉"——是"住"在"殉"上——是"我执"最重的表现——你没破"我相"。</strong></blockquote>
+<h3>第 5 种·"被境界所转"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 念佛看到佛——激动 3 天 - 打坐到气脉——骄傲 3 年 - 修行到"开悟"——以为成佛 - 一段时间没动静——又退心</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"境界"来了——"我"被"境界"转——"境界"走了——"我"被"失落"转。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩"以身为炉"——境界来了——火箭——达摩不被转——境界走了——天降大雪——达摩也不被转。</strong></blockquote>
+<blockquote><strong>你"住"在"境界"上——所以你被境界转。</strong></blockquote>
+<blockquote><strong>达摩"无住"——所以不被转——不被转就是"如如不动"。</strong></blockquote>
+<h3>第 6 种·"自欺欺人"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 表面念佛——心里装贪 - 表面慈悲——背后算计 - 表面修行——家里骂妻 - 表面谦卑——背后骄傲</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"在"修"——但"我"在"装"——"我"在"装"的时候——"我"还是"我"——"我"还是"住"在"装"上。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩"以身为炉"——是真的烧——不是装的——真的坐在火箭里——不躲——不是"做样子"。</strong></blockquote>
+<blockquote><strong>你的"修行"——是"装"——是"做样子"——是"住"在"我"上——所以你的"修"不是真修。</strong></blockquote>
+<blockquote><strong>"装"的人——是"我执"最重的人——比不装还差。</strong></blockquote>
+<h3>第 7 种·"恨众生"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- 恨伤害我的人——一辈子 - 恨欺骗我的人——几辈子 - 恨不爱我的人——永远 - 恨所有人——整个世界</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"恨——"我"是"恨"——"我"住在"恨"上——"我"是"仇恨"的化身。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩"心无敌人"——不是"没看到"众生在苦——是"看到了"但"不恨"。</strong></blockquote>
+<blockquote><strong>达摩"以身为炉"——是为了"化"众生的"恨"——是为了"烧"众生的"无明"——是为了"点亮"众生的"善根"。</strong></blockquote>
+<blockquote><strong>你"恨"众生——你"住"在"恨"上——你"住"在"敌人"上——你比"敌人"还苦——因为"敌人"已经忘了你——但你还在"恨"里。</strong></blockquote>
+<p><strong>达摩"以身为炉"——是对"恨"最彻底的解药——你不"恨"——你就"无敌人"——你就"无敌"——你就"如来"。</strong></p>
+<hr/>
+<h2>第五章·落地——三步走"以身为炉"的实修法门</h2>
+<h3>第 1 段·30 天入门——找到"你的炉"</h3>
+<p><strong>目标</strong>：30 天内，识别出"你住在哪里"。</p>
+<p><strong>每日 3 问</strong>：</p>
+<ol>
+<li><strong>今天我"住"在哪个"身"上？</strong></li>
+<p>- 身相（外形·衣着·健康）    - 身见（我见·我相）    - 身识（我身体的感觉）</p>
+</ol>
+<ol>
+<li><strong>今天我"住"在哪个"敌"上？</strong></li>
+<p>- 伤害过我的人    - 我不原谅的事    - 我怨恨的过</p>
+</ol>
+<ol>
+<li><strong>今天我有没有"以身为炉"的片刻？</strong></li>
+<p>- 一秒钟就好。    - 帮人而不期待回报    - 受伤而不留伤    - 牺牲而不"住"在牺牲上</p>
+</ol>
+<p><strong>30 天后</strong>：你会发现——<strong>"我"是"住"的总根源——"我住"在"身"上——"我住"在"敌"上——"我住"在"过去"上——我出不来是因为我"住"。</strong></p>
+<h3>第 2 段·1 年稳固——从"住"到"无住"</h3>
+<p><strong>目标</strong>：1 年内，从"住"到"无住"。</p>
+<p><strong>每月 1 主题</strong>：</p>
+<p>- <strong>第 1 月</strong>：破"我相"——身不是我——身是工具。 - <strong>第 2 月</strong>：破"人相"——你不是我执的对象——你是当下的因缘。 - <strong>第 3 月</strong>：破"众生相"——众生不是我救的对象——众生是我自己。 - <strong>第 4 月</strong>：破"寿者相"——时间不是束缚——当下是全部。 - <strong>第 5 月</strong>：破"我执"——我不是固定的我——我是当下的觉照。 - <strong>第 6 月</strong>：破"法执"——佛法也不是固定——佛法是工具。 - <strong>第 7 月</strong>：破"空执"——空也不是固定——空是活生生的。 - <strong>第 8 月</strong>：破"佛执"——佛也不是对象——佛就是当下的心。 - <strong>第 9 月</strong>：破"师执"——师父也是工具——师父不是"我执"的对象。 - <strong>第 10 月</strong>：破"经执"——经文也是工具——经文不是"我执"的对象。 - <strong>第 11 月</strong>：破"禅执"——禅也不是固定——禅是活生生的当下。 - <strong>第 12 月</strong>：破"修执"——修也不是对象——修就是当下的心。</p>
+<p><strong>1 年后</strong>：你会发现——<strong>所有的"住"都是"我执"——我"住"在哪里——哪里就是我的"炉"——"炉"是用来烧的——不是用来"住"的</strong>。</p>
+<h3>第 3 段·3 年突破——从"以身为炉"到"以心为灯"</h3>
+<p><strong>目标</strong>：3 年内，从"以身为炉"到"以心为灯"。</p>
+<p><strong>3 个突破</strong>：</p>
+<p><strong>第 1 年突破</strong>：<strong>以身为炉</strong>——肉身的"炉"——身体受苦——心不被苦转。</p>
+<p><strong>第 2 年突破</strong>：<strong>以心为灯</strong>——心里的"灯"——心里清楚——身心都不被转。</p>
+<p><strong>第 3 年突破</strong>：<strong>以觉为剑</strong>——觉性的"剑"——觉照一切——连"炉"和"灯"都放下。</p>
+<p><strong>3 年后</strong>：<strong>你不是"以身为炉"——你是"炉"——你"是"炉——你"是"灯——你"是"剑——你"是"无我"</strong>。</p>
+<h3>第 4 段·终身功夫——"以身为炉" + "以心为灯" + "以觉为剑"</h3>
+<p><strong>口诀</strong>：</p>
+<blockquote><strong>以身为炉 = 肉身是工具。</strong></blockquote>
+<blockquote><strong>以心为灯 = 心是觉照。</strong></blockquote>
+<blockquote><strong>以觉为剑 = 觉照一切相皆空。</strong></blockquote>
+<blockquote><strong>三句 = 破相·破执·破住。</strong></blockquote>
+<p><strong>师兄你看——</strong>达摩的"以身为炉"——是初地——<strong>破"身相"</strong>。 <strong>达摩的"刀剑加身亦如清风"——是 7 地——</strong>破"对立"<strong>。 </strong>达摩的"为众生点燃心灯"——是 9-10 地——<strong>破"众生相"</strong>。</p>
+<p><strong>三层功夫——一层比一层深——一层比一层无</strong>。</p>
+<hr/>
+<h2>第六章·回扣原话——5 句关键台词的逐句落地</h2>
+<h3>第 1 句·"心无敌人，所以刀剑加身亦如清风拂面"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"心无敌人"</strong>——心没有对立——心里没有"我"和"敌人"——心是空的 - <strong>"刀剑加身"</strong>——外部的伤害——肉身的痛苦 - <strong>"亦"</strong>——也 - <strong>"如清风拂面"</strong>——像微风吹过——心不被伤</p>
+<p><strong>师兄你看——</strong>这 16 个字——是 9-10 层的实修——</p>
+<blockquote><strong>心空——刀剑只是"过客"——过客不伤我——因为我"无我"。</strong></blockquote>
+<h3>第 2 句·"达摩不是不能躲，他要以身为炉"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"不是不能躲"</strong>——达摩有能力躲——达摩有神通 - <strong>"他要"</strong>——主动选择 - <strong>"以身为炉"</strong>——把身当炉——用身来烧</p>
+<p><strong>这一句</strong>——<strong>破"我相"</strong>——身不是"我"——身是"炉"——炉要烧——所以身要烧——所以主动烧。</p>
+<p><strong>这是达摩的"主动"——不是被动——是慈悲的主动——是"我要为你烧"——是"为众生点燃心灯"的主动</strong>。</p>
+<h3>第 3 句·"这一把火烧的是他的身体，点亮的却是强盗心中的那一点点尚未泯灭的善根"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"烧的是他的身体"</strong>——肉身被火——这是"炉"的功能 - <strong>"点亮的是"</strong>——不是"烧成"——是"点亮" - <strong>"强盗心中"</strong>——哪怕是强盗——心里也有 - <strong>"那一点点"</strong>——极少 - <strong>"尚未泯灭的善根"</strong>——还没有消失的善</p>
+<p><strong>这一句</strong>——<strong>是整个故事的核心</strong>——</p>
+<blockquote><strong>达摩的火——烧的不是"消灭"——是"点亮"。</strong></blockquote>
+<blockquote><strong>点亮的方式是"以身为炉"——用肉身做燃料——用慈悲做火——用善根做光。</strong></blockquote>
+<blockquote><strong>这一句——对应"佛性"——佛性是本来就有的——佛性需要"火"来点亮——火是"慈悲"——慈悲是"达摩的以身为炉"。</strong></blockquote>
+<h3>第 4 句·"跪的不是达摩祖师的神通，是自己那一念回头的善心"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"跪的不是"</strong>——不是跪向"外" - <strong>"达摩祖师"</strong>——不是跪向"佛" - <strong>"的神通"</strong>——不是跪向"力" - <strong>"是自己"</strong>——是自己 - <strong>"那一念"</strong>——是一个瞬间 - <strong>"回头的"</strong>——转过来 - <strong>"善心"</strong>——善的心</p>
+<p><strong>这一句</strong>——<strong>是"佛在灵山莫远求"的最佳注释</strong>——</p>
+<blockquote><strong>跪的不是达摩——是"自己的善心"——"善心"是"佛"——"佛"在"自己心里"——不在"外面"。</strong></blockquote>
+<p><strong>师兄你看——</strong>这一句话<strong>对应"心即佛"</strong>——<strong>佛在心里——不心外求</strong>。</p>
+<h3>第 5 句·"佛在灵山莫远求，灵山只在汝心头"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"灵山"</strong> = 佛住的地方 = 觉悟的境界 - <strong>"莫远求"</strong> = 不要去远方求 - <strong>"灵山只在汝心头"</strong> = 灵山就在你心里</p>
+<p><strong>这一句</strong>——是整个故事的总收——</p>
+<blockquote><strong>达摩以身为炉——烧的是"外求"——点亮的是"内觉"。</strong></blockquote>
+<blockquote><strong>外求的人——去远方求佛——永远到不了。</strong></blockquote>
+<blockquote><strong>内觉的人——当下就是佛——当下就是灵山。</strong></blockquote>
+<hr/>
+<h2>第七章·结语——以身为炉，是禅的极致</h2>
+<p><strong>师兄——</strong>你今天问这个题目——<strong>是因为你看到了"心有敌人"的苦</strong>。</p>
+<p><strong>达摩告诉你</strong>——<strong>不是"消灭敌人"——是"心无敌人"</strong>。</p>
+<p><strong>心无敌人</strong>——<strong>是 9-10 层</strong>——</p>
+<p>- <strong>第 1-2 层（病）</strong>——有敌人——恨——嗔——轮回 - <strong>第 3-4 层（药）</strong>——守本分·忘我——开始放下 - <strong>第 5-6 层（药）</strong>——真我·破相——看穿"敌人"的虚妄 - <strong>第 7-8 层（效）</strong>——无为·本心——不被"敌人"转 - <strong>第 9-10 层（果）</strong>——无敌·如来——心无敌人·以身为炉</p>
+<p><strong>师兄——</strong>你今天在哪一层？</p>
+<p>- <strong>1-2 层</strong>——还在恨——被"敌人"转 - <strong>3-4 层</strong>——开始放——但还在"放"上 - <strong>5-6 层</strong>——看穿"敌人"是空的——但还有"看穿"的我 - <strong>7-8 层</strong>——心不动——但还有"不动"的心 - <strong>9-10 层</strong>——心无敌人——以身为炉——以慈悲为火——以众生为灯</p>
+<p><strong>达摩的"以身为炉"——是 10 层的极致——也是 1 层的起步——</strong></p>
+<blockquote><strong>如果你还在 1-2 层——达摩告诉你"以身为炉"是终点。</strong></blockquote>
+<blockquote><strong>如果你已经在 9-10 层——达摩告诉你"以身为炉"是日常。</strong></blockquote>
+<p><strong>师兄——</strong>这一篇笔记——<strong>只做一件事</strong>——</p>
+<p><strong>把"以身为炉"这 4 个字——拆到底——拆到你能用。</strong></p>
+<p><strong>从"今天被人骂了一句"开始——</strong></p>
+<p><strong>你能不能——不"住"在"骂"上——不"住"在"骂你的人"上——不"住"在"被骂的我"上——</strong></p>
+<p><strong>这一刻——你就是达摩——你就在"以身为炉"——你就在"心无敌人"。</strong></p>
+<hr/>
+<h2>附录·15 条经典原句索引</h2>
+<ol>
+<li><strong>《达摩血脉论》</strong>："即心即佛。心即是佛，佛即是心。心外无佛，佛外无心。"</li>
+<li><strong>《金刚经·离相寂灭分第十四》</strong>："若菩萨有我相、人相、众生相、寿者相，即非菩萨。"</li>
+<li><strong>《达摩四行观》"报冤行"</strong>："甘心忍受，都无冤诉。"</li>
+<li><strong>《维摩诘经·佛道品》</strong>："火中生莲华，是可谓希有。在欲而行禅，希有亦如是。"</li>
+<li><strong>《六祖坛经·忏悔品》</strong>："忏其前愆……悔其后过。"</li>
+<li><strong>《大乘起信论》"心真如门"</strong>："所谓心性不生不灭。"</li>
+<li><strong>《楞严经》</strong>："纵灭一切见闻觉知，内守幽闲，犹为法尘分别影事。"</li>
+<li><strong>《坛经·般若品》</strong>："菩提自性，本来清净，但用此心，直了成佛。"</li>
+<li><strong>《传习录》"四句教"</strong>："无善无恶心之体，有善有恶意之动，知善知恶是良知，为善去恶是格物。"</li>
+<li><strong>《六祖坛经·行由品》</strong>："不识本心，学法无益。识心见性，即悟大意。"</li>
+<li><strong>《摩诃般若波罗蜜多心经》</strong>："是诸法空相，不生不灭，不垢不净，不增不减。"</li>
+<li><strong>《达摩四行观》"无所求行"</strong>："众生无量劫来，常求诸欲，颠倒执着……有智之人，明知是苦。"</li>
+<li><strong>《永嘉证道歌》</strong>："了即业障本来空，未了应须还宿债。"</li>
+<li><strong>《达摩祖师传》</strong>："佛在灵山莫远求，灵山只在汝心头。"</li>
+<li><strong>《达摩祖师传》</strong>："罪从心生还从心灭，一切善恶皆由心生。"</li>
+</ol>
+<hr/>
+<p><strong>写到这里——师兄——</strong>达摩的"以身为炉"——不是神话——是心性的实相。</p>
+<p><strong>当心空了——身就是炉——炉就是火——火就是光——光就是心——心就是佛。</strong></p>
+<p><strong>师兄你今天看到了这个故事——</strong>说明你心里那一点点善根——<strong>正在被点亮了</strong>。</p>
+<p>—— 静思 / 悟真</p>
+  <div class="seal">悟 真</div>
+  <div class="footer">静思出品 · 2026-07-17 · 一部电影，一千年，一条路</div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const btnPlay = document.getElementById('btnPlay');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const curTime = document.getElementById('curTime');
+const totalTime = document.getElementById('totalTime');
+const btnMute = document.getElementById('btnMute');
+const volSlider = document.getElementById('volSlider');
+const rateBtns = document.querySelectorAll('.rate-btn');
+
+function fmt(s) {
+  if (isNaN(s)) return '--:--';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+  totalTime.textContent = fmt(audio.duration);
+});
+
+btnPlay.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    btnPlay.textContent = '⏸';
+    btnPlay.classList.add('playing');
+  } else {
+    audio.pause();
+    btnPlay.textContent = '▶';
+    btnPlay.classList.remove('playing');
+  }
+});
+
+audio.addEventListener('timeupdate', () => {
+  const pct = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = pct + '%';
+  curTime.textContent = fmt(audio.currentTime);
+});
+
+progressBar.addEventListener('click', (e) => {
+  const rect = progressBar.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+});
+
+btnMute.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  btnMute.textContent = audio.muted ? '🔊' : '🔇';
+  btnMute.classList.toggle('mute-active', audio.muted);
+});
+
+volSlider.addEventListener('input', (e) => {
+  audio.volume = e.target.value / 100;
+  if (audio.volume > 0 && audio.muted) {
+    audio.muted = false;
+    btnMute.textContent = '🔇';
+    btnMute.classList.remove('mute-active');
+  }
+});
+
+rateBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    rateBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    audio.playbackRate = parseFloat(btn.dataset.rate);
+  });
+});
+
+audio.addEventListener('ended', () => {
+  btnPlay.textContent = '▶';
+  btnPlay.classList.remove('playing');
+  progressFill.style.width = '0%';
+});
+</script>
+</body>
+</html>
