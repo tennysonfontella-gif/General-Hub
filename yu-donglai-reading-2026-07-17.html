@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>于东来经营与人生哲学读书笔记</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Times New Roman', 'Songti SC', 'STSong', serif;
+    background: #faf8f5;
+    color: #2a2433;
+    line-height: 1.85;
+    font-size: 17px;
+    padding: 40px 0;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+
+  /* 顶部 */
+  .header {
+    background: #22223b;
+    color: #f2e9e4;
+    padding: 60px 0 50px;
+    margin-bottom: 50px;
+    border-bottom: 6px solid #9a8c98;
+  }
+  .header-inner { max-width: 780px; margin: 0 auto; padding: 0 28px; }
+  .header .tag {
+    display: inline-block;
+    background: rgba(242,233,228,0.15);
+    color: #c9ada7;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 22px;
+  }
+  .header h1 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+  }
+  .header .subtitle {
+    font-size: 16px;
+    color: #c9ada7;
+    line-height: 1.7;
+    font-style: italic;
+    border-left: 3px solid #9a8c98;
+    padding-left: 16px;
+  }
+
+  /* 章节标题 */
+  h2 {
+    font-size: 26px;
+    color: #22223b;
+    margin: 60px 0 24px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #9a8c98;
+    font-weight: 700;
+  }
+  h2 .num {
+    color: #9a8c98;
+    font-size: 18px;
+    margin-right: 12px;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 20px;
+    color: #4a4458;
+    margin: 36px 0 14px;
+    font-weight: 700;
+  }
+
+  /* 正文 */
+  p { margin: 14px 0; }
+  p strong { color: #22223b; font-weight: 700; }
+
+  /* 引用块 */
+  blockquote {
+    background: #f2e9e4;
+    border-left: 4px solid #9a8c98;
+    margin: 18px 0;
+    padding: 16px 22px;
+    color: #4a4458;
+    font-style: italic;
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote p { margin: 6px 0; }
+
+  /* 反常识块 */
+  .contrarian {
+    background: #fff;
+    border: 1px solid #9a8c98;
+    border-left: 5px solid #9a8c98;
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 4px;
+  }
+  .contrarian .label {
+    display: inline-block;
+    background: #9a8c98;
+    color: #faf8f5;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  /* 步骤卡 */
+  .step {
+    background: rgba(160,232,184,0.15);
+    border: 1px solid #a0e8b8;
+    border-left: 5px solid #a0e8b8;
+    padding: 22px 26px;
+    margin: 22px 0;
+    border-radius: 6px;
+  }
+  .step .step-num {
+    display: inline-block;
+    background: #4a8a5e;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    font-weight: 700;
+    margin-right: 10px;
+    font-size: 15px;
+  }
+  .step h3 { margin: 0 0 12px 0; color: #2d4a36; }
+
+  /* 5 信念 */
+  .beliefs {
+    background: #22223b;
+    color: #f2e9e4;
+    padding: 30px 32px;
+    border-radius: 6px;
+    margin: 30px 0;
+  }
+  .beliefs .beliefs-title {
+    color: #c9ada7;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  .beliefs ol { list-style: none; counter-reset: b; }
+  .beliefs li {
+    counter-increment: b;
+    padding: 12px 0 12px 42px;
+    position: relative;
+    border-bottom: 1px dashed rgba(242,233,228,0.15);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  .beliefs li:last-child { border-bottom: none; }
+  .beliefs li::before {
+    content: counter(b);
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    background: #9a8c98;
+    color: #22223b;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  /* 延伸阅读 */
+  .reading {
+    background: #fff;
+    border: 1px solid #c9ada7;
+    padding: 24px 28px;
+    border-radius: 6px;
+    margin: 24px 0;
+  }
+  .reading h3 { color: #22223b; margin-top: 0; }
+  .reading ul { list-style: none; padding: 0; }
+  .reading li {
+    padding: 8px 0 8px 22px;
+    position: relative;
+    color: #4a4458;
+  }
+  .reading li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #9a8c98;
+    font-weight: 700;
+  }
+  .reading li strong { color: #22223b; }
+
+  /* 编者按 */
+  .note {
+    background: rgba(160,232,184,0.15);
+    border-left: 4px solid #a0e8b8;
+    padding: 24px 28px;
+    border-radius: 0 6px 6px 0;
+    font-size: 0.95em;
+    color: #4a4458;
+    line-height: 1.8;
+    margin-top: 60px;
+  }
+  .note strong { color: #2d4a36; }
+
+  /* 页脚 */
+  .footer {
+    text-align: center;
+    color: #9a8c98;
+    font-size: 13px;
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid #c9ada7;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <span class="tag">静思读书会 · 人物志</span>
+    <h1>于东来经营与人生哲学<br>读书笔记</h1>
+    <p class="subtitle">
+      一个 60 岁、负债过 30 万、最后把一家河南四线超市做成"中国零售业神话"的男人，用一句"你活着，最起码你将来还有还的机会"教会无数负债人如何重活一次。
+    </p>
+  </div>
+</div>
+
+<div class="container">
+
+<p style="text-align: center; color: #9a8c98; font-size: 14px; margin-bottom: 40px;">
+  基于一段 4 分多钟的直播对谈 + 于东来过去三十年公开经营哲学整理 · 2026-07-17
+</p>
+
+<h2><span class="num">一、</span>这段 4 分钟的对话里，于东来说了哪些"反常识"的话</h2>
+
+<p>这段视频能爆，是因为于东来说的每句话都在"反常识"——</p>
+
+<div class="contrarian">
+  <span class="label">反常识 1</span>
+  <p><strong>"负债就负债，还不起就还不起。"</strong></p>
+  <p>普通人会教你"再努力一点、再坚持一下、赶紧找副业"。于东来让你先停下来。</p>
+</div>
+
+<div class="contrarian">
+  <span class="label">反常识 2</span>
+  <p><strong>"你欠别人的钱，别人也有责任。"</strong></p>
+  <p>这是全场最颠覆的一句话。借钱给你的人，他也要承担"错估你还款能力"的责任。这不是甩锅，是事实。</p>
+</div>
+
+<div class="contrarian">
+  <span class="label">反常识 3</span>
+  <p><strong>"不快乐就对不起自己。"</strong></p>
+  <p>一个快 60 岁的男人，在直播里对另一个男人说"晚上没事喝个小酒，跟老婆看个电影"——这不是鸡汤，是严肃的处方。</p>
+</div>
+
+<div class="contrarian">
+  <span class="label">反常识 4</span>
+  <p><strong>"你的命是无价的，给你一个宇宙你也换不来。"</strong></p>
+  <p>现代社会教你"赚钱、翻身、再来一次"，于东来教你"先别死"。</p>
+</div>
+
+<p>这 4 句话的背后，是一套完整的<strong>于东来哲学</strong>。</p>
+
+
+<h2><span class="num">二、</span>于东来哲学的 5 个核心命题</h2>
+
+<h3>命题 1：自由比赚钱重要</h3>
+
+<blockquote>
+  <p>"做企业，不是为了赚钱，是为了让自己和更多人自由地生活。"</p>
+</blockquote>
+
+<p>于东来 1992 年负债 30 万开始创业，1995 年开出第一家"胖东来"超市的前身。2015 年前后，胖东来已经做到河南许昌、新乡两地年销 50 亿规模。但他坚持：<strong>不上市，不扩张，不开新城市。</strong></p>
+
+<p>他公开说："上市就是把自己卖了。"</p>
+
+<p>不是装清高，是他算过一笔账——</p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li>上市要业绩承诺，业绩要增长，增长要加杠杆</li>
+  <li>加杠杆就要压员工、压供应链、压品质</li>
+  <li>一旦开始压，你就不是在做"让人幸福"的生意，而是在做"让股东赚钱"的生意</li>
+</ul>
+
+<p>胖东来员工的工资是同行业 1.5-2 倍，管理层年薪百万级，店长年假 40 天，普通员工 30 天，<strong>每周二全店闭店</strong>。</p>
+
+<p><strong>于东来算的不是利润，是"自由"——</strong></p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li>员工不被工资绑架的自由</li>
+  <li>顾客不被焦虑推销绑架的自由</li>
+  <li>自己不被资本裹挟的自由</li>
+</ul>
+
+<p>负债人听他说"还不起就还不起"，本质上就是这套哲学：负债只是数字，<strong>自由之身比任何数字都贵</strong>。</p>
+
+
+<h3>命题 2：先学会生活，再学会创业</h3>
+
+<blockquote>
+  <p>"如果我们懂得怎样生活了，复原了以后，我们慢慢开始展开我们的进入社会，创业呢我要专业啊，从事哪个行业的经营啊那你经营你得懂啊懂，所以说你要去学嘛，边打工边学习，这样通过两三年的这种时间，就稳扎稳打的开始创业。"</p>
+</blockquote>
+
+<p>这是于东来开给所有负债人的第一张处方：<strong>先学会生活，再谈事业。</strong></p>
+
+<p>他的逻辑链是这样的：</p>
+<p>1. <strong>不懂生活的人，一定会盲目创业</strong>——因为他对"什么是好的"没有判断标准，看到别人做什么赚钱就跟着做</p>
+<p>2. <strong>盲目创业的人，一定会负债</strong>——因为他既不懂行业，也不懂自己，更不懂风险</p>
+<p>3. <strong>一旦负债，唯一能救你的不是"再创业一次"，而是"先回到生活本身"</strong>——重新理解什么是"足够"</p>
+
+<p><strong>于东来自己在 1992 年负债 30 万后做的事情就是回到生活——</strong></p>
+<p>他没有急着再开第二家店，没有急着做连锁加盟。他花了 3 年时间，把一家小店做扎实，理解每一个供应商、每一批商品、每一个员工的真实情况。1995 年才开出胖东来前身"望月楼胖子店"。这一扎，就是 30 年。</p>
+
+
+<h3>命题 3：痛苦不是用来背负的，是用来放下的</h3>
+
+<blockquote>
+  <p>"不要背这个包袱，挣钱慢的还，还不了了就拉倒，是不是，那你得尽力就行了，没必要去把这种痛苦往自己身上加压。"</p>
+</blockquote>
+
+<p>这是于东来哲学里最反"成功学"的部分。</p>
+
+<p>中国主流成功学教你：</p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li>痛苦是成功的燃料</li>
+  <li>失败是成功之母</li>
+  <li>吃得苦中苦，方为人上人</li>
+</ul>
+
+<p>于东来教你的正好相反：</p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li><strong>痛苦不是燃料，是消耗</strong></li>
+  <li><strong>失败不是阶梯，是信号</strong>——告诉你"这条路对你不通"</li>
+  <li><strong>"吃得苦中苦"不会让你成为人上人，只会让你变成"苦中苦"</strong></li>
+</ul>
+
+<p>他说的"不要背这个包袱"，不是"假装痛苦不存在"，而是<strong>承认痛苦，然后不放大它</strong>。</p>
+
+<p>负债人最大的问题不是"债本身"，是"我对不起家人、我是个失败者、我这辈子完了"——这一层情绪。于东来把这一层扒掉：</p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li>负债 100 万，对一个普通人来说"很多"</li>
+  <li>但对一个 60 岁的男人来说"我 92 年就负债 30 万了，那时候负担比你大多了"</li>
+  <li>你的"天塌了"，在更长的时间尺度上，只是"人生正常的一种经历"</li>
+</ul>
+
+<p><strong>把痛苦"相对化"，不是自我欺骗，是认知校准。</strong></p>
+
+
+<h3>命题 4：爱自己，才有能力爱别人</h3>
+
+<blockquote>
+  <p>"首先你要知道你自己的命是无价的，给你一个宇宙你也换不来你自己的命，知道吧，首先要尊重自己的命。"</p>
+</blockquote>
+
+<p>于东来哲学的底层，是<strong>自我尊重</strong>。</p>
+
+<p>他反复强调的"爱自己"，不是消费主义那套"爱自己就是给自己买东西"，是——</p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li><strong>不为了还债去做违法的事</strong>（"如果去做违法的事情，从负债开始走向犯罪，失去自由，一生就彻底完了"）</li>
+  <li><strong>不为了还债牺牲陪伴孩子的时间</strong>（"保护好自己的孩子……不能跟孩子之间失去真诚"）</li>
+  <li><strong>不为了还债把自己逼抑郁</strong>（"你自己想不开死了，那机会也没了"）</li>
+  <li><strong>不为了还债牺牲当下生活</strong>（"该吃普通一点的还是挺快乐的，该听音乐该休息还是一样"）</li>
+</ul>
+
+<p>这套哲学的内在逻辑是：<strong>你只有先活着、自由着、快乐着，才有可能把债还完；把自己逼到绝境，反而丧失了还债的本钱。</strong></p>
+
+<p>这是反直觉的，但无数悲剧证明它是对的——很多人不是被债压垮的，是被"我必须立刻还清"这个念头压垮的。</p>
+
+
+<h3>命题 5：分享，是于东来哲学的真正落点</h3>
+
+<blockquote>
+  <p>"我得拿着自己的自由，拿自己的健康，拿自己的生命，来去做这种希望大家幸福的事情。"</p>
+</blockquote>
+
+<p>为什么一个快 60 岁的企业家，要在直播间里跟一个负债 100 万的陌生人连麦 4 分钟？为什么他说"你比我的状态要好太多太多了"？为什么他说"我有过你这样的想法，真的幸亏没有走这些弯路"？</p>
+
+<p>因为于东来自己<strong>就曾经站在那个边缘</strong>。</p>
+
+<p>1992 年负债 30 万，那是一个普通工人 30 年的工资。他父亲早年因病离世。他得了癌症。他开公司被各种"打压、伤害"，被同行围剿过，被供应商背叛过，被误解过。</p>
+
+<p>他活下来了。活下来之后，他开始做一件事：<strong>把自己踩过的坑、走过的弯路、悟出来的道理，免费分享给所有人。</strong></p>
+
+<p>"胖东来"这三个字现在是中国零售业的天花板，但于东来真正的"产品"不是超市，是<strong>这套哲学</strong>——</p>
+<ul style="margin-left: 24px; color: #4a4458;">
+  <li>把员工当人</li>
+  <li>把顾客当人</li>
+  <li>把自己当人</li>
+  <li>把员工当家人的同时，也把员工的家人当自己家人</li>
+  <li>把超市做成"让所有人活得更像人"的地方</li>
+</ul>
+
+<p>他开超市不为了赚钱，开超市是为了"证明一种活法"。</p>
+
+
+<h2><span class="num">三、</span>于东来给负债人的 3 个具体步骤</h2>
+
+<p style="color: #4a4458;">这是这份笔记真正"能落地"的部分。看懂了哲学，还得有下一步。</p>
+
+<div class="step">
+  <h3><span class="step-num">1</span>立刻停止"再借一笔来还上一笔"</h3>
+  <blockquote>
+    <p>"还不起就还不起，认账就行了嘛。"</p>
+  </blockquote>
+  <ul style="margin-left: 24px; color: #2d4a36; margin-top: 12px;">
+    <li>把所有债务列一张表：金额、债权人、利率、每月最低还款、是否违法催收</li>
+    <li>把"今天就要还"的债务和"还能拖"的债务分开</li>
+    <li>联系银行（个人债务）说明情况，申请停息挂账或展期</li>
+    <li>对"违法催收"的债务，<strong>保留证据，报警或起诉</strong>——不要忍</li>
+    <li>删掉所有"快速翻身""债务重组"的广告电话</li>
+  </ul>
+  <p style="margin-top: 14px;"><strong>核心原则：不增加新债。</strong>这一步做不到，后面所有步骤都是空话。</p>
+</div>
+
+<div class="step">
+  <h3><span class="step-num">2</span>把生活成本压到"绝对最低"，但不允许快乐归零</h3>
+  <blockquote>
+    <p>"该吃普通一点的还是挺快乐的，该听音乐该休息还是一样，不要背这个包袱。"</p>
+  </blockquote>
+  <ul style="margin-left: 24px; color: #2d4a36; margin-top: 12px;">
+    <li>算清每月"保命钱"：房租（最便宜的）、基础伙食、交通、通信</li>
+    <li>一切非保命支出暂停：外卖、咖啡、新衣服、看剧会员、外出吃饭</li>
+    <li>但<strong>保命钱里必须留出一项"快乐预算"</strong>——哪怕每周 50 块买束花、或者跟朋友吃顿 30 块的牛肉面</li>
+    <li>快乐预算的作用：<strong>防止你陷入抑郁</strong>——抑郁会让你失去赚钱能力，恶性循环</li>
+  </ul>
+  <p style="margin-top: 14px;">这一条，于东来在视频里反复强调：不要"整天苦闷的生活"。</p>
+</div>
+
+<div class="step">
+  <h3><span class="step-num">3</span>从"小生意"或"打工"开始，不做"翻身仗"</h3>
+  <blockquote>
+    <p>"从做小生意开始来，一步一步来，就像摆地摊一样。"</p>
+  </blockquote>
+  <ul style="margin-left: 24px; color: #2d4a36; margin-top: 12px;">
+    <li><strong>不要做"翻本"计划</strong>——所有让你觉得"这次一定行"的项目，都是危险信号</li>
+    <li>从"你能力圈内的事"开始：能卖什么、能不能去做小工、能不能做钟点工</li>
+    <li>选择"现金即时到账"的工作：不要做需要先垫资的项目</li>
+    <li>每天的收入用来还"最低还款"，剩下的还"本金大、利息低的"</li>
+    <li>设定一个"3 年还完"的目标——不是"明年就翻身"</li>
+  </ul>
+  <p style="margin-top: 14px;"><strong>于东来在视频里专门提到一个亿万富翁负债后去深圳摆地摊的故事。</strong>地摊不是"丢脸"，是"在最小风险下保住现金流"。</p>
+</div>
+
+
+<h2><span class="num">四、</span>于东来哲学的底层：5 个信念</h2>
+
+<p style="color: #4a4458;">如果你只能记住 5 句话，请记住这 5 句：</p>
+
+<div class="beliefs">
+  <div class="beliefs-title">FIVE BELIEFS · 五个信念</div>
+  <ol>
+    <li>你的命比任何债都贵。</li>
+    <li>自由比赚钱重要。</li>
+    <li>不会生活的人，一定会盲目创业。</li>
+    <li>痛苦不是燃料，是消耗。</li>
+    <li>你是你生命里最该被尊重的人。</li>
+  </ol>
+</div>
+
+
+<h2><span class="num">五、</span>给愿意继续读的人</h2>
+
+<p>于东来没有写过书。但他过去 30 年的"经营 + 直播 + 内部讲话"，构成了一份厚厚的"非正式著作"。</p>
+
+<p>如果你想继续读：</p>
+
+<div class="reading">
+  <h3>延伸阅读 4 条路径</h3>
+  <ul>
+    <li><strong>胖东来员工手册</strong>（公开版）——看于东来如何对待员工</li>
+    <li><strong>于东来历年直播合集</strong>（抖音/视频号）——他每年要做 100+ 场直播分享</li>
+    <li><strong>《把员工当人，把顾客当人》</strong>（非官方整理）——知乎和公众号上有大量于东来语录</li>
+    <li><strong>胖东来商品陈列与选品逻辑</strong>（雷军、贾国龙等企业家多次探店后公开评价）——看他如何"用产品表达哲学"</li>
+  </ul>
+</div>
+
+
+<h2 style="border-bottom: none; margin-top: 70px;">写在最后</h2>
+
+<p>于东来在视频结尾说了一句话：</p>
+<blockquote>
+  <p>"你心里边想不开的时候，就想想东来哥就行了，东来哥是我的朋友，东来哥是我的哥。"</p>
+</blockquote>
+
+<p>一个快 60 岁的男人，把 1000 多万抖音粉丝当成自己的兄弟姐妹。他不是在做"网红"，他是在做<strong>"一个人能对另一个人说的最真的话"</strong>。</p>
+
+<p>负债 100 万不是你的错。盲目创业是这个时代 + 你自己不成熟共同造成的。但从今天开始，<strong>你必须做一个选择</strong>：</p>
+<p style="text-align: center; font-size: 18px; color: #22223b; margin: 30px 0;">
+是把痛苦放大成"我这辈子完了"，<br>
+还是接受它，然后<strong>一步一步、一块钱一块钱、把日子过回来</strong>。
+</p>
+
+<p>于东来选了后者。他 30 年前选了。你今天也可以选。</p>
+
+
+<div class="note">
+  <strong>编者按：</strong>这份笔记基于 2026 年 7 月公开流传的一段于东来与负债人连麦的直播视频，并结合于东来 1992 年至今公开的经营哲学整理。<br>
+  于东来本人没有读过这份笔记，也未授权。但他应该不会反对——因为他做这一切，就是为了"希望更多的人能少走弯路"。<br><br>
+  整理者：静思读书会<br>
+  2026-07-17
+</div>
+
+<div class="footer">
+  静思读书会 · 人物志系列 · 于东来专题<br>
+  本笔记基于公开内容整理，仅供学习与分享
+</div>
+
+</div>
+
+</body>
+</html>
