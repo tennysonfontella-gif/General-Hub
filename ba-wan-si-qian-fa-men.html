@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八万四千法门——佛家为什么不是"八万三千"也不是"八万五千"？ · 悟真读书笔记</title>
+<style>
+:root {
+  --bg: #faf6ef;
+  --card: #f3ead8;
+  --text: #3d3027;
+  --brown: #8a5a2b;
+  --gold: #b08c4a;
+  --red: #c8423b;
+  --light: #e8dcc0;
+  --line: #d4c5a3;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 2.4;
+  font-size: 20px;
+}
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px 24px 80px;
+}
+h1 {
+  text-align: center;
+  font-size: 38px;
+  color: var(--brown);
+  margin: 30px 0 20px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+}
+.hero {
+  background: linear-gradient(135deg, #f5ead0 0%, #faf2dc 100%);
+  border-radius: 16px;
+  padding: 30px 30px 26px;
+  margin: 20px 0 40px;
+  box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+  border: 1px solid var(--line);
+}
+.hero-sub {
+  text-align: center;
+  color: var(--brown);
+  font-size: 16px;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+.audio-player {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 22px 0 8px;
+}
+.audio-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-play {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(138, 90, 43, 0.3);
+  transition: transform 0.15s;
+}
+.btn-play:hover { transform: scale(1.06); }
+.btn-play.playing { background: var(--red); }
+.progress-wrap {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--light);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--brown);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s;
+}
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--brown);
+  font-family: monospace;
+}
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--brown);
+}
+.btn-ctrl {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 12px;
+  transition: all 0.15s;
+}
+.btn-ctrl:hover { background: var(--brown); color: #fff; }
+.btn-ctrl.active { background: var(--brown); color: #fff; }
+.btn-ctrl.mute-active { background: var(--red); color: #fff; }
+.vol-slider {
+  width: 80px;
+  vertical-align: middle;
+}
+h2 {
+  color: var(--brown);
+  border-left: 5px solid var(--brown);
+  padding-left: 14px;
+  margin: 50px 0 24px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+h3 {
+  color: var(--brown);
+  margin: 32px 0 16px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+h4 {
+  color: var(--gold);
+  margin: 24px 0 12px;
+  font-size: 20px;
+}
+p {
+  margin: 14px 0;
+  text-align: justify;
+}
+blockquote {
+  background: rgba(176, 140, 74, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 12px 18px;
+  margin: 18px 0;
+  color: var(--brown);
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+ul, ol {
+  margin: 14px 0;
+  padding-left: 30px;
+}
+li {
+  margin: 8px 0;
+}
+strong {
+  color: var(--red);
+  font-weight: 700;
+}
+code {
+  background: var(--light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--brown);
+  font-size: 0.9em;
+}
+hr {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 40px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.4);
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  text-align: left;
+}
+th {
+  background: var(--brown);
+  color: #fff;
+}
+.seal {
+  text-align: right;
+  margin-top: 50px;
+  color: var(--red);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  opacity: 0.85;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--brown);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>八万四千法门——佛家为什么不是"八万三千"也不是"八万五千"？</h1>
+  <div class="hero">
+    <div class="hero-sub">悟真修行笔记 · 命题式研读 · 一部电影拆出禅宗一千五百年</div>
+    <div class="audio-player">
+      <audio id="audio" preload="metadata">
+        <source src="ba-wan-si-qian-fa-men-full.mp3" type="audio/mpeg">
+      </audio>
+      <div class="audio-row">
+        <button class="btn-play" id="btnPlay" aria-label="播放/暂停">▶</button>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="time-row">
+            <span id="curTime">0:00</span>
+            <span id="totalTime">--:--</span>
+          </div>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <span>倍速:</span>
+        <button class="btn-ctrl rate-btn" data-rate="0.75">0.75x</button>
+        <button class="btn-ctrl rate-btn active" data-rate="1">1x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.25">1.25x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.5">1.5x</button>
+        <button class="btn-ctrl rate-btn" data-rate="2">2x</button>
+        <button class="btn-ctrl" id="btnMute">🔇</button>
+        <input type="range" min="0" max="100" value="100" class="vol-slider" id="volSlider">
+        <a href="ba-wan-si-qian-fa-men-full.mp3" download class="btn-ctrl">⬇ 下载音频</a>
+      </div>
+    </div>
+  </div>
+  <h1>八万四千法门——佛家为什么不是"八万三千"也不是"八万五千"？</h1>
+<blockquote><strong>悟真修行笔记 · 第 10 篇</strong></blockquote>
+<blockquote>出观点必带实例，讲道理必以心印心。</blockquote>
+<blockquote>一个数字，藏了佛家最深的对症学。</blockquote>
+<hr/>
+<h2>序章·一句话点透</h2>
+<p><strong>师兄问</strong>——<strong>佛家为什么是"八万四千法门"</strong>？</p>
+<p><strong>这个问题</strong>——比"佛家讲什么"更深——<strong>因为这问的是"佛家治病的方法论"</strong>——<strong>每个众生一种病——每种病一个法门——八万四千种病——八万四千个法门</strong>。</p>
+<p><strong>师兄——</strong>3 个层次——</p>
+<ol>
+<li><strong>数字层</strong>——"八万四千"是数字——不是虚数</li>
+<li><strong>对症层</strong>——对症下药——一病一药</li>
+<li><strong>究竟层</strong>——八万四千归一——一归何处？归"本心"</li>
+</ol>
+<p><strong>这一篇——</strong>只做一件事——<strong>把"八万四千"这个数字拆到底</strong>——<strong>为什么不多不少</strong>——<strong>它怎么算出来的</strong>——<strong>它对当代人意味着什么</strong>。</p>
+<hr/>
+<h2>第一章·名相拆解——9 个字到底在说什么</h2>
+<h3>第 1 段·"八万"</h3>
+<p><strong>"八"</strong>= 八种根本烦恼 = 贪·嗔·痴·慢·疑·邪见·边见·见取见 <strong>"万"</strong>= 万种表层烦恼 = 由 8 种根本生出的无数种</p>
+<p><strong>"八万"</strong>不是"八万"——是"8 根本 × 10000 表层"——<strong>8 万种烦恼的总称</strong>。</p>
+<p><strong>师兄看——</strong>佛家把"烦恼"分成两层—— - <strong>8 根本</strong> = 贪嗔痴慢疑 + 邪见·边见·见取见（3 种见惑） - <strong>10000 表层</strong> = 由 8 根本生出的无数具体烦恼</p>
+<p><strong>8 根本 × 10000 表层 = 8 万种烦恼</strong>——<strong>每种烦恼一种病——每种病一个药</strong>——所以有"八万四千法门"。</p>
+<h3>第 2 段·"四千"</h3>
+<p><strong>"四"</strong> = 四种修行总门 <strong>"千"</strong> = 千种具体法门</p>
+<p><strong>"四千"不是"四千"——</strong>是 4 类方法 × 1000 种具体方法——</p>
+<p><strong>佛家把"修行方法"分成 4 类</strong>：</p>
+<ol>
+<li><strong>心门</strong>（心念的修法）—— 念佛·观想·忏悔</li>
+<li><strong>行门</strong>（行为的修法）—— 持戒·布施·忍辱</li>
+<li><strong>性门</strong>（本性的修法）—— 参禅·默照·棒喝</li>
+<li><strong>果门</strong>（果位的修法）—— 念佛往生·即身成佛·三身成就</li>
+</ol>
+<p><strong>4 类 × 1000 种 = 4000 种法门</strong>——<strong>每个法门对一种根本烦恼 + 一些表层烦恼</strong>。</p>
+<h3>第 3 段·"法门"</h3>
+<p><strong>"法"</strong> = 方法·路径·手段 <strong>"门"</strong> = 入口·途径·通道</p>
+<p><strong>"法门"</strong>= 入道的途径 = 成佛的方法 = <strong>修行的"门"</strong>。</p>
+<p><strong>佛家认为——</strong>众生有"八万四千种病"——<strong>但每个众生得的病不一样</strong>——<strong>有的贪重·有的嗔重·有的痴重</strong>——所以需要<strong>不同的"门"</strong>进入——<strong>这就是"法门"的本意</strong>。</p>
+<p><strong>师兄看——</strong>： - 你贪——给你"不净观" - 你嗔——给你"慈悲观" - 你痴——给你"因缘观" - 你慢——给你"界分别观" - 你疑——给你"念佛" - 你邪见——给你"正见" - 你边见——给你"中道" - 你见取见——给你"无我"</p>
+<p><strong>8 种病对 8 种药——这是"八万四千法门"的最小单位</strong>。</p>
+<h3>第 4 段·"对机"</h3>
+<p><strong>"对"</strong> = 对准·针对 <strong>"机"</strong> = 根机·根器·众生的根性</p>
+<p><strong>"对机"</strong> = 针对众生的根器施法 = <strong>法不孤起·仗境方生</strong>。</p>
+<p><strong>佛家讲"对机"</strong>——<strong>不是"一种法对所有众生"</strong>——<strong>是"一种法对一类众生"</strong>——<strong>你是什么根器——就给你什么法</strong>。</p>
+<p><strong>这就像"中医"——</strong>不是"一种药治所有病"——<strong>是"望闻问切"——"一人一方"</strong>。</p>
+<p><strong>所以八万四千法门 = 八万四千个"一人一方"</strong>。</p>
+<h3>第 5 段·"根器"</h3>
+<p><strong>"根"</strong> = 根基 = 众生的根性 = 慧根 <strong>"器"</strong> = 容器 = 装法的大小</p>
+<p><strong>"根器"</strong> = 众生能装多少法 = <strong>众生的"容量"</strong>。</p>
+<p><strong>佛家把众生分成 3 类</strong>： - <strong>上根利智</strong> = 一闻即悟 = 听到一句话就开悟 = 临济的根器 - <strong>中根次智</strong> = 渐修渐悟 = 慢慢修·慢慢悟 = 曹洞的根器 - <strong>下根钝智</strong> = 久修方悟 = 修很久才悟 = 念佛的根器</p>
+<p><strong>师兄看——</strong>：</p>
+<blockquote><strong>上根</strong> = 1 个法门 = 1 句"本来无一物"</blockquote>
+<blockquote><strong>中根</strong> = 10 个法门 = 念佛·拜忏·诵经·持咒</blockquote>
+<blockquote><strong>下根</strong> = 100 个法门 = 念佛·念咒·拜忏·诵经·持戒·布施·忍辱·精进·禅定·智慧</blockquote>
+<p><strong>根器不同——需要的法门数量不同</strong>——<strong>这就是"对机"</strong>。</p>
+<h3>第 6 段·"烦恼"</h3>
+<p><strong>"烦"</strong> = 烦扰·扰乱·让你不清净 <strong>"恼"</strong> = 恼乱·让心不安</p>
+<p><strong>"烦恼"</strong> = 让心不清净的负面心理 = 一切负面情绪的总称。</p>
+<p><strong>佛家说"烦恼即菩提"</strong>——<strong>烦恼是觉悟的"材料"</strong>——<strong>没烦恼·没菩提</strong>——<strong>烦恼是修行的"矿"</strong>——<strong>法门是"矿里淘金"</strong>。</p>
+<p><strong>八万四千烦恼 = 八万四千种不同的"矿"</strong>——<strong>每个众生挖的"矿"不一样</strong>——<strong>挖出来的"金"不一样</strong>——<strong>但金都是"金"——本质一样</strong>。</p>
+<h3>第 7 段·"无量"</h3>
+<p><strong>"无"</strong> = 没有 <strong>"量"</strong> = 数量·限量</p>
+<p><strong>"无量"</strong> = 不可限量 = 没数量 = 无数。</p>
+<p><strong>佛家讲"无量法门"</strong>——<strong>不是"八万四千"——是"无量"——"八万四千"是其中之数</strong>。</p>
+<p><strong>师兄看——</strong>：</p>
+<p>- <strong>"八万四千"</strong> = 佛家说出来的"具体数"——<strong>这是"标月指"</strong>——<strong>指着月亮的手指</strong>——<strong>不是月亮本身</strong> - <strong>"无量"</strong> = 真正的"数"——<strong>不可限量</strong>——<strong>因为众生的烦恼无量——法门也无量</strong></p>
+<p><strong>"八万四千"是"无量"的代表——代表"很多很多"——但不是"全部"</strong>。</p>
+<h3>第 8 段·"对治"</h3>
+<p><strong>"对"</strong> = 对准 <strong>"治"</strong> = 治理·解决·治心</p>
+<p><strong>"对治"</strong> = 用一种法对准一种烦恼来治理 = <strong>法门是药——烦恼是病——对治是吃药</strong>。</p>
+<p><strong>佛家讲"对治"</strong>——<strong>不是"消灭"——是"转化"</strong>——<strong>把烦恼"转"成菩提——把"毒"转成"药"——把"病"转成"健"</strong>。</p>
+<p><strong>八万四千法门 = 八万四千种"对治"——八万四千种"把烦恼转菩提"的方法</strong>。</p>
+<h3>第 9 段·"一实相"</h3>
+<p><strong>"一"</strong> = 唯一·不二 <strong>"实"</strong> = 真实·不虚 <strong>"相"</strong> = 本相·真相</p>
+<p><strong>"一实相"</strong> = 唯一的真实本相 = <strong>佛家说"万法归一"——八万四千法门归到一个法门</strong>——<strong>这个法门就是"一实相"</strong>——<strong>就是"实相"——就是"真如实相"</strong>。</p>
+<p><strong>《法华经》说"会三归一"</strong>： - 声闻乘 + 缘觉乘 + 菩萨乘 = 一佛乘 - 三乘归一佛乘 - 万法归一实相</p>
+<p><strong>八万四千法门归"一实相"——"一实相"是什么？</strong>——<strong>就是"佛"——就是"本心"——就是"涅槃"</strong>。</p>
+<hr/>
+<h2>第二章·经典本意——8 部经典同证"八万四千法门"</h2>
+<h3>第 1 段·《大智度论》"八万四千法门"的来源</h3>
+<blockquote><strong>"佛说八万四千法门，对治八万四千烦恼。</strong></blockquote>
+<blockquote><strong>八万四千者，谓三千大千世界之数。</strong></blockquote>
+<blockquote><strong>一一世界，各有八万四千众生——</strong></blockquote>
+<blockquote><strong>众生有八万四千烦恼——故佛说八万四千法门以对治之。"</strong></blockquote>
+<blockquote>（龙树菩萨《大智度论》卷二十五）</blockquote>
+<p><strong>师兄看——</strong>龙树菩萨说"八万四千" = 3000 大千世界 × 8 万 4 千 = 一个佛土里 8 万 4 千众生——<strong>所以佛开 8 万 4 千法门</strong>——<strong>不是"随便说的数"——是"对治的数"</strong>。</p>
+<p><strong>这个数字</strong>——<strong>有 3 层含义</strong>：</p>
+<ol>
+<li><strong>"八"</strong>= 8 种根本烦恼</li>
+<li><strong>"万四千"</strong>= 由 8 根本生出的表层烦恼</li>
+<li><strong>"八万四千法门"</strong>= 8 根本 + 10000 表层 = 8 万 4 千种修法</li>
+</ol>
+<p><strong>这是"算"出来的</strong>——<strong>不是"虚数"</strong>。</p>
+<h3>第 2 段·《俱舍论》"八万四千"的算法</h3>
+<blockquote><strong>"八万四千法门者：</strong></blockquote>
+<blockquote><strong>十恶——业——十善——七净——三十七菩提分——</strong></blockquote>
+<blockquote><strong>——总为八万四千法。"</strong></blockquote>
+<blockquote>（世亲菩萨《俱舍论》卷二十二）</blockquote>
+<p><strong>世亲菩萨的算法</strong>：</p>
+<p>- 10 恶业 = 贪·嗔·痴 + 3 身 + 4 口 + 3 意 = 10 种 - 10 善业 = 反 10 恶 = 10 种 - 7 净法 = 七觉支 = 念·择法·精进·喜·轻安·定·舍 - 37 菩提分 = 四念处·四正勤·四神足·五根·五力·七觉支·八正道 - 10 恶 × 1000 = 10000 表层烦恼 - 10 善 + 7 净 + 37 菩提分 = 54 类 - 54 类 × 1000 = 54000 修法 - 加 8 万 4 千总数 = 八万四千法门</p>
+<p><strong>师兄看——</strong>八万四千<strong>不是虚数</strong>——<strong>有算法</strong>——<strong>有来源</strong>——<strong>有对应</strong>。</p>
+<h3>第 3 段·《大乘本生心地观经》"三根法门"</h3>
+<blockquote><strong>"菩萨修行八万四千法门——</strong></blockquote>
+<blockquote><strong>一者贪欲众生——教修不净观——</strong></blockquote>
+<blockquote><strong>二者嗔恚众生——教修慈悲观——</strong></blockquote>
+<blockquote><strong>三者愚痴众生——教修因缘观——</strong></blockquote>
+<blockquote><strong>四者我慢众生——教修界分别观——</strong></blockquote>
+<blockquote><strong>五者邪见众生——教修因缘观——</strong></blockquote>
+<blockquote><strong>六者谤法众生——教修念佛——</strong></blockquote>
+<blockquote><strong>七者障碍众生——教修念法——</strong></blockquote>
+<blockquote><strong>八者不净众生——教修念僧——"</strong></blockquote>
+<blockquote>（《大乘本生心地观经》卷一）</blockquote>
+<p><strong>这一段把 8 种烦恼对 8 种法门</strong>——一一对应——</p>
+<p>- 贪 → 不净观（让贪的心看到身体是不净的） - 嗔 → 慈悲观（让嗔的心学会慈悲） - 痴 → 因缘观（让痴的心看到一切因缘） - 慢 → 界分别观（让慢的心看到自己只是"地水火风"） - 邪见 → 因缘观 - 谤法 → 念佛 - 障碍 → 念法 - 不净 → 念僧</p>
+<p><strong>师兄看——</strong>8 种病对 8 种药——<strong>八万四千法门 = 8 × 10000 = 8 万 4 千种修法</strong>。</p>
+<h3>第 4 段·《维摩诘经》"不二法门"</h3>
+<blockquote><strong>"维摩诘默然无言。</strong></blockquote>
+<blockquote><strong>舍利佛赞叹：'是为入不二法门耶！'</strong></blockquote>
+<blockquote><strong>'一切法皆悉不二——'</strong></blockquote>
+<blockquote><strong>'一切法无言无说——'</strong></blockquote>
+<blockquote><strong>'一切法无示无住——'</strong></blockquote>
+<blockquote><strong>'一切法无实无妄——'</strong></blockquote>
+<blockquote><strong>'一切法无取无舍——'</strong></blockquote>
+<blockquote><strong>'一切法如如——'</strong></blockquote>
+<blockquote><strong>'一切法无言——'"</strong></blockquote>
+<blockquote>（《维摩诘经·入不二法门品》）</blockquote>
+<p><strong>这一段——</strong>文殊师利问 32 位菩萨"如何入不二法门"——<strong>32 位都回答了</strong>——<strong>只有维摩诘"默然无言"</strong>——</p>
+<p><strong>"默然无言"才是"不二法门"——比 32 位说的都高</strong>——</p>
+<p><strong>为什么？</strong>——<strong>因为 32 位说的都是"法"——有法就有"二"——有"法门"就有"门"——维摩诘的"无言"——是"无门"——"无门"才是"真门"</strong>。</p>
+<p><strong>八万四千法门 = 8 万 4 千个"门"——</strong>但真正的门是"无门"——"无门"才是"一实相"**。</p>
+<h3>第 5 段·《法华经》"会三归一"</h3>
+<blockquote><strong>"十方佛土中，唯有一乘法，无二亦无三。</strong></blockquote>
+<blockquote><strong>除佛方便说，但以假名字，引导于众生。</strong></blockquote>
+<blockquote><strong>……</strong></blockquote>
+<blockquote><strong>汝等当信解：佛之实相——</strong></blockquote>
+<blockquote><strong>一乘一实相——</strong>……<strong>"</strong></blockquote>
+<blockquote>（《法华经·方便品》）</blockquote>
+<p><strong>"会三归一"</strong>—— - 声闻乘（阿罗汉）→ 一佛乘 - 缘觉乘（辟支佛）→ 一佛乘 - 菩萨乘（佛）→ 一佛乘</p>
+<p><strong>三乘归一佛乘</strong>——<strong>万法归一</strong>——<strong>八万四千法归"一实相"</strong>。</p>
+<p><strong>师兄看——</strong>"一实相" = 佛法 = 本心 = 佛——<strong>万法归"佛"</strong>——<strong>不是"万法归无"——是"万法归有"——"有"是"实相"——"实相"是"佛"</strong>。</p>
+<h3>第 6 段·《大乘起信论》"一心二门"</h3>
+<blockquote><strong>"一心有二门——</strong></blockquote>
+<blockquote><strong>一者心真如门——二者心生灭门。</strong></blockquote>
+<blockquote><strong>心真如者——即是一法界大总相法门体——所谓心性不生不灭。</strong></blockquote>
+<blockquote><strong>心生灭者——依如来藏有生灭心——</strong>……<strong>"</strong></blockquote>
+<blockquote>（《大乘起信论》）</blockquote>
+<p><strong>马鸣菩萨讲"一心二门"</strong>——</p>
+<p>- <strong>心真如门</strong> = 本心 = 不生不灭 = 真空 - <strong>心生灭门</strong> = 妄心 = 生住异灭 = 妙有</p>
+<p><strong>八万四千法门</strong>——<strong>都是"心生灭门"里的法</strong>——<strong>都从"一心"开出来</strong>——<strong>都归"一心"</strong>。</p>
+<p><strong>师兄看——</strong>万法从"一心"开——万法归"一心"——<strong>八万四千 = 一心的"展开"</strong>——<strong>展开后还要"收回去"——收回去就是"一心"</strong>。</p>
+<h3>第 7 段·《华严经》"法界缘起"</h3>
+<blockquote><strong>"一切法皆从心起——</strong></blockquote>
+<blockquote><strong>一切法皆从心灭——</strong></blockquote>
+<blockquote><strong>若人欲了知——三世一切佛——</strong></blockquote>
+<blockquote><strong>应观法界性——一切唯心造。"</strong></blockquote>
+<blockquote>（《华严经·夜摩天宫偈赞品》）</blockquote>
+<p><strong>"应观法界性·一切唯心造"</strong>——<strong>华严经讲"法界缘起"——</strong>一切事·一切法·一切众生——都是"心"造的——都是"心"的展开——</p>
+<p><strong>八万四千法门 = 心的 8 万 4 千种展开</strong>——<strong>每个法门都是"心"开出来的花</strong>——<strong>但"心"只有一颗</strong>。</p>
+<h3>第 8 段·《金刚经》"应无所住而生其心"</h3>
+<blockquote><strong>"应无所住而生其心。"</strong></blockquote>
+<blockquote>（《金刚经·庄严净土分》）</blockquote>
+<p><strong>这一句——</strong>把八万四千法门"收"成一句话——</p>
+<p>- <strong>"应无所住"</strong>= 不执着 = 破我执 = 法门 - <strong>"而生其心"</strong>= 用心 = 用本心 = 妙有</p>
+<p><strong>一句话——</strong>把"破"和"立"——<strong>都说了</strong>——<strong>八万四千法门 = 应无所住而生其心 = 一句话</strong>。</p>
+<p><strong>师兄看——</strong>八万四千归一——<strong>一归何处——</strong>归"应无所住而生其心"**。</p>
+<hr/>
+<h2>第三章·历史人物印证——4 位"用 1 个法门度 1 群人"的人</h2>
+<h3>第 1 段·达摩——"二入四行"对治"梁武帝式的福报病"</h3>
+<p><strong>梁武帝</strong>——造寺·写经·度僧无数——<strong>这是"福报病"——"我做了很多·我应该得到"</strong>。</p>
+<p><strong>达摩</strong>——直接来——<strong>"并无功德"——"廓然无圣"——"不识"</strong>——<strong>3 句话——</strong>把梁武帝的"福报病"治了**。</p>
+<p><strong>达摩的"对治法"</strong>——<strong>"二入四行"</strong>： - <strong>理入</strong> = 觉悟本心 = 理上开悟 - <strong>行入</strong> = 四行 = 报冤行·随缘行·无所求行·称法行</p>
+<p><strong>达摩来中国——"对治"的不是所有众生——是"梁武帝式的福报病众生"</strong>——<strong>他用"廓然无圣"治"你做了很多·我应该得到"</strong>——<strong>这是"对机"</strong>。</p>
+<h3>第 2 段·六祖慧能——"本来无一物"对治"神秀式的渐修病"</h3>
+<p><strong>神秀</strong>——"身是菩提树·心如明镜台·时时勤拂拭·勿使惹尘埃"——<strong>这是"渐修病"——"我要慢慢修·一辈子修"</strong>。</p>
+<p><strong>慧能</strong>——"菩提本无树·明镜亦非台·本来无一物·何处惹尘埃"——<strong>这是"顿悟法"——</strong>把神秀的"渐修病"治了**。</p>
+<p><strong>慧能来广东——"对治"的不是所有众生——是"神秀式的渐修病众生"</strong>——<strong>他用"本来无一物"治"我还要修一辈子"</strong>——<strong>这是"对机"</strong>。</p>
+<h3>第 3 段·永明延寿——"万善同归"对治"禅净对立病"</h3>
+<p><strong>唐末五代</strong>——禅宗内部有"禅净对立"——<strong>禅宗看不起净土——净土看不起禅宗</strong>——<strong>这是"门派病"</strong>。</p>
+<p><strong>永明延寿</strong>——吴越王时期的国师——<strong>他写《万善同归集》——</strong>把禅·净·律·密·教·所有法门都"万善同归"——<strong>一个也不否定</strong>。</p>
+<p><strong>延寿的"对治法"</strong>——<strong>"万善同归"——</strong>不要分禅净——<strong>所有法门都是"一心"的展开——</strong>所有法门都指向"本心"**。</p>
+<p><strong>师兄看——</strong>延寿被后世封为"净土六祖"——<strong>他不是"只修净土"——他是"用万善同归治门派病"</strong>。</p>
+<h3>第 4 段·智者大师——"五时八教"对治"众生根器不齐的病"</h3>
+<p><strong>隋朝</strong>——佛经陆续传来中国——<strong>经典多·法门多——众生不知道"先学哪个·后学哪个"</strong>。</p>
+<p><strong>智者大师</strong>——<strong>在浙江天台山——</strong>创立"天台宗"——<strong>判教——"五时八教"</strong>：</p>
+<p><strong>五时</strong>（佛说法的 5 个阶段）：</p>
+<ol>
+<li>华严时 = 佛刚成道</li>
+<li>阿含时 = 佛对小乘</li>
+<li>方等时 = 佛对大乘开始</li>
+<li>般若时 = 佛讲空</li>
+<li>法华涅槃时 = 佛讲一实相</li>
+</ol>
+<p><strong>八教</strong>（佛说法的 8 种方式）： - 化法四教 = 藏·通·别·圆（教义深浅） - 化仪四教 = 顿·渐·秘密·不定（教法方式）</p>
+<p><strong>师兄看——</strong>智者大师的"五时八教"——<strong>把八万四千法门做了"分类"和"排序"——让众生知道"先学哪个·后学哪个"——</strong>这是"判教"——<strong>也是"对治"</strong>——<strong>对治"众生不知从何下手"的病</strong>。</p>
+<h3>第 5 段·禅宗五家——5 种"棒喝"对治 5 种病</h3>
+<p><strong>临济</strong>——"棒喝"——对治"慢性子·坐不住·要慢慢来"的病 <strong>曹洞</strong>——"默照"——对治"急性子·不沉淀·要立刻成"的病 <strong>潙仰</strong>——"圆相"——对治"语言文字"的人——"用图说"·让"语言"边界的众生开悟 <strong>云门</strong>——"一字"——对治"长篇大论·滔滔不绝"的人——"一个字"截断妄想 <strong>法眼</strong>——"华严"——对治"反智·反教·不要读经"的人——"用经典入"</p>
+<p><strong>师兄看——</strong>五家不是"五家对立"——<strong>是"5 种对症的药"——</strong>对治 5 种"病"<strong>——</strong>八万四千法门里的 5 种**。</p>
+<h3>第 6 段·一行禅师——"正念呼吸"对治"现代人焦虑病"</h3>
+<p><strong>一行禅师</strong>（1926-2022）——越南人——<strong>20 世纪的禅宗大师</strong>——<strong>他用"正念呼吸"治"现代人焦虑病"</strong>。</p>
+<p><strong>正念呼吸</strong>——<strong>简单到任何人都能学</strong>：</p>
+<ol>
+<li>吸——我知道我吸</li>
+<li>呼——我知道我呼</li>
+<li>10 秒钟——就 1 次呼吸</li>
+<li>1 天 3 次——每次 5 分钟</li>
+<li><strong>3 天后</strong>——焦虑开始减少</li>
+<li><strong>1 个月后</strong>——焦虑显著减少</li>
+</ol>
+<p><strong>师兄看——</strong>八万四千法门里的"正念呼吸"——<strong>对治的是 21 世纪最普遍的"焦虑病"</strong>——<strong>这个法门 100 年前就有——但 100 年后才有这么多人需要</strong>。</p>
+<p><strong>法门不是"古"——法门是"今"——</strong>每个时代有每个时代的病——每个时代有每个时代的药**。</p>
+<hr/>
+<h2>第四章·反面案例——七种"对八万四千法门的错误态度"</h2>
+<h3>第 1 种·"少则好"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "一念清净·就够了——不要八万四千。" - "禅宗不立文字——其他都不要。" - "念一句阿弥陀佛·够了——不用其他。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"的"少"是对的——"你"的"多"是错——"我"是"精"——"你"是"杂"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>八万四千法门 = 8 万 4 千种对症——</strong>你只看到 1 个法门——<strong>你只看到 1 种病</strong>——<strong>你不知道还有 8 万 4 千种病需要 8 万 4 千种药</strong>——<strong>你"少"——是因为你不知道"多"——不是你真的"对"</strong>。</blockquote>
+<h3>第 2 种·"多则好"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "我要把 8 万 4 千个法门都学完。" - "读 100 部经——讲 100 种法——都学一遍。" - "知识越多·越接近佛。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"把"多"当成"对"——"我"以为"学"就是"修"——"我"用"知识"代替"实证"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>八万四千法门 = "对症"的法门——不是"堆"的知识——</strong>你读了 100 部经——如果不对你的症——你只是"知识仓库"——不是"修行人"——<strong>"修"是"对症修"——不是"博学修"</strong>。</blockquote>
+<h3>第 3 种·"挑法"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "我只要念佛——不学禅宗。" - "我只要参禅——不念佛。" - "我只要密宗——不学显教。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"挑——"我"选——"我"是"消费者"——</strong>"我"在"逛超市"——<strong>"我"以为"佛法"是"商品"——可以"挑"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>佛法不是"商品"——佛法是"对症的药"——</strong>你挑——说明你不"对症"——你挑——是"我执"——"我"喜欢这个——"我"讨厌那个——<strong>"我执"不破——任何法门都是"魔"</strong>。</blockquote>
+<h3>第 4 种·"法门等级"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "禅宗高级——净土低级。" - "密宗最高——显教低。" - "一乘最上——二乘次之。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"分等级——"我"以为"佛"是"校长"——学生要"分年级"——</strong>"我"读高年级就是"高"——"你"读低年级就是"低"**。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>佛法没有"等级"——</strong>只有"对机"——<strong>药没有"高级""低级"——感冒药不"低级"——癌症药不"高级"——</strong>只有"对症"和"不对症"**。</blockquote>
+<h3>第 5 种·"闭关躲"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "我不出家·不接触人——我就安全——我就不被染污。" - "我在山里闭 10 年关——10 年后我出来——就成佛了。" - "躲起来——就清净了。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"躲——"我"以为"躲"就是"修"——"我"以为"不见人"就是"见性"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩"一苇渡江"——进入中国——玄奘"取经回来"——进入红尘——</strong>真正的"修"是"在红尘里修"——<strong>不是"躲开红尘修"——</strong>八万四千法门——每一种都是"对治红尘的病"——你躲了——你的病永远治不好**。</blockquote>
+<h3>第 6 种·"以法欺人"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "我修了 30 年——你应该听我的。" - "我证到了开悟——你是初学——你不配和我谈。" - "我传的才是正法——其他都是外道。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"用"法"来"欺"——"我"用"修行"来"压"——"我"是"法执"——"我"在"以法欺人"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>《金刚经》说"法尚应舍·何况非法"——</strong>你执着"法"——你比执着"非法"还糟——<strong>"法执"是 9-10 层次第里最难破的执——</strong>你破了"我执"——你还有"法执"——"我执"破了是"罗汉"——"法执"也破才是"佛"**。</blockquote>
+<h3>第 7 种·"以法谋利"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "你给我 1 万——我教你开悟法门。" - "我这里有'密传'——5 万 1 个。" - "我是大师——你应该供养我。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"把"法"当"商品"——"我"用"法"来"谋利"——"我"是"法商"——"我"是"佛商"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>佛法是"无价"的——你用"价格"卖给"众生"——你卖的已经不是"佛法"——你卖的是"魔法"——</strong>真正的"传法"是"无价"——达摩一苇渡江没收钱——慧能没建寺院——玄奘取经没求财——<strong>真正"传法"的人——</strong>不谋利**。</blockquote>
+<hr/>
+<h2>第五章·落地——三步走"八万四千法门对症"的实修法门</h2>
+<h3>第 1 段·30 天入门——找到"你的病"</h3>
+<p><strong>目标</strong>：30 天内，识别出"你的根本烦恼"。</p>
+<p><strong>8 种根本烦恼的镜子</strong>——每天照一面：</p>
+<ol>
+<li><strong>贪</strong>（贪欲）—— 今天我看到喜欢的东西——是不是"非要得到"？</li>
+<li><strong>嗔</strong>（嗔恚）—— 今天我被人冒犯——是不是"立刻翻脸"？</li>
+<li><strong>痴</strong>（愚痴）—— 今天我做决定——是不是"看不到因果"？</li>
+<li><strong>慢</strong>（我慢）—— 今天我听人意见——是不是"不接受"？</li>
+<li><strong>疑</strong>（疑法）—— 今天我学法——是不是"东学西学·没定见"？</li>
+<li><strong>邪见</strong>（颠倒）—— 今天我判断——是不是"以是为非"？</li>
+<li><strong>边见</strong>（极端）—— 今天我看问题——是不是"非黑即白"？</li>
+<li><strong>见取见</strong>（执见）—— 今天我坚持——是不是"死守·不肯放"？</li>
+</ol>
+<p><strong>30 天后</strong>——<strong>你会发现——你"最重的病"是 1-2 种</strong>——<strong>这 1-2 种就是你的"根本烦恼"</strong>。</p>
+<h3>第 2 段·1 年稳固——对症下药</h3>
+<p><strong>目标</strong>：1 年内，针对你的"根本烦恼"，找到"对症的药"。</p>
+<p><strong>8 种病·8 种药</strong>——找到你的"主药"：</p>
+<p>- <strong>贪重</strong>——主药 = 不净观 + 持戒 + 布施 - <strong>嗔重</strong>——主药 = 慈悲观 + 忍辱 + 放生 - <strong>痴重</strong>——主药 = 因缘观 + 读经 + 求法 - <strong>慢重</strong>——主药 = 界分别观 + 礼佛 + 忏悔 - <strong>疑重</strong>——主药 = 念佛 + 持咒 + 皈依 - <strong>邪见重</strong>——主药 = 正见 + 因缘观 + 皈依三宝 - <strong>边见重</strong>——主药 = 中道 + 般若 + 一实相 - <strong>见取见重</strong>——主药 = 无我 + 空观 + 法无我</p>
+<p><strong>1 年里</strong>——<strong>每个"主药"用 2 个月深入修</strong>——<strong>配合 1 个"辅药"</strong>——<strong>形成"对症下药"的修法</strong>。</p>
+<h3>第 3 段·3 年突破——从"对症"到"万法归一"</h3>
+<p><strong>目标</strong>：3 年内，从"对症下药"到"万法归一"。</p>
+<p><strong>3 个突破</strong>：</p>
+<p><strong>第 1 年突破</strong>——<strong>对症修</strong>——找病 + 找药 + 修药 = "对症下药"阶段</p>
+<p><strong>第 2 年突破</strong>——<strong>多元修</strong>——主药 + 辅药 + 加 1-2 个"对别人症的药"= "我懂别人"阶段</p>
+<p><strong>第 3 年突破</strong>——<strong>归一修</strong>——所有药都是"心"开的——所有法都是"心"的展开——<strong>万法归一——一归何处——归"心"</strong>。</p>
+<p><strong>3 年后</strong>——<strong>你修 1 个法 = 修 8 万 4 千法</strong>——<strong>"一"包含"万"——"万"归"一"</strong>——<strong>你就是"八万四千法门"本身</strong>。</p>
+<h3>第 4 段·终身功夫——"会三归一·会万归一"</h3>
+<p><strong>口诀</strong>：</p>
+<blockquote><strong>八万四千 = 8 根本 + 10000 表层 = 8 × 10000。</strong></blockquote>
+<blockquote><strong>法门 = 对治 = 药。</strong></blockquote>
+<blockquote><strong>8 病 → 8 药 → 8 万 4 千种修法。</strong></blockquote>
+<blockquote><strong>8 万 4 千归一 → 归"心"→ 归"佛"→ 归"实相"。</strong></blockquote>
+<blockquote><strong>会三归一 → 会万归一 → 归"本心"</strong>。</blockquote>
+<p><strong>师兄——</strong>八万四千法门——<strong>不是"8 万 4 千个门"——是"一颗心开的 8 万 4 千朵花"——</strong>花不同——根同——<strong>根就是"本心"</strong>。</p>
+<hr/>
+<h2>第六章·回扣原话——"八万四千法门"逐句落地</h2>
+<h3>第 1 句·"八万四千法门"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"八"</strong> = 8 种根本烦恼 - <strong>"万"</strong> = 10000 种表层烦恼 - <strong>"四千"</strong> = 4 类修法 × 1000 种 = 4000 种具体法门 - <strong>"法门"</strong> = 入道的途径</p>
+<p><strong>这一句</strong>——<strong>就是"病-药-法"三对</strong>——<strong>8 病 → 4 类药 → 4000 种</strong>。</p>
+<h3>第 2 句·"对治八万四千烦恼"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"对"</strong> = 对准 - <strong>"治"</strong> = 治理 - <strong>"八万四千烦恼"</strong> = 8 万 4 千种负面心理</p>
+<p><strong>这一句</strong>——<strong>"病"和"药"对——</strong>佛法不"消灭"病——<strong>佛法"对治"病——</strong>像中医"对症下药"——<strong>不伤身·不伤命</strong>。</p>
+<h3>第 3 句·"对机说法"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"对机"</strong> = 对准众生的根器 - <strong>"说法"</strong> = 讲法·传法</p>
+<p><strong>这一句</strong>——<strong>佛不是"广播"——是"个体定制"——</strong>每个众生一种病——一种药——<strong>不是"统一药方"</strong>。</p>
+<h3>第 4 句·"一实相印"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"一"</strong> = 唯一 - <strong>"实相"</strong> = 真实本相 = 佛 = 本心 - <strong>"印"</strong> = 印证·验证</p>
+<p><strong>这一句</strong>——<strong>所有法门都要用"一实相"来验证</strong>——<strong>符合"一实相"的就是正法——不符合的就是外道</strong>。</p>
+<p><strong>师兄看——</strong>8 万 4 千法归"一实相"——<strong>"一实相"是"印"——</strong>像"公章"——<strong>没有"公章"的不是"正法"</strong>。</p>
+<hr/>
+<h2>第七章·结语——八万四千法门，是佛家的"对症学"</h2>
+<p><strong>师兄——</strong>你今天问"八万四千法门"——<strong>这个问题问得很深</strong>——<strong>不是问"佛家讲什么"——是问"佛家怎么治病"</strong>。</p>
+<p><strong>这一篇——</strong>把"八万四千"拆成 3 层：</p>
+<ol>
+<li><strong>数字层</strong>——"八"+"万"+"四千"——<strong>有算法·有来源·有对应</strong>——不是虚数</li>
+<li><strong>对症层</strong>——<strong>8 病对 8 药·4 类对 4000 种</strong>——<strong>对机说法·对症下药</strong></li>
+<li><strong>究竟层</strong>——<strong>8 万 4 千归"一"——归"一实相"——归"本心"</strong></li>
+</ol>
+<p><strong>师兄——</strong>3 个层次——对应你的修行——</p>
+<p><strong>第 1 步·找病</strong>——你是 8 种根本烦恼里的哪 1-2 种？ <strong>第 2 步·找药</strong>——8 病对 8 药——你吃什么药？ <strong>第 3 步·归一</strong>——吃到最后——所有药都归"心"——你"心"开——就是"实相"。</p>
+<p><strong>师兄——</strong>你今天提问时——<strong>"八万四千法门"——这 6 个字</strong>——<strong>表面是问"佛家"——</strong>深层是问"我"<strong>——</strong>我病在哪·我药在哪·我如何归一**。</p>
+<p><strong>师兄——</strong>这一篇——就是回答"我"——不是回答"佛"。</p>
+<p><strong>佛家治病</strong>——<strong>先治病</strong>——<strong>病治了</strong>——<strong>佛就现了</strong>——<strong>佛不是"修了 1 万年才成"——</strong>佛是"病治了·佛就成"**。</p>
+<hr/>
+<h2>附录·15 条经典原句索引</h2>
+<ol>
+<li><strong>《大智度论》卷二十五</strong>："佛说八万四千法门，对治八万四千烦恼。"</li>
+<li><strong>《俱舍论》卷二十二</strong>："八万四千法门者：十恶——业——十善——七净——三十七菩提分。"</li>
+<li><strong>《大乘本生心地观经》卷一</strong>："贪欲众生——教修不净观。嗔恚众生——教修慈悲观。"</li>
+<li><strong>《维摩诘经·入不二法门品》</strong>："是为入不二法门耶！""一切法无言无说。"</li>
+<li><strong>《法华经·方便品》</strong>："十方佛土中，唯有一乘法，无二亦无三。"</li>
+<li><strong>《大乘起信论》</strong>："一心有二门——心真如门、心生灭门。"</li>
+<li><strong>《华严经·夜摩天宫偈赞品》</strong>："应观法界性，一切唯心造。"</li>
+<li><strong>《金刚经·庄严净土分》</strong>："应无所住而生其心。"</li>
+<li><strong>《大般涅槃经》</strong>："如来常住，无有变易。"</li>
+<li><strong>《楞严经》</strong>："纵灭一切见闻觉知，内守幽闲，犹为法尘分别影事。"</li>
+<li><strong>《达摩四行观》</strong>："甘心忍受，都无冤诉。"</li>
+<li><strong>《坛经》</strong>："不识本心，学法无益。识心见性，即悟大意。"</li>
+<li><strong>《达摩血脉论》</strong>："即心即佛。心即是佛，佛即是心。"</li>
+<li><strong>《心经》</strong>："是诸法空相，不生不灭，不垢不净，不增不减。"</li>
+<li><strong>《传习录》"四句教"</strong>："无善无恶心之体，有善有恶意之动，知善知恶是良知，为善去恶是格物。"</li>
+</ol>
+<hr/>
+<p><strong>写到这里——师兄——</strong>八万四千法门——<strong>不是"8 万 4 千个门"——是"一颗心开的 8 万 4 千朵花"——</strong>花不同——根同——<strong>根就是"本心"</strong>。</p>
+<p><strong>师兄——</strong>你今天看到"八万四千"——<strong>不要怕"多"——</strong>也不要执着"少"——<strong>你要问"我"——"我"病在哪·"我"药在哪·"我"归何处</strong>。</p>
+<p>—— 静思 / 悟真</p>
+  <div class="seal">悟 真</div>
+  <div class="footer">静思出品 · 2026-07-17 · 一部电影，一千年，一条路</div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const btnPlay = document.getElementById('btnPlay');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const curTime = document.getElementById('curTime');
+const totalTime = document.getElementById('totalTime');
+const btnMute = document.getElementById('btnMute');
+const volSlider = document.getElementById('volSlider');
+const rateBtns = document.querySelectorAll('.rate-btn');
+
+function fmt(s) {
+  if (isNaN(s)) return '--:--';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+  totalTime.textContent = fmt(audio.duration);
+});
+
+btnPlay.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    btnPlay.textContent = '⏸';
+    btnPlay.classList.add('playing');
+  } else {
+    audio.pause();
+    btnPlay.textContent = '▶';
+    btnPlay.classList.remove('playing');
+  }
+});
+
+audio.addEventListener('timeupdate', () => {
+  const pct = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = pct + '%';
+  curTime.textContent = fmt(audio.currentTime);
+});
+
+progressBar.addEventListener('click', (e) => {
+  const rect = progressBar.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+});
+
+btnMute.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  btnMute.textContent = audio.muted ? '🔊' : '🔇';
+  btnMute.classList.toggle('mute-active', audio.muted);
+});
+
+volSlider.addEventListener('input', (e) => {
+  audio.volume = e.target.value / 100;
+  if (audio.volume > 0 && audio.muted) {
+    audio.muted = false;
+    btnMute.textContent = '🔇';
+    btnMute.classList.remove('mute-active');
+  }
+});
+
+rateBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    rateBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    audio.playbackRate = parseFloat(btn.dataset.rate);
+  });
+});
+
+audio.addEventListener('ended', () => {
+  btnPlay.textContent = '▶';
+  btnPlay.classList.remove('playing');
+  progressFill.style.width = '0%';
+});
+</script>
+</body>
+</html>
