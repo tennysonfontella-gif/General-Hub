@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>一花开五叶——达摩"一花"到五家七宗"五叶"的 1160 年传灯路 · 悟真读书笔记</title>
+<style>
+:root {
+  --bg: #faf6ef;
+  --card: #f3ead8;
+  --text: #3d3027;
+  --brown: #8a5a2b;
+  --gold: #b08c4a;
+  --red: #c8423b;
+  --light: #e8dcc0;
+  --line: #d4c5a3;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 2.4;
+  font-size: 20px;
+}
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px 24px 80px;
+}
+h1 {
+  text-align: center;
+  font-size: 38px;
+  color: var(--brown);
+  margin: 30px 0 20px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+}
+.hero {
+  background: linear-gradient(135deg, #f5ead0 0%, #faf2dc 100%);
+  border-radius: 16px;
+  padding: 30px 30px 26px;
+  margin: 20px 0 40px;
+  box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+  border: 1px solid var(--line);
+}
+.hero-sub {
+  text-align: center;
+  color: var(--brown);
+  font-size: 16px;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+.audio-player {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 22px 0 8px;
+}
+.audio-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-play {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(138, 90, 43, 0.3);
+  transition: transform 0.15s;
+}
+.btn-play:hover { transform: scale(1.06); }
+.btn-play.playing { background: var(--red); }
+.progress-wrap {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--light);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--brown);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s;
+}
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--brown);
+  font-family: monospace;
+}
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--brown);
+}
+.btn-ctrl {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 12px;
+  transition: all 0.15s;
+}
+.btn-ctrl:hover { background: var(--brown); color: #fff; }
+.btn-ctrl.active { background: var(--brown); color: #fff; }
+.btn-ctrl.mute-active { background: var(--red); color: #fff; }
+.vol-slider {
+  width: 80px;
+  vertical-align: middle;
+}
+h2 {
+  color: var(--brown);
+  border-left: 5px solid var(--brown);
+  padding-left: 14px;
+  margin: 50px 0 24px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+h3 {
+  color: var(--brown);
+  margin: 32px 0 16px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+h4 {
+  color: var(--gold);
+  margin: 24px 0 12px;
+  font-size: 20px;
+}
+p {
+  margin: 14px 0;
+  text-align: justify;
+}
+blockquote {
+  background: rgba(176, 140, 74, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 12px 18px;
+  margin: 18px 0;
+  color: var(--brown);
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+ul, ol {
+  margin: 14px 0;
+  padding-left: 30px;
+}
+li {
+  margin: 8px 0;
+}
+strong {
+  color: var(--red);
+  font-weight: 700;
+}
+code {
+  background: var(--light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--brown);
+  font-size: 0.9em;
+}
+hr {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 40px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.4);
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  text-align: left;
+}
+th {
+  background: var(--brown);
+  color: #fff;
+}
+.seal {
+  text-align: right;
+  margin-top: 50px;
+  color: var(--red);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  opacity: 0.85;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--brown);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>一花开五叶——达摩"一花"到五家七宗"五叶"的 1160 年传灯路</h1>
+  <div class="hero">
+    <div class="hero-sub">悟真修行笔记 · 命题式研读 · 一部电影拆出禅宗一千五百年</div>
+    <div class="audio-player">
+      <audio id="audio" preload="metadata">
+        <source src="yi-kai-hua-wu-ye-v1-full.mp3" type="audio/mpeg">
+      </audio>
+      <div class="audio-row">
+        <button class="btn-play" id="btnPlay" aria-label="播放/暂停">▶</button>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="time-row">
+            <span id="curTime">0:00</span>
+            <span id="totalTime">--:--</span>
+          </div>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <span>倍速:</span>
+        <button class="btn-ctrl rate-btn" data-rate="0.75">0.75x</button>
+        <button class="btn-ctrl rate-btn active" data-rate="1">1x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.25">1.25x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.5">1.5x</button>
+        <button class="btn-ctrl rate-btn" data-rate="2">2x</button>
+        <button class="btn-ctrl" id="btnMute">🔇</button>
+        <input type="range" min="0" max="100" value="100" class="vol-slider" id="volSlider">
+        <a href="yi-kai-hua-wu-ye-v1-full.mp3" download class="btn-ctrl">⬇ 下载音频</a>
+      </div>
+    </div>
+  </div>
+  <h1>一花开五叶——达摩"一花"到五家七宗"五叶"的 1160 年传灯路</h1>
+<blockquote><strong>悟真修行笔记 · 第 9 篇</strong></blockquote>
+<blockquote>出观点必带实例，讲道理必以心印心。</blockquote>
+<blockquote>一朵花开，五片叶子，1160 年还在长。</blockquote>
+<hr/>
+<h2>序章·一句话点透</h2>
+<p><strong>达摩一苇渡江之前——</strong>说了一句话：</p>
+<blockquote><strong>"吾来此土，传法救迷情。一花开五叶，结果自然成。"</strong></blockquote>
+<p><strong>师兄——</strong>这 16 个字——<strong>是禅宗在中国的"剧本"</strong>——<strong>"一花五叶·结果自然成"</strong>——<strong>说清楚 3 件事</strong>：</p>
+<ol>
+<li><strong>"一花"</strong>= 一颗心 = 佛心 = 本心</li>
+<li><strong>"五叶"</strong>= 五家 = 临济·曹洞·潙仰·云门·法眼（5 种对症的药方）</li>
+<li><strong>"结果自然成"</strong>= 1160 年后还在长——还没到"结果"——还在"成"的过程</li>
+</ol>
+<p><strong>师兄你问"V1 版本"——意思是"原版"——</strong>这是 6 月底我第一次写《一花开五叶》时<strong>的原貌</strong>——<strong>长篇·1160 年传灯史</strong>——<strong>把"五家"的源流讲到底</strong>。</p>
+<p><strong>这一篇——</strong>和后来 7 月 17 日写的《一花开五叶·2026 当代人选宗》（V2）<strong>角度不同</strong>——</p>
+<p>- V1 = 历史源流 + 1160 年传灯 - V2 = 当代人对症选法 + 5 病对 5 宗</p>
+<p><strong>V1 是根——V2 是用</strong>——<strong>两篇配合看——就把禅宗从古到今串起来了。</strong></p>
+<hr/>
+<h2>第一章·名相拆解——9 个字到底在说什么</h2>
+<h3>第 1 段·"一花"</h3>
+<p><strong>"一"</strong> = 唯一·不二·不可分。 <strong>"花"</strong> = 果之先·因之实·能结果的东西。</p>
+<p><strong>达摩说的"一花"</strong>——<strong>不是"一朵具体的花"——是"一颗能结果的种子"</strong>。</p>
+<p><strong>师兄看——</strong>：</p>
+<p>- "一" = 一心 = 佛心 = 本心 - "花" = 觉悟之花 = 菩提之花 = 这颗心能开出的花</p>
+<p><strong>"一花" = 唯一能开悟的心</strong>——<strong>是禅宗的"根"</strong>——<strong>这一颗心传到达摩·传到慧可·传到僧璨·传到道信·传到弘忍·传到慧能——一脉相承</strong>。</p>
+<h3>第 2 段·"五叶"</h3>
+<p><strong>"五"</strong> = 五家·五种·五条路。 <strong>"叶"</strong> = 花的延伸·枝的不同·从同一根出来的不同分支。</p>
+<p><strong>"五叶" = 从"一花"开出来的五种法门</strong>——</p>
+<p>- <strong>第一片叶</strong> = 临济义玄（？-867）—— "棒喝"法门 - <strong>第二片叶</strong> = 曹洞良价（807-869）—— "默照"法门 - <strong>第三片叶</strong> = 潙仰慧寂（814-890）—— "圆相"法门 - <strong>第四片叶</strong> = 云门文偃（864-949） —— "一字"法门 - <strong>第五片叶</strong> = 法眼文益（885-958） —— "华严"法门</p>
+<p><strong>师兄看——</strong>五叶不是"分裂"——<strong>是"一花根据不同土壤·开出五种叶子"</strong>——<strong>同一颗心·五种表达</strong>。</p>
+<h3>第 3 段·"结果"</h3>
+<p><strong>"果"</strong> = 花结的果 = 觉悟的完成 = 佛。 <strong>"结"</strong> = 长出来 = 成熟 = 完成。</p>
+<p><strong>"结果" = 觉悟彻底完成 = 真正成佛</strong>。</p>
+<p><strong>但达摩说"结果自然成"——</strong>不是"成佛了"——<strong>是"还在成"——还在"结"——还没到"果"</strong>。</p>
+<p><strong>师兄看——</strong>1160 年过去了——<strong>禅宗还"没有结果"——还在"成"</strong>——<strong>这是禅宗最深的地方</strong>——<strong>它不结"果"——它一直在"开"</strong>。</p>
+<h3>第 4 段·"自然"</h3>
+<p><strong>"自"</strong> = 自己·自性·本心。 <strong>"然"</strong> = 如此·这样·本来的样子。</p>
+<p><strong>"自然" = 本来就是这样 = 不需要人为 = 不是勉强</strong>。</p>
+<p><strong>"结果自然成"</strong>——<strong>不是"我们去结"——是"它自己会结"——我们只管开花·结果不是我们的事</strong>。</p>
+<p><strong>师兄看——</strong>这 2 个字是禅的"无为"——</p>
+<p>- "有为"= 努力去修·努力去开悟·努力去成佛 - "自然"= 不努力·让它自己长·本心本来就是佛</p>
+<p><strong>达摩说"自然"——就是"应无所住而生其心"——就是"不修而修"</strong>。</p>
+<h3>第 5 段·"成"</h3>
+<p><strong>"成"</strong> = 完成·成就·成全。</p>
+<p><strong>"结果自然成"</strong>——<strong>"成"是"完成"——但还没完成</strong>——<strong>还在"成"的过程中</strong>。</p>
+<p><strong>师兄看——</strong>禅宗到现在 1160 年——<strong>还在"成"</strong>——<strong>因为每个人的心都在"成"——每个人的心都在开悟——每个人都在"结果自然成"</strong>。</p>
+<p><strong>不是禅宗在"成"——是每个人在"成"——禅宗只是"陪着每个人成"</strong>。</p>
+<h3>第 6 段·"传法"</h3>
+<p><strong>"传"</strong> = 一代代给·从甲到乙·从乙到丙。 <strong>"法"</strong> = 佛法·觉悟的方法·佛心。</p>
+<p><strong>"传法" = 把"佛心"一代代传下去</strong>——</p>
+<p><strong>达摩 → 慧可 → 僧璨 → 道信 → 弘忍 → 慧能</strong>——<strong>这是"一花"的传</strong>——<strong>"一脉单传"</strong>。</p>
+<p><strong>慧能之后</strong>——<strong>一花开五叶——</strong>是"五叶"的传——<strong>"花开多脉"</strong>。</p>
+<p><strong>师兄看——</strong>：</p>
+<p>- "一花"传 = 衣钵单传 = 师资的传 - "五叶"传 = 法脉分传 = 教法的传</p>
+<p><strong>两种"传"——合起来才是禅宗</strong>。</p>
+<h3>第 7 段·"救迷情"</h3>
+<p><strong>"救"</strong> = 救度·帮助·让……出来。 <strong>"迷"</strong> = 迷失·无明·找不到本心。 <strong>"情"</strong> = 情识·情绪·情执·七情六欲。</p>
+<p><strong>"救迷情" = 把众生从"无明"里救出来 = 把众生的"七情六欲"转化成"本心的觉照"</strong>。</p>
+<p><strong>师兄看——</strong>：</p>
+<p>- "迷"= 不知道本心 - "情"= 七情六欲 - "救"= 让……从"迷"和"情"里出来</p>
+<p><strong>达摩来中国——就是来"救迷情"——不是来"传衣钵"——是来"让众生开悟"</strong>。</p>
+<h3>第 8 段·"此土"</h3>
+<p><strong>"此"</strong> = 这个·这里。 <strong>"土"</strong> = 土地·地方·国家。</p>
+<p><strong>"此土" = 中国 = 中土 = 中央之国</strong>。</p>
+<p><strong>达摩是印度人——</strong>他从印度到中国——<strong>说"吾来此土"</strong>——<strong>意思是我来中国——不是来日本·不是来越南·不是来朝鲜</strong>——<strong>就是来中国</strong>。</p>
+<p><strong>师兄看——</strong>：</p>
+<p>- 达摩"来此土"= 达摩到中国 - 达摩"传法"= 把禅带到中国 - 中国接受 = 中国人开"五叶" - 1160 年后 = 五叶传到日本·韩国·越南·欧美</p>
+<p><strong>"此土"是源头——但五叶流到了全世界</strong>。</p>
+<h3>第 9 段·"结果自然成"——3 层深意</h3>
+<p><strong>达摩这 4 个字——</strong>不是一句安慰话——<strong>是禅宗的"剧本"</strong>——</p>
+<p><strong>第 1 层·字面</strong>——"花会结果·自然而成"——不用急。</p>
+<p><strong>第 2 层·禅意</strong>——"一切本心自然·不用人为"——无为。</p>
+<p><strong>第 3 层·究竟</strong>——"成佛不在果·在花·在叶·在每时每刻"——<strong>你开悟的每一刻——就是"成"——不是成佛了·是正在成</strong>。</p>
+<hr/>
+<h2>第二章·经典本意——达摩偈 + 多版本互证</h2>
+<h3>第 1 段·《五灯会元》原文</h3>
+<blockquote><strong>"吾来此土，传法救迷情。一花开五叶，结果自然成。"</strong></blockquote>
+<blockquote>（南宋·普济《五灯会元》卷一·达摩传）</blockquote>
+<p><strong>这是达摩到中国后——对中国弟子说的第一句话</strong>——<strong>也是禅宗在中国的"开宗明义"</strong>。</p>
+<h3>第 2 段·《景德传灯录》原文</h3>
+<blockquote><strong>"大师泛重溟，凡三周寒暑，达于南海，实梁普通七年丙午岁也。</strong></blockquote>
+<blockquote><strong>越九年，公元梁普通八年丁未，</strong>……<strong>问曰：‘朕即位已来，造寺、写经、度僧，不可胜纪，有何功德？’</strong></blockquote>
+<blockquote><strong>师曰：‘并无功德。’</strong></blockquote>
+<blockquote><strong>帝曰：‘何以无功德？’</strong></blockquote>
+<blockquote><strong>师曰：‘此但人天小果，有漏之因，如影随形，虽有非实。’</strong></blockquote>
+<blockquote><strong>帝曰：‘如何是真实功德？’</strong></blockquote>
+<blockquote><strong>师曰：‘净智妙圆，体自空寂，如是功德，不以世求。’"</strong></blockquote>
+<blockquote>（北宋·道原《景德传灯录》卷三·达摩传）</blockquote>
+<p><strong>师兄看——</strong>达摩说"并无功德"——这句话是禅宗的"判教"——</p>
+<p>- 梁武帝的"功德"= 造寺·写经·度僧 = 形式 - 达摩的"功德"= 净智妙圆·体自空寂 = 心性 - <strong>形式 ≠ 心性</strong>——<strong>梁武帝做了"有"——但没"空"——所以没功德</strong></p>
+<p><strong>这是"一花开五叶"的第一片叶——"无功德"就是"无"——无相·无住·无所得</strong>。</p>
+<h3>第 3 段·《续高僧传》原文</h3>
+<blockquote><strong>"菩提达摩，南天竺婆罗门种，神慧疏朗，闻皆晓悟。志存大乘，冥心虚寂，通微彻数，定学高之。</strong></blockquote>
+<blockquote><strong>……（达摩）念震旦缘熟，行化时至，乃不屈其（不辞辛苦），航海而来，三十余年。</strong></blockquote>
+<blockquote><strong>初至广州，刺史欧阳頠礼请之；闻梁主崇尚佛教，请与相见，帝问：‘如何是圣谛第一义？’</strong></blockquote>
+<blockquote><strong>师曰：‘廓然无圣。’</strong></blockquote>
+<blockquote><strong>帝曰：‘对朕者谁？’</strong></blockquote>
+<blockquote><strong>师曰：‘不识。’"</strong></blockquote>
+<blockquote>（唐·道宣《续高僧传》卷十九·习禅篇）</blockquote>
+<p><strong>"廓然无圣"——"不识"——这就是达摩的根本法门</strong>——</p>
+<p>- "廓然"= 空·广·无 - "无圣"= 没有"圣"这个概念·没有"佛"这个对象 - "不识"= 不认识·梁武帝问"对朕者谁"·达摩说"不识"——意思是我和佛不是二元的</p>
+<p><strong>师兄看——</strong>达摩的法门——<strong>破"佛"——破"圣"——破"我"——三个都破</strong>——<strong>这就是"无"</strong>。</p>
+<h3>第 4 段·《释氏稽古略》原文</h3>
+<blockquote><strong>"达摩之禅，非以静坐看心为事，亦非以经论为务。其要唯在直指人心、见性成佛。</strong></blockquote>
+<blockquote><strong>一花五叶之语，实为禅宗东土之谶。"</strong></blockquote>
+<blockquote>（元·觉岸《释氏稽古略》卷三）</blockquote>
+<p><strong>这一段把"一花五叶"判为"东土之谶"——意思是"预言"</strong>——<strong>达摩知道禅宗会在中国开五片叶子——所以他说了"一花开五叶"</strong>。</p>
+<h3>第 5 段·《五家正宗赞》</h3>
+<blockquote><strong>"一花五叶，自然而成。</strong></blockquote>
+<blockquote><strong>临济棒喝，曹洞默照。</strong></blockquote>
+<blockquote><strong>潙仰圆相，云门一字。</strong></blockquote>
+<blockquote><strong>法眼华严，五家齐辉。"</strong></blockquote>
+<blockquote>（南宋·绍隆等《五家正宗赞》）</blockquote>
+<p><strong>这是"五家"的判教</strong>——<strong>每家一个核心法门</strong>——</p>
+<p>- 临济 = 棒喝（当头一棒·大喝一声） - 曹洞 = 默照（静默观照·绵密保任） - 潙仰 = 圆相（画圆圈·用图像开示） - 云门 = 一字（一个字回答·不解释） - 法眼 = 华严（用华严境界开示）</p>
+<p><strong>师兄看——</strong>五家不是"五宗对立"——<strong>是"五种药方"——</strong>病人不同——<strong>药方不同</strong>。</p>
+<h3>第 6 段·《人天眼目》"五家宗旨"</h3>
+<blockquote><strong>"临济家风——机锋峻烈，电卷星飞。</strong></blockquote>
+<blockquote><strong>曹洞家风——绵密回互，妙用亲切。</strong></blockquote>
+<blockquote><strong>潙仰家风——方圆默契，师资契合。</strong></blockquote>
+<blockquote><strong>云门家风——孤危耸峻，简洁高古。</strong></blockquote>
+<blockquote><strong>法眼家风——详审分别，归于中道。"</strong></blockquote>
+<blockquote>（南宋·智昭《人天眼目》卷一）</blockquote>
+<p><strong>这是 5 家的"家风"对比</strong>——<strong>家风 = 教学风格 = 治愈方式</strong>——</p>
+<p>- 临济 = "电卷星飞" = 快·猛·当下 - 曹洞 = "绵密回互" = 慢·细·长养 - 潙仰 = "方圆默契" = 圆·融·契合 - 云门 = "孤危耸峻" = 高·冷·简洁 - 法眼 = "详审分别" = 明·辨·融通</p>
+<p><strong>师兄看——</strong>5 种家风——<strong>对应 5 种根器</strong>——</p>
+<p>- 上根利智 = 临济（当头一棒就开悟） - 中根钝智 = 曹洞（慢慢来·长养） - 圆融契合 = 潙仰（师徒契合） - 简洁明快 = 云门（一字点破） - 详审博学 = 法眼（理入·融通）</p>
+<p><strong>五家对应五根——这就是"五叶"的本意</strong>。</p>
+<hr/>
+<h2>第三章·历史人物印证——五家 7 宗的真实故事</h2>
+<h3>第 1 段·临济义玄——"棒喝"的诞生（公元 ？-867 年）</h3>
+<p><strong>临济义玄</strong>——山东济南人——出家后先学律宗·再学三论·最后到黄檗希运处学禅。</p>
+<p><strong>黄檗希运</strong>——是百丈怀海的弟子——<strong>法眼很厉害</strong>——<strong>对临济用"棒"</strong>——<strong>临济三次问"如何是西来意"——黄檗三次打</strong>——<strong>第三次打完后</strong>——<strong>临济开悟了</strong>——说：</p>
+<blockquote><strong>"原来黄檗佛法无多子。"</strong></blockquote>
+<p><strong>"无多子"= 没什么了不起 = 直指人心</strong>。</p>
+<p><strong>临济后来开创"临济宗"</strong>——<strong>用"棒喝"教学</strong>——<strong>"棒"= 拿棒子打——"喝"= 大喝一声"咄！"</strong>——<strong>你被打/被喝——"我执"破——"佛性"现</strong>。</p>
+<p><strong>临济宗</strong>——<strong>传到今天 1160 年了</strong>——<strong>是禅宗最"利"的一脉</strong>——<strong>也是传到日本·韩国·欧美最广的一脉</strong>——<strong>日本"临济宗"至今还是日本佛教最大的宗派之一</strong>。</p>
+<p><strong>临济的"棒"——不是打人——是"打"我执——是"打"妄想——是"打"那个"我"</strong>——<strong>你"被打"——"我"就没了——"我"没了——"佛"就现</strong>。</p>
+<h3>第 2 段·曹洞良价——"默照"的开创（公元 807-869 年）</h3>
+<p><strong>良价</strong>——是洞山良价的弟子——<strong>在江西宜丰县洞山</strong>——<strong>开创"曹洞宗"</strong>——<strong>"曹"= 曹溪（慧能）·"洞"= 洞山（良价）</strong>——<strong>意思是"从慧能到良价"</strong>。</p>
+<p><strong>良价传本寂——</strong>本寂在江西抚州宜黄县曹山——<strong>两人合创"曹洞宗"</strong>。</p>
+<p><strong>曹洞的核心</strong>——<strong>"默照禅"——"默"= 静默·不立文字·"照"= 观照·清楚明了</strong>——<strong>静坐·默照·绵密保任</strong>——<strong>长年累月·不断长养</strong>。</p>
+<p><strong>曹洞的"默照"——不是"死坐"——是"清清楚楚地看着心念来去·不抓·不住·不送"</strong>——<strong>心念来——你知道——心念去——你知道——你只是"看"——不参与</strong>。</p>
+<p><strong>曹洞宗</strong>——<strong>传到今天 1160 年了</strong>——<strong>传到日本成为"曹洞宗"——日本永平寺·总持寺至今还在</strong>——<strong>是日本禅宗最大的两脉之一</strong>。</p>
+<p><strong>曹洞的"默照"——对应"中根钝智"——</strong>慢慢来·长养·不急·不猛——<strong>对治"急躁"·"焦虑"·"坐不住"的人</strong>。</p>
+<h3>第 3 段·潙仰慧寂——"圆相"的奥妙（公元 814-890 年）</h3>
+<p><strong>慧寂</strong>——是仰山慧寂——<strong>湖南郴州人</strong>——<strong>在江西宜春仰山</strong>——开创"潙仰宗"——<strong>"潙"= 潙山（灵佑）·"仰"= 仰山（慧寂）</strong>——<strong>两人合创</strong>。</p>
+<p><strong>潙仰的核心</strong>——<strong>"圆相"——用笔在纸上画圆圈</strong>——<strong>圆圈代表"圆满"·"周遍"·"无始无终"</strong>——<strong>用圆圈开示</strong>——<strong>圆圈里有圆圈·圆圈套圆圈</strong>——<strong>表示"事事无碍"·"重重无尽"</strong>。</p>
+<p><strong>潙仰还有"九十六种圆相"——</strong>每一种圆相代表不同的开示——<strong>对不同根器的人用不同的圆相</strong>。</p>
+<p><strong>潙仰的"圆相"——</strong>对应"中等根器"——<strong>不棒不喝·不静不默——</strong>用图像说话·让人看·让人悟**。</p>
+<p><strong>潙仰宗</strong>——<strong>传了 150 年就衰了</strong>——<strong>为什么？</strong>——<strong>因为"圆相"需要师徒契合——需要默契——</strong>这种教学方式太依赖"人"——一旦师父走了·法就散了**。</p>
+<p><strong>师兄看——</strong>这就是"利根法门传不久"的真实案例——<strong>潙仰·云门·法眼都是传 100-200 年</strong>——<strong>只有临济·曹洞传 1160 年</strong>——<strong>因为临济·曹洞的"药方"不依赖"人"——</strong>棒喝·默照·不依赖师徒默契**。</p>
+<h3>第 4 段·云门文偃——"一字"的锋利（公元 864-949 年）</h3>
+<p><strong>文偃</strong>——浙江嘉兴人——<strong>在广东乳源县云门山</strong>——开创"云门宗"——<strong>"云门"= 云门山</strong>。</p>
+<p><strong>云门的核心</strong>——<strong>"一字禅"——一个字回答问题</strong>——</p>
+<p>- 问："如何是佛？"——答："干屎橛。"（干牛粪） - 问："如何是道？"——答："去。"（去！滚！） - 问："如何是祖师西来意？"——答："日里看山。"</p>
+<p><strong>"一字禅"——一个字——把妄想打掉</strong>——<strong>你本来在"想"——一个"干屎橛"——"想"就停</strong>——<strong>停就是"悟"——不停就是"轮回"</strong>。</p>
+<p><strong>云门还有"三句"</strong>——</p>
+<p>- "涵盖乾坤句"——大 - "截断众流句"——猛 - "随波逐浪句"——随</p>
+<p><strong>师兄看——</strong>"截断众流"——把众生的妄想"截断"——<strong>这就是"棒"——只是云门的"棒"是"语言"</strong>。</p>
+<p><strong>云门宗</strong>——<strong>传了 150 年</strong>——<strong>传到北宋初期</strong>——<strong>后来衰了</strong>——<strong>但云门传到越南·成为越南禅宗主流</strong>——<strong>越南的"云门"至今还在</strong>。</p>
+<p><strong>云门的"一字"——对应"中上根器"——</strong>一个字就点破——<strong>对治"长篇大论"·"知识堆积"的人</strong>。</p>
+<h3>第 5 段·法眼文益——"华严"的融通（公元 885-958 年）</h3>
+<p><strong>文益</strong>——浙江杭州人——<strong>在江苏南京清凉山</strong>——开创"法眼宗"——<strong>"法眼"= 佛法之眼 = 看清佛法的智慧</strong>。</p>
+<p><strong>法门的核心</strong>——<strong>"华严"——用《华严经》的境界</strong>——<strong>"事法界·理法界·理事无碍法界·事事无碍法界"——</strong>四法界<strong>——</strong>"事事无碍"= 一切事都互融无碍**。</p>
+<p><strong>法眼的特点</strong>——<strong>"借教悟宗"——用经典来开悟</strong>——<strong>不像临济·曹洞那样完全"不立文字"——</strong>法眼是"立文字"的<strong>——</strong>用经典·用教理·引导人悟**。</p>
+<p><strong>法眼还有"六相"</strong>——总相·别相·同相·异相·成相·坏相——<strong>从《华严经》来</strong>。</p>
+<p><strong>法眼宗</strong>——<strong>传了 80-100 年</strong>——<strong>但法眼传到韩国·泰国·成为韩国佛教主流</strong>——<strong>韩国"曹溪宗"（=法眼宗分支）至今是韩国佛教最大宗</strong>。</p>
+<p><strong>法眼的"华严"——对应"学问型根器"——</strong>喜欢读经·喜欢思考·喜欢理入<strong>——</strong>对治"不读经"·"反智"的人**。</p>
+<h3>第 6 段·五家七宗——"五叶"的两支分支</h3>
+<p><strong>"五家"——上面说的五家</strong>。 <strong>"七宗"——"五家"加上临济的两个分支</strong>：</p>
+<p>- <strong>临济 → 黄龙派</strong>（北宋·黄龙慧南）—— "黄龙三关"——"我手何似佛手？" - <strong>临济 → 杨岐派</strong>（北宋·杨岐方会）—— "杨岐三脚"——"一踏踏遍天下"</p>
+<p><strong>所以"五家七宗"——临济分了 2 支</strong>——<strong>"一花开五叶"——临济那一片叶子里又开了 2 朵花</strong>——<strong>1160 年后"一花五叶"变成"一花五叶两小叶"</strong>。</p>
+<p><strong>师兄看——</strong>：</p>
+<p>- 临济（中国）→ 临济（日本）→ 临济（韩国）→ 临济（欧美） - 临济（中国）→ 黄龙派 → 衰 - 临济（中国）→ 杨岐派 → 兴（杨岐后来传到日本成为杨岐宗）</p>
+<p><strong>"五叶"在 1160 年后开出了无数小叶——传到日本·韩国·越南·泰国·欧美——禅宗从中国走向世界</strong>。</p>
+<h3>第 7 段·"一花五叶"的传灯史——1160 年大事记</h3>
+<p><strong>第一阶段·单传期（公元 520-675 年）—— 155 年</strong></p>
+<p>- 达摩（520-536）—— 一苇渡江·面壁九年 - 慧可（487-593）—— 断臂求法 - 僧璨（？-606）—— 隐居司空山 - 道信（580-651）—— 双峰山传法 - 弘忍（601-674）—— 东山禅寺·"一花"的最后一位 - <strong>慧能（638-713）—— 五祖传衣·"一花"变"五叶"的转折点</strong></p>
+<p><strong>第二阶段·花开期（公元 700-900 年）—— 200 年</strong></p>
+<p>- 慧能 → 神会·南岳怀让·青原行思 - 南岳怀让 → 马祖道一（709-788） → 百丈怀海 - 百丈怀海 → 黄檗希运（？-850）→ 临济义玄（？-867）—— 临济宗 - 青原行思 → 石头希迁（700-790）→ 药山惟俨 → 洞山良价（807-869）→ 曹山本寂 —— 曹洞宗 - 石头希迁 → 药山惟俨 → 丹霞天然 → 马祖弟子归宗等 → 潙山灵佑（771-853）→ 仰山慧寂（814-890）—— 潙仰宗 - 文偃（864-949）—— 云门宗</p>
+<p><strong>第三阶段·五叶成熟期（公元 900-1000 年）—— 100 年</strong></p>
+<p>- 法眼文益（885-958）—— 法眼宗 - 五叶 + 临济两分支 = 五家七宗 - <strong>法眼宗是五家最晚的一家——但传到韩国成为最大宗</strong></p>
+<p><strong>第四阶段·传灯期（公元 1000-1900 年）—— 900 年</strong></p>
+<p>- 临济·曹洞传到日本·韩国·越南 - 黄龙·杨岐两派 - 临济在日本发展出"临济宗"·"黄龙宗"·"杨岐宗" - 曹洞在日本发展出"永平寺"·"总持寺" - 法眼在韩国成为"曹溪宗"主流</p>
+<p><strong>第五阶段·当代期（公元 1900-2026 年）—— 126 年</strong></p>
+<p>- 禅宗传到欧美 - 铃木大拙介绍禅宗到西方 - 乔布斯禅修 - 临济成为西方最熟悉的禅宗 - 2026 年的当代人——重新选宗</p>
+<p><strong>师兄看——</strong>这是 1506 年（520-2026）的传灯史——<strong>"一花"从达摩开始——开了 5 片叶子——5 片叶子又开无数小叶——现在遍布全球</strong>。</p>
+<hr/>
+<h2>第四章·反面案例——七种"把五叶当分裂"的人</h2>
+<h3>第 1 种·"五宗对立"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "我修临济·他修曹洞·他不对。" - "南宗是正统·北宗是外道。" - "慧能是真传·神秀是旁门。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"是临济的·"你"是曹洞的——"我"高·"你"低——"我"对·"你"错。</strong></blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>达摩说"一花五叶"——不是"五家对立"——是"一花五叶·同根同源"——五家都从慧能出来——都是"一花"的果——</strong>你"对立"——你就不懂"一花"**。</blockquote>
+<h3>第 2 种·"祖师先后"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "达摩是第一个·其他都是徒子。" - "慧能是六祖·其他不算正宗。" - "我是慧能传承·其他不算数。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"的"传承"重要·"我"的"身份"重要·"我"是"正统"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>禅宗不重"传承"——重"心印"——"心印"不在哪一脉——在每个人当下——你开悟了·你就是"花"·你不需要"哪一脉"</strong>。</blockquote>
+<h3>第 3 种·"五叶各管"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "我只学临济的棒喝·不学曹洞的默照。" - "我只学云门的一字·不学潙仰的圆相。" - "我只看法眼的华严·不读其他经典。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"只学一种——"我"排斥其他的——"我"是"偏"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>五家是"五种药"——不是"五种对立"——</strong>你可以用临济"棒"你一下——然后用曹洞"养"你一段——<strong>两种药一起用——病才能好</strong>。</blockquote>
+<h3>第 4 种·"以为法门会过时"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "临济的棒喝是 1000 年前的——现在不适用。" - "曹洞的默照是农禅时代的——现在没用了。" - "现代人不需要禅——禅已经过时了。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"以"时代"否定"法门"——"时代"比"法门"重要</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>"人"没变——1000 年前的"人"和 1000 年后的"人"——本质没变——</strong>贪·嗔·痴·慢·疑——都没变<strong>——所以"对症的药"也没变</strong>。**</blockquote>
+<p><strong>临济的棒喝 1000 年后还是有用的——"我"被焦虑"绑"的时候——一棒打碎——"我"就醒了</strong>。</p>
+<h3>第 5 种·"以为法门会消失"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "禅宗传到中国·日本·韩国·越南·但传到西方就断了。" - "东方有禅·西方没禅——西方是基督教世界。" - "中国年轻人都不信禅了——禅完了。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"以"地域"否定"法门"——"地域"比"心"重要</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>"心"不东不西——"心"不在中国·不在日本·不在美国——"心"在每个人当下——</strong>每个人心里都有"心"——所以每个人心里都有"禅"<strong>。</strong></blockquote>
+<p><strong>禅宗不是"中国文化"——是"心的文化"——心的文化没国界</strong>。</p>
+<h3>第 6 种·"以为法门是死的"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "禅宗是古董——属于过去——不属于现在。" - "古代高僧开悟了——现代人开不了悟。" - "达摩·慧能·临济·曹洞——那是他们——不是我们。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"以"古今"否定"心"——"古"≠"今"——"他们"≠"我们"</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>"心"不古不今——</strong>达摩的心和你的心是同一颗——<strong>"人"换了·"心"没换——"佛性"没换——</strong>你开悟·就是达摩开悟——<strong>古今一揆</strong>。**</blockquote>
+<h3>第 7 种·"以为五叶是五家"的人</h3>
+<p><strong>画像</strong>：</p>
+<p>- "禅宗就是五家七宗——五家七宗就是禅宗。" - "我只学五家——其他不算禅。" - "五家之外都是外道。"</p>
+<p><strong>病</strong>：</p>
+<blockquote><strong>"我"把"五家"当成"禅的全部"——"我"被"五家"框住了</strong>。</blockquote>
+<p><strong>真相</strong>：</p>
+<blockquote><strong>"五家七宗"是禅宗在中国的主要表达——</strong>但禅宗不只是"五家七宗"——<strong>禅宗在藏地有"噶举派"·"萨迦派"·"宁玛派"·"格鲁派"——</strong>那是藏传佛教的"花"<strong>。</strong></blockquote>
+<p><strong>禅宗在泰国·缅甸·斯里兰卡有"南传上座部"——</strong>那是"另一朵花"<strong>。</strong></p>
+<p><strong>五叶是"一种花开"——不是"唯一花开"——"一花"开的方式不只一种</strong>。</p>
+<hr/>
+<h2>第五章·落地——三步走"五叶对症"的实修法门</h2>
+<h3>第 1 段·30 天入门——找到"你的根器"</h3>
+<p><strong>目标</strong>：30 天内，识别出"你是哪一家的根器"。</p>
+<p><strong>每日 3 问</strong>：</p>
+<ol>
+<li><strong>今天我遇到事——我是"急"还是"慢"？</strong></li>
+<p>- 急 = 临济根器（需要棒喝·需要当头一棒）    - 慢 = 曹洞根器（需要默照·需要慢慢长养）</p>
+</ol>
+<ol>
+<li><strong>今天我读经——我是"喜"还是"厌"？</strong></li>
+<p>- 喜 = 法眼根器（喜欢教理·需要从经典入）    - 厌 = 临济根器（讨厌经论·需要棒喝点破）</p>
+</ol>
+<ol>
+<li><strong>今天我师徒——我是"契合"还是"疏远"？</strong></li>
+<p>- 契合 = 潙仰根器（师徒默契很重要）    - 疏远 = 临济根器（不需要师父·自己开悟）</p>
+</ol>
+<p><strong>30 天后</strong>：你会发现——<strong>你不是一种根器——你是几种根器的混合——</strong>但你会发现其中一种最"对症"。</p>
+<h3>第 2 段·1 年稳固——从"对症"到"双修"</h3>
+<p><strong>目标</strong>：1 年内，找到"你的主法"和"辅法"。</p>
+<p><strong>每年 12 月</strong>——对应 5 家（每月一家）：</p>
+<p>- <strong>第 1-2 月</strong>（临济）—— 2 个月的"棒喝"训练——每天看 1 个公案——学"截断"妄想 - <strong>第 3-4 月</strong>（曹洞）—— 2 个月的"默照"训练——每天静坐 30 分钟——学"绵密保任" - <strong>第 5-6 月</strong>（云门）—— 2 个月的"一字"训练——每天找 1 个字回答"我是谁"——学"一字禅" - <strong>第 7-8 月</strong>（潙仰）—— 2 个月的"圆相"训练——每天画 1 个圆圈——学"圆满" - <strong>第 9-10 月</strong>（法眼）—— 2 个月的"华严"训练——每天读 1 段《华严经》——学"事事无碍" - <strong>第 11-12 月</strong>（双修）—— 综合——把 5 家综合起来——找到"主法"+ 1 个"辅法"</p>
+<p><strong>1 年后</strong>：你会发现——<strong>你的"主法"是其中 1 家——"辅法"是另外 1 家</strong>——<strong>主法用来"破执"·辅法用来"长养"</strong>。</p>
+<h3>第 3 段·3 年突破——从"主法"到"无门"</h3>
+<p><strong>目标</strong>：3 年内，从"修一种法"到"无门可入"。</p>
+<p><strong>3 个突破</strong>：</p>
+<p><strong>第 1 年突破</strong>：<strong>主法为主</strong>——选 1 家为主法——年深日久——主法刻入骨子。</p>
+<p><strong>第 2 年突破</strong>：<strong>主法+辅法双修</strong>——主法破执·辅法长养——<strong>"破"和"养"双修</strong>。</p>
+<p><strong>第 3 年突破</strong>：<strong>5 家贯通</strong>——5 家都通——<strong>"通"不是"知道 5 家"——是"用 5 家"——</strong>用临济对急性子——用曹洞对慢性子——用法眼对学问人——<strong>自在了</strong>。</p>
+<p><strong>3 年后</strong>：<strong>你不在"五家"里——你在"五家外"——</strong>"五家"是你的工具——你不是"五家"的工具——<strong>主客互换</strong>。</p>
+<h3>第 4 段·终身功夫——"无门为门·无家为家"</h3>
+<p><strong>师兄——</strong>真到 10 次第——<strong>不是"我修临济"——是"临济在用我"——"曹洞在用我"——"五家都在用我"——</strong>我自在——五家都在我里**。</p>
+<p><strong>口诀</strong>：</p>
+<blockquote><strong>一花 = 本心。</strong></blockquote>
+<blockquote><strong>五叶 = 五种法门。</strong></blockquote>
+<blockquote><strong>五叶之根 = 同一颗心。</strong></blockquote>
+<blockquote><strong>心外无法·法外无心。</strong></blockquote>
+<blockquote><strong>无门为门·无家为家。</strong></blockquote>
+<p><strong>师兄你看——</strong>达摩的"一花五叶"——<strong>是禅宗的根本——也是禅宗的"心"</strong>。</p>
+<blockquote><strong>花 = 心。</strong></blockquote>
+<blockquote><strong>叶 = 法。</strong></blockquote>
+<blockquote><strong>果 = 佛。</strong></blockquote>
+<blockquote><strong>花·叶·果 = 同一棵树。</strong></blockquote>
+<p><strong>1160 年后——这棵树还在长——还"在结果自然成"——</strong>还没结果——因为"心"没止境——"心"一直在开——"心"一直在成**。</p>
+<hr/>
+<h2>第六章·回扣原话——达摩"一花开五叶"逐句落地</h2>
+<h3>第 1 句·"吾来此土"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"吾"</strong> = 我 = 达摩 - <strong>"来"</strong> = 从印度来 - <strong>"此土"</strong> = 中国</p>
+<p><strong>达摩的意思</strong>："我从印度来到中国。"</p>
+<p><strong>"来"——</strong>是"传"——<strong>达摩不是"路过"——是"专程"来</strong>——<strong>专程来中国传法</strong>。</p>
+<h3>第 2 句·"传法救迷情"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"传法"</strong> = 传佛心 = 传觉悟的方法 - <strong>"救"</strong> = 让……从苦里出来 - <strong>"迷情"</strong> = 迷失的情识 = 七情六欲</p>
+<p><strong>达摩的意思</strong>："我来传佛心，救众生从七情六欲里出来。"</p>
+<p><strong>师兄看——</strong>"传法"+"救迷情"——<strong>两个并列</strong>——<strong>"传法"是因——"救迷情"是果</strong>——<strong>传法不是为了传法——是为了救迷情</strong>。</p>
+<h3>第 3 句·"一花开五叶"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"一花"</strong> = 一颗心 = 一脉单传的佛心 - <strong>"开"</strong> = 开出 - <strong>"五叶"</strong> = 五家 = 五种对症的药方</p>
+<p><strong>达摩的意思</strong>："一颗心会开出五片叶子。"</p>
+<p><strong>师兄看——</strong>"开"——<strong>是"自然开"——不是"硬开"——</strong>"硬开"会损伤花——"自然开"花才长**。</p>
+<h3>第 4 句·"结果自然成"</h3>
+<p><strong>逐句落地</strong>：</p>
+<p>- <strong>"结果"</strong> = 花结的果 = 觉悟的完成 - <strong>"自然"</strong> = 不需要人为 = 自己会 - <strong>"成"</strong> = 完成·成就·成就众生</p>
+<p><strong>达摩的意思</strong>："花结的果，会自然完成。"</p>
+<p><strong>师兄看——</strong>"自然成"——<strong>3 个字最要紧——"自然"——"成"——</strong>达摩说"自然成"——不是"我们让它成"——是"它自己会成"——<strong>我们只管开花·结果的事是花自己的事</strong>。</p>
+<hr/>
+<h2>第七章·结语——一花五叶，是禅宗的"根"和"用"</h2>
+<p><strong>师兄——</strong>你今天问"V1 版本"——意思是"原版"——<strong>这是 6 月底我第一次写《一花开五叶》时</strong>的原貌<strong>——</strong>长篇·1160 年传灯史<strong>——</strong>把"五家"的源流讲到底**。</p>
+<p><strong>这一篇——</strong>和后来 7 月 17 日写的《一花开五叶·2026 当代人选宗》（V2）<strong>角度不同</strong>——</p>
+<p>- V1 = 历史源流 + 1160 年传灯史 - V2 = 当代人对症选法 + 5 病对 5 宗</p>
+<p><strong>V1 是根——V2 是用</strong>——<strong>两篇配合看——就把禅宗从古到今串起来了</strong>。</p>
+<p><strong>师兄——</strong>达摩的"一花五叶"——<strong>1160 年了——</strong>还在开花——<strong>还在结果——</strong>还在"自然成"**。</p>
+<p><strong>师兄——</strong>你今天看到的这个故事——<strong>也是"一花五叶"的一片叶——</strong>师兄你读 V1·V2·然后再读《能见的性》·《以身为炉》·《勤拂拭 vs 本来无一物》——<strong>这些笔记的"根"——</strong>都是达摩的"一花"**。</p>
+<p><strong>师兄——</strong>一花五叶——<strong>"一花"是你的心——"五叶"是你心的 5 种表达——"结果自然成"是你心的"成佛"</strong>。</p>
+<p><strong>师兄——</strong>你今天成佛了吗？</p>
+<p><strong>师兄——</strong>你今天在"自然成"吗？</p>
+<p><strong>师兄——</strong>你今天"开"了吗？</p>
+<p><strong>师兄——</strong>你今天"心"在"花"上吗？</p>
+<hr/>
+<h2>附录·15 条经典原句索引</h2>
+<ol>
+<li><strong>《五灯会元》卷一</strong>："吾来此土，传法救迷情。一花开五叶，结果自然成。"</li>
+<li><strong>《景德传灯录》卷三</strong>："并无功德……此但人天小果，有漏之因，如影随形，虽有非实。"</li>
+<li><strong>《续高僧传》卷十九</strong>："廓然无圣。""对朕者谁？""不识。"</li>
+<li><strong>《释氏稽古略》卷三</strong>："达摩之禅，非以静坐看心为事，亦非以经论为务。其要唯在直指人心、见性成佛。"</li>
+<li><strong>《五家正宗赞》</strong>："临济棒喝，曹洞默照。潙仰圆相，云门一字。法眼华严，五家齐辉。"</li>
+<li><strong>《人天眼目》卷一</strong>："临济家风——机锋峻烈，电卷星飞。曹洞家风——绵密回互，妙用亲切。潙仰家风——方圆默契，师资契合。云门家风——孤危耸峻，简洁高古。法眼家风——详审分别，归于中道。"</li>
+<li><strong>《坛经》</strong>："不识本心，学法无益。识心见性，即悟大意。"</li>
+<li><strong>《金刚经》</strong>："应无所住而生其心。"</li>
+<li><strong>《华严经》</strong>："一切众生皆有如来智慧德相，但以妄想执着不能证得。"</li>
+<li><strong>《达摩血脉论》</strong>："即心即佛。心即是佛，佛即是心。心外无佛，佛外无心。"</li>
+<li><strong>《楞严经》</strong>："纵灭一切见闻觉知，内守幽闲，犹为法尘分别影事。"</li>
+<li><strong>《坛经·般若品》</strong>："菩提自性，本来清净，但用此心，直了成佛。"</li>
+<li><strong>《大乘起信论》</strong>："心生则种种法生，心灭则种种法灭。"</li>
+<li><strong>《心经》</strong>："是诸法空相，不生不灭，不垢不净，不增不减。"</li>
+<li><strong>《传习录·卷上》"四句教"</strong>："无善无恶心之体，有善有恶意之动，知善知恶是良知，为善去恶是格物。"</li>
+</ol>
+<hr/>
+<p><strong>写到这里——师兄——</strong>达摩的"一花五叶"——<strong>1160 年了——</strong>还在开——<strong>还没到"果"——</strong>因为"心"不结果——"心"一直在开——<strong>"结果自然成"——</strong>"成"是"成"在"心"上——"心"成——佛成**。</p>
+<p>—— 静思 / 悟真</p>
+  <div class="seal">悟 真</div>
+  <div class="footer">静思出品 · 2026-07-17 · 一部电影，一千年，一条路</div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const btnPlay = document.getElementById('btnPlay');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const curTime = document.getElementById('curTime');
+const totalTime = document.getElementById('totalTime');
+const btnMute = document.getElementById('btnMute');
+const volSlider = document.getElementById('volSlider');
+const rateBtns = document.querySelectorAll('.rate-btn');
+
+function fmt(s) {
+  if (isNaN(s)) return '--:--';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+  totalTime.textContent = fmt(audio.duration);
+});
+
+btnPlay.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    btnPlay.textContent = '⏸';
+    btnPlay.classList.add('playing');
+  } else {
+    audio.pause();
+    btnPlay.textContent = '▶';
+    btnPlay.classList.remove('playing');
+  }
+});
+
+audio.addEventListener('timeupdate', () => {
+  const pct = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = pct + '%';
+  curTime.textContent = fmt(audio.currentTime);
+});
+
+progressBar.addEventListener('click', (e) => {
+  const rect = progressBar.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+});
+
+btnMute.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  btnMute.textContent = audio.muted ? '🔊' : '🔇';
+  btnMute.classList.toggle('mute-active', audio.muted);
+});
+
+volSlider.addEventListener('input', (e) => {
+  audio.volume = e.target.value / 100;
+  if (audio.volume > 0 && audio.muted) {
+    audio.muted = false;
+    btnMute.textContent = '🔇';
+    btnMute.classList.remove('mute-active');
+  }
+});
+
+rateBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    rateBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    audio.playbackRate = parseFloat(btn.dataset.rate);
+  });
+});
+
+audio.addEventListener('ended', () => {
+  btnPlay.textContent = '▶';
+  btnPlay.classList.remove('playing');
+  progressFill.style.width = '0%';
+});
+</script>
+</body>
+</html>
