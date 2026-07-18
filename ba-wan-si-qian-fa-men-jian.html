@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>八万四千法门——1 颗心开的 8 万 4 千朵花 · 悟真读书笔记</title>
+<style>
+:root {
+  --bg: #faf6ef;
+  --card: #f3ead8;
+  --text: #3d3027;
+  --brown: #8a5a2b;
+  --gold: #b08c4a;
+  --red: #c8423b;
+  --light: #e8dcc0;
+  --line: #d4c5a3;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: "站酷小薇体", "STKaiti", "KaiTi", "楷体", "PingFang SC", "Microsoft YaHei", serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 2.4;
+  font-size: 20px;
+}
+.container {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 30px 24px 80px;
+}
+h1 {
+  text-align: center;
+  font-size: 38px;
+  color: var(--brown);
+  margin: 30px 0 20px;
+  letter-spacing: 4px;
+  line-height: 1.5;
+}
+.hero {
+  background: linear-gradient(135deg, #f5ead0 0%, #faf2dc 100%);
+  border-radius: 16px;
+  padding: 30px 30px 26px;
+  margin: 20px 0 40px;
+  box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+  border: 1px solid var(--line);
+}
+.hero-sub {
+  text-align: center;
+  color: var(--brown);
+  font-size: 16px;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+.audio-player {
+  background: rgba(255,255,255,0.65);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 22px 0 8px;
+}
+.audio-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.btn-play {
+  background: var(--brown);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 8px rgba(138, 90, 43, 0.3);
+  transition: transform 0.15s;
+}
+.btn-play:hover { transform: scale(1.06); }
+.btn-play.playing { background: var(--red); }
+.progress-wrap {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: var(--light);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--brown);
+  border-radius: 3px;
+  width: 0%;
+  transition: width 0.1s;
+}
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--brown);
+  font-family: monospace;
+}
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--brown);
+}
+.btn-ctrl {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 4px 10px;
+  cursor: pointer;
+  color: var(--brown);
+  font-size: 12px;
+  transition: all 0.15s;
+}
+.btn-ctrl:hover { background: var(--brown); color: #fff; }
+.btn-ctrl.active { background: var(--brown); color: #fff; }
+.btn-ctrl.mute-active { background: var(--red); color: #fff; }
+.vol-slider {
+  width: 80px;
+  vertical-align: middle;
+}
+h2 {
+  color: var(--brown);
+  border-left: 5px solid var(--brown);
+  padding-left: 14px;
+  margin: 50px 0 24px;
+  font-size: 28px;
+  letter-spacing: 2px;
+}
+h3 {
+  color: var(--brown);
+  margin: 32px 0 16px;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+h4 {
+  color: var(--gold);
+  margin: 24px 0 12px;
+  font-size: 20px;
+}
+p {
+  margin: 14px 0;
+  text-align: justify;
+}
+blockquote {
+  background: rgba(176, 140, 74, 0.1);
+  border-left: 4px solid var(--gold);
+  padding: 12px 18px;
+  margin: 18px 0;
+  color: var(--brown);
+  font-style: italic;
+  border-radius: 0 8px 8px 0;
+}
+ul, ol {
+  margin: 14px 0;
+  padding-left: 30px;
+}
+li {
+  margin: 8px 0;
+}
+strong {
+  color: var(--red);
+  font-weight: 700;
+}
+code {
+  background: var(--light);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: var(--brown);
+  font-size: 0.9em;
+}
+hr {
+  border: none;
+  border-top: 1px dashed var(--line);
+  margin: 40px 0;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background: rgba(255,255,255,0.4);
+}
+th, td {
+  border: 1px solid var(--line);
+  padding: 10px 14px;
+  text-align: left;
+}
+th {
+  background: var(--brown);
+  color: #fff;
+}
+.seal {
+  text-align: right;
+  margin-top: 50px;
+  color: var(--red);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 8px;
+  opacity: 0.85;
+}
+.footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  color: var(--brown);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>八万四千法门——1 颗心开的 8 万 4 千朵花</h1>
+  <div class="hero">
+    <div class="hero-sub">悟真修行笔记 · 命题式研读 · 一部电影拆出禅宗一千五百年</div>
+    <div class="audio-player">
+      <audio id="audio" preload="metadata">
+        <source src="ba-wan-si-qian-fa-men-jian-full.mp3" type="audio/mpeg">
+      </audio>
+      <div class="audio-row">
+        <button class="btn-play" id="btnPlay" aria-label="播放/暂停">▶</button>
+        <div class="progress-wrap">
+          <div class="progress-bar" id="progressBar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <div class="time-row">
+            <span id="curTime">0:00</span>
+            <span id="totalTime">--:--</span>
+          </div>
+        </div>
+      </div>
+      <div class="audio-controls">
+        <span>倍速:</span>
+        <button class="btn-ctrl rate-btn" data-rate="0.75">0.75x</button>
+        <button class="btn-ctrl rate-btn active" data-rate="1">1x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.25">1.25x</button>
+        <button class="btn-ctrl rate-btn" data-rate="1.5">1.5x</button>
+        <button class="btn-ctrl rate-btn" data-rate="2">2x</button>
+        <button class="btn-ctrl" id="btnMute">🔇</button>
+        <input type="range" min="0" max="100" value="100" class="vol-slider" id="volSlider">
+        <a href="ba-wan-si-qian-fa-men-jian-full.mp3" download class="btn-ctrl">⬇ 下载音频</a>
+      </div>
+    </div>
+  </div>
+  <h1>八万四千法门——1 颗心开的 8 万 4 千朵花</h1>
+<blockquote><strong>悟真修行笔记 · 第 10 篇 · 精简版</strong></blockquote>
+<blockquote>砍理论·留案例·保落地。</blockquote>
+<hr/>
+<h2>序章·一句话点透</h2>
+<p><strong>师兄问</strong>——<strong>"八万四千"是随便说的数？</strong></p>
+<p><strong>不是</strong>——<strong>是真实算法</strong>： - "八" = 8 根本烦恼（贪·嗔·痴·慢·疑 + 3 种见惑） - "万四千" = 10000 表层烦恼 + 4000 种修法 - <strong>每个众生一种病·每种病一个药</strong></p>
+<p><strong>但 8 万 4 千归"一"——归"本心"</strong>。</p>
+<hr/>
+<h2>第一章·3 个"对症下药"的真实故事</h2>
+<h3>第 1 个·达摩——"廓然无圣"对治"福报病"</h3>
+<p><strong>梁武帝</strong>——造寺·写经·度僧无数——<strong>"我做了这么多·应该开悟了"</strong>——这是"福报病"。</p>
+<p><strong>达摩</strong>——"并无功德"——<strong>"廓然无圣"——"不识"</strong>——<strong>3 句话把梁武帝的"福报病"治了</strong>。</p>
+<p><strong>师兄看——</strong>： - 武帝的"病"= 形式主义·靠做事求功德 - 达摩的"药"= "无功德"——直指心性</p>
+<p><strong>这就是"对症"——不是"一种药给所有人"</strong>。</p>
+<h3>第 2 个·慧能——"本来无一物"对治"渐修病"</h3>
+<p><strong>神秀</strong>——"身是菩提树·心如明镜台·时时勤拂拭·勿使惹尘埃"——<strong>"我要慢慢修·一辈子修"</strong>——这是"渐修病"。</p>
+<p><strong>慧能</strong>——"菩提本无树·明镜亦非台·本来无一物·何处惹尘埃"——<strong>"根本无一物"——</strong>把神秀的"渐修病"治了**。</p>
+<p><strong>师兄看——</strong>： - 神秀的"病"= 执着渐修·没完没了 - 慧能的"药"= "本来无一物"——当下顿悟</p>
+<h3>第 3 个·永明延寿——"万善同归"对治"门派病"</h3>
+<p><strong>唐末五代</strong>——禅宗内部有"禅净对立"——<strong>禅宗看不起净土·净土看不起禅宗</strong>——这是"门派病"。</p>
+<p><strong>永明延寿</strong>——写《万善同归集》——<strong>"禅·净·律·密·教·所有法门都归'一心'"——</strong>把"门派病"治了**。</p>
+<p><strong>师兄看——</strong>： - 门派的"病"= 各分各的·互相否定 - 延寿的"药"= "万善同归"——一个也不否定</p>
+<p><strong>8 万 4 千法 = 8 万 4 千种"对症的药"——不是"8 万 4 千种"对立的"派"</strong>。</p>
+<hr/>
+<h2>第二章·7 种"对八万四千法门的错误态度"</h2>
+<h3>1·"少则好"的人</h3>
+<p><strong>画像</strong>："一念清净够了——其他不要。"</p>
+<p><strong>病</strong>："我"只看到 1 种药——就否定 8 万 4 千种。</p>
+<p><strong>真相</strong>：<strong>你"少"——是因为你不知道"多"</strong>——不是你真的"对"。</p>
+<h3>2·"多则好"的人</h3>
+<p><strong>画像</strong>："我要把 8 万 4 千个法门都学完。"</p>
+<p><strong>病</strong>："我"用"知识"代替"实证"。</p>
+<p><strong>真相</strong>：<strong>你读 100 部经·如果不对你的症——你只是"知识仓库"——不是"修行人"</strong>。</p>
+<h3>3·"挑法"的人</h3>
+<p><strong>画像</strong>："我只要念佛——不学禅宗。"</p>
+<p><strong>病</strong>："我"把佛法当"商品"——可以"挑"。</p>
+<p><strong>真相</strong>：<strong>佛法不是商品——是"对症的药"——你挑·是"我执"——"我执"不破·任何法门都是"魔"</strong>。</p>
+<h3>4·"法门等级"的人</h3>
+<p><strong>画像</strong>："禅宗高级——净土低级。"</p>
+<p><strong>病</strong>："我"分等级·以为"高年级" = "高"。</p>
+<p><strong>真相</strong>：<strong>药没有"高级""低级"——感冒药不"低级"——癌症药不"高级"——只有"对症"和"不对症"</strong>。</p>
+<h3>5·"闭关躲"的人</h3>
+<p><strong>画像</strong>："我不出家·不接触人——我就安全。"</p>
+<p><strong>病</strong>："我"以为"躲"就是"修"。</p>
+<p><strong>真相</strong>：<strong>真正的"修"是"在红尘里修"——不是"躲开红尘修"——</strong>八万四千法门——每一种都是"对治红尘的病"——你躲了·你的病永远治不好**。</p>
+<h3>6·"以法欺人"的人</h3>
+<p><strong>画像</strong>："我修了 30 年——你应该听我的。"</p>
+<p><strong>病</strong>："我"用"法"来"欺"——"我"是"法执"。</p>
+<p><strong>真相</strong>：《金刚经》说"法尚应舍·何况非法"——<strong>"法执"比"我执"还难破——</strong>"我执"破了是罗汉——"法执"也破才是佛**。</p>
+<h3>7·"以法谋利"的人</h3>
+<p><strong>画像</strong>："你给我 1 万——我教你开悟法门。"</p>
+<p><strong>病</strong>："我"把"法"当"商品"——"我"是"佛商"。</p>
+<p><strong>真相</strong>：<strong>佛法是"无价"的——</strong>达摩一苇渡江没收钱——慧能没建寺院——玄奘取经没求财——<strong>真正"传法"的人·不谋利</strong>。</p>
+<hr/>
+<h2>第三章·3 步落地（精简版）</h2>
+<h3>第 1 步·30 天·找病</h3>
+<p><strong>8 面镜子</strong>——每天照一面：</p>
+<ol>
+<li><strong>贪</strong>——今天看到喜欢的东西·是不是"非要得到"？</li>
+<li><strong>嗔</strong>——今天被人冒犯·是不是"立刻翻脸"？</li>
+<li><strong>痴</strong>——今天做决定·是不是"看不到因果"？</li>
+<li><strong>慢</strong>——今天听人意见·是不是"不接受"？</li>
+<li><strong>疑</strong>——今天学法·是不是"东学西学·没定见"？</li>
+<li><strong>邪见</strong>——今天判断·是不是"以是为非"？</li>
+<li><strong>边见</strong>——今天看问题·是不是"非黑即白"？</li>
+<li><strong>见取见</strong>——今天坚持·是不是"死守·不肯放"？</li>
+</ol>
+<p><strong>30 天后</strong>——你会发现<strong>最重的病是 1-2 种</strong>——这就是你的"根本烦恼"。</p>
+<h3>第 2 步·1 年·下药</h3>
+<p><strong>8 病对 8 药</strong>——找你的"主药"：</p>
+<p>| 病 | 主药 | 辅药 | |---|---|---| | 贪 | 不净观 | 持戒 + 布施 | | 嗔 | 慈悲观 | 忍辱 + 放生 | | 痴 | 因缘观 | 读经 + 求法 | | 慢 | 界分别观 | 礼佛 + 忏悔 | | 疑 | 念佛 | 持咒 + 皈依 | | 邪见 | 正见 | 因缘观 + 皈依三宝 | | 边见 | 中道 | 般若 + 一实相 | | 见取见 | 无我 | 空观 + 法无我 |</p>
+<p><strong>1 年里</strong>——每种"主药"用 2 个月深入修——配 1 个"辅药"。</p>
+<h3>第 3 步·3 年·归一</h3>
+<p><strong>3 个阶段</strong>： - <strong>第 1 年</strong>——对症修·找病 + 找药 + 修药 - <strong>第 2 年</strong>——多元修·主药 + 辅药 + 加 1-2 个"对别人症的药" - <strong>第 3 年</strong>——归一修·所有药都归"心"·<strong>万法归一</strong></p>
+<p><strong>3 年后</strong>——<strong>你修 1 个法 = 修 8 万 4 千法——一法通·8 万 4 千通</strong>。</p>
+<hr/>
+<h2>收束·一句话口诀</h2>
+<blockquote><strong>八万四千 = 8 根本 + 10000 表层 = 8 × 10000。</strong></blockquote>
+<blockquote><strong>法门 = 对治 = 药。</strong></blockquote>
+<blockquote><strong>8 病 → 8 药 → 8 万 4 千种修法。</strong></blockquote>
+<blockquote><strong>8 万 4 千归一 → 归"心"→ 归"佛"→ 归"实相"。</strong></blockquote>
+<blockquote><strong>会三归一 → 会万归一 → 归"本心"。</strong></blockquote>
+<hr/>
+<h2>附录·5 条经典原句</h2>
+<ol>
+<li><strong>《大智度论》</strong>："佛说八万四千法门，对治八万四千烦恼。"</li>
+<li><strong>《法华经》</strong>："十方佛土中，唯有一乘法，无二亦无三。"</li>
+<li><strong>《金刚经》</strong>："应无所住而生其心。"</li>
+<li><strong>《坛经》</strong>："不识本心，学法无益。识心见性，即悟大意。"</li>
+<li><strong>《心经》</strong>："是诸法空相，不生不灭，不垢不净，不增不减。"</li>
+</ol>
+<hr/>
+<p><strong>师兄——</strong>八万四千法门 = <strong>一颗心开的 8 万 4 千朵花</strong>——<strong>花不同·根同</strong>——<strong>根就是"本心"</strong>。</p>
+<p>—— 静思 / 悟真</p>
+  <div class="seal">悟 真</div>
+  <div class="footer">静思出品 · 2026-07-17 · 一部电影，一千年，一条路</div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const btnPlay = document.getElementById('btnPlay');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const curTime = document.getElementById('curTime');
+const totalTime = document.getElementById('totalTime');
+const btnMute = document.getElementById('btnMute');
+const volSlider = document.getElementById('volSlider');
+const rateBtns = document.querySelectorAll('.rate-btn');
+
+function fmt(s) {
+  if (isNaN(s)) return '--:--';
+  const m = Math.floor(s / 60);
+  const sec = Math.floor(s % 60);
+  return `${m}:${sec.toString().padStart(2, '0')}`;
+}
+
+audio.addEventListener('loadedmetadata', () => {
+  totalTime.textContent = fmt(audio.duration);
+});
+
+btnPlay.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    btnPlay.textContent = '⏸';
+    btnPlay.classList.add('playing');
+  } else {
+    audio.pause();
+    btnPlay.textContent = '▶';
+    btnPlay.classList.remove('playing');
+  }
+});
+
+audio.addEventListener('timeupdate', () => {
+  const pct = (audio.currentTime / audio.duration) * 100;
+  progressFill.style.width = pct + '%';
+  curTime.textContent = fmt(audio.currentTime);
+});
+
+progressBar.addEventListener('click', (e) => {
+  const rect = progressBar.getBoundingClientRect();
+  const pct = (e.clientX - rect.left) / rect.width;
+  audio.currentTime = pct * audio.duration;
+});
+
+btnMute.addEventListener('click', () => {
+  audio.muted = !audio.muted;
+  btnMute.textContent = audio.muted ? '🔊' : '🔇';
+  btnMute.classList.toggle('mute-active', audio.muted);
+});
+
+volSlider.addEventListener('input', (e) => {
+  audio.volume = e.target.value / 100;
+  if (audio.volume > 0 && audio.muted) {
+    audio.muted = false;
+    btnMute.textContent = '🔇';
+    btnMute.classList.remove('mute-active');
+  }
+});
+
+rateBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    rateBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    audio.playbackRate = parseFloat(btn.dataset.rate);
+  });
+});
+
+audio.addEventListener('ended', () => {
+  btnPlay.textContent = '▶';
+  btnPlay.classList.remove('playing');
+  progressFill.style.width = '0%';
+});
+</script>
+</body>
+</html>
