@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《心外无物·当在念转——所见皆因果，他人之错实为自身心念投射》</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #faf6ef; color: #3d3027;
+    font-family: 'Noto Serif SC', '站酷小薇体', 'STKaiti', 'KaiTi', 'PingFang SC', serif;
+    font-size: 20px; line-height: 2.2; padding: 0 0 80px 0;
+}
+.page { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+.hero {
+    background: linear-gradient(135deg, #faf6ef 0%, #f3eada 100%);
+    padding: 80px 32px 60px; text-align: center;
+    border-bottom: 3px double #8a5a2b; margin-bottom: 60px;
+}
+.hero .main-title {
+    font-size: 42px; font-weight: 700; color: #3d3027;
+    letter-spacing: 4px; margin-bottom: 16px; line-height: 1.4;
+}
+.hero .sub-title {
+    font-size: 22px; color: #8a5a2b; font-weight: 500;
+    letter-spacing: 3px; margin-bottom: 24px; line-height: 1.6;
+}
+.hero .meta {
+    font-size: 14px; color: #7a6f63; letter-spacing: 2px; margin-bottom: 40px;
+}
+.hero .meta .seal { color: #c8423b; font-weight: 600; }
+.audio-player {
+    background: #fff; border: 2px solid #8a5a2b; border-radius: 12px;
+    padding: 24px 28px; max-width: 720px; margin: 32px auto 0;
+    box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+}
+.audio-player .player-row { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+.audio-player .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #8a5a2b; color: #fff; border: none; font-size: 22px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s;
+}
+.audio-player .play-btn:hover { background: #6f4520; }
+.audio-player .progress-wrap { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.audio-player .progress-bar {
+    width: 100%; height: 8px; background: #f0e4d0; border-radius: 4px;
+    cursor: pointer; position: relative; overflow: hidden;
+}
+.audio-player .progress-fill {
+    height: 100%; background: linear-gradient(90deg, #8a5a2b, #c8a85a);
+    width: 0%; transition: width 0.1s;
+}
+.audio-player .time-row {
+    display: flex; justify-content: space-between;
+    font-size: 13px; color: #7a6f63; font-family: monospace;
+}
+.audio-player .controls {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid #f0e4d0;
+}
+.audio-player .ctrl-btn {
+    background: transparent; border: 1px solid #d4c4a8; color: #8a5a2b;
+    padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-family: inherit;
+}
+.audio-player .ctrl-btn:hover { background: #f0e4d0; }
+.audio-player .ctrl-btn.active { background: #8a5a2b; color: #fff; border-color: #8a5a2b; }
+.audio-player .speed-group { display: flex; gap: 4px; }
+.audio-player .volume { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.audio-player .volume-slider { width: 80px; }
+.audio-player .download { color: #8a5a2b; text-decoration: none; font-size: 13px; }
+.title-h1 {
+    font-size: 30px; color: #3d3027; margin: 60px 0 30px; padding-bottom: 16px;
+    border-bottom: 2px solid #8a5a2b; letter-spacing: 3px; font-weight: 600;
+}
+.title-h2 {
+    font-size: 26px; color: #8a5a2b; margin: 50px 0 24px; padding-left: 18px;
+    border-left: 6px solid #8a5a2b; letter-spacing: 2px; font-weight: 600; line-height: 1.5;
+}
+.title-h3 { font-size: 22px; color: #5a3e22; margin: 36px 0 18px; font-weight: 600; letter-spacing: 1px; }
+.title-h4 { font-size: 19px; color: #5a3e22; margin: 24px 0 12px; font-weight: 600; }
+.paragraph { margin-bottom: 20px; text-indent: 2em; text-align: justify; }
+.strong {
+    color: #8a5a2b; font-weight: 600;
+    background: linear-gradient(transparent 65%, rgba(200, 168, 90, 0.25) 65%);
+    padding: 0 2px;
+}
+.quote {
+    background: #fef5f4; border-left: 4px solid #c8423b;
+    padding: 16px 24px; margin: 24px 0; border-radius: 0 6px 6px 0;
+    font-style: normal; color: #5a3e22;
+}
+.quote p { margin: 8px 0; text-indent: 0; }
+.bullet-list, .num-list { margin: 16px 0 20px 40px; }
+.bullet-list li, .num-list li { margin-bottom: 10px; line-height: 1.9; }
+.table-wrap { overflow-x: auto; margin: 24px 0; }
+.data-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid #d4c4a8; border-radius: 6px; overflow: hidden; font-size: 16px;
+}
+.data-table th {
+    background: #8a5a2b; color: #fff; padding: 12px 16px;
+    text-align: left; font-weight: 600; letter-spacing: 1px;
+}
+.data-table td { padding: 12px 16px; border-top: 1px solid #f0e4d0; line-height: 1.7; }
+.data-table tr:nth-child(even) td { background: #faf6ef; }
+.divider { border: none; border-top: 1px dashed #c8a85a; margin: 50px 0; }
+.seal-stamp {
+    display: inline-block; background: #c8423b; color: #fff;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600;
+    letter-spacing: 4px; margin: 0 4px;
+}
+.sign-off {
+    text-align: right; margin: 60px 0 30px; color: #8a5a2b;
+    font-size: 18px; letter-spacing: 2px; line-height: 2;
+}
+@media (max-width: 768px) {
+    body { font-size: 18px; line-height: 2.0; }
+    .hero { padding: 50px 20px 40px; }
+    .hero .main-title { font-size: 28px; letter-spacing: 3px; }
+    .hero .sub-title { font-size: 17px; }
+    .title-h1 { font-size: 24px; }
+    .title-h2 { font-size: 20px; }
+    .page { padding: 0 20px; }
+    .audio-player { padding: 18px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="hero">
+    <div class="main-title">《心外无物·当在念转——所见皆因果，他人之错实为自身心念投射》</div>
+    <div class="sub-title">道是体，法术是用；用反噬体，便是礼崩乐坏 · 深度研读笔记</div>
+    <div class="meta">
+        <span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 21 日 · 字数 14000+ · 全文音频约 60 分钟
+    </div>
+    <div class="audio-player">
+        <audio id="audio" preload="metadata">
+            <source src="../xin-wai-wu-wu-nian-zhuan-full.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player-row">
+            <button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+            <div class="progress-wrap">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-row">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">--:--</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="speed-group">
+                <button class="ctrl-btn" data-speed="0.75">0.75x</button>
+                <button class="ctrl-btn active" data-speed="1">1x</button>
+                <button class="ctrl-btn" data-speed="1.25">1.25x</button>
+                <button class="ctrl-btn" data-speed="1.5">1.5x</button>
+                <button class="ctrl-btn" data-speed="2">2x</button>
+            </div>
+            <button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+            <div class="volume">
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+            </div>
+            <a class="download" id="downloadBtn" href="../xin-wai-wu-wu-nian-zhuan-full.mp3" download="xin-wai-wu-wu-nian-zhuan-full.mp3">⬇ 下载音频</a>
+        </div>
+    </div>
+</div>
+<div class="page">
+<h1 class="title-h1">《心外无物·当在念转——所见皆因果，他人之错实为自身心念投射》</h1>
+<h2 class="title-h2">悟真读书笔记（详述版）</h2>
+<p class="paragraph"><strong class="strong">核心命题：心外无物当在念转。所见皆因果——他人的"错"，实为自身心念的投射。修行不在求外，而在于念转。</strong></p>
+<blockquote class="quote">
+<p>"<strong class="strong">此心不动，名为寂；于法无染，名为静；寂静即无心，无心即修行。</strong>"</p>
+<p>"<strong class="strong">心外无物，物外无心，皆得自在。</strong>"</p>
+<p>"<strong class="strong">心神向寂，无色无形，睹之不见，听之无声，似暗非暗，如明不明，舍之不灭，取之无生。</strong>"</p>
+</blockquote>
+<p class="paragraph">这一段话，把修行从"求外"请回到"转念"——</p>
+<ul class="bullet-list">
+<li>心不动 = <strong class="strong">寂</strong>。</li>
+<li>于法无染 = <strong class="strong">静</strong>。</li>
+<li>寂静即无心 = <strong class="strong">修行</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">所见皆因果，他人之错实为自身心念投射</strong>"——<strong class="strong">你以为别人错，其实是自己在投射</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">0. 序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">师兄，心外无物，物外无心；皆得自在，当在念转。</strong></p>
+<p class="paragraph">修行 30 年的老和尚，被人问"什么是修行"，答："<strong class="strong">心不动</strong>。" 问"怎样心不动"，答："<strong class="strong">于法无染</strong>。" 问"怎样于法无染"，答："<strong class="strong">转念</strong>。"</p>
+<p class="paragraph"><strong class="strong">转念 = 修行的全部</strong>。</p>
+<p class="paragraph"><strong class="strong">心外无物</strong>——不是唯物论，是心学的根本命题：</p>
+<ul class="bullet-list">
+<li>你看到的山，不是山——<strong class="strong">是你心里那座山</strong>。</li>
+<li>你说爱人错——<strong class="strong">不是爱人错，是你的心在投射</strong>。</li>
+<li>你说社会不公——<strong class="strong">不是社会不公，是你的心在投射</strong>。</li>
+<li>你说老板压制你——<strong class="strong">不是老板压制，是你的心在投射</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物当在念转</strong>"——<strong class="strong">心外没有东西，全是你自己的念</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">1. 第一章·名相拆解——"寂、静、无心、心外无物、念转、自在"七字逐字拆</h2>
+<h3 class="title-h3">1.1【寂】——此心不动</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">此心不动，名为寂。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"寂"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">庄子</strong>："<strong class="strong">形如槁木，心如死灰。</strong>"——<strong class="strong">寂是心如死灰</strong>。</li>
+<li><strong class="strong">僧肇</strong>："<strong class="strong">寂然无相。</strong>"——<strong class="strong">寂是连相都没有</strong>。</li>
+<li><strong class="strong">慧能</strong>："<strong class="strong">本来无一物，何处惹尘埃。</strong>"——<strong class="strong">寂是本来无一物</strong>。</li>
+<li><strong class="strong">阳明</strong>："<strong class="strong">此心不动，随感而应。</strong>"——<strong class="strong">寂是此心不动</strong>。</li>
+<li><strong class="strong">神秀</strong>："<strong class="strong">身是菩提树，心如明镜台，时时勤拂拭，勿使惹尘埃。</strong>"——<strong class="strong">寂是勤拂拭</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">寂 = 此心不动 = 不被外境带着走</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">寂不是冷冰冰，是心有定海神针</strong>"——<strong class="strong">心不动，外面再吵，你也不乱</strong>。</p>
+<h3 class="title-h3">1.2【静】——于法无染</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">于法无染，名为静。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"静"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《大学》</strong>："<strong class="strong">定而后能静，静而后能安。</strong>"——<strong class="strong">静是定之后</strong>。</li>
+<li><strong class="strong">《道德经》</strong>："<strong class="strong">致虚极，守静笃。</strong>"——<strong class="strong">静是守静</strong>。</li>
+<li><strong class="strong">《庄子》</strong>："<strong class="strong">圣人之静也，非曰静也善，故静也。</strong>"——<strong class="strong">静不是为了静而静</strong>。</li>
+<li><strong class="strong">慧能</strong>："<strong class="strong">于法无染，即是禅。</strong>"——<strong class="strong">静是不被法染污</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">静 = 于法无染 = 不被外境带情绪 = 心有定但不被定</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">静不是死水，是活水不动</strong>"——<strong class="strong">静是心里有活水，但不乱流</strong>。</p>
+<h3 class="title-h3">1.3【无心】——寂静即无心</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">寂静即无心，无心即修行。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"无心"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">慧能</strong>："<strong class="strong">无心者，无一切心也。</strong>"——<strong class="strong">无心是无一切心</strong>。</li>
+<li><strong class="strong">洞山良价</strong>："<strong class="strong">切忌从他觅，迢迢与我疏。</strong>"——<strong class="strong">无心是不向外求</strong>。</li>
+<li><strong class="strong">南泉普愿</strong>："<strong class="strong">心不是佛，智不是道。</strong>"——<strong class="strong">无心是连"心"这个概念都没有</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">无心 ≠ 没有心</strong>——<strong class="strong">无心 = 没有执着的分别心</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">无心不是没感觉，是感觉来了不留</strong>"——<strong class="strong">心如明镜，物来则映，物去则空</strong>。</p>
+<h3 class="title-h3">1.4【心外无物】——心学的根本命题</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物，物外无心。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"心外无物"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">阳明</strong>："<strong class="strong">心外无物，心外无理，心外无事，心外无义，心外无善。</strong>"——<strong class="strong">一切都在心里</strong>。</li>
+<li><strong class="strong">阳明</strong>："<strong class="strong">你未看此花时，此花与汝心同归于寂。你来看此花时，则此花颜色一时明白起来。</strong>"——<strong class="strong">花的存在因为你的心而存在</strong>。</li>
+<li><strong class="strong">慧能</strong>："<strong class="strong">不是风动，不是幡动，仁者心动。</strong>"——<strong class="strong">风动幡动都是心动</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">心外无物 = 你看到的一切，都是你心的投射</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物不是否认物质存在，是说物质对你的意义是你心赋予的</strong>"——<strong class="strong">你眼里的世界 = 你心造的世界</strong>。</p>
+<h3 class="title-h3">1.5【念转】——修行的关键</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物当在念转</strong>"——<strong class="strong">转念 = 修行的关键</strong>。</p>
+<p class="paragraph"><strong class="strong">什么是"转念"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《金刚经》</strong>："<strong class="strong">应无所住而生其心。</strong>"——<strong class="strong">生其心 = 转念</strong>。</li>
+<li><strong class="strong">《心经》</strong>："<strong class="strong">心无挂碍。</strong>"——<strong class="strong">心无挂碍 = 不住念</strong>。</li>
+<li><strong class="strong">《坛经》</strong>："<strong class="strong">转识成智。</strong>"——<strong class="strong">转前七识为大圆镜智</strong>。</li>
+<li><strong class="strong">阳明</strong>："<strong class="strong">去人欲，存天理。</strong>"——<strong class="strong">转人欲为天理</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">念转 = 念头从染污转到清净 = 同一件事，从"烦恼"看到"智慧"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">念转 = 同一件事，3 个角度看，从地狱看到天堂</strong>"——<strong class="strong">转的是心，不是事</strong>。</p>
+<h3 class="title-h3">1.6【自在】——皆得自在</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物，物外无心，皆得自在。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"自在"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《法华经》</strong>："<strong class="strong">自在力。</strong>"——<strong class="strong">菩萨的自在力</strong>。</li>
+<li><strong class="strong">《楞严经》</strong>："<strong class="strong">妙湛总持不动尊。</strong>"——<strong class="strong">自在 = 妙湛不动</strong>。</li>
+<li><strong class="strong">《庄子·逍遥游》</strong>："<strong class="strong">乘天地之正，御六气之辩，以游无穷。</strong>"——<strong class="strong">自在 = 逍遥游</strong>。</li>
+<li><strong class="strong">慧能</strong>："<strong class="strong">本来无一物，何处惹尘埃。</strong>"——<strong class="strong">自在 = 不被染污</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">自在 = 不被外境绑 = 不被内念绑 = 真正自由</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">自在不是想干嘛就干嘛，是不想干嘛就能不干嘛</strong>"——<strong class="strong">自在是能进能出</strong>。</p>
+<h3 class="title-h3">1.7【见之不见，听之无声】——无色无形</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心神向寂，无色无形，睹之不见，听之无声，似暗非暗，如明不明，舍之不灭，取之无生。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"无色无形"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《道德经》</strong>："<strong class="strong">大音希声，大象无形。</strong>"——<strong class="strong">最高的道，无色无形</strong>。</li>
+<li><strong class="strong">《心经》</strong>："<strong class="strong">色即是空，空即是色。</strong>"——<strong class="strong">色空不二</strong>。</li>
+<li><strong class="strong">《楞严经》</strong>："<strong class="strong">见见之时，见非是见。</strong>"——<strong class="strong">真见不是见</strong>。</li>
+<li><strong class="strong">《坛经》</strong>："<strong class="strong">本来无一物。</strong>"——<strong class="strong">本来无相</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">无色无形 ≠ 什么都没有</strong>——<strong class="strong">无色无形 = 超越色相的本体</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">真修行人看到的世界，和你看到的不一样</strong>"——<strong class="strong">他们看到的是无色无形的本体</strong>。</p>
+<h3 class="title-h3">1.8 一句话总结</h3>
+<blockquote class="quote">
+<p><strong class="strong">寂 = 心不动。</strong></p>
+<p><strong class="strong">静 = 于法无染。</strong></p>
+<p><strong class="strong">无心 = 没有执着的分别心。</strong></p>
+<p><strong class="strong">心外无物 = 一切都在心里。</strong></p>
+<p><strong class="strong">念转 = 修行的关键。</strong></p>
+<p><strong class="strong">自在 = 真正自由。</strong></p>
+<p><strong class="strong">无色无形 = 超越色相的本体。</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">2. 第二章·经典本意——"心外无物当在念转"在 6 部经典里的同证</h2>
+<h3 class="title-h3">2.1 《金刚经》——应无所住而生其心</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">应无所住而生其心。</strong>"</p>
+</blockquote>
+<p class="paragraph">佛陀一句话点透：<strong class="strong">应无所住</strong>——心不执着于任何事，<strong class="strong">而生其心</strong>——但还要生起清净心。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">无所住 = 不住念；生其心 = 还要起心</strong>"——<strong class="strong">这不是枯木死灰，是活水不动</strong>。</p>
+<p class="paragraph"><strong class="strong">心外无物 = 不住念 = 无住</strong>。 <strong class="strong">当在念转 = 生其心 = 转念</strong>。</p>
+<h3 class="title-h3">2.2 《心经》——心无挂碍</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心无挂碍，无挂碍故，无有恐怖，远离颠倒梦想，究竟涅槃。</strong>"</p>
+</blockquote>
+<p class="paragraph">观自在菩萨的境界：<strong class="strong">心无挂碍 = 念转了</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心无挂碍不是没牵挂，是牵挂来了不留</strong>"——<strong class="strong">心如明镜，物来则映，物去则空</strong>。</p>
+<h3 class="title-h3">2.3 《六祖坛经》——不是风动，不是幡动</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">不是风动，不是幡动，仁者心动。</strong>"</p>
+</blockquote>
+<p class="paragraph">六祖慧能一句话：<strong class="strong">心动</strong>——风动幡动都是心动。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心动不是心在跳，是心在动念</strong>"——<strong class="strong">心一动，外境就跟着动</strong>。</p>
+<p class="paragraph"><strong class="strong">你看到爱人错，是你的心动念 = 你在投射</strong>。 <strong class="strong">你看到社会不公，是你的心动念 = 你在投射</strong>。 <strong class="strong">你看到老板压制你，是你的心动念 = 你在投射</strong>。</p>
+<p class="paragraph"><strong class="strong">转念 = 风动幡动都不动 = 心不动</strong>。</p>
+<h3 class="title-h3">2.4 《传习录》——心外无物，心外无理</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">心外无物，心外无理，心外无事，心外无义，心外无善。</strong>"</p>
+<p>"<strong class="strong">你未看此花时，此花与汝心同归于寂。你来看此花时，则此花颜色一时明白起来。</strong>"</p>
+</blockquote>
+<p class="paragraph">阳明两段话，把"心外无物"讲透——</p>
+<p class="paragraph"><strong class="strong">第一段</strong>：一切都在心里。 <strong class="strong">第二段</strong>：花的存在因为你的心而存在。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你没看花时，花寂；你看花时，花明</strong>"——<strong class="strong">花的意义 = 你心的意义</strong>。</p>
+<h3 class="title-h3">2.5 《道德经》——致虚极，守静笃</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">致虚极，守静笃。</strong>"</p>
+</blockquote>
+<p class="paragraph">老子一句话：<strong class="strong">致虚极</strong>——心里不存任何东西；<strong class="strong">守静笃</strong>——守住这个静。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">致虚极 = 心里没有任何念；守静笃 = 守住这个状态</strong>"——<strong class="strong">这就是寂、就是静、就是无心</strong>。</p>
+<h3 class="title-h3">2.6 《庄子·齐物论》——天地与我并生，而万物与我为一</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">天地与我并生，而万物与我为一。</strong>"</p>
+</blockquote>
+<p class="paragraph">庄子一句话：<strong class="strong">万物与我为一</strong>——<strong class="strong">物我不二</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">物我不二 = 心外无物 = 物外无心</strong>"——<strong class="strong">我和万物是一体的</strong>。</p>
+<h3 class="title-h3">2.7 经典互证</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>经典</th>
+<th>翻法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>《金刚经》</td>
+<td>应无所住而生其心</td>
+<td>无住 = 不住念，生心 = 转念</td>
+</tr>
+<tr>
+<td>《心经》</td>
+<td>心无挂碍</td>
+<td>心无挂碍 = 念转了</td>
+</tr>
+<tr>
+<td>《坛经》</td>
+<td>不是风动，不是幡动，仁者心动</td>
+<td>心动 = 念动</td>
+</tr>
+<tr>
+<td>《传习录》</td>
+<td>心外无物 / 你未看此花时</td>
+<td>一切都在心里</td>
+</tr>
+<tr>
+<td>《道德经》</td>
+<td>致虚极，守静笃</td>
+<td>致虚 = 心不动</td>
+</tr>
+<tr>
+<td>《庄子》</td>
+<td>天地与我并生，万物与我为一</td>
+<td>物我不二</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">6 部经典，一个指向：心外无物当在念转——心转了，世界就转了。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">3. 第三章·历史人物——五个"心转"的故事</h2>
+<h3 class="title-h3">3.1 慧能·"不思善不思恶"找本来面目</h3>
+<p class="paragraph">五祖弘忍要传衣钵，让弟子作偈。</p>
+<p class="paragraph">神秀写："<strong class="strong">身是菩提树，心如明镜台，时时勤拂拭，勿使惹尘埃。</strong>" 慧能写："<strong class="strong">菩提本无树，明镜亦非台，本来无一物，何处惹尘埃。</strong>"</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">神秀是渐修，慧能是顿悟</strong>"——<strong class="strong">神秀还在念转，慧能已经心外无物</strong>。</p>
+<p class="paragraph">慧能的伟大——<strong class="strong">他不是修心，是心直接转了</strong>。</p>
+<h3 class="title-h3">3.2 阳明·龙场悟道与"心外无物"</h3>
+<p class="paragraph">王阳明 1508 年被贬龙场。</p>
+<p class="paragraph">一夜，他端坐石棺前，<strong class="strong">忽然大悟</strong>："<strong class="strong">圣人之道，吾性自足，向之求理于事物者误也。</strong>"</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">阳明悟的就是心外无物</strong>"——</p>
+<p class="paragraph">阳明 37 岁之前，<strong class="strong">格物致知，向外求理</strong>——朱熹的路。 阳明 37 岁之后，<strong class="strong">心外无物，向内求心</strong>——心学的路。</p>
+<p class="paragraph"><strong class="strong">格竹子格了 7 天没格出名堂</strong>——<strong class="strong">因为理不在竹子里</strong>。 <strong class="strong">龙场一夜大悟</strong>——<strong class="strong">因为理在心里</strong>。</p>
+<p class="paragraph"><strong class="strong">阳明一辈子用四个字打天下</strong>：<strong class="strong">致良知</strong>——让心回到本来的良知。</p>
+<h3 class="title-h3">3.3 蝉·蜕壳的痛苦</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">蝉蜕壳时不动，被蚂蚁吃，但脱完壳才能飞</strong>"——<strong class="strong">这本身就是念转的过程</strong>。</p>
+<p class="paragraph"><strong class="strong">蝉的一生</strong>——</p>
+<ul class="bullet-list">
+<li>在地下<strong class="strong">7 年</strong>（中国蝉），吸树根的汁。</li>
+<li>出土后<strong class="strong">上树</strong>，脱壳。</li>
+<li>脱壳时<strong class="strong">最脆弱</strong>——几个小时里，不能动，被蚂蚁吃。</li>
+<li>脱完壳，<strong class="strong">才能飞</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">念转也是这样</strong>——</p>
+<ul class="bullet-list">
+<li>在暗处<strong class="strong">扎根</strong>（很多年的积累）；</li>
+<li>出来<strong class="strong">脱壳</strong>（心在转）；</li>
+<li>脱壳时<strong class="strong">最痛</strong>（但不得不）；</li>
+<li>脱完壳，<strong class="strong">才能飞</strong>（心外无物）。</li>
+</ul>
+<h3 class="title-h3">3.4 妈妈·30 年种地心中有标准</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">妈妈种 30 年地，心中有标准</strong>"——<strong class="strong">这就是心外无物</strong>。</p>
+<p class="paragraph"><strong class="strong">妈妈的标准</strong>——</p>
+<ul class="bullet-list">
+<li>节气到了<strong class="strong">该种</strong>——<strong class="strong">心不动，照着标准做</strong>。</li>
+<li>天气不对<strong class="strong">该等</strong>——<strong class="strong">心不动，照着节气等</strong>。</li>
+<li>虫来了<strong class="strong">该除</strong>——<strong class="strong">心不动，照着规律除</strong>。</li>
+<li>收成好了<strong class="strong">不喜</strong>——<strong class="strong">心不动，照着天收</strong>。</li>
+<li>收成差了<strong class="strong">不悲</strong>——<strong class="strong">心不动，照着天收</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">妈妈种 30 年地，心一直没动</strong>——<strong class="strong">这就是寂、就是静、就是无心、就是心外无物</strong>。</p>
+<h3 class="title-h3">3.5 玄奘·19 年求法</h3>
+<p class="paragraph">玄奘 27 岁出长安，<strong class="strong">西行 19 年</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">玄奘 19 年求法，心从来没动过</strong>"——</p>
+<ul class="bullet-list">
+<li><strong class="strong">遇到雪山</strong>——<strong class="strong">心不动，继续走</strong>。</li>
+<li><strong class="strong">遇到强盗</strong>——<strong class="strong">心不动，继续走</strong>。</li>
+<li><strong class="strong">遇到高昌王挽留</strong>——<strong class="strong">心不动，继续走</strong>。</li>
+<li><strong class="strong">遇到荣辱得失</strong>——<strong class="strong">心不动，继续走</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">玄奘 19 年没改变初心</strong>——<strong class="strong">这就是心外无物</strong>。</p>
+<h3 class="title-h3">3.6 五个故事·一个共同点</h3>
+<p class="paragraph">慧能、阳明、蝉、妈妈、玄奘——</p>
+<p class="paragraph">他们的共同点：<strong class="strong">心不动</strong>。</p>
+<ul class="bullet-list">
+<li>慧能<strong class="strong">不思善不思恶</strong>——<strong class="strong">心不动</strong>。</li>
+<li>阳明<strong class="strong">龙场悟道</strong>——<strong class="strong">心不动</strong>。</li>
+<li>蝉<strong class="strong">脱壳时不动</strong>——<strong class="strong">心不动</strong>。</li>
+<li>妈妈<strong class="strong">种 30 年地</strong>——<strong class="strong">心不动</strong>。</li>
+<li>玄奘<strong class="strong">19 年求法</strong>——<strong class="strong">心不动</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">心不动 = 心外无物 = 当在念转 = 真修行。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">4. 第四章·反面案例——七种"心外有物"的人</h2>
+<h3 class="title-h3">4.1 「我被伤害」型——心外有人伤我</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">你以为别人错，其实是自己在投射</strong>"——<strong class="strong">"我被伤害"型的人，</strong>心外有人伤我**。</p>
+<p class="paragraph"><strong class="strong">这种人把"我被伤害"当真</strong>——</p>
+<ul class="bullet-list">
+<li>爱人不爱我——<strong class="strong">她伤我</strong>。</li>
+<li>同事陷害我——<strong class="strong">他伤我</strong>。</li>
+<li>老板压制我——<strong class="strong">他伤我</strong>。</li>
+<li>朋友背叛我——<strong class="strong">他伤我</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——伤你的不是别人，是你的心在投射</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：她在爱我 / 他在帮我 / 这是功课 / 这是锻炼</strong>。</p>
+<h3 class="title-h3">4.2 「社会不公」型——心外有社会</h3>
+<p class="paragraph"><strong class="strong">"社会不公"型的人，</strong>心外有社会**。</p>
+<ul class="bullet-list">
+<li>我不成功——<strong class="strong">社会不公</strong>。</li>
+<li>我赚不到钱——<strong class="strong">社会不公</strong>。</li>
+<li>我不健康——<strong class="strong">社会不公</strong>。</li>
+<li>我婚姻不幸——<strong class="strong">社会不公</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——不公的不是社会，是你的心在投射</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：社会给我功课 / 我能改变自己 / 我能创造价值</strong>。</p>
+<h3 class="title-h3">4.3 「命运注定」型——心外有命运</h3>
+<p class="paragraph"><strong class="strong">"命运注定"型的人，</strong>心外有命运**。</p>
+<ul class="bullet-list">
+<li>我穷——<strong class="strong">命</strong>。</li>
+<li>我病——<strong class="strong">命</strong>。</li>
+<li>我孤独——<strong class="strong">命</strong>。</li>
+<li>我失败——<strong class="strong">命</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——注定的不是命，是你的心在投射</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：命由我作，福自己求 / 一切福田，不离方寸</strong>。</p>
+<h3 class="title-h3">4.4 「他人错」型——心外有人错</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">所见皆因果，他人之错实为自身心念投射</strong>"——<strong class="strong">"他人错"型的人，</strong>心外有人错**。</p>
+<ul class="bullet-list">
+<li>爱人错——<strong class="strong">她不听我</strong>。</li>
+<li>孩子错——<strong class="strong">他不听话</strong>。</li>
+<li>同事错——<strong class="strong">他不配合</strong>。</li>
+<li>老板错——<strong class="strong">他不公平</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——错的不是别人，是你的心在投射</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：她不听是我没表达清楚 / 他不听话是我没教好 / 我能改变自己</strong>。</p>
+<h3 class="title-h3">4.5 「我要赢」型——心外有对手</h3>
+<p class="paragraph"><strong class="strong">"我要赢"型的人，</strong>心外有对手**。</p>
+<ul class="bullet-list">
+<li>商业——<strong class="strong">对手</strong>。</li>
+<li>关系——<strong class="strong">对手</strong>。</li>
+<li>内心——<strong class="strong">对手</strong>。</li>
+<li>朋友圈——<strong class="strong">对手</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——对手不是别人，是你的心在投射</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：没有对手 / 我们是一体 / 我能创造共赢</strong>。</p>
+<h3 class="title-h3">4.6 「我没本事」型——心外有本事</h3>
+<p class="paragraph"><strong class="strong">"我没本事"型的人，</strong>心外有本事**。</p>
+<ul class="bullet-list">
+<li>我不行——<strong class="strong">我没本事</strong>。</li>
+<li>我做不到——<strong class="strong">我没本事</strong>。</li>
+<li>我不配——<strong class="strong">我没本事</strong>。</li>
+<li>我不够好——<strong class="strong">我没本事</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——本事不在外，在你的心</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：心外无物 = 我本来具足 = 我心即宇宙</strong>。</p>
+<h3 class="title-h3">4.7 「我不自由」型——心外有束缚</h3>
+<p class="paragraph"><strong class="strong">"我不自由"型的人，</strong>心外有束缚**。</p>
+<ul class="bullet-list">
+<li>我没钱——<strong class="strong">不自由</strong>。</li>
+<li>我没时间——<strong class="strong">不自由</strong>。</li>
+<li>我没人爱——<strong class="strong">不自由</strong>。</li>
+<li>我没地位——<strong class="strong">不自由</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">但心外无物——束缚不在外，在你的心</strong>。</p>
+<p class="paragraph"><strong class="strong">心转过来：心外无物 = 我本来就自由 = 无挂碍故无有恐怖</strong>。</p>
+<h3 class="title-h3">4.8 现代职场版·3 种"心外有物"画像</h3>
+<h4 class="title-h4">4.8.1 35 岁产品经理——"我被伤害"型</h4>
+<p class="paragraph">小王 35 岁，高级产品经理。</p>
+<p class="paragraph">他信奉"我被伤害"——</p>
+<ul class="bullet-list">
+<li>老板不赏识——<strong class="strong">他伤我</strong>。</li>
+<li>同事抢功——<strong class="strong">他伤我</strong>。</li>
+<li>客户刁难——<strong class="strong">他伤我</strong>。</li>
+<li>团队不给力——<strong class="strong">他伤我</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">小王从来不想"我为什么被伤害"</strong>——<strong class="strong">他只想"他们为什么伤我"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物</strong>"——<strong class="strong">小王的伤害，</strong>不是别人给的，是他自己心里投射的**。</p>
+<p class="paragraph">真知的产品经理，<strong class="strong">会问"我为什么觉得被伤害"</strong>——<strong class="strong">因为他在转念</strong>。</p>
+<h4 class="title-h4">4.8.2 45 岁创业者——"社会不公"型</h4>
+<p class="paragraph">老李 45 岁，创业十年。</p>
+<p class="paragraph">他信奉"社会不公"——</p>
+<ul class="bullet-list">
+<li>资源不公——<strong class="strong">社会不公</strong>。</li>
+<li>机会不公——<strong class="strong">社会不公</strong>。</li>
+<li>规则不公——<strong class="strong">社会不公</strong>。</li>
+<li>命运不公——<strong class="strong">社会不公</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">老李从来不想"我为什么没拿到"</strong>——<strong class="strong">他只想"社会为什么不公"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物</strong>"——<strong class="strong">老李的不公，</strong>不是社会给的，是他自己心里投射的**。</p>
+<p class="paragraph">真知的创业者，<strong class="strong">会问"我为什么觉得不公"</strong>——<strong class="strong">因为他在转念</strong>。</p>
+<h4 class="title-h4">4.8.3 60 岁退休人——"命运注定"型</h4>
+<p class="paragraph">老张 60 岁，退休五年。</p>
+<p class="paragraph">他信奉"命运注定"——</p>
+<ul class="bullet-list">
+<li>我身体不好——<strong class="strong">命</strong>。</li>
+<li>我钱不够——<strong class="strong">命</strong>。</li>
+<li>我子女不孝——<strong class="strong">命</strong>。</li>
+<li>我孤独——<strong class="strong">命</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">老张从来不想"我为什么这样"</strong>——<strong class="strong">他只想"命就是这样"</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物</strong>"——<strong class="strong">老张的命运，</strong>不是命注定的，是他自己心里投射的**。</p>
+<p class="paragraph">真知的退休人，<strong class="strong">会问"我为什么认命"</strong>——<strong class="strong">因为他在转念</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">5. 第五章·落地——三步走"心外无物当在念转"实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门——每天找一件"我在投射的事"</h3>
+<p class="paragraph"><strong class="strong">30 天的目标：每天睡前问自己"今天有什么事是我在投射"。</strong></p>
+<p class="paragraph">举例：</p>
+<ul class="bullet-list">
+<li>今天<strong class="strong">爱人</strong>和我吵架——<strong class="strong">我为什么觉得她错了</strong>？</li>
+<li>今天<strong class="strong">同事</strong>甩锅——<strong class="strong">我为什么觉得他不负责任</strong>？</li>
+<li>今天<strong class="strong">老板</strong>批评我——<strong class="strong">我为什么觉得他不公平</strong>？</li>
+<li>今天<strong class="strong">孩子</strong>顶嘴——<strong class="strong">我为什么觉得他不懂事</strong>？</li>
+</ul>
+<p class="paragraph"><strong class="strong">30 天后，你会发现"原来很多事是我在投射"</strong>——这是念转的开始。</p>
+<h3 class="title-h3">5.2 1 年稳固——练"三秒转念"</h3>
+<p class="paragraph"><strong class="strong">1 年的目标：能在 3 秒内转念</strong>。</p>
+<p class="paragraph">举例：今天爱人又骂我——</p>
+<ul class="bullet-list">
+<li><strong class="strong">第 1 秒</strong>：她骂我（情绪上来）=<strong class="strong">心外有人骂我</strong>。</li>
+<li><strong class="strong">第 2 秒</strong>：她在说什么（觉察）=<strong class="strong">她在投射</strong>。</li>
+<li><strong class="strong">第 3 秒</strong>：我为什么觉得被骂（转念）=<strong class="strong">心外无物，我在投射</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">3 秒转念 = 3 秒心转</strong> = <strong class="strong">3 秒心外无物</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物 = 一念之间</strong>"——<strong class="strong">念转了，世界就转了</strong>。</p>
+<h3 class="title-h3">5.3 3 年突破——心外无物</h3>
+<p class="paragraph"><strong class="strong">3 年的目标：能做到心外无物</strong>。</p>
+<ul class="bullet-list">
+<li>不是"没有外境"——<strong class="strong">外境永远有</strong>。</li>
+<li>不是"没有情绪"——<strong class="strong">情绪永远有</strong>。</li>
+<li>是"<strong class="strong">看到外境，心不被带走</strong>"。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">此心不动，名为寂</strong>"——<strong class="strong">心不动 = 心外无物</strong>。</p>
+<h3 class="title-h3">5.4 终身功夫</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">当在念转</strong>"——<strong class="strong">念转是一辈子的事</strong>。</p>
+<p class="paragraph"><strong class="strong">心外无物，是一辈子的事</strong>——</p>
+<ul class="bullet-list">
+<li>慧能一辈子<strong class="strong">不思善不思恶</strong>。</li>
+<li>阳明一辈子<strong class="strong">致良知</strong>。</li>
+<li>妈妈一辈子<strong class="strong">种 30 年地</strong>。</li>
+<li>玄奘一辈子<strong class="strong">19 年求法</strong>。</li>
+</ul>
+<h3 class="title-h3">5.5 三个检验</h3>
+<ol class="num-list">
+<li><strong class="strong">今天的事检验</strong>——今天<strong class="strong">有一件事你能在 3 秒内转念</strong>吗？</li>
+<li><strong class="strong">爱人检验</strong>——你爱人<strong class="strong">最让你难受的事</strong>——你能在心里看到这是你的投射吗？</li>
+<li><strong class="strong">孩子检验</strong>——你<strong class="strong">最看不惯孩子的点</strong>——你能在心里看到这是你的投射吗？</li>
+</ul>
+<hr class="divider">
+<h2 class="title-h2">6. 第六章·回扣原话——7 句原话逐句落地表</h2>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>名相</th>
+<th>落地动作</th>
+</tr>
+<tr>
+<td>"此心不动，名为寂"</td>
+<td>寂</td>
+<td>今天有什么事让你的心动了？转念</td>
+</tr>
+<tr>
+<td>"于法无染，名为静"</td>
+<td>静</td>
+<td>今天有什么法（外境）染了你？放下</td>
+</tr>
+<tr>
+<td>"寂静即无心"</td>
+<td>无心</td>
+<td>今天有什么分别心？去掉</td>
+</tr>
+<tr>
+<td>"心外无物，物外无心"</td>
+<td>心外无物</td>
+<td>今天有什么"外物"让你难受？那是你的心</td>
+</tr>
+<tr>
+<td>"皆得自在"</td>
+<td>自在</td>
+<td>今天有什么不自在？问自己"我为什么不自在"</td>
+</tr>
+<tr>
+<td>"舍之不灭，取之无生"</td>
+<td>不生不灭</td>
+<td>今天有什么你想要或不想要的？都不取不舍</td>
+</tr>
+<tr>
+<td>"所见皆因果，他人之错实为自身心念投射"</td>
+<td>因果 / 投射</td>
+<td>今天你看到谁错？那是你自己的投射</td>
+</tr>
+</table></div>
+<h3 class="title-h3">6.1 一句话总纲</h3>
+<blockquote class="quote">
+<p><strong class="strong">心外无物当在念转。</strong></p>
+<p><strong class="strong">所见皆因果，他人之错实为自身心念投射。</strong></p>
+<p><strong class="strong">师兄，</strong>今天你看到谁错？那是你自己的投射。<em>*</em>*</p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">7. 收束——心外无物，当在念转</h2>
+<p class="paragraph">悟真师兄讲："<strong class="strong">心外无物当在念转</strong>"——<strong class="strong">这一句话，2500 年来，所有修行人都在说同一件事</strong>。</p>
+<p class="paragraph"><strong class="strong">佛家说</strong>："<strong class="strong">应无所住而生其心。</strong>" <strong class="strong">道家说</strong>："<strong class="strong">致虚极，守静笃。</strong>" <strong class="strong">儒家说</strong>："<strong class="strong">心外无物，心外无理。</strong>" <strong class="strong">禅宗说</strong>："<strong class="strong">不是风动，不是幡动，仁者心动。</strong>" <strong class="strong">妈妈说</strong>："<strong class="strong">节气到了就种。</strong>" <strong class="strong">玄奘说</strong>："<strong class="strong">宁向西天一步死，不回东土半步生。</strong>" <strong class="strong">阳明说</strong>："<strong class="strong">此心不动，随感而应。</strong>"</p>
+<p class="paragraph"><strong class="strong">5 圣 5 句话，同指一件事</strong>：<strong class="strong">心外无物当在念转</strong>。</p>
+<p class="paragraph"><strong class="strong">心转了，世界就转了</strong>。 <strong class="strong">心不转，世界永远是地狱</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">所见皆因果，他人之错实为自身心念投射</strong>"——<strong class="strong">你以为你在看别人，其实你在看自己</strong>。</p>
+<blockquote class="quote">
+<p><strong class="strong">师兄，</strong></p>
+<p><strong class="strong">今天你看谁错？那是你自己在投射。</strong></p>
+<p><strong class="strong">今天你看谁坏？那是你自己在投射。</strong></p>
+<p><strong class="strong">今天你看社会不公？那是你自己在投射。</strong></p>
+<p><strong class="strong">今天你看命运不济？那是你自己在投射。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">心外无物 = 你看到的世界 = 你心的世界</strong>。</p>
+<p class="paragraph"><strong class="strong">师兄，</strong>今天你看到谁错？<em>*</em>*</p>
+<p class="paragraph"><strong class="strong">看到自己，就是念转的第一步</strong>。 守住这一步，<strong class="strong">三年后，你能看穿一切外境——因为一切外境，都是你自己的心</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">8. 附录·12 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《金刚经·第十品》</strong> "应无所住而生其心"</li>
+<li><strong class="strong">《心经》</strong> "心无挂碍，无挂碍故，无有恐怖，远离颠倒梦想，究竟涅槃"</li>
+<li><strong class="strong">《六祖坛经·行由品》</strong> "不是风动，不是幡动，仁者心动"</li>
+<li><strong class="strong">《六祖坛经·行由品》</strong> "菩提本无树，明镜亦非台，本来无一物，何处惹尘埃"</li>
+<li><strong class="strong">《传习录·卷上》</strong> "心外无物，心外无理，心外无事，心外无义，心外无善"</li>
+<li><strong class="strong">《传习录·卷下》</strong> "你未看此花时，此花与汝心同归于寂。你来看此花时，则此花颜色一时明白起来"</li>
+<li><strong class="strong">《道德经·第十六章》</strong> "致虚极，守静笃"</li>
+<li><strong class="strong">《庄子·齐物论》</strong> "天地与我并生，而万物与我为一"</li>
+<li><strong class="strong">《大学》</strong> "知止而后有定，定而后能静，静而后能安"</li>
+<li><strong class="strong">《中庸·第一章》</strong> "天命之谓性，率性之谓道，修道之谓教"</li>
+<li><strong class="strong">《法华经·方便品》</strong> "是法住法位，世间相常住"</li>
+<li><strong class="strong">《楞严经·卷四》</strong> "见见之时，见非是见"</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p><strong class="strong">署名：悟真 · 静思整理</strong></p>
+<p><strong class="strong">2026-07-21 下午 · 飞书对话由悟真命题、静思执笔</strong></p>
+<p><strong class="strong">最高纲领：古人的智慧不是拿来欣赏的，是拿来校准的。</strong></p>
+</blockquote>
+    <div class="sign-off">
+        <span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>
+        2026 年 7 月 21 日 · 北京
+    </div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const muteBtn = document.getElementById('muteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const speedBtns = document.querySelectorAll('.ctrl-btn[data-speed]');
+function fmt(s) {
+    if (!s || isNaN(s)) return '00:00';
+    const m = Math.floor(s / 60);
+    const ss = Math.floor(s % 60);
+    return String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
+}
+playBtn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); playBtn.textContent = '⏸'; }
+    else { audio.pause(); playBtn.textContent = '▶'; }
+});
+audio.addEventListener('loadedmetadata', () => { durationEl.textContent = fmt(audio.duration); });
+audio.addEventListener('timeupdate', () => {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = fmt(audio.currentTime);
+});
+audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶';
+    progressFill.style.width = '0%';
+});
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+});
+muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇 取消静音' : '🔊 静音';
+});
+volumeSlider.addEventListener('input', () => { audio.volume = volumeSlider.value / 100; });
+speedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const speed = parseFloat(btn.dataset.speed);
+        audio.playbackRate = speed;
+        speedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+audio.volume = 0.8;
+</script>
+</body>
+</html>
