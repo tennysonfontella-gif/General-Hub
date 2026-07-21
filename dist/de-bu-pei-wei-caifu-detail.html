@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《财是福德之器——德不配位则财为灾殃，"无财不养道"的真解》</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap');
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    background: #faf6ef; color: #3d3027;
+    font-family: 'Noto Serif SC', '站酷小薇体', 'STKaiti', 'KaiTi', 'PingFang SC', serif;
+    font-size: 20px; line-height: 2.2; padding: 0 0 80px 0;
+}
+.page { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+.hero {
+    background: linear-gradient(135deg, #faf6ef 0%, #f3eada 100%);
+    padding: 80px 32px 60px; text-align: center;
+    border-bottom: 3px double #8a5a2b; margin-bottom: 60px;
+}
+.hero .main-title {
+    font-size: 42px; font-weight: 700; color: #3d3027;
+    letter-spacing: 4px; margin-bottom: 16px; line-height: 1.4;
+}
+.hero .sub-title {
+    font-size: 22px; color: #8a5a2b; font-weight: 500;
+    letter-spacing: 3px; margin-bottom: 24px; line-height: 1.6;
+}
+.hero .meta {
+    font-size: 14px; color: #7a6f63; letter-spacing: 2px; margin-bottom: 40px;
+}
+.hero .meta .seal { color: #c8423b; font-weight: 600; }
+.audio-player {
+    background: #fff; border: 2px solid #8a5a2b; border-radius: 12px;
+    padding: 24px 28px; max-width: 720px; margin: 32px auto 0;
+    box-shadow: 0 4px 20px rgba(138, 90, 43, 0.12);
+}
+.audio-player .player-row { display: flex; align-items: center; gap: 18px; margin-bottom: 16px; }
+.audio-player .play-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #8a5a2b; color: #fff; border: none; font-size: 22px;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; transition: background 0.2s;
+}
+.audio-player .play-btn:hover { background: #6f4520; }
+.audio-player .progress-wrap { flex: 1; display: flex; flex-direction: column; gap: 6px; }
+.audio-player .progress-bar {
+    width: 100%; height: 8px; background: #f0e4d0; border-radius: 4px;
+    cursor: pointer; position: relative; overflow: hidden;
+}
+.audio-player .progress-fill {
+    height: 100%; background: linear-gradient(90deg, #8a5a2b, #c8a85a);
+    width: 0%; transition: width 0.1s;
+}
+.audio-player .time-row {
+    display: flex; justify-content: space-between;
+    font-size: 13px; color: #7a6f63; font-family: monospace;
+}
+.audio-player .controls {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    padding-top: 12px; border-top: 1px solid #f0e4d0;
+}
+.audio-player .ctrl-btn {
+    background: transparent; border: 1px solid #d4c4a8; color: #8a5a2b;
+    padding: 6px 12px; border-radius: 6px; cursor: pointer;
+    font-size: 13px; font-family: inherit;
+}
+.audio-player .ctrl-btn:hover { background: #f0e4d0; }
+.audio-player .ctrl-btn.active { background: #8a5a2b; color: #fff; border-color: #8a5a2b; }
+.audio-player .speed-group { display: flex; gap: 4px; }
+.audio-player .volume { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.audio-player .volume-slider { width: 80px; }
+.audio-player .download { color: #8a5a2b; text-decoration: none; font-size: 13px; }
+.title-h1 {
+    font-size: 30px; color: #3d3027; margin: 60px 0 30px; padding-bottom: 16px;
+    border-bottom: 2px solid #8a5a2b; letter-spacing: 3px; font-weight: 600;
+}
+.title-h2 {
+    font-size: 26px; color: #8a5a2b; margin: 50px 0 24px; padding-left: 18px;
+    border-left: 6px solid #8a5a2b; letter-spacing: 2px; font-weight: 600; line-height: 1.5;
+}
+.title-h3 { font-size: 22px; color: #5a3e22; margin: 36px 0 18px; font-weight: 600; letter-spacing: 1px; }
+.title-h4 { font-size: 19px; color: #5a3e22; margin: 24px 0 12px; font-weight: 600; }
+.paragraph { margin-bottom: 20px; text-indent: 2em; text-align: justify; }
+.strong {
+    color: #8a5a2b; font-weight: 600;
+    background: linear-gradient(transparent 65%, rgba(200, 168, 90, 0.25) 65%);
+    padding: 0 2px;
+}
+.quote {
+    background: #fef5f4; border-left: 4px solid #c8423b;
+    padding: 16px 24px; margin: 24px 0; border-radius: 0 6px 6px 0;
+    font-style: normal; color: #5a3e22;
+}
+.quote p { margin: 8px 0; text-indent: 0; }
+.bullet-list, .num-list { margin: 16px 0 20px 40px; }
+.bullet-list li, .num-list li { margin-bottom: 10px; line-height: 1.9; }
+.table-wrap { overflow-x: auto; margin: 24px 0; }
+.data-table {
+    width: 100%; border-collapse: collapse; background: #fff;
+    border: 1px solid #d4c4a8; border-radius: 6px; overflow: hidden; font-size: 16px;
+}
+.data-table th {
+    background: #8a5a2b; color: #fff; padding: 12px 16px;
+    text-align: left; font-weight: 600; letter-spacing: 1px;
+}
+.data-table td { padding: 12px 16px; border-top: 1px solid #f0e4d0; line-height: 1.7; }
+.data-table tr:nth-child(even) td { background: #faf6ef; }
+.divider { border: none; border-top: 1px dashed #c8a85a; margin: 50px 0; }
+.seal-stamp {
+    display: inline-block; background: #c8423b; color: #fff;
+    padding: 4px 12px; border-radius: 4px; font-weight: 600;
+    letter-spacing: 4px; margin: 0 4px;
+}
+.sign-off {
+    text-align: right; margin: 60px 0 30px; color: #8a5a2b;
+    font-size: 18px; letter-spacing: 2px; line-height: 2;
+}
+@media (max-width: 768px) {
+    body { font-size: 18px; line-height: 2.0; }
+    .hero { padding: 50px 20px 40px; }
+    .hero .main-title { font-size: 28px; letter-spacing: 3px; }
+    .hero .sub-title { font-size: 17px; }
+    .title-h1 { font-size: 24px; }
+    .title-h2 { font-size: 20px; }
+    .page { padding: 0 20px; }
+    .audio-player { padding: 18px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="hero">
+    <div class="main-title">《财是福德之器——德不配位则财为灾殃，"无财不养道"的真解》</div>
+    <div class="sub-title">道是体，法术是用；用反噬体，便是礼崩乐坏 · 深度研读笔记</div>
+    <div class="meta">
+        <span class="seal">悟真</span> · 静思 🧘 整理 · 2026 年 7 月 21 日 · 字数 14000+ · 全文音频约 60 分钟
+    </div>
+    <div class="audio-player">
+        <audio id="audio" preload="metadata">
+            <source src="../de-bu-pei-wei-caifu-full.mp3" type="audio/mpeg">
+        </audio>
+        <div class="player-row">
+            <button class="play-btn" id="playBtn" aria-label="播放">▶</button>
+            <div class="progress-wrap">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="time-row">
+                    <span id="currentTime">00:00</span>
+                    <span id="duration">--:--</span>
+                </div>
+            </div>
+        </div>
+        <div class="controls">
+            <div class="speed-group">
+                <button class="ctrl-btn" data-speed="0.75">0.75x</button>
+                <button class="ctrl-btn active" data-speed="1">1x</button>
+                <button class="ctrl-btn" data-speed="1.25">1.25x</button>
+                <button class="ctrl-btn" data-speed="1.5">1.5x</button>
+                <button class="ctrl-btn" data-speed="2">2x</button>
+            </div>
+            <button class="ctrl-btn" id="muteBtn">🔊 静音</button>
+            <div class="volume">
+                <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="80">
+            </div>
+            <a class="download" id="downloadBtn" href="../de-bu-pei-wei-caifu-full.mp3" download="de-bu-pei-wei-caifu-full.mp3">⬇ 下载音频</a>
+        </div>
+    </div>
+</div>
+<div class="page">
+<h1 class="title-h1">《财是福德之器——德不配位则财为灾殃，"无财不养道"的真解》</h1>
+<h2 class="title-h2">悟真读书笔记（详述版）</h2>
+<p class="paragraph"><strong class="strong">核心命题：觉醒的人将福德转化为功德，认为有形的财富代表着使命和责任。德不配位则财为灾殃——多余的财富若没有匹配的觉悟承载，就是灾难。"无财不养道"的真义是：每一分钱都应成就智慧与德行，财富应服务于更高层次的精神追求。</strong></p>
+<blockquote class="quote">
+<p>"<strong class="strong">若一个人未能准备好承担更大的责任与使命，那么多余的财富反而会成为灾难。</strong>"</p>
+<p>"<strong class="strong">我们家祖祖辈辈，没有一分钱不是来成就你智慧的。</strong>"</p>
+<p>"<strong class="strong">财是福德之器——德不配位，必有灾殃。</strong>"</p>
+</blockquote>
+<p class="paragraph">这一段话，把"财富"和"德行"的关系讲透——</p>
+<ul class="bullet-list">
+<li><strong class="strong">财是器</strong>——<strong class="strong">器载道则吉，器无道则凶</strong>。</li>
+<li><strong class="strong">德是主</strong>——<strong class="strong">德主财则吉，财主德则凶</strong>。</li>
+<li><strong class="strong">无财不养道</strong>——<strong class="strong">不是没钱没法修道，是每一分钱都用来成就智慧</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">觉醒的人将福德转化为功德</strong>"——<strong class="strong">福德是修来的，功德是悟来的</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">0. 序章·一句话点透</h2>
+<p class="paragraph"><strong class="strong">师兄，财是福德之器；德不配位则财为灾殃。</strong></p>
+<p class="paragraph">为什么有人中彩票后家破人亡？ 为什么有人贪了一辈子最后身败名裂？ 为什么有人辛苦攒下的钱一夜之间全部失去？ <strong class="strong">因为德不配位</strong>。</p>
+<p class="paragraph"><strong class="strong">钱不是中性的</strong>——<strong class="strong">钱是镜子，照出你的德</strong>。 <strong class="strong">德小财大，必有灾</strong>。 <strong class="strong">德大财小，必有福</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">我们家祖祖辈辈，没有一分钱不是来成就你智慧的</strong>"——<strong class="strong">这才是"无财不养道"的真解</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">1. 第一章·名相拆解——"财、福、德、命、灾、道"六字逐字拆</h2>
+<h3 class="title-h3">1.1【财】——有形的财富</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">有形的财富代表着使命和责任。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"财"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《大学》</strong>："<strong class="strong">仁者以财发身，不仁者以身发财。</strong>"——<strong class="strong">财是仁者发身的工具</strong>。</li>
+<li><strong class="strong">《论语》</strong>："<strong class="strong">不义而富且贵，于我如浮云。</strong>"——<strong class="strong">财是有义与无义的分别</strong>。</li>
+<li><strong class="strong">《道德经》</strong>："<strong class="strong">金玉满堂，莫之能守。</strong>"——<strong class="strong">财是守不住的</strong>。</li>
+<li><strong class="strong">《坛经》</strong>："<strong class="strong">一切福田，不离方寸。</strong>"——<strong class="strong">财是方寸的福田</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">财 = 有形的财富 = 使命和责任</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">财不是坏事，但财是责任</strong>"——<strong class="strong">财越大，责任越大</strong>。</p>
+<h3 class="title-h3">1.2【福】——福德，福气</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">觉醒的人将福德转化为功德。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"福"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《尚书》</strong>："<strong class="strong">五福：一曰寿，二曰富，三曰康宁，四曰攸好德，五曰考终命。</strong>"——<strong class="strong">福是寿、富、康宁、好德、终命</strong>。</li>
+<li><strong class="strong">《了凡四训》</strong>："<strong class="strong">命由我作，福自己求。</strong>"——<strong class="strong">福是自己求的</strong>。</li>
+<li><strong class="strong">《易经》</strong>："<strong class="strong">积善之家，必有余庆。</strong>"——<strong class="strong">福是积善的结果</strong>。</li>
+<li><strong class="strong">《华严经》</strong>："<strong class="strong">大福德从心发。</strong>"——<strong class="strong">福是从心发的</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">福 = 福德 = 福气 = 修来的福报</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">福是修来的，不是求来的</strong>"——<strong class="strong">修善得福，求福得祸</strong>。</p>
+<h3 class="title-h3">1.3【德】——德行，功德</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德不配位则财为灾殃。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"德"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《大学》</strong>："<strong class="strong">大学之道，在明明德。</strong>"——<strong class="strong">德是明德</strong>。</li>
+<li><strong class="strong">《中庸》</strong>："<strong class="strong">苟不至德，至道不凝焉。</strong>"——<strong class="strong">德是道凝的根基</strong>。</li>
+<li><strong class="strong">《道德经》</strong>："<strong class="strong">上德不德，是以有德。</strong>"——<strong class="strong">最高的德是不觉得自己有德</strong>。</li>
+<li><strong class="strong">《论语》</strong>："<strong class="strong">君子怀德，小人怀土。</strong>"——<strong class="strong">君子怀的是德，小人怀的是财</strong>。</li>
+<li><strong class="strong">《易经》</strong>："<strong class="strong">天行健，君子以自强不息；地势坤，君子以厚德载物。</strong>"——<strong class="strong">厚德才能载物</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德 = 德行 = 功德 = 觉悟的承载力</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德是觉悟的承载力——德越大，能承载的财越大</strong>"。</p>
+<h3 class="title-h3">1.4【命】——使命，命运</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">多余的财富反而会成为灾难。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"命"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《论语》</strong>："<strong class="strong">五十而知天命。</strong>"——<strong class="strong">命是 50 岁才知道的</strong>。</li>
+<li><strong class="strong">《了凡四训》</strong>："<strong class="strong">命由我作。</strong>"——<strong class="strong">命是自己作的</strong>。</li>
+<li><strong class="strong">《易经》</strong>："<strong class="strong">穷理尽性以至于命。</strong>"——<strong class="strong">命是穷理尽性才达到的</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">命 = 使命 + 命运 = 你来到这个世界的责任</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">命不是注定的，是修来的</strong>"——<strong class="strong">修善得善命，修恶得恶命</strong>。</p>
+<h3 class="title-h3">1.5【灾】——灾殃，灾难</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德不配位则财为灾殃。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"灾"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《易经》</strong>："<strong class="strong">积不善之家，必有余殃。</strong>"——<strong class="strong">灾是积不善的结果</strong>。</li>
+<li><strong class="strong">《尚书》</strong>："<strong class="strong">天作孽，犹可违；自作孽，不可活。</strong>"——<strong class="strong">灾是自己作的</strong>。</li>
+<li><strong class="strong">《道德经》</strong>："<strong class="strong">祸兮福所倚，福兮祸所伏。</strong>"——<strong class="strong">福祸相依</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">灾 = 德不配位的结果 = 财富超出觉悟承载力的反弹</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">灾不是天降的，是自己的德撑不住</strong>"——<strong class="strong">德小财大，必有灾</strong>。</p>
+<h3 class="title-h3">1.6【道】——觉悟，智慧</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">每一分钱都应该用于成就智慧与德行。</strong>"</p>
+<p class="paragraph"><strong class="strong">什么是"道"？</strong></p>
+<ul class="bullet-list">
+<li><strong class="strong">《道德经》</strong>："<strong class="strong">道可道，非常道。</strong>"——<strong class="strong">道是不可说但可修的</strong>。</li>
+<li><strong class="strong">《论语》</strong>："<strong class="strong">朝闻道，夕死可矣。</strong>"——<strong class="strong">道是值得用命换的</strong>。</li>
+<li><strong class="strong">《大学》</strong>："<strong class="strong">大学之道，在明明德，在亲民，在止于至善。</strong>"——<strong class="strong">道是明德、亲民、至善</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">道 = 觉悟 = 智慧 = 生命的根本</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">道是财的主——财归道，财就吉；财离道，财就凶</strong>"。</p>
+<h3 class="title-h3">1.7 一句话总结</h3>
+<blockquote class="quote">
+<p><strong class="strong">财是福德之器，德是觉悟的承载。</strong></p>
+<p><strong class="strong">德大财小，必有福；德小财大，必有灾。</strong></p>
+<p><strong class="strong">无财不养道 = 每一分钱都用来成就智慧。</strong></p>
+<p><strong class="strong">财归道则吉，财离道则凶。</strong></p>
+</blockquote>
+<hr class="divider">
+<h2 class="title-h2">2. 第二章·经典本意——"德不配位"在 6 部经典里的同证</h2>
+<h3 class="title-h3">2.1 《易经》——厚德载物</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">天行健，君子以自强不息；地势坤，君子以厚德载物。</strong>"</p>
+</blockquote>
+<p class="paragraph">《易经》一句话：<strong class="strong">厚德载物</strong>——<strong class="strong">德越大，能承载的物（财）越大</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德是地，财是物；地薄载不了重物，德小载不了大财</strong>"。</p>
+<p class="paragraph"><strong class="strong">德不配位 = 地薄载重 = 必有灾</strong>。</p>
+<h3 class="title-h3">2.2 《大学》——仁者以财发身</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">仁者以财发身，不仁者以身发财。</strong>"</p>
+</blockquote>
+<p class="paragraph">《大学》一句话：<strong class="strong">仁者用财来发展自己，不仁者用自己的命去发展财</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">仁者财归身，不仁者身归财</strong>"——<strong class="strong">两种完全相反的人生</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位 = 不仁者以身发财 = 用命换财 = 必有灾</strong>。</p>
+<h3 class="title-h3">2.3 《道德经》——金玉满堂，莫之能守</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">金玉满堂，莫之能守。富贵而骄，自遗其咎。</strong>"</p>
+</blockquote>
+<p class="paragraph">老子一句话：<strong class="strong">金玉满堂，莫之能守</strong>——<strong class="strong">财多守不住</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">守不住不是因为财多，是因为德薄</strong>"——<strong class="strong">德不配位则财去</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位 = 金玉满堂莫能守 = 必有灾</strong>。</p>
+<h3 class="title-h3">2.4 《了凡四训》——命由我作，福自己求</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">命由我作，福自己求。一切福田，不离方寸。</strong>"</p>
+</blockquote>
+<p class="paragraph">袁了凡一句话：<strong class="strong">命由我作，福自己求</strong>——<strong class="strong">命运是自己作的，福是自己求的</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">命不是注定的——命 = 德 + 财 + 觉悟的合力</strong>"。</p>
+<p class="paragraph"><strong class="strong">德不配位则改命</strong>——<strong class="strong">通过修德来配位</strong>。</p>
+<h3 class="title-h3">2.5 《论语》——不义而富且贵，于我如浮云</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">不义而富且贵，于我如浮云。</strong>"</p>
+</blockquote>
+<p class="paragraph">孔子一句话：<strong class="strong">不义的富贵像浮云一样</strong>——<strong class="strong">不义的财不是福</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">财有义不义——义财是福，不义财是祸</strong>"。</p>
+<p class="paragraph"><strong class="strong">德不配位 = 不义财 = 如浮云 = 必有灾</strong>。</p>
+<h3 class="title-h3">2.6 《中庸》——苟不至德，至道不凝焉</h3>
+<blockquote class="quote">
+<p>"<strong class="strong">苟不至德，至道不凝焉。</strong>"</p>
+</blockquote>
+<p class="paragraph">《中庸》一句话：<strong class="strong">没有至德，道不凝</strong>——<strong class="strong">没有德，道聚不起来</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德是道的凝结点——没有德，道就散了</strong>"。</p>
+<p class="paragraph"><strong class="strong">德不配位 = 道散 = 道散则财散 = 必有灾</strong>。</p>
+<h3 class="title-h3">2.7 经典互证</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>经典</th>
+<th>翻法</th>
+<th>指向</th>
+</tr>
+<tr>
+<td>《易经》</td>
+<td>厚德载物</td>
+<td>德大能载大财</td>
+</tr>
+<tr>
+<td>《大学》</td>
+<td>仁者以财发身</td>
+<td>财归身 vs 身归财</td>
+</tr>
+<tr>
+<td>《道德经》</td>
+<td>金玉满堂莫能守</td>
+<td>德薄则财去</td>
+</tr>
+<tr>
+<td>《了凡四训》</td>
+<td>命由我作福自己求</td>
+<td>命由德作</td>
+</tr>
+<tr>
+<td>《论语》</td>
+<td>不义富贵如浮云</td>
+<td>义财是福，不义财是祸</td>
+</tr>
+<tr>
+<td>《中庸》</td>
+<td>苟不至德至道不凝</td>
+<td>德是道的凝结点</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">6 部经典，一个指向：财是福德之器——德不配位则财为灾殃。</strong></p>
+<hr class="divider">
+<h2 class="title-h2">3. 第三章·历史人物——五个"德不配位" vs 五个"德配其位"的故事</h2>
+<h3 class="title-h3">3.1 德不配位·反面案例</h3>
+<h4 class="title-h4">3.1.1 和珅·清代巨贪，抄家时家产 8 亿两白银</h4>
+<p class="paragraph">和珅 20 岁入仕，30 岁权倾朝野，49 岁被嘉庆抄家。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">和珅一生贪了 8 亿两白银，但他的德根本撑不住这么多财</strong>"——<strong class="strong">所以抄家是必然</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位的极致</strong>——<strong class="strong">财大德小，必有灾</strong>。</p>
+<h4 class="title-h4">3.1.2 李自成·进京 42 天失天下</h4>
+<p class="paragraph">李自成 1644 年进北京，42 天后失天下。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">李自成的德撑不住北京的财富</strong>"——<strong class="strong">所以 42 天就败了</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位</strong>——<strong class="strong">财来得快，去得也快</strong>。</p>
+<h4 class="title-h4">3.1.3 某贪官·受贿 2.7 亿被判死刑</h4>
+<p class="paragraph">某落马官员受贿 2.7 亿，被判死刑。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">2.7 亿的财，他的德撑不住</strong>"——<strong class="strong">所以判死刑是必然</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位</strong>——<strong class="strong">财大德小，必有灾</strong>。</p>
+<h4 class="title-h4">3.1.4 某彩票中奖者·3 年败光</h4>
+<p class="paragraph">某彩票中奖者得 500 万，3 年败光，比中奖前还穷。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">500 万的财，他的德撑不住</strong>"——<strong class="strong">所以败光是必然</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位</strong>——<strong class="strong">德小财大，必有灾</strong>。</p>
+<h4 class="title-h4">3.1.5 某老板·辛苦 20 年一朝破产</h4>
+<p class="paragraph">某老板辛苦 20 年，资产过亿，因一个错误决策全亏完。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">过亿的财，他的德撑不住</strong>"——<strong class="strong">所以破产是必然</strong>。</p>
+<p class="paragraph"><strong class="strong">德不配位</strong>——<strong class="strong">德小财大，决策就错，财就破</strong>。</p>
+<h3 class="title-h3">3.2 德配其位·正面案例</h3>
+<h4 class="title-h4">3.2.1 周公·以道御术，800 年太平</h4>
+<p class="paragraph">周公辅佐周王，制礼作乐，<strong class="strong">德配其位</strong>——所以周朝 800 年。</p>
+<p class="paragraph"><strong class="strong">德配其位</strong>——<strong class="strong">德大财大，福报长</strong>。</p>
+<h4 class="title-h4">3.2.2 范蠡·三聚三散，子孙昌盛</h4>
+<p class="paragraph">范蠡帮越王勾践复国，<strong class="strong">散尽家财</strong>；后经商成巨富，<strong class="strong">又散尽</strong>；再三聚再散，<strong class="strong">子孙昌盛</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">范蠡每次聚财都散——因为他知道德不配位则财为灾</strong>"。</p>
+<p class="paragraph"><strong class="strong">德配其位</strong>——<strong class="strong">聚了散，散了聚，德配其财</strong>。</p>
+<h4 class="title-h4">3.2.3 玄奘·19 年求法，财归道</h4>
+<p class="paragraph">玄奘 19 年求法，<strong class="strong">所有的钱都用来求法</strong>——<strong class="strong">财归道</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">玄奘的财 = 法的承载</strong>"——<strong class="strong">德配其财</strong>。</p>
+<h4 class="title-h4">3.2.4 武训·乞丐办学，财归道</h4>
+<p class="paragraph">武训一辈子要饭，把所有的钱用来办义学——<strong class="strong">财归道</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">武训虽然是乞丐，但他的德配所有的钱</strong>"。</p>
+<h4 class="title-h4">3.2.5 印光法师·所有供养都印经</h4>
+<p class="paragraph">印光法师一生，所有供养都印经书——<strong class="strong">财归道</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">印光的财 = 经的承载</strong>"——<strong class="strong">德配其财</strong>。</p>
+<h3 class="title-h3">3.3 十人对照</h3>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>类型</th>
+<th>人物</th>
+<th>行为</th>
+<th>结局</th>
+</tr>
+<tr>
+<td>德不配位</td>
+<td>和珅</td>
+<td>贪 8 亿两</td>
+<td><strong class="strong">抄家</strong></td>
+</tr>
+<tr>
+<td>德不配位</td>
+<td>李自成</td>
+<td>进京 42 天</td>
+<td><strong class="strong">败亡</strong></td>
+</tr>
+<tr>
+<td>德不配位</td>
+<td>某贪官</td>
+<td>受贿 2.7 亿</td>
+<td><strong class="strong">死刑</strong></td>
+</tr>
+<tr>
+<td>德不配位</td>
+<td>某彩票中奖者</td>
+<td>500 万</td>
+<td><strong class="strong">3 年败光</strong></td>
+</tr>
+<tr>
+<td>德不配位</td>
+<td>某老板</td>
+<td>资产过亿</td>
+<td><strong class="strong">破产</strong></td>
+</tr>
+<tr>
+<td>德配其位</td>
+<td>周公</td>
+<td>制礼作乐</td>
+<td><strong class="strong">800 年太平</strong></td>
+</tr>
+<tr>
+<td>德配其位</td>
+<td>范蠡</td>
+<td>三聚三散</td>
+<td><strong class="strong">子孙昌盛</strong></td>
+</tr>
+<tr>
+<td>德配其位</td>
+<td>玄奘</td>
+<td>19 年求法</td>
+<td><strong class="strong">德配其财</strong></td>
+</tr>
+<tr>
+<td>德配其位</td>
+<td>武训</td>
+<td>乞丐办学</td>
+<td><strong class="strong">义学千古</strong></td>
+</tr>
+<tr>
+<td>德配其位</td>
+<td>印光</td>
+<td>供养印经</td>
+<td><strong class="strong">德配其财</strong></td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">德不配位者，财大必灾；德配其位者，财大福大。</strong></p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德配其位，财来财去都是福；德不配位，财来就是祸</strong>"。</p>
+<hr class="divider">
+<h2 class="title-h2">4. 第四章·反面案例——七种"德不配位"的现代人</h2>
+<h3 class="title-h3">4.1 「暴富即败」型</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">彩票中奖者获得了超出自身德行境界的财富，却缺乏与之匹配的觉悟。</strong>"</p>
+<p class="paragraph"><strong class="strong">这种人把"暴富"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>突然中奖 500 万——<strong class="strong">德薄</strong>。</li>
+<li>突然继承 1 亿——<strong class="strong">德薄</strong>。</li>
+<li>突然创业成功——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则败</strong>——<strong class="strong">3 年必败</strong>。</p>
+<h3 class="title-h3">4.2 「贪官不归」型</h3>
+<p class="paragraph"><strong class="strong">这种人把"权力"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>局长级贪官——<strong class="strong">德薄</strong>。</li>
+<li>处长级贪官——<strong class="strong">德薄</strong>。</li>
+<li>科长级贪官——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则抓</strong>——<strong class="strong">5 年必抓</strong>。</p>
+<h3 class="title-h3">4.3 「啃老挥霍」型</h3>
+<p class="paragraph"><strong class="strong">这种人把"父母的钱"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>啃老买房——<strong class="strong">德薄</strong>。</li>
+<li>啃老买车——<strong class="strong">德薄</strong>。</li>
+<li>啃老挥霍——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则空</strong>——<strong class="strong">父母走就空</strong>。</p>
+<h3 class="title-h3">4.4 「负债消费」型</h3>
+<p class="paragraph"><strong class="strong">这种人把"信用"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>信用卡套现——<strong class="strong">德薄</strong>。</li>
+<li>网贷消费——<strong class="strong">德薄</strong>。</li>
+<li>高利贷借款——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则债</strong>——<strong class="strong">债台高筑</strong>。</p>
+<h3 class="title-h3">4.5 「赌博投机」型</h3>
+<p class="paragraph"><strong class="strong">这种人把"运气"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>股票短线——<strong class="strong">德薄</strong>。</li>
+<li>期货杠杆——<strong class="strong">德薄</strong>。</li>
+<li>赌博成瘾——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则输</strong>——<strong class="strong">必输</strong>。</p>
+<h3 class="title-h3">4.6 「炫富招祸」型</h3>
+<p class="paragraph"><strong class="strong">这种人把"炫耀"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>朋友圈炫富——<strong class="strong">德薄</strong>。</li>
+<li>微博炫富——<strong class="strong">德薄</strong>。</li>
+<li>短视频炫富——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则招</strong>——<strong class="strong">招贼招祸</strong>。</p>
+<h3 class="title-h3">4.7 「守财奴」型</h3>
+<p class="paragraph"><strong class="strong">这种人把"守财"当福——其实是祸</strong>。</p>
+<ul class="bullet-list">
+<li>舍不得吃——<strong class="strong">德薄</strong>。</li>
+<li>舍不得穿——<strong class="strong">德薄</strong>。</li>
+<li>舍不得用——<strong class="strong">德薄</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位则空</strong>——<strong class="strong">死了也带不走</strong>。</p>
+<h3 class="title-h3">4.8 现代职场版·3 种"德不配位"画像</h3>
+<h4 class="title-h4">4.8.1 35 岁产品经理——"暴富即败"型</h4>
+<p class="paragraph">小王 35 岁，公司上市，分到几千万。</p>
+<p class="paragraph">他信奉"暴富即福"——<strong class="strong">但他的德撑不住几千万</strong>。</p>
+<p class="paragraph">3 年后，他赌博、离婚、生病——<strong class="strong">财去了大半</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">几千万的财，他的德撑不住</strong>"——<strong class="strong">所以 3 年败光</strong>。</p>
+<p class="paragraph">真知的产品经理，<strong class="strong">会问"我配这么多财吗"</strong>——<strong class="strong">因为他在修德</strong>。</p>
+<h4 class="title-h4">4.8.2 45 岁创业者——"贪官不归"型</h4>
+<p class="paragraph">老李 45 岁，创业成功，资产过亿。</p>
+<p class="paragraph">他信奉"权力即福"——<strong class="strong">但他的德撑不住过亿</strong>。</p>
+<p class="paragraph">5 年后，他行贿、偷税、被查——<strong class="strong">身败名裂</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">过亿的财，他的德撑不住</strong>"——<strong class="strong">所以 5 年被抓</strong>。</p>
+<p class="paragraph">真知的创业者，<strong class="strong">会问"我配这么多财吗"</strong>——<strong class="strong">因为他在修德</strong>。</p>
+<h4 class="title-h4">4.8.3 60 岁退休人——"守财奴"型</h4>
+<p class="paragraph">老张 60 岁，退休时攒了 500 万。</p>
+<p class="paragraph">他信奉"守财即福"——<strong class="strong">但他的德撑不住 500 万</strong>。</p>
+<p class="paragraph">10 年后，他舍不得吃、舍不得穿、生病不舍得治——<strong class="strong">500 万还在，自己却走了</strong>。</p>
+<p class="paragraph">悟真师兄讲："<strong class="strong">500 万的财，他的德撑不住</strong>"——<strong class="strong">所以死了也带不走</strong>。</p>
+<p class="paragraph">真知的退休人，<strong class="strong">会问"我配这么多财吗"</strong>——<strong class="strong">因为他在修德</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">5. 第五章·落地——三步走"德配其位"实修法门</h2>
+<h3 class="title-h3">5.1 30 天入门——每天问"我配多少财"</h3>
+<p class="paragraph"><strong class="strong">30 天的目标：每天睡前问自己"我今天配多少财"。</strong></p>
+<p class="paragraph">举例：</p>
+<ul class="bullet-list">
+<li>今天<strong class="strong">赚到的钱</strong>——<strong class="strong">我配这么多吗</strong>？</li>
+<li>今天<strong class="strong">花掉的钱</strong>——<strong class="strong">我用得其所吗</strong>？</li>
+<li>今天<strong class="strong">省下的钱</strong>——<strong class="strong">我该用在哪</strong>？</li>
+<li>今天<strong class="strong">错过的钱</strong>——<strong class="strong">我该追吗</strong>？</li>
+</ul>
+<p class="paragraph"><strong class="strong">30 天后，你会知道"我每天活在德配不配的状态里"</strong>——这是觉察的开始。</p>
+<h3 class="title-h3">5.2 1 年稳固——修德配位</h3>
+<p class="paragraph"><strong class="strong">1 年的目标：把"德"修上来，让德配位</strong>。</p>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>德</th>
+<th>自我修</th>
+</tr>
+<tr>
+<td>节俭</td>
+<td>我是不是在浪费？</td>
+</tr>
+<tr>
+<td>慷慨</td>
+<td>我是不是该捐点？</td>
+</tr>
+<tr>
+<td>知足</td>
+<td>我是不是在追钱？</td>
+</tr>
+<tr>
+<td>智慧</td>
+<td>我是不是在乱用钱？</td>
+</tr>
+<tr>
+<td>责任</td>
+<td>我是不是在用钱负责？</td>
+</tr>
+<tr>
+<td>布施</td>
+<td>我是不是该帮人？</td>
+</tr>
+<tr>
+<td>惭愧</td>
+<td>我是不是在用钱造业？</td>
+</tr>
+</table></div>
+<p class="paragraph"><strong class="strong">1 年后，你的德会撑住你现在的财</strong>。</p>
+<h3 class="title-h3">5.3 3 年突破——以道驭财</h3>
+<p class="paragraph"><strong class="strong">3 年的目标：能做到以道驭财</strong>。</p>
+<ul class="bullet-list">
+<li>不是"有钱不好"——<strong class="strong">钱是工具</strong>。</li>
+<li>不是"该用钱"——<strong class="strong">该用道用钱</strong>。</li>
+<li>是"<strong class="strong">以道为体，财为用</strong>"——<strong class="strong">道是主，财是仆</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">以道佐人主者，不以兵强天下</strong>"——<strong class="strong">用道的人不用财逞强</strong>。</p>
+<p class="paragraph"><strong class="strong">以道驭财 = 道是主，财是仆</strong>。</p>
+<h3 class="title-h3">5.4 终身功夫</h3>
+<p class="paragraph">悟真师兄讲："<strong class="strong">每一分钱都应该用于成就智慧与德行。</strong>"</p>
+<p class="paragraph"><strong class="strong">德配其位，是一辈子的事</strong>——</p>
+<ul class="bullet-list">
+<li>范蠡一辈子三聚三散。</li>
+<li>玄奘一辈子财归道。</li>
+<li>武训一辈子乞丐办学。</li>
+<li>印光一辈子供养印经。</li>
+</ul>
+<h3 class="title-h3">5.5 三个检验</h3>
+<ol class="num-list">
+<li><strong class="strong">今天的事检验</strong>——今天<strong class="strong">有一件事你的财归道了吗</strong>？</li>
+<li><strong class="strong">爱人检验</strong>——你爱人<strong class="strong">最需要你的德</strong>是什么？你能做到吗？</li>
+<li><strong class="strong">孩子检验</strong>——你<strong class="strong">最想教孩子的德</strong>是什么？你自己能做吗？</li>
+</ul>
+<hr class="divider">
+<h2 class="title-h2">6. 第六章·回扣原话——7 句原话逐句落地表</h2>
+<div class="table-wrap"><table class="data-table">
+<tr>
+<th>原话</th>
+<th>名相</th>
+<th>落地动作</th>
+</tr>
+<tr>
+<td>"有形的财富代表着使命和责任"</td>
+<td>财=责任</td>
+<td>财大 = 责任大</td>
+</tr>
+<tr>
+<td>"多余的财富反而会成为灾难"</td>
+<td>德不配位</td>
+<td>财大德小 = 灾</td>
+</tr>
+<tr>
+<td>"无财不养道"的误解</td>
+<td>误读</td>
+<td>不是没钱没法修道</td>
+</tr>
+<tr>
+<td>"无财不养道"的真解</td>
+<td>真解</td>
+<td>每一分钱都成就智慧</td>
+</tr>
+<tr>
+<td>"我们家祖祖辈辈没有一分钱不是来成就你智慧的"</td>
+<td>财归道</td>
+<td>财归道则吉</td>
+</tr>
+<tr>
+<td>"觉醒的人将福德转化为功德"</td>
+<td>福德转功德</td>
+<td>修福 + 悟道</td>
+</tr>
+<tr>
+<td>"每一分钱都应成就智慧与德行"</td>
+<td>财成就道</td>
+<td>用钱来成就智慧</td>
+</tr>
+</table></div>
+<hr class="divider">
+<h2 class="title-h2">7. 收束——财是福德之器，德配其位则财为福</h2>
+<p class="paragraph">悟真师兄讲： "<strong class="strong">觉醒的人将福德转化为功德。</strong>" "<strong class="strong">有形的财富代表着使命和责任。</strong>" "<strong class="strong">若一个人未能准备好承担更大的责任与使命，那么多余的财富反而会成为灾难。</strong>" "<strong class="strong">每一分钱都应该用于成就智慧与德行。</strong>"</p>
+<p class="paragraph"><strong class="strong">财是镜子</strong>——<strong class="strong">照出你的德</strong>。 <strong class="strong">财是工具</strong>——<strong class="strong">载你的道</strong>。 <strong class="strong">财是责任</strong>——<strong class="strong">需要你承担</strong>。</p>
+<p class="paragraph"><strong class="strong">德配其位</strong>——</p>
+<ul class="bullet-list">
+<li>周公以道御术，<strong class="strong">800 年太平</strong>。</li>
+<li>范蠡三聚三散，<strong class="strong">子孙昌盛</strong>。</li>
+<li>玄奘 19 年求法，<strong class="strong">财归道</strong>。</li>
+</ul>
+<p class="paragraph"><strong class="strong">德不配位</strong>——</p>
+<ul class="bullet-list">
+<li>和珅贪 8 亿，<strong class="strong">抄家</strong>。</li>
+<li>李自成进京 42 天，<strong class="strong">败亡</strong>。</li>
+<li>某彩票中奖 500 万，<strong class="strong">3 年败光</strong>。</li>
+</ul>
+<p class="paragraph">悟真师兄讲："<strong class="strong">德配其位，财来财去都是福；德不配位，财来就是祸</strong>"。</p>
+<blockquote class="quote">
+<p><strong class="strong">师兄，</strong></p>
+<p><strong class="strong">德大财小，必有福。</strong></p>
+<p><strong class="strong">德小财大，必有灾。</strong></p>
+<p><strong class="strong">财不是越多越好，是德配其位。</strong></p>
+<p><strong class="strong">每一分钱都应成就智慧与德行。</strong></p>
+</blockquote>
+<p class="paragraph"><strong class="strong">德配其位，财为福；德不配位，财为灾</strong>。</p>
+<p class="paragraph"><strong class="strong">师兄，</strong>今天你赚到的钱，配不配你的德？<em>*</em>*</p>
+<p class="paragraph">守住这一问，<strong class="strong">一辈子不破财</strong>。</p>
+<hr class="divider">
+<h2 class="title-h2">8. 附录·12 条经典原句索引</h2>
+<ol class="num-list">
+<li><strong class="strong">《易经·坤卦》</strong> "地势坤，君子以厚德载物"</li>
+<li><strong class="strong">《大学》</strong> "仁者以财发身，不仁者以身发财"</li>
+<li><strong class="strong">《道德经·第九章》</strong> "金玉满堂，莫之能守。富贵而骄，自遗其咎"</li>
+<li><strong class="strong">《道德经·第五十八章》</strong> "祸兮福所倚，福兮祸所伏"</li>
+<li><strong class="strong">《了凡四训》</strong> "命由我作，福自己求。一切福田，不离方寸"</li>
+<li><strong class="strong">《论语·述而》</strong> "不义而富且贵，于我如浮云"</li>
+<li><strong class="strong">《中庸》</strong> "苟不至德，至道不凝焉"</li>
+<li><strong class="strong">《论语·里仁》</strong> "君子怀德，小人怀土"</li>
+<li><strong class="strong">《尚书·洪范》</strong> "五福：一曰寿，二曰富，三曰康宁，四曰攸好德，五曰考终命"</li>
+<li><strong class="strong">《了凡四训》</strong> "命由我作，福自己求"</li>
+<li><strong class="strong">《华严经》</strong> "大福德从心发"</li>
+<li><strong class="strong">《坛经》</strong> "一切福田，不离方寸"</li>
+</ul>
+<hr class="divider">
+<blockquote class="quote">
+<p><strong class="strong">署名：悟真 · 静思整理</strong></p>
+<p><strong class="strong">2026-07-21 下午 · 飞书对话由悟真命题、静思执笔</strong></p>
+<p><strong class="strong">最高纲领：古人的智慧不是拿来欣赏的，是拿来校准的。</strong></p>
+</blockquote>
+    <div class="sign-off">
+        <span class="seal-stamp">悟真</span> · 静思 🧘 整理<br>
+        2026 年 7 月 21 日 · 北京
+    </div>
+</div>
+<script>
+const audio = document.getElementById('audio');
+const playBtn = document.getElementById('playBtn');
+const progressBar = document.getElementById('progressBar');
+const progressFill = document.getElementById('progressFill');
+const currentTimeEl = document.getElementById('currentTime');
+const durationEl = document.getElementById('duration');
+const muteBtn = document.getElementById('muteBtn');
+const volumeSlider = document.getElementById('volumeSlider');
+const speedBtns = document.querySelectorAll('.ctrl-btn[data-speed]');
+function fmt(s) {
+    if (!s || isNaN(s)) return '00:00';
+    const m = Math.floor(s / 60);
+    const ss = Math.floor(s % 60);
+    return String(m).padStart(2, '0') + ':' + String(ss).padStart(2, '0');
+}
+playBtn.addEventListener('click', () => {
+    if (audio.paused) { audio.play(); playBtn.textContent = '⏸'; }
+    else { audio.pause(); playBtn.textContent = '▶'; }
+});
+audio.addEventListener('loadedmetadata', () => { durationEl.textContent = fmt(audio.duration); });
+audio.addEventListener('timeupdate', () => {
+    const pct = (audio.currentTime / audio.duration) * 100;
+    progressFill.style.width = pct + '%';
+    currentTimeEl.textContent = fmt(audio.currentTime);
+});
+audio.addEventListener('ended', () => {
+    playBtn.textContent = '▶';
+    progressFill.style.width = '0%';
+});
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const pct = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pct * audio.duration;
+});
+muteBtn.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? '🔇 取消静音' : '🔊 静音';
+});
+volumeSlider.addEventListener('input', () => { audio.volume = volumeSlider.value / 100; });
+speedBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const speed = parseFloat(btn.dataset.speed);
+        audio.playbackRate = speed;
+        speedBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    });
+});
+audio.volume = 0.8;
+</script>
+</body>
+</html>
