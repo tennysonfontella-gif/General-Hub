@@ -2,24 +2,39 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>三足鼎立·缺一即偏——《禅海蠡测》悟真读书笔记（详述版·浅色）</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+<title>三足鼎立·缺一即偏——《禅海蠡测》悟真读书笔记（详述版·浅色 v4）</title>
 <style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    font-family: "站酷小薇体", "Noto Serif CJK SC", "STKaiti", "KaiTi", "PingFang SC", serif;
-    background: #faf6ef;
-    color: #3d3027;
-    line-height: 2.4;
-    font-size: 20px;
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+    overflow-x: hidden;
+  }
+  body {
+    font-family: "Noto Serif CJK SC", "Source Han Serif SC", "STKaiti", "KaiTi", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
+    background: #faf6ef;
+    color: #3d3027;
+    line-height: 2.0;
+    font-size: 19px;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    word-break: normal;          /* 关键：按 CJK 正常断行，不按字强断 */
+    overflow-wrap: break-word;   /* 关键：长单词/无断点时才断 */
+    -webkit-font-smoothing: antialiased;
+  }
+  /* ===== Hero ===== */
   .hero {
     background: linear-gradient(135deg, #faf6ef 0%, #f3e9d2 100%);
     border-bottom: 2px solid #c8a85a;
-    padding: 50px 20px 30px;
+    padding: 50px 24px 32px;
     text-align: center;
     position: relative;
+    width: 100%;
   }
   .hero::after {
     content: "悟真印";
@@ -27,18 +42,19 @@
     top: 30px;
     right: 40px;
     color: #c8423b;
-    font-size: 24px;
+    font-size: 22px;
     border: 2px solid #c8423b;
     border-radius: 4px;
     padding: 6px 12px;
     transform: rotate(-8deg);
     font-weight: bold;
-    opacity: 0.7;
+    opacity: 0.75;
   }
-  .hero h1 { font-size: 38px; color: #8a5a2b; margin-bottom: 12px; letter-spacing: 4px; }
-  .hero .subtitle { font-size: 18px; color: #6b5443; margin-bottom: 20px; }
+  .hero h1 { font-size: 36px; color: #8a5a2b; margin-bottom: 12px; letter-spacing: 4px; }
+  .hero .subtitle { font-size: 17px; color: #6b5443; margin-bottom: 22px; line-height: 1.6; }
   .audio-player {
-    max-width: 720px;
+    max-width: 680px;
+    width: calc(100% - 32px);
     margin: 30px auto 0;
     background: #fff;
     border: 1px solid #c8a85a;
@@ -46,10 +62,10 @@
     padding: 20px;
     box-shadow: 0 4px 12px rgba(138, 90, 43, 0.1);
   }
-  .audio-player audio { width: 100%; margin-bottom: 12px; }
+  .audio-player audio { width: 100%; max-width: 100%; margin-bottom: 12px; }
   .audio-controls {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -63,7 +79,6 @@
     cursor: pointer;
     font-size: 14px;
     text-decoration: none;
-    transition: background 0.2s;
   }
   .audio-controls button:hover, .audio-controls a:hover { background: #c8a85a; }
   .audio-controls .rate-group { display: inline-flex; gap: 4px; }
@@ -74,38 +89,74 @@
     font-size: 13px;
   }
   .audio-controls .rate-btn.active { background: #8a5a2b; color: #fff; }
-  .container { max-width: 800px; margin: 0 auto; padding: 40px 20px 80px; }
-  h1, h2, h3, h4 { color: #8a5a2b; margin: 28px 0 16px; font-weight: bold; }
+  /* ===== 容器 ===== */
+  .container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 28px 80px;
+  }
+  /* ===== 标题 ===== */
+  h1, h2, h3, h4 {
+    color: #8a5a2b;
+    margin: 32px 0 18px;
+    font-weight: bold;
+    word-break: normal;
+    line-height: 1.4;
+  }
   h1 { font-size: 30px; text-align: center; border-bottom: 2px solid #c8a85a; padding-bottom: 12px; }
-  h2 { font-size: 26px; border-left: 6px solid #c8a85a; padding-left: 14px; }
-  h3 { font-size: 22px; color: #6b5443; }
-  h4 { font-size: 20px; color: #6b5443; }
-  p, li { margin: 12px 0; text-align: justify; }
+  h2 { font-size: 24px; border-left: 6px solid #c8a85a; padding-left: 14px; margin-top: 40px; }
+  h3 { font-size: 21px; color: #6b5443; margin-top: 28px; }
+  h4 { font-size: 19px; color: #6b5443; margin-top: 20px; }
+  /* ===== 正文 ===== */
+  p, li {
+    margin: 14px 0;
+    text-align: justify;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  /* ===== 引用 ===== */
   blockquote {
     border-left: 4px solid #c8a85a;
     background: #f3e9d2;
     padding: 14px 20px;
-    margin: 16px 0;
+    margin: 18px 0;
     color: #6b5443;
     font-style: italic;
     border-radius: 0 8px 8px 0;
+    line-height: 1.8;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+  blockquote p { margin: 6px 0; }
+  /* ===== 表格（关键：不强制固定列宽，让内容自然排） ===== */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+    width: 100%;
   }
   table {
     width: 100%;
     border-collapse: collapse;
-    margin: 20px 0;
     background: #fff;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(138, 90, 43, 0.1);
+    word-break: normal;
+    overflow-wrap: break-word;
   }
   th, td {
     border: 1px solid #e0d5c0;
     padding: 10px 14px;
     text-align: left;
+    word-break: normal;
+    overflow-wrap: break-word;
+    vertical-align: top;
   }
   th { background: #c8a85a; color: #fff; font-weight: bold; }
   tr:nth-child(even) td { background: #fbf7ed; }
+  /* ===== 强调 ===== */
   strong { color: #c8423b; font-weight: bold; }
   code {
     background: #f3e9d2;
@@ -113,9 +164,10 @@
     padding: 2px 6px;
     border-radius: 4px;
     font-family: "Courier New", monospace;
+    word-break: break-all;
   }
-  hr { border: 0; border-top: 1px dashed #c8a85a; margin: 30px 0; }
-  ul, ol { margin: 12px 0 12px 30px; }
+  hr { border: 0; border-top: 1px dashed #c8a85a; margin: 32px 0; }
+  ul, ol { margin: 14px 0 14px 32px; padding-left: 0; }
   li { margin: 6px 0; }
   .seal { text-align: right; color: #c8423b; margin-top: 40px; font-size: 18px; font-weight: bold; }
   footer {
@@ -125,18 +177,30 @@
     padding: 30px 20px;
     border-top: 1px solid #c8a85a;
   }
-  @media (max-width: 600px) {
-    body { font-size: 18px; }
-    .hero h1 { font-size: 26px; }
+  /* ===== 响应式 ===== */
+  @media (max-width: 768px) {
+    body { font-size: 18px; line-height: 1.95; }
+    .hero { padding: 40px 16px 24px; }
+    .hero h1 { font-size: 28px; letter-spacing: 2px; }
+    .hero .subtitle { font-size: 15px; }
+    .hero::after { font-size: 18px; top: 20px; right: 20px; padding: 4px 8px; }
+    .container { padding: 30px 18px 60px; }
+    h1 { font-size: 26px; }
     h2 { font-size: 22px; }
     h3 { font-size: 20px; }
+    h4 { font-size: 18px; }
+  }
+  @media (max-width: 480px) {
+    body { font-size: 17px; }
+    .hero h1 { font-size: 24px; }
+    .container { padding: 24px 14px 50px; }
   }
 </style>
 </head>
 <body>
 <div class="hero">
   <h1>三足鼎立　缺一即偏</h1>
-  <div class="subtitle">《禅海蠡测》悟真深度读书笔记　·　详述版·浅色　·　见地·修证·行愿的真实落地</div>
+  <div class="subtitle">《禅海蠡测》悟真深度读书笔记　·　详述版·浅色 v4　·　见地·修证·行愿的真实落地</div>
   <div class="audio-player">
     <audio id="audio" controls preload="metadata">
       <source src="full.mp3" type="audio/mpeg">
@@ -159,13 +223,7 @@
 
 <p><strong>《禅海蠡测》悟真深度读书笔记</strong></p>
 
-<blockquote>**【序章·一句话点透】**</blockquote>
-<blockquote></blockquote>
-<blockquote>**禅不是口头的机锋，是&quot;见地—修证—行愿&quot;具足的真参实证。**</blockquote>
-<blockquote></blockquote>
-<blockquote>南师在《禅海蠡测》开篇就立住了一句话：&quot;有见无证=口头禅；有证无行=自了汉；三者具足，方是完整的禅。&quot;——把整部千年禅宗收摄为三足鼎立，缺一即偏。</blockquote>
-<blockquote></blockquote>
-<blockquote>我们今天研读《禅海蠡测》，不是去学机锋、不是去背公案，而是借南师的&quot;蠡&quot;——那只谦卑的瓢——去测禅海之深，最终要问自己一句：**我的三足，立起来了吗？**</blockquote>
+<blockquote><strong>【序章·一句话点透】</strong><br><br><strong>禅不是口头的机锋，是"见地—修证—行愿"具足的真参实证。</strong><br><br>南师在《禅海蠡测》开篇就立住了一句话："有见无证=口头禅；有证无行=自了汉；三者具足，方是完整的禅。"——把整部千年禅宗收摄为三足鼎立，缺一即偏。<br><br>我们今天研读《禅海蠡测》，不是去学机锋、不是去背公案，而是借南师的"蠡"——那只谦卑的瓢——去测禅海之深，最终要问自己一句：<strong>我的三足，立起来了吗？</strong></blockquote>
 
 <hr>
 
@@ -228,11 +286,7 @@
 
 <h3>1.4 一句话总结</h3>
 
-<blockquote>**见地=眼；修证=足；行愿=根。**</blockquote>
-<blockquote></blockquote>
-<blockquote>眼不正走错路；足不行到不了家；根不深长不成树。</blockquote>
-<blockquote></blockquote>
-<blockquote>三个字合起来——才是完整的禅。</blockquote>
+<blockquote><strong>见地=眼；修证=足；行愿=根。</strong><br><br>眼不正走错路；足不行到不了家；根不深长不成树。<br><br>三个字合起来——才是完整的禅。</blockquote>
 
 <hr>
 
@@ -241,7 +295,7 @@
 <h3>2.1 《六祖坛经》：&quot;不识本心，学法无益&quot;</h3>
 
 <p><strong>【原文】</strong></p>
-<blockquote>慧能一闻经语，心即开悟。遂问客曰：&quot;我当往弘化，以答四恩，未审能之否？&quot;客曰：&quot;和尚是岭南人，佛法与岭南人有缘，佛法与岭南人无缘，即和尚与岭南人有缘，方辩得是。&quot;慧能曰：&quot;今有盗者，窃人衣被，将去者，是佛之逆贼；着如来衣，不了本心，非佛弟子。&quot;**不识本心，学法无益；识心见性，即悟大意。**</blockquote>
+<blockquote>慧能一闻经语，心即开悟。遂问客曰："我当往弘化，以答四恩，未审能之否？"客曰："和尚是岭南人，佛法与岭南人有缘，佛法与岭南人无缘，即和尚与岭南人有缘，方辩得是。"慧能曰："今有盗者，窃人衣被，将去者，是佛之逆贼；着如来衣，不了本心，非佛弟子。"<strong>不识本心，学法无益；识心见性，即悟大意。</strong></blockquote>
 
 <p><strong>【逐句详解】</strong></p>
 <ul>
@@ -256,7 +310,7 @@
 <h3>2.2 《楞严经》卷六：&quot;妙性圆明，离诸名相&quot;</h3>
 
 <p><strong>【原文】</strong></p>
-<blockquote>佛告阿难：&quot;妙性圆明，离诸名相，本来无有世界众生。因妄有生，因生有灭，生灭名妄，灭妄名真。是称如来无上菩提，及大涅槃，二转依号。&quot;</blockquote>
+<blockquote>佛告阿难："妙性圆明，离诸名相，本来无有世界众生。因妄有生，因生有灭，生灭名妄，灭妄名真。是称如来无上菩提，及大涅槃，二转依号。"</blockquote>
 
 <p><strong>【逐句详解】</strong></p>
 <ul>
@@ -270,7 +324,7 @@
 <h3>2.3 《金刚经》：&quot;应无所住而生其心&quot;</h3>
 
 <p><strong>【原文】</strong></p>
-<blockquote>须菩提！于意云何？如来有所说法不？&quot;须菩提白佛言：&quot;世尊！如来无所说。&quot;&quot;须菩提！于意云何？三千大千世界所有微尘是为多不？&quot;须菩提言：&quot;甚多，世尊！&quot;&quot;须菩提！诸微尘，如来说非微尘，是名微尘。如来说世界，非世界，是名世界。须菩提！于意云何？可以三十二相见如来不？&quot;&quot;须菩提！汝若作是念：如来不以具足相故，得阿耨多罗三藐三菩提。须菩提！汝若作是念：如来说法，说法者，无法可说，是名说法。&quot;</blockquote>
+<blockquote>须菩提！于意云何？如来有所说法不？"须菩提白佛言："世尊！如来无所说。""须菩提！于意云何？三千大千世界所有微尘是为多不？"须菩提言："甚多，世尊！""须菩提！诸微尘，如来说非微尘，是名微尘。如来说世界，非世界，是名世界。须菩提！于意云何？可以三十二相见如来不？""须菩提！汝若作是念：如来不以具足相故，得阿耨多罗三藐三菩提。须菩提！汝若作是念：如来说法，说法者，无法可说，是名说法。"</blockquote>
 
 <p><strong>【逐句详解】</strong></p>
 <ul>
@@ -284,7 +338,7 @@
 <h3>2.4 《大乘起信论》：&quot;心生则种种法生，心灭则种种法灭&quot;</h3>
 
 <p><strong>【原文】</strong></p>
-<blockquote>&quot;是故三界虚伪，唯心所作，离心则无六尘境界。一切诸法，唯依妄念而有差别，若离心念，则无一切境界之相。是故一切法，如镜中像，无体可得，唯心虚妄。以心生则种种法生，心灭则种种法灭故。&quot;</blockquote>
+<blockquote>"是故三界虚伪，唯心所作，离心则无六尘境界。一切诸法，唯依妄念而有差别，若离心念，则无一切境界之相。是故一切法，如镜中像，无体可得，唯心虚妄。以心生则种种法生，心灭则种种法灭故。"</blockquote>
 
 <p><strong>【逐句详解】</strong></p>
 <ul>
@@ -296,7 +350,7 @@
 <h3>2.5 《普贤行愿品》：&quot;虚空界尽、众生界尽、众生业尽、众生烦恼尽，我愿乃尽&quot;</h3>
 
 <p><strong>【原文】</strong></p>
-<blockquote>尔时，普贤菩萨摩诃萨，称叹如来胜功德已，告诸菩萨及善财言：&quot;善男子！若欲成就此功德门，应修十种广大行愿。何等为十？一者礼敬诸佛，二者称赞如来，三者广修供养，四者忏悔业障，五者随喜功德，六者请转法轮，七者请佛住世，八者常随佛学，九者恒顺众生，十者普皆回向。&quot;</blockquote>
+<blockquote>尔时，普贤菩萨摩诃萨，称叹如来胜功德已，告诸菩萨及善财言："善男子！若欲成就此功德门，应修十种广大行愿。何等为十？一者礼敬诸佛，二者称赞如来，三者广修供养，四者忏悔业障，五者随喜功德，六者请转法轮，七者请佛住世，八者常随佛学，九者恒顺众生，十者普皆回向。"</blockquote>
 
 <p><strong>【逐句详解】</strong></p>
 <ul>
@@ -307,7 +361,7 @@
 <h3>2.6 《维摩诘经》：&quot;不入烦恼大海，则无诸功德庄严&quot;</h3>
 
 <p><strong>【原文】</strong></p>
-<blockquote>文殊师利问维摩诘：&quot;何等是菩萨入不二法门？&quot;维摩诘默然无言。文殊师利叹曰：&quot;善哉！善哉！乃至无有文字语言，是真入不二法门。&quot;</blockquote>
+<blockquote>文殊师利问维摩诘："何等是菩萨入不二法门？"维摩诘默然无言。文殊师利叹曰："善哉！善哉！乃至无有文字语言，是真入不二法门。"</blockquote>
 
 <p><strong>【互证】</strong> 维摩诘的"默然无言"——是见地最深处的无言；却"入酒肆、赴淫舍"广行众善——是行愿的最圆满。"默然后行"——这就是三足鼎立的活榜样。</p>
 
@@ -429,9 +483,7 @@
 
 <h3>3.6 一句话总结</h3>
 
-<blockquote>五个古人，三足都立。立得不偏、立得圆满、立得到底。</blockquote>
-<blockquote></blockquote>
-<blockquote>我们今天研读《禅海蠡测》，就是要学这五位的三足立——而不仅仅是学他们的话头、机锋、棒喝。</blockquote>
+<blockquote>五个古人，三足都立。立得不偏、立得圆满、立得到底。<br><br>我们今天研读《禅海蠡测》，就是要学这五位的三足立——而不仅仅是学他们的话头、机锋、棒喝。</blockquote>
 
 <hr>
 
@@ -515,11 +567,7 @@
 
 <h3>4.4 病根总图</h3>
 
-<blockquote>**七种人，七种偏，七种病根。**</blockquote>
-<blockquote></blockquote>
-<blockquote>病根只有一个：**三足不立**。或缺一足、或缺两足、或三足皆倒。</blockquote>
-<blockquote></blockquote>
-<blockquote>南师的针砭，不是打人的棍子，是照人的镜子——先照自己，再照他人。</blockquote>
+<blockquote><strong>七种人，七种偏，七种病根。</strong><br><br>病根只有一个：<strong>三足不立</strong>。或缺一足、或缺两足、或三足皆倒。<br><br>南师的针砭，不是打人的棍子，是照人的镜子——先照自己，再照他人。</blockquote>
 
 <hr>
 
@@ -589,11 +637,7 @@
 
 <h3>5.5 一句话总纲</h3>
 
-<blockquote>**三足鼎立，缺一即偏；偏一处则全盘倒。**</blockquote>
-<blockquote></blockquote>
-<blockquote>立起来是禅师；偏了就是口头禅、狂禅、自了汉。</blockquote>
-<blockquote></blockquote>
-<blockquote>一辈子立三足——这是《禅海蠡测》的全部要义。</blockquote>
+<blockquote><strong>三足鼎立，缺一即偏；偏一处则全盘倒。</strong><br><br>立起来是禅师；偏了就是口头禅、狂禅、自了汉。<br><br>一辈子立三足——这是《禅海蠡测》的全部要义。</blockquote>
 
 <hr>
 
@@ -623,11 +667,11 @@
 
 <p>PPT 第 11 页收得最妙：</p>
 
-<blockquote>**&quot;禅,不是口头的机锋,而是&#x27;见地—修证—行愿&#x27;具足的真参实证。&quot;**</blockquote>
+<blockquote><strong>"禅,不是口头的机锋,而是'见地—修证—行愿'具足的真参实证。"</strong></blockquote>
 
 <p>我们今天研读《禅海蠡测》，不是去学机锋、不是去背公案、不是去争"禅"是"禅定"还是"禅宗"——而是借南师的"蠡"——那只谦卑的瓢——去测禅海之深，最终要问自己一句：</p>
 
-<blockquote>**我的三足，立起来了吗？立了多久？还要立多久？**</blockquote>
+<blockquote><strong>我的三足，立起来了吗？立了多久？还要立多久？</strong></blockquote>
 
 <p><strong>立起来，是禅；立不住，沦为口头禅。</strong></p>
 
@@ -679,24 +723,16 @@
 <li>PPT 11：「禅,不是口头的机锋,而是'见地—修证—行愿'具足的真参实证。」</li>
 </ul>
 <ol>
-<li>PPT 12：「直指人心　见性成佛　《禅海蠡测》· 南怀瑾」</li>
+<li>PPT 12：「直指人心 见性成佛 《禅海蠡测》· 南怀瑾」</li>
 </ul>
 
 <hr>
 
-<blockquote>**【悟真题记】**</blockquote>
-<blockquote></blockquote>
-<blockquote>《禅海蠡测》不是一本&quot;看完就懂&quot;的书——是一面照自己三足的镜子。</blockquote>
-<blockquote></blockquote>
-<blockquote>今天研读至此，我们暂搁一瓢。</blockquote>
-<blockquote></blockquote>
-<blockquote>但禅海之深，蠡测之谦——这条路，才刚刚开始。</blockquote>
-<blockquote></blockquote>
-<blockquote>——悟真记于 2026-07-22，研读南怀瑾《禅海蠡测》v2 版 12 页 PPT</blockquote>
+<blockquote><strong>【悟真题记】</strong><br><br>《禅海蠡测》不是一本"看完就懂"的书——是一面照自己三足的镜子。<br><br>今天研读至此，我们暂搁一瓢。<br><br>但禅海之深，蠡测之谦——这条路，才刚刚开始。<br><br>——悟真记于 2026-07-22，研读南怀瑾《禅海蠡测》v2 版 12 页 PPT</blockquote>
 
-  <div class="seal">悟真印　·　详述浅色版 · 2026-07-22</div>
+  <div class="seal">悟真印　·　详述浅色版 v4 · 2026-07-22</div>
 </div>
-<footer>《禅海蠡测》研读笔记　·　南怀瑾著　·　悟真整编　·　详述版·浅色</footer>
+<footer>《禅海蠡测》研读笔记　·　南怀瑾著　·　悟真整编　·　详述版·浅色 v4</footer>
 <script>
   const audio = document.getElementById('audio');
   document.querySelectorAll('.rate-btn').forEach(btn => {
@@ -709,11 +745,19 @@
   function downloadAudio() {
     const a = document.createElement('a');
     a.href = 'full.mp3';
-    a.download = '三足鼎立·缺一即偏——禅海蠡测悟真读书笔记（详述浅色）.mp3';
+    a.download = '三足鼎立·缺一即偏——禅海蠡测悟真读书笔记（详述浅色v4）.mp3';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
   }
+  document.querySelectorAll('table').forEach(t => {
+    if (!t.parentElement.classList.contains('table-wrap')) {
+      const wrap = document.createElement('div');
+      wrap.className = 'table-wrap';
+      t.parentNode.insertBefore(wrap, t);
+      wrap.appendChild(t);
+    }
+  });
 </script>
 </body>
 </html>
