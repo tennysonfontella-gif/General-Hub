@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三足鼎立·缺一即偏——《禅海蠡测》悟真深度读书笔记</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "站酷小薇体", "Noto Serif CJK SC", "STKaiti", "KaiTi", "PingFang SC", serif;
+    background: #faf6ef;
+    color: #3d3027;
+    line-height: 2.4;
+    font-size: 20px;
+    padding: 0;
+  }
+  .hero {
+    background: linear-gradient(135deg, #faf6ef 0%, #f3e9d2 100%);
+    border-bottom: 2px solid #c8a85a;
+    padding: 50px 20px 30px;
+    text-align: center;
+    position: relative;
+  }
+  .hero::after {
+    content: "悟真印";
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #c8423b;
+    font-size: 24px;
+    border: 2px solid #c8423b;
+    border-radius: 4px;
+    padding: 6px 12px;
+    transform: rotate(-8deg);
+    font-weight: bold;
+    opacity: 0.7;
+  }
+  .hero h1 {
+    font-size: 38px;
+    color: #8a5a2b;
+    margin-bottom: 12px;
+    letter-spacing: 4px;
+  }
+  .hero .subtitle {
+    font-size: 18px;
+    color: #6b5443;
+    margin-bottom: 20px;
+  }
+  .audio-player {
+    max-width: 720px;
+    margin: 30px auto 0;
+    background: #fff;
+    border: 1px solid #c8a85a;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(138, 90, 43, 0.1);
+  }
+  .audio-player audio {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  .audio-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  .audio-controls button, .audio-controls a {
+    background: #8a5a2b;
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .audio-controls button:hover, .audio-controls a:hover {
+    background: #c8a85a;
+  }
+  .audio-controls .rate-group {
+    display: inline-flex;
+    gap: 4px;
+  }
+  .audio-controls .rate-btn {
+    background: #f3e9d2;
+    color: #8a5a2b;
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+  .audio-controls .rate-btn.active {
+    background: #8a5a2b;
+    color: #fff;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 80px;
+  }
+  h1, h2, h3, h4 {
+    color: #8a5a2b;
+    margin: 28px 0 16px;
+    font-weight: bold;
+  }
+  h1 { font-size: 30px; text-align: center; border-bottom: 2px solid #c8a85a; padding-bottom: 12px; }
+  h2 { font-size: 26px; border-left: 6px solid #c8a85a; padding-left: 14px; }
+  h3 { font-size: 22px; color: #6b5443; }
+  h4 { font-size: 20px; color: #6b5443; }
+  p, li {
+    margin: 12px 0;
+    text-align: justify;
+  }
+  blockquote {
+    border-left: 4px solid #c8a85a;
+    background: #f3e9d2;
+    padding: 14px 20px;
+    margin: 16px 0;
+    color: #6b5443;
+    font-style: italic;
+    border-radius: 0 8px 8px 0;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(138, 90, 43, 0.1);
+  }
+  th, td {
+    border: 1px solid #e0d5c0;
+    padding: 10px 14px;
+    text-align: left;
+  }
+  th {
+    background: #c8a85a;
+    color: #fff;
+    font-weight: bold;
+  }
+  tr:nth-child(even) td {
+    background: #fbf7ed;
+  }
+  strong {
+    color: #c8423b;
+    font-weight: bold;
+  }
+  code {
+    background: #f3e9d2;
+    color: #8a5a2b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+  }
+  hr {
+    border: 0;
+    border-top: 1px dashed #c8a85a;
+    margin: 30px 0;
+  }
+  ul, ol {
+    margin: 12px 0 12px 30px;
+  }
+  li {
+    margin: 6px 0;
+  }
+  .seal {
+    text-align: right;
+    color: #c8423b;
+    margin-top: 40px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  footer {
+    text-align: center;
+    color: #6b5443;
+    font-size: 14px;
+    padding: 30px 20px;
+    border-top: 1px solid #c8a85a;
+  }
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    .hero h1 { font-size: 26px; }
+    h2 { font-size: 22px; }
+    h3 { font-size: 20px; }
+    .audio-controls { font-size: 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="hero">
+  <h1>三足鼎立　缺一即偏</h1>
+  <div class="subtitle">《禅海蠡测》悟真深度读书笔记　·　见地·修证·行愿的真实落地</div>
+  <div class="audio-player">
+    <audio id="audio" controls preload="metadata">
+      <source src="full.mp3" type="audio/mpeg">
+      您的浏览器不支持 audio 标签。
+    </audio>
+    <div class="audio-controls">
+      <button onclick="downloadAudio()">⬇ 下载音频</button>
+      <div class="rate-group">
+        <button class="rate-btn" data-rate="0.75">0.75x</button>
+        <button class="rate-btn active" data-rate="1">1x</button>
+        <button class="rate-btn" data-rate="1.25">1.25x</button>
+        <button class="rate-btn" data-rate="1.5">1.5x</button>
+        <button class="rate-btn" data-rate="2">2x</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+<h1>三足鼎立，缺一即偏——见地·修证·行愿的真实落地</h1>
+
+<p><strong>《禅海蠡测》悟真深度读书笔记</strong></p>
+
+<blockquote>**【序章·一句话点透】**</blockquote>
+<blockquote></blockquote>
+<blockquote>**禅不是口头的机锋，是&quot;见地—修证—行愿&quot;具足的真参实证。**</blockquote>
+<blockquote></blockquote>
+<blockquote>南师在《禅海蠡测》开篇就立住了一句话：&quot;有见无证=口头禅；有证无行=自了汉；三者具足，方是完整的禅。&quot;——把整部千年禅宗收摄为三足鼎立，缺一即偏。</blockquote>
+<blockquote></blockquote>
+<blockquote>我们今天研读《禅海蠡测》，不是去学机锋、不是去背公案，而是借南师的&quot;蠡&quot;——那只谦卑的瓢——去测禅海之深，最终要问自己一句：**我的三足，立起来了吗？**</blockquote>
+
+<hr>
+
+<h2>第一章·名相拆解——三足鼎立的真实含义</h2>
+
+<p>南师说："南师把整部禅宗、整部佛法，收摄为三个字眼。三者如鼎之三足，缺一即偏。"</p>
+
+<p>但"见地·修证·行愿"这六个字，多少人挂在嘴边一辈子，到头来还是口头禅？我们一句一句拆。</p>
+
+<h3>1.1 见地——不是&quot;知道&quot;，是&quot;看见&quot;</h3>
+
+<p><strong>【名相】</strong> 见地（梵文：dr̥ṣṭi ādhiṣṭhāna；藏文：lta ba）</p>
+
+<p><strong>【两层意思】</strong> 字典上"见地"是"见解、主张"——但禅门里，"见地"是远比"见解"重的两个字。</p>
+
+<ul>
+<li><strong>理层见地</strong>：理上彻见心性，知道"即心即佛、非心非佛"到底在说什么——不被名相所惑。</li>
+<li><strong>事层见地</strong>：历境不迷，遇事方知真章——这是更深一层的"见"，是日用中真刀真枪磨出来的"看见"。</li>
+</ul>
+
+<p><strong>【辨析】</strong> 解悟 ≠ 证悟。PPT 第 5 页说得清楚：理上想通了是"解悟"；身心上亲证现量才是"证悟"。多数人止于解悟而自以为了——这是禅门第一大病。</p>
+
+<p><strong>【三字口诀】</strong> 见地就是那双眼。眼不正，走多远都偏。盲修瞎练、认妄为真，皆因见地不明。故禅门首重"正眼"。</p>
+
+<p><strong>【南师原话·注】</strong></p>
+<blockquote>「有眼无足到不了家；有足无眼走错了路。见地，就是那双眼。」</blockquote>
+
+<p><strong>【互证·《六祖坛经》】</strong> 六祖慧能言："不识本心，学法无益。"——这就是"见地"二字的根本。没有见地，所有修都成"盲修"。没有见地，所有行都成"盲行"。</p>
+
+<h3>1.2 修证——不是&quot;坐多久&quot;，是&quot;证多少&quot;</h3>
+
+<p><strong>【名相】</strong> 修证（梵文：bhāvanā sākṣāt-kara）</p>
+
+<p><strong>【两层意思】</strong></p>
+<ul>
+<li><strong>修</strong>：实际的功夫。调身、调息、调心——一行三昧、日复一日的"绵密保任"。</li>
+<li><strong>证</strong>：身心上真实兑现的境界。PPT 第 6 页点明：见性是"入门"不是"到家"。</li>
+</ul>
+
+<p><strong>【南师针砭】</strong></p>
+<blockquote>「理可顿悟，事须渐修。悟后保任，绵密无间，方是真修。」</blockquote>
+
+<p>习气深厚，一悟之后旧业仍会翻腾——故云"悟后正好修"。绵绵密密保任长养，使悟境不退不失，这才是真功夫。</p>
+
+<p><strong>【三字口诀】</strong> 修证是一生的事。悟不是终点，是真修的起点。</p>
+
+<h3>1.3 行愿——不是&quot;修福&quot;，是&quot;发心&quot;</h3>
+
+<p><strong>【名相】</strong> 行愿（梵文：praṇidhāna；藏文：smon pa）</p>
+
+<p><strong>【两层意思】</strong></p>
+<ul>
+<li><strong>行</strong>：践行。广行众善、入世利他。</li>
+<li><strong>愿</strong>：发心。菩提心为根——四弘誓愿、众生无边誓愿度。</li>
+</ul>
+
+<p><strong>【关键】</strong> PPT 第 6 页特别强调：行愿不仅是"果"，更能<strong>反策</strong>见地与修证——慈悲到极处即是智慧。</p>
+
+<p><strong>【三字口诀】</strong> 行愿是大根。没有大根，纵有证悟亦成自了汉、狂禅。</p>
+
+<h3>1.4 一句话总结</h3>
+
+<blockquote>**见地=眼；修证=足；行愿=根。**</blockquote>
+<blockquote></blockquote>
+<blockquote>眼不正走错路；足不行到不了家；根不深长不成树。</blockquote>
+<blockquote></blockquote>
+<blockquote>三个字合起来——才是完整的禅。</blockquote>
+
+<hr>
+
+<h2>第二章·经典本意——六部经互证三足鼎立</h2>
+
+<h3>2.1 《六祖坛经》：&quot;不识本心，学法无益&quot;</h3>
+
+<p><strong>【原文】</strong></p>
+<blockquote>慧能一闻经语，心即开悟。遂问客曰：&quot;我当往弘化，以答四恩，未审能之否？&quot;客曰：&quot;和尚是岭南人，佛法与岭南人有缘，佛法与岭南人无缘，即和尚与岭南人有缘，方辩得是。&quot;慧能曰：&quot;今有盗者，窃人衣被，将去者，是佛之逆贼；着如来衣，不了本心，非佛弟子。&quot;**不识本心，学法无益；识心见性，即悟大意。**</blockquote>
+
+<p><strong>【逐句详解】</strong></p>
+<ul>
+<li>"不识本心"——见地不明。</li>
+<li>"学法无益"——修证无根。</li>
+<li>"识心见性"——见地+修证+行愿三足立。</li>
+<li>"即悟大意"——三足立，则大事了毕。</li>
+</ul>
+
+<p><strong>【与《禅海蠡测》互证】</strong> 慧能这一句，正是《禅海蠡测》"三足鼎立"的源头——见地、修证、行愿，缺一即偏，"不识本心"就是最大的偏。</p>
+
+<h3>2.2 《楞严经》卷六：&quot;妙性圆明，离诸名相&quot;</h3>
+
+<p><strong>【原文】</strong></p>
+<blockquote>佛告阿难：&quot;妙性圆明，离诸名相，本来无有世界众生。因妄有生，因生有灭，生灭名妄，灭妄名真。是称如来无上菩提，及大涅槃，二转依号。&quot;</blockquote>
+
+<p><strong>【逐句详解】</strong></p>
+<ul>
+<li>"妙性圆明"——见地的本体。</li>
+<li>"离诸名相"——不被口头禅、机锋所惑。</li>
+<li>"因妄有生，因生有灭"——修证的过程（破妄显真）。</li>
+</ul>
+
+<p><strong>【互证】</strong> 《楞严经》开悟的圆瑛大师，正是从"七处征心、八还辨见"破见地的不正——这是禅门见地功夫的最深表达。</p>
+
+<h3>2.3 《金刚经》：&quot;应无所住而生其心&quot;</h3>
+
+<p><strong>【原文】</strong></p>
+<blockquote>须菩提！于意云何？如来有所说法不？&quot;须菩提白佛言：&quot;世尊！如来无所说。&quot;&quot;须菩提！于意云何？三千大千世界所有微尘是为多不？&quot;须菩提言：&quot;甚多，世尊！&quot;&quot;须菩提！诸微尘，如来说非微尘，是名微尘。如来说世界，非世界，是名世界。须菩提！于意云何？可以三十二相见如来不？&quot;&quot;须菩提！汝若作是念：如来不以具足相故，得阿耨多罗三藐三菩提。须菩提！汝若作是念：如来说法，说法者，无法可说，是名说法。&quot;</blockquote>
+
+<p><strong>【逐句详解】</strong></p>
+<ul>
+<li>"应无所住"——见地（不染不住）。</li>
+<li>"而生其心"——行愿（生大悲心）。</li>
+<li>"如来说法，无法可说"——破"以解为证"的针砭。</li>
+</ul>
+
+<p><strong>【互证】</strong> 六祖慧能闻此句而悟——见地、修证、行愿，在"应无所住而生其心"中一齐圆满。</p>
+
+<h3>2.4 《大乘起信论》：&quot;心生则种种法生，心灭则种种法灭&quot;</h3>
+
+<p><strong>【原文】</strong></p>
+<blockquote>&quot;是故三界虚伪，唯心所作，离心则无六尘境界。一切诸法，唯依妄念而有差别，若离心念，则无一切境界之相。是故一切法，如镜中像，无体可得，唯心虚妄。以心生则种种法生，心灭则种种法灭故。&quot;</blockquote>
+
+<p><strong>【逐句详解】</strong></p>
+<ul>
+<li>"心生则种种法生"——见地的根。</li>
+<li>"心灭则种种法灭"——修证的果。</li>
+<li>"离心则无六尘境界"——行愿的基。</li>
+</ul>
+
+<h3>2.5 《普贤行愿品》：&quot;虚空界尽、众生界尽、众生业尽、众生烦恼尽，我愿乃尽&quot;</h3>
+
+<p><strong>【原文】</strong></p>
+<blockquote>尔时，普贤菩萨摩诃萨，称叹如来胜功德已，告诸菩萨及善财言：&quot;善男子！若欲成就此功德门，应修十种广大行愿。何等为十？一者礼敬诸佛，二者称赞如来，三者广修供养，四者忏悔业障，五者随喜功德，六者请转法轮，七者请佛住世，八者常随佛学，九者恒顺众生，十者普皆回向。&quot;</blockquote>
+
+<p><strong>【逐句详解】</strong></p>
+<ul>
+<li>行愿的具体内容——十种广大行愿。</li>
+<li>"虚空界尽……我愿乃尽"——行愿的究竟相。</li>
+</ul>
+
+<h3>2.6 《维摩诘经》：&quot;不入烦恼大海，则无诸功德庄严&quot;</h3>
+
+<p><strong>【原文】</strong></p>
+<blockquote>文殊师利问维摩诘：&quot;何等是菩萨入不二法门？&quot;维摩诘默然无言。文殊师利叹曰：&quot;善哉！善哉！乃至无有文字语言，是真入不二法门。&quot;</blockquote>
+
+<p><strong>【互证】</strong> 维摩诘的"默然无言"——是见地最深处的无言；却"入酒肆、赴淫舍"广行众善——是行愿的最圆满。"默然后行"——这就是三足鼎立的活榜样。</p>
+
+<hr>
+
+<h2>第三章·历史人物印证——五个真参实证的活榜样</h2>
+
+<p>PPT 第 3 页说："三足鼎立，缺一即偏。"我们用五个真实历史人物来印证。</p>
+
+<h3>3.1 六祖慧能——三足圆满的祖</h3>
+
+<p><strong>【故事】</strong> 慧能本是岭南樵夫，一闻《金刚经》"应无所住而生其心"即开悟见地。后到黄梅，五祖令舂米八个月——是修证的功夫。得法南归后猎人队中藏身 15 年，是行愿的隐藏。最后出广州法性寺，印宗法师为其剃度，开东山法门——三足立，禅宗自此大盛。</p>
+
+<p><strong>【三足】</strong></p>
+<ul>
+<li><strong>见地</strong>："本来无一物"——直指心性的正见。</li>
+<li><strong>修证</strong>：舂米八月、猎人队中 15 年——绵密保任。</li>
+<li><strong>行愿</strong>：一花开五叶——把禅的种子撒向千年。</li>
+</ul>
+
+<p><strong>【三层分点】</strong></p>
+<ol>
+<li>见地是"悟"。慧能的悟是顿悟，但顿悟之后还有 16 年的修证和行愿。</li>
+</ul>
+<ol>
+<li>修证是"磨"。磨在哪里磨？在柴房、在米臼、在猎人队——一切处都是道场。</li>
+</ul>
+<ol>
+<li>行愿是"传"。传到哪里？传到神会、传到南岳青原、传到五家七宗——传了一千年。</li>
+</ul>
+
+<h3>3.2 南岳怀让——把&quot;磨砖&quot;变成&quot;坐禅&quot;的活榜样</h3>
+
+<p><strong>【故事】</strong> 怀让在曹溪接六祖之法后，到南岳磨镜台。一日见马祖道一坐禅，问："大德坐禅图什么？"马祖云："图作佛。"怀让拿一块砖在石上磨。马祖问："磨砖作什么？"怀让云："磨作镜。"马祖惊："磨砖岂得成镜？"怀让云："磨砖既不成镜，坐禅岂得成佛？"</p>
+
+<p><strong>【三足】</strong></p>
+<ul>
+<li><strong>见地</strong>："坐禅岂得成佛"——见地最深的一句话。</li>
+<li><strong>修证</strong>：磨砖作镜——用日用事来锤炼。</li>
+<li><strong>行愿</strong>：把见地从"坐禅"救出来——行愿之大。</li>
+</ul>
+
+<p><strong>【三层分点】</strong></p>
+<ol>
+<li>见地不正：马祖原以为"坐禅就能成佛"——这是以定为悟的病。</li>
+</ul>
+<ol>
+<li>修证转向：从坐禅转向"磨镜"——日用中磨心。</li>
+</ul>
+<ol>
+<li>行愿成就：从此马祖得法，开洪州宗——行愿成就了禅的半壁江山。</li>
+</ul>
+
+<h3>3.3 洞山良价与曹山本寂——细密回互的曹洞家风</h3>
+
+<p><strong>【故事】</strong> 良价过水睹影，大悟，作偈："切忌从他觅，迢迢与我疏。我今独自往，处处得逢渠。渠今正是我，我今不是渠。应须恁么会，方得契如如。"——这是见地。本寂继之，开"君臣五位"——正偏回互、细密绵绵。</p>
+
+<p><strong>【三足】</strong></p>
+<ul>
+<li><strong>见地</strong>：渠今正是我，我今不是渠——正偏不二。</li>
+<li><strong>修证</strong>：默照禅——稳实绵远。</li>
+<li><strong>行愿</strong>：曹洞绵密的家风——传到日本，成为"只管打坐"的源头。</li>
+</ul>
+
+<p><strong>【三层分点】</strong></p>
+<ol>
+<li>见地的深度：水影、镜花、梦中幻——曹洞见地最深最细。</li>
+</ul>
+<ol>
+<li>修证的绵密：默照禅——"黑漆桶"里磨出来。</li>
+</ul>
+<ol>
+<li>行愿的绵远：从洞山到日本，从本寂到道元——传了一千二百年。</li>
+</ul>
+
+<h3>3.4 临济义玄——棒喝峻烈的大机大用</h3>
+
+<p><strong>【故事】</strong> 临济三次问黄檗"如何是佛法的的大意"，三度被打——棒下见地成。后开临济宗，"四料简""四宾主""四照用"——大机大用。</p>
+
+<p><strong>【三足】</strong></p>
+<ul>
+<li><strong>见地</strong>："我有时一喝如金刚王宝剑，有时一喝如踞地师子……"——棒喝的见地最深。</li>
+<li><strong>修证</strong>：棒下悟——在最激烈的当下了悟。</li>
+<li><strong>行愿</strong>：大机大用——为后人开了一扇最直接的法门。</li>
+</ul>
+
+<p><strong>【三层分点】</strong></p>
+<ol>
+<li>见地的峻烈：临济的见地是"杀活"——要杀你所有的执念。</li>
+</ul>
+<ol>
+<li>修证的激烈：棒下无生无死——修证在最极端处。</li>
+</ul>
+<ol>
+<li>行愿的大机：临济一宗，后世占了禅宗大半——行愿最大。</li>
+</ul>
+
+<h3>3.5 赵州从谂——八十犹行脚的活榜样</h3>
+
+<p><strong>【故事】</strong> 赵州八十岁仍行脚，有人问："和尚年高，犹行脚做什么？"赵州云："我此间无着身处。"——到一百二十岁圆寂。</p>
+
+<p><strong>【三足】</strong></p>
+<ul>
+<li><strong>见地</strong>："无着身处"——见地最彻底的"无住"。</li>
+<li><strong>修证</strong>：八十行脚——一辈子修证到底。</li>
+<li><strong>行愿</strong>：茶禅一味——把禅化入日用。</li>
+</ul>
+
+<p><strong>【三层分点】</strong></p>
+<ol>
+<li>见地的彻底：连"行脚"也无处住——见地最彻底。</li>
+</ul>
+<ol>
+<li>修证的不息：到八十、到一百——修证到死方休。</li>
+</ul>
+<ol>
+<li>行愿的平常：茶就是禅、禅就是茶——行愿在日用。</li>
+</ul>
+
+<h3>3.6 一句话总结</h3>
+
+<blockquote>五个古人，三足都立。立得不偏、立得圆满、立得到底。</blockquote>
+<blockquote></blockquote>
+<blockquote>我们今天研读《禅海蠡测》，就是要学这五位的三足立——而不仅仅是学他们的话头、机锋、棒喝。</blockquote>
+
+<hr>
+
+<h2>第四章·反面案例——南师六处针砭与三种&quot;修偏了&quot;的人</h2>
+
+<p>PPT 第 10 页是整本 PPT 最痛的一页——南师在《禅海蠡测》中针砭了"六处易错"。我们一条一条拆，再配三种"修偏了"的现代画像。</p>
+
+<h3>4.1 南师六处针砭（PPT 第 10 页·原文逐句）</h3>
+
+<ol>
+<li><strong>口头禅</strong>：机锋公案说得滚瓜烂熟，身心境界毫无——<strong>数他人珍宝</strong>。</li>
+</ul>
+<ol>
+<li><strong>以解为证</strong>：理上想通便自谓彻悟，得少为足——<strong>禅门第一大病</strong>。</li>
+</ul>
+<ol>
+<li><strong>以定为悟</strong>：把坐中清净境界误认作见性——<strong>定是定，悟是悟</strong>。</li>
+</ul>
+<ol>
+<li><strong>着气脉神通</strong>：以气脉发动神通现前为道——<strong>落在命功与魔境</strong>。</li>
+</ul>
+<ol>
+<li><strong>废教暗证</strong>：轻视经教不求印证，一味盲参——<strong>易堕野狐禅</strong>。</li>
+</ul>
+<ol>
+<li><strong>执空堕断灭</strong>：把"本来无一物"会成顽空，拨无因果——<strong>大邪见</strong>。</li>
+</ul>
+
+<h3>4.2 配三足鼎立来看</h3>
+
+<table>
+<thead><tr><th>针砭</th><th>缺的哪一足</th></tr></thead>
+<tbody>
+<tr><td>口头禅</td><td>缺修证 + 缺行愿</td></tr>
+<tr><td>以解为证</td><td>缺修证</td></tr>
+<tr><td>以定为悟</td><td>缺见地（把定当见地）</td></tr>
+<tr><td>着气脉神通</td><td>缺见地（着命功而非心性）</td></tr>
+<tr><td>废教暗证</td><td>缺见地（无正见指引）</td></tr>
+<tr><td>执空堕断灭</td><td>缺行愿（拨无因果 = 无慈悲）</td></tr>
+</tbody>
+</table>
+
+<p><strong>【关键】</strong> 六种针砭，<strong>五种都缺见地</strong>。这就是南师为什么要首重"正眼"——见地是根，根不正，一切修都偏。</p>
+
+<h3>4.3 七种&quot;修偏了&quot;的现代画像</h3>
+
+<h4>4.3.1 35 岁&quot;禅学网红&quot;型（口头禅）</h4>
+<p>症状：满嘴机锋公案，赵州茶、云门饼、信手拈来，但从不静坐，从不发愿，遇事还是一脸焦虑。</p>
+<p>病根：缺修证、缺行愿。</p>
+<p>药方：每日静坐 30 分钟，每年做一次利他公益。</p>
+
+<h4>4.3.2 40 岁&quot;学术权威&quot;型（以解为证）</h4>
+<p>症状：佛学院教授、博士头衔，写了十本禅学著作，但从未真参一句话头。</p>
+<p>病根：缺修证。</p>
+<p>药方：放下笔，提起一则话头——"念佛是谁"——从学者变行者。</p>
+
+<h4>4.3.3 50 岁&quot;瑜伽/打坐狂热者&quot;型（以定为悟）</h4>
+<p>症状：每天静坐 4 小时，体验到"空、明、乐"——但以为这就是开悟。</p>
+<p>病根：缺见地（把定当见地）。</p>
+<p>药方：参一则话头，看看你那个"空"——能所双亡否？</p>
+
+<h4>4.3.4 45 岁&quot;气功/特异功能&quot;型（着气脉神通）</h4>
+<p>症状：沉迷于"打通中脉""看到前世""遥视遥听"。</p>
+<p>病根：缺见地（着命功而非心性）。</p>
+<p>药方：读《楞严经》卷九"五十种阴魔"——看清这些境界的来历。</p>
+
+<h4>4.3.5 30 岁&quot;无神论学者&quot;型（执空堕断灭）</h4>
+<p>症状：学了点"本来无一物"，就否定因果、否定善恶、否定一切修行。</p>
+<p>病根：缺行愿（拨无因果 = 无慈悲）。</p>
+<p>药方：去养老院、孤儿院做一年义工——"无一物"的境界里怎么会没有慈悲？</p>
+
+<h4>4.3.6 60 岁&quot;野狐禅&quot;型（废教暗证）</h4>
+<p>症状：自以为"不立文字、直指人心"，不读经、不学教，遇到问题就拍胸脯"我开悟了"。</p>
+<p>病根：缺见地（无正见指引）。</p>
+<p>药方：从《六祖坛经》《金刚经》读起，把见地基筑牢。</p>
+
+<h4>4.3.7 25 岁&quot;佛系青年&quot;型（自了汉）</h4>
+<p>症状：学了点禅，自以为"看开了"，逃避责任、不结婚、不工作。</p>
+<p>病根：缺行愿。</p>
+<p>药方：六祖言："不离世间觉。"——觉了还在世间，这才是真修。</p>
+
+<h3>4.4 病根总图</h3>
+
+<blockquote>**七种人，七种偏，七种病根。**</blockquote>
+<blockquote></blockquote>
+<blockquote>病根只有一个：**三足不立**。或缺一足、或缺两足、或三足皆倒。</blockquote>
+<blockquote></blockquote>
+<blockquote>南师的针砭，不是打人的棍子，是照人的镜子——先照自己，再照他人。</blockquote>
+
+<hr>
+
+<h2>第五章·落地——三步走&quot;立三足&quot;实修法门</h2>
+
+<p>PPT 第 7 页、第 9 页给了具体方法。我们把它整理为三步走。</p>
+
+<h3>5.1 第一步：30 天入门——立起见地这一足</h3>
+
+<p><strong>【目标】</strong> 在 30 天内，找到"信"——信什么？信禅、信自己、信"明心见性"这件事是真的。</p>
+
+<p><strong>【方法】</strong></p>
+<ul>
+<li><strong>每日读诵</strong>：选一部经典，每天读一卷。</li>
+</ul>
+<p>  - 推荐：初学《六祖坛经》→ 进阶《金刚经》→ 深入《楞严经》→ 究竟《华严经》。</p>
+<ul>
+<li><strong>每日静坐</strong>：30 分钟。调身、调息、调心——不求境界，只求"数息"清楚。</li>
+<li><strong>每周笔记</strong>：写 300 字"我的见地笔记"——把这周读懂的、用上的、做不到的写下来。</li>
+</ul>
+
+<p><strong>【检验】</strong> 30 天后，你是否愿意在朋友圈承认"我在学禅"？这步过了——见地立了。</p>
+
+<h3>5.2 第二步：1 年稳固——立起修证这一足</h3>
+
+<p><strong>【目标】</strong> 在 1 年内，从"知道"走到"做到"。</p>
+
+<p><strong>【方法】</strong></p>
+<ul>
+<li><strong>每日静坐</strong>：从 30 分钟加到 60 分钟。</li>
+<li><strong>参一则话头</strong>：选一则话头，提起疑情。PPT 第 7 页说："选一则话头（如'念佛是谁'）轻轻提起。不在字面求解，只觉一团'不明白'——这点'不明白'就是疑情的种子。"</li>
+<li><strong>每月一次小参</strong>：找有经验的老师，请其勘验。</li>
+<li><strong>每日保任</strong>：行住坐卧不离这个疑情。</li>
+</ul>
+
+<p><strong>【检验】</strong> 1 年后，你是否有过一次"话头破了"的体验？——即使只是一闪，也是修证立了。</p>
+
+<h3>5.3 第三步：3 年突破——立起行愿这一足</h3>
+
+<p><strong>【目标】</strong> 在 3 年内，把修出来的"证"化入日用，发大愿、广行善。</p>
+
+<p><strong>【方法】</strong></p>
+<ul>
+<li><strong>每日行一善</strong>：利他从小事做起。</li>
+<li><strong>每月一次大愿</strong>：每月发一次利他愿、回向。</li>
+<li><strong>每年一次闭关</strong>：3 天、7 天、21 天——量力而行。</li>
+<li><strong>读《普贤行愿品》</strong>：三个月一次，循环读诵。</li>
+</ul>
+
+<p><strong>【检验】</strong> 3 年后，你是否把"自了"放下，把"利他"提起来？——这是行愿立了。</p>
+
+<h3>5.4 终身功夫——三足永立</h3>
+
+<p><strong>【南师原话】</strong></p>
+<blockquote>「理可顿悟，事须渐修。悟后保任，绵密无间，方是真修。」</blockquote>
+
+<p>三足鼎立，不是 3 年立了就完——是一辈子立下去。每天的"读诵、坐禅、利他"——是三足的日日保任。</p>
+
+<p><strong>【反问自己】</strong></p>
+<ul>
+<li>今天我读了吗？见地保住了吗？</li>
+<li>今天我坐了吗？修证保住了吗？</li>
+<li>今天我利他了吗？行愿保住了吗？</li>
+</ul>
+
+<p><strong>【三问三答】</strong> 日日问、日日答——答不上来时，就是脚底打滑了。</p>
+
+<h3>5.5 一句话总纲</h3>
+
+<blockquote>**三足鼎立，缺一即偏；偏一处则全盘倒。**</blockquote>
+<blockquote></blockquote>
+<blockquote>立起来是禅师；偏了就是口头禅、狂禅、自了汉。</blockquote>
+<blockquote></blockquote>
+<blockquote>一辈子立三足——这是《禅海蠡测》的全部要义。</blockquote>
+
+<hr>
+
+<h2>第六章·回扣原话——三足对原话，逐句落地</h2>
+
+<p>PPT 12 页里的核心原话，我们把它和"三足"对应，逐句落地。</p>
+
+<table>
+<thead><tr><th>PPT 关键句</th><th>对应三足</th><th>落地到今天</th></tr></thead>
+<tbody>
+<tr><td>&quot;有见无证=口头禅&quot;</td><td>缺修证</td><td>今天我坐了吗？</td></tr>
+<tr><td>&quot;有证无行=自了汉&quot;</td><td>缺行愿</td><td>今天我利他了吗？</td></tr>
+<tr><td>&quot;三者具足，方是完整的禅&quot;</td><td>三足立</td><td>三件事今天做到了吗？</td></tr>
+<tr><td>&quot;理可顿悟，事须渐修&quot;</td><td>见地 + 修证</td><td>我是顿悟还是渐修？</td></tr>
+<tr><td>&quot;悟后正好修&quot;</td><td>修证</td><td>悟后我修了多久？</td></tr>
+<tr><td>&quot;见地就是那双眼&quot;</td><td>见地</td><td>我的眼正吗？</td></tr>
+<tr><td>&quot;以解为证&quot;</td><td>缺修证</td><td>我把&quot;懂&quot;当&quot;证&quot;了吗？</td></tr>
+<tr><td>&quot;以定为悟&quot;</td><td>缺见地</td><td>我把&quot;清净&quot;当&quot;开悟&quot;了吗？</td></tr>
+<tr><td>&quot;本来无一物&quot;不是顽空</td><td>见地 + 行愿</td><td>我拨无因果了吗？</td></tr>
+<tr><td>&quot;不离世间觉&quot;</td><td>行愿</td><td>我逃避世间了吗？</td></tr>
+</tbody>
+</table>
+
+<hr>
+
+<h2>第七章·收束——以一句话点透</h2>
+
+<p>PPT 第 11 页收得最妙：</p>
+
+<blockquote>**&quot;禅,不是口头的机锋,而是&#x27;见地—修证—行愿&#x27;具足的真参实证。&quot;**</blockquote>
+
+<p>我们今天研读《禅海蠡测》，不是去学机锋、不是去背公案、不是去争"禅"是"禅定"还是"禅宗"——而是借南师的"蠡"——那只谦卑的瓢——去测禅海之深，最终要问自己一句：</p>
+
+<blockquote>**我的三足，立起来了吗？立了多久？还要立多久？**</blockquote>
+
+<p><strong>立起来，是禅；立不住，沦为口头禅。</strong></p>
+
+<p>南师一辈子在做的事，就是把"立起来"三个字，从口头、书本、生活、生命里活出来。</p>
+
+<p>我们今天读《禅海蠡测》——也是为这"立起来"。</p>
+
+<hr>
+
+<h2>附录·原句索引（PPT 12 页·14 条）</h2>
+
+<ol>
+<li>PPT 2：「以蠡测海——拿一只瓢,去量度禅宗这片汪洋。」</li>
+</ul>
+<ol>
+<li>PPT 3：「南师把整部禅宗、整部佛法，收摄为三个字眼。三者如鼎之三足，缺一即偏。」</li>
+</ul>
+<ol>
+<li>PPT 3：「有见无证=口头禅；有证无行=自了汉；三者具足,方是完整的禅。」</li>
+</ul>
+<ol>
+<li>PPT 4：「从灵山拈花到曹溪大鉴，一灯相续，方有五家七宗之盛。」</li>
+</ul>
+<ol>
+<li>PPT 5：「有眼无足到不了家；有足无眼走错了路。见地，就是那双眼。」</li>
+</ul>
+<ol>
+<li>PPT 6：「理可顿悟，事须渐修。悟后保任，绵密无间，方是真修。」</li>
+</ul>
+<ol>
+<li>PPT 6：「以行愿为药,方圆满。」</li>
+</ul>
+<ol>
+<li>PPT 7：「疑到山穷水尽，忽然'啪'地一声，桶底脱落——能疑所疑一时顿空。」</li>
+</ul>
+<ol>
+<li>PPT 7：「切忌把话头当'咒语'来念,那是'念话头'不是'参话头'——念与参,天壤之别。」</li>
+</ul>
+<ol>
+<li>PPT 8：「一花开五叶，结果自然成。——六祖法偈」</li>
+</ul>
+<ol>
+<li>PPT 9：「用功无他，只在一提一放之间善加调适。——南师」</li>
+</ul>
+<ol>
+<li>PPT 10：六处针砭（口头禅 / 以解为证 / 以定为悟 / 着气脉神通 / 废教暗证 / 执空堕断灭）</li>
+</ul>
+<ol>
+<li>PPT 11：「禅,不是口头的机锋,而是'见地—修证—行愿'具足的真参实证。」</li>
+</ul>
+<ol>
+<li>PPT 12：「直指人心　见性成佛　《禅海蠡测》· 南怀瑾」</li>
+</ul>
+
+<hr>
+
+<blockquote>**【悟真题记】**</blockquote>
+<blockquote></blockquote>
+<blockquote>《禅海蠡测》不是一本&quot;看完就懂&quot;的书——是一面照自己三足的镜子。</blockquote>
+<blockquote></blockquote>
+<blockquote>今天研读至此，我们暂搁一瓢。</blockquote>
+<blockquote></blockquote>
+<blockquote>但禅海之深，蠡测之谦——这条路，才刚刚开始。</blockquote>
+<blockquote></blockquote>
+<blockquote>——悟真记于 2026-07-22，研读南怀瑾《禅海蠡测》v2 版 12 页 PPT</blockquote>
+
+  <div class="seal">悟真印　·　2026-07-22</div>
+</div>
+<footer>《禅海蠡测》研读笔记　·　南怀瑾著　·　悟真整编</footer>
+<script>
+  const audio = document.getElementById('audio');
+  document.querySelectorAll('.rate-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.rate-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      audio.playbackRate = parseFloat(btn.dataset.rate);
+    });
+  });
+  function downloadAudio() {
+    const a = document.createElement('a');
+    a.href = 'full.mp3';
+    a.download = '三足鼎立·缺一即偏——禅海蠡测悟真读书笔记.mp3';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+</script>
+</body>
+</html>
