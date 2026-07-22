@@ -2,8 +2,8 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
-<title>三足鼎立·缺一即偏——《禅海蠡测》悟真读书笔记（详述版·浅色 v4）</title>
+<meta name="viewport" content="width=760, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+<title>三足鼎立·缺一即偏——《禅海蠡测》悟真读书笔记（详述版·浅色 v5）</title>
 <style>
   *, *::before, *::after {
     box-sizing: border-box;
@@ -12,35 +12,34 @@
   }
   html {
     -webkit-text-size-adjust: 100%;
-    overflow-x: hidden;
+    text-size-adjust: 100%;
   }
   body {
     font-family: "Noto Serif CJK SC", "Source Han Serif SC", "STKaiti", "KaiTi", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", serif;
     background: #faf6ef;
     color: #3d3027;
-    line-height: 2.0;
-    font-size: 19px;
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-    word-break: normal;          /* 关键：按 CJK 正常断行，不按字强断 */
-    overflow-wrap: break-word;   /* 关键：长单词/无断点时才断 */
+    line-height: 1.95;
+    font-size: 18px;
     -webkit-font-smoothing: antialiased;
   }
-  /* ===== Hero ===== */
+  /* 关键：固定 PC 渲染宽度 760px */
+  .page {
+    width: 760px;
+    margin: 0 auto;
+    background: #faf6ef;
+  }
   .hero {
     background: linear-gradient(135deg, #faf6ef 0%, #f3e9d2 100%);
     border-bottom: 2px solid #c8a85a;
-    padding: 50px 24px 32px;
+    padding: 50px 32px 32px;
     text-align: center;
     position: relative;
-    width: 100%;
   }
   .hero::after {
     content: "悟真印";
     position: absolute;
     top: 30px;
-    right: 40px;
+    right: 50px;
     color: #c8423b;
     font-size: 22px;
     border: 2px solid #c8423b;
@@ -53,8 +52,7 @@
   .hero h1 { font-size: 36px; color: #8a5a2b; margin-bottom: 12px; letter-spacing: 4px; }
   .hero .subtitle { font-size: 17px; color: #6b5443; margin-bottom: 22px; line-height: 1.6; }
   .audio-player {
-    max-width: 680px;
-    width: calc(100% - 32px);
+    width: 660px;
     margin: 30px auto 0;
     background: #fff;
     border: 1px solid #c8a85a;
@@ -62,15 +60,12 @@
     padding: 20px;
     box-shadow: 0 4px 12px rgba(138, 90, 43, 0.1);
   }
-  .audio-player audio { width: 100%; max-width: 100%; margin-bottom: 12px; }
+  .audio-player audio { width: 100%; margin-bottom: 12px; }
   .audio-controls {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+    line-height: 36px;
   }
-  .audio-controls button, .audio-controls a {
+  .audio-controls button {
     background: #8a5a2b;
     color: #fff;
     border: none;
@@ -78,44 +73,29 @@
     border-radius: 6px;
     cursor: pointer;
     font-size: 14px;
-    text-decoration: none;
+    margin: 0 3px;
   }
-  .audio-controls button:hover, .audio-controls a:hover { background: #c8a85a; }
-  .audio-controls .rate-group { display: inline-flex; gap: 4px; }
-  .audio-controls .rate-btn {
-    background: #f3e9d2;
-    color: #8a5a2b;
-    padding: 6px 10px;
-    font-size: 13px;
-  }
+  .audio-controls button:hover { background: #c8a85a; }
+  .audio-controls .rate-btn { background: #f3e9d2; color: #8a5a2b; padding: 6px 10px; font-size: 13px; }
   .audio-controls .rate-btn.active { background: #8a5a2b; color: #fff; }
-  /* ===== 容器 ===== */
-  .container {
-    width: 100%;
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 40px 28px 80px;
+  .content {
+    width: 760px;
+    padding: 40px 32px 80px;
   }
-  /* ===== 标题 ===== */
   h1, h2, h3, h4 {
     color: #8a5a2b;
     margin: 32px 0 18px;
     font-weight: bold;
-    word-break: normal;
     line-height: 1.4;
   }
   h1 { font-size: 30px; text-align: center; border-bottom: 2px solid #c8a85a; padding-bottom: 12px; }
   h2 { font-size: 24px; border-left: 6px solid #c8a85a; padding-left: 14px; margin-top: 40px; }
   h3 { font-size: 21px; color: #6b5443; margin-top: 28px; }
   h4 { font-size: 19px; color: #6b5443; margin-top: 20px; }
-  /* ===== 正文 ===== */
   p, li {
     margin: 14px 0;
     text-align: justify;
-    word-break: normal;
-    overflow-wrap: break-word;
   }
-  /* ===== 引用 ===== */
   blockquote {
     border-left: 4px solid #c8a85a;
     background: #f3e9d2;
@@ -125,16 +105,12 @@
     font-style: italic;
     border-radius: 0 8px 8px 0;
     line-height: 1.8;
-    word-break: normal;
-    overflow-wrap: break-word;
   }
   blockquote p { margin: 6px 0; }
-  /* ===== 表格（关键：不强制固定列宽，让内容自然排） ===== */
+  /* 表格：移动端走横向滚动，PC 端不缩 */
   .table-wrap {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
     margin: 20px 0;
-    width: 100%;
   }
   table {
     width: 100%;
@@ -143,20 +119,15 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(138, 90, 43, 0.1);
-    word-break: normal;
-    overflow-wrap: break-word;
   }
   th, td {
     border: 1px solid #e0d5c0;
     padding: 10px 14px;
     text-align: left;
-    word-break: normal;
-    overflow-wrap: break-word;
     vertical-align: top;
   }
   th { background: #c8a85a; color: #fff; font-weight: bold; }
   tr:nth-child(even) td { background: #fbf7ed; }
-  /* ===== 强调 ===== */
   strong { color: #c8423b; font-weight: bold; }
   code {
     background: #f3e9d2;
@@ -164,7 +135,6 @@
     padding: 2px 6px;
     border-radius: 4px;
     font-family: "Courier New", monospace;
-    word-break: break-all;
   }
   hr { border: 0; border-top: 1px dashed #c8a85a; margin: 32px 0; }
   ul, ol { margin: 14px 0 14px 32px; padding-left: 0; }
@@ -177,38 +147,43 @@
     padding: 30px 20px;
     border-top: 1px solid #c8a85a;
   }
-  /* ===== 响应式 ===== */
-  @media (max-width: 768px) {
-    body { font-size: 18px; line-height: 1.95; }
-    .hero { padding: 40px 16px 24px; }
+
+  /* 关键响应式：移动端 .page 强制等比缩放 */
+  @media (max-width: 760px) {
+    .page {
+      width: 100%;
+    }
+    .hero { padding: 40px 20px 24px; }
     .hero h1 { font-size: 28px; letter-spacing: 2px; }
     .hero .subtitle { font-size: 15px; }
-    .hero::after { font-size: 18px; top: 20px; right: 20px; padding: 4px 8px; }
-    .container { padding: 30px 18px 60px; }
+    .hero::after { font-size: 18px; top: 20px; right: 24px; padding: 4px 8px; }
+    .audio-player { width: calc(100% - 24px); padding: 16px; }
+    .content { width: 100%; padding: 30px 20px 60px; }
     h1 { font-size: 26px; }
     h2 { font-size: 22px; }
     h3 { font-size: 20px; }
     h4 { font-size: 18px; }
+    body { font-size: 17px; }
   }
   @media (max-width: 480px) {
-    body { font-size: 17px; }
+    body { font-size: 16px; }
     .hero h1 { font-size: 24px; }
-    .container { padding: 24px 14px 50px; }
+    .content { padding: 24px 16px 50px; }
   }
 </style>
 </head>
 <body>
-<div class="hero">
-  <h1>三足鼎立　缺一即偏</h1>
-  <div class="subtitle">《禅海蠡测》悟真深度读书笔记　·　详述版·浅色 v4　·　见地·修证·行愿的真实落地</div>
-  <div class="audio-player">
-    <audio id="audio" controls preload="metadata">
-      <source src="full.mp3" type="audio/mpeg">
-      您的浏览器不支持 audio 标签。
-    </audio>
-    <div class="audio-controls">
-      <button onclick="downloadAudio()">⬇ 下载音频</button>
-      <div class="rate-group">
+<div class="page">
+  <div class="hero">
+    <h1>三足鼎立　缺一即偏</h1>
+    <div class="subtitle">《禅海蠡测》悟真深度读书笔记　·　详述版·浅色 v5　·　见地·修证·行愿的真实落地</div>
+    <div class="audio-player">
+      <audio id="audio" controls preload="metadata">
+        <source src="full.mp3" type="audio/mpeg">
+        您的浏览器不支持 audio 标签。
+      </audio>
+      <div class="audio-controls">
+        <button onclick="downloadAudio()">⬇ 下载音频</button>
         <button class="rate-btn" data-rate="0.75">0.75x</button>
         <button class="rate-btn active" data-rate="1">1x</button>
         <button class="rate-btn" data-rate="1.25">1.25x</button>
@@ -217,8 +192,7 @@
       </div>
     </div>
   </div>
-</div>
-<div class="container">
+  <div class="content">
 <h1>三足鼎立，缺一即偏——见地·修证·行愿的真实落地</h1>
 
 <p><strong>《禅海蠡测》悟真深度读书笔记</strong></p>
@@ -730,9 +704,10 @@
 
 <blockquote><strong>【悟真题记】</strong><br><br>《禅海蠡测》不是一本"看完就懂"的书——是一面照自己三足的镜子。<br><br>今天研读至此，我们暂搁一瓢。<br><br>但禅海之深，蠡测之谦——这条路，才刚刚开始。<br><br>——悟真记于 2026-07-22，研读南怀瑾《禅海蠡测》v2 版 12 页 PPT</blockquote>
 
-  <div class="seal">悟真印　·　详述浅色版 v4 · 2026-07-22</div>
+    <div class="seal">悟真印　·　详述浅色版 v5 · 2026-07-22</div>
+  </div>
+  <footer>《禅海蠡测》研读笔记　·　南怀瑾著　·　悟真整编　·　详述版·浅色 v5</footer>
 </div>
-<footer>《禅海蠡测》研读笔记　·　南怀瑾著　·　悟真整编　·　详述版·浅色 v4</footer>
 <script>
   const audio = document.getElementById('audio');
   document.querySelectorAll('.rate-btn').forEach(btn => {
@@ -745,7 +720,7 @@
   function downloadAudio() {
     const a = document.createElement('a');
     a.href = 'full.mp3';
-    a.download = '三足鼎立·缺一即偏——禅海蠡测悟真读书笔记（详述浅色v4）.mp3';
+    a.download = '三足鼎立·缺一即偏——禅海蠡测悟真读书笔记（详述浅色v5）.mp3';
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
