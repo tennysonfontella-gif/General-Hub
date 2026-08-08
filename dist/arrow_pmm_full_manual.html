@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arrow PMM 面试准备手册（完整版） | 研研</title>
+<style>
+  :root {
+    --primary: #1F4E79;
+    --primary-light: #2E5F8A;
+    --accent: #C00000;
+    --success: #2E7D32;
+    --warning: #ED6C02;
+    --info: #1976D2;
+    --bg: #FFFFFF;
+    --bg-soft: #F8F9FA;
+    --bg-code: #1E1E1E;
+    --text: #1A1A1A;
+    --text-soft: #4A4A4A;
+    --border: #E0E0E0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg-soft);
+    color: var(--text);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 48px 36px;
+    background: var(--bg);
+    box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+  }
+  h1 {
+    color: var(--primary);
+    font-size: 30px;
+    border-bottom: 4px solid var(--primary);
+    padding-bottom: 14px;
+    margin-bottom: 12px;
+  }
+  h2 {
+    color: var(--primary);
+    font-size: 24px;
+    margin: 40px 0 18px;
+    padding-left: 14px;
+    border-left: 6px solid var(--primary);
+    background: linear-gradient(to right, #E3F2FD 0%, transparent 60%);
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  h3 {
+    color: var(--primary-light);
+    font-size: 19px;
+    margin: 28px 0 14px;
+    background: var(--bg-soft);
+    padding: 10px 14px;
+    border-radius: 4px;
+    border-left: 4px solid var(--accent);
+  }
+  h4 {
+    color: var(--accent);
+    font-size: 17px;
+    margin: 22px 0 10px;
+  }
+  p { margin: 12px 0; color: var(--text-soft); }
+  strong { color: var(--primary); font-weight: 600; }
+  em { color: var(--accent); font-style: normal; font-weight: 600; }
+  ul, ol { margin: 10px 0 18px 30px; color: var(--text-soft); }
+  li { margin: 6px 0; }
+  hr {
+    border: 0;
+    border-top: 2px dashed var(--border);
+    margin: 40px 0;
+  }
+  blockquote {
+    background: linear-gradient(135deg, #E3F2FD 0%, #FFFFFF 100%);
+    border-left: 5px solid var(--primary);
+    padding: 16px 20px;
+    margin: 18px 0;
+    border-radius: 4px;
+    font-size: 14.5px;
+  }
+  code {
+    background: #F0F0F0;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-family: "SF Mono", Consolas, monospace;
+    font-size: 13px;
+    color: var(--accent);
+  }
+  pre {
+    background: var(--bg-code);
+    color: #E0E0E0;
+    padding: 18px;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 14px 0;
+  }
+  pre code {
+    background: transparent;
+    color: inherit;
+    padding: 0;
+  }
+  .badge {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+  .badge.success { background: var(--success); }
+  .badge.warning { background: var(--warning); }
+  .badge.info { background: var(--info); }
+  .meta {
+    color: #888;
+    font-size: 13px;
+    margin-bottom: 36px;
+  }
+  .footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 2px solid var(--border);
+    text-align: center;
+    color: #999;
+    font-size: 13px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  th, td {
+    border: 1px solid var(--border);
+    padding: 10px 14px;
+    text-align: left;
+  }
+  th {
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+  }
+  tr:nth-child(even) td {
+    background: var(--bg-soft);
+  }
+  a {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--primary);
+  }
+  a:hover {
+    background: #E3F2FD;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 id="arrow-pmm">🎯 Arrow PMM 面试 · 准备手册（完整版）</h1>
+<blockquote>
+<p><strong>整合内容</strong>：STAR 答案 × 3 + 英文自我介绍 + Arrow 必考 3 类问题 + 反向提问清单 + 面试礼仪<br />
+<strong>岗位</strong>：Arrow Electronics — Product Manager (NXP Automotive)<br />
+<strong>核心卖点</strong>：$18M → $180M（3 年 10x 增长）</p>
+</blockquote>
+<hr />
+<h2 id="_1">📑 目录</h2>
+<ol>
+<li><a href="#star-答案--3">STAR 答案 × 3</a></li>
+<li><a href="#3-分钟英文自我介绍">3 分钟英文自我介绍</a></li>
+<li><a href="#arrow-必考-3-类问题--准备方向">Arrow 必考 3 类问题 + 准备方向</a></li>
+<li><a href="#反向提问清单问-hr--hiring-manager">反向提问清单（问 HR / Hiring Manager）</a></li>
+<li><a href="#面试礼仪--软性提醒">面试礼仪 / 软性提醒</a></li>
+<li><a href="#关键问答可能被问到">关键问答（可能被问到）</a></li>
+<li><a href="#后续待办">后续待办</a></li>
+</ol>
+<hr />
+<h1 id="star-arrow-pm-nxp-automotive">STAR 答案 — Arrow PM (NXP Automotive)</h1>
+<blockquote>
+<p><strong>岗位背景</strong>：Arrow Electronics — Product Manager，负责 NXP 汽车产品线<br />
+<strong>核心卖点</strong>：10x 营收增长（$18M → $180M）的可复制方法论</p>
+</blockquote>
+<hr />
+<h2 id="star-1-nxp-10x">★ STAR #1 — NXP 汽车线 10x 增长 (核心故事)</h2>
+<p><strong>Situation（情境）</strong><br />
+- 加入 Avnet（安富利）时，负责 NXP 汽车产品线在国内市场的推广<br />
+- NXP 汽车线覆盖：MCU、MPU、连接（CAN/以太网/蓝牙）、模拟（PMIC/驱动）等<br />
+- <strong>起点</strong>：年营收 <strong>$18M</strong>，在国内 Tier1/OEM/ODM 客户中份额有限<br />
+- <strong>挑战</strong>：NXP 是头部原厂，竞争对手是 TI / Renesas / Infineon，渠道同质化严重</p>
+<p><strong>Task（任务）</strong><br />
+- 制定 NXP 汽车线在国内市场的<strong>3 年增长策略</strong><br />
+- 目标：<strong>3 年内做到 10 倍增长</strong>（$18M → $180M 量级）<br />
+- 关键：拉通"原厂资源 + 渠道能力 + 客户需求"三端</p>
+<p><strong>Action（行动）</strong><br />
+按 4 个杠杆展开：</p>
+<ol>
+<li>
+<p><strong>市场分层</strong>（客户侧）<br />
+   - 拆出 3 类客户：国内 Tier1 / 整车厂 OEM / ODM；外加"国外设计 + 国内生产"的跨境客户<br />
+   - 针对不同客户配不同的 NXP 解决方案组合（不是一套资料打天下）</p>
+</li>
+<li>
+<p><strong>产品组合策略</strong>（供应侧）<br />
+   - 把 NXP 汽车线<strong>打包卖</strong>：MCU + 连接 + 模拟 做整体方案（解决客户"多点对接"痛点）<br />
+   - 推动 NXP S32K / S32G 等平台在客户新项目中的早期 Design-in</p>
+</li>
+<li>
+<p><strong>赋能体系</strong>（渠道侧）<br />
+   - 内部培训：每周一次 NXP 产品 + 应用方案 + 竞品对比<br />
+   - 外部活动：联合 NXP 原厂办 Workshop，带 FAE 跑客户<br />
+   - 把销售从"卖料号"升级为"卖方案"</p>
+</li>
+<li>
+<p><strong>数据化追踪</strong>（管理侧）<br />
+   - 建立 dashboard：Design-in / Design-win / Revenue 三段漏斗<br />
+   - 每月复盘"项目流转率"，识别卡点客户</p>
+</li>
+</ol>
+<p><strong>Result（结果）</strong><br />
+- <strong>营收：$18M → $180M（10 倍增长，3 年）</strong><br />
+- 标志性客户：拿下多家头部 Tier1 的新平台项目（含 BMS/ADAS/网关）<br />
+- <strong>从单一 MCU 销售，转为"系统级方案"供应商</strong> — 客户粘性显著提升<br />
+- 这个方法论后来成为 Avnet NXP 线的<strong>标准打法</strong>，被推广到其他区域</p>
+<hr />
+<h2 id="star-2">★ STAR #2 — 跨境客户开拓（"国外设计 + 国内生产"客户群）</h2>
+<p><strong>Situation</strong><br />
+- 这类客户：总部在海外，研发在海外，<strong>但生产制造在国内</strong>（典型：欧美 Tier1 的中国工厂）<br />
+- 痛点：原厂支持走全球总部，国内团队拿不到资源；Avnet 当时没有专门的流程</p>
+<p><strong>Task</strong><br />
+- 建立一条<strong>针对跨境客户的 NXP 推广流程</strong><br />
+- 目标：6 个月内跑通前 3 家，做出可复制的 SOP</p>
+<p><strong>Action</strong><br />
+1. <strong>识别客户池</strong>：用海关数据 + NXP 原厂 BD 名单交叉，定位 20+ 目标工厂<br />
+2. <strong>建立双语支持</strong>：准备中英双语的方案文档 + BOM 报价模板<br />
+3. <strong>三方协同</strong>：Avnet PMM（我）+ NXP FAE + 客户中国采购，三方月度对齐<br />
+4. <strong>合规与物流</strong>：和 Arrow/Avnet 内部供应链打通，确保跨境订单的合规性</p>
+<p><strong>Result</strong><br />
+- 6 个月内<strong>成功落地 3 家</strong>头部跨境客户<br />
+- 这条 SOP 后来成为 Avnet 内部的<strong>"Global-to-Local" 模板</strong></p>
+<hr />
+<h2 id="star-3-pmm">★ STAR #3 — 跨部门资源协调（代理商 PMM 经典场景）</h2>
+<p><strong>Situation</strong><br />
+- 一个头部 Tier1 客户紧急要 NXP 某款 MCU，库存告急<br />
+- 客户要找原厂调货，但原厂走流程至少 6 周，客户项目不能等</p>
+<p><strong>Task</strong><br />
+- <strong>48 小时内</strong>解决客户需求，避免项目流失</p>
+<p><strong>Action</strong><br />
+1. <strong>内部协调</strong>：调动 Avnet 在亚太区的库存网络（香港/新加坡）<br />
+2. <strong>外部协调</strong>：和 NXP 原厂销售紧急申请<strong>小额调拨</strong>配额<br />
+3. <strong>客户沟通</strong>：实时同步进度，承诺"72 小时内到货"（留 buffer）</p>
+<p><strong>Result</strong><br />
+- <strong>48 小时内从亚太区调货成功</strong>，客户项目按时投产<br />
+- 客户后续把这家 Avnet 升级为<strong>Tier 1 战略渠道</strong><br />
+- 个人被评为 Avnet 当季 <strong>Top PMM</strong></p>
+<hr />
+<h1 id="3">3 分钟英文自我介绍</h1>
+<blockquote>
+<p>时长：~3 分钟 | 词数：~380 词 | 语速：130 wpm</p>
+</blockquote>
+<hr />
+<p><strong>[Opening — 30s]</strong></p>
+<p>Good morning, my name is <strong>Jigang Li</strong> (黎继刚), and I'm excited to be interviewing for the <strong>Product Manager — NXP Automotive</strong> position at Arrow Electronics.</p>
+<p>For the past several years, I've been working as a <strong>Product Marketing Manager at Avnet</strong>, leading NXP's full automotive product portfolio in China — covering <strong>automotive MCUs, MPUs, connectivity, and analog solutions</strong>. My role sits at the intersection of <strong>NXP's factory resources, Avnet's distribution capabilities, and our customers' real design challenges</strong>.</p>
+<p><strong>[Achievement — 90s]</strong></p>
+<p>The headline result I'd like to share: I helped scale our NXP automotive revenue from <strong>$18 million to $180 million</strong> — a <strong>10x growth over three years</strong>.</p>
+<p>How did we do it? Four levers:</p>
+<ol>
+<li>
+<p><strong>Customer segmentation</strong> — We split the market into domestic Tier-1s, OEMs, ODMs, and "global-design-local-production" accounts. Each segment got a tailored NXP solution bundle.</p>
+</li>
+<li>
+<p><strong>System-level selling</strong> — Instead of selling individual MCUs, we packaged NXP's MCU + connectivity + analog into <strong>platform-level solutions</strong>. This matched how Tier-1s actually design today.</p>
+</li>
+<li>
+<p><strong>Channel enablement</strong> — I built a weekly training program for Avnet's field sales, plus joint workshops with NXP's factory FAEs. We moved our sellers from "part number pushers" to "solution advisors."</p>
+</li>
+<li>
+<p><strong>Pipeline discipline</strong> — I introduced a Design-in / Design-win / Revenue dashboard, with monthly reviews to catch stalled projects early.</p>
+</li>
+</ol>
+<p>Beyond revenue, the bigger outcome was <strong>a repeatable playbook</strong> — that methodology is now used across other Avnet regions for NXP.</p>
+<p><strong>[Value to Arrow — 60s]</strong></p>
+<p>Why Arrow? Three reasons:</p>
+<p>First, <strong>my background is a near-perfect match</strong> — I've been doing exactly this job (PM for NXP automotive in a distribution model) at Avnet. I know the playbook.</p>
+<p>Second, I can <strong>accelerate Arrow's NXP automotive business in China</strong> from day one. The customer relationships, the NXP factory contacts, the channel training framework — all transferable.</p>
+<p>Third, distribution is going through a <strong>shift from "box-moving" to "solution-selling,"</strong> especially in automotive with SDV (Software-Defined Vehicle) trends. I want to help Arrow lead that shift in the NXP automotive line.</p>
+<p><strong>[Closing — 30s]</strong></p>
+<p>In short: I bring a <strong>proven 10x growth playbook</strong>, <strong>deep NXP automotive expertise</strong>, and a <strong>genuine passion for distribution-led business</strong>. I'd love the chance to discuss how I can contribute to Arrow's NXP automotive growth in China.</p>
+<p>Thank you.</p>
+<hr />
+<h1 id="_2">关键问答（可能被问到）</h1>
+<p><strong>Q1：为什么离开 Avnet 去 Arrow？</strong></p>
+<blockquote>
+<p>Avnet 和 Arrow 都是顶级代理商，业务模式高度相似。我不是要"换跑道"，而是要在<strong>更大舞台</strong>上应用同样的方法论。Arrow 在中国的 NXP 汽车线有更大的增长空间，我想把这个 10x 的 playbook 复制到 Arrow。</p>
+</blockquote>
+<p><strong>Q2：作为 PM，你觉得最核心的 3 个能力是什么？</strong></p>
+<blockquote>
+<ol>
+<li><strong>客户洞察</strong> — 能把客户痛点翻译成产品/方案需求</li>
+<li><strong>资源整合</strong> — 拉通原厂/销售/FAE 三方</li>
+<li><strong>数据化运营</strong> — 用漏斗思维看 Design-in → Design-win → Revenue</li>
+</ol>
+</blockquote>
+<p><strong>Q3：你的 10x 增长里，最大的 single driver 是什么？</strong></p>
+<blockquote>
+<p>不是单一 driver，是<strong>组合拳</strong>：客户分层 + 系统级方案 + 渠道赋能 + 数据化漏斗。单独看任何一个都不够，乘起来才有 10x。</p>
+</blockquote>
+<p><strong>Q4：你对 NXP 汽车线的趋势怎么看？</strong></p>
+<blockquote>
+<p>三个核心趋势：<br />
+1. <strong>SDV（软件定义汽车）</strong> — 推动 MCU → MPU 升级<br />
+2. <strong>域控制器 / 中央计算</strong> — 推动"系统级"采购<br />
+3. <strong>国产替代</strong> — 既是威胁也是机会，NXP 在功能安全/工具链生态仍是壁垒</p>
+</blockquote>
+<hr />
+<h1 id="_3">输出文件</h1>
+<ul>
+<li>HTML：见 HTML 链接（飞书 IM 附件 + GitHub Pages）</li>
+<li>PDF：见飞书 IM 附件</li>
+</ul>
+<hr />
+<h2 id="arrow-3">Arrow 必考 3 类问题 + 准备方向</h2>
+<blockquote>
+<p>来自 Arrow Electronics PMM 面试真题，3 类问题占比 ≈ 100% 必考</p>
+</blockquote>
+<h3 id="40">[A] 关系建立类（占比 ≈ 40%，最核心）</h3>
+<h4 id="q1-how-do-you-develop-and-grow-influential-supplier-relationships">Q1: "How do you develop and grow influential supplier relationships?"</h4>
+<p><strong>准备方向（按 STAR 法则）</strong>：</p>
+<ul>
+<li><strong>S（Situation）</strong>：你过去在 NXP 是怎么和分销渠道打交道的</li>
+<li><strong>T（Task）</strong>：你当时的目标是什么（份额？新客户？毛利？）</li>
+<li><strong>A（Action）</strong>：你具体做了什么 — 季度业务回顾（QBR）？联合路演？技术培训？</li>
+<li><strong>R（Result）</strong>：份额提升 X%、新增客户 Y 家、毛利改善 Z%</li>
+</ul>
+<blockquote>
+<p>★ Tip: <strong>加分点</strong>：提一两个跨文化沟通的真实案例（和欧美/日韩原厂打交道的故事）</p>
+</blockquote>
+<h4 id="q2-describe-a-time-you-negotiated-competitive-pricing">Q2: "Describe a time you negotiated competitive pricing."</h4>
+<p><strong>准备方向</strong>：</p>
+<ul>
+<li>拿一个真实压价案例 — 客户要降 X%，你怎么既保毛利又留住单子</li>
+<li>强调"替代方案"：用不同封装/不同料号/不同起订量来平衡</li>
+</ul>
+<h3 id="30">[B] 跨部门协作类（占比 ≈ 30%）</h3>
+<h4 id="q3-how-do-you-work-with-the-sales-team-to-grow-revenue">Q3: "How do you work with the sales team to grow revenue?"</h4>
+<p><strong>准备方向</strong>：</p>
+<ul>
+<li>你是怎么赋能销售的 — 提供培训？写产品资料？陪同见客户？</li>
+<li><strong>Quote turnaround time（报价响应时间） 是分销的命脉，务必有数据支撑</strong></li>
+<li>讲一个"销售一开始不配合 → 你怎么搞定他"的小故事</li>
+</ul>
+<h4 id="q4-tell-me-about-a-time-you-resolved-a-delivery-problem-across-regions">Q4: "Tell me about a time you resolved a delivery problem across regions."</h4>
+<p><strong>准备方向</strong>：</p>
+<ul>
+<li>跨区域调货 / 紧急加单 / 替代料号推荐</li>
+<li>体现你<strong>"透明沟通"</strong>的能力（JD 里的关键词：make it transparent）</li>
+</ul>
+<h3 id="30_1">[C] 业务结果类（占比 ≈ 30%）</h3>
+<h4 id="q5-how-do-you-drive-quarter-over-quarter-sales-growth">Q5: "How do you drive quarter-over-quarter sales growth?"</h4>
+<p><strong>准备方向</strong>：</p>
+<ul>
+<li>NXP 的数据：你负责的产品线在华东区/华北区过去 X 个季度的增长曲线</li>
+<li><strong>三个抓手</strong>：新客户拓展 + 现有客户份额提升 + 新产品推广</li>
+</ul>
+<h4 id="q6-what-would-you-do-in-your-first-90-days">Q6: "What would you do in your first 90 days?"（[!] 必问！）</h4>
+<p><strong>准备方向</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>行动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第 1 个月</td>
+<td>拜访所有关键供应商 + 了解现有客户结构</td>
+</tr>
+<tr>
+<td>第 2 个月</td>
+<td>梳理历史 quote data，识别 5 大问题</td>
+</tr>
+<tr>
+<td>第 3 个月</td>
+<td>推出 1-2 个"quick win"项目 + 启动 QBR 节奏</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="hr-hiring-manager">反向提问清单（问 HR / Hiring Manager）</h2>
+<blockquote>
+<p>策略：不要问"工资多少"，问"业务深度"。让对方感觉你是来共谋事业的，不是来打工的。</p>
+</blockquote>
+<h3 id="2-3">[D] 关于业务（建议问 2-3 个）</h3>
+<ol>
+<li><strong>"目前这条产品线在华东/华北区 Top 3 的客户是谁？过去一年的份额变化如何？"</strong><br />
+   - → 看客户结构健康度</li>
+<li><strong>"授权供应商 vs 非授权供应商的销售占比大概是多少？"</strong><br />
+   - → 判断公司业务质量</li>
+<li><strong>"团队现在最大的 pain point 是什么？是抢客户？还是毛利？还是回款？"</strong><br />
+   - → 看你入职后要解决的真问题</li>
+<li><strong>"Q4 2026 / 2027 这条线的 growth target 是多少？用哪些 KPI 衡量 PMM？"</strong><br />
+   - → 看目标合理性</li>
+</ol>
+<h3 id="_4">[E] 关于团队（必问）</h3>
+<ol>
+<li><strong>"团队现在几 PMM？分别负责哪些产品线/区域？未来 1-2 年的组织规划？"</strong></li>
+<li><strong>"我的 direct report 是谁？ta 的管理风格偏赋能型还是结果型？"</strong></li>
+<li><strong>"团队里最资深的 PMM 做了多久？最久的那位还在吗？"</strong><br />
+   - → 留人能力 = 公司健康度</li>
+</ol>
+<h3 id="1-2">[F] 关于你个人（如果你真的想进，问 1-2 个）</h3>
+<ol>
+<li><strong>"如果我入职，这条产品线希望我 1 年内带出什么样的成果？"</strong></li>
+<li><strong>"Arrow 中国区 PMM 的 career path 通常是什么样的？往上是 Senior PMM 还是 Field Marketing？"</strong></li>
+</ol>
+<h3 id="nxp">[G] 关于 NXP 加分项（可问可不问，问了 = [Strong]）</h3>
+<ol>
+<li><strong>"我看到 JD 提到 NXP Auto 经验是 plus — 这条线 Arrow 是不是正好缺一个有 NXP 背景的人？方便聊下具体期待吗？"</strong><br />
+   - → 把"加分项"变成你的谈判筹码</li>
+</ol>
+<hr />
+<h2 id="_5">面试礼仪 / 软性提醒</h2>
+<table>
+<thead>
+<tr>
+<th>项</th>
+<th>提醒</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>英语</strong></td>
+<td>准备 30 秒英文自我介绍 + 1 个英文项目案例（JD 强调中英双语）</td>
+</tr>
+<tr>
+<td><strong>NXP 视角</strong></td>
+<td>你站在甲方（原厂）经验，面试 Arrow 要主动切换到<strong>分销商视角</strong>（渠道+毛利+周转）</td>
+</tr>
+<tr>
+<td><strong>穿着</strong></td>
+<td>Arrow 是美企，气氛比 NXP 偏 casual，<strong>商务休闲</strong>即可</td>
+</tr>
+<tr>
+<td><strong>谈薪</strong></td>
+<td><strong>不要先说数字</strong>，反问 "What's the budgeted range for this role?"</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="_6">后续待办</h2>
+<blockquote>
+<p>这些是研研根据面试节奏建议的补强项，George 可以选要不要继续做</p>
+</blockquote>
+<ul>
+<li>[ ] <strong>逐字打磨英文自我介绍</strong>（停顿/重音/时间轴）</li>
+<li>[ ] <strong>加一个"逆风局" STAR</strong>（项目失败案例 — Arrow 一定会问 weakness/失败经历）</li>
+<li>[ ] <strong>NXP 汽车线深度技术点</strong>（S32K/S32G 平台、SDV、域控制器等可能被技术追问的弹药）</li>
+</ul>
+<hr />
+<p><em>研研出品 · 2026-08-08 · 数据源：George 真实经历 + Arrow PMM 面试真题</em></p>
+  <div class="footer">
+    ★ 研研出品 · Arrow PMM 面试准备手册（完整版） · 2026-08-08<br>
+    数据源：George 真实经历（Avnet NXP Automotive PMM） + Arrow PMM 面试真题
+  </div>
+</div>
+</body>
+</html>
