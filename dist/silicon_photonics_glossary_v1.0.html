@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硅光产业链黑话词典 v1.0</title>
+<meta name="author" content="研研">
+<meta name="date" content="2026-08-11">
+<style>
+:root {
+  --primary: #2D5F8A;
+  --primary-dark: #1F3F5F;
+  --accent: #5B9BD5;
+  --bg: #FFFFFF;
+  --bg-light: #F4F7FB;
+  --bg-card: #FAFBFD;
+  --text: #1A1A1A;
+  --text-soft: #5A5A5A;
+  --border: #D0D7E0;
+  --callout-bg: #E8F1FA;
+  --callout-border: #2D5F8A;
+  --code-bg: #F0F4F8;
+  --shadow: 0 2px 8px rgba(45, 95, 138, 0.08);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #5B9BD5;
+    --primary-dark: #2D5F8A;
+    --accent: #8AB4D8;
+    --bg: #0F1B2D;
+    --bg-light: #1A2840;
+    --bg-card: #16243B;
+    --text: #E5E9F0;
+    --text-soft: #A0AEC0;
+    --border: #2A3B5A;
+    --callout-bg: #1A2B3D;
+    --callout-border: #5B9BD5;
+    --code-bg: #16243B;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+  transition: background 0.3s, color 0.3s;
+}
+a { color: var(--primary); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.hero {
+  background: linear-gradient(135deg, #0F1B2D 0%, #2D5F8A 100%);
+  color: #fff;
+  padding: 80px 20px 60px;
+  text-align: center;
+}
+.hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 12px; letter-spacing: 2px; }
+.hero .subtitle { font-size: 18px; color: #A8C4E0; margin-bottom: 8px; font-weight: 300; }
+.hero .meta { font-size: 14px; color: #8AB4D8; margin-top: 24px; }
+.hero .fox { font-size: 64px; margin-bottom: 20px; }
+.search-box { max-width: 600px; margin: 24px auto 0; position: relative; }
+.search-box input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 24px;
+  font-size: 14px;
+  outline: none;
+}
+.search-box input::placeholder { color: rgba(255, 255, 255, 0.6); }
+.search-box::before {
+  content: "🔍";
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+.layout { display: grid; grid-template-columns: 240px 1fr; gap: 32px; margin-top: 40px; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+  .toc { position: static !important; }
+  .hero h1 { font-size: 32px; }
+}
+.toc {
+  position: sticky;
+  top: 24px;
+  align-self: start;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  max-height: calc(100vh - 48px);
+  overflow-y: auto;
+  box-shadow: var(--shadow);
+}
+.toc h3 {
+  font-size: 13px;
+  color: var(--text-soft);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.toc ul { list-style: none; }
+.toc li { margin: 6px 0; }
+.toc a {
+  color: var(--text);
+  font-size: 13px;
+  display: block;
+  padding: 4px 0;
+  border-left: 2px solid transparent;
+  padding-left: 8px;
+  transition: all 0.2s;
+}
+.toc a:hover { border-left-color: var(--primary); color: var(--primary); text-decoration: none; }
+.toc .sub { padding-left: 16px; font-size: 12.5px; color: var(--text-soft); }
+.content { min-width: 0; }
+.chapter { margin-bottom: 48px; padding-top: 20px; }
+.chapter h2 {
+  font-size: 28px;
+  color: var(--primary);
+  padding-bottom: 12px;
+  border-bottom: 3px solid var(--primary);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.section {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s;
+}
+.section:hover { transform: translateY(-2px); }
+.section h3 {
+  font-size: 22px;
+  color: var(--text);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section h3 .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.section h4 {
+  font-size: 14px;
+  color: var(--primary);
+  margin: 16px 0 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.section p { margin-bottom: 10px; }
+.section strong { color: var(--text); font-weight: 700; }
+.section ul, .section ol { margin: 8px 0 12px 28px; }
+.section li { margin: 4px 0; }
+.callout {
+  background: var(--callout-bg);
+  border-left: 4px solid var(--callout-border);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 14px 0;
+  font-size: 14.5px;
+}
+.callout .label { font-weight: 700; color: var(--primary); margin-right: 6px; }
+.code-block {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 12px 16px;
+  border-radius: 0 6px 6px 0;
+  font-family: "SF Mono", "Monaco", monospace;
+  font-size: 13px;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  font-size: 14px;
+  background: var(--bg);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+th { background: var(--primary); color: #fff; padding: 10px 12px; text-align: left; font-weight: 600; }
+td { padding: 9px 12px; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: var(--bg-light); }
+tr:hover td { background: var(--callout-bg); }
+.intro {
+  background: var(--bg-card);
+  border-radius: 12px;
+  padding: 28px;
+  margin: 32px 0;
+  border-left: 4px solid var(--primary);
+  box-shadow: var(--shadow);
+}
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-soft);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+mark { background: #FFE066; color: #000; padding: 0 2px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="hero">
+  <div class="hero-content">
+    <div class="fox">🦊</div>
+    <h1>硅光产业链黑话词典</h1>
+    <p class="subtitle">Silicon Photonics Industry Chain Glossary · v1.0</p>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="搜索术语（如：PIC100 / CPO / BiCMOS）" />
+    </div>
+    <p class="meta">制作：研研 · 投资助理 · 2026-08-11</p>
+  </div>
+</div>
+<div class="container">
+<div class="layout">
+<aside class="toc">
+  <h3>目录 · Contents</h3>
+  <ul>
+    <li><a href="#intro">📖 前言</a></li>
+    <li><a href="#ch1">第一章 · 基础层</a>
+      <ul class="sub">
+        <li><a href="#term-1">SiPho</a></li>
+        <li><a href="#term-2">TIA</a></li>
+        <li><a href="#term-3">EML</a></li>
+      </ul>
+    </li>
+    <li><a href="#ch2">第二章 · 产品形态</a>
+      <ul class="sub">
+        <li><a href="#term-4">Pluggable</a></li>
+        <li><a href="#term-5">CPO</a></li>
+        <li><a href="#term-6">NPO</a></li>
+      </ul>
+    </li>
+    <li><a href="#ch3">第三章 · 商业流程</a>
+      <ul class="sub">
+        <li><a href="#term-7">Design-in</a></li>
+        <li><a href="#term-8">Allocation</a></li>
+        <li><a href="#term-9">Foundry</a></li>
+      </ul>
+    </li>
+    <li><a href="#ch4">第四章 · 技术流程</a>
+      <ul class="sub">
+        <li><a href="#term-10">PDK</a></li>
+        <li><a href="#term-11">Tape-out</a></li>
+      </ul>
+    </li>
+    <li><a href="#ch5">第五章 · 串联图</a></li>
+    <li><a href="#ch6">第六章 · 速查表</a></li>
+    <li><a href="#ch7">第七章 · 4 大观察</a></li>
+  </ul>
+</aside>
+<main class="content">
+<section id="intro" class="intro">
+  <h2 style="border:none; padding:0; margin-bottom:16px;">📖 前言 · Why This Glossary</h2>
+  <p>硅光产业链横跨<strong>半导体制造</strong>、<strong>光通信</strong>、<strong>AI 算力</strong>三大领域,术语密度极高。这份词典按<strong>设计→生产→产品</strong>的产业链顺序,把 11 个最高频术语串成完整故事。每个词条都给出<strong>投资含义</strong>,方便你快速识别「哪个环节最值得押注」。</p>
+  <div class="callout"><span class="label">📌 阅读建议</span>先看每个词条的「一句话」理解概念,再看「投资含义」识别机会。「<a href="#ch5">第五章串联图</a>」把 11 个词串成完整价值链——这是这份词典最值钱的部分。</div>
+</section>
+
+<section id="ch1" class="chapter">
+<h2>第一章 · 基础层 (Foundation)</h2>
+
+<article id="term-1" class="section">
+  <h3><span class="num">1</span> Silicon Photonics (硅光, SiPho)</h3>
+  <p><strong>一句话</strong>:用硅基 CMOS 工艺做光通信芯片,让光信号在硅波导里传输。</p>
+  <h4>为什么重要</h4>
+  <ul><li>传统光模块用 InP(磷化铟)、GaAs(砷化镓) —— <strong>贵、难做大、难集成</strong></li>
+  <li>硅光 = 用<strong>硅</strong>(便宜、成熟、12 寸大晶圆)+ 异质集成激光器</li>
+  <li><strong>核心优势</strong>:成本低、集成度高、功耗低</li></ul>
+  <h4>关键工艺节点</h4>
+  <ul><li>300mm 晶圆(12 寸)—— 成本/良率优势</li>
+  <li>BiCMOS(硅光 + 高速电芯片 单片集成)</li>
+  <li>TSV(硅穿孔, 2.5D/3D 封装必需)</li></ul>
+  <h4>代表玩家</h4>
+  <table><thead><tr><th>层级</th><th>国际玩家</th><th>国产玩家</th></tr></thead>
+  <tbody><tr><td>IDM</td><td>Intel / 博通 / Marvell / ST</td><td>暂无规模玩家</td></tr>
+  <tr><td>Foundry</td><td>GlobalFoundries / TSMC</td><td>—</td></tr>
+  <tr><td>研究</td><td>IBM / IMEC</td><td>中科院微电子所</td></tr></tbody></table>
+  <div class="callout"><span class="label">💡 投资含义</span>硅光是 AI 数据中心光互联的<strong>卡位赛道</strong>。2026-2030 年是商业化拐点期,押注有工艺平台的 IDM/ST,比押注 Fabless 设计公司更稳。</div>
+</article>
+
+<article id="term-2" class="section">
+  <h3><span class="num">2</span> TIA (Trans-Impedance Amplifier, 跨阻放大器)</h3>
+  <p><strong>一句话</strong>:把光探测器收到的微弱光电流 → 放大成电压信号。</p>
+  <h4>在 1.6T 光模块里的位置</h4>
+  <div class="code-block">光信号 → 探测器(PD) → TIA → 高速ADC/DSP → 电信号处理
+         ↑              ↑
+         「眼睛」        「耳朵放大器」</div>
+  <h4>为什么重要</h4>
+  <ul><li>1.6T 速率下,<strong>TIA 带宽必须 ≥ 50 GHz</strong></li>
+  <li>噪声性能直接决定模块灵敏度</li>
+  <li><strong>关键供应商</strong>:Macom、Semtech、Renesas、ST(BiCMOS55X 平台)</li></ul>
+  <div class="callout"><span class="label">💡 投资含义</span>ST 的 BiCMOS55X 平台(400 Gbps/lane)是做 TIA 的「金标准」,锁定 Macom/Semtech/Renesas 三家顶级客户。关注 Macom(MTSI)—— TIA 龙头。</div>
+</article>
+
+<article id="term-3" class="section">
+  <h3><span class="num">3</span> EML (Electro-absorption Modulated Laser)</h3>
+  <p><strong>一句话</strong>:把电信号「调制」到激光上,发出带数据的光信号。</p>
+  <h4>结构</h4>
+  <div class="code-block">EML = DFB 激光器(发光) + EAM 调制器(调数据)</div>
+  <h4>为什么是 1.6T 标配</h4>
+  <ul><li>传统 DML(直接调制)速率上限 ~25 Gbps</li>
+  <li>EML 轻松到 50/100 Gbps/lane</li>
+  <li><strong>1.6T = 4 lane × 400G</strong>,每 lane 必须用 EML 或硅光调制器</li></ul>
+  <h4>关键供应商</h4>
+  <table><thead><tr><th>地区</th><th>代表玩家</th><th>国产化程度</th></tr></thead>
+  <tbody><tr><td>国际</td><td>Lumentum / Broadcom / Coherent / Macom</td><td>—</td></tr>
+  <tr><td>国产</td><td><strong>源杰科技</strong> / 长光华芯 / 武汉锐晶</td><td>源杰是唯一规模化 InP 激光器玩家</td></tr></tbody></table>
+  <div class="callout"><span class="label">💡 投资含义</span>EML 是硅光模块的「光源」,国产化率最低、替代难度最大。<strong>源杰科技(688498)</strong>是国内唯一规模化玩家,但 TTM PE 472x 透支严重,建议减仓至 0-3% 小仓位。</div>
+</article>
+</section>
+
+<section id="ch2" class="chapter">
+<h2>第二章 · 产品形态 (Form Factor)</h2>
+
+<article id="term-4" class="section">
+  <h3><span class="num">4</span> Pluggable (可插拔光模块)</h3>
+  <p><strong>一句话</strong>:可以热插拔、独立更换的光模块,<strong>目前 AI 数据中心主流形态</strong>。</p>
+  <h4>典型形态</h4>
+  <ul><li>QSFP-DD(4×100G = 400G)</li>
+  <li>QSFP-DD800(8×100G = 800G)</li>
+  <li>OSFP(8×100G = 800G / 16×100G = 1.6T)</li>
+  <li><strong>OSFP 1.6T</strong> 已开始出货(2026)</li></ul>
+  <h4>优势 vs 痛点</h4>
+  <table><thead><tr><th>优势 ✅</th><th>痛点 ❌</th></tr></thead>
+  <tbody><tr><td>模块故障可独立更换</td><td>1.6T 速率下功耗高(每模块 25-30W)</td></tr>
+  <tr><td>标准接口,多厂商兼容</td><td>密度受限(交换机前面板空间有限)</td></tr>
+  <tr><td>客户最熟悉的形态</td><td>高速 SerDes 成本飙升</td></tr></tbody></table>
+  <div class="callout"><span class="label">💡 投资含义</span>Pluggable 是<strong>当下</strong>主流,1.6T Pluggable 在 2026-2027 仍是出货主力。<strong>中际旭创 / 新易盛</strong>是 Pluggable 模块双龙头。</div>
+</article>
+
+<article id="term-5" class="section">
+  <h3><span class="num">5</span> CPO (Co-Packaged Optics, 共封装光学)</h3>
+  <p><strong>一句话</strong>:把光引擎<strong>直接封装在交换机 ASIC 旁边</strong>,干掉前面板。</p>
+  <h4>对比 Pluggable</h4>
+  <table><thead><tr><th>维度</th><th>Pluggable</th><th>CPO</th></tr></thead>
+  <tbody><tr><td>位置</td><td>交换机前面板</td><td>交换机 ASIC 旁边</td></tr>
+  <tr><td>距离</td><td>数厘米-数米</td><td>数毫米</td></tr>
+  <tr><td>功耗</td><td>高(25-30W/模块)</td><td><strong>降 30-50%</strong></td></tr>
+  <tr><td>密度</td><td>受限</td><td><strong>提升 5-10x</strong></td></tr>
+  <tr><td>可维护</td><td>✅ 独立更换</td><td>❌ 整机返厂</td></tr></tbody></table>
+  <h4>关键时间点</h4>
+  <ul><li>2024-2025:<strong>博通 Tomahawk 5 / Marvell</strong> 等交换芯片开始集成 CPO</li>
+  <li>2026-2027:<strong>大规模商用起步</strong>(AWS、Google、Meta 试用)</li>
+  <li>2028+:<strong>加速渗透</strong></li></ul>
+  <h4>代表玩家</h4>
+  <ul><li>国际:Broadcom、Marvell、Intel、Ranovus</li>
+  <li>国产:<strong>长电科技 / 通富微电</strong>、天孚通信、博创科技</li></ul>
+  <div class="callout"><span class="label">💡 投资含义</span>CPO 是<strong>2026-2028 的「分水岭」</strong>,Pluggable → CPO 的转换<strong>不可逆</strong>。长电/通富必须现在押注 CPO 封装产能,这是 2-3 年后的核心增长点。</div>
+</article>
+
+<article id="term-6" class="section">
+  <h3><span class="num">6</span> NPO (Near-Package Optics, 近封装光学)</h3>
+  <p><strong>一句话</strong>:CPO 的「温和版」,光引擎紧挨着 ASIC 但<strong>仍可独立维护</strong>。</p>
+  <h4>为什么 NPO 存在</h4>
+  <ul><li>CPO 维护性太差(要拆整机)</li>
+  <li>NPO = <strong>CPO 的可插拔化</strong>,介于 Pluggable 和 CPO 之间</li></ul>
+  <h4>结构示意</h4>
+  <div class="code-block">ASIC —— 短距互联 —— NPO 光引擎(紧贴 ASIC 封装基板)
+                       ↑
+                    可独立更换</div>
+  <h4>时间表</h4>
+  <ul><li>2026:行业标准制定中(OIF、IEEE)</li>
+  <li><strong>2027:开始小批量商用</strong></li>
+  <li>2028+:与 CPO 共存</li></ul>
+  <div class="callout"><span class="label">💡 投资含义</span>ST 的 PIC100 TSV 路线图就是面向 CPO/NPO 设计的。<strong>NPO 是「过渡产品」</strong>,在 Pluggable 和 CPO 切换期提供风险对冲。</div>
+</article>
+</section>
+
+<section id="ch3" class="chapter">
+<h2>第三章 · 商业流程 (Business Workflow)</h2>
+
+<article id="term-7" class="section">
+  <h3><span class="num">7</span> Design-in (设计导入)</h3>
+  <p><strong>一句话</strong>:把一个芯片<strong>设计进</strong>客户的方案里,完成<strong>第一笔订单前的全过程</strong>。</p>
+  <h4>设计导入的 5 个阶段</h4>
+  <ol><li><strong>样品送测</strong>(免费样品,客户测试)</li>
+  <li><strong>方案评估</strong>(客户做系统级验证)</li>
+  <li><strong>Design Win</strong>(中标,成为合格供应商)</li>
+  <li><strong>小批量出货</strong>(验证量产可行性)</li>
+  <li><strong>Design-in 完成</strong>(进入 BOM,进入量产)</li></ol>
+  <h4>为什么重要</h4>
+  <ul><li>光模块的 <strong>Design-in 周期 12-18 个月</strong>(非常长)</li>
+  <li>一旦 Design-in 成功,<strong>客户切换成本极高</strong>(要重新做光模块认证)</li>
+  <li>业内有句话:<strong>「Design-in 是芯片公司的护城河」</strong></li></ul>
+  <div class="callout"><span class="label">💡 投资含义</span>ST 的优势在于 PIC100 + BiCMOS55X 是「<strong>两片一起卖</strong>」—— 客户做光模块只需要 ST 一家,减少供应链管理成本,<strong>更可能拿到 Design-in</strong>。这就是为什么 AWS 这次大单直接锁定 ST 多年。</div>
+</article>
+
+<article id="term-8" class="section">
+  <h3><span class="num">8</span> Allocation (产能分配)</h3>
+  <p><strong>一句话</strong>:产能紧张时,<strong>晶圆厂把产能「切」给优先级最高的客户</strong>。</p>
+  <h4>Allocation 的触发条件</h4>
+  <ul><li>需求 > 供给(<strong>2024-2027 AI 光模块持续这个状态</strong>)</li>
+  <li>战略客户优先(大客户 > 中小客户)</li>
+  <li>长约优先(签 1-3 年产能保证协议的优先)</li></ul>
+  <h4>Allocation 的「双赢」结构</h4>
+  <table><thead><tr><th>赢家</th><th>收益</th></tr></thead>
+  <tbody><tr><td>大客户</td><td>✅ 锁定产能,不怕断供</td></tr>
+  <tr><td>晶圆厂</td><td>✅ 绑死大客户(比如 ST 锁死 AWS)</td></tr>
+  <tr><td>中小客户</td><td>❌ 拿不到货</td></tr>
+  <tr><td>现货市场</td><td>❌ 价格飙升(2024 年 800G 模块涨过 2-3 倍)</td></tr></tbody></table>
+  <div class="callout"><span class="label">💡 投资含义</span>ST 的 AWS 合同就是典型的 Allocation 安排——AWS 多年期数十亿大单,ST 把 Crolles 厂产能<strong>优先分给 AWS</strong>,其他客户只能拿剩余产能。<strong>绑大客户 = 锁定利润</strong>。</div>
+</article>
+
+<article id="term-9" class="section">
+  <h3><span class="num">9</span> Foundry (晶圆代工厂)</h3>
+  <p><strong>一句话</strong>:不做自家产品、<strong>专门帮别人做晶圆加工</strong>的厂。</p>
+  <h4>Foundry 模式 vs IDM 模式</h4>
+  <table><thead><tr><th>模式</th><th>代表</th><th>特点</th></tr></thead>
+  <tbody><tr><td><strong>IDM</strong>(垂直整合)</td><td>Intel / 三星 / ST / TI</td><td>设计+制造+封测都自己干</td></tr>
+  <tr><td><strong>Foundry</strong>(纯代工)</td><td>TSMC / 中芯国际 / 格芯</td><td>只做制造,不做设计</td></tr>
+  <tr><td><strong>Fabless</strong>(无厂)</td><td>NVIDIA / Macom / Semtech</td><td>只做设计,找代工</td></tr></tbody></table>
+  <h4>ST 的特殊地位</h4>
+  <ul><li>原本是 <strong>IDM</strong>(汽车/工业/消费电子)</li>
+  <li>硅光/SiGe 这块是<strong>「代工模式」</strong>(给 Macom、Semtech、AWS 客户代工晶圆)</li>
+  <li>一个公司里<strong>同时跑 IDM + Foundry 两种模式</strong>(少见)</li></ul>
+  <h4>硅光 Foundry 主要玩家</h4>
+  <table><thead><tr><th>玩家</th><th>工艺</th><th>特点</th></tr></thead>
+  <tbody><tr><td><strong>ST</strong></td><td>PIC100 (硅光)</td><td>🏆 欧洲版台积电</td></tr>
+  <tr><td><strong>GlobalFoundries</strong></td><td>9WG / 45CLO</td><td>美国 IDM 转型,先进封装强</td></tr>
+  <tr><td>TSMC</td><td>硅光 PDK</td><td>主要为自家 ASIC 用</td></tr>
+  <tr><td>Intel</td><td>硅光 IDM</td><td>自家用为主,外供有限</td></tr></tbody></table>
+  <div class="callout"><span class="label">💡 投资含义</span>ST 是<strong>「非美+非中」</strong>唯一规模化 300mm 硅光 IDM,地缘变局下的「中立第三方供应商」,这是它在 2026 年 YTD +109% 的核心逻辑。</div>
+</article>
+</section>
+
+<section id="ch4" class="chapter">
+<h2>第四章 · 技术流程 (Technical Workflow)</h2>
+
+<article id="term-10" class="section">
+  <h3><span class="num">10</span> PDK (Process Design Kit, 工艺设计套件)</h3>
+  <p><strong>一句话</strong>:晶圆厂给设计公司用的<strong>「工具包」</strong>,包含设计规则、器件模型、仿真工具。</p>
+  <h4>PDK 包含什么</h4>
+  <ol><li><strong>设计规则</strong>(Design Rule)—— 最小线宽、间距、层数</li>
+  <li><strong>器件模型</strong>(SPICE Model)—— 晶体管/波导/光电探测器的电学/光学模型</li>
+  <li><strong>仿真库</strong>(Library)—— 标准单元、参考设计</li>
+  <li><strong>文档</strong>(DRC/LVS 规则)—— 检查版图错误的脚本</li></ol>
+  <h4>PDK 的「档位」</h4>
+  <table><thead><tr><th>档位</th><th>内容</th><th>客户群</th></tr></thead>
+  <tbody><tr><td>基础 PDK</td><td>工艺规则 + 基本器件</td><td>大学/研究机构</td></tr>
+  <tr><td>完整 PDK</td><td>+ 仿真模型 + IP 库</td><td>中小设计公司</td></tr>
+  <tr><td><strong>COT PDK</strong></td><td>+ 完整版图 + 测试结构</td><td><strong>顶级客户(Macom/Semtech)</strong></td></tr></tbody></table>
+  <div class="callout"><span class="label">💡 投资含义</span>ST 的 <strong>EUROPRACTICE</strong> 服务通过 MPW(多项目晶圆)平台给欧洲高校/初创<strong>低价提供 PDK 访问</strong>——提前锁定欧洲下一代 IC 设计人才,培养出来的客户长大后大概率继续用 ST 代工(路径依赖)。</div>
+</article>
+
+<article id="term-11" class="section">
+  <h3><span class="num">11</span> Tape-out (流片)</h3>
+  <p><strong>一句话</strong>:芯片设计完成 → <b>送去晶圆厂「印刷」的那一刻</b>。</p>
+  <h4>Tape-out 的 5 个阶段</h4>
+  <ol><li><strong>RTL 设计</strong>(数字)或 <strong>Schematic 设计</strong>(模拟)</li>
+  <li><strong>布局布线</strong>(Place & Route)</li>
+  <li><strong>DRC/LVS 检查</strong>(设计规则/版图一致性)</li>
+  <li><strong>Tape-out</strong>(生成 GDSII 文件,提交晶圆厂)</li>
+  <li><strong>wafer out</strong>(晶圆回来,6-12 周后)</li></ol>
+  <h4>Tape-out 的成本与周期</h4>
+  <table><thead><tr><th>工艺</th><th>成本</th><th>周期</th></tr></thead>
+  <tbody><tr><td>成熟节点(28nm+)</td><td>几百万-几千万</td><td>8-12 周</td></tr>
+  <tr><td>先进节点(5nm)</td><td>几千万-上亿</td><td>12-16 周</td></tr>
+  <tr><td><strong>硅光(300mm)</strong></td><td><strong>几千万-几亿</strong></td><td><strong>10-14 周</strong></td></tr></tbody></table>
+  <h4>硅光 Tape-out 的特殊性</h4>
+  <ul><li>一次流片要 <strong>PIC100 + BiCMOS55X 两套掩膜</strong>(光+电)</li>
+  <li>成本高,<strong>客户必须非常确定需求才敢流片</strong></li>
+  <li>这也是 <strong>ST 双平台</strong>战略优势所在 —— <strong>两套一起做,分摊成本</strong></li></ul>
+  <div class="callout"><span class="label">💡 投资含义</span>一次硅光 Tape-out 几千万,客户<strong>绝对不敢轻易换平台</strong>(重新流片要钱+要时间+要重新认证)。<strong>ST 现在的 PIC100 客户 = 未来 5-10 年的铁客户</strong>。</div>
+</article>
+</section>
+
+<section id="ch5" class="chapter">
+<h2>第五章 · 串联图 (The Full Value Chain)</h2>
+<p>把 11 个术语<b>串成一个完整故事</b>,从设计到量产:</p>
+
+<h3 style="color:var(--primary); margin: 16px 0 8px;">🔧 设计阶段</h3>
+<ol><li><strong>PDK 拿到</strong> —— 客户拿到 ST 的工艺套件</li>
+<li><strong>用 PDK 做设计</strong> —— Macom/Semtech 设计 TIA</li>
+<li><strong>Tape-out 流片</strong> —— 几千万成本,10-14 周</li>
+<li><strong>一次 Tape-out</strong> = PIC100(光)+ BiCMOS55X(电)两片</li></ol>
+
+<h3 style="color:var(--primary); margin: 16px 0 8px;">🏭 生产阶段</h3>
+<ol start="5"><li><strong>Foundry 加工</strong> —— ST Crolles 厂做晶圆</li>
+<li><strong>AWS 锁定产能</strong>(Allocation) —— 数十亿大单保产能</li>
+<li><strong>PIC100 量产</strong> —— 2026-03 进入大规模量产</li>
+<li><strong>模块厂采购晶圆</strong> —— 中际/新易盛买 PIC100 + BiCMOS55X 晶圆</li>
+<li><strong>Design-in 12-18 个月</strong> —— 模块厂设计进光模块</li></ol>
+
+<h3 style="color:var(--primary); margin: 16px 0 8px;">📦 产品阶段</h3>
+<ol start="10"><li><strong>EML 激光器</strong> —— 1.6T 模块关键光器件</li>
+<li><strong>TIA 跨阻放大器</strong> —— BiCMOS55X 做的核心电芯片</li>
+<li><strong>封装成 Pluggable 模块</strong> —— 800G/1.6T 传统形态</li>
+<li><strong>未来 CPO/NPO</strong> —— 2027-2028 下一代形态</li>
+<li><strong>AWS/Meta/Google 部署</strong> —— AI 数据中心</li></ol>
+
+<div class="callout"><span class="label">🎯 一句话总结</span>ST = <strong>Foundry</strong>,用 <strong>PDK</strong> 帮客户 <strong>Tape-out</strong> 出 PIC100 + BiCMOS55X 晶圆,模块厂 <strong>Design-in</strong> 后做成 <strong>Pluggable</strong> 或 <strong>CPO</strong> 光模块,部署到 AI 数据中心。<strong>Allocation</strong> 决定谁优先拿到货。</div>
+</section>
+
+<section id="ch6" class="chapter">
+<h2>第六章 · 速查表 (Cheat Sheet)</h2>
+<p>11 个术语的快速对照表,方便随时翻阅:</p>
+<table><thead><tr><th>缩写</th><th>全称</th><th>中文</th><th>一句话</th></tr></thead>
+<tbody><tr><td><strong>SiPho</strong></td><td>Silicon Photonics</td><td>硅光</td><td>用硅做光芯片</td></tr>
+<tr><td><strong>TIA</strong></td><td>Trans-Impedance Amplifier</td><td>跨阻放大器</td><td>光电流→电压</td></tr>
+<tr><td><strong>EML</strong></td><td>EA Modulated Laser</td><td>电吸收调制激光器</td><td>1.6T 标配激光器</td></tr>
+<tr><td><strong>Pluggable</strong></td><td>—</td><td>可插拔模块</td><td>现行主流形态</td></tr>
+<tr><td><strong>CPO</strong></td><td>Co-Packaged Optics</td><td>共封装光学</td><td>下一代革命</td></tr>
+<tr><td><strong>NPO</strong></td><td>Near-Package Optics</td><td>近封装光学</td><td>CPO 温和版</td></tr>
+<tr><td><strong>Design-in</strong></td><td>—</td><td>设计导入</td><td>客户认证的全过程</td></tr>
+<tr><td><strong>Allocation</strong></td><td>—</td><td>产能分配</td><td>紧缺时代的游戏规则</td></tr>
+<tr><td><strong>Foundry</strong></td><td>—</td><td>晶圆代工厂</td><td>只做加工不做设计</td></tr>
+<tr><td><strong>PDK</strong></td><td>Process Design Kit</td><td>工艺设计套件</td><td>晶圆厂的「工具包」</td></tr>
+<tr><td><strong>Tape-out</strong></td><td>—</td><td>流片</td><td>设计完成的「印刷」</td></tr></tbody></table>
+</section>
+
+<section id="ch7" class="chapter">
+<h2>第七章 · 给老板的 4 个深度观察</h2>
+
+<div class="section">
+<h3>观察 1:「设计导入 12-18 个月」是最大护城河</h3>
+<p>这就是为什么 <strong>中际旭创/新易盛</strong> 一旦用了 ST 的 PIC100,<strong>3 年内不会换</strong>。也是为什么 AWS 这次大单<strong>直接锁定 ST 多年</strong>。</p>
+</div>
+
+<div class="section">
+<h3>观察 2:Allocation 时代,绑定大客户 = 锁定利润</h3>
+<p>ST 的策略:<strong>优先绑 AWS</strong>(稳赚不赔)。反过来:<strong>AWS 也要绑 ST</strong>(怕被卡脖子)。这是 2024-2027 年 AI 芯片/光模块产业链的典型「双向锁定」逻辑。</p>
+</div>
+
+<div class="section">
+<h3>观察 3:PDK + Tape-out 成本 = 客户黏性</h3>
+<p>一次硅光 Tape-out 几千万。客户<strong>绝对不敢轻易换平台</strong>(重新流片要钱+要时间+要重新认证)。<strong>ST 现在的 PIC100 客户 = 未来 5-10 年的铁客户</strong>。</p>
+</div>
+
+<div class="section">
+<h3>观察 4:CPO 是 2026-2028 的「分水岭」</h3>
+<p>Pluggable → CPO 的转换<strong>不可逆</strong>。谁先布局 CPO,谁就吃到下一代红利。<strong>长电/通富</strong>必须现在押注 CPO 封装产能。</p>
+</div>
+</section>
+
+</main>
+</div>
+</div>
+
+<div class="footer">
+  <p>━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━ ━</p>
+  <p><strong>本词典由研研 (George 投资助理) 整理</strong></p>
+  <p>数据基准日 2026-08-11 · 仅供学习研究使用,不构成投资建议</p>
+  <p>本词典与《硅光产业链深度对比研究》报告配套阅读效果更佳</p>
+</div>
+
+<script>
+// 搜索高亮
+const searchInput = document.getElementById('searchInput');
+searchInput.addEventListener('input', function(e) {
+  const keyword = e.target.value.trim();
+  // 清除所有旧高亮
+  document.querySelectorAll('mark').forEach(mark => {
+    const parent = mark.parentNode;
+    parent.replaceChild(document.createTextNode(mark.textContent), mark);
+    parent.normalize();
+  });
+  if (keyword.length < 2) return;
+  
+  // 高亮所有匹配
+  const sections = document.querySelectorAll('.section, .chapter, .intro, .callout');
+  sections.forEach(section => {
+    const walker = document.createTreeWalker(section, NodeFilter.SHOW_TEXT, null, false);
+    const textNodes = [];
+    let node;
+    while (node = walker.nextNode()) {
+      if (node.parentNode.tagName === 'SCRIPT' || node.parentNode.tagName === 'STYLE') continue;
+      textNodes.push(node);
+    }
+    textNodes.forEach(textNode => {
+      const text = textNode.textContent;
+      const lowerText = text.toLowerCase();
+      const lowerKeyword = keyword.toLowerCase();
+      if (lowerText.includes(lowerKeyword)) {
+        const fragment = document.createDocumentFragment();
+        let lastIdx = 0;
+        let idx;
+        while ((idx = lowerText.indexOf(lowerKeyword, lastIdx)) !== -1) {
+          if (idx > lastIdx) {
+            fragment.appendChild(document.createTextNode(text.substring(lastIdx, idx)));
+          }
+          const mark = document.createElement('mark');
+          mark.textContent = text.substring(idx, idx + keyword.length);
+          fragment.appendChild(mark);
+          lastIdx = idx + keyword.length;
+        }
+        if (lastIdx < text.length) {
+          fragment.appendChild(document.createTextNode(text.substring(lastIdx)));
+        }
+        textNode.parentNode.replaceChild(fragment, textNode);
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
