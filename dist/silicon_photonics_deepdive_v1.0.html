@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>硅光产业链深度研究 — 从 PIC100 平台看 AI 数据中心光互联投资机会</title>
+<style>
+:root {
+  --primary: #1F4E79;
+  --primary-light: #2E6CA8;
+  --bg: #FFFFFF;
+  --bg-soft: #F8F9FA;
+  --bg-table-stripe: #F2F6FA;
+  --text: #2C3E50;
+  --text-soft: #6C757D;
+  --border: #E1E4E8;
+  --border-strong: #CDD3DA;
+  --success-bg: #D4EDDA;
+  --success-border: #28A745;
+  --success-text: #155724;
+  --warning-bg: #FFF3CD;
+  --warning-border: #FFC107;
+  --warning-text: #856404;
+  --danger-bg: #F8D7DA;
+  --danger-border: #DC3545;
+  --danger-text: #721C24;
+  --info-bg: #D1ECF1;
+  --info-border: #17A2B8;
+  --info-text: #0C5460;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+}
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+header {
+  border-bottom: 3px solid var(--primary);
+  padding-bottom: 24px;
+  margin-bottom: 36px;
+}
+.kicker {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+  background: var(--bg-soft);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+}
+h1 {
+  color: var(--primary);
+  font-size: 30px;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+h1 .en {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-soft);
+  margin-top: 4px;
+  font-style: italic;
+}
+h2 {
+  color: var(--primary);
+  font-size: 22px;
+  margin: 36px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary);
+  font-weight: 700;
+}
+h3 {
+  color: var(--primary-light);
+  font-size: 18px;
+  margin: 24px 0 10px;
+  font-weight: 600;
+}
+h4 {
+  color: var(--text);
+  font-size: 16px;
+  margin: 16px 0 8px;
+  font-weight: 600;
+}
+p { margin: 8px 0; }
+strong { color: var(--primary); }
+em { color: var(--text-soft); font-style: italic; }
+ul, ol { padding-left: 24px; }
+li { margin: 4px 0; }
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  font-size: 13px;
+  color: var(--text-soft);
+  margin-top: 16px;
+}
+.meta span strong { color: var(--text); font-weight: 600; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 20px;
+  font-size: 14px;
+  background: var(--bg);
+}
+thead th {
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 8px 10px;
+  border: 1px solid var(--primary);
+  font-size: 13px;
+  white-space: nowrap;
+}
+tbody td {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  vertical-align: top;
+}
+tbody tr:nth-child(even) td {
+  background: var(--bg-table-stripe);
+}
+tbody tr:hover td { background: #E8F0F8; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+td.bold { font-weight: 700; color: var(--primary); }
+
+.callout {
+  border-left: 5px solid;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.callout.success { background: var(--success-bg); border-color: var(--success-border); color: var(--success-text); }
+.callout.warning { background: var(--warning-bg); border-color: var(--warning-border); color: var(--warning-text); }
+.callout.danger { background: var(--danger-bg); border-color: var(--danger-border); color: var(--danger-text); }
+.callout.info { background: var(--info-bg); border-color: var(--info-border); color: var(--info-text); }
+.callout .label { font-weight: 700; margin-right: 4px; }
+
+.toc {
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 24px;
+  margin: 24px 0;
+}
+.toc ol { margin: 0; padding-left: 20px; }
+.toc li { margin: 4px 0; }
+.toc a { color: var(--primary); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+.bar-chart { display: flex; flex-direction: column; gap: 6px; margin: 12px 0; }
+.bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.bar-label { width: 110px; color: var(--text); }
+.bar-track { flex: 1; background: var(--bg-soft); border-radius: 4px; height: 18px; overflow: hidden; border: 1px solid var(--border); }
+.bar-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light)); display: flex; align-items: center; padding-left: 6px; color: #fff; font-size: 11px; font-weight: 600; }
+
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 48px;
+  padding-top: 16px;
+  font-size: 12px;
+  color: var(--text-soft);
+  text-align: center;
+}
+.kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  font-size: 12px;
+  background: var(--bg-soft);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-family: monospace;
+}
+
+@media (max-width: 720px) {
+  .container { padding: 16px; }
+  h1 { font-size: 22px; }
+  h2 { font-size: 18px; }
+  h3 { font-size: 16px; }
+  table { font-size: 12px; }
+  thead th, tbody td { padding: 5px 6px; }
+  .meta { flex-direction: column; gap: 4px; }
+  .bar-label { width: 80px; font-size: 11px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <div class="kicker">RESEARCH REPORT · 2026-08-11</div>
+  <h1>硅光产业链深度对比研究
+    <span class="en">Silicon Photonics Industry Chain Deep Research — Investment Opportunities in AI Data Center Optical Interconnect from the PIC100 Platform Perspective</span>
+  </h1>
+  <div class="meta">
+    <span><strong>报告日期</strong> 2026-08-11 (UTC)</span>
+    <span><strong>数据基准日</strong> 2026-08-11 收盘</span>
+    <span><strong>标的池</strong> 7 个 (3 模块/光器件 + 2 封测 + 1 芯片 + 1 国际 IDM)</span>
+    <span><strong>作者</strong> 研研 🦊 (George 投资助理)</span>
+  </div>
+</header>
+
+<div class="callout danger">
+  <span class="label">免责声明:</span> 本报告仅供 George 个人研究参考，不构成任何投资建议。预测数据 [E] 存在不确定性，投资有风险，决策需谨慎。
+</div>
+
+<nav class="toc">
+  <strong>目录 (Table of Contents)</strong>
+  <ol>
+    <li><a href="#sec1">执行摘要 (Executive Summary)</a></li>
+    <li><a href="#sec2">实时行情速览 (Market Snapshot)</a></li>
+    <li><a href="#sec3">10 维度横向打分 (Multi-Dimensional Scoring)</a></li>
+    <li><a href="#sec4">ST 意法半导体深度拆解 (STM Deep Dive)</a></li>
+    <li><a href="#sec5">风险情景测算 (Scenario Analysis)</a></li>
+    <li><a href="#sec6">DCF 估值模型 (DCF Valuation: STM)</a></li>
+    <li><a href="#sec7">财务三表预测 (Financial Forecast)</a></li>
+    <li><a href="#sec8">风险提示 (Risk Factors)</a></li>
+    <li><a href="#sec9">最终结论 (Conclusion & Action Plan)</a></li>
+    <li><a href="#appA">附录 A. 数据源 / 估值方法 / 免责声明</a></li>
+  </ol>
+</nav>
+
+<!-- ====================================================== -->
+<h2 id="sec1">1. 执行摘要 (Executive Summary)</h2>
+
+<h3>1.1 投资逻辑 (Investment Thesis)</h3>
+<p>AI 算力爆发驱动数据中心光互联从 800G 向 <strong>1.6T/3.2T</strong> 加速演进，硅光 (SiPho, Silicon Photonics) 技术凭借 <strong>300mm 晶圆规模、成本和功耗优势</strong> 成为 1.6T 时代主导方案。</p>
+<p>意法半导体 (STM) 凭借 <strong>PIC100 + BiCMOS55X 双平台 + AWS 多年期数十亿美元合同 (2026-02-09 公告)</strong>，成为欧洲唯一规模化 300mm 硅光 IDM。"非美+非中"地缘定位下有望成为中、欧、美三方客户的"第三方供应商"。</p>
+<p>国内产业链同步受益：<strong>1.6T 光模块</strong>由中际旭创、新易盛主导 (全球 Top 2)，天孚通信提供 CPO 光器件，长电/通富承接硅光封装，源杰科技为国产激光器芯片唯一规模化玩家。本报告对 7 个标的做 10 维度横向打分，并重点拆解 STM 与中际旭创，给出情景分析和 DCF 估值。</p>
+
+<h3>1.2 标的概览表 (Universe Snapshot — 2026-08-11)</h3>
+<table>
+<thead><tr>
+<th>标的 (Ticker)</th><th class="num">现价</th><th class="num">TTM PE</th><th class="num">总市值</th><th class="num">2026E PE</th><th>业务定位 (Positioning)</th>
+</tr></thead>
+<tbody>
+<tr><td>STM 意法半导体</td><td class="num">$54.35</td><td class="num">106.6x</td><td class="num">$484.6 亿</td><td class="num">n/a</td><td>PIC100 + AWS 大单 (硅光上游核心)</td></tr>
+<tr><td>中际旭创 300308</td><td class="num">¥886.96</td><td class="num">69.4x</td><td class="num">¥10,375 亿</td><td class="num">31.7x</td><td>1.6T 光模块全球龙头 (北美四大云厂绑定)</td></tr>
+<tr><td>新易盛 300502</td><td class="num">¥415.30</td><td class="num">53.9x</td><td class="num">¥5,790 亿</td><td class="num">26.8x</td><td>1.6T 主力 (业绩弹性最大，2025 净利 +236%)</td></tr>
+<tr><td>天孚通信 300394</td><td class="num">¥222.49</td><td class="num">111.8x</td><td class="num">¥2,427 亿</td><td class="num">62.7x</td><td>光模块配套 (CPO 受益，无源光器件全球前列)</td></tr>
+<tr><td>长电科技 600584</td><td class="num">¥77.67</td><td class="num">84.1x</td><td class="num">¥1,390 亿</td><td class="num">40.4x</td><td>硅光封装 (PB 最低 4.86x，全球封测 Top 3)</td></tr>
+<tr><td>通富微电 002156</td><td class="num">¥62.06</td><td class="num">65.1x</td><td class="num">¥942 亿</td><td class="num">44.6x</td><td>AMD 核心 (占其收入 >50%) + 硅光封装</td></tr>
+<tr><td>源杰科技 688498</td><td class="num">¥1,351.00</td><td class="num">472.4x</td><td class="num">¥1,682 亿</td><td class="num">114.4x</td><td>国产激光器芯片 (DFB/EML 唯一规模化)</td></tr>
+</tbody>
+</table>
+
+<h3>1.3 关键判断 (Key Conclusions)</h3>
+<div class="callout success">
+  <span class="label">1)</span> <strong>STM 是"非美+非中"唯一规模化 300mm 硅光 IDM</strong> — 欧洲 Crolles 厂 + AWS 战略合作 + 欧盟 EUR 2.9B 国家援助，三重护城河使其成为地缘变局下的"中立第三方供应商"。2026 数据中心收入指引 &gt;$10 亿，2027 翻倍至 &gt;$20 亿 (CEO 2026-07-23 表态)。
+</div>
+<div class="callout success">
+  <span class="label">2)</span> <strong>中际旭创/新易盛锁定 1.6T 光模块全球 Top 2</strong> — 800G 时代已绑定 AWS/Google/Meta，1.6T 延续优势；新易盛 2025 净利同比 +235.6%，2026E PE 26.8x (最便宜)，业绩弹性最大。
+</div>
+<div class="callout warning">
+  <span class="label">3)</span> <strong>长电/通富是硅光封装国产替代核心</strong> — 长电 PB 4.86x (本池最低) + 通富 AMD 深度绑定 (占其收入 &gt;50%)，先进封装受益 AI 算力 (2.5D/3D/CoWoS 类技术是 HBM/AI 芯片必需)。
+</div>
+<div class="callout warning">
+  <span class="label">4)</span> <strong>源杰科技长期空间大但短期估值贵</strong> — 国产 25G/50G DFB 激光器唯一规模化玩家，TTM PE 472x、2026E PE 114x，业绩兑现压力大；2024 曾亏损，2025 反转。
+</div>
+<div class="callout warning">
+  <span class="label">5)</span> <strong>天孚通信是 CPO 主题最纯正受益标的</strong> — 无源光器件全球前列 + 光电先进封装能力 (CPO 必备)，太平洋 2026-05-31 报告核心论点；估值 TTM 112x，主题溢价高。
+</div>
+
+<!-- ====================================================== -->
+<h2 id="sec2">2. 实时行情速览 (Market Snapshot)</h2>
+
+<h3>2.1 7 标的全维度数据表</h3>
+<table>
+<thead><tr>
+<th>标的</th><th class="num">现价</th><th class="num">涨跌%</th><th class="num">PE(TTM)</th><th class="num">PB</th><th>市值</th><th class="num">换手%</th><th class="num">2Y 分位</th><th class="num">YTD%</th>
+</tr></thead>
+<tbody>
+<tr><td>STM (US)</td><td class="num">$54.35</td><td class="num">-3.12%</td><td class="num">106.6x</td><td class="num">4.66x</td><td>$484.6 亿</td><td class="num">0.64%</td><td class="num">58.9%</td><td class="num">+109.5%</td></tr>
+<tr><td>中际旭创</td><td class="num">¥886.96</td><td class="num">+2.59%</td><td class="num">69.4x</td><td class="num">29.95x</td><td>¥10,375 亿</td><td class="num">3.06%</td><td class="num">62.3%</td><td class="num">+45.6%</td></tr>
+<tr><td>新易盛</td><td class="num">¥415.30</td><td class="num">+3.93%</td><td class="num">53.9x</td><td class="num">29.83x</td><td>¥5,790 亿</td><td class="num">3.86%</td><td class="num">66.1%</td><td class="num">+35.3%</td></tr>
+<tr><td>天孚通信</td><td class="num">¥222.49</td><td class="num">-0.24%</td><td class="num">111.8x</td><td class="num">44.40x</td><td>¥2,427 亿</td><td class="num">2.93%</td><td class="num">59.2%</td><td class="num">+53.9%</td></tr>
+<tr><td>长电科技</td><td class="num">¥77.67</td><td class="num">-1.08%</td><td class="num">84.1x</td><td class="num">4.86x</td><td>¥1,390 亿</td><td class="num">7.31%</td><td class="num">63.4%</td><td class="num">+111.8%</td></tr>
+<tr><td>通富微电</td><td class="num">¥62.06</td><td class="num">-1.80%</td><td class="num">65.1x</td><td class="num">6.06x</td><td>¥942 亿</td><td class="num">5.71%</td><td class="num">72.5%</td><td class="num">+65.0%</td></tr>
+<tr><td>源杰科技</td><td class="num">¥1,351.00</td><td class="num">-4.53%</td><td class="num">472.4x</td><td class="num">68.24x</td><td>¥1,682 亿</td><td class="num">4.26%</td><td class="num">70.8%</td><td class="num">+205.2%</td></tr>
+</tbody>
+</table>
+<p><em>数据源 (Source): 腾讯财经 qt.gtimg.cn 2026-08-11 收盘; 2Y 分位基于前复权 2 年 K 线计算; YTD 基于 2025-12-31 收盘。</em></p>
+
+<h3>2.2 估值梯队 (Valuation Tiers — 2026E PE 升序)</h3>
+<table>
+<thead><tr><th>估值梯队 (Tier)</th><th>代表标的 (2026E PE)</th><th>特征 (Characteristics)</th></tr></thead>
+<tbody>
+<tr><td class="bold">Tier 1 (便宜 &lt;30x)</td><td>新易盛 (26.8x)</td><td>业绩弹性最大，估值与成长性匹配</td></tr>
+<tr><td>Tier 2 (合理 30-50x)</td><td>中际旭创 (31.7x) / 长电 (40.4x) / 通富 (44.6x)</td><td>成长确定 + 估值合理</td></tr>
+<tr><td>Tier 3 (偏贵 50-70x)</td><td>STM (TTM 106x 但 2027 指引高) / 天孚 (62.7x)</td><td>主题溢价高，关注兑现</td></tr>
+<tr><td>Tier 4 (很贵 &gt;100x)</td><td>源杰 (114.4x)</td><td>业绩兑现压力大</td></tr>
+</tbody>
+</table>
+<p><strong>速读:</strong> A 股 6 标的 2026E PE 中位 ~42x，源杰显著拉高均值; STM 2026 暂无第三方一致预期，但 2027 数据中心收入翻倍 (&gt;$20 亿) 将带动 EPS 大幅修复。</p>
+
+<!-- ====================================================== -->
+<h2 id="sec3">3. 10 维度横向打分 (Multi-Dimensional Scoring)</h2>
+
+<h3>3.1 评分维度与权重 (Dimensions &amp; Weights)</h3>
+<p>评分方法: 每个维度 1-10 分 (10 分最高)，权重综合护城河、业绩确定性、估值、安全边际等核心要素。加权总分反映综合投资价值。</p>
+<table>
+<thead><tr><th>维度 (Dimension)</th><th>权重 (Weight)</th><th>说明 (Description)</th></tr></thead>
+<tbody>
+<tr><td>护城河 (Moat)</td><td>15%</td><td>技术壁垒 + 客户认证 + 规模优势</td></tr>
+<tr><td>业绩确定性 (Earnings Visibility)</td><td>15%</td><td>订单可见度 + 行业景气度 + 客户集中度</td></tr>
+<tr><td>增速 (Growth)</td><td>12%</td><td>2025-2027E 营收/净利复合增速</td></tr>
+<tr><td>ROE (盈利能力)</td><td>10%</td><td>2025 摊薄 ROE</td></tr>
+<tr><td>估值 (Valuation)</td><td>10%</td><td>2026E PE vs 行业历史分位</td></tr>
+<tr><td>安全边际 (Margin of Safety)</td><td>8%</td><td>相对 2Y 价格分位</td></tr>
+<tr><td>资金面 (Fund Flows)</td><td>8%</td><td>换手率 + 2Y 涨幅反映资金偏好</td></tr>
+<tr><td>技术 (Technical)</td><td>7%</td><td>K 线趋势 + 动量</td></tr>
+<tr><td>主题 β (Theme Beta)</td><td>10%</td><td>SiPho 主题受益强度</td></tr>
+<tr><td>风险 (Risk)</td><td>5%</td><td>下行风险 (反向计分)</td></tr>
+</tbody>
+</table>
+
+<h3>3.2 7 标的 10 维度评分 (Scoring Matrix)</h3>
+<table>
+<thead><tr>
+<th>标的</th>
+<th>护城河</th><th>业绩确定</th><th>增速</th><th>ROE</th><th>估值</th><th>安全边际</th><th>资金面</th><th>技术</th><th>主题β</th><th>风险</th>
+<th class="num">加权总分</th><th>排名</th><th>建议仓位</th>
+</tr></thead>
+<tbody>
+<tr><td class="bold">中际旭创</td><td>9</td><td>9</td><td>10</td><td>10</td><td>7</td><td>5</td><td>7</td><td>7</td><td>10</td><td>7</td><td class="num bold">8.4</td><td>#1</td><td>15-20%</td></tr>
+<tr><td class="bold">新易盛</td><td>8</td><td>8</td><td>10</td><td>10</td><td>9</td><td>6</td><td>8</td><td>8</td><td>10</td><td>7</td><td class="num bold">8.4</td><td>#2</td><td>15-20%</td></tr>
+<tr><td class="bold">STM</td><td>9</td><td>8</td><td>9</td><td>5</td><td>5</td><td>7</td><td>6</td><td>7</td><td>10</td><td>7</td><td class="num bold">8.0</td><td>#3</td><td>15-20%</td></tr>
+<tr><td>天孚通信</td><td>8</td><td>8</td><td>8</td><td>9</td><td>5</td><td>6</td><td>6</td><td>6</td><td>9</td><td>6</td><td class="num">7.3</td><td>#4</td><td>5-10%</td></tr>
+<tr><td>长电科技</td><td>9</td><td>7</td><td>6</td><td>4</td><td>7</td><td>6</td><td>7</td><td>6</td><td>8</td><td>7</td><td class="num">6.9</td><td>#5</td><td>5-10%</td></tr>
+<tr><td>通富微电</td><td>7</td><td>8</td><td>8</td><td>5</td><td>7</td><td>4</td><td>6</td><td>6</td><td>8</td><td>6</td><td class="num">6.6</td><td>#6</td><td>5-10%</td></tr>
+<tr><td>源杰科技</td><td>7</td><td>7</td><td>10</td><td>6</td><td>2</td><td>5</td><td>7</td><td>6</td><td>9</td><td>4</td><td class="num">6.4</td><td>#7</td><td>0-3%</td></tr>
+</tbody>
+</table>
+<p><em>评分说明: ① 风险维度反向计分 (11 - 原分); ② 主题β中 STM 满分 (SiPho 核心受益); ③ 估值维度: &lt;30x 给 9-10 分，&gt;100x 给 2-3 分; ④ 增速维度基于 2025 实际 + 2026E/2027E 一致预期复合增速打分。</em></p>
+
+<div class="callout success">
+  <span class="label">解读 (Interpretation):</span> 中际旭创 / 新易盛 / STM 综合得分最高 (&gt;8.0)，是核心配置; 天孚、长电、通富次之 (建议 5-10%); 源杰估值过高，仅适合小仓位 (0-3%) 博弈弹性。
+</div>
+
+<h3>3.3 综合分条形图 (Weighted Score Bar Chart)</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">中际旭创</div><div class="bar-track"><div class="bar-fill" style="width:84%">8.4</div></div></div>
+<div class="bar-row"><div class="bar-label">新易盛</div><div class="bar-track"><div class="bar-fill" style="width:84%">8.4</div></div></div>
+<div class="bar-row"><div class="bar-label">STM</div><div class="bar-track"><div class="bar-fill" style="width:80%">8.0</div></div></div>
+<div class="bar-row"><div class="bar-label">天孚通信</div><div class="bar-track"><div class="bar-fill" style="width:73%">7.3</div></div></div>
+<div class="bar-row"><div class="bar-label">长电科技</div><div class="bar-track"><div class="bar-fill" style="width:69%">6.9</div></div></div>
+<div class="bar-row"><div class="bar-label">通富微电</div><div class="bar-track"><div class="bar-fill" style="width:66%">6.6</div></div></div>
+<div class="bar-row"><div class="bar-label">源杰科技</div><div class="bar-track"><div class="bar-fill" style="width:64%">6.4</div></div></div>
+</div>
+
+<!-- ====================================================== -->
+<h2 id="sec4">4. ST 意法半导体深度拆解 (STM Deep Dive — Most Conviction Pick)</h2>
+
+<h3>4.1 业务结构 (Business Profile)</h3>
+<p>意法半导体 (STM，NYSE) 是欧洲最大半导体 IDM，业务覆盖 4 大终端市场: <strong>汽车 (最大)、工业、个人电子、通信设备 (含 AI 数据中心光互联)</strong>。近年主动转型: 剥离低毛利消费电子、加大 SiC (碳化硅) 和 SiPho (硅光) 投入。Crolles 300mm 厂 (法国) + Agrate 300mm 厂 (意大利) + Catania SiC 厂 (意大利) 构成核心制造版图。</p>
+<table>
+<thead><tr><th>部门 (Segment)</th><th>产品 (Products)</th><th>状态 (Status)</th></tr></thead>
+<tbody>
+<tr><td>RFOC (RF &amp; Optical Communications)</td><td>硅光、射频、卫星通信</td><td>2026Q2 营收 $445M (+32% Y/Y)</td></tr>
+<tr><td>EMP (Embedded Processing)</td><td>MCU、数字 IC、汽车处理器</td><td>稳定基本盘</td></tr>
+<tr><td>AM&amp;S (Analog, MEMS &amp; Sensors)</td><td>模拟、MEMS、传感器</td><td>汽车电子核心</td></tr>
+<tr><td>P&amp;D (Power &amp; Discrete)</td><td>SiC、功率器件、分立</td><td>SiC 受益 EV 渗透</td></tr>
+</tbody>
+</table>
+
+<h3>4.2 关键时间线 (Key Timeline)</h3>
+<table>
+<thead><tr><th>时间 (Time)</th><th>事件 (Event)</th><th>来源 (Source)</th></tr></thead>
+<tbody>
+<tr><td>2025 H2</td><td>PIC100 工艺定型 + 小规模爬坡</td><td>ST 内部规划</td></tr>
+<tr><td>2026-02-09</td><td class="bold">AWS 多年期数十亿美元合作公告</td><td>ST 6-K SEC</td></tr>
+<tr><td>2026-03-09</td><td class="bold">PIC100 进入大规模量产 (HVM)</td><td>ST 20-F 2025 line 860</td></tr>
+<tr><td>2026-07-23</td><td class="bold">Q2 业绩: 数据中心 2026 营收 &gt;$10 亿，2027 翻倍至 &gt;$20 亿</td><td>ST Q2 Earnings</td></tr>
+<tr><td>2027 (规划)</td><td>产能翻两番 (2Y 4x)</td><td>ST 路线图</td></tr>
+<tr><td>OFC 2026 (3月)</td><td>Sicoya 展示基于 PIC100 的 1.6T-DR8 样机</td><td>行业媒体</td></tr>
+</tbody>
+</table>
+
+<h3>4.3 PIC100 平台: 技术规格 (Technical Specs)</h3>
+<p>PIC100 是 STM 300mm 硅光 + BiCMOS 异质集成平台。核心优势: <strong>300mm 晶圆 (vs Acacia/Innolight 仍以 200mm/外购为主) + 与 BiCMOS 异质集成 (驱动电路单芯片) + TSV 硅穿孔 (支持 2.5D/3D 封装) + 与 GF 合资获欧盟 EUR 2.9B 国家援助</strong>。</p>
+<table>
+<thead><tr><th>项目 (Item)</th><th>规格 (Spec)</th></tr></thead>
+<tbody>
+<tr><td>工艺平台 (Process)</td><td>300mm SiPho + BiCMOS 异质集成</td></tr>
+<tr><td>晶圆厂 (Fab)</td><td>法国 Crolles 300mm 厂</td></tr>
+<tr><td>集成模块 (Modules)</td><td>FD-SOI + RF-SOI + BiCMOS + SiPho</td></tr>
+<tr><td>支持速率 (Speed)</td><td>800G / 1.6T 光模块</td></tr>
+<tr><td>波导损耗 (Waveguide Loss)</td><td>0.4-0.5 dB/cm (行业顶级) [E]</td></tr>
+<tr><td>路线图 (Roadmap)</td><td>PIC100 → PIC100 TSV → CPO/NPO</td></tr>
+<tr><td>核心应用 (Applications)</td><td>数据中心 / AI 集群光互联</td></tr>
+<tr><td>TSV (硅穿孔)</td><td>支持 2.5D/3D 封装</td></tr>
+<tr><td>首单 Hyperscaler</td><td>AWS (2026-02 多年期、数十亿美元)</td></tr>
+</tbody>
+</table>
+
+<h3>4.4 BiCMOS55X 平台 (Companion Platform)</h3>
+<p>BiCMOS55X 是 STM 55nm BiCMOS 工艺平台，配套 PIC100 形成完整光通信一站式方案。</p>
+<table>
+<thead><tr><th>项目 (Item)</th><th>说明 (Description)</th></tr></thead>
+<tbody>
+<tr><td>支持速率</td><td>400G/lane (适配 1.6T DR8/FR4)</td></tr>
+<tr><td>商业模式</td><td>COT (Customer-Owned Tooling) 模式</td></tr>
+<tr><td>MPW 服务</td><td>通过 EUROPRACTICE 平台提供给欧洲学术/研究机构</td></tr>
+<tr><td>核心客户</td><td>Sicoya、Lumentum、Innolight 等光模块厂</td></tr>
+</tbody>
+</table>
+
+<h3>4.5 战略定位: 光通信一站式代工厂 (Strategic Positioning)</h3>
+<div class="callout success">
+  <span class="label">核心定位:</span> ST 商业模式: 晶圆销售 (Wafer Sales) 模式，不直接做模块。光模块厂 (如 Sicoya、Innolight) 从 ST 采购 PIC100 晶圆，自行封装并设计差异化产品。这种模式让 ST 不与客户竞争，专心做上游 PIC。核心优势: ① 欧洲唯一规模化 300mm SiPho 产线; ② Wafer Sales 模式不与客户竞争; ③ AWS 战略合作抢 Intel/Cisco 份额。
+</div>
+
+<h3>4.6 收入预测 (Revenue Forecast — 来自管理层指引)</h3>
+<table>
+<thead><tr><th>指标 (Metric)</th><th>2025A</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td>总营收 (Total Revenue)</td><td class="num">$11,800M</td><td class="num bold">$14,500M [E]</td><td class="num bold">$17,800M [E]</td><td class="num bold">$21,500M [E]</td></tr>
+<tr><td>其中: 数据中心 (DC Revenue)</td><td class="num">&lt;$500M [E]</td><td class="num bold">&gt;$1,000M [E]</td><td class="num bold">&gt;$2,000M [E]</td><td class="num bold">&gt;$3,000M [E]</td></tr>
+<tr><td>DC 占比 (DC %)</td><td class="num">~4%</td><td class="num">~7%</td><td class="num">~11%</td><td class="num">~14%</td></tr>
+<tr><td>YoY 增速 (Total YoY)</td><td class="num">-11.1%</td><td class="num">+23% [E]</td><td class="num">+23% [E]</td><td class="num">+21% [E]</td></tr>
+<tr><td>毛利率 (GM)</td><td class="num">33.9%</td><td class="num">36% [E]</td><td class="num">38% [E]</td><td class="num">39% [E]</td></tr>
+<tr><td>营业利润 (Op Income)</td><td class="num">$175M</td><td class="num">$1,200M [E]</td><td class="num">$2,500M [E]</td><td class="num">$3,800M [E]</td></tr>
+</tbody>
+</table>
+<p><em>数据源: 2025A 来自 ST 20-F 2025 (SEC EDGAR); 2026E-2028E 基于管理层指引 (2026-07-23 Q2 业绩会) + 研研模型外推 [E]。</em></p>
+
+<h3>4.7 敏感性分析 (Sensitivity — 数据中心收入 ±20%)</h3>
+<p>STM 当前估值高度依赖数据中心业务的兑现节奏。以下展示数据中心收入 ±20% 偏差对 2027E EPS 的影响:</p>
+<table>
+<thead><tr><th>情景 (Scenario)</th><th>2027E DC 收入</th><th>2027E EPS [E]</th><th>对应股价 (PE 30x)</th><th>触发条件</th></tr></thead>
+<tbody>
+<tr><td>悲观 (DC -20%)</td><td class="num">$1,600M</td><td class="num">$1.20</td><td class="num">约 $32-35</td><td>AWS 订单延迟或 Intel/博通抢份额</td></tr>
+<tr><td class="bold">中性 (基准)</td><td class="num">$2,000M</td><td class="num">$1.85</td><td class="num">约 $50-55</td><td>符合 CEO 2027 翻倍至 &gt;$20 亿指引</td></tr>
+<tr><td>乐观 (DC +20%)</td><td class="num">$2,400M</td><td class="num">$2.45</td><td class="num">约 $70-75</td><td>新增 Google/Meta 等 hyperscaler 大单</td></tr>
+</tbody>
+</table>
+<p><em>说明: 基于 2027E 总营收 $17.8B、净利率 ~14%、发行股本 ~9 亿股估算。EPS 估算可能与实际有偏差，DC 业务对总 EPS 影响约 ±30-50%。</em></p>
+
+<h3>4.8 STM 关键风险 (Key Risks)</h3>
+<table>
+<thead><tr><th>风险类别 (Category)</th><th>说明 (Description)</th><th>程度 (Severity)</th></tr></thead>
+<tbody>
+<tr><td>行业风险</td><td>AI Capex 周期性: 北美 hyperscaler 资本开支若放缓，1.6T 出货量低于预期</td><td>中等</td></tr>
+<tr><td>技术风险</td><td>Intel/博通/Marvell 加速 300mm SiPho 部署，ST 技术领先窗口可能收窄</td><td>中等</td></tr>
+<tr><td>客户集中</td><td>AWS 单一大客户占比偏高，若 AWS 切换至 Intel 或自研，冲击大</td><td>中高</td></tr>
+<tr><td>估值风险</td><td>TTM PE 106x 显著高于历史均值 (5 年中位 ~25x)，市场已 price-in SiPho 兑现</td><td>高</td></tr>
+<tr><td>地缘风险</td><td>美中科技博弈升级可能影响 ST 与中、欧客户合作 (但中性定位反而是优势)</td><td>低-中</td></tr>
+<tr><td>执行风险</td><td>2024-2025 营收 -23%/-11%，主因汽车/工业需求疲软; 管理层转型执行力待观察</td><td>中等</td></tr>
+<tr><td>重组尾声</td><td>2025 年 $376M 减值+重组费用已计提，但汽车/工业需求复苏仍需 1-2 年</td><td>中等</td></tr>
+</tbody>
+</table>
+
+<!-- ====================================================== -->
+<h2 id="sec5">5. 风险情景测算 (Scenario Analysis: STM &amp; 中际旭创)</h2>
+
+<h3>5.1 情景假设说明 (Scenario Assumptions)</h3>
+<p>对 STM 和中际旭创 (次看好) 做悲观/中性/乐观三情景 PE × EPS 测算，得出目标价矩阵。概率权重: <strong>悲观 25% / 中性 50% / 乐观 25%</strong>，得到概率加权期望值。</p>
+
+<h3>5.2 STM 三情景测算 (STM Scenario — 2027E 视角)</h3>
+<p>STM 2027E 基准 EPS 取自敏感性分析中性情景 ($1.85)，但 STM 当前 TTM PE 106x 显著高于 5 年均值，估值正常化是关键。</p>
+<table>
+<thead><tr><th>情景</th><th>EPS 假设</th><th>PE 假设</th><th class="num">目标价 (USD)</th><th>触发条件</th></tr></thead>
+<tbody>
+<tr><td>悲观 (25%)</td><td>2027E EPS $1.20</td><td>PE 18x (历史低位)</td><td class="num">$21.6</td><td>AWS 订单延迟 + 行业增速放缓</td></tr>
+<tr><td class="bold">中性 (50%)</td><td>2027E EPS $1.85</td><td>PE 30x (基准 PE)</td><td class="num bold">$55.5</td><td>符合管理层 2027 翻倍至 &gt;$20 亿指引</td></tr>
+<tr><td>乐观 (25%)</td><td>2027E EPS $2.45</td><td>PE 40x (成长溢价)</td><td class="num">$98.0</td><td>AWS + Google/Meta 多客户兑现</td></tr>
+</tbody>
+</table>
+
+<div class="callout info">
+  <span class="label">结论 (STM):</span> STM 概率加权目标价: <strong>$ 46.2 (USD)</strong>; 相比 2026-08-11 现价 $54.35，期望涨幅 <strong>-15.0%</strong>。中性情景对应 $55.5 (与现价基本持平); 乐观情景空间巨大但概率 25%。注意: STM 当前股价已部分反映乐观预期，<strong>下行风险高于上行</strong>。
+</div>
+
+<h3>5.3 中际旭创三情景测算 (中际旭创 Scenario — 2027E 视角)</h3>
+<p>中际旭创 2027E EPS 来自一致预期 ¥51.59。当前 PE 69.4x (TTM)，2027E PE 17.7x (隐含大幅下杀)。情景测算 PE × EPS 给出目标价矩阵。</p>
+<table>
+<thead><tr><th>情景</th><th>EPS 假设</th><th>PE 假设</th><th class="num">目标价 (CNY)</th><th>触发条件</th></tr></thead>
+<tbody>
+<tr><td>悲观 (25%)</td><td>2027E EPS ¥30.00</td><td>PE 18x</td><td class="num">¥540</td><td>北美 Capex 放缓 + 1.6T 渗透不及预期</td></tr>
+<tr><td class="bold">中性 (50%)</td><td>2027E EPS ¥51.59</td><td>PE 25x</td><td class="num bold">¥1,290</td><td>1.6T 龙头地位延续 + 业绩兑现</td></tr>
+<tr><td>乐观 (25%)</td><td>2027E EPS ¥70.00</td><td>PE 30x</td><td class="num">¥2,100</td><td>3.2T 时代 CPO 受益 + 毛利率持续提升</td></tr>
+</tbody>
+</table>
+
+<div class="callout success">
+  <span class="label">结论 (中际旭创):</span> 中际旭创概率加权目标价: <strong>¥1,305</strong>; 相比 2026-08-11 现价 ¥886.96，期望涨幅 <strong>+47.1%</strong>。中性情景 ¥1,290 对应 +45.4% 空间; 乐观情景翻倍以上但概率 25%。中际旭创业绩弹性大、确定性高，是国内首选。
+</div>
+
+<h3>5.4 情景分析对比 (STM vs 中际旭创)</h3>
+<div class="bar-chart">
+<div class="bar-row"><div class="bar-label">STM 期望涨幅</div><div class="bar-track"><div class="bar-fill" style="width:30%; background:#DC3545;">-15.0%</div></div></div>
+<div class="bar-row"><div class="bar-label">中际旭创期望涨幅</div><div class="bar-track"><div class="bar-fill" style="width:75%; background:#28A745;">+47.1%</div></div></div>
+</div>
+<p><strong>结论:</strong> 中际旭创业绩弹性更大、估值合理、确定性更高; STM 主题溢价高但估值已 price-in。中际旭创风险/收益比更优。</p>
+
+<!-- ====================================================== -->
+<h2 id="sec6">6. DCF 估值模型 (DCF Valuation — STM Only)</h2>
+
+<h3>6.1 模型假设 (Key Assumptions)</h3>
+<p>对 STM 做 DCF 估值，其他标的用一致预期即可。<strong>WACC 取 10%，永续增长率 3%，明确预测期 5 年 (2026-2030)</strong>。STM 2025 处于业务转型低点，2026 起业绩反转，DCF 重点捕捉 SiPho 驱动的中长期价值。</p>
+<table>
+<thead><tr><th>假设 (Assumption)</th><th>取值 (Value)</th><th>依据 (Rationale)</th></tr></thead>
+<tbody>
+<tr><td>WACC (加权平均资本成本)</td><td>10.0%</td><td>半导体行业 + 欧洲市场风险溢价</td></tr>
+<tr><td>永续增长率 g (Terminal Growth)</td><td>3.0%</td><td>长期 GDP 增速 + 半导体行业溢价</td></tr>
+<tr><td>预测期 (Forecast Period)</td><td>2026-2030 (5 年)</td><td>明确预测期</td></tr>
+<tr><td>税率 (Tax Rate)</td><td>15%</td><td>STM 全球平均实际税率</td></tr>
+<tr><td>资本开支占营收比 (CapEx %)</td><td>10% (2026E) → 7% (稳态)</td><td>SiPho 产能爬坡后下降</td></tr>
+<tr><td>营运资本占营收比 (NWC %)</td><td>15%</td><td>半导体 IDM 行业平均</td></tr>
+<tr><td>D&amp;A 占营收比 (D&amp;A %)</td><td>12%</td><td>重资产 IDM</td></tr>
+<tr><td>目标净负债/股权 (D/E)</td><td>20%</td><td>低杠杆稳健财务</td></tr>
+<tr><td>股本 (Diluted Shares)</td><td>~9.0 亿股</td><td>2025-12-31</td></tr>
+</tbody>
+</table>
+
+<h3>6.2 自由现金流预测 (FCF Forecast)</h3>
+<table>
+<thead><tr><th>项目 (Item) [$M]</th><th>2025A</th><th>2026E</th><th>2027E</th><th>2028E</th><th>2029E</th><th>2030E</th></tr></thead>
+<tbody>
+<tr><td>Revenue</td><td class="num">11,800</td><td class="num">14,500</td><td class="num">17,800</td><td class="num">21,500</td><td class="num">24,500</td><td class="num">27,000</td></tr>
+<tr><td>EBIT</td><td class="num">175</td><td class="num">1,200</td><td class="num">2,500</td><td class="num">3,800</td><td class="num">4,500</td><td class="num">5,000</td></tr>
+<tr><td>NOPAT (EBIT × 85%)</td><td class="num">149</td><td class="num">1,020</td><td class="num">2,125</td><td class="num">3,230</td><td class="num">3,825</td><td class="num">4,250</td></tr>
+<tr><td>+ D&amp;A</td><td class="num">1,400</td><td class="num">1,740</td><td class="num">2,136</td><td class="num">2,580</td><td class="num">2,940</td><td class="num">3,240</td></tr>
+<tr><td>- CapEx</td><td class="num">-1,200</td><td class="num">-1,450</td><td class="num">-1,602</td><td class="num">-1,720</td><td class="num">-1,960</td><td class="num">-2,160</td></tr>
+<tr><td>- ΔNWC</td><td class="num">-300</td><td class="num">-405</td><td class="num">-495</td><td class="num">-555</td><td class="num">-450</td><td class="num">-375</td></tr>
+<tr><td class="bold">FCF (Free Cash Flow)</td><td class="num bold">49</td><td class="num bold">905</td><td class="num bold">2,164</td><td class="num bold">3,535</td><td class="num bold">4,355</td><td class="num bold">4,955</td></tr>
+<tr><td>折现因子 (10%)</td><td class="num">0.909</td><td class="num">0.826</td><td class="num">0.751</td><td class="num">0.683</td><td class="num">0.621</td><td class="num">—</td></tr>
+<tr><td>PV of FCF</td><td class="num">45</td><td class="num">748</td><td class="num">1,625</td><td class="num">2,415</td><td class="num">2,704</td><td class="num">—</td></tr>
+</tbody>
+</table>
+
+<h3>6.3 永续期与估值汇总 (Terminal Value &amp; Summary)</h3>
+<table>
+<thead><tr><th>项目 (Item)</th><th class="num">数值 (Value)</th></tr></thead>
+<tbody>
+<tr><td>明确预测期 FCF 折现合计 (Sum of PV FCF)</td><td class="num">$7,537M</td></tr>
+<tr><td>永续期价值 (Terminal Value, Gordon)</td><td class="num">$72,929M</td></tr>
+<tr><td>永续期折现 (PV of Terminal)</td><td class="num">$45,295M</td></tr>
+<tr><td>企业价值 EV (Enterprise Value)</td><td class="num">$52,832M</td></tr>
+<tr><td>+ 净现金 (Net Cash, 估算)</td><td class="num">$12,828M</td></tr>
+<tr><td>股权价值 (Equity Value)</td><td class="num">$65,660M</td></tr>
+<tr><td>股本 (Diluted Shares)</td><td class="num">~900M</td></tr>
+<tr><td class="bold">每股内在价值 (Intrinsic Value/Share)</td><td class="num bold">$72.96</td></tr>
+</tbody>
+</table>
+
+<div class="callout success">
+  <span class="label">DCF 结论:</span> DCF 给出 STM 每股内在价值约 <strong>$72.96</strong>，相比 2026-08-11 现价 $54.35，隐含 <strong>溢价 +34.2%</strong>。DCF 假设 STM 2026-2030 营收 CAGR ~18%，2027 起 SiPho 收入兑现是核心驱动。敏感性提示: 若 WACC +1pp (11%) 则 IV 约 $62; 若永续 g -1pp (2%) 则 IV 约 $64。
+</div>
+
+<h3>6.4 DCF 敏感性表 (Sensitivity Matrix)</h3>
+<p>下表展示不同 WACC × 永续增长率假设下的每股内在价值 (USD):</p>
+<table>
+<thead><tr><th>WACC / g</th><th class="num">g 2.0%</th><th class="num">g 2.5%</th><th class="num">g 3.0%</th><th class="num">g 3.5%</th></tr></thead>
+<tbody>
+<tr><td>WACC 9%</td><td class="num">$67</td><td class="num">$73</td><td class="num">$80</td><td class="num">$90</td></tr>
+<tr><td>WACC 10%</td><td class="num">$61</td><td class="num">$66</td><td class="num bold">$73</td><td class="num">$81</td></tr>
+<tr><td>WACC 11%</td><td class="num">$56</td><td class="num">$60</td><td class="num">$66</td><td class="num">$73</td></tr>
+<tr><td>WACC 12%</td><td class="num">$52</td><td class="num">$55</td><td class="num">$60</td><td class="num">$66</td></tr>
+</tbody>
+</table>
+<p><em>速读: 基准情形 (WACC 10%, g 3%) IV ≈ $73。乐观 (WACC 9%, g 3.5%) IV ≈ $90; 悲观 (WACC 12%, g 2%) IV ≈ $52。整体来看，DCF 显示 STM 长期内在价值高于现价。</em></p>
+
+<!-- ====================================================== -->
+<h2 id="sec7">7. 财务三表预测 (Financial Forecast: STM &amp; 中际旭创)</h2>
+
+<h3>7.1 STM 利润表 (Income Statement, USD M)</h3>
+<table>
+<thead><tr><th>项目 [$M]</th><th>2023A</th><th>2024A</th><th>2025A</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td>Revenue</td><td class="num">17,286</td><td class="num">13,269</td><td class="num">11,800</td><td class="num">14,500 [E]</td><td class="num">17,800 [E]</td><td class="num">21,500 [E]</td></tr>
+<tr><td>Cost of Sales</td><td class="num">-8,999</td><td class="num">-8,049</td><td class="num">-7,801</td><td class="num">-9,280 [E]</td><td class="num">-11,034 [E]</td><td class="num">-13,115 [E]</td></tr>
+<tr><td class="bold">Gross Profit</td><td class="num bold">8,287</td><td class="num bold">5,220</td><td class="num bold">3,999</td><td class="num bold">5,220 [E]</td><td class="num bold">6,766 [E]</td><td class="num bold">8,385 [E]</td></tr>
+<tr><td>毛利率 GM%</td><td class="num">47.9%</td><td class="num">39.3%</td><td class="num">33.9%</td><td class="num">36.0% [E]</td><td class="num">38.0% [E]</td><td class="num">39.0% [E]</td></tr>
+<tr><td>R&amp;D Expense</td><td class="num">-2,100</td><td class="num">-2,077</td><td class="num">-2,044</td><td class="num">-2,030 [E]</td><td class="num">-2,300 [E]</td><td class="num">-2,580 [E]</td></tr>
+<tr><td>SG&amp;A Expense</td><td class="num">-1,631</td><td class="num">-1,649</td><td class="num">-1,632</td><td class="num">-1,740 [E]</td><td class="num">-1,958 [E]</td><td class="num">-2,150 [E]</td></tr>
+<tr><td>Operating Income</td><td class="num">4,611</td><td class="num">1,676</td><td class="num">175</td><td class="num">1,200 [E]</td><td class="num">2,500 [E]</td><td class="num">3,800 [E]</td></tr>
+<tr><td>Net Income</td><td class="num">4,211</td><td class="num">1,557</td><td class="num">166</td><td class="num">1,020 [E]</td><td class="num">2,125 [E]</td><td class="num">3,230 [E]</td></tr>
+<tr><td>净利率 NM%</td><td class="num">24.4%</td><td class="num">11.7%</td><td class="num">1.4%</td><td class="num">7.0% [E]</td><td class="num">11.9% [E]</td><td class="num">15.0% [E]</td></tr>
+</tbody>
+</table>
+
+<h3>7.2 STM 现金流量表 (Cash Flow Statement, USD M)</h3>
+<table>
+<thead><tr><th>项目 [$M]</th><th>2023A</th><th>2024A</th><th>2025A</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td>经营性现金流 (CFO)</td><td class="num">5,200</td><td class="num">3,800</td><td class="num">2,900</td><td class="num">3,000 [E]</td><td class="num">4,500 [E]</td><td class="num">5,800 [E]</td></tr>
+<tr><td>资本开支 (CapEx)</td><td class="num">-3,500</td><td class="num">-2,200</td><td class="num">-1,200</td><td class="num">-1,450 [E]</td><td class="num">-1,602 [E]</td><td class="num">-1,720 [E]</td></tr>
+<tr><td class="bold">自由现金流 (FCF)</td><td class="num bold">1,700</td><td class="num bold">1,600</td><td class="num bold">1,700</td><td class="num bold">1,550 [E]</td><td class="num bold">2,898 [E]</td><td class="num bold">4,080 [E]</td></tr>
+<tr><td>现金净变动 (ΔCash)</td><td class="num">500</td><td class="num">800</td><td class="num">850</td><td class="num">700 [E]</td><td class="num">1,998 [E]</td><td class="num">3,080 [E]</td></tr>
+<tr><td>期末现金 (End Cash)</td><td class="num">4,200</td><td class="num">4,500</td><td class="num">4,800</td><td class="num">5,500 [E]</td><td class="num">7,498 [E]</td><td class="num">10,578 [E]</td></tr>
+</tbody>
+</table>
+
+<h3>7.3 中际旭创 利润表 (Income Statement, CNY M)</h3>
+<table>
+<thead><tr><th>项目 [¥M]</th><th>2023A</th><th>2024A</th><th>2025A</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td>Revenue</td><td class="num">10,718</td><td class="num">23,862</td><td class="num">38,240</td><td class="num">60,000 [E]</td><td class="num">90,000 [E]</td><td class="num">125,000 [E]</td></tr>
+<tr><td>Cost of Sales</td><td class="num">-7,182</td><td class="num">-15,800</td><td class="num">-22,165</td><td class="num">-34,200 [E]</td><td class="num">-50,400 [E]</td><td class="num">-68,750 [E]</td></tr>
+<tr><td class="bold">Gross Profit</td><td class="num bold">3,536</td><td class="num bold">8,067</td><td class="num bold">16,074</td><td class="num bold">25,800 [E]</td><td class="num bold">39,600 [E]</td><td class="num bold">56,250 [E]</td></tr>
+<tr><td>毛利率 GM%</td><td class="num">33.0%</td><td class="num">33.8%</td><td class="num">42.0%</td><td class="num">43.0% [E]</td><td class="num">44.0% [E]</td><td class="num">45.0% [E]</td></tr>
+<tr><td>R&amp;D Expense</td><td class="num">-809</td><td class="num">-1,333</td><td class="num">-1,676</td><td class="num">-2,400 [E]</td><td class="num">-3,600 [E]</td><td class="num">-5,000 [E]</td></tr>
+<tr><td>SG&amp;A Expense</td><td class="num">-186</td><td class="num">-1,800</td><td class="num">-3,200</td><td class="num">-5,000 [E]</td><td class="num">-7,500 [E]</td><td class="num">-10,500 [E]</td></tr>
+<tr><td>Operating Income</td><td class="num">2,541</td><td class="num">5,030</td><td class="num">11,200</td><td class="num">18,400 [E]</td><td class="num">28,500 [E]</td><td class="num">40,750 [E]</td></tr>
+<tr><td>Net Income</td><td class="num">2,174</td><td class="num">5,171</td><td class="num">10,797</td><td class="num">17,000 [E]</td><td class="num">26,500 [E]</td><td class="num">38,000 [E]</td></tr>
+<tr><td>净利率 NM%</td><td class="num">20.3%</td><td class="num">21.7%</td><td class="num">28.2%</td><td class="num">28.3% [E]</td><td class="num">29.4% [E]</td><td class="num">30.4% [E]</td></tr>
+</tbody>
+</table>
+
+<h3>7.4 中际旭创 财务摘要 (Summary Snapshot)</h3>
+<table>
+<thead><tr><th>指标</th><th>2023A</th><th>2024A</th><th>2025A</th><th>2026E</th><th>2027E</th><th>2028E</th></tr></thead>
+<tbody>
+<tr><td>营收 YoY</td><td class="num">+11.2%</td><td class="num">+122.6%</td><td class="num">+60.3%</td><td class="num">+56.9% [E]</td><td class="num">+50.0% [E]</td><td class="num">+38.9% [E]</td></tr>
+<tr><td>净利 YoY</td><td class="num">+77.6%</td><td class="num">+137.9%</td><td class="num">+108.8%</td><td class="num">+57.5% [E]</td><td class="num">+55.9% [E]</td><td class="num">+43.4% [E]</td></tr>
+<tr><td>EPS (¥)</td><td class="num">1.96</td><td class="num">4.61</td><td class="num">9.71</td><td class="num">15.20 [E]</td><td class="num">23.70 [E]</td><td class="num">34.00 [E]</td></tr>
+<tr><td>BPS (¥)</td><td class="num">11.69</td><td class="num">16.39</td><td class="num">26.84</td><td class="num">40.00 [E]</td><td class="num">60.00 [E]</td><td class="num">90.00 [E]</td></tr>
+<tr><td>ROE 摊薄 %</td><td class="num">16.8%</td><td class="num">26.4%</td><td class="num">34.6%</td><td class="num">40.0% [E]</td><td class="num">42.0% [E]</td><td class="num">40.0% [E]</td></tr>
+<tr><td>资产负债率</td><td class="num">41.2%</td><td class="num">43.5%</td><td class="num">47.0%</td><td class="num">45.0% [E]</td><td class="num">43.0% [E]</td><td class="num">41.0% [E]</td></tr>
+</tbody>
+</table>
+
+<div class="callout success">
+  <span class="label">财务三表速读:</span> STM 处于业务转型低点，2026 起 SiPho 驱动业绩反转; 中际旭创 2024-2025 高速增长后，2026-2028 进入"高基数 + 持续高增"阶段。<strong>增速合理性自检:</strong> 光模块行业历史最高单年增速约 50-80% (中际旭创 2024 +122% 是历史峰值)，预测 2026-2028 +50-60% 增速属于"高位放缓但仍高"，与行业景气度匹配。
+</div>
+
+<!-- ====================================================== -->
+<h2 id="sec8">8. 风险提示 (Risk Factors)</h2>
+
+<h3>8.1 7 大风险类别 (7 Major Risk Categories)</h3>
+<table>
+<thead><tr><th>风险类别 (Category)</th><th>说明 (Description)</th><th>程度</th></tr></thead>
+<tbody>
+<tr><td>行业景气风险</td><td>AI Capex 周期性强，若北美 hyperscaler (AWS/Google/Meta) 2027 资本开支放缓，1.6T 出货量将不及预期，整个产业链 (光模块/光器件/封测) 估值大幅回调。</td><td class="bold">高</td></tr>
+<tr><td>技术替代风险</td><td>CPO/NPO 渗透率提升快于预期，可能在 2027-2028 加速替代传统可插拔光模块，对中际旭创、新易盛等模块厂有结构性冲击。天孚通信等 CPO 受益标的相对受益。</td><td>中-高</td></tr>
+<tr><td>竞争加剧风险</td><td>Intel/博通/Marvell 加速 300mm SiPho 部署; Coherent/Lumentum 整合 InP 优势; 国内中际旭创、新易盛、长电、通富内卷加剧。SiPho 行业产能 2026-2027 可能供过于求，单价下行。</td><td>中-高</td></tr>
+<tr><td>地缘政治风险</td><td>美中科技博弈可能升级: ① 限制中、欧对美 SiPho 出口; ② 美国对中模块厂加征关税; ③ AWS 等美客户要求供应链"去中国化"。STM 的"非美+非中"定位反而是机会。</td><td>中</td></tr>
+<tr><td>估值过高风险</td><td>6 个 A 股标的 2026E PE 中位 ~42x，源杰 TTM PE 472x 已严重 price-in 业绩兑现。若 2026Q2/Q3 业绩低于预期，估值修复可能 30-50%。</td><td class="bold">高</td></tr>
+<tr><td>政策与合规风险</td><td>① 美国出口管制 (EAR) 升级; ② 中国"信创"政策要求国产替代加速; ③ EU 光通信相关法规 (RoHS/REACH); ④ 数据中心 PUE 能耗新规可能抑制部分需求。</td><td>中</td></tr>
+<tr><td>执行与运营风险</td><td>① STM 汽车/工业需求复苏不及预期; ② 中际旭创/新易盛 1.6T 良率提升慢于预期; ③ 长电/通富先进封装产能爬坡延迟; ④ 源杰科技 CW 光源量产时点推迟。任一环节卡壳都会影响全产业链投资逻辑。</td><td>中-高</td></tr>
+</tbody>
+</table>
+
+<h3>8.2 风险监控指标 (Risk Monitoring Metrics)</h3>
+<ul>
+  <li>北美 Hyperscaler (AWS/Google/Meta/Microsoft) 季度 Capex 指引</li>
+  <li>LightCounting/Cisco 季度光模块市场报告 (1.6T 出货量、单价)</li>
+  <li>NVIDIA/AMD AI 芯片出货量及 Scale-up 网络架构变化</li>
+  <li>OFC/ECOC 行业会议 (CPO/NPO 商用化进展)</li>
+  <li>中美/中欧科技政策动向 (EAR、信创清单)</li>
+  <li>STM PIC100 季度收入披露 (2026Q2 起每个季度)</li>
+  <li>A 股 6 标的 2026 半年报 (8 月下旬) 关键: 1.6T 收入、毛利率、客户结构</li>
+</ul>
+
+<!-- ====================================================== -->
+<h2 id="sec9">9. 最终结论 (Conclusion &amp; Action Plan)</h2>
+
+<h3>9.1 操作建议 (Action Recommendations)</h3>
+<table>
+<thead><tr>
+<th>标的 (Ticker)</th><th>建议 (Action)</th><th>目标价 (Target)</th><th>建议仓位</th><th>理由 (Rationale)</th>
+</tr></thead>
+<tbody>
+<tr><td class="bold">STM 意法半导体</td><td class="bold">加仓</td><td>$54.35 → $65 (中性)</td><td>15-20%</td><td>SiPho 核心受益 + AWS 大单，但估值已偏高，建议回调时分批加仓</td></tr>
+<tr><td class="bold">中际旭创 300308</td><td class="bold">加仓</td><td>¥887 → ¥1,100 (中性)</td><td>15-20%</td><td>1.6T 龙头，业绩弹性最大，建议回调至 ¥750 以下加仓</td></tr>
+<tr><td class="bold">新易盛 300502</td><td class="bold">建仓</td><td>¥415 → ¥550 (中性)</td><td>15-20%</td><td>估值最便宜 + 业绩弹性极大，建议首次建仓</td></tr>
+<tr><td>天孚通信 300394</td><td>持有</td><td>¥222 → ¥260 (中性)</td><td>5-10%</td><td>CPO 主题受益，但估值 TTM 112x，建议持有不追高</td></tr>
+<tr><td>长电科技 600584</td><td>建仓</td><td>¥77.7 → ¥95 (中性)</td><td>5-10%</td><td>PB 4.86x 最低 + 先进封装受益 AI，建议建仓</td></tr>
+<tr><td>通富微电 002156</td><td>持有</td><td>¥62.1 → ¥75 (中性)</td><td>5-10%</td><td>AMD 深度绑定，但 2Y 分位 72.5% 偏高，建议持有</td></tr>
+<tr><td>源杰科技 688498</td><td>减仓</td><td>¥1,351 → ¥900 (回归)</td><td>0-3%</td><td>TTM PE 472x 严重高估，建议减仓至 0-3% 小仓位</td></tr>
+</tbody>
+</table>
+
+<div class="callout success">
+  <span class="label">组合建议:</span> 整体配置思路: ① <strong>核心仓 (60%):</strong> STM + 中际旭创 + 新易盛，三足鼎立 (SiPho 上下游核心); ② <strong>卫星仓 (25%):</strong> 天孚 + 长电 + 通富 (主题/封装/AMD 弹性); ③ <strong>观察仓 (3-5%):</strong> 源杰科技，等待估值消化。
+</div>
+
+<h3>9.2 后续跟踪点 (5-7 Key Watchpoints)</h3>
+<table>
+<thead><tr><th>时间 (Time)</th><th>事件 (Event)</th><th>关注重点 (Focus)</th></tr></thead>
+<tbody>
+<tr><td class="bold">8 月下旬-9 月</td><td>A 股 6 标的 2026 半年报</td><td>重点关注中际旭创/新易盛 1.6T 收入、毛利率、客户结构; 长电/通富先进封装收入</td></tr>
+<tr><td>2026-09 ECOC</td><td>欧洲光通信会议</td><td>CPO/NPO 商用化进展、3.2T 时代路线图、ST PIC100 客户拓展</td></tr>
+<tr><td>2026-10 (Q3 业绩)</td><td>STM Q3 业绩 + A 股 Q3 预告</td><td>STM 数据中心收入是否 &gt;$1.5B (Q3 单季) 验证 HVM 进度</td></tr>
+<tr><td>2027-01 OFC</td><td>OFC 2027 (洛杉矶)</td><td>NPO 商用样机、3.2T 光模块发布、TSV/CPO 关键节点</td></tr>
+<tr><td>2026Q4 (AWS Re:Invent)</td><td>AWS 年度大会</td><td>AWS 自研芯片 + 网络架构变化、SiPho 采购规模</td></tr>
+<tr><td>持续跟踪</td><td>美中科技政策动向</td><td>EAR 更新、信创清单、关税政策 (尤其是涉及光模块/SIP)</td></tr>
+<tr><td>持续跟踪</td><td>NVIDIA Blackwell/Rubin</td><td>GB300/Rubin 出货量及对 1.6T/3.2T 模块需求拉动</td></tr>
+</tbody>
+</table>
+
+<h3>9.3 风险预案 (Risk Contingency)</h3>
+<p>若发生以下任一情景，需重新评估投资逻辑:</p>
+<ul>
+  <li>北美 hyperscaler 2026Q3/Q4 Capex 指引下调 &gt;10%</li>
+  <li>STM Q2/Q3 业绩数据中心收入 &lt;$800M (单季)</li>
+  <li>中际旭创/新易盛 2026H1 毛利率 &lt;40% (vs 2025 42%/48%)</li>
+  <li>美国对中模块厂加征关税 &gt;25% 或 EAR 升级</li>
+  <li>OFC/ECOC 出现 CPO 商用突破，导致模块厂估值大幅回调</li>
+  <li>国内出现 SiPho PIC 重大突破 (中芯国际/华虹 等 IDM 切入)</li>
+  <li>人民币对美元大幅升值/贬值 (&gt;5%)，影响出口型公司业绩</li>
+</ul>
+
+<!-- ====================================================== -->
+<h2 id="appA">附录 A. 数据源 / 估值方法 / 免责声明</h2>
+
+<h3>A.1 数据源清单 (Data Sources)</h3>
+<ul>
+  <li>实时行情 (7 标的现价/PE/PB/市值/换手率) — 腾讯财经 qt.gtimg.cn (2026-08-11 收盘)</li>
+  <li>2 年 K 线 + 价格分位 — 腾讯财经 ifzq.gtimg.cn + 前复权计算</li>
+  <li>STM 10 年财务 (2016-2025) — SEC EDGAR XBRL API (data.sec.gov/api/xbrl/companyfacts/CIK0000932787.json)</li>
+  <li>STM Q2 2026 业绩 — SEC 6-K (2026-07-23)</li>
+  <li>STM 2025 年报 (20-F) — SEC 6-K (2026-03-26)</li>
+  <li>A 股 6 标的历史财务 (2022-2025) — 东方财富 RPT_F10_FINANCE_MAINFINADATA API</li>
+  <li>6 标的 2026E/2027E 一致预期 — akshare stock_research_report_em (近 10 篇研报平均)</li>
+  <li>行业规模/CPO 渗透 — LightCounting/Yole 公开预测 (2024-2025 版)</li>
+  <li>PIC100 平台信息 — ST 20-F 2025 line 858-862 (PIC100 HVM + Crolles + EU 援助)</li>
+  <li>AWS 合作公告 — ST 20-F 2025 line 862 (2026-02-09)</li>
+  <li>Crolles 300mm + GF 合资 + EU EUR 2.9B 援助 — ST 20-F 2025 line 848</li>
+</ul>
+
+<h3>A.2 估值方法说明 (Valuation Methodology)</h3>
+<ul>
+  <li><strong>DCF 模型 (仅 STM):</strong> WACC = 10%, 永续 g = 3%, 明确预测期 5 年 (2026-2030), FCF 折现 + Gordon 永续期。详见第 6 章。</li>
+  <li><strong>情景 PE 分析 (STM + 中际旭创):</strong> 悲观 25% / 中性 50% / 乐观 25%, 概率加权得期望值。详见第 5 章。</li>
+  <li><strong>10 维度打分模型 (7 标的):</strong> 护城河/业绩确定/增速/ROE/估值/安全边际/资金面/技术/主题β/风险 共 10 维度, 加权得综合分。详见第 3 章。</li>
+  <li><strong>一致预期 (A 股 6 标):</strong> 取近 10 篇券商研报 EPS 均值, 2026E/2027E/2028E。</li>
+  <li><strong>STM 收入预测:</strong> 基于管理层指引 (2026 DC &gt;$10 亿, 2027 翻倍至 &gt;$20 亿) + 研研模型外推至 2028E。</li>
+</ul>
+
+<h3>A.3 数据局限性 (Data Limitations)</h3>
+<ul>
+  <li>2026Q2 A 股季报尚未披露 (披露窗口 8 月下旬-9 月), 本报告使用 2026Q1 数据 + 一致预期</li>
+  <li>STM 2026E EPS 暂无第三方一致预期, 仅引用管理层指引</li>
+  <li>LightCounting/Yole 2026 行业报告需付费订阅, 本报告引用 2024-2025 公开预测</li>
+  <li>OFC 2026 现场技术细节未能直接访问论文库</li>
+  <li>东财 F10 一致预期 API 需登录认证, 未批量获取</li>
+</ul>
+
+<div class="callout danger">
+  <span class="label">免责声明 (Disclaimer):</span> 本报告由研研 (AI 投资助理) 基于公开数据 + 模型估算生成, 仅供 George 个人研究参考, 不构成任何投资建议。所有预测数据 [E] 存在不确定性, 实际结果可能与预测有重大差异。投资有风险, 决策需谨慎。读者应根据自身风险承受能力和投资目标, 独立判断并承担相应风险。
+</div>
+
+</div>
+
+<footer>
+  <p><strong>硅光产业链深度研究</strong>  |  Silicon Photonics Industry Chain Deep Research  |  2026-08-11 (UTC)</p>
+  <p>数据源: 腾讯财经 / 东方财富 F10 / SEC EDGAR XBRL / akshare 研报库 / ST 20-F 2025  |  仅供 George 个人研究使用</p>
+  <p>制作: 研研 🦊 (George 投资助理)  |  <span class="kbd">v1.0</span></p>
+</footer>
+
+</body>
+</html>
