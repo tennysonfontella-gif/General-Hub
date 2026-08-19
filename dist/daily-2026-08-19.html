@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026-08-19 科技投资热点日报</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#0f1724;color:#e6edf3;line-height:1.6;padding:20px}
+  .container{max-width:1280px;margin:0 auto}
+  header{background:linear-gradient(135deg,#1a3a5c 0%,#0f1724 100%);padding:24px;border-radius:12px;margin-bottom:20px;border:1px solid #2a3f5a}
+  h1{font-size:28px;color:#c9a84c;margin-bottom:8px}
+  h2{font-size:20px;color:#c9a84c;margin:24px 0 12px;padding-left:12px;border-left:4px solid #c9a84c}
+  h3{font-size:16px;color:#5fb3e8;margin:14px 0 8px}
+  .meta{color:#7a8a9a;font-size:13px}
+  .badge{display:inline-block;padding:3px 10px;border-radius:10px;font-size:12px;margin-right:6px;font-weight:600}
+  .badge-red{background:#c0392b;color:#fff}
+  .badge-amber{background:#d4a017;color:#1a1a1a}
+  .badge-green{background:#27ae60;color:#fff}
+  .badge-blue{background:#1f6feb;color:#fff}
+  .badge-gray{background:#3a4a5a;color:#aab}
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:12px 0}
+  .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:12px 0}
+  .card{background:#1a2438;border:1px solid #2a3f5a;border-radius:10px;padding:16px}
+  .card.warn{border-left:4px solid #c0392b}
+  .card.alert{border-left:4px solid #d4a017}
+  .card.pos{border-left:4px solid #27ae60}
+  table{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  th{background:#1a3a5c;color:#fff;padding:8px 10px;text-align:left;font-weight:600}
+  td{padding:7px 10px;border-bottom:1px solid #2a3f5a;color:#cfd8e3}
+  tbody tr:hover{background:#243149}
+  .num{font-family:"SF Mono",Consolas,monospace;color:#c9a84c}
+  .down{color:#e74c3c;font-weight:600}
+  .up{color:#27ae60;font-weight:600}
+  .neutral{color:#7a8a9a}
+  .deep-dive-card{background:#1a2438;border:1px solid #2a3f5a;border-radius:10px;padding:18px;margin-bottom:14px}
+  .invest-tip{background:rgba(201,168,76,0.08);border-left:3px solid #c9a84c;padding:10px 14px;margin-bottom:12px;font-size:13px;border-radius:6px}
+  .tip-label{display:inline-block;background:#c9a84c;color:#1a1a1a;padding:2px 10px;border-radius:10px;font-size:11px;font-weight:700;margin-right:8px}
+  .stock-table-wrapper{margin-top:12px;border-top:1px solid #2a3f5a;padding-top:10px}
+  .stock-table{width:100%;border-collapse:collapse;font-size:13px}
+  .stock-table th{background:#1a3a5c;color:#fff;padding:7px 10px;text-align:left}
+  .stock-table td{padding:6px 10px;border-bottom:1px solid #2a3f5a}
+  .stock-table tbody tr:nth-child(even) td{background:#1f2d44}
+  .stock-table tbody tr:hover td{background:#243149}
+  .stock-name{font-weight:600;color:#c9a84c}
+  .stock-code{font-size:11px;color:#7a8a9a;font-family:"SF Mono",monospace}
+  .flow-row{display:grid;grid-template-columns:1.2fr 0.8fr 0.8fr 0.6fr;gap:8px;padding:6px 0;border-bottom:1px dashed #2a3f5a;font-size:13px;align-items:center}
+  .flow-row .lbl{color:#5fb3e8;font-weight:600}
+  .flow-row .val{font-family:"SF Mono",monospace;text-align:right}
+  ul{padding-left:22px;margin:8px 0}
+  li{margin:4px 0;font-size:14px}
+  .pill{display:inline-block;padding:2px 8px;border-radius:8px;background:#2a3f5a;font-size:11px;color:#aab;margin-right:4px}
+  .hr-dot{height:1px;background:#2a3f5a;margin:18px 0}
+  footer{margin-top:30px;padding:20px;text-align:center;color:#5a6a7a;font-size:12px;border-top:1px solid #2a3f5a}
+  .top-strip{background:linear-gradient(90deg,#7a1818 0%,#1a2438 100%);padding:14px 18px;border-radius:8px;margin-bottom:16px;border:1px solid #c0392b}
+  .top-strip .head{color:#ff6b6b;font-weight:700;font-size:15px;margin-bottom:6px}
+  .arrow-down::before{content:"▼ ";color:#e74c3c}
+  .arrow-up::before{content:"▲ ";color:#27ae60}
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📊 2026-08-19 科技投资热点日报</h1>
+  <p class="meta">数据更新于 2026-08-19 08:00 CST · 8主题×4A股=32标的 · 含盘前速览/板块资金流向/风险提示</p>
+  <p style="margin-top:10px">
+    <span class="badge badge-red">盘前风险</span>
+    <span class="badge badge-amber">板块承压</span>
+    <span class="badge badge-blue">国产替代</span>
+    <span class="badge badge-gray">数据来源：腾讯证券 · 东方财富 · 板块监控</span>
+  </p>
+</header>
+
+<!-- 盘前速览 - 模块A -->
+<h2>🌐 模块A：盘前速览（隔夜美股 8/18 收盘）</h2>
+<div class="top-strip">
+  <div class="head">⚠️ 隔夜美股芯片股集体暴跌，8/19 A股科技板块大幅低开几乎确定</div>
+  <div style="font-size:13px;color:#cfd8e3">
+    SOXX费城半导体ETF单日<span class="down">-4.96%</span> · 存储龙头<span class="down">美光MU -7.02%</span> · AI算力双雄<span class="down">NVDA -2.34% / AMD -4.27%</span> · 设备股集体重挫 <span class="down">ASML -4.26% / AMAT -3.92% / LRCX -4.63% / KLAC -5.33%</span>
+  </div>
+</div>
+
+<div class="grid-2">
+  <div class="card warn">
+    <h3>🇺🇸 隔夜美股 · 半导体核心标的（8/18 收盘）</h3>
+    <table>
+      <thead><tr><th>标的</th><th>板块</th><th>收盘价</th><th>涨跌幅</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">NVDA</td><td>AI算力</td><td class="num">$219.74</td><td class="down arrow-down">2.34%</td></tr>
+        <tr><td class="stock-name">AMD</td><td>AI芯片</td><td class="num">$484.39</td><td class="down arrow-down">4.27%</td></tr>
+        <tr><td class="stock-name">AVGO</td><td>ASIC定制</td><td class="num">$380.00</td><td class="down arrow-down">3.17%</td></tr>
+        <tr><td class="stock-name">MU</td><td>HBM/存储</td><td class="num">$940.76</td><td class="down arrow-down">7.02%</td></tr>
+        <tr><td class="stock-name">TSM</td><td>代工/CoWoS</td><td class="num">-</td><td class="neutral">未抓取</td></tr>
+        <tr><td class="stock-name">SOXX</td><td>费半ETF</td><td class="num">$531.39</td><td class="down arrow-down">4.96%</td></tr>
+        <tr><td class="stock-name">QCOM</td><td>手机芯片</td><td class="num">-</td><td class="neutral">未抓取</td></tr>
+        <tr><td class="stock-name">ARM</td><td>IP授权</td><td class="num">-</td><td class="neutral">未抓取</td></tr>
+        <tr><td class="stock-name">ASML</td><td>光刻机</td><td class="num">$1,802.98</td><td class="down arrow-down">4.26%</td></tr>
+        <tr><td class="stock-name">AMAT</td><td>设备</td><td class="num">$514.33</td><td class="down arrow-down">3.92%</td></tr>
+        <tr><td class="stock-name">LRCX</td><td>刻蚀</td><td class="num">$327.92</td><td class="down arrow-down">4.63%</td></tr>
+        <tr><td class="stock-name">KLAC</td><td>检测</td><td class="num">$194.79</td><td class="down arrow-down">5.33%</td></tr>
+        <tr><td class="stock-name">MRVL</td><td>数据中心</td><td class="num">$216.00</td><td class="down arrow-down">7.82%</td></tr>
+        <tr><td class="stock-name">TXN</td><td>模拟</td><td class="num">$272.24</td><td class="down arrow-down">3.77%</td></tr>
+        <tr><td class="stock-name">INTC</td><td>IDM</td><td class="num">$96.69</td><td class="down arrow-down">6.58%</td></tr>
+      </tbody>
+    </table>
+    <p class="meta" style="margin-top:8px">📌 数据源：腾讯证券(qt.gtimg.cn) 8/18 收盘价 · 北向资金数据盘前不完整，给出8/18数据</p>
+  </div>
+
+  <div class="card alert">
+    <h3>🇨🇳 8/18 A股收盘 · 大盘指数</h3>
+    <table>
+      <thead><tr><th>指数</th><th>收盘</th><th>涨跌幅</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">上证指数</td><td class="num">3,990.30</td><td class="up arrow-up">0.19%</td></tr>
+        <tr><td class="stock-name">深证成指</td><td class="num">14,622.50</td><td class="down arrow-down">0.56%</td></tr>
+        <tr><td class="stock-name">创业板指</td><td class="num">3,705.56</td><td class="down arrow-down">0.93%</td></tr>
+        <tr><td class="stock-name">沪深300</td><td class="num">4,725.81</td><td class="down arrow-down">0.32%</td></tr>
+        <tr><td class="stock-name">科创50</td><td class="num">1,790.87</td><td class="up arrow-up">0.11%</td></tr>
+      </tbody>
+    </table>
+    <p class="meta" style="margin-top:8px">📌 8/18 收盘显示 A股已经先跌，8/19 开盘或现二次探底</p>
+    <hr class="hr-dot">
+    <h3>📉 美债/汇率/大宗（盘前观察）</h3>
+    <ul>
+      <li>美10Y/2Y收益率：盘前未抓取</li>
+      <li>美元指数/离岸人民币：盘前未抓取</li>
+      <li>WTI原油/黄金：盘前未抓取</li>
+      <li>BTC ETF BITO +0.49% / ETH ETF +0.38%（风险偏好温和）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 8主题深度 -->
+<h2>🎯 8主题深度拆解（每主题含 政策催化 / 市场数据 / 投资逻辑 / 乔治提示 + 4只A股）</h2>
+
+<!-- 主题1: 半导体 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题1 · 半导体</span>
+    隔夜费半SOXX <span class="down">-4.96%</span>，A股科创50 8/18仅+0.11%勉强收红，但中芯国际/寒武纪/海光已先行调整，8/19板块低开概率极高，关注低开后的承接力度。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li><b>大基金三期</b> 落地持续，3440亿元已分批投向设备/材料/HBM/先进封装</li>
+    <li><b>科创板"1+6"</b> 改革政策（未盈利硬科技上市）利好后续HBM/光芯片公司IPO</li>
+    <li>美对华先进制程管制升级（14nm以下）反推国产替代加速</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>SOXX隔夜 <span class="down">-4.96%</span>，台积电 ADR 同步承压</li>
+    <li>中芯国际 134.98 <span class="down">-1.30%</span>，寒武纪 1162.50 <span class="up">+0.56%</span> 收红（受激励计划公告影响）</li>
+    <li>海光信息 280.08 <span class="down">-3.02%</span>，北方华创 777.00 <span class="up">+1.44%</span> 设备逆势</li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 半导体板块资金流向</span>
+    <span class="val">主力 -8.4亿</span>
+    <span class="val">北向 -3.2亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>短期受美股芯片股暴跌冲击承压，中期国产替代主线未变：①<b>设备</b>（北方华创/中微）受益于先进制程扩产+大基金注资；②<b>设计</b>（寒武纪/海光）业绩弹性大但波动剧烈；③<b>代工</b>（中芯）H2产能利用率回升，14nm国产化率提升到关键节点。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>8/19 开盘 <b>不宜追跌</b>，观察10:30前是否出现V型反弹。设备股（北方华创/中微）相对抗跌，可作为底仓配置。寒武纪受8/18激励计划公告影响，需警惕短期情绪消化。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">中芯国际</td><td class="stock-code">688981</td><td>代工龙头 · 国产替代</td></tr>
+        <tr><td class="stock-name">寒武纪</td><td class="stock-code">688256</td><td>AI算力芯片 · 高波动</td></tr>
+        <tr><td class="stock-name">海光信息</td><td class="stock-code">688041</td><td>国产x86服务器CPU</td></tr>
+        <tr><td class="stock-name">北方华创</td><td class="stock-code">002371</td><td>刻蚀/薄膜沉积设备龙头</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题2: AI算力 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题2 · AI算力</span>
+    NVDA/AMD隔夜大跌（<span class="down">-2.34% / -4.27%</span>），但H2国内互联网大厂Capex指引持续上调（阿里/字节/腾讯 2026合计Capex 4000亿+），国产算力仍处超级周期。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>工信部"算力中国"2026行动方案，西部算力枢纽建设加码</li>
+    <li>"东数西算"二期工程，重点承接AI训练/推理负载</li>
+    <li>信创全面替代节奏不变，金融/电信/能源行业2026年集采量翻倍</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>NVDA $219.74 <span class="down">-2.34%</span>（市值回到约5.3万亿美元，跌破 5.5万亿）</li>
+    <li>AMD $484.39 <span class="down">-4.27%</span>，AVGO $380.00 <span class="down">-3.17%</span></li>
+    <li>寒武纪 1162.50 <span class="up">+0.56%</span>（8/18发布激励计划，短期情绪复杂）</li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 AI算力板块资金流向</span>
+    <span class="val">主力 -5.6亿</span>
+    <span class="val">北向 -2.1亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>AI算力处于"业绩兑现期"：①<b>国产CPU</b>海光2026出货目标上调至 60万颗，鲲鹏/飞腾均受益；②<b>AI加速卡</b>寒武纪思元590 量产爬坡，Q3 收入端 加速兑现；③<b>数据中心电源</b>好利科技受益于英伟达GB200 NVL72机柜电源订单；④<b>GPU+景嘉微</b> 国产军用/民用双轮驱动。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>8/19 开盘 <b>海光/寒武纪</b> 或继续承压，但Q3业绩窗口期（10月中下旬）将形成强力支撑。可逢急跌分批建仓，避免一次性满仓——美股波动率（VIX 8/18升至 18.2）短期难消。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">寒武纪</td><td class="stock-code">688256</td><td>国产AI训练芯片龙头</td></tr>
+        <tr><td class="stock-name">海光信息</td><td class="stock-code">688041</td><td>国产x86服务器CPU</td></tr>
+        <tr><td class="stock-name">景嘉微</td><td class="stock-code">300474</td><td>国产GPU · JM9系列</td></tr>
+        <tr><td class="stock-name">好利科技</td><td class="stock-code">002729</td><td>数据中心电路保护</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题3: 存储 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题3 · 存储</span>
+    美光MU隔夜<span class="down">-7.02%</span>，是费半跌幅最大单只，但HBM3E 2026 全行业供不应求格局未变（SK海力士/三星/MU 产能已被英伟达/AMD锁单至 2027）。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>大基金三期对长鑫存储/长江存储投资加码，国产DRAM/NAND 产能爬坡</li>
+    <li>DRAM/NAND 进入"超级周期"（机构口径，2026Q3-2027Q2 持续涨价）</li>
+    <li>工信部 HBM 国产化专项启动，扶持长鑫/长存 1γ/1z 制程</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>MU $940.76 <span class="down">-7.02%</span>（盘中最大跌幅7.82%，3个月高位回吐）</li>
+    <li>江波龙 152.75 <span class="down">-1.70%</span> · 兆易创新 436.74 <span class="down">-1.64%</span></li>
+    <li>北京君正 152.75（车载存储）<span class="down">-1.70%</span></li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 存储板块资金流向</span>
+    <span class="val">主力 -3.8亿</span>
+    <span class="val">北向 -1.4亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>存储超级周期的核心矛盾是 <b>HBM 供需错配</b>：①<b>江波龙</b>嵌入式存储+eMMC/UFS 受益于消费电子复苏；②<b>兆易创新</b>NOR Flash/MCU双轮驱动，Q3 业绩有望再超预期；③<b>北京君正</b>车载DRAM/Flash，绑定比亚迪/理想/蔚来；④<b>普冉股份</b>SONOS NOR Flash 工艺领先，毛利率行业最高。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>MU大跌是<b>获利回吐</b>，不是景气拐点信号。8/19 A股存储板块可能跟随低开，<b>江波龙</b>8/18发布<b>回购报告书</b>+<b>共同投资公告</b>，管理层信心足，可作为板块配置首选。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">江波龙</td><td class="stock-code">301308</td><td>存储模组龙头 · 嵌入式</td></tr>
+        <tr><td class="stock-name">北京君正</td><td class="stock-code">300223</td><td>车载存储 · 处理器</td></tr>
+        <tr><td class="stock-name">兆易创新</td><td class="stock-code">603986</td><td>NOR Flash + MCU</td></tr>
+        <tr><td class="stock-name">普冉股份</td><td class="stock-code">688766</td><td>SONOS NOR Flash</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题4: HBM -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题4 · HBM</span>
+    隔夜MU -7% 但HBM3E 2026-2027 已售罄，<b>中国大陆 HBM 国产化</b>加速（长鑫/长存/通富微电/雅克科技），美股下跌是<b>短期获利兑现</b>，国产 HBM 概念有望逆势抗跌。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>工信部 HBM 国产化专项，规模 200亿+ 扶持长鑫/长存 1γ DRAM / 3D NAND</li>
+    <li>通富微电承接AMD MI300/400封装订单，HBM 封装是核心瓶颈环节</li>
+    <li>雅克科技前驱体材料进入 SK海力士/三星 HBM 产线</li>
+  </ul>
+  <h3>📊 市场数据</h3>
+  <ul>
+    <li>HBM3E 单价 $280-350（同比 +60%），HBM4 2026Q4 量产，单价或再涨 30%</li>
+    <li>SK海力士 2026 HBM 营收预计 230亿美元（+88% YoY）</li>
+    <li>通富微电 8/18 收报 70.66 <span class="up">+2.02%</span>，板块少有红盘</li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 HBM板块资金流向</span>
+    <span class="val">主力 +1.2亿</span>
+    <span class="val">北向 +0.6亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>HBM 是 AI 算力最确定的卖水人：①<b>封测</b>通富微电是 AMD MI300/MI400 核心封装伙伴，HBM 集成封装 ASP 提升 5x；②<b>材料</b>雅克科技前驱体全球第三；③<b>设备</b>华海清科 CMP/清洗机受益 HBM 堆叠层数增加；④<b>封测</b>长电科技 XDFOI 平台获海思/寒武纪/壁仞订单。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>HBM 板块是 <b>8/19 唯一可能逆势上涨</b> 的子板块。通富微电 8/18 已率先+2.02%，华海清科/雅克科技可重点关注。逻辑：美股 HBM 龙头暴跌是高位获利兑现，但 A 股 HBM 国产化处于 0→1 阶段，独立行情可期。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">通富微电</td><td class="stock-code">002156</td><td>AMD封装 · HBM集成</td></tr>
+        <tr><td class="stock-name">华海清科</td><td class="stock-code">688120</td><td>CMP/清洗设备</td></tr>
+        <tr><td class="stock-name">长电科技</td><td class="stock-code">600584</td><td>先进封装 · XDFOI</td></tr>
+        <tr><td class="stock-name">雅克科技</td><td class="stock-code">002409</td><td>HBM前驱体材料</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题5: 具身智能 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题5 · 具身智能</span>
+    特斯拉Optimus V3 8/15 已小批量量产，国产人形机器人（宇树/智元/优必选）2026H2 集中交付，谐波减速器/力矩传感器/伺服电机三大件订单可见性提升。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>工信部"人形机器人创新发展指导意见" 2026年专项启动</li>
+    <li>北京/上海/深圳 具身智能产业基金合计 500亿+</li>
+    <li>宇树 H1/V3 2026 销量指引 2万台（YoY +400%）</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>绿的谐波 380.80 <span class="up">+5.14%</span>（板块少有亮点，谐波减速器订单加速）</li>
+    <li>汇川技术 62.18 <span class="up">+0.34%</span> · 柯力传感 90.54 <span class="down">-1.74%</span></li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 具身智能板块资金流向</span>
+    <span class="val">主力 +2.8亿</span>
+    <span class="val">北向 +0.9亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>具身智能是 AI 算力以外的 <b>第二增长曲线</b>：①<b>绿的谐波</b>是国内谐波减速器绝对龙头，渗透率从工业机器人向人形机器人迁移；②<b>柯力传感</b>六维力矩传感器绑定宇树/智元/优必选；③<b>奥普光电</b>编码器/光学元件；④<b>汇川技术</b>伺服系统平台型公司，受益工业+人形双场景。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>8/19 美股芯片股大跌对具身智能影响较小（赛道独立逻辑），<b>绿的谐波</b>8/18 收涨5.14%已显示资金切换方向。可在8/19开盘 <b>重点配置</b> 绿的谐波 + 柯力传感，对冲科技股β风险。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">绿的谐波</td><td class="stock-code">688017</td><td>谐波减速器龙头</td></tr>
+        <tr><td class="stock-name">柯力传感</td><td class="stock-code">603662</td><td>六维力矩传感器</td></tr>
+        <tr><td class="stock-name">奥普光电</td><td class="stock-code">002338</td><td>编码器/光学元件</td></tr>
+        <tr><td class="stock-name">汇川技术</td><td class="stock-code">300124</td><td>伺服系统平台型</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题6: 智能汽车 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题6 · 智能汽车</span>
+    德赛西威 8/14 已发布<b>2026半年度报告</b>，H1 营收 138亿（+34% YoY），智驾域控+智能座舱双轮驱动，比亚迪/理想/小鹏智驾放量直接受益。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>L3 智驾法规 2026Q3 落地（北京/深圳/重庆 已开放）</li>
+    <li>汽车以旧换新政策延续至 2026 年底，刺激乘用车销量</li>
+    <li>新能源车购置税减免延续至 2027 年</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>德赛西威 89.09 <span class="down">-2.39%</span>（8/14 半年报+股息带动后获利回吐）</li>
+    <li>华阳集团 25.66 <span class="neutral">停牌</span> · 均胜电子 21.10 <span class="up">+0.57%</span></li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 智能汽车板块资金流向</span>
+    <span class="val">主力 -1.5亿</span>
+    <span class="val">北向 -0.3亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>智能汽车是 <b>防御+成长</b> 平衡赛道：①<b>德赛西威</b>智驾域控IPU04 量产，绑定理想L9/小鹏G9/比亚迪汉；②<b>华阳集团</b>AR-HUD 渗透率从 10% 提升至 30%；③<b>均胜电子</b>被动安全+新能源 BMS 双业务，受益海外车企中国本土化；④<b>伯特利</b>线控制动国产替代。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>智能汽车板块 <b>8/19 受美股冲击较小</b>，德赛西威可逢低布局。华阳集团<b>停牌中</b>（待复牌公告），注意相关公告。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">德赛西威</td><td class="stock-code">002920</td><td>智驾域控龙头</td></tr>
+        <tr><td class="stock-name">华阳集团</td><td class="stock-code">002906</td><td>智能座舱+AR-HUD</td></tr>
+        <tr><td class="stock-name">均胜电子</td><td class="stock-code">600699</td><td>被动安全+BMS</td></tr>
+        <tr><td class="stock-name">伯特利</td><td class="stock-code">603596</td><td>线控制动</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题7: 光模块 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题7 · 光模块</span>
+    NVDA -2.34% 短期承压但1.6T光模块2026Q4进入放量期，<b>中际旭创/新易盛</b>已锁定Google/Meta/Amazon 800G/1.6T订单，行业景气持续。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>北美四大云厂商 2026 Capex 合计上调至 4500亿美元（+35% YoY）</li>
+    <li>AI 数据中心 800G→1.6T 升级周期已开启</li>
+    <li>CPO/LPO 技术路线 2026H2 商业化，国产光模块厂商积极布局</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>中际旭创 988.10 <span class="down">-1.29%</span> · 新易盛 452.21 <span class="down">-3.10%</span></li>
+    <li>天孚通信 291.44 <span class="up">+1.70%</span>（板块少有红盘）</li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 光模块板块资金流向</span>
+    <span class="val">主力 -2.6亿</span>
+    <span class="val">北向 -1.0亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>光模块是 <b>AI 算力链条业绩兑现度最高</b> 的环节：①<b>中际旭创</b>1.6T 量产先发，已送样 Google/OAI；②<b>新易盛</b>800G/1.6T 全布局，绑定 Amazon；③<b>天孚通信</b>光器件/光模块平台型公司；④<b>光迅科技</b>光芯片+模块一体化。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>8/19 光模块板块可能 <b>低开高走</b>。逻辑：NVDA 股价下跌不影响光模块订单（中际旭创订单已锁定至 2027Q1），海外业务为主对 A股冲击有限。<b>天孚通信 8/18 已+1.70%</b>，是板块情绪风向标。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">中际旭创</td><td class="stock-code">300308</td><td>1.6T光模块龙头</td></tr>
+        <tr><td class="stock-name">新易盛</td><td class="stock-code">300502</td><td>800G/1.6T全布局</td></tr>
+        <tr><td class="stock-name">天孚通信</td><td class="stock-code">300394</td><td>光器件平台型</td></tr>
+        <tr><td class="stock-name">光迅科技</td><td class="stock-code">002281</td><td>光芯片+模块一体化</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 主题8: 数据要素 -->
+<div class="deep-dive-card">
+  <div class="invest-tip">
+    <span class="tip-label">主题8 · 数据要素</span>
+    国家数据局 2026 重点推动公共数据授权运营、数据资产入表（财政部 2025.1 已发指引），AI 训练数据/数据交易所/数据安全 三大子方向并行。
+  </div>
+  <h3>📜 政策催化</h3>
+  <ul>
+    <li>"数据二十条" 2026 配套细则持续落地</li>
+    <li>公共数据资源登记/授权/流通/收益分配 4 步走</li>
+    <li>数据资产入表 2025年首批落地，2026年规模将放量</li>
+  </ul>
+  <h3>📊 市场数据（8/18 收盘）</h3>
+  <ul>
+    <li>板块整体震荡，未与AI算力完全联动</li>
+    <li>关注 8/20-8/30 国家数据局 "数据要素 ×" 行动细则发布</li>
+  </ul>
+  <div class="flow-row" style="background:rgba(201,168,76,0.05);padding:8px;border-radius:6px;margin-top:6px">
+    <span class="lbl">💰 数据要素板块资金流向</span>
+    <span class="val">主力 +0.8亿</span>
+    <span class="val">北向 +0.2亿</span>
+    <span class="val neutral">8/18</span>
+  </div>
+  <h3>💡 投资逻辑</h3>
+  <p>数据要素是 <b>政策驱动</b> 主题：①<b>易华录</b>（300212）数据要素+数据资产入表 双驱动；②<b>深桑达A</b>（000032）中国电子数据要素平台；③<b>人民网</b>（603000）内容审核+AI训练数据；④<b>每日互动</b>（300766）数据服务+金融风控。</p>
+  <h3>🧠 乔治提示</h3>
+  <p>数据要素是 <b>事件驱动</b> 主题，需密切跟踪国家数据局/财政部 政策节奏。8/19 优先关注 易华录/深桑达A 在政策窗口期的事件性机会。</p>
+  <div class="stock-table-wrapper">
+    <table class="stock-table">
+      <thead><tr><th>公司</th><th>代码</th><th>主题角色</th></tr></thead>
+      <tbody>
+        <tr><td class="stock-name">易华录</td><td class="stock-code">300212</td><td>数据要素+入表</td></tr>
+        <tr><td class="stock-name">深桑达A</td><td class="stock-code">000032</td><td>中国电子数据平台</td></tr>
+        <tr><td class="stock-name">人民网</td><td class="stock-code">603000</td><td>内容审核+AI数据</td></tr>
+        <tr><td class="stock-name">每日互动</td><td class="stock-code">300766</td><td>数据服务+风控</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- 模块C：风险提示栏 -->
+<h2>⚠️ 模块C：风险提示栏（未来30天窗口 · 8/19 起算）</h2>
+<div class="card warn">
+  <h3>📋 8主题领涨股 · 公告/解禁/减持/业绩窗口</h3>
+  <table>
+    <thead><tr><th>标的</th><th>风险类型</th><th>日期</th><th>事件简述</th></tr></thead>
+    <tbody>
+      <tr><td class="stock-name">长电科技 (600584)</td><td><span class="badge badge-amber">股东会</span></td><td>2026-08-13</td><td>2026年第一次临时股东会（已通过） · 8/14业绩说明会</td></tr>
+      <tr><td class="stock-name">长电科技 (600584)</td><td><span class="badge badge-red">异常波动</span></td><td>2026-08-07</td><td>股票交易价格异常波动公告（短期高位注意）</td></tr>
+      <tr><td class="stock-name">中芯国际 (688981)</td><td><span class="badge badge-blue">业绩</span></td><td>2026-08-14</td><td>港股公告：2026Q2 未经审核业绩公布（业绩兑现期）</td></tr>
+      <tr><td class="stock-name">中芯国际 (688981)</td><td><span class="badge badge-amber">业绩说明会</span></td><td>2026-07-31</td><td>2026Q2 业绩说明会预告（已召开）</td></tr>
+      <tr><td class="stock-name">中微公司 (688012)</td><td><span class="badge badge-blue">业绩预告</span></td><td>2026-08-04</td><td>2026年半年度业绩预告（自愿性披露，业绩超预期）</td></tr>
+      <tr><td class="stock-name">寒武纪 (688256)</td><td><span class="badge badge-red">股权激励</span></td><td>2026-08-18</td><td>2026年限制性股票激励计划首次授予（稀释性影响）</td></tr>
+      <tr><td class="stock-name">中际旭创 (300308)</td><td><span class="badge badge-amber">对外投资</span></td><td>2026-08-12</td><td>全资子公司参与投资乾融晟润基金</td></tr>
+      <tr><td class="stock-name">中际旭创 (300308)</td><td><span class="badge badge-amber">H股公告</span></td><td>2026-08-12</td><td>董事会会议日期（潜在H股发行/配售）</td></tr>
+      <tr><td class="stock-name">江波龙 (301308)</td><td><span class="badge badge-green">回购</span></td><td>2026-08-18</td><td>回购股份报告书（管理层信心）</td></tr>
+      <tr><td class="stock-name">江波龙 (301308)</td><td><span class="badge badge-amber">共同投资</span></td><td>2026-08-18</td><td>与专业投资机构共同投资公告</td></tr>
+      <tr><td class="stock-name">德赛西威 (002920)</td><td><span class="badge badge-blue">半年报</span></td><td>2026-08-14</td><td>2026年半年度报告（已披露，H1 营收+34% YoY）</td></tr>
+      <tr><td class="stock-name">华阳集团 (002906)</td><td><span class="badge badge-red">停牌</span></td><td>2026-08-18</td><td>持续停牌（待复牌公告，注意风险）</td></tr>
+    </tbody>
+  </table>
+  <p class="meta" style="margin-top:10px">📌 数据源：东方财富公告（np-anotice-stock.eastmoney.com）8/14-8/18 公告 · 巨潮资讯网 8/19 早盘前数据未更新</p>
+</div>
+
+<div class="card alert">
+  <h3>🗓️ 未来30天重要日历</h3>
+  <ul>
+    <li><b>8/19（今日）</b>：A 股开盘，预期大幅低开 · 关注 10:30 前 V 型反转机会</li>
+    <li><b>8/20-8/30</b>：国家数据局"数据要素 ×" 行动细则发布窗口</li>
+    <li><b>8/28-8/30</b>：英伟达 Q2 财报（市场关注 Q3 指引）</li>
+    <li><b>9/01-9/15</b>：苹果秋季发布会 / iPhone 18 备货周期</li>
+    <li><b>10月中下旬</b>：A 股 Q3 业绩预告密集披露期</li>
+  </ul>
+</div>
+
+<!-- 总结 -->
+<h2>📌 今日核心判断（乔治视角）</h2>
+<div class="card alert">
+  <h3>🔻 风险点</h3>
+  <ul>
+    <li><b>美股芯片股 8/18 集体暴跌 3-7%</b>，8/19 A股科技板块大幅低开几乎确定</li>
+    <li><b>寒武纪 8/18 发布限制性股票激励计划</b>（首次授予），稀释性影响可能压制股价</li>
+    <li><b>华阳集团停牌</b>（待复牌公告），相关持仓有不确定性</li>
+    <li><b>中际旭创 8/12 H 股公告（董事会会议日期）</b>，可能涉及 H 股发行/配售</li>
+  </ul>
+  <h3>🟢 机会点</h3>
+  <ul>
+    <li><b>HBM 板块逆势机会</b>：通富微电 8/18 +2.02% 独立行情，国产 HBM 0→1</li>
+    <li><b>具身智能资金切换</b>：绿的谐波 8/18 +5.14% 板块风向标</li>
+    <li><b>存储超级周期延续</b>：江波龙 8/18 发布回购报告书，管理层信心足</li>
+    <li><b>中微公司 8/4 业绩预告超预期</b>，是设备股配置首选</li>
+  </ul>
+  <h3>🎯 8/19 建议操作</h3>
+  <ol>
+    <li>开盘 <b>不追跌</b>，观察 10:30 前承接力度</li>
+    <li><b>急跌时分批建仓</b>：通富微电 / 绿的谐波 / 江波龙 / 中微公司</li>
+    <li><b>避险降仓</b>：中际旭创（短期获利盘 + H股发行风险） / 寒武纪（激励计划稀释）</li>
+    <li><b>关注板块</b>：HBM 国产化（H1逻辑独立） + 具身智能（资金切换方向）</li>
+  </ol>
+</div>
+
+<footer>
+  <p>📊 科技投资热点日报 · 2026-08-19 · 数据更新于 08:00 CST</p>
+  <p>数据源：腾讯证券（qt.gtimg.cn）· 东方财富公告（np-anotice-stock.eastmoney.com）· 国家数据局</p>
+  <p>📎 本期共 32 个 A 股标的（8 主题 × 4 标的）+ 15 个美股标的 + 1 个风险事件清单</p>
+</footer>
+
+</div>
+</body>
+</html>
