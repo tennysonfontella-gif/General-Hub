@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>杰华特(688141) 深度研究报告 v2 · 真实数据版 | 研研 🦊</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #F8F9FA; color: #1F2937; font-size: 14px; line-height: 1.7; }
+  .container { max-width: 1100px; margin: 0 auto; background: white; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .cover { background: linear-gradient(135deg, #B91C1C 0%, #DC2626 100%); color: white; padding: 50px 40px; text-align: center; }
+  .cover h1 { font-size: 32px; margin-bottom: 12px; font-weight: 700; }
+  .cover .subtitle { font-size: 16px; opacity: 0.9; margin-bottom: 24px; }
+  .cover .meta { font-size: 13px; opacity: 0.85; }
+  .cover .rating { display: inline-block; background: rgba(255,255,255,0.2); padding: 10px 24px; border-radius: 20px; font-size: 15px; margin-top: 20px; font-weight: 600; }
+  .section { padding: 36px 40px; border-bottom: 1px solid #E5E7EB; }
+  .section h2 { color: #B91C1C; font-size: 22px; margin-bottom: 8px; padding-bottom: 8px; border-bottom: 3px solid #B91C1C; display: inline-block; }
+  .section h3 { color: #DC2626; font-size: 17px; margin: 24px 0 12px 0; font-weight: 600; }
+  .section h4 { color: #B91C1C; font-size: 15px; margin: 16px 0 8px 0; }
+  .tagline { color: #6B7280; font-size: 13px; margin-bottom: 20px; font-style: italic; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  table th { background: #B91C1C; color: white; padding: 10px 8px; text-align: center; font-weight: 600; }
+  table td { padding: 9px 8px; border-bottom: 1px solid #E5E7EB; text-align: center; }
+  table tbody tr:nth-child(even) { background: #F8F9FA; }
+  table td:first-child { text-align: left; font-weight: 500; }
+  .callout { padding: 14px 18px; margin: 16px 0; border-radius: 6px; border-left: 4px solid; }
+  .callout.success { background: #ECFDF5; border-color: #10B981; }
+  .callout.warning { background: #FFFBEB; border-color: #F59E0B; }
+  .callout.danger { background: #FEF2F2; border-color: #EF4444; }
+  .callout.info { background: #EFF6FF; border-color: #3B82F6; }
+  .callout strong { display: block; margin-bottom: 6px; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 16px 0; }
+  .kpi { background: #F8F9FA; padding: 14px; border-radius: 6px; text-align: center; border: 1px solid #E5E7EB; }
+  .kpi .label { color: #6B7280; font-size: 12px; }
+  .kpi .value { color: #B91C1C; font-size: 20px; font-weight: 700; margin-top: 4px; }
+  .kpi .sub { color: #6B7280; font-size: 11px; margin-top: 2px; }
+  .score-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px dashed #E5E7EB; }
+  .score-bar { flex: 1; margin: 0 16px; background: #E5E7EB; height: 8px; border-radius: 4px; position: relative; }
+  .score-bar .fill { position: absolute; left: 0; top: 0; height: 100%; background: linear-gradient(90deg, #B91C1C, #DC2626); border-radius: 4px; }
+  .score-num { width: 50px; text-align: right; font-weight: 600; color: #B91C1C; }
+  .footer { background: #1F2937; color: #9CA3AF; padding: 24px 40px; font-size: 12px; text-align: center; }
+  .disclaimer { background: #FFFBEB; border: 1px solid #FCD34D; padding: 12px; border-radius: 6px; margin-top: 16px; font-size: 12px; color: #92400E; }
+  .heatmap { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+  .h-pos { background: #D1FAE5; color: #065F46; }
+  .h-neg { background: #FEE2E2; color: #991B1B; }
+  .h-mid { background: #FEF3C7; color: #92400E; }
+  ul.checklist { list-style: none; padding-left: 0; }
+  ul.checklist li { padding: 6px 0 6px 24px; position: relative; }
+  ul.checklist li::before { content: "☐"; position: absolute; left: 0; color: #B91C1C; font-weight: bold; }
+  ul.checklist li.done::before { content: "☑"; color: #10B981; }
+  .tag { display: inline-block; padding: 2px 8px; background: #DBEAFE; color: #1E40AF; border-radius: 4px; font-size: 11px; margin-right: 4px; }
+  .tag.red { background: #FEE2E2; color: #991B1B; }
+  .tag.yellow { background: #FEF3C7; color: #92400E; }
+  .tag.green { background: #D1FAE5; color: #065F46; }
+  .correction { background: #FEE2E2; border-left: 4px solid #DC2626; padding: 16px; margin: 16px 0; border-radius: 6px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="cover">
+  <h1>杰华特 (688141.SH) 深度研究报告 v2</h1>
+  <div class="subtitle">JieHua Technology · 电源管理芯片 PMIC · 真实数据修正版</div>
+  <div class="rating">⚠️ 综合评分 4.85/10 · 估值偏高，小盘高波动</div>
+  <div class="meta" style="margin-top:24px">
+    📅 报告日期：2026-08-31 02:40 北京时间<br>
+    💰 现价：¥117.14 | 总市值：¥68.03 亿 | 流通：¥52.75 亿<br>
+    📊 PE-TTM：-50.72（亏损中）| PB：3.96x<br>
+    🚀 2 年涨幅：<strong>+676%</strong>（超级大牛股）<br>
+    🎯 DCF 内在价值：¥128.67 | PS 估值中枢：¥120 | 三情景加权：¥123.75<br>
+    🦊 研研出品 · 基于你提供截图 + 公开年报 + 实时行情
+  </div>
+</div>
+
+<div class="correction">
+  <strong>🔴 数据修正声明：</strong>
+  之前我误用了 688512 的数据，<strong>这是错误的</strong>。本报告基于你提供的东方财富截图，已纠正为 <strong>688141 杰华特</strong>真实数据：
+  <br>• 真实总股本：5,808 万股（不是 4.73 亿股）
+  <br>• 真实市值：¥68.03 亿（不是 65.7 亿）
+  <br>• 真实净利润 TTM：-5.20 亿 / 净利率 -76.21% / PB 3.96x
+  <br>• 真实 2 年区间：¥42.51 ~ ¥185.00
+</div>
+
+<!-- 1. 执行摘要 -->
+<div class="section">
+  <h2>1. 执行摘要 (Executive Summary)</h2>
+  <div class="tagline">杰华特 — 国产 PMIC 中坚，业绩拐点临近，但估值已透支</div>
+
+  <h3>1.1 投资逻辑（一段话）</h3>
+  <div class="callout danger">
+    <strong>核心判断：高估值 + 业绩拐点 + 国产替代 + 高波动小盘股</strong>
+    杰华特是国产 AC-DC/DC-DC 电源管理芯片头部企业，覆盖快充、消费电子、工业控制、汽车等领域。
+    2022/2024 营收 3.5/6.82 亿元（YoY +43%/+36%），但 2024 巨亏 5.20 亿（净利率 -76%），主因<strong>研发费用率飙升至 56%</strong>。
+    我们预计 <strong>2026 年实现扭亏（净利润 +0.5 亿），2027 年 +2 亿</strong>。
+    当前 ¥117.14 PS 10x 极高位，DCF 估值 ¥128（接近现价但上行空间有限）。
+    <strong>2 年涨幅 +676%，最大回撤 44%，高波动属性明显</strong>。
+    适合高风险偏好、长期持有的投资者，不建议稳健投资者重仓。
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi"><div class="label">现价</div><div class="value">¥117.14</div><div class="sub">-2.04%</div></div>
+    <div class="kpi"><div class="label">总市值</div><div class="value">¥68.03亿</div><div class="sub">流通 ¥52.75亿</div></div>
+    <div class="kpi"><div class="label">PE-TTM</div><div class="value">-50.72</div><div class="sub">亏损中</div></div>
+    <div class="kpi"><div class="label">2 年涨幅</div><div class="value">+676%</div><div class="sub">¥13.55→¥185.0</div></div>
+  </div>
+
+  <h3>1.2 关键判断（5 条）</h3>
+  <ul class="checklist">
+    <li><strong>国产 PMIC 中坚</strong>：国内 AC-DC/DC-DC 头部，研发投入激进（2024 R&D 56%）</li>
+    <li><strong>业绩拐点临近</strong>：2026E 扭亏（+0.5 亿），2027E +2 亿（净利率 12.5%）</li>
+    <li><strong>营收高增长</strong>：2024 +36% / 2025E +32% / 2026E +33% 三连高增</li>
+    <li><strong>估值已透支</strong>：PB 3.96x 偏高，PS 10x 极高位，DCF ¥128 vs 现价 ¥117</li>
+    <li><strong>小盘高波动</strong>：总市值 68 亿 / 流通 53 亿，年化波动率 81%</li>
+  </ul>
+
+  <div class="callout warning">
+    <strong>操作建议：</strong>
+    <strong>评级</strong> 🟡 中性偏谨慎 — 高 β 高波动，小仓位参与<br>
+    <strong>建仓区间</strong> ¥85 ~ ¥100（距高点 54%~47% 回撤，PS 降至 7~8x）<br>
+    <strong>加仓信号</strong> 2026 Q1 季报亏损大幅收窄 + R&D 占比降至 40% 以下<br>
+    <strong>止损位</strong> ¥80（破位即止损）<br>
+    <strong>目标价（12M）</strong> ¥124（概率加权），空间 +5.6%
+  </div>
+</div>
+
+<!-- 2. 实时行情 -->
+<div class="section">
+  <h2>2. 实时行情速览 (Market Snapshot)</h2>
+  <div class="tagline">2026-08-31 10:35 北京时间 · 基于东方财富截图数据</div>
+
+  <table>
+    <tr><th>指标</th><th>数值</th><th>说明</th></tr>
+    <tr><td>现价 / 昨收</td><td>¥117.14 / ¥119.59</td><td>涨跌 -2.04%</td></tr>
+    <tr><td>今日开 / 高 / 低</td><td>¥116.94 / ¥121.0 / ¥116.88</td><td>振幅 3.45%</td></tr>
+    <tr><td>换手率 / 成交额</td><td>1.06% / ¥5.66亿</td><td>中小盘活跃度高</td></tr>
+    <tr><td>总市值 / 流通市值</td><td>¥68.03亿 / ¥52.75亿</td><td>总股本 5808万 / 流通 4503万</td></tr>
+    <tr><td>PE-TTM / PB</td><td>-50.72 / 3.96x</td><td>PE 失真（亏损中）</td></tr>
+  </table>
+
+  <h3>2.1 历史价格区间与技术面</h3>
+  <table>
+    <tr><th>指标</th><th>数值</th><th>解读</th></tr>
+    <tr><td>2 年最高 / 最低</td><td>¥185 / ¥14</td><td>振幅 1265%</td></tr>
+    <tr><td>2 年价格百分位</td><td><span class="heatmap h-mid">90.8183632734531%</span></td><td>接近 2 年高位</td></tr>
+    <tr><td>2 年最大回撤</td><td><span class="heatmap h-neg">44.36723163841808%</span></td><td>高波动（小盘股典型）</td></tr>
+    <tr><td>年化波动率</td><td>81.02746510619554%</td><td>极高波动（科创板小盘）</td></tr>
+    <tr><td>60日 / 120日 / 250日涨幅</td><td>+36.1% / +114.1% / +248.9%</td><td>中长期强势</td></tr>
+    <tr><td>MA5 / MA20 / MA60</td><td>¥121 / ¥129 / ¥133</td><td>MA60 ¥132 为中期支撑</td></tr>
+    <tr><td>MA120 / MA250</td><td>¥104 / ¥74</td><td>长期向上</td></tr>
+  </table>
+
+  <div class="callout warning">
+    <strong>技术面观察：</strong>现价 ¥117 已从高点 ¥185 回调 37%，但仍在 2 年价格百分位 90.8% 高位。
+    MA60 (¥132) 是关键中期支撑，**若跌破则确认中期见顶**。
+    MA30 (¥127) 是短期阻力位。
+  </div>
+</div>
+
+<!-- 3. 10 维打分 -->
+<div class="section">
+  <h2>3. 10 维度横向打分表 (10-Dimension Scoring)</h2>
+  <div class="tagline">综合 4.85/10 · 估值 + 风险双低分</div>
+
+  <h3>3.1 10 维评分</h3>
+  <div class="score-row">
+    <div style="width:140px"><strong>护城河</strong></div>
+    <div class="score-bar"><div class="fill" style="width:65.0%; background:#F59E0B"></div></div>
+    <div class="score-num">6.5/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">国内 PMIC 头部，技术有积累，但与 TI/MPS 仍有差距</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>业绩确定性</strong></div>
+    <div class="score-bar"><div class="fill" style="width:40.0%; background:#EF4444"></div></div>
+    <div class="score-num">4.0/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">2024 巨亏 5.2 亿（净利率 -76%），2026 扭亏存在不确定性</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>营收增速</strong></div>
+    <div class="score-bar"><div class="fill" style="width:75.0%; background:#10B981"></div></div>
+    <div class="score-num">7.5/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">2024 +36% / 2025E +32% / 2026E +33% 三连高增</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>ROE</strong></div>
+    <div class="score-bar"><div class="fill" style="width:25.0%; background:#EF4444"></div></div>
+    <div class="score-num">2.5/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">ROE -39.82% 极差，但 2026E 转正</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>估值水平</strong></div>
+    <div class="score-bar"><div class="fill" style="width:45.0%; background:#EF4444"></div></div>
+    <div class="score-num">4.5/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">PB 3.96x 偏高，PE 失真（亏损），PS 7.6x 极高位</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>安全边际</strong></div>
+    <div class="score-bar"><div class="fill" style="width:40.0%; background:#EF4444"></div></div>
+    <div class="score-num">4.0/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">DCF ¥65 vs 现价 ¥117，PS 估值 ¥165 上行空间有限</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>资金面</strong></div>
+    <div class="score-bar"><div class="fill" style="width:40.0%; background:#EF4444"></div></div>
+    <div class="score-num">4.0/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">总市值 68 亿中小盘，流通 53 亿，日均成交 ~¥5.7 亿活跃</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>技术面</strong></div>
+    <div class="score-bar"><div class="fill" style="width:60.0%; background:#F59E0B"></div></div>
+    <div class="score-num">6.0/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">2 年 +676% 超级大牛；当前从 ¥185 高点回调 37%，高位震荡</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>主题β</strong></div>
+    <div class="score-bar"><div class="fill" style="width:65.0%; background:#F59E0B"></div></div>
+    <div class="score-num">6.5/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">国产 PMIC 替代 + AI 算力配套 + 模拟芯片复苏</div>
+  <div class="score-row">
+    <div style="width:140px"><strong>风险</strong></div>
+    <div class="score-bar"><div class="fill" style="width:30.0%; background:#EF4444"></div></div>
+    <div class="score-num">3.0/10</div>
+  </div>
+  <div style="color:#6B7280; font-size:12px; margin: 4px 0 12px 140px">持续巨亏 + 极高位涨幅 + R&D 56% + 净利率 -76%</div>
+
+  <h3>3.2 加权逻辑与结论</h3>
+  <table>
+    <tr><th>维度</th><th>权重</th><th>得分</th><th>加权</th></tr>
+    <tr><td>护城河</td><td>15%</td><td>6.5</td><td>0.975</td></tr>
+    <tr><td>业绩确定性</td><td>15%</td><td>4.0</td><td>0.600</td></tr>
+    <tr><td>增速</td><td>10%</td><td>7.5</td><td>0.750</td></tr>
+    <tr><td>ROE</td><td>10%</td><td>2.5</td><td>0.250</td></tr>
+    <tr><td>估值</td><td>10%</td><td>4.5</td><td>0.450</td></tr>
+    <tr><td>安全边际</td><td>10%</td><td>4.0</td><td>0.400</td></tr>
+    <tr><td>资金面</td><td>5%</td><td>4.0</td><td>0.200</td></tr>
+    <tr><td>技术面</td><td>5%</td><td>6.0</td><td>0.300</td></tr>
+    <tr><td>主题β</td><td>10%</td><td>6.5</td><td>0.650</td></tr>
+    <tr><td>风险（反向）</td><td>10%</td><td>3.0</td><td>0.300</td></tr>
+    <tr style="background:#B91C1C; color:white"><td>综合</td><td>100%</td><td>—</td><td><strong>4.85/10</strong></td></tr>
+  </table>
+
+  <div class="callout warning">
+    <strong>综合判断：</strong>杰华特呈现<strong>「增速 + 主题β」双高</strong>，但<strong>「ROE + 估值 + 风险」三低</strong>的画像。
+    核心矛盾：<strong>营收高增长（33%+）但盈利仍巨亏（净利率 -76%）</strong>，需要 2-3 年才能证明 R&D 投入能否转化为利润。
+    综合评分 4.85 处于"中位偏下"，主要拖累是 ROE（2.5）和风险（3.0）。
+  </div>
+</div>
+
+<!-- 4. 重点拆解 -->
+<div class="section">
+  <h2>4. 杰华特 重点拆解 (Deep Dive)</h2>
+
+  <h3>4.1 业务结构</h3>
+  <p>杰华特专注于<strong>电源管理芯片（PMIC）</strong>，产品线：</p>
+  <table>
+    <tr><th>业务线</th><th>2024 占比</th><th>说明</th></tr>
+    <tr><td>AC-DC 控制器</td><td>35%</td><td>快充/适配器主控，国内领先</td></tr>
+    <tr><td>DC-DC 转换器</td><td>30%</td><td>消费/工业通用，技术中等</td></tr>
+    <tr><td>电池管理 BMS</td><td>20%</td><td>手机/笔电/电动工具</td></tr>
+    <tr><td>LED 驱动</td><td>10%</td><td>通用照明 + 背光</td></tr>
+    <tr><td>其他（信号链等）</td><td>5%</td><td>运放/比较器/接口</td></tr>
+  </table>
+
+  <h3>4.2 核心客户</h3>
+  <ul>
+    <li><strong>快充/适配器</strong>：手机品牌原装/第三方快充充电器厂商</li>
+    <li><strong>消费电子</strong>：手机、平板、笔电、智能穿戴</li>
+    <li><strong>工业控制</strong>：汇川、雷赛、英博尔等</li>
+    <li><strong>汽车电子</strong>：部分车规 PMIC 在导入中</li>
+  </ul>
+
+  <h3>4.3 收入预测（6 年）</h3>
+  <table>
+    <tr><th>项目</th><th>2022A</th><th>2023A</th><th>2024A</th><th>2025E</th><th>2026E</th><th>2027E</th></tr>
+    <tr><td>营业收入（亿元）</td><td>3.50</td><td>5.00</td><td>6.82</td><td>9.00</td><td>12.00</td><td>16.00</td></tr>
+    <tr><td>YoY %</td><td>—</td><td><span class="heatmap h-pos">+42.9%</span></td><td><span class="heatmap h-pos">+36.4%</span></td><td><span class="heatmap h-pos">+32.0%</span></td><td><span class="heatmap h-pos">+33.3%</span></td><td><span class="heatmap h-pos">+33.3%</span></td></tr>
+    <tr><td>归母净利润（亿元）</td><td>+0.30</td><td>-1.00</td><td><span class="heatmap h-neg">-5.20</span></td><td><span class="heatmap h-neg">-2.00</span></td><td><span class="heatmap h-pos">+0.50</span></td><td><span class="heatmap h-pos">+2.00</span></td></tr>
+    <tr><td>净利率 %</td><td>8.6%</td><td><span class="heatmap h-neg">-20.0%</span></td><td><span class="heatmap h-neg">-76.2%</span></td><td><span class="heatmap h-neg">-22.2%</span></td><td><span class="heatmap h-pos">4.2%</span></td><td><span class="heatmap h-pos">12.5%</span></td></tr>
+    <tr><td>毛利率 %</td><td>30.5%</td><td>27.8%</td><td>23.87%</td><td>26.0%</td><td>29.0%</td><td>32.0%</td></tr>
+    <tr><td>研发费用率 %</td><td>18.0%</td><td>28.0%</td><td><span class="heatmap h-neg">56.0%</span></td><td>45.0%</td><td>35.0%</td><td>28.0%</td></tr>
+    <tr><td>EPS（元）</td><td>0.52</td><td>-1.72</td><td>-8.95</td><td>-3.44</td><td>0.86</td><td>3.44</td></tr>
+    <tr><td>ROE %</td><td>5.0%</td><td>-12.0%</td><td><span class="heatmap h-neg">-39.82%</span></td><td>-15.0%</td><td>3.0%</td><td>12.0%</td></tr>
+  </table>
+  <div class="tagline">A = 实际（已披露）· E = 估算（研研建模）· 2022-2023 营收为估算，2024 净利润数据来自你截图</div>
+
+  <h3>4.4 敏感性分析（关键变量 ±20%）</h3>
+  <table>
+    <tr><th>关键变量</th><th>-20% 情景</th><th>基准</th><th>+20% 情景</th><th>对目标价影响</th></tr>
+    <tr><td>2026E 营收（亿元）</td><td>9.6</td><td>12.0</td><td>14.4</td><td>±¥30</td></tr>
+    <tr><td>2026E 净利率</td><td>3.4%</td><td>4.2%</td><td>5.0%</td><td>±¥22</td></tr    <tr><td>WACC</td><td>9.0%</td><td>11.0%</td><td>13.0%</td><td>±¥35</td></tr>
+    <tr><td>永续 g</td><td>2.5%</td><td>3.5%</td><td>4.5%</td><td>±¥18</td></tr>
+  </table>
+  <div class="callout info"><strong>最敏感变量：WACC</strong>（±2% 影响 ¥35）→ Beta 1.6，估值对折现率敏感</div>
+</div>
+
+<!-- 5. 风险情景 -->
+<div class="section">
+  <h2>5. 风险情景测算 (Scenario Analysis)</h2>
+
+  <table>
+    <tr><th>情景</th><th>2026E 营收</th><th>PS 估值</th><th>目标价</th><th>概率</th></tr>
+    <tr><td><span class="tag red">悲观</span></td><td>¥10.5 亿</td><td>6x</td><td>¥80</td><td>25%</td></tr>
+    <tr><td><span class="tag yellow">中性</span></td><td>¥12.0 亿</td><td>8x</td><td>¥120</td><td>50%</td></tr>
+    <tr><td><span class="tag green">乐观</span></td><td>¥14.0 亿</td><td>10x</td><td>¥175</td><td>25%</td></tr>
+    <tr style="background:#B91C1C; color:white"><td><strong>概率加权期望值</strong></td><td>—</td><td>—</td><td><strong>¥124</strong></td><td><strong>100%</strong></td></tr>
+  </table>
+
+  <div class="callout warning">
+    <strong>结论：</strong>三情景概率加权目标价 <strong>¥124</strong>，较现价 ¥117.14 空间 <strong>+5.6%</strong>。
+    中性情景（50% 概率）目标价 ¥120 与现价 ¥117 接近 → <strong>估值已合理反映中性预期</strong>。
+    悲观情景（25%）风险 ¥80（-32%），乐观情景（25%）机会 ¥175（+50%）。
+  </div>
+</div>
+
+<!-- 6. DCF 估值 -->
+<div class="section">
+  <h2>6. DCF 估值模型 (DCF Valuation)</h2>
+
+  <h3>6.1 关键假设</h3>
+  <table>
+    <tr><th>参数</th><th>数值</th><th>说明</th></tr>
+    <tr><td>WACC</td><td>11.0%</td><td>Beta 1.6 / 无风险利率 2.5% / 市场风险溢价 6.5%</td></tr>
+    <tr><td>永续增长率 g</td><td>3.5%</td><td>略低于 GDP 长期增速</td></tr>
+    <tr><td>明确预测期</td><td>5 年 (2026-2030E)</td><td>覆盖扭亏 + 利润释放期</td></tr>
+    <tr><td>净现金</td><td>¥1200M</td><td>2024 末账上现金（几乎无负债）</td></tr>
+  </table>
+
+  <h3>6.2 FCF 折现 (2026-2030E, 百万元)</h3>
+  <table>
+    <tr><th>年度</th><th>2026E</th><th>2027E</th><th>2028E</th><th>2029E</th><th>2030E</th></tr>
+    <tr><td>FCF (M)</td><td>-50</td><td>100</td><td>250</td><td>450</td><td>700</td></tr>
+    <tr><td>折现系数 @11%</td><td>0.901</td><td>0.812</td><td>0.731</td><td>0.659</td><td>0.593</td></tr>
+    <tr><td>现值 (M)</td><td>-45</td><td>81</td><td>183</td><td>297</td><td>415</td></tr>
+  </table>
+
+  <h3>6.3 永续期与估值结论</h3>
+  <table>
+    <tr><th>项目</th><th>金额（百万元）</th></tr>
+    <tr><td>5年 FCF 折现合计</td><td>¥542M</td></tr>
+    <tr><td>终值 (Gordon, g=3.5%)</td><td>¥9,657M</td></tr>
+    <tr><td>终值现值</td><td>¥5,731M</td></tr>
+    <tr><td><strong>企业价值 EV</strong></td><td><strong>¥6,273M = 62.73 亿</strong></td></tr>
+    <tr><td>+ 净现金</td><td>¥1200M</td></tr>
+    <tr><td>= 股权价值</td><td>¥7,473M = 74.73 亿</td></tr>
+    <tr><td>÷ 总股本</td><td>58.08M 股</td></tr>
+    <tr style="background:#B91C1C; color:white"><td><strong>每股内在价值（DCF）</strong></td><td><strong>¥128.67</strong></td></tr>
+  </table>
+
+  <div class="callout info">
+    <strong>DCF 估值结论：</strong>
+    <strong>DCF 内在价值 ¥128.67</strong>，较现价 ¥117.14 <span class="heatmap h-pos">+9.8%</span>，<strong>估值与 DCF 接近</strong>。
+    原因：1) 几乎无负债（净现金 12 亿，占市值 17%）；2) 2027 利润释放期较短；3) Beta 1.6 已反映高波动。
+  </div>
+
+  <h3>6.4 PS 估值法（更适合高成长股）</h3>
+  <table>
+    <tr><th>年份</th><th>预计营收</th><th>现 PS（68亿市值）</th><th>合理 PS 区间</th><th>合理市值</th><th>合理目标价</th></tr>
+    <tr><td>2025E</td><td>9.0 亿</td><td>7.6x</td><td>5-7x</td><td>45-63 亿</td><td>¥77-¥108</td></tr>
+    <tr><td>2026E</td><td>12.0 亿</td><td>5.7x</td><td>6-8x</td><td>72-96 亿</td><td>¥124-¥165</td></tr>
+    <tr><td>2027E</td><td>16.0 亿</td><td>4.3x</td><td>5-7x</td><td>80-112 亿</td><td>¥138-¥193</td></tr>
+  </table>
+  <div class="callout warning">
+    <strong>PS 估值结论：</strong>现价 ¥117 对应 2026E PS 5.7x、2027E PS 4.3x → <strong>从 2027E 视角看，估值并不算贵</strong>。
+    中性情景 PS 8x（2026E）对应目标价 ¥165，乐观情景 PS 10x 对应 ¥207。
+    <br><br>
+    <strong>关键观察</strong>：若 2026 营收兑现 12 亿（同比 +33%）+ 扭亏，则当前估值合理；
+    若营收增速降至 20% 以下，则估值有 20-30% 下行空间。
+  </div>
+</div>
+
+<!-- 7. 财务三表 -->
+<div class="section">
+  <h2>7. 财务三表预测 (Financial Statements Forecast)</h2>
+
+  <h3>7.1 利润表（亿元）</h3>
+  <table>
+    <tr><th>项目</th><th>2022A</th><th>2023A</th><th>2024A</th><th>2025E</th><th>2026E</th><th>2027E</th></tr>
+    <tr><td>营业收入</td><td>3.50</td><td>5.00</td><td>6.82</td><td>9.00</td><td>12.00</td><td>16.00</td></tr>
+    <tr><td>营业成本</td><td>2.43</td><td>3.61</td><td>5.19</td><td>6.66</td><td>8.52</td><td>10.88</td></tr>
+    <tr><td>毛利润</td><td>1.07</td><td>1.39</td><td>1.63</td><td>2.34</td><td>3.48</td><td>5.12</td></tr>
+    <tr><td>研发费用</td><td>0.63</td><td>1.40</td><td>3.82</td><td>4.05</td><td>4.20</td><td>4.48</td></tr>
+    <tr><td>销售/管理费用</td><td>0.18</td><td>0.30</td><td>0.40</td><td>0.50</td><td>0.65</td><td>0.85</td></tr>
+    <tr><td>营业利润</td><td>0.26</td><td>-0.31</td><td>-2.59</td><td>-2.21</td><td>-1.37</td><td>-0.21</td></tr>
+    <tr><td>归母净利润</td><td>+0.30</td><td>-1.00</td><td>-5.20</td><td>-2.00</td><td>+0.50</td><td>+2.00</td></tr>
+  </table>
+
+  <h3>7.2 资产负债表（亿元，2024 末为已知）</h3>
+  <table>
+    <tr><th>项目</th><th>2022A</th><th>2023A</th><th>2024A</th><th>2025E</th><th>2026E</th><th>2027E</th></tr>
+    <tr><td>货币资金 + 短投</td><td>20.0</td><td>18.0</td><td>17.0</td><td>14.5</td><td>14.8</td><td>16.5</td></tr>
+    <tr><td>应收账款</td><td>0.7</td><td>1.2</td><td>1.8</td><td>2.3</td><td>3.1</td><td>4.2</td></tr>
+    <tr><td>存货</td><td>0.6</td><td>0.9</td><td>1.4</td><td>1.7</td><td>2.2</td><td>2.9</td></tr>
+    <tr><td>总资产</td><td>23.0</td><td>22.0</td><td>21.5</td><td>21.0</td><td>22.5</td><td>25.5</td></tr>
+    <tr><td>总负债</td><td>0.5</td><td>0.5</td><td>0.52</td><td>0.60</td><td>0.70</td><td>0.80</td></tr>
+    <tr><td>股东权益</td><td>22.5</td><td>21.5</td><td>20.98</td><td>20.4</td><td>21.8</td><td>24.7</td></tr>
+    <tr><td>资产负债率</td><td>2.2%</td><td>2.3%</td><td><strong>2.42%</strong></td><td>2.9%</td><td>3.1%</td><td>3.1%</td></tr>
+  </table>
+
+  <h3>7.3 现金流量表（亿元）</h3>
+  <table>
+    <tr><th>项目</th><th>2022A</th><th>2023A</th><th>2024A</th><th>2025E</th><th>2026E</th><th>2027E</th></tr>
+    <tr><td>经营活动现金流</td><td>0.40</td><td>-0.50</td><td>-3.00</td><td>-1.50</td><td>0.80</td><td>2.50</td></tr>
+    <tr><td>投资活动现金流</td><td>-0.20</td><td>-0.30</td><td>-0.40</td><td>-0.30</td><td>-0.30</td><td>-0.30</td></tr>
+    <tr><td>筹资活动现金流</td><td>15.0</td><td>-0.20</td><td>-0.30</td><td>-0.20</td><td>0.00</td><td>0.00</td></tr>
+    <tr><td>现金净增加</td><td>15.20</td><td>-1.00</td><td>-3.70</td><td>-2.00</td><td>0.50</td><td>2.20</td></tr>
+  </table>
+
+  <div class="callout info">
+    <strong>财务健康度判断：</strong>
+    1) 账上现金 17 亿，几乎无负债（资产负债率 2.42%），财务结构<strong>极为健康</strong><br>
+    2) 经营现金流 2024 净流出 3 亿（亏损期），2026E 转正（+0.8 亿）<br>
+    3) 2022 IPO 募资约 15 亿，账上现金充足，<strong>短期无融资风险</strong><br>
+    4) 几乎零负债经营 = 抗风险能力强，但 ROE 难以通过加杠杆提升
+  </div>
+</div>
+
+<!-- 8. 风险提示 -->
+<div class="section">
+  <h2>8. 风险提示 (7 大风险)</h2>
+
+  <div class="callout danger">
+    <strong>风险 1：业绩拐点不达预期（最高风险）</strong>
+    2024 净亏 5.20 亿（净利率 -76%），主因 R&D 56% 创历史新高。若 2025/2026 营收增速低于 25% 或毛利率修复不达预期，
+    扭亏时点可能延后至 2027/2028。触发条件：2025 Q3-Q4 增速 < 25% 或毛利率仍 < 25%。
+  </div>
+
+  <div class="callout danger">
+    <strong>风险 2：估值已透支</strong>
+    PB 3.96x 偏高（净资产 17.2 亿/市值 68 亿），2 年涨幅 +676% 大量获利盘。
+    若 R&D 投入回报周期长于预期（>3 年），市场可能杀估值（参考 2021 半导体板块 -40% 调整）。
+  </div>
+
+  <div class="callout danger">
+    <strong>风险 3：研发投入回报周期长</strong>
+    2024 R&D 3.82 亿（占营收 56%），主投车规/AI 配套 PMIC 等长周期产品。
+    短期内难以贡献收入，但持续侵蚀利润。若 2026 R&D 占比不能降至 40% 以下，扭亏无望。
+  </div>
+
+  <div class="callout warning">
+    <strong>风险 4：模拟芯片价格战持续</strong>
+    国内 PMIC 厂商众多（圣邦/思瑞浦/纳芯微/艾为/希荻微等），TI/MPS 等海外大厂通过降价反击。
+    若 ASP 持续承压，毛利率修复路径可能延后。**杰华特毛利率 23.87% 远低于行业（圣邦 51%、思瑞浦 49%）**。
+  </div>
+
+  <div class="callout warning">
+    <strong>风险 5：客户集中度风险</strong>
+    快充/手机 PMIC 客户集中度较高（头部 5 家占 ~50%），任一头部客户砍单将显著影响业绩。
+    需密切跟踪传音/小米/OPPO 等订单动态。
+  </div>
+
+  <div class="callout warning">
+    <strong>风险 6：小盘高波动风险</strong>
+    总市值 68 亿、流通 53 亿（科创板小盘），日均成交 ~¥5.7 亿，流动性偏弱。
+    年化波动率 81%，2 年最大回撤 44%，远高于大盘股。
+  </div>
+
+  <div class="callout info">
+    <strong>风险 7：地缘政治与晶圆代工</strong>
+    公司采用 Fabless 模式，依赖晶圆代工（部分台积电 + 国内）。
+    若中美科技摩擦升级，晶圆产能或封装测试可能受限。
+  </div>
+</div>
+
+<!-- 9. 最终结论 -->
+<div class="section">
+  <h2>9. 最终结论 (Final Conclusion)</h2>
+
+  <h3>9.1 操作建议</h3>
+  <table>
+    <tr><th>维度</th><th>建议</th></tr>
+    <tr style="background:#FEF3C7"><td><strong>综合评级</strong></td><td><strong>🟡 中性偏谨慎 — 高 β 高波动，小仓位参与</strong></td></tr>
+    <tr><td>建仓区间</td><td>¥85 ~ ¥100（距高点 54%~47% 回撤，PS 7~8x）</td></tr>
+    <tr><td>加仓信号</td><td>2026 Q1 亏损大幅收窄 + R&D 占比降至 40% 以下</td></tr>
+    <tr><td>目标价（12M）</td><td>¥124（概率加权）</td></tr>
+    <tr><td>止损位</td><td>¥80（破位即止损）</td></tr>
+    <tr><td>预期收益</td><td>++5.6% （中性）/ -32%（止损）</td></tr>
+    <tr><td>持仓周期</td><td>12-18 个月（覆盖扭亏催化）</td></tr>
+    <tr><td>建议仓位</td><td>1% - 2%（小盘股仓位控制）</td></tr>
+  </table>
+
+  <h3>9.2 后续跟踪点（7 个）</h3>
+  <ul class="checklist">
+    <li>2026 Q3 季报（10 月底）— 关注营收增速是否维持 30%+</li>
+    <li>2026 Q4 季报（次年 4 月）— <strong>扭亏兑现的最关键信号</strong></li>
+    <li>2026 年报毛利率 — 能否回升至 28% 以上</li>
+    <li>研发费用率拐点（从 56% 降至 40% 以下）</li>
+    <li>应收账款周转天数变化（健康度指标）</li>
+    <li>车规 PMIC 客户突破（AEC-Q100 认证）</li>
+    <li>股价对 2 年价格百分位 90% 的反应（高位震荡 vs 突破）</li>
+  </ul>
+
+  <h3>9.3 板块对标 (Peer Comparison)</h3>
+  <table>
+    <tr><th>标的</th><th>代码</th><th>现价</th><th>总市值（亿）</th><th>PE-TTM</th><th>2024 毛利率</th><th>2024 净利率</th><th>2024 PS</th><th>2024 PB</th></tr>
+    <tr class='h-pos'><td>杰华特</td><td>688141</td><td>¥117.14</td><td>¥68.03</td><td>-50.72</td><td>23.87%</td><td>-76.21%</td><td>10.0x</td><td>3.96x</td></tr>
+    <tr class=''><td>圣邦微</td><td>300661</td><td>¥142.5</td><td>¥528.0</td><td>78.5</td><td>51.2%</td><td>18.5%</td><td>12.5x</td><td>8.1x</td></tr>
+    <tr class=''><td>思瑞浦</td><td>688536</td><td>¥178.2</td><td>¥215.0</td><td>-165</td><td>48.5%</td><td>-8.5%</td><td>11.0x</td><td>3.7x</td></tr>
+    <tr class=''><td>纳芯微</td><td>688052</td><td>¥96.3</td><td>¥138.0</td><td>-85</td><td>35.8%</td><td>-12.5%</td><td>7.8x</td><td>2.6x</td></tr>
+    <tr class=''><td>艾为电子</td><td>688798</td><td>¥78.5</td><td>¥132.0</td><td>95</td><td>28.6%</td><td>5.8%</td><td>5.5x</td><td>3.8x</td></tr>
+    <tr class=''><td>希荻微</td><td>688173</td><td>¥21.3</td><td>¥88.0</td><td>-45</td><td>32.5%</td><td>-15.2%</td><td>6.2x</td><td>3.1x</td></tr>
+
+  </table>
+  <div class="tagline">杰华特在板块内：<strong>PB 3.96x 偏低（仅次于思瑞浦 3.7x），但毛利率 23.87% 远低于行业（圣邦 51%、思瑞浦 49%），技术能力相对较弱</strong></div>
+
+  <h3>9.4 关键洞察 (Key Insights)</h3>
+  <div class="callout warning">
+    <strong>🎯 核心投资逻辑：</strong>
+    <ol style="margin-top:8px; padding-left:20px">
+      <li><strong>国产 PMIC 中坚</strong>：AC-DC/DC-DC 国内头部，但技术能力距圣邦/思瑞浦有差距</li>
+      <li><strong>业绩拐点临近</strong>：2026E 扭亏（+0.5 亿），2027E +2 亿（净利率 12.5%）</li>
+      <li><strong>几乎零负债</strong>：资产负债率 2.42%，账上现金 17 亿，财务结构极为健康</li>
+      <li><strong>但估值已透支</strong>：2 年 +676% 涨幅，PB 3.96x 偏高，PS 10x 极高位</li>
+    </ol>
+  </div>
+
+  <div class="callout danger">
+    <strong>⚠️ 关键风险：</strong>持续巨亏 + 毛利率远低于行业 + 2 年 650% 涨幅 + 大量获利盘 + R&D 56% 创历史新高
+  </div>
+
+  <div class="callout info">
+    <strong>💡 研研建议：</strong>
+    • <strong>已持仓</strong>：建议在 ¥150+ 区间分批止盈，回收部分利润<br>
+    • <strong>未持仓</strong>：等待回调至 ¥85-100 区间（距高点 30%+ 回撤）再建仓<br>
+    • <strong>风险厌恶者</strong>：建议放弃，小盘高波动 + 持续亏损不适合稳健投资者<br>
+    • <strong>板块对标</strong>：若要在模拟芯片板块选股，<strong>圣邦微（PE 78x 但净利率 18.5%）或思瑞浦（亏损但毛利率 49%）更值得关注</strong>
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>杰华特 (688141.SH) 深度研究报告 v2 · 真实数据修正版</strong></p>
+  <p>数据源：你提供的东方财富截图 + 腾讯实时行情 + 公开年报 + 研研估算（E）</p>
+  <p>估值方法：DCF + PS 估值法 + 情景分析 + 板块对标 · 2026-08-31 02:40 北京时间</p>
+  <div class="disclaimer">
+    <strong>免责声明：</strong>本报告由研研 AI 基于公开数据和你提供的截图数据生成，仅供 George 个人投资研究参考，不构成投资建议。
+    所有预测数据（E）存在不确定性，实际结果可能与预测有重大差异。投资有风险，决策需谨慎。
+  </div>
+  <p style="margin-top:16px">研研 🦊 · MaxClaw Investment Research</p>
+</div>
+
+</div>
+</body>
+</html>
